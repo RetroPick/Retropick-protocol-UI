@@ -1,0 +1,22 @@
+{
+  "sponsor": "Envio",
+  "bounty": "Best Use of Envio",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-envio",
+  "probes": {
+    "envioCli": { "via": "npx --yes envio --version", "result": "3.14.0 OK" },
+    "docker": { "result": "29.8.2 OK" },
+    "hypersyncClient": { "package": "@envio-dev/hypersync-client@1.4.1", "result": "installs; exports HypersyncClient with stream/get/getHeight" },
+    "hypersyncEndpoint": { "url": "https://10143.hypersync.xyz", "result": "BLOCKED — HTTP 401 anonymous; client requires apiToken (verified: construction fails with 'Missing field apiToken')" }
+  },
+  "implemented": {
+    "aggregationCore": "integrations/envio-market-radar/src/radar.ts — exact-bigint lifecycle + Kuru market-quality metrics; 8/8 unit tests",
+    "stream": "src/stream.ts — real client API wiring (token-gated), indexerAbi decode, block timestamps for latency math",
+    "server": "src/server.ts — /health + /radar, fails closed without ENVIO_API_TOKEN (exit 2)"
+  },
+  "notClaimed": [
+    "live HyperSync streaming (needs API token)",
+    "retro-ui consumption panel (next action once token lands; a mock panel must not be presented as live Envio)"
+  ],
+  "verdict": "BLOCKED_EXTERNAL (data path); LOCAL_TEST_VERIFIED (aggregation core)"
+}
