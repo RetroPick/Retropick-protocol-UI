@@ -6,11 +6,14 @@ import { createReferralApp } from './app.ts';
 import { ReferralAuth } from './auth.ts';
 import { ReferralStore } from './store.ts';
 import { AttributionSync } from './sync.ts';
+import { acquireReferralDbLock } from './lock.ts';
 
 const origin=process.env.REFERRAL_ORIGIN??'http://127.0.0.1:3000';
 const production=process.env.NODE_ENV==='production';
 if(production && !origin.startsWith('https://'))throw Error('Production REFERRAL_ORIGIN requires HTTPS');
 const db=resolve(process.env.REFERRAL_DB??'.data/referral-attribution.sqlite');mkdirSync(dirname(db),{recursive:true});
+const releaseLock=acquireReferralDbLock(db);
+process.on('exit',releaseLock);
 const store=new ReferralStore(db);
 const client=createPublicClient({chain:monadTestnet,transport:http(process.env.REFERRAL_RPC_URL??'https://testnet-rpc.monad.xyz',{timeout:5000,retryCount:1})});
 if(await client.getChainId()!==10143)throw Error('Referral service requires Monad Testnet chain 10143');

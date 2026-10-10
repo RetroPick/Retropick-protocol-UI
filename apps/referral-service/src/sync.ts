@@ -20,7 +20,7 @@ export class AttributionSync {
       }
       const to=envelope.data.canonicalToBlock;
       // Association can be newer than the indexer's confirmation buffer.
-      if(to<from){this.error=null;return;}
+      if(to<from){this.store.reconcile(from,to,[],envelope.freshness);this.error=null;return;}
       const events: QualifyingEvent[]=[]; const seen=new Set<string>(); const seenLogs=new Set<string>();
       let pages=0; const first=envelope.freshness;
       while(true) {
@@ -40,7 +40,7 @@ export class AttributionSync {
     finally {this.running=false;}
   }
   private async page(from: number,to?: number,cursor?: string): Promise<ActivityEnvelope> {
-    const url=new URL('/v1/activity',this.indexerUrl);url.searchParams.set('fromBlock',String(from));url.searchParams.set('limit','500');
+    const url=new URL('/v1/activity',this.indexerUrl);url.searchParams.set('fromBlock',String(from));url.searchParams.set('limit','100');
     if(to!==undefined)url.searchParams.set('toBlock',String(to));if(cursor)url.searchParams.set('cursor',cursor);
     const response=await this.request(url,{signal:AbortSignal.timeout(8000)});
     if(!response.ok)throw new ApiError(502,response.status===409?'CURSOR_EXPIRED':'INDEXER_UNAVAILABLE');

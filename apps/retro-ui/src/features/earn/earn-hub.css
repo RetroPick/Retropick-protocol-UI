@@ -1,25 +1,239 @@
-.rp-hub { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0 }
+/* Earn & Portfolio hub (Sections 20–23). Hero money bar + tabbed sections on radix tabs.
+   Builds on theme tokens in index.css and buttons/primitives in trading.css. */
+
+.rp-hub { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; min-width: 0 }
 .rp-hub > * { min-width: 0 }
 .rp-hub-head h1 { margin: 0; font-size: 26px; letter-spacing: -.5px; display: flex; align-items: center; gap: 10px }
 .rp-hub-head p { margin: 4px 0 0; color: var(--text-3); font-size: 13.5px; max-width: 80ch }
-.rp-hub-nav { display: flex; gap: 6px; flex-wrap: wrap }
-.rp-hub-nav a { min-height: 36px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border-soft); color: var(--text-3); font-size: 13px; font-weight: 600 }
-.rp-hub-nav a:hover { color: var(--text); border-color: var(--accent) }
-.rp-hub-hero { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 20px; border-radius: var(--rp-radius); border: 1px solid var(--border-soft); background: var(--panel) }
-.rp-hub-hero p { margin: 6px 0 0; color: var(--text-3); font-size: 12.5px; max-width: 60ch }
-.rp-hub-label { font-family: var(--rp-mono); font-size: 10.5px; letter-spacing: .6px; text-transform: uppercase; color: var(--text-3) }
-.rp-hub-total { display: block; font-size: 36px; font-weight: 750; letter-spacing: -1px; margin-top: 4px }
-.rp-hub-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px }
-.rp-hub-card { display: grid; gap: 4px; padding: 14px; border-radius: var(--rp-radius); border: 1px solid var(--border-soft); background: var(--panel) }
-.rp-hub-card > span { color: var(--text-2); font-size: 13px; font-weight: 600; display: flex; align-items: center }
-.rp-hub-card strong { font-size: 18px } .rp-hub-card small { color: var(--text-3); font-size: 11.5px }
-.rp-hub-section { display: grid; gap: 8px; scroll-margin-top: 16px }
-.rp-hub-section > h2, .rp-hub-row h2 { margin: 0; font-size: 16px; display: flex; gap: 8px; align-items: center }
+
+/* ── Hero money bar ─────────────────────────────────────────────────────── */
+.rp-hero {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: center;
+  padding: 22px; border-radius: 16px; border: 1px solid #2a1d55;
+  background:
+    radial-gradient(130% 200% at 0% 0%, rgba(131, 110, 249, .32), transparent 52%),
+    radial-gradient(90% 140% at 100% 100%, rgba(95, 237, 223, .1), transparent 55%),
+    linear-gradient(128deg, #200052 0%, #150a33 52%, #0d0720 100%);
+}
+.rp-hero-main { display: grid; gap: 6px; min-width: 0 }
+.rp-hero-label-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap }
+.rp-hub-label { font-family: var(--rp-mono); font-size: 10.5px; letter-spacing: .6px; text-transform: uppercase; color: #cdc5ee }
+.rp-live-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #5feddf; border: 1px solid rgba(95, 237, 223, .35); background: rgba(95, 237, 223, .08); border-radius: 999px; padding: 2px 9px }
+.rp-hero-extra { font-size: 11px; color: #b9b2ce; font-family: var(--rp-mono) }
+.rp-hero-amount { display: flex; align-items: baseline; gap: 8px; font-size: 42px; font-weight: 760; letter-spacing: -1.4px; line-height: 1.05; color: #ffffff; font-variant-numeric: tabular-nums }
+.rp-hero-unit { font-family: var(--rp-mono); font-size: 13px; letter-spacing: .5px; color: #b9a8ff; font-weight: 600 }
+.rp-hero-note { margin: 0; color: #a79fd0; font-size: 12px; max-width: 52ch }
+.rp-hero-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap }
+.rp-hero-side { position: relative; display: grid; gap: 12px; align-content: center; min-width: 0 }
+.rp-hero-eye { position: absolute; top: -4px; right: -4px; color: #b9b2ce }
+.rp-hero-eye:hover { color: #ffffff; background: rgba(131, 110, 249, .18) }
+.rp-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 }
+.rp-hero-stat { display: grid; gap: 3px; align-content: start; padding: 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .09); background: rgba(10, 5, 26, .45) }
+.rp-hero-stat dt { display: flex; align-items: center; gap: 5px; font-family: var(--rp-mono); font-size: 10px; letter-spacing: .5px; text-transform: uppercase; color: #a79fd0 }
+.rp-hero-stat dd { margin: 0; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; color: #f2effc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.rp-hero-stat small { color: #8b84a3; font-size: 10.5px }
+.rp-dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; display: inline-block }
+.rp-dot-pulse { background: #5feddf; animation: rp-pulse 1.8s ease-out infinite }
+@keyframes rp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(95, 237, 223, .45) }
+  70% { box-shadow: 0 0 0 8px rgba(95, 237, 223, 0) }
+  100% { box-shadow: 0 0 0 0 rgba(95, 237, 223, 0) }
+}
+.rp-spin { animation: rp-rotate .9s linear infinite }
+@keyframes rp-rotate { to { transform: rotate(360deg) } }
+
+/* ── Tabs ───────────────────────────────────────────────────────────────── */
+.rp-hub-nav-wrap { min-width: 0 }
+.rp-hub-tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding: 3px; border: 1px solid var(--border-soft); border-radius: 12px; background: var(--panel); width: fit-content; max-width: 100% }
+.rp-hub-tab { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 13px; border-radius: 9px; border: 0; background: transparent; color: var(--text-3); font: inherit; font-size: 13px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background .15s, color .15s }
+.rp-hub-tab:hover { color: var(--text) }
+.rp-hub-tab[data-state='active'] { background: var(--accent-dim); color: var(--text); box-shadow: inset 0 0 0 1px rgba(131, 110, 249, .35) }
+.rp-hub-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px }
+.rp-hub-panel { padding-top: 4px; min-width: 0 }
+
+/* ── Sections & tiles ───────────────────────────────────────────────────── */
+.rp-hub-section { display: grid; gap: 10px; min-width: 0 }
+.rp-section-title { margin: 0; font-size: 16px; display: flex; gap: 8px; align-items: center }
 .rp-hub-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap }
-.rp-ref { display: flex; gap: 8px; align-items: center; flex-wrap: wrap }
-.rp-ref input { flex: 1 1 260px; min-width: 0; min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--inset); color: var(--text); font-family: var(--rp-mono); font-size: 12.5px }
-.rp-hub-send h3 { display: flex; gap: 6px; align-items: center; margin: 12px 0 0; font-size: 14px }
-/* Legacy earn panels and tables must not widen the page on phones. */
+.rp-tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px }
+.rp-tile { display: grid; gap: 4px; align-content: start; padding: 14px; border-radius: 12px; border: 1px solid var(--border-soft); background: var(--panel); transition: border-color .15s, transform .15s }
+.rp-tile:hover { border-color: var(--border); transform: translateY(-1px) }
+.rp-tile-label { display: flex; align-items: center; gap: 6px; color: var(--text-2); font-size: 13px; font-weight: 600 }
+.rp-tile strong { font-size: 19px; font-variant-numeric: tabular-nums }
+.rp-tile small { color: var(--text-3); font-size: 11.5px }
+.rp-tile-actions { margin-top: 6px }
+
+/* ── Claim rows ─────────────────────────────────────────────────────────── */
+.rp-claim-group { display: grid; gap: 8px; min-width: 0 }
+.rp-group-title { margin: 0; display: flex; align-items: center; gap: 7px; font-family: var(--rp-mono); font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--text-3) }
+.rp-claim-list { display: grid; gap: 8px }
+.rp-claim-row { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--border-soft); background: var(--panel); transition: border-color .15s, transform .15s, box-shadow .15s }
+.rp-claim-row:hover { border-color: rgba(131, 110, 249, .45); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0, 0, 0, .25) }
+.rp-claim-row[data-phase='failed'] { border-color: rgba(255, 143, 163, .5) }
+.rp-claim-row[data-phase='success'] { border-color: rgba(95, 237, 223, .45) }
+.rp-glyph { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; font-weight: 800; font-size: 14px; flex-shrink: 0 }
+.rp-claim-info { display: grid; gap: 1px; min-width: 0 }
+.rp-claim-info strong { font-size: 14px }
+.rp-claim-source { color: var(--text-3); font-size: 11.5px }
+.rp-claim-amount { margin-left: auto; display: grid; justify-items: end; gap: 1px; font-variant-numeric: tabular-nums }
+.rp-claim-amount .rp-mono { font-size: 14.5px; font-weight: 600 }
+.rp-claim-amount small { color: var(--text-3); font-size: 10.5px; font-family: var(--rp-mono); letter-spacing: .3px }
+.rp-claim-row .rp-btn { min-width: 108px }
+.rp-sheet-group { display: grid; gap: 8px; border-top: 1px dashed var(--border); padding-top: 12px }
+.rp-sheet-group h4 { margin: 0; font-size: 13px }
+.rp-claim-sheet .rp-claim-list { max-height: 46vh; overflow-y: auto; padding-right: 2px }
+
+/* ── Hub-scoped legacy embeds (fund/send, portfolio embed, referral) ────── */
 .rp-hub .detail-trades, .rp-hub .data-table { display: block; overflow-x: auto; max-width: 100% }
 .rp-hub .cashout-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) }
 .rp-hub-embed { min-width: 0; max-width: 100%; overflow-x: auto }
+.rp-ref { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap }
+.rp-ref-link { display: flex; align-items: center; gap: 8px; flex: 1 1 260px; min-width: 0; min-height: 46px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--inset) }
+.rp-ref-link:focus-within { border-color: var(--accent) }
+.rp-ref-link input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font-family: var(--rp-mono); font-size: 12px; outline: none; text-overflow: ellipsis }
+.rp-hub-send { border-top: 1px dashed var(--border); padding-top: 10px }
+.rp-hub-send h3 { display: flex; gap: 6px; align-items: center; margin: 12px 0 0; font-size: 14px }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rp-hero { grid-template-columns: 1fr; padding: 18px }
+}
+@media (max-width: 620px) {
+  .rp-hero-amount { font-size: 34px }
+  .rp-hero-stats { grid-template-columns: 1fr 1fr }
+  .rp-claim-row { flex-wrap: wrap }
+  .rp-claim-amount { margin-left: 46px; justify-items: start }
+  .rp-claim-row .rp-btn { margin-left: auto }
+}
+
+/* ── Light theme ────────────────────────────────────────────────────────── */
+:root[data-theme='light'] .rp-hero {
+  border-color: var(--border);
+  background:
+    radial-gradient(130% 200% at 0% 0%, rgba(131, 110, 249, .16), transparent 55%),
+    radial-gradient(90% 140% at 100% 100%, rgba(95, 237, 223, .14), transparent 55%),
+    linear-gradient(128deg, #ece7fd 0%, #f7f6fd 55%, #ffffff 100%);
+}
+:root[data-theme='light'] .rp-hub-label { color: var(--text-3) }
+:root[data-theme='light'] .rp-hero-amount { color: var(--text) }
+:root[data-theme='light'] .rp-hero-unit { color: #6a4fd0 }
+:root[data-theme='light'] .rp-hero-note { color: var(--text-3) }
+:root[data-theme='light'] .rp-hero-extra { color: var(--text-2) }
+:root[data-theme='light'] .rp-hero-eye { color: var(--text-3) }
+:root[data-theme='light'] .rp-hero-stat { border-color: var(--border-soft); background: rgba(255, 255, 255, .78) }
+:root[data-theme='light'] .rp-hero-stat dt { color: var(--text-3) }
+:root[data-theme='light'] .rp-hero-stat dd { color: var(--text) }
+:root[data-theme='light'] .rp-live-chip { color: #0a7d73; border-color: rgba(10, 125, 115, .35); background: rgba(10, 125, 115, .08) }
+:root[data-theme='light'] .rp-dot-pulse { background: #0a7d73; animation-name: rp-pulse-light }
+@keyframes rp-pulse-light {
+  0% { box-shadow: 0 0 0 0 rgba(10, 125, 115, .4) }
+  70% { box-shadow: 0 0 0 8px rgba(10, 125, 115, 0) }
+  100% { box-shadow: 0 0 0 0 rgba(10, 125, 115, 0) }
+}
+
+/* ── Tab interior cards (beautification pass) ───────────────────────────── */
+.rp-hub-card { display: grid; gap: 12px; padding: 18px; border-radius: 14px; border: 1px solid var(--border-soft); background: var(--panel); min-width: 0 }
+.rp-hub-card-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap }
+.rp-card-icon { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: rgba(131, 110, 249, .14); color: #b9a8ff; flex-shrink: 0 }
+.rp-hub-card-head h3 { margin: 0; font-size: 14.5px; display: flex; align-items: center; gap: 8px }
+.rp-card-sub { color: var(--text-3); font-size: 12px; margin: 0 }
+.rp-card-aside { margin-left: auto; display: flex; gap: 8px; align-items: center }
+.rp-count-chip { font-family: var(--rp-mono); font-size: 10px; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-soft); color: var(--text-3); background: var(--inset) }
+
+/* Scoped table styling — hub tables previously had no CSS at all. */
+.rp-hub .detail-trades, .rp-hub .data-table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; margin: 0 }
+.rp-hub .detail-trades th, .rp-hub .data-table th { text-align: left; font-family: var(--rp-mono); font-size: 10px; letter-spacing: .6px; text-transform: uppercase; color: var(--text-3); font-weight: 600; padding: 9px 10px; border-bottom: 1px solid var(--border-soft); white-space: nowrap }
+.rp-hub .detail-trades td, .rp-hub .data-table td { padding: 11px 10px; border-bottom: 1px solid var(--border-soft); color: var(--text-2); white-space: nowrap }
+.rp-hub .detail-trades tbody tr:hover td, .rp-hub .data-table tbody tr:hover td { background: var(--hover) }
+.rp-num { text-align: right !important }
+.rp-cell-asset { display: inline-flex; align-items: center; gap: 8px }
+.rp-cell-glyph { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; font-weight: 800; font-size: 11.5px; flex-shrink: 0 }
+
+/* Designed empty panels */
+.rp-empty-panel { display: grid; gap: 13px; justify-items: center; text-align: center; padding: 34px 22px; border-radius: 14px; border: 1px dashed var(--border); background: radial-gradient(80% 120% at 50% 0%, rgba(131, 110, 249, .09), transparent 60%), var(--panel) }
+.rp-empty-panel.rp-empty-compact { padding: 22px; grid-template-columns: auto 1fr; justify-items: start; text-align: left; gap: 12px }
+.rp-empty-disc { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 17px; background: linear-gradient(135deg, rgba(131, 110, 249, .26), rgba(95, 237, 223, .13)); color: #b9a8ff; border: 1px solid rgba(131, 110, 249, .3) }
+.rp-empty-panel strong { font-size: 15.5px }
+.rp-empty-panel p { margin: 0; color: var(--text-3); font-size: 12.5px; max-width: 48ch; line-height: 1.65 }
+.rp-empty-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center }
+
+/* How-it-works steps strip */
+.rp-steps { display: flex; align-items: flex-start; flex-wrap: wrap; justify-content: center; margin-top: 2px }
+.rp-step { display: grid; gap: 6px; justify-items: center; padding: 0 22px; position: relative }
+.rp-step:not(:last-child)::after { content: '→'; position: absolute; right: -6px; top: 3px; color: var(--text-dim); font-size: 12px }
+.rp-step-num { width: 22px; height: 22px; border-radius: 999px; display: grid; place-items: center; background: rgba(131, 110, 249, .14); color: #b9a8ff; font-family: var(--rp-mono); font-size: 10.5px; font-weight: 700 }
+.rp-step span { font-size: 11.5px; color: var(--text-2) }
+
+/* Amount copy affordance */
+.rp-amount { display: inline-flex; align-items: center; gap: 6px }
+.rp-amount small { color: var(--text-3); font-size: 10.5px; font-family: var(--rp-mono) }
+.rp-amount-copy-btn { border: 0; background: none; padding: 2px; cursor: pointer; display: inline-flex }
+.rp-amount-copy { opacity: 0; color: var(--text-3); transition: opacity .12s }
+.rp-amount:hover .rp-amount-copy { opacity: .85 }
+.rp-amount-copied { color: var(--pos) }
+
+/* Status chips */
+.rp-chip { display: inline-flex; align-items: center; gap: 5px; font-family: var(--rp-mono); font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border-soft); color: var(--text-3); background: var(--inset); white-space: nowrap }
+.rp-chip-warn { color: var(--warn-text); border-color: var(--warn-border); background: var(--warn-bg) }
+
+/* Fund & send — faucet CTA */
+.rp-faucet { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 14px; border: 1px solid rgba(131, 110, 249, .35); background: linear-gradient(120deg, rgba(131, 110, 249, .14), rgba(32, 0, 82, .28)); color: var(--text); text-decoration: none; transition: border-color .15s, transform .15s, box-shadow .15s }
+.rp-faucet:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(131, 110, 249, .2) }
+.rp-faucet strong { display: block; font-size: 14.5px }
+.rp-faucet small { color: var(--text-3); font-size: 12px }
+.rp-faucet .rp-card-icon { background: rgba(131, 110, 249, .22) }
+.rp-faucet-arrow { margin-left: auto; color: #b9a8ff }
+
+/* Fund & send — provider rows inside the collapsible */
+.rp-provider-list { display: grid; gap: 8px }
+.rp-provider-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--border-soft); border-radius: 12px; background: var(--panel-2); flex-wrap: wrap }
+.rp-provider-row strong { font-size: 13.5px }
+.rp-provider-row p { margin: 0; color: var(--text-3); font-size: 11.5px; flex: 1 1 240px; min-width: 0; line-height: 1.6 }
+.rp-doc-link { color: var(--accent); font-size: 12px; display: inline-flex; gap: 4px; align-items: center; text-decoration: none }
+.rp-doc-link:hover { text-decoration: underline }
+
+/* Radix collapsible */
+.rp-collapse-trigger { display: flex; align-items: center; gap: 8px; width: 100%; background: none; border: 0; padding: 12px 0 0; color: var(--text-2); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; text-align: left }
+.rp-collapse-trigger:hover { color: var(--text) }
+.rp-collapse-chevron { margin-left: auto; transition: transform .18s; color: var(--text-3) }
+.rp-collapse-trigger[data-state='open'] .rp-collapse-chevron { transform: rotate(180deg) }
+.rp-collapse-content { padding-top: 10px }
+
+/* Send form */
+.rp-send-grid { display: grid; gap: 14px }
+.rp-send-field { display: grid; gap: 6px; min-width: 0 }
+.rp-send-field > span, .rp-send-field .field-label { font-size: 12.5px; color: var(--text-2); font-weight: 600 }
+.rp-amount-input { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 10px; background: var(--inset); padding: 0 12px; min-height: 52px; gap: 10px }
+.rp-amount-input:focus-within { border-color: var(--accent) }
+.rp-amount-input input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; outline: none; font-family: inherit }
+.rp-amount-input .rp-unit { color: var(--text-3); font-family: var(--rp-mono); font-size: 12px }
+.rp-presets { display: flex; gap: 6px }
+.rp-preset { border: 1px solid var(--border-soft); background: var(--panel-2); color: var(--text-3); border-radius: 8px; padding: 5px 9px; font-family: var(--rp-mono); font-size: 10.5px; cursor: pointer; transition: color .12s, border-color .12s }
+.rp-preset:hover { color: var(--text); border-color: var(--accent) }
+.rp-field-input { position: relative }
+.rp-field-input input { width: 100%; border: 1px solid var(--border); border-radius: 10px; background: var(--inset); color: var(--text); padding: 12px 36px 12px 12px; font-size: 14px; font-family: inherit; outline: none }
+.rp-field-input input:focus { border-color: var(--accent) }
+.rp-valid-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none }
+.rp-valid-ok { color: var(--pos) }
+.rp-valid-bad { color: var(--neg) }
+.rp-send-balance { color: var(--text-3); font-size: 11.5px }
+
+/* Review summary card */
+.rp-review { display: grid; gap: 9px; padding: 15px; border-radius: 12px; border: 1px solid rgba(131, 110, 249, .3); background: rgba(131, 110, 249, .06) }
+.rp-review-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px }
+.rp-review-row > span { color: var(--text-3); flex-shrink: 0 }
+.rp-review-row strong { font-variant-numeric: tabular-nums; text-align: right; word-break: break-all; color: var(--text) }
+.rp-review-actions { display: flex; gap: 8px; margin-top: 4px }
+
+/* Referral QR */
+.rp-qr { display: grid; gap: 10px; justify-items: center; padding: 14px; border-radius: 12px; border: 1px solid var(--border-soft); background: #ffffff; width: fit-content }
+.rp-qr figcaption { color: #3c3660; font-size: 10px; font-family: var(--rp-mono); text-align: center; word-break: break-all; max-width: 180px }
+.rp-ref-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: start }
+
+/* Light theme overrides for interior pass */
+:root[data-theme='light'] .rp-card-icon { color: #6a4fd0; background: rgba(106, 79, 208, .1) }
+:root[data-theme='light'] .rp-empty-disc { color: #6a4fd0; background: linear-gradient(135deg, rgba(106, 79, 208, .16), rgba(10, 125, 115, .1)); border-color: rgba(106, 79, 208, .25) }
+:root[data-theme='light'] .rp-step-num { color: #6a4fd0; background: rgba(106, 79, 208, .1) }
+:root[data-theme='light'] .rp-faucet { border-color: rgba(106, 79, 208, .3); background: linear-gradient(120deg, rgba(106, 79, 208, .08), rgba(236, 231, 253, .55)) }
+:root[data-theme='light'] .rp-faucet-arrow { color: #6a4fd0 }
+:root[data-theme='light'] .rp-review { border-color: rgba(106, 79, 208, .25); background: rgba(106, 79, 208, .05) }

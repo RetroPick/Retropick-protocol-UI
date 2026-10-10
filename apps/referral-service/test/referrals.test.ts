@@ -141,3 +141,26 @@ test('HTTP Origin, cookie ownership, invalid parameters, session expiry and logo
     await post('logout',{}, {Cookie:session});assert.equal((await fetch(`${base}/summary`,{headers:{Cookie:session}})).status,401);
   }finally{await new Promise<void>(resolve=>server.close(()=>resolve()));s.store.close();}
 });
+
+
+test('activity page size stays within the actual indexer API contract',async()=>{
+ const s=setup();try {
+  await associate(s);let observed=false;
+  const sync=new AttributionSync(s.store,'http://indexer.local',requestReturning(url=>{
+   assert.equal(url.searchParams.get('limit'),'100');observed=true;return envelope([event(110)]);
+  }));await sync.sync();assert.equal(sync.error,null);assert.equal(observed,true);
+ }finally{s.store.close();}
+});
+
+test('canonical head falling below association clears orphaned qualification and records pending freshness',async()=>{
+  const s=setup();try {
+    await associate(s);s.store.reconcile(100,200,[event(110),event(120,'TokenLaunched',{txHash:hexHash('2')})],freshness());
+    assert.equal(s.store.summary(lower(bob.address)).qualifiedWallets,1);
+    const sync=new AttributionSync(s.store,'http://indexer.local',requestReturning(url=>envelope([],Number(url.searchParams.get('fromBlock')),90,1)));
+    await sync.sync();assert.equal(sync.error,null);
+    const summary=s.store.summary(lower(bob.address));
+    assert.equal(summary.qualifiedWallets,0);assert.equal(summary.createdLaunches,0);assert.deepEqual(summary.volumeByQuote,[]);
+    assert.equal(summary.referrals[0].status,'ASSOCIATED');assert.equal(summary.freshness?.indexedBlock,90);assert.equal(summary.freshness?.reorgRevision,1);
+    assert.equal(s.store.association(lower(alice.address))?.associationBlock,100);
+  }finally{s.store.close();}
+});
