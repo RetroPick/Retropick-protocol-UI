@@ -47,9 +47,9 @@ export const test = base.extend<Fixtures>({
     page.on('console', (m) => {
       if (m.type() !== 'error' && m.type() !== 'warning') return;
       const url = m.location()?.url ?? '';
-      observed.console.push({ type: m.type(), text: m.text().slice(0, 600), url: redactUrl(url), classification: classify(m.text(), url) });
+      observed.console.push({ type: m.type(), text: redactText(m.text()).slice(0, 600), url: redactUrl(url), classification: classify(m.text(), url) });
     });
-    page.on('pageerror', (e) => observed.pageErrors.push(String(e.message).slice(0, 600)));
+    page.on('pageerror', (e) => observed.pageErrors.push(redactText(String(e.message)).slice(0, 600)));
     page.on('requestfailed', (r) => observed.failedRequests.push({ url: redactUrl(r.url()), failure: r.failure()?.errorText ?? 'unknown' }));
     await use(observed);
     writeObserved(testInfo, observed);
@@ -64,6 +64,10 @@ export const test = base.extend<Fixtures>({
     });
   },
 });
+
+function redactText(text: string): string {
+  return text.replace(/https?:\/\/[^\s"'<>]+/g, (url) => redactUrl(url));
+}
 
 function writeObserved(testInfo: TestInfo, observed: Observed): void {
   const dir = join(EVIDENCE_DIR, 'observed');

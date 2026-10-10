@@ -4,7 +4,7 @@ import type { Page, Request } from '@playwright/test';
  * Network guard: blocks and records any request that could broadcast or sign a transaction, and (fixture target)
  * any outbound request that is not the local app server or the font CDN. Tests assert `violations` is empty.
  */
-const WRITE_METHODS = /"method"\s*:\s*"(eth_sendRawTransaction|eth_sendTransaction|eth_sign|personal_sign|eth_signTypedData(_v[34])?|wallet_sendCalls)"/;
+const WRITE_METHODS = /"method"\s*:\s*"(eth_send\w*|eth_sign\w*|personal_sign|wallet_send\w*|wallet_sign\w*)"/;
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
 export interface GuardRecord { url: string; method: string; reason: string }
@@ -43,6 +43,8 @@ export async function installNetworkGuard(page: Page, mode: 'fixture' | 'live' |
 export function redactUrl(raw: string): string {
   try {
     const u = new URL(raw);
+    u.username = '';
+    u.password = '';
     for (const key of [...u.searchParams.keys()]) if (/key|token|secret|auth|sig/i.test(key)) u.searchParams.set(key, 'REDACTED');
     // API keys embedded in RPC paths (e.g. /v2/<key>)
     u.pathname = u.pathname.replace(/\/[A-Za-z0-9_-]{24,}(?=\/|$)/g, '/REDACTED');
