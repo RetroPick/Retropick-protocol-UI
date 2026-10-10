@@ -1,105 +1,61 @@
-# RetroPick Metropolis — 72-hour Integration Master Plan
-**Snapshot:** 2026-10-11 | **Deadline:** 2026-10-14 10:59 GMT+7 | **Track:** Onchain Finance & Trading | **Status:** planning, NOT implementation proof.
-**Agent instruction:** Read `09-AGENTS-HANDOFF.md` and the bounty-specific file before coding. Existing deployed V2 must remain intact.
+# Metropolis Master Plan — Sponsor Integration Campaign
 
-## Executive decision
-**Primary narrative:** "RetroPick turns new assets into functioning Monad markets: transparent issuance and price discovery, then verified Kuru graduation, protected initial liquidity, and real orderbook execution." This is already demonstrated for generic creator tokens. A truly NEW asset class (event-backed outcome claims) would improve Kuru New Assets eligibility, but is a **new protocol project**, not a UI toggle. Do not claim the PRISM protocol is deployed.
+Source mission: `RetroPick_Metropolis_ZCode_GLM_Full_Integration_Prompt_RETRO_UI_ONLY.md` (repo root).
+This plan records the campaign as approved by the operator on 2026-10-11.
 
-**Recommended delivery order:** preserve current live V2 + submission evidence > Kuru Consumer UX > Envio event intelligence > Mera PRF Private Strategy Vault > MetaMask Agent Wallet plugin > Aurora live any-chain fund-and-trade > CRE > Nansen. User's explicit top-four priorities are Aurora, Kuru New Assets, Mera PRF and MetaMask. The engineering order differs because Aurora and a new outcome-token contract are dependency/high-risk gates. If one senior engineer has ~30–40 productive hours in the 72-hour calendar window, completing all eight is implausible. Parallel agents help only after a stable integration contract.
+## Operator decisions (fixed)
 
-## Eight selected bounties: fit / incremental effort / go-no-go
-| Sponsor | Prize and track | Current evidence | 72h fit (1–5) | Incremental effort (engineer-hours) | Decision |
-|---|---|---|---:|---:|---|
-| Kuru New Assets | $5k, Onchain Finance | Real Kuru market+orders; creator tokens NOT proved novel class | 2 | 24–40 for minimal outcome asset, 60+ for PRISM | P0 CONDITIONAL: novel claim prototype only after math/security gate |
-| Aurora Intents | $5k pool ($2.5k first), all | No live cross-chain receipt shown | 2 | 12–24 plus access/funding | P0 user choice; 4h feasibility spike then go/no-go |
-| Mera One Passkey Many Keys | $2.5k, all | PRF not implemented in live V2 | 4 | 8–14 | P0, isolated encrypted strategy vault |
-| MetaMask Agent Wallet Plugin | $2.5k, Onchain Finance | Not implemented; existing Kuru ABI reusable | 3 | 12–20 plus CLI compatibility | P0, bounded launch-trading plugin |
-| Kuru Consumer Trading App | $5k, Onchain Finance | Real frontend order/fill/cancel proof | 5 | 4–8 | HIGH ROI: select/retain if eligible |
-| Envio | $1k, all | Existing custom TS indexer, no verified Envio integration | 4 | 8–16 | Add if real indexed core feature |
-| Chainlink CRE | $3k, all | PRISM resolution only specified, not deployed | 2 | 8–18 | Graduation-risk workflow if no prediction resolver |
-| Nansen | $5k pool ($2k first), all | No verified Nansen call | 2 | 5–10 plus key/licensing | Conditional; testnet assets may lack coverage |
+1. In-flight completed work is landed on `main` first as the qualified base (done: commits
+   `8384c4c`, `044ee09`, `c9d391c`, `7fd742b`).
+2. Stage 7 (Kuru New Assets onchain deployment) executes **only after the P0 gate report is
+   delivered and the operator explicitly authorizes** with a funded testnet wallet.
+3. Deadline-prioritized stage order (below), not strict mission order.
 
-**Prize arithmetic:** Eight listed bounty prize pools total $29,000, NOT $29,000 attainable by one team. Top advertised award amounts across these eight total at most $23,500 before eligibility, sponsor stacking, and competition. Primary track is $30,000 across three $10,000 winners. Never use pooled total as expected winnings.
+## Stage order (deadline-prioritized)
 
-## Canonical repo and evidence
-- Repo: https://github.com/RetroPick/retropick-protocol (default branch main; verify HEAD before implementation).
-- Live frontend: https://retropick-metropolis.vercel.app
-- `README.md`, `HACKATHON.md`, `docs/hackathon/EVIDENCE_MAP.md`, `docs/hackathon/METROPOLIS_REQUIREMENTS.md`, `docs/hackathon/KURU_BOUNTY.md`.
-- `contracts/src/v2/RetroPickLaunchFactoryV2.sol`, `RetroPickBondingCurveV2.sol`, `GraduationCoordinatorV2.sol`, `KuruGraduationExecutorV2.sol`, `KuruLiquidityLockV2.sol`.
-- `apps/web/lib/live/client.ts`, `wallet.tsx`, `kuru.ts`, `model.ts`; `apps/web/features/live/kuru.tsx`; `apps/web/app/api/chain/route.ts`; `apps/indexer/src/project.ts`.
-- `deployments/monad-testnet/v2.json` chainId 10143; factory `0xa7f18b9eceb0A9852b08408854A45D00fc682454`, coordinator `0xaD62309242EA65BB07C833669EC6a4ED23AF738F`, demo Kuru market `0x1F5dE72616a7fe645Cf45aC66dfce8Ac7452C57F`. Deployment source SHA `f0363249f4b74e58dde37d1241742ca5a92bcfe3` is NOT necessarily current main HEAD.
-- Existing proofs: launch, buy, graduation, Kuru order/fill/cancel and browser E2E; functional testnet transactions, NOT organic traction. Canonical Circle-USDC live smoke BLOCKED_FUNDING; unaudited testnet only.
-- Uploaded older Base Sepolia MarketEngine/Go/fe-v1 reference is NOT current deployment. `docs/prism/**` is ambitious SPEC/RESEARCH; `docs/prism/05-hackathon/MVP.md` explicitly excludes StatePool/SLE from MVP and does not establish deployment. Production Solidity gates are not passed merely by writing docs.
+| # | Stage | Sponsor/bounty | Branch |
+|---|-------|----------------|--------|
+| 1 | Kuru consumer validation + gaps | Kuru "Next Consumer Trading App" | `feat/metropolis-kuru-consumer` |
+| 2 | P0 qualification gate | (internal gate for Stage 7) | `feat/metropolis-p0-qualification` |
+| 3 | Private Strategy Vault | Mera "One Passkey, Many Keys" | `feat/metropolis-mera-prf` |
+| 4 | Market Quality Radar | Envio "Best Use of Envio" | `feat/metropolis-envio` |
+| 5 | Graduation Safety Workflow | Chainlink "Best Workflow with CRE" | `feat/metropolis-chainlink-cre` |
+| 6 | Risk-controlled trading agent | MetaMask Agent Wallet | `feat/metropolis-metamask-agent` |
+| 7 | Route + entitlement checks | Aurora Intents / Nansen | docs/evidence only |
+| 8 | Outcome markets onchain | Kuru "Bring New Assets and Markets" | `feat/metropolis-kuru-outcome-p0` (**authorization-gated**) |
+| 9 | Cross-sponsor coherence + closure | — | per-stage |
 
-## As-is -> to-be (no change to V2 custody authority)
-```mermaid
-flowchart LR
-Creator-->Factory[RetroPick V2 Factory]-->Curve[Bonding Curve]-->Coordinator[Graduation Coordinator]
-Coordinator-->Executor[Kuru Executor]-->Market[Kuru CLOB + Vault]
-Executor-->Lock[Permanent LP/Excess Lock]
-Market-->Index[Existing TS Indexer]
-Market-->Envio[Optional Envio Index]
-Index-->Web[Next.js Live App]
-Envio-->Web
-Aurora[Aurora cross-chain funds]-->|only verified destination asset|User[User Wallet]
-User-->Market
-Mera[Mera PRF encrypted strategies]-->Web
-MM[MetaMask Agent Wallet Plugin]-->|policy/MFA gated writes|Market
-CRE[CRE risk or resolution workflow]-.->Web
-Nansen[Nansen insights, permitted data only]-.->Web
-```
-No sponsor adapter may gain custody of graduation collateral, impersonate user signing, override the coordinator's accounting, or mark a cross-chain transfer settled from a frontend callback.
+## Per-sponsor gates
 
-## Critical 72-hour schedule (GMT+7)
-**Oct 11 02:30–08:30 (0–6h):** freeze current repo SHA and release evidence; verify submission form; smoke live Kuru; check Aurora route source→Monad token and funds; Mera PRF support on TWO devices; MetaMask CLI/plugin version and Monad transaction; access keys for Envio/Nansen/CRE. Abort inaccessible integrations.
-**Oct 11 08:30–Oct 12 02:30 (6–24h):** one agent preserves primary V2+Kuru consumer proof, one implements PRF vault, one scaffolds plugin; Aurora agent performs first REAL route if supported. Separate contract agent designs bounded outcome token only if full time/security staffing exists.
-**Oct 12 02:30–Oct 13 02:30 (24–48h):** finish integration tests, Envio derived read-model, plugin install/write, Aurora arrival+in-app use; run Foundry regression and Next.js checks. CRE/Nansen only if P0 gates pass.
-**Oct 13 02:30–Oct 14 02:30 (48–72h):** full judge E2E on fresh browser, reorg/replay/timeout/refund tests, videos, sponsor evidence, submission drafts, pitch. No protocol changes after Oct 13 18:00 unless fixing critical breakage.
-**Oct 14 02:30–10:59:** protected submission buffer; upload early, verify all URLs/permissions, do not wait for last minute.
+A — Source verification (official SDK/docs, pinned version, supported network, verified
+addresses, no invented methods).
+B — Local engineering (typecheck, build, unit tests, schema validation, error handling).
+C — Security (no exposed keys, no unauthorized signing, no custody regression, no unsafe
+allowance, correct bigint precision, failure states tested).
+D — Integration E2E (real provider response, real chain receipt where required, browser/mobile
+validation, existing product still functions).
+E — Hackathon eligibility (meets sponsor requirements, core product value, evidence, judge
+access).
 
-## Go/no-go gates
-G1 existing Kuru demo remains functional; G2 external Aurora route and destination token supported with real small transfer (otherwise withdraw bounty claim); G3 PRF derives same key on fresh profile/second synced device AND ciphertext decrypts; G4 plugin actually installs and a policy-gated write succeeds (or remove bounty); G5 new-asset claim has exact collateral accounting, redemption, Kuru listing and fill (or submit only existing V2 without novelty claim); G6 every selected sponsor has proof and submission field answered accurately.
+Evidence labels: `SOURCE_VERIFIED`, `LOCAL_TEST_VERIFIED`, `ONCHAIN_VERIFIED`,
+`BROWSER_E2E_VERIFIED`, `SPONSOR_QUALIFIED`, `BLOCKED` / `NOT_RUN`.
+Evidence root: `evidence/hackathon/metropolis/sponsors/<sponsor>/`.
 
-## Security and economic boundaries
-- Graduation quote collateral and LP/excess custody are NOT general-purpose funding pools.
-- For future binary claims: lock 1 collateral before minting 1 YES + 1 NO; permit inverse merge; immutable resolution specification; deterministic invalid/cancel policy; redeem only on verified resolution; check token decimals/rounding and solvency; segregate trading liquidity from redemption collateral.
-- Kuru Router market creation does not ensure depth; record bid, ask, tick, spread, size, actual fill and fee. No fake/wash volume.
-- PRISM Phase-1 long-only exact-backed basket `h=Gx`, `B_i >= S*x_i` is a **separate research/contract track**. Shared State Liquidity Engine and Payoff AMM are future R&D, not a 72h deliverable.
-- Legal review is needed before permissionless real-money event markets; testnet does not establish legal eligibility.
+## Deadline policy
 
-## Required submission packet
-One primary track; project logo, public source and license/AI disclosure, live Monad link and judge instructions, <=3min live technical demo, <=2min founder pitch, actual chain tx hashes, 30/60/90d plan, measurable (non-fabricated) demand. Sponsor-specific <=2min videos except MetaMask <=5min and Envio optional <=2min. Portal requirements and repo's older scoring/logo limits differ: recheck live authenticated portal. Deadline above is user-captured portal time.
+- Hard deadline: 2026-10-14 10:59 GMT+7 (user-reported portal close).
+- Conservative stop: 2026-10-13 23:59 ET (verified in `docs/hackathon/METROPOLIS_REQUIREMENTS.md`).
+- Final 8 hours: submission fixes only; no new contract deployments.
+- Internal freeze dates in `docs/prism/05-hackathon/RETROPICK_METROPOLIS_AGENT_DEVELOPMENT_WORKFLOW.md`
+  (code freeze 2026-10-11 23:59 GMT+7) predate this campaign's operator mandate and are recorded
+  as superseded by the operator-approved mission prompt for sponsor-scope work; the launchpad-core
+  contract freeze itself remains respected (no V2 contract changes in this campaign).
 
-## Sources
-https://hackathon.monad.xyz/tracks/onchain-finance
-https://docs.kuru.io/sdk/deploy-market
-https://docs.metamask.io/agent-wallet/
-https://github.com/MetaMask/agent-wallet-plugin-examples
-https://docs.envio.dev/docs/HyperIndex/overview
-https://docs.chain.link/cre
-https://docs.nansen.ai/
-https://docs.intents.aurora.dev/
-https://mera.category.xyz/concepts/passkeys-and-prf/
+## Standing rules
 
-
----
-## 2026-10-11 integration re-validation update (supersedes tentative SDK assumptions)
-**Start here:** [Navigation](README.md), [officially verified sources](10-VERIFIED-SOURCES.md), [agent execution runbook](11-EXECUTION-RUNBOOK.md), [bounty innovation matrix](12-SPONSOR-INNOVATION.md). The original effort estimates above are *planning ranges*, not measured integration durations.
-
-### Material corrections
-1. **Research P0 is not blank:** `research/contract-kernels/src/hackathon/PredictionFactoryP0.sol` and `PredictionMarketP0.sol` already exist alongside tests; `research/hackathon-p0/PRISM_P0_SPEC.md` is an exact-lot, in-kind redemption specification and excludes final cash settlement. Reuse/review, do not start by cloning the V2 factory.
-2. **Live V2 versus illustrative UI:** `apps/web/features/create-market/wizard.tsx` writes an explicitly labeled local demo draft; `features/prism/prism.tsx` is illustrative research UI. `features/live/kuru.tsx` does perform real wallet-mediated Kuru testnet actions. Verify the current deployment commit before promising a unified launch/PRISM app.
-3. **Envio** has official direct HyperSync for Monad 10143 (`https://10143.hypersync.xyz`). Fastest toolchain: `pnpx envio init` local ABI import → generated config/schema/handlers → `envio skills update` → `createTestIndexer()` → GraphQL reconciliation. Local/self-hosted HyperSync requires `ENVIO_API_TOKEN`.
-4. **Mera** already has published secret-vault APIs; avoid custom PRF/HKDF/AES unless implementing something beyond the provided primitive. Stable RP ID and physical cross-device test are key.
-5. **MetaMask** bounty is a real oclif plugin with manifest capabilities and separate agent skill; sample `wallet-submit` permission acquisition does not constitute actual execution. Inspect v7 CLI compatibility with sample v6.2 peer dependency.
-6. **Aurora** supported Monad in general is not evidence of a route to **Monad Testnet 10143** or output **native MON** to the live V2 Kuru quote. Runtime proof first, otherwise defer.
-7. **Chainlink** CRE CLI v1.30.0 supports **Monad Testnet simulation**; testnet production write is NOT established by this fact.
-8. **Nansen** allowed `monad` API chain denotes available data coverage but not new hackathon testnet tokens; some Smart Money endpoints cannot legally be redistributed. Public UX must be endpoint-license gated.
-
-### Redesigned 72-hour ordering based on sponsor constraints
-- **0–4h:** run G0 baseline and separate sponsor capability spikes (Aurora supported route, MetaMask CLI/plugin, Mera RP/PRF, Envio API token, Nansen key, CRE CLI).
-- **4–24h:** parallel safe lanes: (A) Kuru Consumer proof, (B) Envio P0 known-address indexer, (C) Mera secret vault, (D) MetaMask plugin scaffold+policy, (E) Aurora actual small quote/transfer if possible, (F) P0 kernel tests only.
-- **24–48h:** finish one real core feature per selected sponsor, reconcile onchain proof, mobile Playwright and contract tests. New outcome asset must have separate deployed receipt+venue fill, else remain research.
-- **48–64h:** integration QA, user evidence, demo capture, sponsor submission answers, PR review.
-- **Final >=8h:** freeze, submit and confirm public judging access. Drop unproven bounties rather than showing mocked sponsor logos.
-**Agent success metric:** proportion of selected sponsor requirements backed by inspectable proof, not number of package installs.
+- `apps/web` zero-write guard enforced before every commit and PR.
+- One sponsor per branch/PR; no auto-merge; no mainnet; no secrets committed.
+- Fail closed: missing CLI/credential/network ⇒ `BLOCKED_EXTERNAL` in
+  `execution/EXTERNAL-BLOCKERS.md`, continue with next stage.
+- Live testnet signing only inside the separately authorized workflow (Stage 8 and any
+  order re-validation), with funded test wallets and bounded amounts.
