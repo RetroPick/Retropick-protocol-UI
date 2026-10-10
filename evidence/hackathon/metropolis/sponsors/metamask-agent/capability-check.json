@@ -1,0 +1,21 @@
+{
+  "sponsor": "MetaMask (Agent Wallet)",
+  "bounty": "MetaMask Agent Wallet track",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-metamask-agent",
+  "probes": {
+    "cli": { "package": "@metamask/agent-wallet", "version": "6.2.1 (matches plugin peer ^6.2.0)", "result": "mm --version OK; mm doctor OK; node 22.23.2 satisfies ≥22.18" },
+    "pluginApi": { "source": "official agent-wallet-plugin-examples repo + shipped @metamask/agent-wallet types (PluginCommand, CommandIO emit/yield, walletStateManager, mm manifest schemaVersion 1)", "result": "verified from package types" },
+    "install": { "result": "BLOCKED — CLI 6.2.1 rewrites local path/tarball sources to https://github.com//<path> and npm fails (twice verified); npm publish is the supported verifiable source (operator decision)" }
+  },
+  "implemented": {
+    "dir": "integrations/metamask-agent-retropick",
+    "commands": ["retropick markets", "retropick market inspect", "retropick order quote", "retropick order place (policy-gated, fails closed)", "retropick order cancel (ownership-gated, fails closed)", "retropick wallet exposure", "retropick market risk"],
+    "policyCore": "src/policy.ts — chain allowlist (10143), verified-market registry, notional/size caps, quote expiry, book-lag, tick alignment, underprice guard, margin sufficiency, cancel signer-ownership; 8/8 unit tests",
+    "manifest": "oclif.manifest.json generated; mm consent screen parsed all 7 commands + capabilities (wallet-submit flagged) before the install bug",
+    "build": "bun-bundled dist per command (externals kept), typecheck PASS against @metamask/agent-wallet 6.2.1 + @oclif/core"
+  },
+  "safeguards": ["Monad-only allowlist", "verified market registry", "max notional/size caps", "quote expiry + book freshness", "tick validation", "margin checks", "cancel ownership", "no private key export", "place/cancel fail closed without provisioned agent wallet", "host MFA/policy never bypassed"],
+  "notClaimed": ["successful plugin install", "live testnet order via agent wallet", "receipt confirmation"],
+  "verdict": "LOCAL_TEST_VERIFIED (typecheck + policy tests + manifest validation); install BLOCKED_EXTERNAL (BLOCKER-005)"
+}

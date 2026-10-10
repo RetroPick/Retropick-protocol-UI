@@ -1,0 +1,42 @@
+{
+  "name": "@retropick/mm-plugin",
+  "version": "0.1.0",
+  "description": "RetroPick risk-controlled trading agent plugin for the MetaMask Agent Wallet (mm) CLI",
+  "license": "MIT",
+  "type": "module",
+  "keywords": ["oclif-plugin", "metamask", "agent-wallet", "retropick"],
+  "files": ["dist", "oclif.manifest.json"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "test:policy": "node --experimental-strip-types --test test/policy.test.ts"
+  },
+  "oclif": {
+    "bin": "mm",
+    "commands": "./dist/commands",
+    "topicSeparator": " "
+  },
+  "mm": {
+    "schemaVersion": 1,
+    "minCliVersion": "^6.2.0",
+    "capabilities": [],
+    "commands": [
+      { "id": "retropick markets", "capabilities": [], "dataAccess": [] },
+      { "id": "retropick market inspect", "capabilities": [], "dataAccess": [] },
+      { "id": "retropick order quote", "capabilities": [], "dataAccess": [] },
+      { "id": "retropick order place", "capabilities": ["wallet-submit"], "dataAccess": ["accounts"] },
+      { "id": "retropick order cancel", "capabilities": ["wallet-submit"], "dataAccess": ["accounts"] },
+      { "id": "retropick wallet exposure", "capabilities": [], "dataAccess": ["accounts", "balances"] },
+      { "id": "retropick market risk", "capabilities": [], "dataAccess": [] }
+    ]
+  },
+  "peerDependencies": {
+    "@metamask/agent-wallet": "^6.2.0"
+  },
+  "devDependencies": {
+    "@metamask/agent-wallet": "^6.2.0",
+    "oclif": "^4",
+    "typescript": "^5",
+    "viem": "^2.57.4"
+  }
+}
