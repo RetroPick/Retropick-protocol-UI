@@ -1,5 +1,8 @@
 {
   "../../contracts/lib/forge-std": {
     "rev": "bf647bd6046f2f7da30d0c2bf435e5c76a780c1b"
+  },
+  "../../contracts/lib/v4-deployment-periphery": {
+    "rev": "9969eec44cfdf07e24b41de47f40276a58401976"
   }
 }
