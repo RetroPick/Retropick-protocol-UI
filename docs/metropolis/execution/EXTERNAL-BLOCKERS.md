@@ -93,3 +93,32 @@ Format per mission §22. Never print credentials.
 
 ## PENDING PROBES (Stage 6/7): MetaMask `mm` CLI installability, Aurora Intents route
 support for the required source/destination assets, Nansen API entitlement.
+## BLOCKER-006 — Aurora Intents: no testnet route
+
+- Sponsor: Aurora ("Bring Any-Chain Liquidity to Monad")
+- Required service: an intents route whose destination is the deployed product's chain
+- Current status: CLOSED as structurally blocked — official supported-chains table lists
+  Monad MAINNET (source+destination) and no testnet environment at all; RetroPick is
+  testnet-only and mainnet is out of scope by campaign rules
+- What was tested: official docs fetched and quoted (2026-10-11); see
+  `sponsors/aurora/capability-check.json`
+- Can local implementation continue: NO — a widget or mainnet flow would violate the
+  fail-closed rules (widget-only is explicitly insufficient; mainnet forbidden)
+- Next owner action: none for this campaign; revisit if Aurora ships a testnet route
+
+## BLOCKER-007 — Nansen: no API entitlement and no testnet coverage
+
+- Sponsor: Nansen ("Best Use of Nansen")
+- Required service: entitled Nansen API key; AND coverage of the product's assets
+- Current status: CLOSED as blocked — official docs: Monad mainnet supported, Monad
+  Testnet NOT listed (newly minted testnet launch tokens are outside coverage regardless
+  of key); no key exists in this environment; Smart-Money redistribution is
+  restricted/prohibited for most display uses
+- What was tested: official chains + redistribution pages fetched and quoted; see
+  `sponsors/nansen/capability-check.json`
+- Can local implementation continue: honest alternative shipped instead — Risk-Before-Ape
+  factors from local signals (holder concentration, spread/depth, freshness) with sources;
+  no Nansen-derived data is displayed anywhere
+- Next owner action: if a key is obtained, wire the server-side adapter per the mission
+  architecture (key never in the browser) and respect the redistribution tiers
+>>>>>>> 4400c16 (docs(metropolis): aurora + nansen capability checks — both closed BLOCKED_EXTERNAL)

@@ -1,0 +1,15 @@
+{
+  "sponsor": "Aurora (NEAR Intents)",
+  "bounty": "Bring Any-Chain Liquidity to Monad",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-aurora-nansen",
+  "source": "https://docs.intents.aurora.dev/intents-deposits/supported-chains.md (official, fetched 2026-10-11)",
+  "findings": {
+    "monadMainnet": "SUPPORTED as both source and destination",
+    "monadTestnet10143": "NOT LISTED \u2014 the supported-chains table contains mainnet chains only; no testnet environment is offered",
+    "constraint": "RetroPick is deployed on Monad Testnet only; mainnet activity is forbidden by the campaign rules (no mainnet). Therefore no supported route exists for the deployed product.",
+    "assetConversion": "Compounding concern (per mission): even a mainnet USDC\u2192MON route would not demonstrate spendable MON in the MON-quoted testnet Kuru market without a verified conversion path."
+  },
+  "decision": "BLOCKED_EXTERNAL \u2014 no testnet route; mainnet is out of scope. No widget-only integration was built (explicitly insufficient for the bounty).",
+  "nextAction": "If Aurora ships a testnet route (or the product deploys to Monad mainnet post-qualification), the Fund & Trade flow spec in the mission doc applies."
+}
