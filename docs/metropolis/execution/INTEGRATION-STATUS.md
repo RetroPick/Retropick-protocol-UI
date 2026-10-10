@@ -10,7 +10,8 @@ Updated after every stage. Verdicts: `QUALIFIED / CONDITIONAL / BLOCKED / DEFERR
 | Mera PRF vault | CONDITIONAL (impl complete, failure-states E2E-verified) | PR #12 (`feat/metropolis-mera-prf`) | Private Strategy Vault (Earn→Vault tab): passkey-PRF-encrypted theses/drafts/watchlists/risk budgets; save re-encrypts per ceremony | unit 7/0; fixture e2e incl. 3 new @vault specs; encrypted-at-rest asserted | manual PRF happy-path evidence (operator, ~2 min); deployment (BLOCKER-001) | merged with operator authorization | `sponsors/mera/` |
 | Envio radar | BLOCKED_EXTERNAL (data) / core TESTED_LOCAL | PR #13 (`feat/metropolis-envio`) | HyperSync market-quality radar service (standalone integrations/ pkg): lifecycle latency, trade volume, staleness | envio CLI 3.14 + docker OK; HyperSync endpoint token-gated (401 + client requires apiToken); radar core 8/8 unit tests | ENVIO_API_TOKEN (BLOCKER-003) → npm start → retro-ui panel | merged with operator authorization | `sponsors/envio/` + integrations/envio-market-radar |
 
-| Chainlink CRE | NOT_STARTED | — | — | — | — | Stage 5 | — |
+| Chainlink CRE | LOCAL_TEST_VERIFIED; simulation BLOCKED_EXTERNAL (login) | PR #14 (`feat/metropolis-chainlink-cre`) | Graduation Safety workflow (5 checks incl. real Sourcify external input, deterministic verdicts) | CLI 1.38 + SDK 1.23.0 typecheck PASS; simulate requires cre login (BLOCKER-004) | operator `cre login` then documented simulate command | merged with operator authorization | `sponsors/chainlink-cre/` + integrations/chainlink-cre |
+
 | MetaMask agent | NOT_STARTED | — | — | — | — | Stage 6 | — |
 | Aurora | NOT_STARTED | — | — | — | — | Stage 7 | — |
 | Nansen | NOT_STARTED | — | — | — | — | Stage 7 | — |

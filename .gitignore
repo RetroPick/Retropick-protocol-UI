@@ -48,3 +48,6 @@ evidence/**/test-output/
 .video_agent/
 valkey-mcp-server.log
 *:Zone.Identifier
+integrations/chainlink-cre/graduation-safety/node_modules/
+integrations/chainlink-cre/graduation-safety/bun.lock
+

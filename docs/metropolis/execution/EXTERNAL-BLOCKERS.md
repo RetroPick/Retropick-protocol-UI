@@ -52,6 +52,22 @@ Format per mission §22. Never print credentials.
 - Can real E2E continue: NO (needs the token)
 - Next owner action: create the Envio token, set ENVIO_API_TOKEN, `npm install && npm start`
   in integrations/envio-market-radar, then wire the retro-ui consumption panel
+## BLOCKER-004 — Chainlink CRE account login (workflow simulation)
+
+- Sponsor: Chainlink ("Best Workflow with CRE")
+- Required service: CRE platform auth (`cre login` interactive flow or `CRE_API_KEY`)
+- Credential/access: Chainlink CRE account — operator only
+- Environment variable: `CRE_API_KEY` (none set in this environment)
+- Current status: OPEN — verified: `cre workflow simulate` refuses to run unauthenticated
+- What was tested: CLI v1.38.0 installed via the official install script; workflow project
+  hand-built per documented structure and typechecks clean against @chainlink/cre-sdk
+  1.23.0; simulate + init both demand authentication
+- Blocking error category: credential/access
+- Can local implementation continue: YES — done (workflow source complete, LOCAL_TEST_VERIFIED)
+- Can real E2E continue: NO (simulation requires login)
+- Next owner action: `cre login`, then `cd integrations/chainlink-cre && cre workflow
+  simulate graduation-safety --target monad-testnet-settings --non-interactive --trigger-index 0`
+>>>>>>> a1e2224 (feat(metropolis): chainlink CRE graduation safety workflow (simulation auth-gated))
 
 ## PENDING PROBES (Stage 6/7): MetaMask `mm` CLI installability, Aurora Intents route
 support for the required source/destination assets, Nansen API entitlement.

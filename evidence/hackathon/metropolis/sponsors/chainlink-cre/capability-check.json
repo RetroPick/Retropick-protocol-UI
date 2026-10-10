@@ -1,0 +1,29 @@
+{
+  "sponsor": "Chainlink",
+  "bounty": "Best Workflow with CRE",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-chainlink-cre",
+  "probes": {
+    "cli": { "install": "official script https://app.chain.link/cre/install.sh | bash", "version": "v1.38.0 (≥ v1.30.0 Monad Testnet simulation threshold)", "auth": "login required for init AND simulate — BLOCKER-004" },
+    "sdk": { "package": "@chainlink/cre-sdk", "version": "1.23.0", "result": "installed via bun; API verified from shipped types (EVMClient.callContract/headerByNumber, HTTPClient.sendRequest, CronCapability.trigger, Runner, consensusIdenticalAggregation)" },
+    "monadSupport": { "source": "official supported-networks page + SDK generated chain-selectors", "result": "Monad Testnet supported since CLI v1.30.0; chain selector 2183018362218727504n (name monad-testnet)" }
+  },
+  "workflow": {
+    "name": "retropick-graduation-safety",
+    "dir": "integrations/chainlink-cre/graduation-safety",
+    "checks": [
+      "chain anchor (headerByNumber at execution)",
+      "graduation ledger phase === 2 (coordinator.ledger)",
+      "market identity: receipt.market === expected Kuru market",
+      "custody agreement: ledger.protectedLPAmount === receipt.protectedLPAmount > 0 and receivers non-zero",
+      "external input: Sourcify verification status of the launch factory via HTTP capability (runInNodeMode + identical consensus)"
+    ],
+    "verdicts": ["PASS", "FAIL", "INCOMPLETE_EXTERNAL (external source unavailable — recorded, never guessed)"],
+    "duplicateTrigger": "cron re-runs re-evaluate fresh state; same chain state ⇒ same verdict (idempotent by construction)",
+    "readOnly": true,
+    "typecheck": "PASS (tsc --noEmit against @chainlink/cre-sdk 1.23.0 + viem)"
+  },
+  "notClaimed": ["official CLI simulation run", "onchain DON execution"],
+  "simulateCommand": "cd integrations/chainlink-cre && cre workflow simulate graduation-safety --target monad-testnet-settings --non-interactive --trigger-index 0 (after cre login)",
+  "verdict": "LOCAL_TEST_VERIFIED (source complete, typechecked); simulation BLOCKED_EXTERNAL (BLOCKER-004: cre login)"
+}
