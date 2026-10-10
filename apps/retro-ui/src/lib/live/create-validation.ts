@@ -12,7 +12,8 @@ export function isLogoUri(value: string): boolean {
   if (!value) return true;
   try {
     const uri = new URL(value);
-    return ['https:', 'ipfs:', 'ar:'].includes(uri.protocol) && !!uri.hostname && !uri.username && !uri.password;
+    // http is admitted for local media-service fallback URIs; HTTPS pages will still glyph-fall back on mixed content.
+    return ['https:', 'http:', 'ipfs:', 'ar:'].includes(uri.protocol) && !!uri.hostname && !uri.username && !uri.password;
   } catch { return false; }
 }
 
@@ -22,7 +23,7 @@ export function validateLaunchMetadata(metadata: LaunchMetadata): string {
   for (const key of Object.keys(LAUNCH_METADATA_LIMITS) as (keyof LaunchMetadata)[]) {
     if (utf8Bytes(metadata[key]) > LAUNCH_METADATA_LIMITS[key]) return `${labels[key]} must fit within ${LAUNCH_METADATA_LIMITS[key]} UTF-8 bytes.`;
   }
-  return isLogoUri(metadata.logo) ? '' : 'Use a public HTTPS, IPFS or Arweave logo URI.';
+  return isLogoUri(metadata.logo) ? '' : 'Use a public HTTPS, IPFS or Arweave logo URI, or upload an image.';
 }
 
 export function validateCreatorFee(input: string, maximumBps: bigint): string {

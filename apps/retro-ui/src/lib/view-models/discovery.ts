@@ -1,5 +1,6 @@
 // Discovery row view model shared by live (indexer) and demo (fixture) launch tables. Exact raw strings only.
 import type { IndexedLaunch } from '@retropick/launchpad-sdk/read-model';
+import { resolveMediaSrc } from '@/lib/media/resolve';
 import { DEMO_NOW_MS, demoFixtureIds, getDemoFixture } from './demo-terminal-fixtures';
 import type { Lifecycle } from './token-terminal';
 
@@ -35,7 +36,7 @@ export interface DiscoveryRow {
 export function liveRow(l: IndexedLaunch): DiscoveryRow {
   return {
     dataMode: 'live', id: l.token, href: `/launchpad/token/${l.token}`, name: l.name, symbol: l.symbol,
-    logo: l.logo && /^https:\/\//.test(l.logo) ? l.logo : null, icon: { glyph: (l.name[0] ?? '◈').toUpperCase(), color: '#836ef9' },
+    logo: resolveMediaSrc(l.logo), icon: { glyph: (l.name[0] ?? '◈').toUpperCase(), color: '#836ef9' },
     quote: { symbol: l.quoteSymbol, decimals: l.quoteDecimals, address: l.quoteAsset }, lifecycle: l.phase, bondingProgressBps: l.bondingProgressBps,
     priceX18: l.priceX18 ?? l.priceRaw, change24hBps: l.change24hBps, marketCapRaw: l.marketCapRaw, liquidityRaw: l.liquidityRaw ?? null,
     volume24hRaw: l.volume24hRaw, lifetimeVolumeRaw: l.lifetimeVolumeRaw, trades24h: l.trades24h,

@@ -63,3 +63,16 @@ test('discovery caches immutable social/quote identity, retains dynamic burned s
     assert.equal(second[0].launch.priceX18, '166666666666666666');
   } finally { store.close(); }
 });
+
+test('range errors bisect until accepted and single-block failure leaves batch uncommitted', async () => {
+  const store = new Store(':memory:'); const indexer = new Indexer(store, 'http://unused.invalid');
+  let failed = false; let calls = 0;
+  indexer.client = { getLogs: async ({ fromBlock, toBlock }: { fromBlock: bigint; toBlock: bigint }) => {
+    calls++; if (toBlock - fromBlock > 24n || failed) throw Error('block range too large'); return [];
+  }, getBlock: async () => ({ hash, timestamp: 1000n }) } as unknown as ChainClient;
+  try {
+    await indexer.scan('beneficiary', START_BLOCK + 99, [TOKEN]); assert.equal(calls, 7); assert.equal(store.cursor('beneficiary', START_BLOCK), START_BLOCK + 99);
+    failed = true; await assert.rejects(indexer.scan('beneficiary', START_BLOCK + 199, [TOKEN]), /range/);
+    assert.equal(store.cursor('beneficiary', START_BLOCK), START_BLOCK + 99);
+  } finally { store.close(); }
+});

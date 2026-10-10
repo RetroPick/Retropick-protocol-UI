@@ -33,7 +33,7 @@ test('HTTP 401 "no access to this network" is classified AUTH, not rate limiting
   assert.equal(classifyFailure(Object.assign(Error('HTTP request failed. Status: 401 Details: project ID does not have access to this network'), { status: 401 })), 'AUTH');
   assert.equal(classifyFailure(Object.assign(Error('Status: 429 Too Many Requests'), { status: 429 })), 'RATE_LIMIT');
   assert.equal(classifyFailure(Error('execution reverted')), 'OTHER');
-  assert.equal(redactEndpoint(AUTH_URL), 'auth.invalid/v3/<key>');
+  assert.equal(redactEndpoint(AUTH_URL), 'auth.invalid');
 });
 
 test('a permanently unauthorized provider is disabled once and never receives backfill requests again', async () => {
@@ -71,9 +71,9 @@ test('a valid JSON-RPC error (revert) is returned to the caller and does not fai
 test('all providers unauthorized → a clear error naming each endpoint state', async () => {
   const { fn } = fakeFetch();
   const pool = createProviderPool([AUTH_URL], { chainId: 10143, fetchFn: fn });
-  await assert.rejects(pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), /No usable Monad RPC provider \(auth\.invalid\/v3\/<key>:disabled\/AUTH\)/);
+  await assert.rejects(pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), /No usable Monad RPC provider \(auth\.invalid:disabled\/AUTH\)/);
   assert.equal(pool.health()[0].lastFailure, 'AUTH');
-  await assert.rejects(pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), /No usable Monad RPC provider \(auth\.invalid\/v3\/<key>:disabled\/AUTH\)/);
+  await assert.rejects(pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), /No usable Monad RPC provider \(auth\.invalid:disabled\/AUTH\)/);
 });
 
 test('rpcEndpoints is provider neutral and deduplicates', () => {
@@ -86,6 +86,7 @@ test('only one indexer process may own a database; stale locks are reclaimed', (
   const dir = mkdtempSync(join(tmpdir(), 'idx-lock-')); const file = join(dir, 'db.sqlite');
   try {
     const release = acquireDbLock(file);
+    assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/, 'same process cannot acquire a second writer');
     writeFileSync(`${file}.lock`, String(process.ppid)); // a live foreign pid
     assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/);
     writeFileSync(`${file}.lock`, '2147483646'); // dead pid → stale
@@ -113,4 +114,116 @@ test('long catch-up publishes consistent v2 snapshots progressively and reaches 
     assert.ok(published.every((b, i) => i === 0 || b > published[i - 1]), 'monotonic progress');
     while (indexer.backfillRunning) await new Promise((r) => setTimeout(r, 5));
   } finally { store.close(); }
+});
+
+test('host-only endpoint and fixed nested diagnostics cover arbitrary credential alphabets', async () => {
+  const secrets = ['short', 'token_with-dashes~%21', 'p@ssword'];
+  const url = 'https://basic:p%40ssword@secret.invalid/short/token_with-dashes~%21?key=query-secret#fragment';
+  assert.equal(redactEndpoint(url), 'secret.invalid');
+  const pool = createProviderPool([url], { chainId: 10143, fetchFn: (async () => { throw Object.assign(Error('network short query-secret p@ssword'), { cause: Error(url) }); }) as typeof fetch });
+  await assert.rejects(pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_call' }), /NETWORK/);
+  for (const secret of [...secrets, 'query-secret', 'fragment', 'basic']) assert.ok(!JSON.stringify(pool.health()).includes(secret));
+});
+
+test('403 and wrong chain are permanently disabled; nested status is recognized', async () => {
+  assert.equal(classifyFailure({ message: 'outer', cause: { status: 403, message: 'hidden' } }), 'AUTH');
+  for (const mode of ['403', 'chain']) {
+    let calls = 0;
+    const pool = createProviderPool([GOOD_URL], { chainId: 10143, fetchFn: (async (_, init) => {
+      calls++; if (mode === '403') return new Response('secret gateway text', { status: 403 });
+      const b = JSON.parse(String(init?.body)); const reply = (r: { id: number }) => ({ jsonrpc: '2.0', id: r.id, result: '0x1' });
+      return new Response(JSON.stringify(Array.isArray(b) ? b.map(reply) : reply(b)));
+    }) as typeof fetch });
+    const t = pool.transport({ chain: undefined, retryCount: 0 });
+    await assert.rejects(t.request({ method: 'eth_blockNumber' })); await assert.rejects(t.request({ method: 'eth_blockNumber' }));
+    assert.equal(calls, 1); assert.equal(pool.health()[0].state, 'disabled');
+    assert.equal(pool.health()[0].lastFailure, mode === '403' ? 'AUTH' : 'WRONG_CHAIN');
+  }
+});
+
+test('429 and timeout recover after circuit, slow primary leaves healthy fallback usable', async () => {
+  for (const failure of ['429', 'timeout']) {
+    let failing = true;
+    const good = fakeFetch();
+    const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, circuitMs: 15, timeoutMs: 20, fetchFn: (async (input, init) => {
+      if (String(input) === FLAKY_URL && failing) {
+        failing = false;
+        if (failure === '429') return new Response('private rate message', { status: 429 });
+        throw Object.assign(Error('request timed out private-token'), { name: 'TimeoutError' });
+      }
+      return good.fn(input, init);
+    }) as typeof fetch });
+    const t = pool.transport({ chain: undefined, retryCount: 0 });
+    assert.equal(await t.request({ method: 'eth_blockNumber' }), '0x10');
+    assert.equal(pool.health()[0].lastFailure, failure === '429' ? 'RATE_LIMIT' : 'TIMEOUT');
+    await new Promise(r => setTimeout(r, 25)); await t.request({ method: 'eth_blockNumber' });
+    assert.equal(pool.health()[0].state, 'healthy');
+  }
+});
+
+test('stale primary head is surfaced and missing historical blocks fail over without rollback', async () => {
+  const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, fetchFn: (async (input, init) => {
+    const b = JSON.parse(String(init?.body)); const stale = String(input) === FLAKY_URL;
+    const reply = (r: { id: number; method: string }) => ({ jsonrpc: '2.0', id: r.id, result: r.method === 'eth_chainId' ? '0x279f' : r.method === 'eth_blockNumber' ? stale ? '0x10' : '0x100' : stale ? null : { hash: 'canonical' } });
+    return new Response(JSON.stringify(Array.isArray(b) ? b.map(reply) : reply(b)));
+  }) as typeof fetch });
+  const t = pool.transport({ chain: undefined, retryCount: 0 });
+  assert.equal(await t.request({ method: 'eth_blockNumber' }), '0x100'); assert.equal(pool.health()[0].state, 'circuit-open');
+  assert.deepEqual(await t.request({ method: 'eth_getBlockByNumber', params: ['0x20', false] }), { hash: 'canonical' });
+});
+
+test('simultaneous explicit probe and requests share one permanent provider check', async () => {
+  const { fn, calls } = fakeFetch(); const pool = createProviderPool([AUTH_URL, GOOD_URL], { chainId: 10143, fetchFn: fn });
+  const t = pool.transport({ chain: undefined, retryCount: 0 });
+  await Promise.all([pool.probe(), t.request({ method: 'eth_call' }), t.request({ method: 'eth_call' })]);
+  assert.equal(calls['auth.invalid'], 1); assert.equal(pool.health()[0].failures, 1);
+});
+
+test('malformed chain response is transient, rather than permanently declaring wrong chain', async () => {
+  const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, fetchFn: (async (input, init) => {
+    const b = JSON.parse(String(init?.body));
+    const reply = (r: { id: number; method: string }) => ({ jsonrpc: '2.0', id: r.id, result: String(input) === FLAKY_URL ? null : r.method === 'eth_chainId' ? '0x279f' : '0x100' });
+    return new Response(JSON.stringify(Array.isArray(b) ? b.map(reply) : reply(b)));
+  }) as typeof fetch });
+  await pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' });
+  assert.equal(pool.health()[0].state, 'circuit-open'); assert.equal(pool.health()[0].lastFailure, 'NETWORK');
+});
+
+test('uncorrelated JSON-RPC batch rate error is classified without retaining its body', async () => {
+  const good = fakeFetch();
+  const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, fetchFn: (async (input, init) => String(input) === FLAKY_URL ? new Response(JSON.stringify({ jsonrpc: '2.0', error: { code: -32005, message: 'private gateway token' } })) : good.fn(input, init)) as typeof fetch });
+  assert.equal(await pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), '0x10');
+  assert.equal(pool.health()[0].lastFailure, 'RATE_LIMIT'); assert.ok(!JSON.stringify(pool.health()).includes('private'));
+});
+
+test('a genuinely slow primary times out and a healthy fallback serves reads', async () => {
+  const good = fakeFetch(); const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, timeoutMs: 15, fetchFn: (async (input, init) => {
+    if (String(input) === FLAKY_URL) await new Promise<void>((resolve, reject) => {
+      const timer = setTimeout(resolve, 80);
+      init?.signal?.addEventListener('abort', () => { clearTimeout(timer); reject(Object.assign(Error('request timed out'), { name: 'TimeoutError' })); }, { once: true });
+    });
+    return good.fn(input, init);
+  }) as typeof fetch });
+  assert.equal(await pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_blockNumber' }), '0x10');
+  assert.equal(pool.health()[0].lastFailure, 'TIMEOUT'); assert.equal(pool.health()[1].state, 'healthy');
+});
+
+test('healthy primary returning null historical block fails over to intact canonical fallback', async () => {
+  const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, fetchFn: (async (input, init) => {
+    const b = JSON.parse(String(init?.body)); const primary = String(input) === FLAKY_URL;
+    const reply = (r: { id: number; method: string }) => ({ jsonrpc: '2.0', id: r.id, result: r.method === 'eth_chainId' ? '0x279f' : primary ? null : { hash: 'canonical' } });
+    return new Response(JSON.stringify(Array.isArray(b) ? b.map(reply) : reply(b)));
+  }) as typeof fetch });
+  assert.deepEqual(await pool.transport({ chain: undefined, retryCount: 0 }).request({ method: 'eth_getBlockByNumber', params: ['0x10', false] }), { hash: 'canonical' });
+  assert.equal(pool.health()[0].lastFailure, 'NETWORK'); assert.equal(pool.health()[0].state, 'circuit-open');
+});
+
+test('HTTP200 malformed batch rows cannot escape as undefined state or block data', async () => {
+  const good = fakeFetch();
+  for (const malformed of [['private gateway failure'], [], [{ jsonrpc: '2.0', id: 1 }]]) {
+    const pool = createProviderPool([FLAKY_URL, GOOD_URL], { chainId: 10143, fetchFn: (async (input, init) => String(input) === FLAKY_URL ? new Response(JSON.stringify(malformed)) : good.fn(input, init)) as typeof fetch });
+    const t = pool.transport({ chain: undefined, retryCount: 0 });
+    assert.equal(await t.request({ method: 'eth_call' }), '0x10');
+    assert.equal(pool.health()[0].lastFailure, 'NETWORK');
+  }
 });

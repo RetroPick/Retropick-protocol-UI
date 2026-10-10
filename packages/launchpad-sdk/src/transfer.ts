@@ -7,7 +7,7 @@ export type PreparedTransfer = { kind: 'transfer'; to: Address; account: Address
 /** Same-chain wallet transfer only. No approval, custody, bridge or exchange routing. */
 export async function prepareTransfer(chain: ChainClient, account: Address, input: { recipient: Address; asset: Address; amount: bigint }): Promise<PreparedTransfer> {
   if (!isAddress(input.recipient) || input.recipient === zeroAddress) throw Error('Enter a valid nonzero EVM recipient address.');
-  if (!isAddress(input.asset) || input.amount <= 0n) throw Error('Enter a valid asset and positive exact amount.');
+  if (!isAddress(account) || account === zeroAddress || !isAddress(input.asset) || input.amount <= 0n || input.amount >= 2n ** 256n) throw Error('Enter a valid account, asset and positive exact uint256 amount.');
   if (await chain.getChainId() !== monad.id) throw Error('Transfers require Monad Testnet.');
   const native = input.asset === zeroAddress;
   const blockNumber = await chain.getBlockNumber({ cacheTime: 0 });
@@ -30,7 +30,9 @@ export async function prepareTransfer(chain: ChainClient, account: Address, inpu
   return { kind: 'transfer', to, account, asset: input.asset, recipient: input.recipient, amount: input.amount, value, data, label: 'Send to wallet', checks: ['Network Monad Testnet 10143', 'recipient and exact amount validated', 'current balance covers transfer and estimated gas'] };
 }
 export async function simulateTransfer(chain: ChainClient, transfer: PreparedTransfer) {
+  // Recheck current network, membership, balances and gas rather than reusing
+  // the review-time qualification after the wallet waits for a signature.
+  const fresh = await prepareTransfer(chain, transfer.account, { asset: transfer.asset, recipient: transfer.recipient, amount: transfer.amount });
+  if (fresh.to.toLowerCase() !== transfer.to.toLowerCase() || fresh.value !== transfer.value || fresh.data !== transfer.data) throw Error('Transfer descriptor changed. Prepare this transfer again.');
   if (transfer.asset === zeroAddress) { await chain.call({ to: transfer.to, value: transfer.value, account: transfer.account }); return; }
-  const result = await chain.simulateContract({ address: transfer.asset, abi: transferAbi, functionName: 'transfer', args: [transfer.recipient, transfer.amount], account: transfer.account });
-  if (result.result !== true) throw Error('ERC20 transfer returned false.');
 }

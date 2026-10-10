@@ -1,4 +1,4 @@
-import { zeroAddress, type Abi, type Address, parseAbi } from 'viem';
+import { zeroAddress, isAddress, type Abi, type Address, parseAbi } from 'viem';
 import { addresses, release, type ChainClient } from './chain.ts';
 import { coordinatorAbi } from './abis/coordinatorAbi.ts';
 import { curveAbi } from './abis/curveAbi.ts';
@@ -330,7 +330,7 @@ export const kuruGrid = {
     units = side === 'buy'
       ? units / params.tickSize * params.tickSize
       : (units + params.tickSize - 1n) / params.tickSize * params.tickSize;
-    if (units <= 0n || units >= 2n ** 32n) fail('Price is outside this market\'s grid.');
+    if (units <= 0n || units >= 2n ** 32n - 1n) fail('Price is outside this market\'s grid.');
     return units;
   },
   unitsToPriceRaw(units: bigint, params: KuruMarketParams): bigint {
@@ -338,7 +338,9 @@ export const kuruGrid = {
   },
   /** quote grid units for a raw quote amount (market-buy sizing). */
   quoteToUnits(quoteRaw: bigint, params: KuruMarketParams): bigint {
-    const units = quoteRaw * params.pricePrecision / 10n ** params.quoteDecimals;
+    const scaled = quoteRaw * params.pricePrecision;
+    if (scaled % 10n ** params.quoteDecimals !== 0n) fail('Quote amount is finer than this market supports.');
+    const units = scaled / 10n ** params.quoteDecimals;
     if (units <= 0n) fail('Amount is below this market\'s quote precision.');
     return units;
   },
@@ -477,6 +479,7 @@ export type KuruMarketOrderInput = {
 
 /** Immediate fill-or-kill market order against the book, funded from the margin account. */
 export async function prepareKuruMarketOrder(chain: ChainClient, account: Address, input: KuruMarketOrderInput): Promise<PreparedWrite> {
+  if (!isAddress(account) || account === zeroAddress) fail('A connected nonzero wallet account is required.');
   const blockNumber = await chain.getBlockNumber({ cacheTime: 0 });
   const params = await assertKuruMarketIdentity(chain, input.market, input.token, blockNumber);
   const isBuy = input.side === 'buy';
@@ -496,6 +499,9 @@ export async function prepareKuruMarketOrder(chain: ChainClient, account: Addres
   const quotedMinimum = minOutput(expected, input.slippageBps ?? 50n);
   const minimum = quotedMinimum > input.minOutcomeRaw ? quotedMinimum : input.minOutcomeRaw;
   if (minimum <= 0n) fail('Market output is below the supported precision.');
+  // The source's zero-address quote returns before fill-or-kill and minimum
+  // checks. Qualify the exact funded execution from the connected account too.
+  await chain.simulateContract({ address: input.market, abi: kuruAbi, functionName: isBuy ? 'placeAndExecuteMarketBuy' : 'placeAndExecuteMarketSell', args: [units, minimum, true, true], account, value: 0n, blockNumber });
   return {
     to: input.market,
     abi: kuruAbi,

@@ -3,6 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { type Address, zeroAddress } from 'viem';
 import Link from '@/components/product/safe-link';
 import { DATA_MODE, INDEXER_URL } from '@/lib/live/env';
+import { resolveMediaSrc } from '@/lib/media/resolve';
+import { ticketLaunch, ticketKuru } from '@/lib/live/trade-ticket-inputs';
 import { fetchHolders, fetchTrades } from '@/lib/live/indexer-client';
 import { launchKeys } from '@/lib/live/queries';
 import { useLaunchDetail } from '@/hooks/use-launch-detail';
@@ -78,7 +80,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     const venue = (state ? (state.packet.venue === 1 ? 'KURU' : 'UNSUPPORTED') : indexed?.venue === 'UNISWAP_V4' ? 'UNSUPPORTED' : 'KURU') as TokenTerminalVM['venue'];
     return {
       dataMode: 'live', id: id.toLowerCase(), name, symbol: state?.symbol ?? indexed?.symbol ?? seed?.symbol ?? '', description: state?.description ?? indexed?.description ?? seed?.description ?? '',
-      logo: indexed?.logo && /^https:\/\//.test(indexed.logo) ? indexed.logo : null, icon: { glyph: (name[0] ?? '◈').toUpperCase(), color: '#836ef9' },
+      logo: resolveMediaSrc(state?.logo ?? indexed?.logo ?? seed?.logo ?? null), icon: { glyph: (name[0] ?? '◈').toUpperCase(), color: '#836ef9' },
       socials: indexed?.socials ?? {}, createdAt: indexed?.createdAt ? Math.floor(Date.parse(indexed.createdAt) / 1000) : null, now: Date.now(),
       quote: { symbol: indexed?.quoteSymbol ?? seed?.quoteSymbol ?? (quoteAsset === zeroAddress ? 'MON' : 'QUOTE'), decimals, native: quoteAsset === zeroAddress },
       baseDecimals, lifecycle, venue, price: { x18: price, source }, change24hBps: indexed?.change24hBps ?? null,
@@ -112,7 +114,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}
     ordersPanel={vm.lifecycle === 'GRADUATED' ? <LiveOrdersPanel token={vm.id} market={vm.addresses.market} quoteSymbol={vm.quote.symbol}/> : undefined}
-    ticket={<Suspense fallback={TICKET_FALLBACK}>{detail.essential ? <Ticket token={id as Address} launch={detail.launch} kuru={detail.kuru} quoteSymbol={vm.quote.symbol} readyToGraduate={detail.readyToGraduate} reload={detail.reload}/> : TICKET_FALLBACK}</Suspense>}/>;
+    ticket={<Suspense fallback={TICKET_FALLBACK}>{detail.essential ? <Ticket token={id as Address} launch={ticketLaunch(detail.launch)} kuru={ticketKuru(detail.kuru)} quoteSymbol={vm.quote.symbol} readyToGraduate={detail.readyToGraduate} reload={detail.reload}/> : TICKET_FALLBACK}</Suspense>}/>;
 }
 
 export default function TokenDetail({ id }: { id: string }) {

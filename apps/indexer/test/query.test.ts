@@ -87,3 +87,13 @@ test('HTTP refuses legacy projection instead of serving incorrect price units', 
   await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve)); t.after(() => new Promise<void>(resolve => server.close(() => resolve())));
   const addr = server.address(); assert.ok(addr && typeof addr !== 'string'); const response = await fetch(`http://127.0.0.1:${addr.port}/v1/launches`); assert.equal(response.status, 503); assert.equal((await response.json()).error, 'INDEX_SCHEMA_UPGRADING');
 });
+
+test('receipt transaction filter finds exact trades/orders before bounded pagination', () => {
+  const s = snapshot();
+  const target = `0x${'e'.repeat(64)}`;
+  s.trades = Array.from({ length: 150 }, (_, i) => ({ id: String(i), token: TOKEN, venue: 'CURVE', side: 'buy', actor: ALICE, quoteRaw: '1', tokensRaw: '1', priceRaw: '1', feeRaw: '0', block: i, timestamp: i, transactionHash: i === 0 ? target : `0x${'f'.repeat(64)}`, logIndex: 0 }));
+  const result = run(s, `/v1/launches/${TOKEN}/trades?transactionHash=${target}`) as IndexEnvelope<{ id: string }[]>;
+  assert.deepEqual(result.data.map(t => t.id), ['0']);
+  const rows = run(s, `/v1/launches/${TOKEN}/orders?status=all&transactionHash=${target}`) as IndexEnvelope<unknown[]>; assert.deepEqual(rows.data, []);
+  assert.throws(() => run(s, `/v1/launches/${TOKEN}/trades?transactionHash=bad`), (e: unknown) => e instanceof QueryError && e.code === 'INVALID_TRANSACTION_HASH');
+});

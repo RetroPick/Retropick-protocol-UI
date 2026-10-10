@@ -1,9 +1,9 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { formatUnits, zeroAddress, type Address } from 'viem';
-import type { LiveLaunch } from '@retropick/launchpad-sdk/model';
-import type { KuruState } from '@retropick/launchpad-sdk/kuru';
+import type { TicketLaunch, TicketKuru } from '@/lib/live/trade-ticket-inputs';
 import { buyQuote, sellQuote, parseExact, minOutput } from '@retropick/launchpad-sdk/math';
+import { errorText } from '@retropick/launchpad-sdk/chain';
 import { prepareCurveBuy, prepareCurveSell, prepareFactoryGraduate, prepareCoordinatorComplete } from '@retropick/launchpad-sdk/prepare';
 import { useWallet } from '@/wallet/provider';
 import { publicClient } from '@/lib/live/public-client';
@@ -14,7 +14,7 @@ import { AmountField, LIMIT_LOCKED_REASON, QuoteLines, SlippageControl, TicketSh
 import { KuruTicket } from './kuru-ticket';
 import { toast } from 'sonner';
 
-export interface LiveTradingTicketProps { token: Address | string; launch: LiveLaunch | null; kuru: KuruState | null; quoteSymbol: string; readyToGraduate: boolean; reload: () => void }
+export interface LiveTradingTicketProps { token: Address | string; launch: TicketLaunch | null; kuru: TicketKuru | null; quoteSymbol: string; readyToGraduate: boolean; reload: () => void }
 
 /** Live Curve ticket. Execution path unchanged: SDK prepare* → executePreparedWrite (approve → simulate → sign → receipt). */
 export function LiveTradingTicket({ token, launch, kuru, quoteSymbol, readyToGraduate, reload }: LiveTradingTicketProps) {
@@ -35,7 +35,7 @@ export function LiveTradingTicket({ token, launch, kuru, quoteSymbol, readyToGra
     if (!launch || phase !== 0 || readyToGraduate || !amount) return null;
     try {
       const input = parseExact(amount, side === 'Buy' ? decimals : 18);
-      const [q, t] = launch.reserves;
+      const q = launch.reserveQuoteRaw, t = launch.reserveTokenRaw;
       const expected = side === 'Buy' ? buyQuote(input, q, t, launch.remaining, launch.fee, launch.tax) : sellQuote(input, t, q, launch.fee, launch.tax);
       if (expected <= 0n || side === 'Sell' && input > launch.balance) return null;
       return { expected, minimum: minOutput(expected, BigInt(slippage)), decimals: side === 'Buy' ? 18 : decimals, symbol: side === 'Buy' ? launch.symbol : quoteSymbol };
@@ -57,7 +57,13 @@ export function LiveTradingTicket({ token, launch, kuru, quoteSymbol, readyToGra
       const result = await executePreparedWrite(publicClient, wallet.wallet, prepared, { onPhase: setTx });
       if (result.kind === 'failed') setError(result.reason);
       else { toast.success(graduate ? 'Graduation confirmed on-chain' : `${side} confirmed on-chain`, { description: result.hash }); setDone({ hash: result.hash, graduation: graduate }); setAmount(''); reload(); }
-    } catch (cause) { const reason = cause instanceof Error ? cause.message : 'Transaction failed.'; setError(reason); setTx({ kind: 'failed', reason, failure: 'unknown' }); }
+    } catch (cause) {
+      const text = errorText(cause);
+      const reason = /RPC_[A-Z_]+\b|No healthy Monad RPC provider/.test(text)
+        ? 'The Monad RPC is briefly unavailable — please try again in a moment.'
+        : text;
+      setError(reason); setTx({ kind: 'failed', reason, failure: 'unknown' });
+    }
   };
   if (launch && phase === 2 && launch.packet.venue === 1) return <KuruTicket market={launch.receipt.market} token={token as Address} tokenSymbol={launch.symbol} quoteSymbol={quoteSymbol} initialQuoteBalance={kuru?.quoteBalance ?? 0n} initialBaseBalance={kuru?.baseBalance ?? 0n} orderKind={kind} onKindChange={(k) => setKind(k as OrderKind)} reload={reload}/>;
 
@@ -77,7 +83,7 @@ export function LiveTradingTicket({ token, launch, kuru, quoteSymbol, readyToGra
     footer={<>Simulated on-chain, then signed in your wallet. Fees: {launch ? `${formatUnits(launch.fee, 2)}% curve + ${formatUnits(launch.tax, 2)}% creator` : '—'}.</>}>
     {phase === 1 ? <p className="rp-note" role="status">Graduation is in progress. Completing it is a permissionless retry.</p>
       : phase === 2 ? <p className="rp-note">This launch graduated to a venue this ticket does not support.</p>
-      : readyToGraduate ? <p className="rp-note">The curve is complete. Graduate to enable Kuru trading.</p>
+      : readyToGraduate ? <p className="rp-note">The curve is complete. Graduate to enable Kuru trading — graduation is permissionless: any wallet can trigger it, you only pay the gas.</p>
       : <>
         <AmountField testId="ticket-amount" label={side === 'Buy' ? 'Pay' : 'Sell'} unit={side === 'Buy' ? quoteSymbol : symbol} value={amount} onChange={setAmount}
           balanceRaw={wallet.wallet && launch ? (side === 'Buy' ? launch.quoteBalance : launch.balance) : null} decimals={side === 'Buy' ? decimals : 18}

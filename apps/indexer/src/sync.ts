@@ -1,4 +1,4 @@
-import { createPublicClient, http, decodeEventLog, zeroAddress, type Address, type Hex } from 'viem';
+import { createPublicClient, decodeEventLog, zeroAddress, type Address, type Hex } from 'viem';
 import { addresses, monad, release, type ChainClient } from '@retropick/launchpad-sdk/chain';
 import { coordinatorAbi, tokenAbi, curveAbi, registryAbi, kuruAbi } from '@retropick/launchpad-sdk/abi';
 import { retroPickFeeEscrowV2Abi } from '@retropick/launchpad-sdk/abis/retroPickFeeEscrowV2Abi';
@@ -6,7 +6,7 @@ import { retroPickBuybackVaultV2Abi } from '@retropick/launchpad-sdk/abis/retroP
 import { indexerAbi } from '@retropick/launchpad-sdk/events';
 import type { IndexedLaunch, IndexedAssetMetadata, IndexedMarketParameters } from '@retropick/launchpad-sdk/read-model';
 import { Store, type JournalEvent } from './store.ts';
-import { createProviderPool, type ProviderPool } from './providers.ts';
+import { createProviderPool, classifyFailure, safeErrorMessage, type ProviderPool } from './providers.ts';
 import { project, marketCapQuoteRaw, executionPriceX18, PROJECTION_VERSION, type LaunchSeed, type Snapshot } from './project.ts';
 export const START_BLOCK: number = release.deploymentBlock ?? 69509526;
 const rootNames = new Set(['TokenLaunched', 'LaunchCommitted', 'GraduationSecured', 'GraduationCompleted']);
@@ -26,11 +26,8 @@ export class Indexer {
     let due = 0;
     const fetchFn: typeof fetch = async (input, init) => { const wait = Math.max(0, due - Date.now()); due = Math.max(due, Date.now()) + 130; if (wait) await new Promise(r => setTimeout(r, wait)); return fetch(input, init); };
     const urls = Array.isArray(url) ? url : [url];
-    // Single endpoint keeps the previous transport (unit tests stub the client); several endpoints go through the
-    // provider pool, which disables permanently unauthorized providers instead of re-sending every request to them.
-    let transport;
-    if (urls.length === 1) transport = http(urls[0], { fetchFn, retryCount: 3, retryDelay: 500, timeout: 8000, batch: { batchSize: 16, wait: 10 } });
-    else { this.pool = createProviderPool(urls, { chainId: monad.id, fetchFn }); transport = this.pool.transport; }
+    this.pool = createProviderPool(urls, { chainId: monad.id, fetchFn });
+    const transport = this.pool.transport;
     this.client = createPublicClient({ chain: monad, batch: { multicall: { batchSize: 4096, wait: 25 } }, transport }) as unknown as ChainClient;
   }
   async header(block: number, fresh = false) {
@@ -45,6 +42,18 @@ export class Indexer {
     for (const c of checkpoints.slice(1)) if ((await this.header(c.block, true)).hash.toLowerCase() === c.hash.toLowerCase()) { common = c.block; break; }
     this.store.rollback(common); this.headers.clear(); console.log('Reorg rollback:', common);
   }
+  /** Range limits vary by provider; bisect only RANGE failures, retaining complete-batch publication. */
+  async logsWithSplit(request: Parameters<ChainClient['getLogs']>[0]): Promise<Awaited<ReturnType<ChainClient['getLogs']>>> {
+    try { return await this.client.getLogs(request); }
+    catch (error) {
+      const from = request?.fromBlock, to = request?.toBlock;
+      if (classifyFailure(error) !== 'RANGE' || typeof from !== 'bigint' || typeof to !== 'bigint' || from >= to) throw error;
+      const mid = (from + to) / 2n;
+      const left = await this.logsWithSplit({ ...request, toBlock: mid, blockHash: undefined } as Parameters<ChainClient['getLogs']>[0]);
+      const right = await this.logsWithSplit({ ...request, fromBlock: mid + 1n, blockHash: undefined } as Parameters<ChainClient['getLogs']>[0]);
+      return [...left, ...right];
+    }
+  }
   async scan(stage: string, target: number, contracts: Address[], start = START_BLOCK) {
     if (!contracts.length) return;
     const sourceAbi = stage === 'beneficiary' ? auxiliaryAbi : indexerAbi;
@@ -57,7 +66,7 @@ export class Indexer {
     while (from <= target) {
       const ranges = Array.from({ length: Math.min(8, Math.ceil((target - from + 1) / 100)) }, (_, i) => ({ from: from + i * 100, to: Math.min(from + i * 100 + 99, target) }));
       const batches = await Promise.all(ranges.map(async range => {
-        const logs = await this.client.getLogs({ address: contracts, events: eventsAbi, fromBlock: BigInt(range.from), toBlock: BigInt(range.to) } as Parameters<ChainClient['getLogs']>[0]);
+        const logs = await this.logsWithSplit({ address: contracts, events: eventsAbi, fromBlock: BigInt(range.from), toBlock: BigInt(range.to) } as Parameters<ChainClient['getLogs']>[0]);
         const events: JournalEvent[] = [];
         for (const log of logs) {
           if (log.removed || !log.blockHash || !log.transactionHash || log.blockNumber === null || log.logIndex === null || log.transactionIndex === null) throw Error('Incomplete event');
@@ -182,7 +191,7 @@ export class Indexer {
       if (snapshot.beneficiaryIndexedBlock < target && !this.backfillRunning) void this.backfill(target);
     } catch (error) {
       this.error = 'RPC_OR_CHAIN_SYNC_FAILED';
-      this.progress.lastError = String((error as Error)?.message ?? error).split('\n')[0].replace(/https?:\/\/\S+/g, '<rpc>').slice(0, 200);
+      this.progress.lastError = safeErrorMessage(error);
       console.error('Indexer sync failed; last complete snapshot retained: RPC_OR_CHAIN_SYNC_FAILED', this.progress.lastError, this.pool ? JSON.stringify(this.pool.health().map(h => [h.endpoint, h.state, h.lastFailure])) : '');
     }
     finally { this.syncing = false; }

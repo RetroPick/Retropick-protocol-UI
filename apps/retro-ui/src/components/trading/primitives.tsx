@@ -4,6 +4,7 @@ import { Tooltip as RTooltip } from 'radix-ui';
 import { AlertTriangle, Check, Copy, ExternalLink, Info, RefreshCw, SearchX } from 'lucide-react';
 import { explorer } from '@retropick/launchpad-sdk/chain';
 import { lifecycleLabel, shortHex, type Lifecycle } from '@/lib/view-models/token-terminal';
+import { ipfsGatewayCandidates } from '@/lib/media/resolve';
 import './trading.css';
 
 const cx = (...parts: Array<string | false | null | undefined>) => parts.filter(Boolean).join(' ');
@@ -94,8 +95,13 @@ export function DemoBadge({ text = 'DEMO' }: { text?: 'DEMO' | 'SIMULATED' | str
 
 export function TokenIdentity({ name, symbol, icon, logo, size = 'md', children }: { name: string; symbol: string; icon: { glyph: string; color: string }; logo?: string | null; size?: 'sm' | 'md' | 'lg'; children?: ReactNode }) {
   const [broken, setBroken] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() => { setBroken(false); setAttempt(0); }, [logo]);
+  // Public IPFS gateways rate-limit; retry once on the fallback gateway before falling back to the glyph.
+  const candidates = logo ? ipfsGatewayCandidates(logo) : [];
+  const src = candidates.length ? candidates[Math.min(attempt, candidates.length - 1)] : null;
   return <div className={cx('rp-identity', `rp-identity-${size}`)}>
-    {logo && !broken ? <img className="rp-avatar" src={logo} alt="" width={size === 'lg' ? 56 : 32} height={size === 'lg' ? 56 : 32} loading="lazy" onError={() => setBroken(true)}/>
+    {src && !broken ? <img className="rp-avatar" src={src} alt="" width={size === 'lg' ? 56 : 32} height={size === 'lg' ? 56 : 32} loading="lazy" onError={() => { if (attempt < candidates.length - 1) setAttempt(attempt + 1); else setBroken(true); }}/>
       : <span className="rp-avatar" style={{ color: icon.color, background: `${icon.color}1f` }} aria-hidden>{icon.glyph}</span>}
     <div className="rp-identity-text"><div className="rp-identity-name"><strong>{name}</strong><span className="rp-symbol">{symbol}</span></div>{children}</div>
   </div>;

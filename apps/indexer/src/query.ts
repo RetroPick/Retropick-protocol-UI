@@ -34,6 +34,8 @@ export function query(snapshot: Snapshot, url: URL, freshness: IndexFreshness): 
     const nextCursor = start + data.length < rows.length && data.length ? Buffer.from(JSON.stringify({ v: snapshotVersion(snapshot), q: key, after: rowKey(data.at(-1)!) })).toString('base64url') : null;
     return { data, freshness, nextCursor };
   };
+  const transactionHash = params.get('transactionHash')?.toLowerCase();
+  if (transactionHash && !/^0x[0-9a-f]{64}$/.test(transactionHash)) fail('INVALID_TRANSACTION_HASH');
   const term = (params.get('q') ?? '').trim().toLowerCase(); if (term.length > 180) fail('INVALID_SEARCH');
   const matches = (l: IndexedLaunch) => !term || [l.name, l.symbol, l.token, l.creator].some(v => v.toLowerCase().includes(term));
   if (path === '/v1/pairs') {
@@ -78,11 +80,11 @@ export function query(snapshot: Snapshot, url: URL, freshness: IndexFreshness): 
   const token = match[1].toLowerCase(); const launch = snapshot.launches.find(l => l.token === token); if (!launch) throw new QueryError(404, 'LAUNCH_NOT_FOUND');
   if (!match[2]) return { data: { ...launch, candles: launch.candles.slice(-120) }, freshness };
   if (match[2] === 'holders') return page(snapshot.holders[token] ?? [], h => h.address);
-  if (match[2] === 'trades') return page(snapshot.trades.filter(t => t.token === token).sort(descendingEvent), t => t.id);
+  if (match[2] === 'trades') return page(snapshot.trades.filter(t => t.token === token && (!transactionHash || t.transactionHash.toLowerCase() === transactionHash)).sort(descendingEvent), t => t.id);
   if (match[2] === 'orders') {
     const owner = params.get('owner'); if (owner && !address(owner)) fail('INVALID_OWNER');
     const status = params.get('status') ?? 'open'; if (!['open', 'all'].includes(status)) fail('INVALID_ORDER_STATUS');
-    return page(snapshot.orders.filter(o => o.token === token && (!owner || o.owner === owner.toLowerCase()) && (status === 'all' || ['OPEN', 'PARTIALLY_FILLED'].includes(o.status))).sort((a, b) => b.createdBlock - a.createdBlock || compareRaw(a.orderId, b.orderId)), o => `${o.market}:${o.orderId}`);
+    return page(snapshot.orders.filter(o => o.token === token && (!transactionHash || o.transactionHash?.toLowerCase() === transactionHash) && (!owner || o.owner === owner.toLowerCase()) && (status === 'all' || ['OPEN', 'PARTIALLY_FILLED'].includes(o.status))).sort((a, b) => b.createdBlock - a.createdBlock || compareRaw(a.orderId, b.orderId)), o => `${o.market}:${o.orderId}`);
   }
   const resolution = params.get('resolution') ?? '1m'; if (!['1m', '5m', '15m', '1h'].includes(resolution)) fail('INVALID_RESOLUTION');
   const range = params.get('range') ?? 'all'; if (!['1h', '6h', '24h', '7d', '30d', 'all'].includes(range)) fail('INVALID_RANGE');

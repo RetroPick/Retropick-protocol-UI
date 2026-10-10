@@ -4,9 +4,9 @@ import { type Address, zeroAddress } from 'viem';
 import { createServer } from 'node:http';
 import { createChain, release, type ChainClient } from '../src/chain.ts';
 import { readLaunchEssential, readLaunchEconomic, readLaunchProof } from '../src/model.ts';
-import { prepareFeeClaimToken, prepareBuybackRelease, prepareKuruMarketOrder, prepareKuruCancel, prepareLaunchToken } from '../src/prepare.ts';
+import { prepareFeeClaimToken, prepareBuybackRelease, prepareKuruMarketOrder, prepareKuruCancel, prepareLaunchToken, kuruGrid, type KuruMarketParams } from '../src/prepare.ts';
 import { readKuruOrder } from '../src/orders.ts';
-import { prepareTransfer } from '../src/transfer.ts';
+import { prepareTransfer, simulateTransfer } from '../src/transfer.ts';
 const account='0x1111111111111111111111111111111111111111' as Address,token='0x2222222222222222222222222222222222222222' as Address,market='0x3333333333333333333333333333333333333333' as Address,curve='0x4444444444444444444444444444444444444444' as Address;
 const params=[100_000_000n,100_000_000n,token,18,zeroAddress,18,1,100_000n,10n**18n,30,0] as const;
 function mock(overrides:Record<string,unknown>={}) {
@@ -52,4 +52,33 @@ test('unhealthy fallback is excluded; contract revert does not trip primary circ
 
 test('nonzero stale order storage does not imply an open order after its price head advances',async()=>{
  const {chain}=mock({s_buyPricePoints:[2,2]});assert.equal((await readKuruOrder(chain,market,1,77n)).active,false);
+});
+
+
+test('market execution simulation enforces connected-account FOK and positive minimum', async () => {
+ const {chain}=mock(); const simulations: Array<Record<string,unknown>>=[];
+ chain.simulateContract=async (call:any)=>{simulations.push(call);if(call.account===account)throw Error('InsufficientLiquidity');return {result:1000n} as never;};
+ await assert.rejects(()=>prepareKuruMarketOrder(chain,account,{market,token,side:'buy',amountRaw:10n**18n,minOutcomeRaw:999n}),/InsufficientLiquidity/);
+ assert.equal(simulations.length,2);assert.equal(simulations[0].account,zeroAddress);assert.equal(simulations[1].account,account);assert.equal(simulations[1].blockNumber,77n);assert.equal(simulations[1].value,0n);assert.deepEqual(simulations[1].args,[100_000_000n,999n,true,true]);
+});
+test('market sell derives a fresh minimum and exact sell grid',async()=>{
+ const {chain}=mock(); const simulations:Array<any>=[];chain.simulateContract=async(call:any)=>{simulations.push(call);return {result:10_000n} as never;};
+ const prepared=await prepareKuruMarketOrder(chain,account,{market,token,side:'sell',amountRaw:10n**18n,minOutcomeRaw:9000n});assert.deepEqual(prepared.args,[100_000_000n,9950n,true,true]);assert.equal(simulations[1].account,account);
+ await assert.rejects(()=>prepareKuruMarketOrder(chain,account,{market,token,side:'sell',amountRaw:1n,minOutcomeRaw:0n}),/finer/);
+});
+test('zero output and precision-floor minimum never produce a prepared market write',async()=>{
+ for (const output of [0n,1n]) {const {chain}=mock();chain.simulateContract=async()=>({result:output}) as never;await assert.rejects(()=>prepareKuruMarketOrder(chain,account,{market,token,side:'buy',amountRaw:10n**18n,minOutcomeRaw:0n}),/liquidity|precision/);}
+});
+test('quote sizing rejects fractional grids and uint32 max price is rejected',()=>{
+ const grid:KuruMarketParams={pricePrecision:100_000_000n,sizePrecision:100_000_000n,baseAsset:token,baseDecimals:18n,quoteAsset:zeroAddress,quoteDecimals:18n,tickSize:1n,minSize:1n,maxSize:10n**18n,takerFeeBps:30n,makerFeeBps:0n};
+ assert.equal(kuruGrid.quoteToUnits(10n**18n,grid),100_000_000n);assert.throws(()=>kuruGrid.quoteToUnits(10n**18n+1n,grid),/finer/);assert.throws(()=>kuruGrid.priceToUnits((2n**32n-1n)*10n**10n,grid,'buy'),/outside/);
+ assert.equal(kuruGrid.quoteToUnits(1n,{...grid,quoteDecimals:6n}),100n);
+});
+test('release admits both current recipients but rejects empty vest and old creator',async()=>{
+ assert.equal((await prepareBuybackRelease(mock({vestingTerms:[curve,account,1000]}).chain,token,account)).functionName,'release');await assert.rejects(()=>prepareBuybackRelease(mock({releasable:0n}).chain,token,account),/Nothing/);await assert.rejects(()=>prepareFeeClaimToken(mock({balanceOfToken:0n}).chain,account,token),/No claimable/);
+});
+test('execution transfer rechecks chain, gas, false return and descriptor integrity',async()=>{
+ const {chain}=mock();const prepared=await prepareTransfer(chain,account,{recipient:curve,asset:zeroAddress,amount:1n});chain.getChainId=async()=>1;await assert.rejects(()=>simulateTransfer(chain,prepared),/Monad Testnet/);
+ chain.getChainId=async()=>10143;chain.getBalance=async()=>1n;await assert.rejects(()=>simulateTransfer(chain,prepared),/network gas/);chain.getBalance=async()=>10n**24n;await assert.rejects(()=>simulateTransfer(chain,{...prepared,to:token}),/descriptor/);
+ chain.simulateContract=async()=>({result:true}) as never;const erc20=await prepareTransfer(chain,account,{recipient:curve,asset:token,amount:1n});chain.simulateContract=async()=>({result:false}) as never;await assert.rejects(()=>simulateTransfer(chain,erc20),/return success/);
 });

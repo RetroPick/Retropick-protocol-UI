@@ -42,7 +42,7 @@ export function acquireDbLock(file: string): () => void {
       if ((error as NodeJS.ErrnoException).code !== 'EEXIST') throw error;
       const owner = Number(readFileSync(lock, 'utf8'));
       let alive = false; try { process.kill(owner, 0); alive = true; } catch { alive = false; }
-      if (alive && owner !== process.pid) throw Error(`INDEXER_DB_LOCKED: database ${file} is owned by pid ${owner}`);
+      if (alive) throw Error(`INDEXER_DB_LOCKED: database ${file} is owned by pid ${owner}`);
       rmSync(lock, { force: true });
     }
   }
