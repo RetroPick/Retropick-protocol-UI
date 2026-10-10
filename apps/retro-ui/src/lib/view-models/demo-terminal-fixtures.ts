@@ -10,7 +10,7 @@ export const DEMO_NOW_MS = Date.UTC(2026, 8, 17, 12, 0, 0);
 const NOW_S = DEMO_NOW_MS / 1000;
 const E18 = 10n ** 18n;
 
-export const DEMO_SCENARIOS = ['default', 'slow-rpc', 'stale-indexer', 'no-holders', 'no-orders', 'margin-shortfall'] as const;
+export const DEMO_SCENARIOS = ['default', 'slow-rpc', 'stale-indexer', 'no-holders', 'no-orders', 'margin-shortfall', 'no-book'] as const;
 export type DemoScenario = (typeof DEMO_SCENARIOS)[number];
 export function parseScenario(value: string | null | undefined): DemoScenario {
   return (DEMO_SCENARIOS as readonly string[]).includes(value ?? '') ? (value as DemoScenario) : 'default';
@@ -20,12 +20,15 @@ export function parseScenario(value: string | null | undefined): DemoScenario {
 export interface DemoCurveState { quoteReserve: bigint; tokenReserve: bigint; remaining: bigint; feeBps: bigint; taxBps: bigint }
 export interface DemoWalletState { quoteWallet: bigint; tokenWallet: bigint; quoteMargin: bigint; tokenMargin: bigint }
 export interface DemoKuruState { tickRaw: bigint; bestBidX18: bigint; bestAskX18: bigint }
+/** Simulated L2 book (tick-aggregated levels) for the depth ladder; price x18 / base raw units. */
+export interface DemoBookState { bids: Array<{ price: bigint; size: bigint }>; asks: Array<{ price: bigint; size: bigint }> }
 
 export interface DemoFixture {
   vm: TokenTerminalVM;
   data: TerminalData;
   curve: DemoCurveState | null;
   kuru: DemoKuruState | null;
+  book: DemoBookState | null;
   wallet: DemoWalletState;
   scenario: DemoScenario;
 }
@@ -152,6 +155,16 @@ function build(seed: Seed): Omit<DemoFixture, 'scenario'> {
     data: { candles: page(candles), trades: page(trades), holders: page(holders), orders: orders ? page(orders) : null },
     curve: curveState,
     kuru: seed.lifecycle === 'GRADUATED' ? { tickRaw: 10n ** 13n, bestBidX18: priceX18 * 99n / 100n, bestAskX18: priceX18 * 101n / 100n } : null,
+    // Depth ladder fixture: 7 tick-spaced levels a side around the simulated best bid/ask,
+    // deterministic sizes from the same seeded stream (thousands of tokens at 18 decimals).
+    book: seed.lifecycle === 'GRADUATED' ? (() => {
+      const kuruTick = 10n ** 13n, bestBid = priceX18 * 99n / 100n / kuruTick * kuruTick, bestAsk = (priceX18 * 101n / 100n + kuruTick - 1n) / kuruTick * kuruTick;
+      const level = (i: number) => BigInt(3 + Math.floor(rand() * 17)) * 10n ** 21n;
+      return {
+        bids: Array.from({ length: 7 }, (_, i) => ({ price: bestBid - BigInt(i) * kuruTick, size: level(i) })),
+        asks: Array.from({ length: 7 }, (_, i) => ({ price: bestAsk + BigInt(i) * kuruTick, size: level(i) })),
+      };
+    })() : null,
     wallet: { quoteWallet: 120n * qScale, tokenWallet: 50_000n * E18, quoteMargin: 25n * qScale, tokenMargin: 12_000n * E18 },
   };
 }
@@ -171,5 +184,8 @@ export function getDemoFixture(id: string, scenario: DemoScenario = 'default'): 
   if (scenario === 'no-holders') { data.holders = { rows: [], nextCursor: null, status: 'ready' }; vm.holderCount = 0; }
   if (scenario === 'no-orders' && data.orders) data.orders = { rows: [], nextCursor: null, status: 'ready' };
   if (scenario === 'margin-shortfall') { wallet.quoteMargin = 5n * 10n ** BigInt(vm.quote.decimals) / 10n; wallet.tokenMargin = 0n; }
-  return { vm, data, curve: base.curve, kuru: base.kuru, wallet, scenario };
+  // no-book keeps the panel mounted with an empty ladder (the real empty-book state), unlike
+  // pre-graduation fixtures where the whole panel is absent.
+  const book = scenario === 'no-book' && base.book ? { bids: [], asks: [] } : base.book;
+  return { vm, data, curve: base.curve, kuru: base.kuru, book, wallet, scenario };
 }

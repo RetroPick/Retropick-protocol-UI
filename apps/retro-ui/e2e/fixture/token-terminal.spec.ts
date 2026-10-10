@@ -178,6 +178,52 @@ test('@terminal ACTIVE orders tab is disabled until graduation', async ({ page, 
   expectClean(observed);
 });
 
+test('@terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state', async ({ page, observed, snap }) => {
+  await page.goto('/launchpad/token/demo-graduated');
+  const depth = page.getByTestId('depth-panel');
+  await expect(depth).toBeVisible();
+  await expect(depth).toHaveAttribute('data-data-mode', 'demo');
+  await expect(depth.locator('[data-provenance="demo"]').first()).toBeVisible();
+  await expect(depth.locator('.rp-depth-row[data-side="bid"]')).toHaveCount(7);
+  await expect(depth.locator('.rp-depth-row[data-side="ask"]')).toHaveCount(7);
+  // Ladder ordering: best bid (highest) first; best ask (lowest) last on the ask side.
+  const bidPrices = await depth.locator('.rp-depth-row[data-side="bid"] .rp-depth-price').allTextContents();
+  expect(Number(bidPrices[0].replace(/,/g, ''))).toBeGreaterThan(Number(bidPrices[1].replace(/,/g, '')));
+  const askPrices = await depth.locator('.rp-depth-row[data-side="ask"] .rp-depth-price').allTextContents();
+  expect(Number(askPrices[0].replace(/,/g, ''))).toBeGreaterThan(Number(askPrices[6].replace(/,/g, '')));
+  await expect(page.getByTestId('depth-spread')).toContainText('Spread');
+  // Cumulative bars exist and are bounded.
+  for (const bar of await depth.locator('.rp-depth-bar').all()) {
+    const width = (await bar.boundingBox())?.width ?? 0;
+    expect(width).toBeGreaterThan(0);
+  }
+  await snap('depth-graduated');
+  await page.goto('/launchpad/token/demo-active');
+  await expect(page.getByTestId('depth-panel')).toHaveCount(0);
+  await page.goto('/launchpad/token/demo-graduated?scenario=no-book');
+  const empty = page.getByTestId('depth-panel');
+  await expect(empty).toBeVisible();
+  await expect(empty).toContainText('No resting orders');
+  expectClean(observed);
+});
+
+test('@terminal GRADUATED post-only toggle switches order policy', async ({ page, observed }, info) => {
+  test.skip(info.project.name.startsWith('mobile'), 'mobile ticket covered in sheet test');
+  await page.goto('/launchpad/token/demo-graduated');
+  const ticket = page.getByTestId('trade-ticket');
+  await ticket.getByRole('button', { name: 'Connect demo wallet' }).click();
+  await ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' }).click();
+  const postOnly = page.getByTestId('ticket-post-only');
+  await expect(ticket).toContainText('Good till cancelled');
+  await postOnly.check();
+  await expect(postOnly).toBeChecked();
+  await expect(ticket).toContainText('Post-only · maker only');
+  await expect(ticket.getByTestId('ticket-limit-price')).toBeVisible();
+  await postOnly.uncheck();
+  await expect(ticket).toContainText('Good till cancelled');
+  expectClean(observed);
+});
+
 test('@terminal mobile: sticky Trade bar opens bottom-sheet ticket', async ({ page, observed, snap }, info) => {
   test.skip(!info.project.name.startsWith('mobile'), 'mobile only');
   await page.goto('/launchpad/token/demo-active');

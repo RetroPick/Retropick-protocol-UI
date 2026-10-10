@@ -8,6 +8,7 @@ import { ticketLaunch, ticketKuru } from '@/lib/live/trade-ticket-inputs';
 import { fetchHolders, fetchTrades } from '@/lib/live/indexer-client';
 import { launchKeys } from '@/lib/live/queries';
 import { useLaunchDetail } from '@/hooks/use-launch-detail';
+import { useKuruBook } from '@/hooks/use-kuru-book';
 import { useWallet } from '@/wallet/provider';
 import { useSearchParams } from '@/lib/next-compat';
 import { addresses } from '@retropick/launchpad-sdk/chain';
@@ -16,7 +17,7 @@ import { TokenTerminal, type TerminalTab } from './terminal/token-terminal';
 import { DemoTicket } from './terminal/demo-ticket';
 import { LiveOrdersPanel } from './terminal/live-orders';
 import { getDemoFixture, parseScenario } from '@/lib/view-models/demo-terminal-fixtures';
-import { DEFAULT_INTERVAL, RANGE_SECONDS, aggregateCandles, curveSpotX18, intervalFor, marketCapRaw, type CandleInterval, type ChartRange, type Lifecycle, type TerminalData, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
+import { DEFAULT_INTERVAL, RANGE_SECONDS, aggregateCandles, buildDepthLadder, curveSpotX18, intervalFor, marketCapRaw, type CandleInterval, type ChartRange, type Lifecycle, type TerminalData, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
 
 const Ticket = lazy(() => import('./live-trading-ticket').then((m) => ({ default: m.LiveTradingTicket })));
 
@@ -49,7 +50,9 @@ function DemoTokenRoute({ id }: { id: string }) {
     return { ...fixture.data, trades, candles: { rows, nextCursor: null, status: 'ready' } };
   }, [fixture, chart.range, chart.interval, tradePage]);
   if (!fixture || !data) return <EmptyState title="Token launch not found" text="This demo token is not part of the DEMO fixture set." action={<Link className="rp-btn rp-btn-ghost" href="/launchpad">Back to Launchpad</Link>}/>;
-  return <TokenTerminal vm={fixture.vm} data={data} chart={chart} tab={tab} onTab={setTab}
+  // Depth (DEMO): the fixture book through the same aggregation the live hook uses.
+  const depth = fixture.vm.lifecycle === 'GRADUATED' && fixture.book ? { status: 'ready' as const, ladder: buildDepthLadder(fixture.book), block: '0', observedAt: fixture.vm.now } : null;
+  return <TokenTerminal vm={fixture.vm} data={data} chart={chart} depth={depth} tab={tab} onTab={setTab}
     tradesPager={{ hasNext: data.trades.nextCursor !== null, hasPrev: tradePage > 0, next: () => setTradePage((p) => p + 1), first: () => setTradePage(0) }}
     ticket={<DemoTicket key={`${fixture.vm.id}:${scenario}`} fixture={fixture}/>}/>;
 }
@@ -61,6 +64,9 @@ function LiveTokenRoute({ id }: { id: string }) {
   const [tradeCursor, setTradeCursor] = useState<string | undefined>();
   const [holderCursor, setHolderCursor] = useState<string | undefined>();
   const detail = useLaunchDetail(id, wallet.account ?? undefined, { range: chart.range, resolution: chart.interval, proofEnabled: tab === 'Protocol' });
+  // Depth (live): aggregated on-chain L2 book for the graduated Kuru market; null before graduation.
+  const market = detail.essential && detail.essential.ledger.phase === 2 ? detail.essential.receipt.market : null;
+  const depth = useKuruBook(id, market ?? null, detail.essential?.ledger.phase === 2);
   const trades = useQuery({ queryKey: launchKeys.resource(id, 'trade-page', { cursor: tradeCursor }), queryFn: ({ signal }) => fetchTrades(INDEXER_URL!, id, { cursor: tradeCursor }, signal), enabled: !!detail.indexed && tab === 'Trades', refetchInterval: tradeCursor ? false : 10000 });
   const holders = useQuery({ queryKey: launchKeys.resource(id, 'holders', { cursor: holderCursor }), queryFn: ({ signal }) => fetchHolders(INDEXER_URL!, id, { cursor: holderCursor }, signal), enabled: !!detail.indexed && tab === 'Holders', refetchInterval: holderCursor ? false : 10000 });
 
@@ -110,7 +116,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     // Progressive shell: identity skeleton only — never a blank full-page blocker.
     return <div className="rp-terminal" data-testid="token-terminal" aria-busy="true"><div className="rp-head"><SkeletonLine width={280} height={48} label="Loading token"/><SkeletonLine width={200} height={48}/></div><div className="rp-grid"><section className="rp-chart-panel"><SkeletonLine height={380}/></section><aside className="rp-rail">{TICKET_FALLBACK}</aside></div></div>;
   }
-  return <TokenTerminal vm={vm} data={data} chart={chart} tab={tab} onTab={(t) => { setTab(t); setTradeCursor(undefined); setHolderCursor(undefined); }} onRetry={detail.reload}
+  return <TokenTerminal vm={vm} data={data} chart={chart} depth={depth} tab={tab} onTab={(t) => { setTab(t); setTradeCursor(undefined); setHolderCursor(undefined); }} onRetry={detail.reload}
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}
     ordersPanel={vm.lifecycle === 'GRADUATED' ? <LiveOrdersPanel token={vm.id} market={vm.addresses.market} quoteSymbol={vm.quote.symbol}/> : undefined}

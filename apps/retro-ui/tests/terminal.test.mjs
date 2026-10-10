@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { formatUnits } from 'viem';
-import { orderSizeRaw, holderValueRaw, curveSpotX18, marketCapRaw, formatRaw, formatRawCompact, formatBps, formatPriceX18, aggregateCandles, intervalFor, RANGE_INTERVALS } from '../src/lib/view-models/token-terminal.ts';
+import { orderSizeRaw, holderValueRaw, curveSpotX18, marketCapRaw, formatRaw, formatRawCompact, formatBps, formatPriceX18, aggregateCandles, intervalFor, RANGE_INTERVALS, buildDepthLadder } from '../src/lib/view-models/token-terminal.ts';
 import { getDemoFixture, demoFixtureIds, DEMO_FIXTURE_VERSION } from '../src/lib/view-models/demo-terminal-fixtures.ts';
 import { runDepositThenOrder, shortfall, flowMessage } from '../src/features/trading/deposit-order-machine.ts';
 
@@ -118,4 +118,39 @@ test('retry refuses to place the order if deposited margin is no longer sufficie
   const d = h.deps(50n); // requirement grew (e.g. price changed)
   const retried = await runDepositThenOrder(d, failed);
   assert.equal(retried.step, 'order-failed'); assert.equal(h.calls.filter((c) => c === 'order').length, 1);
+});
+
+// ── Depth ladder: aggregation, ordering, dedupe, spread ──
+const D = 10n ** 18n;
+test('buildDepthLadder sorts, dedupes and accumulates exact bigints', () => {
+  const ladder = buildDepthLadder({
+    bids: [{ price: 99n * D, size: 10n * D }, { price: 101n * D, size: 5n * D }, { price: 99n * D, size: 3n * D }, { price: 0n, size: 1n * D }],
+    asks: [{ price: 103n * D, size: 7n * D }, { price: 102n * D, size: 4n * D }, { price: 102n * D, size: 6n * D }, { price: 104n * D, size: 0n }],
+  });
+  assert.deepEqual(ladder.bids.map((l) => l.priceX18), [101n * D, 99n * D], 'bids descending, best first');
+  assert.equal(ladder.bids[1].sizeRaw, 13n * D, 'same-price bid levels merge');
+  assert.equal(ladder.bids[1].cumulativeRaw, 18n * D);
+  assert.deepEqual(ladder.asks.map((l) => l.priceX18), [102n * D, 103n * D], 'asks ascending, best first');
+  assert.equal(ladder.asks[0].sizeRaw, 10n * D, 'same-price ask levels merge');
+  assert.equal(ladder.asks[1].cumulativeRaw, 17n * D);
+  assert.equal(ladder.spreadX18, 102n * D - 101n * D);
+  assert.equal(ladder.midX18, (102n * D + 101n * D) / 2n);
+});
+test('buildDepthLadder handles empty, one-sided and malformed books fail-closed', () => {
+  assert.deepEqual(buildDepthLadder({ bids: [], asks: [] }), { asks: [], bids: [], spreadX18: null, midX18: null });
+  const one = buildDepthLadder({ bids: [{ price: 5n * D, size: 1n * D }], asks: [] });
+  assert.equal(one.spreadX18, null); assert.equal(one.midX18, null);
+  const crossed = buildDepthLadder({ bids: [{ price: 105n * D, size: 1n * D }], asks: [{ price: 103n * D, size: 1n * D }] });
+  assert.equal(crossed.spreadX18, null, 'crossed input never displays a negative spread');
+});
+test('demo fixture exposes a deterministic two-sided graduated book', () => {
+  const f1 = getDemoFixture('nvidia-cult'), f2 = getDemoFixture('nvidia-cult');
+  assert.ok(f1 && f1.book && f1.book.bids.length === 7 && f1.book.asks.length === 7);
+  assert.deepEqual(f1.book, f2 && f2.book, 'deterministic across calls');
+  const ladder = buildDepthLadder(f1.book);
+  assert.ok(ladder.spreadX18 !== null && ladder.spreadX18 > 0n);
+  assert.ok(ladder.asks[0].priceX18 > ladder.bids[0].priceX18, 'never crossed');
+  assert.equal(getDemoFixture('monad-dog')?.book ?? null, null, 'no book before graduation');
+  const noBook = getDemoFixture('nvidia-cult', 'no-book')?.book;
+assert.deepEqual(noBook, { bids: [], asks: [] }, 'no-book scenario keeps an empty ladder for the empty state');
 });

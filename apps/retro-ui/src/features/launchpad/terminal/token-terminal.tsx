@@ -6,7 +6,7 @@ import { ArrowDownRight, ArrowLeft, ArrowUpRight, Globe, MessageCircle, Send, Tw
 import Link from '@/components/product/safe-link';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { AddressChip, DataTable, DemoBadge, EmptyState, ErrorState, FreshnessIndicator, InfoHint, LifecycleBadge, Metric, MetricStrip, PairBadge, SegmentedControl, SkeletonLine, TokenIdentity, cx, type Column } from '@/components/trading/primitives';
-import { RANGE_INTERVALS, RANGE_LABELS, ageFrom, changeDirection, formatBps, formatPriceX18, formatRaw, formatRawCompact, holderValueRaw, lifecycleLabel, orderSizeRaw, type CandleInterval, type ChartRange, type TerminalData, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
+import { RANGE_INTERVALS, RANGE_LABELS, ageFrom, changeDirection, formatBps, formatPriceX18, formatRaw, formatRawCompact, holderValueRaw, lifecycleLabel, orderSizeRaw, type CandleInterval, type ChartRange, type TerminalData, type TerminalDepth, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
 import type { IndexedHolder, IndexedOrder, IndexedTrade } from '@retropick/launchpad-sdk/read-model';
 
 const TradingChart = lazy(() => import('../trading-chart'));
@@ -29,8 +29,8 @@ const ROLE_LABEL: Record<NonNullable<IndexedHolder['role']>, string | null> = {
   CURVE: 'Curve', COORDINATOR: 'Protocol', LP_EXCESS_LOCK: 'Liquidity lock', KURU_INFRASTRUCTURE: 'Liquidity', BUYBACK_VAULT: 'Protocol', FEE_ESCROW: 'Protocol', WALLET: null,
 };
 
-export function TokenTerminal({ vm, data, chart, ticket, tab, onTab, tradesPager, holdersPager, ordersPanel, onRetry, backHref = '/launchpad' }: {
-  vm: TokenTerminalVM; data: TerminalData; chart: ChartControls; ticket: ReactNode;
+export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, tradesPager, holdersPager, ordersPanel, onRetry, backHref = '/launchpad' }: {
+  vm: TokenTerminalVM; data: TerminalData; chart: ChartControls; ticket: ReactNode; depth?: TerminalDepth | null;
   tab: TerminalTab; onTab: (t: TerminalTab) => void; tradesPager?: Pager; holdersPager?: Pager; ordersPanel?: ReactNode; onRetry?: () => void; backHref?: string;
 }) {
   const demo = vm.dataMode === 'demo';
@@ -81,8 +81,10 @@ export function TokenTerminal({ vm, data, chart, ticket, tab, onTab, tradesPager
         </div>
         <div className="rp-chart-foot"><FreshnessIndicator freshness={vm.freshness} demo={demo}/><span>{demo ? 'SIMULATED candles from a deterministic fixture.' : 'Candles from confirmed executed trades.'}</span></div>
       </section>
-      {!mobile && <aside className="rp-rail" aria-label="Trade">{ticket}</aside>}
+      {!mobile && <aside className="rp-rail" aria-label="Trade">{kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}{ticket}</aside>}
     </div>
+
+    {mobile && kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}
 
     <MetricStrip label="Key metrics">
       <Metric testId="metric-mcap" label="Market cap" value={formatRawCompact(vm.marketCapRaw, vm.quote.decimals)} unit={q} definition="Price × total supply, in the quote asset."/>
@@ -228,6 +230,47 @@ function ProtocolPanel({ vm }: { vm: TokenTerminalVM }) {
     <h3 id={`proto-${title}`}>{title}</h3><p className="rp-muted">{text}</p>
     <dl>{rows.map(([k, v, hint]) => <div key={k} className="rp-row"><dt>{k}{hint && <InfoHint text={hint} label={`About ${k}`}/>}</dt><dd>{v}</dd></div>)}</dl>
   </section>)}</div>;
+}
+
+/** Aggregated resting-order depth around the spread. Display-only; read from the on-chain L2
+ *  book (live) or the fixture book (demo). Never used as an execution quote. */
+function MarketDepth({ vm, depth }: { vm: TokenTerminalVM; depth: TerminalDepth | null }) {
+  if (!depth) return null;
+  const q = vm.quote.symbol;
+  const ladder = depth.ladder;
+  const empty = depth.status === 'ready' && (!ladder || (!ladder.asks.length && !ladder.bids.length));
+  const maxCumulative = ladder ? Math.max(Number(ladder.asks.at(-1)?.cumulativeRaw ?? 0n), Number(ladder.bids.at(-1)?.cumulativeRaw ?? 0n)) : 0;
+  return <section className="rp-depth" aria-label="Orderbook depth" data-testid="depth-panel" data-data-mode={vm.dataMode} data-status={depth.status}>
+    <header className="rp-depth-head">
+      <h3>Orderbook</h3>
+      {vm.dataMode === 'demo' ? <DemoBadge text="SIMULATED"/> : depth.block ? <span className="rp-muted">block {depth.block}</span> : null}
+    </header>
+    {depth.status === 'loading' && <div role="status" aria-label="Loading orderbook depth">{Array.from({ length: 5 }, (_, i) => <SkeletonLine key={i} height={16}/>)}</div>}
+    {depth.status === 'error' && <p className="rp-note" role="status">Live orderbook depth is unavailable. Trading reads current on-chain state when you place an order.</p>}
+    {empty && <EmptyState title="No resting orders" text="The book has no open depth right now. Market orders may fail until liquidity is posted."/>}
+    {depth.status === 'ready' && ladder && !empty && <>
+      <div className="rp-depth-cols" aria-hidden="true"><span>Price</span><span>{vm.symbol}</span><span>Total</span></div>
+      <ul className="rp-depth-side" data-side="ask" aria-label="Asks (lowest ask last)">
+        {[...ladder.asks].reverse().slice(0, 7).map((level) => <DepthRow key={level.priceX18.toString()} level={level} vm={vm} maxCumulative={maxCumulative} side="ask"/>)}
+      </ul>
+      <p className="rp-depth-spread" data-testid="depth-spread">
+        {ladder.spreadX18 !== null ? <>Spread <strong>{formatPriceX18(ladder.spreadX18.toString())} {q}</strong>{ladder.midX18 !== null ? <> · mid {formatPriceX18(ladder.midX18.toString())}</> : null}</> : 'No two-sided book — spread unavailable'}
+      </p>
+      <ul className="rp-depth-side" data-side="bid" aria-label="Bids (highest bid first)">
+        {ladder.bids.slice(0, 7).map((level) => <DepthRow key={level.priceX18.toString()} level={level} vm={vm} maxCumulative={maxCumulative} side="bid"/>)}
+      </ul>
+    </>}
+  </section>;
+}
+
+function DepthRow({ level, vm, maxCumulative, side }: { level: { priceX18: bigint; sizeRaw: bigint; cumulativeRaw: bigint }; vm: TokenTerminalVM; maxCumulative: number; side: 'ask' | 'bid' }) {
+  const pct = maxCumulative > 0 ? Math.round((Number(level.cumulativeRaw) / maxCumulative) * 100) : 0;
+  return <li className="rp-depth-row" data-side={side}>
+    <span className="rp-depth-bar" data-side={side} style={{ width: `${pct}%` }} aria-hidden="true"/>
+    <span className="rp-depth-price">{formatPriceX18(level.priceX18.toString())}</span>
+    <span className="rp-depth-size">{formatRawCompact(level.sizeRaw, vm.baseDecimals)}</span>
+    <span className="rp-depth-total">{formatRawCompact(level.cumulativeRaw, vm.baseDecimals)}</span>
+  </li>;
 }
 
 function TableSkeleton() {
