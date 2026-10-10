@@ -17,7 +17,9 @@
     "e2e:smoke": "node e2e/run.mjs smoke",
     "e2e:fixture": "node e2e/run.mjs fixture",
     "e2e:live": "node e2e/run.mjs live",
-    "e2e:research": "node e2e/run.mjs research"
+    "e2e:research": "node e2e/run.mjs research",
+    "test:indexed-record": "node --test tests/indexed-record.test.mjs",
+    "test:media": "node --test tests/media.test.mjs"
   },
   "dependencies": {
     "@retropick/abi": "workspace:*",
@@ -30,6 +32,7 @@
     "lightweight-charts": "5.2.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
+    "qrcode.react": "^4.2.0",
     "radix-ui": "^1.6.7",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",

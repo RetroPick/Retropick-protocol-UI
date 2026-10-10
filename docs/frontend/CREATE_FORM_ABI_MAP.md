@@ -54,7 +54,7 @@ Selector warning for the SDK: F2 and F3 are both 4-arg overloads differing only 
 
 | Form control | Evidence | Category | Live mapping |
 |---|---|---|---|
-| Image picker (FileReader → data URL, ≤5 MB PNG/JPEG/WebP) | `create-launch.tsx:46-57` | EXACT_SOLIDITY_ARG → `TokenParams.logo` (string) | **calldata hazard**: a base64 data URL (~MBs) in `logo` is onchain-bloat expensive; LIVE must upload offchain and pass the URI string. Demo stores only a local preview |
+| Image picker (file → downscale ≤1024px/≤256 KiB WebP → `POST /api/media/upload` → URI; ≤5 MB raw PNG/JPEG/WebP/GIF) | `create-launch.tsx` live branch, `src/lib/media/upload.ts` | EXACT_SOLIDITY_ARG → `TokenParams.logo` (string) | **calldata hazard**: a base64 data URL (~MBs) in `logo` is onchain-bloat expensive; LIVE uploads offchain (`apps/media-service`, ADR-017) and passes the returned URI (`ipfs://<cid>` via Pinata, or the local content-addressed fallback URL) — always ≤512 bytes. An advanced "Paste a URI instead" toggle keeps the manual https/ipfs/ar path. Demo stores only a local preview |
 | Name (≤32 chars, required) | `create-launch.tsx:40,61,95` | EXACT_SOLIDITY_ARG → `TokenParams.name` | contract only requires nonempty (`InvalidTokenParams`); keep client length cap |
 | Ticker (regex `^[A-Z0-9]{2,10}$`) | `create-launch.tsx:40,61` | EXACT_SOLIDITY_ARG → `TokenParams.symbol` | same |
 | Description (≤256) | `create-launch.tsx:40,62,95` | EXACT_SOLIDITY_ARG → `TokenParams.description` | string; storage cost consideration, not a protocol limit |

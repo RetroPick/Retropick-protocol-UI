@@ -6,6 +6,7 @@ Status: `PROPOSED`, `ACCEPTED`, `SUPERSEDED`, `REJECTED`.
 
 - ADR-001 through ADR-007: Prediction/PRISM Phase-1 semantics/gates.
 - `ADR-008-retropick-launchpad-v2-development-line.md`: V1 stable/reference, V2 active Launchpad line.
+- `ADR-017-launchpad-metadata-storage.md`: ACCEPTED 2026-10-11 — logo media via `apps/media-service` (Pinata IPFS primary, local content-addressed fallback); onchain `logo` stays a ≤512-byte URI.
 
 ## Proposed Launchpad decisions
 
@@ -17,7 +18,6 @@ Status: `PROPOSED`, `ACCEPTED`, `SUPERSEDED`, `REJECTED`.
 - `ADR-014-launchpad-backend-runtime.md`
 - `ADR-015-launchpad-indexer-provider.md`
 - `ADR-016-launchpad-wallet-auth.md`
-- `ADR-017-launchpad-metadata-storage.md`
 - `ADR-018-launchpad-admin-key-model.md`
 - `ADR-019-launchpad-non-upgradeability.md`
 - `ADR-020-v4-retirement-after-kuru-proof.md`
