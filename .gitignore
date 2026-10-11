@@ -59,3 +59,6 @@ integrations/metamask-agent-retropick/oclif.manifest.json
 /vercel.json
 .vercel
 .env*
+
+# root runtime state: radar journal/snapshots and WAL-safe staging backups (never commit)
+/.data/

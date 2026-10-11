@@ -15,6 +15,12 @@ export const IPFS_GATEWAY_FALLBACK = 'https://dweb.link';
 
 const IPFS_PATTERN = /^ipfs:\/\/([^/?#]+)/;
 const ARWEAVE_PATTERN = /^ar:\/\/([^/?#]+)/;
+/**
+ * Staging media-service URIs minted while the backend sat behind a rotating cloudflared
+ * QUICK tunnel embed a now-dead hostname. Files are content-addressed (sha256), so the same
+ * bytes are served same-origin through the staging rewrite `/api/media/*` → current tunnel.
+ */
+const QUICK_TUNNEL_MEDIA = /^https:\/\/[a-z0-9-]+\.trycloudflare\.com(\/api\/media\/[0-9a-f]{64}\.(?:png|jpe?g|webp|gif))$/i;
 
 /** Maps a logo URI to a browser-loadable URL, or null so the UI falls back to the letter glyph. */
 export function resolveMediaSrc(logo: string | null | undefined): string | null {
@@ -24,6 +30,8 @@ export function resolveMediaSrc(logo: string | null | undefined): string | null 
   if (ipfs) return `${IPFS_GATEWAY}/ipfs/${ipfs[1]}`;
   const arweave = value.match(ARWEAVE_PATTERN);
   if (arweave) return `https://arweave.net/${arweave[1]}`;
+  const tunneled = value.match(QUICK_TUNNEL_MEDIA);
+  if (tunneled) return tunneled[1];
   if (/^https?:\/\//.test(value)) return value;
   return null;
 }
