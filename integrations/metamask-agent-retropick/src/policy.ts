@@ -118,6 +118,16 @@ export function checkCancel(policy: AgentPolicy, input: { chainId: number; marke
   const reasons: string[] = [];
   if (input.chainId !== policy.chainId) reasons.push('wrong chain');
   if (!policy.verifiedMarkets.includes(input.market.toLowerCase())) reasons.push('unverified market');
-  if (input.orderOwner.toLowerCase() !== input.agentAddress.toLowerCase()) reasons.push('order belongs to a different wallet — signer ownership required');
+  if (!/^0x[0-9a-fA-F]{40}$/.test(input.agentAddress)) reasons.push('no authenticated agent wallet address — fail closed');
+  else if (input.orderOwner.toLowerCase() !== input.agentAddress.toLowerCase()) reasons.push('order belongs to a different wallet — signer ownership required');
   return { ok: reasons.length === 0, reasons, notionalQuoteRaw: 0n };
+}
+
+/**
+ * Resolve the AUTHENTICATED agent-wallet address from the wallet state ONLY. Never falls back to a
+ * caller-supplied argument (that would let a caller assert ownership of someone else's order).
+ * Returns null when no wallet is connected → callers must fail closed.
+ */
+export function requireAgentAddress(walletAddress: string | null | undefined): string | null {
+  return walletAddress && /^0x[0-9a-fA-F]{40}$/.test(walletAddress) ? walletAddress : null;
 }

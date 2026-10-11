@@ -1,7 +1,7 @@
 // Policy-core unit tests for the RetroMask Agent Wallet plugin (pure bigint logic).
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { DEFAULT_POLICY, checkOrder, assessRisk, checkCancel, type AgentPolicy, type OrderCheckInput } from '../src/policy.ts';
+import { DEFAULT_POLICY, checkOrder, assessRisk, checkCancel, requireAgentAddress, type AgentPolicy, type OrderCheckInput } from '../src/policy.ts';
 
 const E18 = 10n ** 18n;
 const policy: AgentPolicy = { ...DEFAULT_POLICY };
@@ -63,9 +63,24 @@ test('risk assessment explains every factor and never invents a score', () => {
 });
 
 test('cancellation requires signer ownership of the order', () => {
-  const ok = checkCancel(policy, { chainId: 10143, market: policy.verifiedMarkets[0], orderOwner: '0xABC', agentAddress: '0xabc' });
+  const ok = checkCancel(policy, { chainId: 10143, market: policy.verifiedMarkets[0], orderOwner: '0x'+'a'.repeat(40), agentAddress: '0x'+'A'.repeat(40) });
   assert.equal(ok.ok, true);
-  const foreign = checkCancel(policy, { chainId: 10143, market: policy.verifiedMarkets[0], orderOwner: '0xDEF', agentAddress: '0xabc' });
+  const foreign = checkCancel(policy, { chainId: 10143, market: policy.verifiedMarkets[0], orderOwner: '0x'+'d'.repeat(40), agentAddress: '0x'+'a'.repeat(40) });
   assert.equal(foreign.ok, false);
   assert.match(foreign.reasons.join(';'), /different wallet/);
+});
+
+test('cancellation fails closed when no authenticated agent address is present', () => {
+  // The caller cannot assert ownership by supplying its own `owner` — an empty/invalid agent
+  // address must refuse, closing the handoff-flagged owner-arg fallback.
+  const noWallet = checkCancel(policy, { chainId: 10143, market: policy.verifiedMarkets[0], orderOwner: '0x'+'a'.repeat(40), agentAddress: '' });
+  assert.equal(noWallet.ok, false);
+  assert.match(noWallet.reasons.join(';'), /no authenticated agent wallet/);
+});
+
+test('requireAgentAddress returns null unless a real wallet address is present (no caller fallback)', () => {
+  assert.equal(requireAgentAddress(undefined), null);
+  assert.equal(requireAgentAddress(''), null);
+  assert.equal(requireAgentAddress('not-an-address'), null);
+  assert.equal(requireAgentAddress('0x'+'b'.repeat(40)), '0x'+'b'.repeat(40));
 });
