@@ -14,7 +14,7 @@ Every status beyond `MISSING` requires evidence.
 
 | 5 | MetaMask Agent Wallet | `MISSING` | `mm` CLI not installed; node 22.23 satisfies ≥22.18 |
 | 6 | Aurora — Any-Chain Liquidity to Monad | `NOT_INSPECTED` | route capability check pending |
-| 8 | Chainlink — Best Workflow with CRE | `MISSING` | no CRE project; simulation support ≥ CLI v1.30.0 |
+| 8 | Chainlink — Best Workflow with CRE | `TESTED_LOCAL` (typechecked, SDK-verified API); sim `BLOCKED_EXTERNAL` (cre login) | `sponsors/chainlink-cre/capability-check.json`; integrations/chainlink-cre |
 | 9 | Nansen — Best Use of Nansen | `NOT_INSPECTED` | no API entitlement known |
 
 Cross-cutting infrastructure already in place: Monad RPC failover SDK, indexer
