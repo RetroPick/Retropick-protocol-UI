@@ -1,0 +1,20 @@
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --filter '@retropick/retro-ui...' --frozen-lockfile",
+  "buildCommand": "pnpm --filter @retropick/retro-ui build",
+  "outputDirectory": "apps/retro-ui/dist",
+  "rewrites": [
+    {
+      "source": "/api/referrals/:path*",
+      "destination": "TUNNEL_URL/api/referrals/:path*"
+    },
+    {
+      "source": "/api/media/:path*",
+      "destination": "TUNNEL_URL/api/media/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

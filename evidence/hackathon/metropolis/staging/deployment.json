@@ -1,0 +1,38 @@
+{
+  "kind": "retro-ui-staging-deployment",
+  "date": "2026-10-11",
+  "canonical": "apps/retro-ui (Vite + React) — apps/web untouched (zero-write guard verified per commit)",
+  "vercel": {
+    "project": "retropick-metropolis-retro-ui-staging",
+    "scope": "asyams-projects (personal, CLI-authenticated jayanegaraasyam-9288)",
+    "productionAlias": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+    "latestDeployment": "retropick-metropolis-retro-ui-staging-ik5r2034o-asyams-projects.vercel.app (dpl chain; prior: dpl_6y3CZYNgzrJAjaqCozCwJ656Myob)",
+    "framework": "vite",
+    "build": "pnpm --filter @retropick/retro-ui build (workspace-aware filtered install, output apps/retro-ui/dist)",
+    "sourceCommit": "02aeba2 (feat/metropolis-retro-ui-staging)",
+    "legacyProjectUntouched": "retropick-metropolis (apps/web) — no settings, domain or deployment changes"
+  },
+  "environment": {
+    "VITE_DATA_MODE": "live",
+    "VITE_INDEXER_URL": "https://lib-initiated-primarily-rank.trycloudflare.com (quick tunnel — NON-DURABLE, rotates on restart; redeploy script handles rotation)",
+    "VITE_MONAD_RPC_FALLBACK_URL": "https://testnet-rpc.monad.xyz (public, browser-safe; no credentials)",
+    "secretsInBundle": "none — all values public-by-design; build guard rejects credential-bearing RPC URLs"
+  },
+  "backends": {
+    "topology": "WSL2 host (loopback-bound services) → staging-gateway 127.0.0.1:8799 (path router) → single cloudflared quick tunnel",
+    "indexer": "8787, resumed SQLite journal, caught up (lag 8 blocks at validation), CORS *, GET-only",
+    "referral": "8788, REFERRAL_ORIGIN=https://retropick-metropolis-retro-ui-stagi.vercel.app (strict same-origin + HttpOnly SameSite=Strict Secure cookie)",
+    "media": "8790, MEDIA_ORIGIN=<staging origin>, local mode with MEDIA_PUBLIC_BASE=<tunnel> (no PINATA_JWT — IPFS mode is an operator upgrade)",
+    "rewrites": "/api/referrals/* and /api/media/* → tunnel via ordered vercel.json rewrites (rendered, gitignored); SPA fallback to /index.html last"
+  },
+  "validation": {
+    "curlMatrix": { "/": 200, "/launchpad deep link": 200, "/api/referrals/health": 200, "/api/media/health": 200, "referral challenge correct-origin": "challenge issued (SIWE-style, names staging domain)", "referral challenge wrong-origin": "403 INVALID_ORIGIN", "indexer freshness": "lag 8 blocks" },
+    "playwright": "12/12 green on the public URL (11 passed + 1 flaky-pass on retry), desktop-1440 + mobile-390, read-only, no signing",
+    "notableFindings": [
+      "Evidenced Kuru market's resting book is currently EMPTY (orders consumed) — depth panel honestly shows 'No resting orders' (validated empty state, no fabricated depth)",
+      "Public RPC intermittently rejects the heavy getL2Book call → designed 'depth is unavailable' state appears; trading reads still revalidate on-chain at order time",
+      "Live discovery renders real indexed launches; zero DEMO/mock leakage; data-mode=live asserted"
+    ]
+  },
+  "labels": { "deployment": "BROWSER_E2E_VERIFIED (public URL)", "indexer": "SOURCE_VERIFIED + live envelope (chainId 10143, MONAD_EVENT_INDEXER)", "referral": "ONCHAIN-ready envelope + strict-origin verified", "durability": "NOT durable — quick tunnel + WSL host; named-tunnel upgrade in OPERATOR-ACTIONS" }
+}
