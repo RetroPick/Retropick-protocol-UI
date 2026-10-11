@@ -86,11 +86,22 @@ lanes (shadow-path only, after rotation). No secret ever entered git, logs, or b
 4. **Then:** MetaMask diagnostics/packet, Pinata shadow (post-rotation), VPS after agent
    unlock, final regression + A–E ledger + submission package.
 
+## 5b. Leave-behind correction (post-merge, same day)
+
+- Staging stack restored a SECOND time after another SIGTERM wave; tunnel rotated to
+  `concerning-billing-unnecessary-poultry.trycloudflare.com`.
+- The deploy script's verified env rotation then caught a REAL propagation race
+  (rm→add→immediate-ls misses the new key) and aborted honestly — exactly the failure
+  mode the operator correction predicted. Patched with bounded retry/backoff; direct
+  pipe-form adds verified working; full proof matrix re-run green on the final state:
+  frontend 200, referral health 200 + challenge 200 + wrong-origin 403, media health
+  200, bundle carries the current tunnel, indexer lag 8 blocks.
+
 ## 6. Consolidation performed at this checkpoint
 
 - L0 restoration + fix: already on main via PR #21 lineage (documented above).
 - L2 Envio WIP: committed on `feat/metropolis-envio-durability` with explicit
   IN_PROGRESS status and exact resume point (PR consolidating it merged).
 - This analysis document + INTEGRATION-STATUS row appended.
-- Staging state at handoff: Vercel 200; WSL stack down (documented; one-command restore).
+- Staging state at handoff: **FULLY UP** — Vercel 200 serving live mode, backends healthy through the current tunnel (indexer lag 8), proof matrix green.
 - Zero `apps/web` paths changed across every commit (guard verified per commit).

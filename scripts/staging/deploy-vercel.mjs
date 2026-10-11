@@ -61,13 +61,24 @@ async function main() {
         sh('vercel', ['env', 'rm', key, target, '--yes']);
         console.log(`env ${key} (${target}): removed stale value for rotation`);
       }
-      try { sh('vercel', ['env', 'add', key, target], { input: value + '\n' }); }
-      catch (error) { console.error(`env ${key} (${target}): add FAILED: ${String(error).slice(0, 160)}`); process.exit(1); }
-      const after = (() => { try { return sh('vercel', ['env', 'ls', target]); } catch { return ''; } })();
-      if (!after.split('\n').some((line) => line.trim().startsWith(key))) {
-        console.error(`env ${key} (${target}): post-write verification FAILED — value not present after add`);
-        process.exit(1);
+      // Vercel env writes propagate asynchronously — verify with bounded retries
+      // (the immediate ls after add can race; never misclassify that as failure/success).
+      let verified = false;
+      for (let attempt = 1; attempt <= 5 && !verified; attempt++) {
+        try { sh('vercel', ['env', 'add', key, target], { input: value + '\n' }); }
+        catch (error) {
+          const text = String(error);
+          if (/already exists|ENVIRONMENT_VARIABLE_ALREADY_EXISTS/i.test(text)) { /* fall through to verify */ }
+          else { console.error(`env ${key} (${target}): add FAILED: ${text.slice(0, 160)}`); process.exit(1); }
+        }
+        for (let wait = 0; wait < 4 && !verified; wait++) {
+          await new Promise((r) => setTimeout(r, 1500 * (wait + 1)));
+          const after = (() => { try { return sh('vercel', ['env', 'ls', target]); } catch { return ''; } })();
+          if (after.split('\n').some((line) => line.trim().startsWith(key))) verified = true;
+        }
+        if (!verified) console.log(`env ${key} (${target}): attempt ${attempt} not visible yet — retrying`);
       }
+      if (!verified) { console.error(`env ${key} (${target}): verification FAILED after retries`); process.exit(1); }
       console.log(`env ${key} (${target}): set + verified`);
     }
   }
