@@ -1,5 +1,8 @@
 # Metropolis Sponsor Integration — Execution Home
 
+> **2026-10-11 CURRENT AGENT ENTRY:** [Root unified ZCode GLM operator-unblock mission](../../RETROPICK_METROPOLIS_OPERATOR_UNBLOCK_MASTER_PROMPT.md) and [mandatory integration-agent workflow](integration/README.md). This supersedes the *execution order* in earlier time-stamped campaign prompts, but does not relax the original security requirements. PR #17 (staging), #18 (Creator Continuity), and #19 (Mera Protected Earn docs) are MERGED; do not restart staging. Backend/VPS, Envio, CRE, MetaMask, Mera and optional Pinata must be proved in real runtime separately. `apps/retro-ui` ONLY; never modify `apps/web/**`. Credentials are managed at protected host runtime rather than stored in GitHub. Every lane must create a stage record in `docs/metropolis/integration/stages/` and update the living status dashboard.
+
+
 Monad Metropolis hackathon campaign for RetroPick. Primary track: **Onchain Finance & Trading**
 (network: Monad Testnet, chain 10143). Deadline: **2026-10-14 10:59 GMT+7** (user-reported;
 verified requirements doc records 2026-10-13 23:59 ET — treat that as the conservative stop).
