@@ -1,19 +1,33 @@
-# Sponsor Qualification — Final Matrix (2026-10-11, staging era)
+# Sponsor Qualification — Final Ledger (2026-10-12)
 
-Judged against actual sponsor requirements; `QUALIFIED` requires sponsor-specific proof.
+Gates: **A** official SDK/network/source · **B** builds + unit tests · **C** threat model + negative
+cases · **D** real integration / receipt · **E** sponsor-specific product + eligibility. `QUALIFIED_A_E`
+only when ALL five hold with real evidence. Main SHA `b5a124f`. Staging deploy SHA `98608fa`.
+Network Monad Testnet 10143. `apps/web` zero-write across the whole campaign (0 commits since `a58f772`).
 
-| Sponsor | Integration | Staging | Security | E2E | Verdict | Ref | Remaining blocker |
+| Sponsor | A | B | C | D | E | Verdict | Evidence / blocker |
 |---|---|---|---|---|---|---|---|
-| Kuru Consumer | live in product | **live on staging URL** | identity-qualified reads; bigint; policy fail-closed | 12/12 public-URL green + onchain read-only revalidation | **QUALIFIED** (staging-backed) | PR #10 | none for staging; judge demo benefits from reseeded book liquidity |
-| Kuru New Assets | kernels qualified, not deployed | n/a | P0 gates PASS, zero drift | forge 210/0/1 | **DEFERRED** | PR #11 | operator authorization + funded wallet |
-| Mera | vault live (Earn→Vault) | mounts on staging; encrypted-at-rest proven | SDK-only crypto; no plaintext at rest; no spending authority | failure-states + tamper e2e; **full PRF ceremony needs a real passkey** | **CONDITIONAL** | PR #12 | operator's ~2-min manual PRF run on the staging domain |
-| Envio | radar core + service | not in staging (fail-closed) | server-only token (absent); bigint core | 8/8 unit | **BLOCKED_EXTERNAL** | PR #13 | ENVIO_API_TOKEN |
-| Chainlink CRE | workflow complete + typechecked | n/a (CLI-side) | read-only workflow, no secrets | typecheck only | **BLOCKED_EXTERNAL** | PR #14 | `cre login` → simulate |
-| MetaMask Agent | plugin + policy core | n/a (CLI-side) | fail-closed place/cancel; ownership checks; no key export | policy 8/8; manifest parsed by mm | **BLOCKED_EXTERNAL** | PR #15 | npm publish → install → wallet-signed order |
-| Aurora | capability check only | n/a | n/a | n/a | **BLOCKED_EXTERNAL (closed)** | PR #16 | no testnet route (mainnet out of scope) |
-| Nansen | local-signal risk factors only | risk info live via terminal | no Nansen-derived data displayed | n/a | **BLOCKED_EXTERNAL (closed)** | PR #16 | no API key + no testnet coverage |
+| **Kuru Consumer** | ✅ | ✅ | ✅ | ✅ | ✅ | **QUALIFIED_A_E** | Live graduated terminal on public staging: Kuru venue, honest empty book, real trade tx `0x93e0…5415` (Monad Explorer). SDK 43/43, terminal 14/14, staging 12/12. `sponsors/kuru/20261012/` |
+| **Chainlink CRE** | ✅ | ✅ | ✅ | ✅(sim) | ✅ | **SIMULATED (official PASS)** | `cre workflow simulate` PASS @ block 70100439, CLI v1.38.0 authed, Sourcify v2 exact_match, 3 negatives + determinism. No DON deployment claimed. `sponsors/chainlink-cre/` |
+| **Envio** | ✅ | ✅ | ✅ | ✅(local) | ⏳ | **RUNTIME_VERIFIED (local)** | Authenticated HyperSync 1.4.1 stream; lifecycle counts exact-match indexer; firstTradeTx reconciled to receipt; durable restart + reorg replay (22/22). Public `/api/radar/*` gated behind token rotation. `sponsors/envio/20261012/` |
+| **Mera** | ✅ | ✅ | ✅ | ✅(local sig) | ⏳ | **TESTED_LOCAL** | passkey→secp256k1→EVM address proven (6/6): deterministic address + local ECDSA recovery + viem sign. Protected Earn 4 honest modes (5/5). `transferCreatorFeeRecipient` prepare-only. Real browser ceremony + broadcast = operator. `20261012-mera-signer.md` |
+| **MetaMask Agent** | ✅ | ✅ | ✅ | ⛔ | ⏳ | **TESTED_LOCAL (install BLOCKED_EXTERNAL)** | policy 10/10, signer-ownership fail-closed, live verification; manifest + wallet-submit cap parse on consent screen. CLI 6.2.1 BLOCKER-005 (local path/tarball → github.com// → E404). Needs npm publish / git URL + provision (operator packet). `20261012-metamask-agent.md` |
+| **Aurora Intents** | ⛔ | — | — | — | — | **BLOCKED_EXTERNAL** | No source→Monad Testnet route (mainnet only, out of scope). No mock. `sponsors/aurora/` |
+| **Nansen** | ⛔ | — | — | — | — | **BLOCKED_EXTERNAL** | No API entitlement / no testnet coverage. Own labelled local signals only; no fabricated data. `sponsors/nansen/` |
+| **Kuru New Assets (P0)** | ✅ | ✅(local) | ✅ | ⛔ | — | **DEFERRED_AUTHORIZATION** | kernels locally qualified; deployment/liquidity needs funded-wallet operator go (HARD GATE). `execution/stages/P0_*.md` |
+| Pinata (infra) | ✅ | ✅ | ✅ | ⏳ | — | **DEFERRED** | local media verified; disclosed JWT unused; activation needs rotation + isolated upload test. `20261012-closures.md` |
 
-Primary-track posture: RetroPick bond-to-book trading is publicly demonstrable on
-Monad Testnet with real indexed data, on-chain-qualified orderbook access and honest
-market states; the originality lane (event-backed outcome assets) stays research-gated
-pending the Stage-7 authorization.
+Legend: ✅ met · ⏳ gated on an operator action (not a code gap) · ⛔ externally blocked.
+
+## What a judge can independently verify right now
+- Public staging launchpad with **real Monad Testnet data**: https://retropick-metropolis-retro-ui-stagi.vercel.app
+- Live graduated token terminal with a real Kuru trade linking to Monad Explorer.
+- Honest unavailable/empty states (no fabricated liquidity, no demo data in live mode).
+- CRE official-simulation evidence (deterministic, reproducible).
+
+## Honest limitations
+- Envio public radar + Mera on-chain signing + MetaMask live order await operator credential
+  rotation / provisioning (all code + local proof complete).
+- Aurora/Nansen have no supported Monad Testnet capability.
+- Staging rides a Cloudflare quick tunnel (auto-recovers on rotation ~40 s); durable ingress is the
+  Contabo proposal, pending operator unlock.

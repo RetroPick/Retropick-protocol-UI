@@ -32,3 +32,16 @@ Deadline: **14 October 2026, 03:59 UTC / 10:59 Bangkok**. Submit early. [Verifie
 - [ ] METROPOLIS_SUBMISSION_FREEZE entered after confirmed filing.
 
 Current package remains a draft. An authenticated session and completed documentation do not establish a filed entry. Do not mark these checkboxes from intent alone.
+
+
+## 2026-10-12 status snapshot (agent)
+
+- Repository release SHA (candidate): `b5a124f` (== origin/main). Deployed staging frontend SHA:
+  `98608fa`. These stay separate per the checklist. A release tag is NOT yet created (gated).
+- Release candidate + judge path: `docs/metropolis/execution/HACKATHON-RELEASE-CANDIDATE.md`.
+- Sponsor A–E ledger: `docs/metropolis/execution/SPONSOR-QUALIFICATION-FINAL.md`.
+- Operator queue (value-ordered): `docs/metropolis/execution/OPERATOR-ACTIONS.md`.
+- `apps/web` zero-write confirmed (0 commits since `a58f772`); tracked-tree secret scan clean.
+- Still unchecked by design: founder-pitch video, exact release/bytecode SHA pinning + tag, final
+  portal draft review, **founder approval**, filing, freeze. The agent does not file or tag without
+  explicit founder authorization.
