@@ -1,64 +1,38 @@
-// Durable state for the Envio radar: an append-only JSONL journal of processed event
-// identities + an atomically-replaced snapshot of the aggregation cursor/state.
+// Durable state for the Envio radar (schema v3).
 //
-// Durability contract (operator-corrected — this is NOT a database, and does not pretend
-// to be WAL-safe):
-//   * The journal is append-only; each line is a self-describing record with a checksum
-//     guard (length prefix). A torn FINAL line (interrupted write) is detected and
-//     skipped on load — the event is then re-delivered by replay from the snapshot
-//     cursor and re-ingested idempotently by the aggregator.
-//   * The snapshot is written tmp+rename (atomic on POSIX) and fsync'd. It contains the
-//     resume cursor + block identity + full aggregator state + schema version +
-//     deployment identity + chain id, so restart resumes EXACTLY where it left off.
-//   * Reorg safety: we record the block hash with the cursor. On resume, if the chain's
-//     hash for the cursor block no longer matches (deep reorg), we fall back to the
-//     last checkpoint whose block hash still matches the chain; events after it are
-//     replayed (the aggregator's event-id set is restored from the snapshot, and
-//     re-delivered events carry the same ids — for a true reorg the new events at the
-//     same (block, logIndex, tx) slots replace old effects only if ids match, which we
-//     conservatively treat by REPLAYING with a cleared id-set from the safe checkpoint;
-//     see checkpointAt()).
-import { existsSync, mkdirSync, openSync, readFileSync, renameSync, writeFileSync, fsyncSync, closeSync, statSync, truncateSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+//   journal.jsonl  append-only, one FULL replayable decoded event per line (bigints tagged),
+//                  fsync'd before the aggregate is advanced. It is the source of truth.
+//   state.json     snapshot written tmp+fsync+rename AFTER the journal append. It is a cache:
+//                  {cursor, journalCount (events folded into the aggregate), canonical block-hash
+//                  ring, aggregator state, identity}. Losing/corrupting it only costs a rebuild.
+//
+// Invariant: the aggregate = fold(journal[0 .. journalCount)), and every journaled event belongs
+// to a block whose hash is recorded in the ring (or older than the ring and previously verified).
+// On a reorg at fork block F the journal is atomically rewritten to events with block < F and the
+// aggregate is REBUILT from it — the previous snapshot aggregate is never reused across a fork.
+import { existsSync, mkdirSync, openSync, readFileSync, renameSync, writeFileSync, fsyncSync, closeSync, truncateSync, rmSync } from 'node:fs';
+import { join } from 'node:path';
+import type { RadarEvent } from './radar.ts';
 
-export const STATE_SCHEMA_VERSION = 2;
+export const STATE_SCHEMA_VERSION = 3;
+export const HASH_RING_SIZE = 512;
 
-export interface JournalRecord {
-  /** `${blockNumber}:${logIndex}:${txHash}` — the aggregator's idempotence key. */
-  id: string;
-  blockNumber: number;
-  blockHash: string;
-  name: string;
-  /** epoch-ms when this record was journaled */
-  ts: number;
-}
+export interface JournalEvent extends RadarEvent { id: string; blockHash: string }
 
-export interface Checkpoint {
-  /** Next block to stream from on resume (exclusive cursor). */
-  cursorBlock: number;
-  /** Chain identity of the block JUST BEFORE the cursor — verified on resume. */
-  anchorBlock: number;
-  anchorBlockHash: string;
-  /** epoch-ms of the checkpoint write */
-  ts: number;
-}
+export interface Identity { chainId: number; deployment: string; factory: string; fromBlock: number }
 
 export interface SnapshotState {
   schemaVersion: number;
-  chainId: number;
-  deployment: string;
-  checkpoint: Checkpoint;
-  /** Aggregator state (opaque here; restored by the caller). */
+  identity: Identity;
+  /** Next block to stream from (HyperSync nextBlock). */
+  cursorBlock: number;
+  /** Number of journal lines folded into `aggregator`. */
+  journalCount: number;
+  /** Recent canonical [block, hash] pairs, ascending by block. */
+  ring: Array<[number, string]>;
   aggregator: unknown;
-  /** Counters kept alongside the state. */
-  counters: { journalLines: number; decodeErrors: number; replays: number };
-}
-
-export interface LoadResult {
-  snapshot: SnapshotState | null;
-  journalIds: Set<string>;
-  /** Journal integrity report. */
-  journal: { lines: number; tornTail: boolean; skipped: number };
+  counters: { decodeErrors: number; reorgs: number; rebuilds: number; removedLogs: number; foreignLogs: number };
+  ts: number;
 }
 
 const SNAPSHOT = 'state.json';
@@ -66,106 +40,108 @@ const JOURNAL = 'journal.jsonl';
 
 function ensureDir(dir: string): void { if (!existsSync(dir)) mkdirSync(dir, { recursive: true }); }
 
-/** Atomic snapshot write: tmp file + fsync + rename (POSIX-atomic). */
+/** bigint-preserving JSON: bigints are tagged so replay restores exact integers. */
+export const encode = (v: unknown) => JSON.stringify(v, (_, x) => (typeof x === 'bigint' ? { $bigint: x.toString() } : x));
+export const decode = <T>(s: string): T => JSON.parse(s, (_, x) => (x && typeof x === 'object' && typeof x.$bigint === 'string' && Object.keys(x).length === 1 ? BigInt(x.$bigint) : x)) as T;
+
+function atomicWrite(path: string, text: string): void {
+  const tmp = `${path}.tmp`;
+  const fd = openSync(tmp, 'w');
+  try { writeFileSync(fd, text); fsyncSync(fd); } finally { closeSync(fd); }
+  renameSync(tmp, path);
+}
+
 export function writeSnapshot(dir: string, state: SnapshotState): void {
   ensureDir(dir);
-  const tmp = join(dir, `.${SNAPSHOT}.tmp`);
-  const fd = openSync(tmp, 'w');
-  try {
-    // bigint-safe: persisted aggregator state carries bigint market fields.
-    writeFileSync(fd, JSON.stringify(state, (_, v) => (typeof v === 'bigint' ? v.toString() : v)) + '\n');
-    fsyncSync(fd);
-  } finally { closeSync(fd); }
-  renameSync(tmp, join(dir, SNAPSHOT));
+  atomicWrite(join(dir, SNAPSHOT), encode(state) + '\n');
 }
+
+export type SnapshotLoad = { snapshot: SnapshotState | null; reason: 'ok' | 'missing' | 'corrupt' | 'schema' };
+export function loadSnapshot(dir: string): SnapshotLoad {
+  const p = join(dir, SNAPSHOT);
+  if (!existsSync(p)) return { snapshot: null, reason: 'missing' };
+  try {
+    const s = decode<SnapshotState>(readFileSync(p, 'utf8'));
+    if (s.schemaVersion !== STATE_SCHEMA_VERSION) return { snapshot: null, reason: 'schema' };
+    return { snapshot: s, reason: 'ok' };
+  } catch { return { snapshot: null, reason: 'corrupt' }; }
+}
+
+export interface JournalLoad { events: JournalEvent[]; tornTail: boolean; corruptLines: number }
 
 /**
- * Load durable state. Journal lines are `JSON\n`; a torn tail (no trailing newline or
- * unparseable final line) is reported and ignored — replay will re-deliver that event.
+ * Read the journal. A torn FINAL line (crash mid-append) is truncated away on disk; a corrupt
+ * line in the MIDDLE is a hard error (the journal is no longer a trustworthy source of truth).
  */
-export function loadState(dir: string): LoadResult {
-  const snapshotPath = join(dir, SNAPSHOT);
-  const journalPath = join(dir, JOURNAL);
-  let snapshot: SnapshotState | null = null;
-  if (existsSync(snapshotPath)) {
+export function readJournal(dir: string, repair = true): JournalLoad {
+  const p = join(dir, JOURNAL);
+  if (!existsSync(p)) return { events: [], tornTail: false, corruptLines: 0 };
+  const raw = readFileSync(p, 'utf8');
+  const lines = raw.split('\n');
+  const events: JournalEvent[] = [];
+  let good = 0, tornTail = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const last = i === lines.length - 1;
+    if (last && line === '') break;
     try {
-      const parsed = JSON.parse(readFileSync(snapshotPath, 'utf8')) as SnapshotState;
-      if (parsed.schemaVersion === STATE_SCHEMA_VERSION) snapshot = parsed;
-    } catch { /* corrupt snapshot → full replay from genesis cursor */ }
-  }
-  const journalIds = new Set<string>();
-  let lines = 0, skipped = 0, tornTail = false;
-  if (existsSync(journalPath)) {
-    const raw = readFileSync(journalPath, 'utf8');
-    const rows = raw.split('\n');
-    // A well-formed journal ends with a newline. A missing final newline means the last
-    // row may be torn: attempt to parse it — failure marks tornTail and skips it
-    // (replay re-delivers that event idempotently).
-    const hasFinalNewline = raw.endsWith('\n');
-    const complete = hasFinalNewline ? rows.slice(0, -1) : rows.slice(0, -1);
-    const partial = hasFinalNewline ? null : rows[rows.length - 1] ?? null;
-    for (const line of complete) {
-      try {
-        const rec = JSON.parse(line) as JournalRecord;
-        if (typeof rec.id !== 'string') throw new Error('bad id');
-        journalIds.add(rec.id);
-        lines++;
-      } catch { skipped++; }
-    }
-    if (partial !== null && partial !== '') {
-      try {
-        const rec = JSON.parse(partial) as JournalRecord;
-        if (typeof rec.id !== 'string') throw new Error('bad id');
-        journalIds.add(rec.id);
-        lines++;
-      } catch { tornTail = true; skipped++; }
+      const e = decode<JournalEvent>(line);
+      if (typeof e.id !== 'string' || typeof e.blockNumber !== 'number') throw new Error('shape');
+      if (last) throw new Error('unterminated'); // a complete record always ends with \n
+      events.push(e); good += Buffer.byteLength(line) + 1;
+    } catch {
+      if (last) { tornTail = true; break; }
+      throw new Error(`radar journal corrupt at line ${i + 1}; refusing to rebuild from it (move ${p} aside to force a full replay)`);
     }
   }
-  return { snapshot, journalIds, journal: { lines, tornTail, skipped: skipped - (tornTail ? 1 : 0) } };
+  if (tornTail && repair) truncateSync(p, good);
+  return { events, tornTail, corruptLines: 0 };
 }
 
-/** Append journal records (one JSON line each) + fsync. */
-export function appendJournal(dir: string, records: JournalRecord[]): void {
-  if (!records.length) return;
+export function appendJournal(dir: string, events: JournalEvent[]): void {
+  if (!events.length) return;
   ensureDir(dir);
   const fd = openSync(join(dir, JOURNAL), 'a');
-  try {
-    for (const r of records) writeFileSync(fd, JSON.stringify(r) + '\n');
-    fsyncSync(fd);
-  } finally { closeSync(fd); }
+  try { writeFileSync(fd, events.map((e) => encode(e) + '\n').join('')); fsyncSync(fd); } finally { closeSync(fd); }
 }
+
+/** Atomically replace the journal (reorg truncation). */
+export function rewriteJournal(dir: string, events: JournalEvent[]): void {
+  ensureDir(dir);
+  atomicWrite(join(dir, JOURNAL), events.map((e) => encode(e) + '\n').join(''));
+}
+
+export function resetState(dir: string): void {
+  for (const f of [SNAPSHOT, JOURNAL]) rmSync(join(dir, f), { force: true });
+}
+
+/** Ring helpers: ascending, bounded, last-write-wins per block. */
+export function ringPut(ring: Array<[number, string]>, block: number, hash: string): Array<[number, string]> {
+  const next = ring.filter(([b]) => b !== block);
+  next.push([block, hash.toLowerCase()]);
+  next.sort((a, b) => a[0] - b[0]);
+  return next.slice(-HASH_RING_SIZE);
+}
+export const ringGet = (ring: Array<[number, string]>, block: number) => ring.find(([b]) => b === block)?.[1] ?? null;
 
 /**
- * Reorg-aware resume point: given the loaded snapshot and a verifier that returns the
- * CURRENT chain hash for a block (or null when unavailable/pruned), walk back over the
- * journal's recent checkpoints to the newest block whose hash still matches the chain.
- * Returns the safe checkpoint to resume from and, when a reorg is detected, a cleared
- * journal-id set is NOT needed because the aggregator treats re-delivered ids as
- * duplicates — instead we return `reorged: true` and the caller replays from the safe
- * anchor with a fresh aggregator state seeded by the snapshot AT that anchor. In this
- * implementation the snapshot is the only aggregate source, so a reorg forces full
- * replay from the last snapshot whose anchor still matches (conservative by design).
+ * Find the fork point: the newest ring entry whose hash still matches the canonical chain.
+ * Returns the first block that must be re-read (matchedBlock + 1), or null when no ring entry
+ * matches (fork deeper than the ring → caller must rebuild from the deployment block).
+ * `verify` returns the canonical hash, or null when unavailable (treated as "cannot confirm").
  */
-export function resolveResume(
-  snapshot: SnapshotState | null,
-  verifyBlockHash: (block: number) => Promise<string | null>,
-  fallbackFromBlock: number,
-): Promise<{ fromBlock: number; reorged: boolean; anchor: Checkpoint | null }> {
-  return (async () => {
-    if (!snapshot) return { fromBlock: fallbackFromBlock, reorged: false, anchor: null };
-    const hash = await verifyBlockHash(snapshot.checkpoint.anchorBlock);
-    if (hash && hash.toLowerCase() === snapshot.checkpoint.anchorBlockHash.toLowerCase()) {
-      return { fromBlock: snapshot.checkpoint.cursorBlock, reorged: false, anchor: snapshot.checkpoint };
-    }
-    // Deep reorg (or pruned verifier): conservative full replay.
-    return { fromBlock: fallbackFromBlock, reorged: true, anchor: null };
-  })();
+export async function findForkBlock(ring: Array<[number, string]>, verify: (block: number) => Promise<string | null>): Promise<{ forkBlock: number | null; checked: number; unverifiable: boolean }> {
+  let checked = 0;
+  for (let i = ring.length - 1; i >= 0; i--) {
+    const [block, hash] = ring[i];
+    const canonical = await verify(block);
+    checked++;
+    if (canonical === null) return { forkBlock: null, checked, unverifiable: true };
+    if (canonical.toLowerCase() === hash) return { forkBlock: block + 1, checked, unverifiable: false };
+  }
+  return { forkBlock: null, checked, unverifiable: false };
 }
 
-/** Test helper: simulate a torn final write by truncating the last N bytes. */
-export function simulateTornTail(dir: string, bytes: number): void {
-  const p = join(dir, JOURNAL);
-  if (!existsSync(p)) return;
-  const size = statSync(p).size;
-  truncateSync(p, Math.max(0, size - bytes));
+export function sameIdentity(a: Identity, b: Identity): boolean {
+  return a.chainId === b.chainId && a.deployment === b.deployment && a.factory.toLowerCase() === b.factory.toLowerCase() && a.fromBlock === b.fromBlock;
 }

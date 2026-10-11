@@ -172,6 +172,17 @@
 .rp-about { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); background: var(--panel); padding: 14px 16px }
 .rp-about h2 { font-size: 14px; margin: 0 0 6px }
 .rp-about p { margin: 0; color: var(--text-2); font-size: 13.5px; max-width: 80ch }
+.rp-radar { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); background: var(--panel); padding: 14px 16px; margin-top: 12px }
+.rp-radar h2 { font-size: 14px; margin: 0 0 10px; display: flex; align-items: center; gap: 7px }
+.rp-radar-src { font-size: 10.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); border: 1px solid var(--border-soft); border-radius: 999px; padding: 1px 8px; margin-left: auto }
+.rp-radar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; margin: 0 }
+.rp-radar-grid > div { display: flex; flex-direction: column; gap: 2px }
+.rp-radar-grid dt { font-size: 11.5px; color: var(--text-3) }
+.rp-radar-grid dd { margin: 0; font-size: 14px; font-variant-numeric: tabular-nums; color: var(--text-1) }
+.rp-radar-grid .rp-unit { font-size: 11px; color: var(--text-3) }
+.rp-radar-proof { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; font-size: 11.5px; color: var(--text-3) }
+.rp-radar-proof span { display: inline-flex; align-items: center; gap: 5px }
+@media (max-width: 560px) { .rp-radar-grid { grid-template-columns: 1fr } }
 .rp-socials { display: flex; gap: 6px; list-style: none; padding: 0; margin: 10px 0 0 }
 .rp-socials a { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border-soft); color: var(--text-2) }
 .rp-socials a:hover { color: var(--accent); border-color: var(--accent) }

@@ -19,3 +19,13 @@ export const RPC_FALLBACK_URL = (import.meta.env.VITE_MONAD_RPC_FALLBACK_URL as 
   ?? (RPC_URL === PUBLIC_RPC_URL ? null : PUBLIC_RPC_URL);
 
 export const CHAIN_ID = 10143;
+
+/**
+ * Envio Market Quality Radar base URL. Default same-origin (`/api/radar`), served through
+ * the staging gateway only when STAGING_GATEWAY_RADAR=1 (off until the Envio token is
+ * rotated). Null disables the panel entirely. Never carries the ENVIO_API_TOKEN — the
+ * token lives only in the backend radar process.
+ */
+export const RADAR_URL = DATA_MODE === 'live'
+  ? ((import.meta.env.VITE_ENVIO_RADAR_URL as string | undefined)?.replace(/\/$/, '') ?? '/api/radar')
+  : null;
