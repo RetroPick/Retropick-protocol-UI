@@ -1,61 +1,77 @@
 # Staging Runbook
 
-## Cold start (host boot / after sleep) — ~3 minutes
+Updated 2026-10-12 (live-data recovery, `integration/stages/20261012-live-data-recovery.md`).
+The backend now runs as **systemd --user units** (user lingering enabled) instead of
+pidfile-managed processes, and the browser reads the indexer **same-origin**.
 
-```bash
-cd /home/ubuntu/project/retropick/retropick-protocol
-
-# 1. Start the backend stack + a fresh quick tunnel (prints the tunnel URL)
-node scripts/staging/start-backend.mjs --origin https://retropick-metropolis-retro-ui-stagi.vercel.app
-
-# 2. If the tunnel URL CHANGED (it will, on every restart — quick tunnels rotate):
-node scripts/staging/deploy-vercel.mjs
-#    (updates VITE_INDEXER_URL, re-renders the gitignored root vercel.json, redeploys)
-#    NOTE: deploy-vercel.mjs sets env via upsert; if VITE_INDEXER_URL already exists it
-#    prints "leaving unchanged" — in that case rotate manually:
-#      vercel env rm VITE_INDEXER_URL production --yes
-#      echo "$(cat .staging/tunnel-url)" | vercel env add VITE_INDEXER_URL production
-#    then redeploy: vercel deploy --prod --yes
-
-# 3. Verify
-curl -s "$(cat .staging/tunnel-url)/health" | head -c 200          # indexer freshness
-curl -s -o /dev/null -w '%{http_code}\n' https://retropick-metropolis-retro-ui-stagi.vercel.app/launchpad
-cd apps/retro-ui && STAGING_URL=https://retropick-metropolis-retro-ui-stagi.vercel.app \
-  pnpm exec playwright test --config e2e/staging.config.ts
+```text
+browser ──► https://retropick-metropolis-retro-ui-stagi.vercel.app
+              /v1/*, /health, /api/referrals/*, /api/media/*  (Vercel rewrites → current quick tunnel)
+              everything else → SPA index.html
+quick tunnel (retropick-tunnel) ──► gateway :8799 (allowlist) ──► indexer :8787 · referral :8788 · media :8790
 ```
 
-## Daily checks
-
-- Indexer lag: `curl -s "$(cat .staging/tunnel-url)/health"` — `lagBlocks` should stay
-  < 64 (the client's STALE_LAG_BLOCKS); it syncs continuously.
-- Referral/media rewrites: `/api/referrals/health` + `/api/media/health` on the staging
-  domain → 200.
-- Services alive: `.staging/*.pid` process groups (`ps -g $(cat .staging/indexer.pid)`).
-
-## Stop everything
+## Status / daily checks
 
 ```bash
-node scripts/staging/stop-backend.mjs   # kills process groups incl. tunnel
+systemctl --user list-units 'retropick*' --all --no-pager
+curl -s https://retropick-metropolis-retro-ui-stagi.vercel.app/health | grep -o '"lagBlocks":[0-9]*'   # < 64
+curl -s -o /dev/null -w '%{http_code}\n' https://retropick-metropolis-retro-ui-stagi.vercel.app/api/referrals/health
+curl -s -o /dev/null -w '%{http_code}\n' https://retropick-metropolis-retro-ui-stagi.vercel.app/api/media/health
+grep tunnel-runner .staging/tunnel.log | tail -5     # rotation + auto-redeploy history
+cat .staging/staging-deploy.json                    # current deployment, source SHA, tunnel
 ```
+
+## Install / reinstall units (idempotent, no sudo)
+
+```bash
+node scripts/staging/install-user-units.mjs --dry-run    # print units
+node scripts/staging/install-user-units.mjs              # write + enable (needs Linger=yes)
+systemctl --user start retropick-staging.target
+```
+
+## Tunnel rotation (automatic)
+
+`retropick-tunnel` runs `scripts/staging/tunnel-runner.mjs`: when cloudflared restarts and the
+hostname rotates, it writes `.staging/tunnel-url`, waits for edge `/health`, and runs
+`deploy-vercel.mjs` at the **same source SHA** as the last deploy (rewrites-only change; the
+bundle is unchanged — it never embeds the tunnel hostname). Measured recovery after a
+cloudflared kill: ~40 s. The quick tunnel itself remains non-durable (no uptime guarantee).
+
+## Frontend release (code change)
+
+```bash
+git fetch origin
+node scripts/staging/deploy-vercel.mjs --sha <reviewed-sha>   # clean /tmp worktree at that SHA
+```
+
+Never deploy the dirty dev checkout. Env (`VITE_DATA_MODE=live`,
+`VITE_INDEXER_URL=<canonical origin>`, `VITE_MONAD_RPC_FALLBACK_URL`) is written only when the
+value changes (`.staging/vercel-env.json`), via `vercel env add … --value … --force --non-interactive`.
+
+## Restart / stop
+
+```bash
+systemctl --user restart retropick-indexer          # single service
+systemctl --user stop retropick-staging.target      # everything (journals/media are preserved)
+```
+
+`start-backend.mjs` / `stop-backend.mjs` are the legacy non-durable path — do not run them
+while units are active (port collisions).
+
+## Rollback
+
+- Frontend: `vercel promote <previous-deployment-url>` on the staging project only
+  (pre-recovery deployment: `retropick-metropolis-retro-ui-staging-4c5oiug6a-…`).
+- Backend: `systemctl --user stop retropick-staging.target && node scripts/staging/install-user-units.mjs --uninstall`,
+  then the legacy `start-backend.mjs` path.
+- Data: WAL-safe backups in `.data/backups/20261012/` (`SHA256SUMS`).
 
 ## Known operational facts
 
-- Quick-tunnel URL is NON-DURABLE: rotates every tunnel restart; host sleep/WSL restart
-  tears it down. The frontend keeps serving the old build (stale indexer banner appears
-  once the tunnel dies) — run the cold start to restore.
-- The pidfiles record the detached process GROUP leader; stop-backend kills `-pgid` so
-  the node children die too (fixed after the orphan-process incident of 2026-10-11).
-- Public RPC occasionally rejects the heavy `getL2Book` browser call → the depth panel
-  shows its designed unavailable-state; order placement revalidates on-chain regardless.
-- The evidenced Kuru market's resting book is currently empty (campaign orders consumed);
-  the depth panel shows the designed "No resting orders" state. Placing live orders
-  requires the separately-authorized wallet flow.
-- WSL2 systemd is degraded — services run as detached process groups, not units; a
-  named tunnel + systemd unit (or a small VPS) is the durability upgrade path.
-
-## Redeploy frontend only (code change)
-
-```bash
-git push … # merge to main, then on the host:
-vercel deploy --prod --yes    # root vercel.json must be current (tunnel) — else run deploy-vercel.mjs
-```
+- Services survive the agent/terminal session (owned by `user@1000.service`, lingering).
+  They do NOT survive the WSL VM stopping (`wsl --shutdown`, Windows sleep/reboot); on WSL boot
+  the enabled target starts them again, the tunnel rotates and auto-redeploys.
+- Public RPC occasionally rejects the heavy `getL2Book` browser call → designed unavailable state.
+- The evidenced Kuru market's resting book may be empty — the UI shows "No resting orders".
+- Durable upgrade path: named tunnel / Contabo isolated stack (`integration/stages/20261012-vps-durability.md`).

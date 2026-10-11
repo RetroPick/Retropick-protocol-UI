@@ -15,6 +15,9 @@ test('resolveMediaSrc maps onchain logo URIs to browser-loadable URLs',()=>{
   assert.equal(resolveMediaSrc('ftp://example.com/x'),null);
   assert.equal(resolveMediaSrc('data:image/png;base64,AAAA'),null);
   assert.equal(resolveMediaSrc('not a uri'),null);
+  const h='4121ffd23a8aaf5f09a457969ad191320a3b4eb6079199837347df571eade19b';
+  assert.equal(resolveMediaSrc(`https://old-rotated-name.trycloudflare.com/api/media/${h}.webp`),`/api/media/${h}.webp`); // Rotated quick-tunnel media → same-origin.
+  assert.equal(resolveMediaSrc('https://evil.trycloudflare.com/other/x.png'),'https://evil.trycloudflare.com/other/x.png'); // Only content-addressed media paths are rewritten.
 });
 
 test('ipfs gateway candidates retry once on the fallback gateway',()=>{

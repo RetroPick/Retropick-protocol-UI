@@ -8,7 +8,7 @@ import { fetchPairs } from '@/lib/live/indexer-client';
 import { useLiveLaunches } from '@/hooks/use-live-launches';
 import { useSearchParams, useRouter } from '@/lib/next-compat';
 import { prefetchLaunch, launchKeys } from '@/lib/live/queries';
-import { DemoBadge, FreshnessIndicator } from '@/components/trading/primitives';
+import { DemoBadge, ErrorState, FreshnessIndicator } from '@/components/trading/primitives';
 import { LIFECYCLE_FILTERS, demoRows, filterDemoRows, liveRow, type LifecycleFilter } from '@/lib/view-models/discovery';
 import { DEMO_NOW_MS } from '@/lib/view-models/demo-terminal-fixtures';
 import { DiscoveryControls, LaunchTable } from './launch-table';
@@ -37,17 +37,23 @@ function LiveDiscovery() {
   const filter = parseFilter(params.get('filter'));
   const query = { sort: filter === 'new' ? 'new' : 'marketCap', phase: ['active', 'near-graduation', 'graduated'].includes(filter) ? filter : undefined, quote: params.get('quote') ?? undefined, cursor: params.get('cursor') ?? undefined };
   const feed = useLiveLaunches(true, query);
-  const pairs = useQuery({ queryKey: [...launchKeys.all, 'pairs'], queryFn: ({ signal }) => fetchPairs(INDEXER_URL!, signal), staleTime: 10000 });
+  // Pair list is decorative: a failure here only empties the dropdown, never the feed.
+  const pairs = useQuery({ queryKey: [...launchKeys.all, 'pairs'], queryFn: ({ signal }) => fetchPairs(INDEXER_URL!, signal), staleTime: 10000, retry: 1 });
   const rows = useMemo(() => feed.launches.map(liveRow), [feed.launches]);
   return <div className="rp-disc" data-testid="discovery" data-data-mode="live">
     <Heading subtitle="Live token markets on Monad Testnet. Values are in each launch's quote asset."/>
     <DiscoveryControls filter={filter} onFilter={(f) => set('filter', f === 'marketCap' ? '' : f)} pairs={(pairs.data?.data ?? []).map((p) => ({ value: p.quoteAsset, label: p.symbol }))} pair={query.quote ?? ''} onPair={(p) => set('quote', p)} view={view} onView={setView}/>
     {filter === 'near-graduation' && <p className="rp-note">Active curves at or above 80% graduation progress.</p>}
-    {feed.status === 'loading' && !rows.length ? <p className="rp-note" role="status">Loading indexed launches…</p>
-      : <LaunchTable rows={rows} view={view} now={Date.now()} onHover={(r) => void prefetchLaunch(r.id)} empty={feed.error ?? undefined}/>}
+    {feed.status === 'unavailable' && feed.failure
+      ? <div data-testid="indexer-unavailable" data-failure-kind={feed.failure.kind}><ErrorState title={feed.failure.title} text={feed.failure.text} onRetry={() => void feed.reload()}/></div>
+      : feed.status === 'loading' && !rows.length ? <p className="rp-note" role="status">Loading indexed launches…</p>
+      : <>
+        {feed.status === 'stale' && feed.failure && <p className="rp-note" role="status" data-testid="indexer-refresh-failed">Latest refresh failed ({feed.failure.title.toLowerCase()}); showing the last indexed page.</p>}
+        <LaunchTable rows={rows} view={view} now={Date.now()} onHover={(r) => void prefetchLaunch(r.id)}/>
+      </>}
     <div className="rp-disc-foot">
       <FreshnessIndicator freshness={feed.freshness ? { indexedBlock: String(feed.freshness.indexedBlock), lagBlocks: feed.freshness.lagBlocks, stale: feed.status === 'stale' } : null}/>
-      <span>{rows.length} launches on this page{feed.nextCursor ? ' · more on the next page' : ''}{!query.quote && filter !== 'new' ? ' · ranked within each quote asset' : ''}</span>
+      <span>{feed.status === 'unavailable' ? 'Launch data unavailable' : `${rows.length} launches on this page`}{feed.nextCursor ? ' · more on the next page' : ''}{!query.quote && filter !== 'new' ? ' · ranked within each quote asset' : ''}</span>
       <span>
         <button className="rp-btn rp-btn-ghost rp-btn-sm" onClick={() => void feed.reload()}>Refresh</button>{' '}
         {query.cursor && <button className="rp-btn rp-btn-ghost rp-btn-sm" onClick={() => set('cursor', '')}>First page</button>}{' '}

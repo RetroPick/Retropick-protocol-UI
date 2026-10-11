@@ -5,6 +5,14 @@
   "outputDirectory": "apps/retro-ui/dist",
   "rewrites": [
     {
+      "source": "/v1/:path*",
+      "destination": "TUNNEL_URL/v1/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "TUNNEL_URL/health"
+    },
+    {
       "source": "/api/referrals/:path*",
       "destination": "TUNNEL_URL/api/referrals/:path*"
     },

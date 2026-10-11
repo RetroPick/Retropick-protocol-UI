@@ -1,0 +1,15 @@
+{
+  "incident": "TUNNEL_UNREACHABLE",
+  "observedAt": "2026-10-11T18:20:00Z",
+  "rootCauseEvidence": {
+    "tunnelLog": "2026-10-11T12:54:01Z INF Initiating graceful shutdown due to signal terminated",
+    "deadHostname": "concerning-billing-unnecessary-poultry.trycloudflare.com (getaddrinfo ENOTFOUND)",
+    "pidfiles": "5/5 dead, no listeners on 8787/8788/8790/8799",
+    "agentShellCgroup": "0::/non-systemd"
+  },
+  "rpc": { "url": "https://testnet-rpc.monad.xyz", "eth_chainId": "0x279f", "eth_blockNumber": "0x42ee83c", "factory": "0xa7f18b9eceb0A9852b08408854A45D00fc682454", "eth_getCode": "non-empty", "owner()": "0x000000000000000000000000b505cbaab3acdf287af1366b9b1229404757913b" },
+  "deploy": { "project": "retropick-metropolis-retro-ui-staging", "sourceSha": "98608fa41de8b69e887da03dc204d60967309a93", "deployments": ["bet579b23 (manual)", "19tu0sna9 (auto, after tunnel kill)"], "rollbackRef": "4c5oiug6a", "bundleIndex": "index-DAG_0gX6.js", "bundleTunnelHostnames": 0 },
+  "publicChecks": { "/launchpad": 200, "/v1/launches": { "status": 200, "rows": 9, "chainId": 10143, "lagBlocks": 8 }, "/api/referrals/health": 200, "/api/media/health": 200, "referralChallengeCorrectOrigin": 200, "referralChallengeWrongOrigin": 403, "existingMediaFile": "200 image/webp" },
+  "playwright": { "staging": "12/12", "routedFailure": "8/8 (ROUTED FIXTURE)" },
+  "durability": { "indexerKill9": "restarted <=6s, NRestarts=1", "cloudflaredKill9": { "killed": "18:42:36Z", "newUrl": "18:42:52Z", "edgeOk": "18:42:56Z", "redeployDone": "18:43:16Z" } }
+}
