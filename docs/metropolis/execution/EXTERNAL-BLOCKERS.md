@@ -48,13 +48,20 @@ Format per mission §22. Never print credentials.
 - Can real E2E continue: NO (needs the token)
 - Next owner action: create the Envio token, set ENVIO_API_TOKEN, `npm install && npm start`
   in integrations/envio-market-radar, then wire the retro-ui consumption panel
-## BLOCKER-004 — Chainlink CRE account login (workflow simulation)
+## BLOCKER-004 — Chainlink CRE account login (workflow simulation) — RESOLVED 2026-10-11
+
+- Current status: **RESOLVED** — operator's `cre login` verified on the SAME host/user as
+  execution (Ubuntu-VPS-Clone/ubuntu, CLI v1.38.0); official `cre workflow simulate` ran
+  the graduation-safety workflow to PASS with real chain reads + Sourcify v2 external
+  input, plus three negative cases and determinism proof. See
+  `sponsors/chainlink-cre/simulation-results.json` (status SIMULATED; DON deployment
+  would still need `cre account access` — not requested).
 
 - Sponsor: Chainlink ("Best Workflow with CRE")
 - Required service: CRE platform auth (`cre login` interactive flow or `CRE_API_KEY`)
-- Credential/access: Chainlink CRE account — operator only
-- Environment variable: `CRE_API_KEY` (none set in this environment)
-- Current status: OPEN — verified: `cre workflow simulate` refuses to run unauthenticated
+- Credential/access: Chainlink CRE account — operator (login completed on this host)
+- Environment variable: `CRE_API_KEY` (unused; interactive session)
+- Current status: RESOLVED (see above) — historical: `cre workflow simulate` had refused to run unauthenticated
 - What was tested: CLI v1.38.0 installed via the official install script; workflow project
   hand-built per documented structure and typechecks clean against @chainlink/cre-sdk
   1.23.0; simulate + init both demand authentication
