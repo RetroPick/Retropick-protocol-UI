@@ -97,3 +97,8 @@ Choose stable HTTPS RP ID; agree recovery admin evidence standards/appeal policy
 - https://docs.ponsfamily.com/v2
 - https://docs.chain.link/cre/overview
 - https://docs.chain.link/cre/guides/operations/deploying-workflows
+
+
+---
+## 2026-10-11 Extension: Creator continuity is strongest when paired with passkey-controlled fee EOA
+NEW companion [14 Protected Earn](14-MERA-PROTECTED-EARN-WITHDRAWALS.md) and [integration README](../../integrations/mera-protected-earn/README.md). The first recovery spec protects **rights to future creator fees**; the second protects the actual **signing account used to claim those fees**. A passkey vault is not a withdrawal authorization verifier. Existing EOA cannot be locked by a browser toggle. Correct combined lifecycle: create/restorable Mera EVM signer → explicitly opt into beneficiary at launch or self-transfer with old beneficiary signature → accrue future FeeEscrow credits under that signer → passkey-authenticated signing session signs onchain `claim` for its own address → user optionally sends funds elsewhere in second signed operation. Historic credits remain under original wallet, as do its private EOA holdings and margin. Protocol owner timelock is separate recovery mechanism; no override by passkey. Future bank off-ramp only if provider/mainnet qualified, unavailable testnet. Proof source: exact Mera SDK signer 0.2.0 API, EVM tx receipt, same derived address on second supported device, no secret leakage. Never claim independent 2FA or smart-account enforced ON/OFF unless actual verified validation contract exists. Canonical UI apps/retro-ui; never apps/web.

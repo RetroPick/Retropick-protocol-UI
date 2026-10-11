@@ -63,3 +63,8 @@ Current graduation-safety workflow is read-only and should be qualified with cre
 **Output:** anchored deterministic statuses ALIGNED, UNVERIFIED, UNMATCHED, WAITING, EXECUTABLE, EXPIRED, REPLACED, CANCELLED, CONFIRMED, INCOMPLETE_EXTERNAL. No CRE-mediated admin call or fake authority. Actual creator-fee redirect requires protocol owner proposing onchain and anyone executing within 3-day post-delay window; no creator veto exists. Existing credit to old FeeEscrow beneficiary is not recoverable, and graduated Kuru revenue path is unqualified. Time travel via Foundry is not live completion.
 
 **Implementation:** independent sibling folder integrations/chainlink-cre/creator-continuity with SDK types discovered from the installed version; no modifications to current graduation-safety until its own simulation qualified. Unit and negative cases required: wrong recipient; stale/compromised external case; missing enrollment; cross-chain mismatch; owner cancel; replaced proposal; expired window; replay and chain reorg. Link to [full architecture](../../docs/metropolis/13-CREATOR-CONTINUITY-MERA-CRE.md) and https://docs.chain.link/cre/overview . THIS IS A DESIGN, NOT DELIVERED EXECUTION.
+
+
+---
+## Enforceable custody correction for Mera Protected Earn
+See [14](../../docs/metropolis/14-MERA-PROTECTED-EARN-WITHDRAWALS.md). CRE graduation and continuity workflows may publish independent checks on fee recipient/escrow/vest but **cannot** block legacy EOA direct FeeEscrow claim, Kuru withdraw, or MON transfer merely because RetroPick's UI "Require Passkey" flag is ON. Avoid claiming a CRE risk report is onchain authorization or new DApp vault. Show actual signer source and claim/account authority separately, label all CLI simulation distinct from live DON.

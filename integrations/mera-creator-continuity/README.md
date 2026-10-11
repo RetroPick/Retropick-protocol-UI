@@ -28,3 +28,8 @@ Investigate official Mera passkey EVM account support, create a reproducible pas
 - https://github.com/category-labs/mera (preview SDK; supported derived accounts + secret vaults)
 - https://github.com/category-labs/mera/tree/main/docs/src/content/docs/reference
 - https://docs.ponsfamily.com/v2 (parallel Pons administrative community takeover; not proof of code lineage)
+
+
+---
+## Protected Earn linkage and important security caveat
+See [Mera Protected Earn](../mera-protected-earn/README.md) and [full architecture](../../docs/metropolis/14-MERA-PROTECTED-EARN-WITHDRAWALS.md). Creator recovery is **fee recipient redirection**, NOT custody transfer of existing EOA funds or enforcement of Mera toggles on EOA. High-value preventive use case: validated separate Mera passkey-derived EVM fee recipient + opt-in on token creation/authorized self-transfer; FeeEscrow future `msg.sender` claims signed by that account. A fresh passkey WebAuthn proof can authenticate enrollment but cannot override Factory owner or recover an unlinked wallet. Old credits remain on old address. App-only confirmation must be labeled bypassable, future audited policy account not built. Future fiat off-ramp unsupported testnet.

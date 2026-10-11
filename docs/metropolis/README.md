@@ -28,3 +28,8 @@ repository; their content is superseded by the stage reports under `execution/st
 ---
 ### 2026-10-11 Creator Continuity / Mera / CRE architecture update
 **Start here for recovery:** [13 — Creator Continuity](13-CREATOR-CONTINUITY-MERA-CRE.md) and [Mera integration plan](../../integrations/mera-creator-continuity/README.md). A launched token has immutable deployer attribution; Factory V2 redirects **future creator fees** using owner-controlled 3-day override, not lost wallet, old escrow balances or ERC20 token ownership. apps/retro-ui is ONLY canonical frontend; older apps/web references in early sponsor guides are stale. /r/:code is referrals; token detail /launchpad/token/:address. CRE recovery watcher is PROPOSED, not implemented, and cannot approve/execute owner changes.
+
+
+---
+### Protected Earn — mandatory financial-security classification (2026-10-11)
+**Start here**: [14 — Mera Protected Earn/Withdrawals](14-MERA-PROTECTED-EARN-WITHDRAWALS.md) and [15 — copyable ZCode execution prompt](15-ZCODE-MERA-PROTECTED-EARN-EXECUTION-PROMPT.md), with [integrations/mera-protected-earn](../../integrations/mera-protected-earn/README.md). The desired Earn "Require Mera Passkey" ON/OFF is **only app-level** for an existing EOA; real enforcement requires a passkey-controlled signing wallet or verified smart-account validator. Mera strategy vault != wallet authorization. App-only check is bypassable from another wallet. Claims, margin withdrawals, direct wallet transfer and off-ramp are DISTINCT actions. Referral payout & testnet bank cashout are not implemented. Absolutely never modify apps/web; only apps/retro-ui.
