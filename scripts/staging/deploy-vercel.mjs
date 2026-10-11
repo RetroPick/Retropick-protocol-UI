@@ -88,9 +88,16 @@ async function main() {
   console.log(`tunnel: ${tunnelUrl}\norigin: ${ORIGIN}\nsource sha: ${sha}`);
   if (DRY) { console.log(vercelJson); return; }
 
-  // Clean, SHA-pinned worktree (never the dirty dev checkout).
+  // Clean, SHA-pinned worktree (never the dirty dev checkout). /tmp can be cleared between
+  // runs while git still has the worktree registered — prune stale registrations first and
+  // force re-add so tunnel-rotation redeploys never crash on a vanished worktree dir.
   const dir = `/tmp/retro-staging-release-${sha.slice(0, 12)}`;
-  if (!existsSync(dir)) sh('git', ['worktree', 'add', '--detach', dir, sha]);
+  try { sh('git', ['worktree', 'prune']); } catch { /* best effort */ }
+  if (existsSync(resolve(dir, '.git'))) { try { sh('git', ['-C', dir, 'checkout', '--detach', sha]); } catch { sh('git', ['worktree', 'remove', '--force', dir]); } }
+  if (!existsSync(resolve(dir, '.git'))) {
+    try { sh('git', ['worktree', 'add', '--detach', '--force', dir, sha]); }
+    catch { sh('git', ['worktree', 'remove', '--force', dir]); sh('git', ['worktree', 'prune']); sh('git', ['worktree', 'add', '--detach', '--force', dir, sha]); }
+  }
   if (sh('git', ['status', '--porcelain=v1', '--untracked-files=no'], { cwd: dir })) { console.error(`worktree ${dir} is dirty — refusing`); process.exit(1); }
   mkdirSync(resolve(dir, '.vercel'), { recursive: true });
   copyFileSync(resolve(repo, '.vercel/project.json'), resolve(dir, '.vercel/project.json'));
