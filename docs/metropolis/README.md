@@ -23,3 +23,8 @@ verified requirements doc records 2026-10-13 23:59 ET — treat that as the cons
 See `execution/INTEGRATION-STATUS.md` (updated after every stage). Historical per-sponsor
 ALLINONE planning documents (01–08) referenced by the mission prompt never existed in this
 repository; their content is superseded by the stage reports under `execution/stages/`.
+
+
+---
+### 2026-10-11 Creator Continuity / Mera / CRE architecture update
+**Start here for recovery:** [13 — Creator Continuity](13-CREATOR-CONTINUITY-MERA-CRE.md) and [Mera integration plan](../../integrations/mera-creator-continuity/README.md). A launched token has immutable deployer attribution; Factory V2 redirects **future creator fees** using owner-controlled 3-day override, not lost wallet, old escrow balances or ERC20 token ownership. apps/retro-ui is ONLY canonical frontend; older apps/web references in early sponsor guides are stale. /r/:code is referrals; token detail /launchpad/token/:address. CRE recovery watcher is PROPOSED, not implemented, and cannot approve/execute owner changes.
