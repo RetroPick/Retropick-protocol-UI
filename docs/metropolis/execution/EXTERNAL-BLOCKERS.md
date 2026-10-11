@@ -2,20 +2,16 @@
 
 Format per mission §22. Never print credentials.
 
-## BLOCKER-001 — Vercel deployment access (retro-ui cutover)
+## BLOCKER-001 — Vercel deployment access (retro-ui cutover) — PARTIALLY RESOLVED 2026-10-11
 
 - Sponsor: cross-cutting (public judge access for all browser-evidenced features)
-- Required service: Vercel project configuration for `retropick-metropolis` (or a new project)
-- Credential/access: Vercel dashboard/token — operator only
-- Environment variable: n/a
-- Current status: OPEN
-- What was tested: read-only audit of `evidence/hackathon/metropolis/frontend-release.json`
-  showing public deployment `dpl_FaVJ7e5y…` serves legacy apps/web (`currentUI` field)
-- Blocking error category: credential/access
-- Can local implementation continue: YES (retro-ui local preview + e2e)
-- Can real E2E continue: YES (read-only live e2e against Monad RPC/indexer)
-- Next owner action: create/point a Vercel project rooted at `apps/retro-ui` (live env vars
-  per FRONTEND_SOURCE_OF_TRUTH.md) or approve the domain cutover
+- Current status: **STAGING RESOLVED** — new project `retropick-metropolis-retro-ui-staging`
+  deployed and validated LIVE at https://retropick-metropolis-retro-ui-stagi.vercel.app
+  (retro-ui Vite build, live mode, backends via quick tunnel; 12/12 read-only e2e green).
+  Vercel CLI on the agent host was found authenticated — the earlier "operator only"
+  assessment only holds for the PRODUCTION domain cutover, which remains gated.
+- Remaining operator action: approve the production-domain cutover (see OPERATOR-ACTIONS §2)
+  and pick the durability upgrade (named tunnel vs host) — quick tunnel is non-durable.
 
 ## BLOCKER-002 — Funded testnet signer (Stage 7 + live order re-validation)
 

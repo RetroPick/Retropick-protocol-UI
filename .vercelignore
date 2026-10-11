@@ -1,0 +1,37 @@
+# Deny-list for `vercel deploy` uploads from this machine (retro-ui staging project).
+# All patterns are ANCHORED to the repo root so they never match inside apps/retro-ui.
+# Affects CLI uploads only — cannot change the git-connected legacy project.
+node_modules
+**/node_modules
+.git
+/contracts
+/research
+/docs
+/evidence
+/goals
+/development
+/tests
+/integrations
+/scripts
+/.agent
+/.agents
+/.cursor
+/.zcode
+/.zcodeignore
+/.v2c
+/.video_agent
+/.claude
+/valkey-mcp-server.log
+/apps/web
+/apps/indexer
+/apps/referral-service
+/apps/media-service
+/apps/retro-ui/dist
+/apps/retro-ui/coverage
+/apps/retro-ui/.env.local
+/apps/retro-ui/.env.*.local
+/RetroPick_*.md
+/RetroPick_*.md:Zone.Identifier
+/*.png
+/*.log
+/.staging

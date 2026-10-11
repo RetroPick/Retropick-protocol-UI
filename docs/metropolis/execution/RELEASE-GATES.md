@@ -30,3 +30,11 @@ implies qualification.
 
 - Conservative content stop: 2026-10-13 23:59 ET. Final 8 h: submission fixes only.
 - No new contract deployment inside the final buffer.
+
+## Staging release record (2026-10-11)
+
+- `apps/web` guard: empty across all phase-2 commits (rendered configs gitignored).
+- Staging suite green (12/12 read-only, public URL, desktop + mobile).
+- Framework/build/output verified on the deployment (Vite / pnpm filtered / dist).
+- Live mode + envelope validation verified; no mock leakage; no secrets in bundle.
+- Production cutover: NOT performed — approval checkpoint stands (OPERATOR-ACTIONS §2).
