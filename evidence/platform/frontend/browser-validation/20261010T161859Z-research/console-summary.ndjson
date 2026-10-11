@@ -1,0 +1,4 @@
+{"test":"research/competitors.spec.ts > @research pons read-only capture","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"research/competitors.spec.ts > @research pons read-only capture","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":4}
+{"test":"research/competitors.spec.ts > @research bags read-only capture","project":"desktop-1440","app":1,"pageErrors":0,"guardViolations":0,"nonApp":13}
+{"test":"research/competitors.spec.ts > @research bags read-only capture","project":"mobile-390","app":1,"pageErrors":0,"guardViolations":0,"nonApp":18}

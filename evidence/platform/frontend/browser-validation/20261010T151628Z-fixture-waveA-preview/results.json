@@ -1,0 +1,5380 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/fixture/token-terminal.spec.ts",
+      "e2e/fixture/smoke.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T151628Z-fixture-waveA-preview/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/smoke.spec.ts",
+      "file": "fixture/smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3213,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:38.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-27900b5598a8caee3dc4",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:38.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9604c55fbc32bb35069f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3004,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:38.341Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-8250635d3e75e9a35449",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3094,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:38.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-164245eb3a5e59d10583",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2112,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:41.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0a2be16b80bb14268480",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:41.782Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9c5a128e15e7c990c549",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:41.932Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b31b41ab956989a89727",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3523,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:00.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0d0fb32a54cfd8b171d8",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:00.103Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-264cc3ef8ec548ec5487",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2842,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:02.203Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-490180d7b094b2b379a2",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:04.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-f66ee8f0b1f6912363fd",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2064,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:04.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d857f6cf9b3ba52d9ec6",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:04.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-4a6fa3fe7101e30d2ea9",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1941,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:05.403Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-f71ab4c840ccb8a0c43d",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2931,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:21.613Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b8e9bc2f2294d0d2a9bb",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2701,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:21.570Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-74a792ab260e70c5cb45",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:21.975Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d11699943566492cf579",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2966,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:24.781Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-53f1f56e2d67ddf0b08a",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2034,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:24.580Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ad2734a195f8afe5e638",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2002,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:24.884Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-87791694bc9ef01041ae",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:25.072Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ca0296cc2f6e22c03d06",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:40.005Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ced610c9f1fb07f4121b",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2342,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:40.207Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-00a886dc16190916c59c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2448,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:40.408Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-890243490d94951cf248",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:42.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-700b5be84b0c4aa1a531",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:42.828Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d9c696b91c64875f3681",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:42.843Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-53d83925f7836643475d",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1555,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:43.159Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e17bccd280221948a8ab",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:57.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-04e1c2fca685a5a91a29",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3833,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:57.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cd07ebf176ffbe4307d3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:57.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e0d67492dce1a7a5fc68",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3182,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:00.215Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d08378a1015b4f94dd4c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2775,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:01.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-356fdb0b79e133892516",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:01.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-c6dd685070ad1411d84c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2533,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:02.974Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-989063ad2f0dcb25194f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3685,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:19.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cba50ae66203027e99b6",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:21.968Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-1cbee558ce1cda6f78c0",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4335,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:23.375Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-95a1d229d27c10fadd9f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3101,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:23.932Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b76543fc124d88f3f8b3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2877,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:26.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-6fa6823ec7aec1d2c680",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:27.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-37b618bd18f24ceb2b3e",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:27.371Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0f55ef036850598fa019",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "fixture/token-terminal.spec.ts",
+      "file": "fixture/token-terminal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:50.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f08b2fbd03975d4e7625",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 6093,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:52.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-4f88495ed5d47a46a512",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4245,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:52.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-af81c83e92757faabf29",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:53.002Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-48b3a92d72fd16ccf268",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:54.335Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-88120bcbc39f70df3711",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 6524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:56.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-5ba3475d1085be90a03e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:58.339Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-5cea77735423f6733ba8",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile only",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 182,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:16:58.398Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile only",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 182,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-314c8b2f002d4344b879",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2815,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:13.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-ed8bf481b6a5a89598ce",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:13.272Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-12c701a569d9b59f62ee",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:14.087Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-7497c6372d04d859d2ad",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 5063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:14.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-88cb9027177e7dadd6cf",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:15.970Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f4f6f60019a878a325bf",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5316,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:18.337Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-1520520d01afcded2906",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:18.794Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-ebfb775f1e1b635f479e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile only",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 182,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 220,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:19.798Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile only",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 182,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-e236f05d0232b364f620",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:32.875Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-631e0ef61f3b431427e4",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:33.079Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-eeda761fe68c8d6b62f4",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:33.324Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f4c0bfae853acc42a909",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4555,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:34.271Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-b5dd9ebe0a1f41d3ae51",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3047,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:35.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-e91b98d92bb82c65aefc",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:37.550Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-4483d5f7b5f5892d6c84",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:37.815Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-e197fc3980d138d44dc9",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile only",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 182,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:38.814Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile only",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 182,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-bdf7ed13ad9bdb9cd58e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2694,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:49.779Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-fc895aa1adc1b2fba3bc",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:50.416Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-cb406db1d75e0797298a",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4093,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:50.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-513abca5b8946447e83d",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:51.498Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-c388fc150c5250b72978",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3253,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:52.519Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-bd2ddc51e721d9e8c01c",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4493,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:54.558Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f87d69fe5643cb163102",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:55.038Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-ab8785a466b52ac4bcf8",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile only",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 182,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:17:55.808Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile only",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 182,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-0d85b08071e4339796b8",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:15.152Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-c6c6ae89d0830197c2d2",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 67,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:15.822Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 67,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-0ba0334dffbae2790153",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 94,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:15.960Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 94,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f6fe94b9a2a11fc45f4e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 115,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 271,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:16.202Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 115,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-8bf20000eda8ecbced67",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 4063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:16.275Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-3a908f2812f2a4f05bb2",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5457,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:16.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-75eb90015e90839bbf3c",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:16.740Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-a485ef84402423dcd345",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6727,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:18.351Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-44bf97979c80fcb9685f",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:38.473Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-000374b20cbb791ea14b",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 67,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:39.580Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 67,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-aea9310ecf1bd6c21f51",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 94,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 250,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:39.863Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 94,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-bae4c72978a8a66c35e8",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 115,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:40.149Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 115,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-3898eb4d7efb6bea626c",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 114,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:40.413Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-b4e6f1f044c1dd0eae2b",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 5612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:40.480Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-7c90267fd9526168f5fd",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 159,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:40.606Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-d4318433f4c54ef6d72f",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:18:42.124Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-a7f662d2998b34804f0c",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "terminal dark",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 12,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3716,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:42.000Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-f4e24f23a1991ca12b05",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4117,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:43.800Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-2682f83aeb829cf62c7e",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3934,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:44.011Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-2a0efed6e608c337036a",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4528,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:44.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-89f13f4f6aee854439f4",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3651,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:06.166Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-f97bb9b242c54775629f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3505,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:06.189Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-c0fffc93846aee6b9a10",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3512,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:07.448Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-7deed808221887830348",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3594,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:07.969Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-a44d1fef47b66ad2571a",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3101,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:26.678Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-a590e6d05eb74910c20f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3248,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:26.961Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-87cb78b4423fe2171713",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3267,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:27.129Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-a15e8b9cbb25ce0a5d5b",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2991,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:28.132Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-d4393d7f2f2d2d0e2d0d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2452,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:44.435Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-630ef3c2123e2e1d492f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2736,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:44.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-8292d5ef0f42b3fae7a7",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2568,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:44.761Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-c98e5ba8ae01b463c9c7",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2856,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:45.713Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-a96d51086b5502eae78f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:03.664Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-14ee6bd0b35725b102e7",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5499,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:03.990Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-bfa767127f217651a3b8",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5577,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:04.066Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-756056fc4497218aab98",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5521,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:05.595Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-cc0e3e2a686fdd332bb2",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:27.990Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-28be4c16c540e80347b0",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5450,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:29.361Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-b27898a7d281a354ca68",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5417,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:29.393Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-51219bb7bd070358b2b3",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5428,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:29.678Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-cfacfff21ed93088459f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "terminal light",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 12,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5019,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:45.778Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-4f382586104920e03067",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4602,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:47.960Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-81573e3b23d8d99bf76d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4552,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:48.022Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-b79d34bbc5f99877127a",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4141,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:16:48.786Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-fd2644004a512d933b0f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3344,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:09.728Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-f3bdb6e9605f69207415",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3377,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:09.856Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-77104711917a7c0d05c2",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3028,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:11.011Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-869198a0917e2bdf50a0",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3313,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:11.591Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-cec392f72da91e6f6992",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2939,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:29.865Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-7c9d2dcfae6e43d00706",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2787,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:30.256Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-a5405d0c3613e31d67de",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2851,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:30.436Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-d84eb33fa0a75b99d60b",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3038,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:31.171Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-338a72c8d8c50a42e5a1",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2812,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:46.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-fe2fc1c56c57a4e64813",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3025,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:47.352Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-8932ec6a544089cbb174",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3026,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:47.359Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-d7f75097971b618c2937",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2838,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:17:48.619Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-333f32baf057eac47ef5",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5976,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:09.143Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-85fbfee85d0612557afc",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:09.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-3a6f9dfd961609e76ab2",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:09.692Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-0a767b350e4a12bb871d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5513,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:11.180Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-3239711309263704378f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5230,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:33.211Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-f101e09020941fe3ced8",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5521,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:34.841Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-682ecf5ae6ffdb9d89d9",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4697,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:34.843Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-4aa8e37503a097a0972d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5410,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:18:35.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-9c6418a12a7e6e63fe79",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T15:16:31.536Z",
+    "duration": 137146.736,
+    "expected": 128,
+    "skipped": 10,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

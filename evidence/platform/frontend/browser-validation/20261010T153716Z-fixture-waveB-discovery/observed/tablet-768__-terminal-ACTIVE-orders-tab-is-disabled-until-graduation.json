@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation",
+  "project": "tablet-768",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 23
+}

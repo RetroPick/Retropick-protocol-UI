@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+  "project": "desktop-1280",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 47
+}

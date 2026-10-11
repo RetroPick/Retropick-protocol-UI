@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 29
+}

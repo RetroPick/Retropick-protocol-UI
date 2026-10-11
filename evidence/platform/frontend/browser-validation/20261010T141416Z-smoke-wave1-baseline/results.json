@@ -1,0 +1,1256 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--grep",
+      "@smoke",
+      "--project=desktop-1440",
+      "--project=mobile-390"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/smoke.spec.ts",
+      "file": "fixture/smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@smoke launchpad renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6517,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:21.353Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-27900b5598a8caee3dc4",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 7162,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:21.382Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9604c55fbc32bb35069f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 6957,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:21.371Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-8250635d3e75e9a35449",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 7680,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:21.361Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-164245eb3a5e59d10583",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2962,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:30.106Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0a2be16b80bb14268480",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 3047,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:30.501Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9c5a128e15e7c990c549",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 2910,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:30.824Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b31b41ab956989a89727",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 3009,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:31.643Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-launchpad-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-04e1c2fca685a5a91a29",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2759,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:33.924Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-active-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cd07ebf176ffbe4307d3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2868,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:34.449Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-token-graduated-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e0d67492dce1a7a5fc68",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 2948,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:34.705Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prediction-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d08378a1015b4f94dd4c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 2627,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:35.812Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-prism-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-356fdb0b79e133892516",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2297,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:37.554Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-earn-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-c6dd685070ad1411d84c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2095,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                      "column": 91,
+                      "line": 21
+                    },
+                    "snippet": "  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                        "column": 91,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 7\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"method\": \"POST\",\u001b[39m\n\u001b[31m+     \"reason\": \"fixture target is offline-only\",\u001b[39m\n\u001b[31m+     \"url\": \"https://testnet-rpc.monad.xyz/\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  19 |     // Data mode must be mock in the fixture target: no indexer requests are allowed to leave the browser.\n  20 |     await page.waitForLoadState('networkidle');\n> 21 |     expect(observed.guard.blockedExternal.filter((r) => /indexer|8787|rpc/i.test(r.url))).toEqual([]);\n     |                                                                                           ^\n  22 |     await snap(`smoke-${name}`);\n  23 |     expectClean(observed);\n  24 |   });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts:21:91"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:14:38.233Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T141416Z-smoke-wave1-baseline/test-output/fixture-smoke--smoke-create-renders-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/smoke.spec.ts",
+                    "column": 91,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-989063ad2f0dcb25194f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T14:14:17.637Z",
+    "duration": 22950.796000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 14,
+    "flaky": 0
+  }
+}

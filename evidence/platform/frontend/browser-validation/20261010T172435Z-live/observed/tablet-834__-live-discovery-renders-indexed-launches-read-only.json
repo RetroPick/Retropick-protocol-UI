@@ -1,0 +1,12 @@
+{
+  "test": "live/live-readonly.spec.ts > @live discovery renders indexed launches read-only",
+  "project": "tablet-834",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 25
+}

@@ -1,0 +1,357 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project",
+      "desktop-1440",
+      "--grep",
+      "depth|post-only"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/token-terminal.spec.ts",
+      "file": "fixture/token-terminal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state",
+          "ok": false,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12901,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:205:23",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                      "column": 23,
+                      "line": 205
+                    },
+                    "snippet": "  203 |   await page.goto('/launchpad/token/demo-graduated?scenario=no-book');\n  204 |   const empty = page.getByTestId('depth-panel');\n> 205 |   await expect(empty).toBeVisible();\n      |                       ^\n  206 |   await expect(empty).toContainText('No resting orders');\n  207 |   expectClean(observed);\n  208 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "column": 23,
+                        "line": 205
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n\n\n  203 |   await page.goto('/launchpad/token/demo-graduated?scenario=no-book');\n  204 |   const empty = page.getByTestId('depth-panel');\n> 205 |   await expect(empty).toBeVisible();\n      |                       ^\n  206 |   await expect(empty).toContainText('No resting orders');\n  207 |   expectClean(observed);\n  208 | });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:205:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T21:01:26.635Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "column": 23,
+                    "line": 205
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11311,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:205:23",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                      "column": 23,
+                      "line": 205
+                    },
+                    "snippet": "  203 |   await page.goto('/launchpad/token/demo-graduated?scenario=no-book');\n  204 |   const empty = page.getByTestId('depth-panel');\n> 205 |   await expect(empty).toBeVisible();\n      |                       ^\n  206 |   await expect(empty).toContainText('No resting orders');\n  207 |   expectClean(observed);\n  208 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "column": 23,
+                        "line": 205
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('depth-panel')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('depth-panel')\u001b[22m\n\n\n  203 |   await page.goto('/launchpad/token/demo-graduated?scenario=no-book');\n  204 |   const empty = page.getByTestId('depth-panel');\n> 205 |   await expect(empty).toBeVisible();\n      |                       ^\n  206 |   await expect(empty).toContainText('No resting orders');\n  207 |   expectClean(observed);\n  208 | });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:205:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T21:01:40.873Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T210113Z-fixture-depth-dev/test-output/fixture-token-terminal--te-98c20-t-no-book-shows-empty-state-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "column": 23,
+                    "line": 205
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-3c3294d43ffe6cd8bad6",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED post-only toggle switches order policy",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T21:01:26.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-7444b682690b6a54e4ad",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 210,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T21:01:16.934Z",
+    "duration": 35821.136999999995,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

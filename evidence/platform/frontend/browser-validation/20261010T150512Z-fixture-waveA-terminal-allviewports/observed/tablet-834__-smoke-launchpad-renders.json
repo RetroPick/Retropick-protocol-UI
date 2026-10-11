@@ -1,0 +1,31 @@
+{
+  "test": "fixture/smoke.spec.ts > @smoke launchpad renders",
+  "project": "tablet-834",
+  "status": "failed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "classification": "app"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 59
+}

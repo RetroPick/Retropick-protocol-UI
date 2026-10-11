@@ -1,0 +1,1823 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project=desktop-1440",
+      "--project=mobile-390",
+      "e2e/fixture/token-terminal.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/token-terminal.spec.ts",
+      "file": "fixture/token-terminal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": false,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 19790,
+                  "error": {
+                    "message": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:85:58)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:61:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 58,
+                      "line": 85
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/test.ts:85\n\n  83 | export function expectClean(observed: Observed): void {\n  84 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n> 85 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n     |                                                          ^\n  86 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n  87 | }\n  88 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 58,
+                        "line": 85
+                      },
+                      "message": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:85\n\n  83 | export function expectClean(observed: Observed): void {\n  84 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n> 85 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n     |                                                          ^\n  86 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n  87 | }\n  88 |\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:85:58)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:61:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:41:51.853Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 58,
+                    "line": 85
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f08b2fbd03975d4e7625",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 27469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:03.997Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-4f88495ed5d47a46a512",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": false,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 53139,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "column": 71,
+                        "line": 106
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Deposit & place order/ })\u001b[22m\n\n\n  104 |   await expect(ticket.getByRole('button', { name: /Deposit & place order/ })).toBeEnabled();\n  105 |   await snap('ticket-graduated-shortfall');\n> 106 |   await ticket.getByRole('button', { name: /Deposit & place order/ }).click();\n      |                                                                       ^\n  107 |   await expect(ticket.locator('[data-flow=\"done\"]')).toHaveText('Order placed');\n  108 |   expect(await walletCalls(page)).toEqual([]);\n  109 |   expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:106:71"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:05.836Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-5ea75-fall-shows-two-step-funding-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-5ea75-fall-shows-two-step-funding-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-5ea75-fall-shows-two-step-funding-desktop-1440/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-af81c83e92757faabf29",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 25969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:08.211Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-48b3a92d72fd16ccf268",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13701,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:14.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-88120bcbc39f70df3711",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 133,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30568,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:28.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-5ba3475d1085be90a03e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 157,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5388,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:31.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-5cea77735423f6733ba8",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile only",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 180,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 200,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:42:34.210Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile only",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 180,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-314c8b2f002d4344b879",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 179,
+          "column": 1
+        },
+        {
+          "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+          "ok": false,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 29943,
+                  "error": {
+                    "message": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:85:58)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:61:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 58,
+                      "line": 85
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers/test.ts:85\n\n  83 | export function expectClean(observed: Observed): void {\n  84 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n> 85 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n     |                                                          ^\n  86 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n  87 | }\n  88 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 58,
+                        "line": 85
+                      },
+                      "message": "Error: no uncaught page errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Object is disposed\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:85\n\n  83 | export function expectClean(observed: Observed): void {\n  84 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n> 85 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n     |                                                          ^\n  86 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n  87 | }\n  88 |\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:85:58)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:61:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:44:44.999Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-4ec03-al-are-independent-controls-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 58,
+                    "line": 85
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-c6c6ae89d0830197c2d2",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 65,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 941,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:03.918Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 65,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-0ba0334dffbae2790153",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile ticket covered in sheet test",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 92,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:05.380Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile ticket covered in sheet test",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 92,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-f6fe94b9a2a11fc45f4e",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "line": 113,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 257,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:05.753Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "line": 113,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-8bf20000eda8ecbced67",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 17967,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:06.049Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-3a908f2812f2a4f05bb2",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 133,
+          "column": 1
+        },
+        {
+          "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+          "ok": false,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 30326,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Syncing on-chain state/).first()\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Syncing on-chain state/).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Syncing on-chain state/).first()\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Syncing on-chain state/).first()\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:168:66",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                      "column": 66,
+                      "line": 168
+                    },
+                    "snippet": "  166 |   await expect(page.getByTestId('token-price')).not.toHaveText('—');\n  167 |   await page.goto('/launchpad/token/demo-active?scenario=slow-rpc');\n> 168 |   await expect(page.getByText(/Syncing on-chain state/).first()).toBeVisible();\n      |                                                                  ^\n  169 |   await expect(page.getByTestId('token-terminal')).toBeVisible();\n  170 |   expectClean(observed);\n  171 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "column": 66,
+                        "line": 168
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Syncing on-chain state/).first()\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Syncing on-chain state/).first()\u001b[22m\n\n\n  166 |   await expect(page.getByTestId('token-price')).not.toHaveText('—');\n  167 |   await page.goto('/launchpad/token/demo-active?scenario=slow-rpc');\n> 168 |   await expect(page.getByText(/Syncing on-chain state/).first()).toBeVisible();\n      |                                                                  ^\n  169 |   await expect(page.getByTestId('token-terminal')).toBeVisible();\n  170 |   expectClean(observed);\n  171 | });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:168:66"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:18.436Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-364c9-ders-stale-indexer-slow-RPC-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-364c9-ders-stale-indexer-slow-RPC-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal--te-364c9-ders-stale-indexer-slow-RPC-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                    "column": 66,
+                    "line": 168
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-75eb90015e90839bbf3c",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 157,
+          "column": 1
+        },
+        {
+          "title": "@terminal ACTIVE orders tab is disabled until graduation",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 6948,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:19.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-a485ef84402423dcd345",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+          "ok": true,
+          "tags": [
+            "terminal"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 24246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T14:45:24.054Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5dd2050ce9ab566ecb76-44bf97979c80fcb9685f",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 179,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "terminal dark",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 12,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45158,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:40:45.047Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-f4e24f23a1991ca12b05",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 53034,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:40:44.883Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-desktop-1440/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-desktop-1440/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-2682f83aeb829cf62c7e",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 52284,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:40:44.900Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-11b7d-rminal-with-DEMO-provenance-desktop-1440/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-11b7d-rminal-with-DEMO-provenance-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-11b7d-rminal-with-DEMO-provenance-desktop-1440/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-2a0efed6e608c337036a",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 55873,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:40:45.156Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-538ef-rminal-with-DEMO-provenance-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-538ef-rminal-with-DEMO-provenance-desktop-1440/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-89f13f4f6aee854439f4",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 33352,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:42:35.959Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-14ee6bd0b35725b102e7",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 60131,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:42:38.273Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-bfa767127f217651a3b8",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 78182,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:43:01.077Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-11b7d-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-11b7d-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-756056fc4497218aab98",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 90041,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                            "column": 15,
+                            "line": 61
+                          },
+                          "message": "Error: page.screenshot: Test ended.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\n\n   at helpers/test.ts:61\n\n  59 |       mkdirSync(dir, { recursive: true });\n  60 |       const file = join(dir, `${name}.png`);\n> 61 |       await p.screenshot({ path: file, fullPage: opts.fullPage ?? true, animations: 'disabled' });\n     |               ^\n  62 |       return file;\n  63 |     });\n  64 |   },\n    at snap (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:61:15)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:32:15"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:43:01.172Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-538ef-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-538ef-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-cc0e3e2a686fdd332bb2",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "terminal light",
+          "file": "fixture/token-terminal.spec.ts",
+          "line": 12,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20440,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:41:31.332Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-4f382586104920e03067",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 24525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:41:40.711Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-81573e3b23d8d99bf76d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 22452,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:41:40.708Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-b79d34bbc5f99877127a",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": true,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 24153,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:41:43.602Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-fd2644004a512d933b0f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 81734,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:43:10.207Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-f4046-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-f4046-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-85fbfee85d0612557afc",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 87577,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:43:48.455Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-b8c21-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-b8c21-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-3a6f9dfd961609e76ab2",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 64009,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:44:23.691Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-feeac-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-feeac-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-0a767b350e4a12bb871d",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            },
+            {
+              "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+              "ok": false,
+              "tags": [
+                "terminal"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 25360,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('token-terminal')\nExpected: \u001b[32m\"GRADUATED\"\u001b[39m\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('token-terminal')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('token-terminal')\nExpected: \u001b[32m\"GRADUATED\"\u001b[39m\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('token-terminal')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:18:32",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                          "column": 32,
+                          "line": 18
+                        },
+                        "snippet": "  16 |         await page.goto(`/launchpad/token/${id}`);\n  17 |         const terminal = page.getByTestId('token-terminal');\n> 18 |         await expect(terminal).toHaveAttribute('data-lifecycle', state);\n     |                                ^\n  19 |         await expect(terminal).toHaveAttribute('data-data-mode', 'demo');\n  20 |         await expect(terminal).toHaveAttribute('data-fixture-version', 'demo-terminal-v1');\n  21 |         await expect(terminal.locator('[data-provenance=\"demo\"]').first()).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                            "column": 32,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('token-terminal')\nExpected: \u001b[32m\"GRADUATED\"\u001b[39m\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('token-terminal')\u001b[22m\n\n\n  16 |         await page.goto(`/launchpad/token/${id}`);\n  17 |         const terminal = page.getByTestId('token-terminal');\n> 18 |         await expect(terminal).toHaveAttribute('data-lifecycle', state);\n     |                                ^\n  19 |         await expect(terminal).toHaveAttribute('data-data-mode', 'demo');\n  20 |         await expect(terminal).toHaveAttribute('data-fixture-version', 'demo-terminal-v1');\n  21 |         await expect(terminal.locator('[data-provenance=\"demo\"]').first()).toBeVisible();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:18:32"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T14:44:36.132Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-b90fb-rminal-with-DEMO-provenance-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-b90fb-rminal-with-DEMO-provenance-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T144040Z-fixture-waveA-terminal/test-output/fixture-token-terminal-ter-b90fb-rminal-with-DEMO-provenance-mobile-390/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+                        "column": 32,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5dd2050ce9ab566ecb76-3239711309263704378f",
+              "file": "fixture/token-terminal.spec.ts",
+              "line": 15,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T14:40:41.949Z",
+    "duration": 308269.167,
+    "expected": 14,
+    "skipped": 4,
+    "unexpected": 14,
+    "flaky": 0
+  }
+}

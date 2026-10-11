@@ -1,0 +1,1376 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/fixture/discovery.spec.ts",
+      "e2e/fixture/smoke.spec.ts",
+      "--project=desktop-1440",
+      "--project=mobile-390"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/discovery.spec.ts",
+      "file": "fixture/discovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+          "ok": true,
+          "tags": [
+            "discovery"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 10456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:00.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-0fd036e1b5bd4f97be91",
+          "file": "fixture/discovery.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+          "ok": true,
+          "tags": [
+            "discovery"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 12580,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:00.259Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-2a51bab396aabe7c9a84",
+          "file": "fixture/discovery.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "@search command palette: keyboard-only open, arrow, enter",
+          "ok": false,
+          "tags": [
+            "search"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 11632,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('listbox', { name: 'Search results' }).getByRole('option')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('listbox', { name: 'Search results' }).getByRole('option')\u001b[22m\n\u001b[2m    19 × locator resolved to 2 elements\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('listbox', { name: 'Search results' }).getByRole('option')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('listbox', { name: 'Search results' }).getByRole('option')\u001b[22m\n\u001b[2m    19 × locator resolved to 2 elements\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:74:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                      "column": 42,
+                      "line": 74
+                    },
+                    "snippet": "  72 |   await snap('search-palette', page, { fullPage: false });\n  73 |   await box.fill('orbit');\n> 74 |   await expect(list.getByRole('option')).toHaveCount(1);\n     |                                          ^\n  75 |   await page.keyboard.press('Enter');\n  76 |   await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATION_READY');\n  77 |   await page.keyboard.press('Control+k');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                        "column": 42,
+                        "line": 74
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('listbox', { name: 'Search results' }).getByRole('option')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('listbox', { name: 'Search results' }).getByRole('option')\u001b[22m\n\u001b[2m    19 × locator resolved to 2 elements\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n\n\n  72 |   await snap('search-palette', page, { fullPage: false });\n  73 |   await box.fill('orbit');\n> 74 |   await expect(list.getByRole('option')).toHaveCount(1);\n     |                                          ^\n  75 |   await page.keyboard.press('Enter');\n  76 |   await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATION_READY');\n  77 |   await page.keyboard.press('Control+k');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:74:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:08.433Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--search--e8b23-board-only-open-arrow-enter-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--search--e8b23-board-only-open-arrow-enter-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--search--e8b23-board-only-open-arrow-enter-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                    "column": 42,
+                    "line": 74
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-333e5a2fd69e4493af95",
+          "file": "fixture/discovery.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "@search mobile search button opens palette",
+          "ok": true,
+          "tags": [
+            "search"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                    "line": 92,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 301,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:08.434Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                        "line": 92,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-8829fa01637d7e908719",
+          "file": "fixture/discovery.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+          "ok": false,
+          "tags": [
+            "discovery"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "timedOut",
+                  "duration": 47361,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                        "column": 56,
+                        "line": 24
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Launch lifecycle' }).getByRole('radio', { name: 'Graduated' })\u001b[22m\n\u001b[2m    - locator resolved to <button role=\"radio\" type=\"button\" tabindex=\"-1\" class=\"rp-seg-item\" aria-checked=\"false\">Graduated</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button role=\"radio\" type=\"button\" tabindex=\"-1\" class=\"rp-seg-item\" aria-checked=\"false\">Near graduation</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button role=\"radio\" type=\"button\" tabindex=\"-1\" class=\"rp-seg-item\" aria-checked=\"false\">Near graduation</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  21 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button role=\"radio\" type=\"button\" tabindex=\"-1\" class=\"rp-seg-item\" aria-checked=\"false\">Near graduation</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button role=\"radio\" type=\"button\" tabindex=\"-1\" class=\"rp-seg-item\" aria-checked=\"false\">Near graduation</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  22 |   await page.goto('/launchpad');\n  23 |   const life = page.getByRole('radiogroup', { name: 'Launch lifecycle' });\n> 24 |   await life.getByRole('radio', { name: 'Graduated' }).click();\n     |                                                        ^\n  25 |   await expect(page.getByTestId('launch-row')).toHaveCount(1);\n  26 |   await expect(page.getByTestId('launch-row').first()).toContainText('NVC');\n  27 |   await life.getByRole('radio', { name: 'Near graduation' }).click();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:24:56"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:20.471Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-d1273--toggle-persists-open-token-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-d1273--toggle-persists-open-token-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-d1273--toggle-persists-open-token-mobile-390/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-808f2d478471d0002e5b",
+          "file": "fixture/discovery.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+          "ok": false,
+          "tags": [
+            "discovery"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 47777,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                        "column": 59,
+                        "line": 55
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /PRISM/ }).first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/prism\">PRISM</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a href=\"/launchpad?type=prediction\">Prediction</a> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a href=\"/launchpad?type=prediction\">Prediction</a> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  20 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button class=\"icon-btn\" aria-label=\"Connect wallet\">…</button> from <div class=\"mobilebar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <a href=\"/launchpad?type=prediction\">Prediction</a> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <a href=\"/launchpad?type=prediction\">Prediction</a> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button class=\"icon-btn\" aria-label=\"Connect wallet\">…</button> from <div class=\"mobilebar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  53 |   await expect(page.getByTestId('launch-row')).toHaveCount(3);\n  54 |   await page.goto('/launchpad');\n> 55 |   await page.getByRole('link', { name: /PRISM/ }).first().click();\n     |                                                           ^\n  56 |   await expect(page.locator('main')).toContainText('PRISM');\n  57 |   await page.goto('/launchpad/prediction/btc-150k');\n  58 |   await expect(page.locator('main')).toContainText('Bitcoin');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:55:59"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:22.747Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-384db-PRISM-navigation-still-work-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-384db-PRISM-navigation-still-work-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery--discove-384db-PRISM-navigation-still-work-mobile-390/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-85b43252ca3387489fe2",
+          "file": "fixture/discovery.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "@search command palette: keyboard-only open, arrow, enter",
+          "ok": true,
+          "tags": [
+            "search"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "hardware-keyboard shortcut",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                    "line": 63,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 501,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:25.030Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "hardware-keyboard shortcut",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts",
+                        "line": 63,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-be3786732a523d791bf6",
+          "file": "fixture/discovery.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "@search mobile search button opens palette",
+          "ok": true,
+          "tags": [
+            "search"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:25.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aca683b30fbd49c6ec82-34908eced569135d5639",
+          "file": "fixture/discovery.spec.ts",
+          "line": 91,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "discovery dark",
+          "file": "fixture/discovery.spec.ts",
+          "line": 4,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+              "ok": true,
+              "tags": [
+                "discovery"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6625,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:34:00.294Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "aca683b30fbd49c6ec82-93e1665db3427d575a1d",
+              "file": "fixture/discovery.spec.ts",
+              "line": 6,
+              "column": 5
+            },
+            {
+              "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+              "ok": false,
+              "tags": [
+                "discovery"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3109,
+                      "error": {
+                        "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m61\u001b[39m",
+                        "stack": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m61\u001b[39m\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:14:7",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                          "column": 51,
+                          "line": 91
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/test.ts:91\n\n  89 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  90 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 91 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  92 | }\n  93 |\n  94 | export { expect };"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                            "column": 51,
+                            "line": 91
+                          },
+                          "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m61\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  90 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 91 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  92 | }\n  93 |\n  94 | export { expect };\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:14:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:34:19.653Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-15eef-O-provenance-and-no-USD-SOL-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-15eef-O-provenance-and-no-USD-SOL-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-15eef-O-provenance-and-no-USD-SOL-mobile-390/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 51,
+                        "line": 91
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "aca683b30fbd49c6ec82-7da40df1d3b4f6082f79",
+              "file": "fixture/discovery.spec.ts",
+              "line": 6,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "discovery light",
+          "file": "fixture/discovery.spec.ts",
+          "line": 4,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+              "ok": true,
+              "tags": [
+                "discovery"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6597,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:34:00.289Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "aca683b30fbd49c6ec82-c292f878a2df18fe8c6d",
+              "file": "fixture/discovery.spec.ts",
+              "line": 6,
+              "column": 5
+            },
+            {
+              "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+              "ok": false,
+              "tags": [
+                "discovery"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 3109,
+                      "error": {
+                        "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m99\u001b[39m",
+                        "stack": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m99\u001b[39m\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:14:7",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                          "column": 51,
+                          "line": 91
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers/test.ts:91\n\n  89 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  90 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 91 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  92 | }\n  93 |\n  94 | export { expect };"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                            "column": 51,
+                            "line": 91
+                          },
+                          "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m99\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  90 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 91 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  92 | }\n  93 |\n  94 | export { expect };\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/discovery.spec.ts:14:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T15:34:19.944Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-1278f-O-provenance-and-no-USD-SOL-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-1278f-O-provenance-and-no-USD-SOL-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T153350Z-fixture-waveB-discovery/test-output/fixture-discovery-discover-1278f-O-provenance-and-no-USD-SOL-mobile-390/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 51,
+                        "line": 91
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "aca683b30fbd49c6ec82-a9bb2cf7049e9bcf7a40",
+              "file": "fixture/discovery.spec.ts",
+              "line": 6,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "fixture/smoke.spec.ts",
+      "file": "fixture/smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2735,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:08.803Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-27900b5598a8caee3dc4",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:11.585Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9604c55fbc32bb35069f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:12.475Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-8250635d3e75e9a35449",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2906,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:14.417Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-164245eb3a5e59d10583",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2710,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:15.538Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0a2be16b80bb14268480",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:16.438Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9c5a128e15e7c990c549",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1733,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:17.381Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b31b41ab956989a89727",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:25.809Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-04e1c2fca685a5a91a29",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5095,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:28.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cd07ebf176ffbe4307d3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5689,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:29.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e0d67492dce1a7a5fc68",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:34.133Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d08378a1015b4f94dd4c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2215,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:34.959Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-356fdb0b79e133892516",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1697,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:36.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-c6dd685070ad1411d84c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T15:34:37.200Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-989063ad2f0dcb25194f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T15:33:53.131Z",
+    "duration": 80458.582,
+    "expected": 19,
+    "skipped": 2,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

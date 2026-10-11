@@ -1,0 +1,26 @@
+[WebServer] (node:183097) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:183121) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:183249) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:183274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer]   ➜  Local:   http://127.0.0.1:4326/
+
+Running 4 tests using 1 worker
+
+(node:183328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (2.4s)
+  ✓  2 [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (1.4s)
+  ✓  3 [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (1.6s)
+  ✓  4 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (3.6s)
+
+  4 passed (22.0s)

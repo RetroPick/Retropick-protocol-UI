@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "waveB-discovery",
+  "startedAt": "2026-10-10T15:33:50.852Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts e2e/fixture/discovery.spec.ts e2e/fixture/smoke.spec.ts --project=desktop-1440 --project=mobile-390",
+  "cwd": "apps/retro-ui"
+}

@@ -1,0 +1,108 @@
+[WebServer] (node:184784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:184803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:184929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:184948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer]   ➜  Local:   http://127.0.0.1:4327/
+
+Running 2 tests using 1 worker
+
+(node:185002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [desktop-1440] › e2e/live/resume-hydration.spec.ts:8:3 › @resume-hydration ACTIVE RPC economic hydration independently qualifies the indexed shell (3.2s)
+  ✘  2 [desktop-1440] › e2e/live/resume-hydration.spec.ts:8:3 › @resume-hydration GRADUATED RPC economic hydration independently qualifies the indexed shell (36.8s)
+(node:185304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [desktop-1440] › e2e/live/resume-hydration.spec.ts:8:3 › @resume-hydration GRADUATED RPC economic hydration independently qualifies the indexed shell (retry #1) (38.2s)
+
+
+  1) [desktop-1440] › e2e/live/resume-hydration.spec.ts:8:3 › @resume-hydration GRADUATED RPC economic hydration independently qualifies the indexed shell 
+
+    Error: expect(locator).not.toHaveText(expected) failed
+
+    Locator:  getByTestId('ticket-total')
+    Expected: not "—"
+    Received: "—"
+    Timeout:  30000ms
+
+    Call log:
+      - Expect "not toHaveText" with timeout 30000ms
+      - waiting for getByTestId('ticket-total')
+        63 × locator resolved to <dd data-testid="ticket-total">—</dd>
+           - unexpected value "—"
+
+
+      37 |         await page.getByTestId('ticket-limit-price').fill('0.004');
+      38 |         await page.getByTestId('ticket-amount').fill('1');
+    > 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');
+         |                                                            ^
+      40 |         await expect(ticket).toContainText('Normalized to market tick');
+      41 |       }
+      42 |       ticketReady = true;
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).not.toHaveText(expected) failed
+
+    Locator:  getByTestId('ticket-total')
+    Expected: not "—"
+    Received: "—"
+    Timeout:  30000ms
+
+    Call log:
+      - Expect "not toHaveText" with timeout 30000ms
+      - waiting for getByTestId('ticket-total')
+        63 × locator resolved to <dd data-testid="ticket-total">—</dd>
+           - unexpected value "—"
+
+
+      37 |         await page.getByTestId('ticket-limit-price').fill('0.004');
+      38 |         await page.getByTestId('ticket-amount').fill('1');
+    > 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');
+         |                                                            ^
+      40 |         await expect(ticket).toContainText('Normalized to market tick');
+      41 |       }
+      42 |       ticketReady = true;
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [desktop-1440] › e2e/live/resume-hydration.spec.ts:8:3 › @resume-hydration GRADUATED RPC economic hydration independently qualifies the indexed shell 
+  1 passed (1.6m)

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "root-redirect",
+    "status": "PASS",
+    "detail": "landed http://localhost:3001/launchpad"
+  },
+  {
+    "name": "launchpad-feed",
+    "status": "PASS",
+    "detail": "feed content present=true"
+  },
+  {
+    "name": "launchpad-links",
+    "status": "PASS",
+    "detail": "55 links"
+  },
+  {
+    "name": "taxonomy-prediction",
+    "status": "PASS",
+    "detail": "rendered http://localhost:3001/launchpad?type=prediction"
+  },
+  {
+    "name": "taxonomy-crypto",
+    "status": "PASS",
+    "detail": "rendered http://localhost:3001/launchpad?type=crypto"
+  },
+  {
+    "name": "taxonomy-stocks",
+    "status": "PASS",
+    "detail": "rendered http://localhost:3001/launchpad?type=stocks"
+  },
+  {
+    "name": "detail-page",
+    "status": "PASS",
+    "detail": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5"
+  },
+  {
+    "name": "detail-trading-controls",
+    "status": "WARN",
+    "detail": "trade controls present=false"
+  },
+  {
+    "name": "wallet-disconnected-gating",
+    "status": "PASS",
+    "detail": "connect/sign CTA present=true"
+  },
+  {
+    "name": "route/prism",
+    "status": "PASS",
+    "detail": "status 200"
+  },
+  {
+    "name": "route/portfolio",
+    "status": "PASS",
+    "detail": "status 200"
+  },
+  {
+    "name": "route/earn",
+    "status": "PASS",
+    "detail": "status 200"
+  },
+  {
+    "name": "route/activity",
+    "status": "PASS",
+    "detail": "status 200"
+  },
+  {
+    "name": "route/docs",
+    "status": "PASS",
+    "detail": "status 200"
+  },
+  {
+    "name": "404-handling",
+    "status": "PASS",
+    "detail": "NotFound view rendered"
+  },
+  {
+    "name": "mobile-touch",
+    "status": "PASS",
+    "detail": "mobile render + tap ok"
+  }
+]

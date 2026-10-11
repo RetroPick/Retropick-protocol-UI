@@ -1,0 +1,12 @@
+{
+  "test": "fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+  "project": "tablet-768",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 27
+}

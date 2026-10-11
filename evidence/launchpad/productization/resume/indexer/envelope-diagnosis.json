@@ -1,0 +1,20 @@
+{
+  "reproduction": "copied SQLite database only",
+  "observedProvider": "monad-testnet.infura.io",
+  "malformedShape": {
+    "httpStatus": 200,
+    "array": true,
+    "rowHasId": false,
+    "rowHasResult": false,
+    "rowHasError": false
+  },
+  "impact": "viem undefined result reached discovery and caused RPC_OTHER; snapshot was retained",
+  "fix": "validate JSON-RPC envelope before parsing results, classify NETWORK and use fallback",
+  "copiedFullSync": {
+    "indexedBlock": 69897030,
+    "launches": 9,
+    "trades": 18,
+    "error": null
+  },
+  "rawBodiesStored": false
+}

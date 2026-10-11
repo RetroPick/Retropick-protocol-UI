@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+  "project": "tablet-834",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 29
+}

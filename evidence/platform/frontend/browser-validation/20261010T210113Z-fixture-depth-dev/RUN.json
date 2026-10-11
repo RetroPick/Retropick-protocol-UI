@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "depth-dev",
+  "startedAt": "2026-10-10T21:01:13.957Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --project desktop-1440 --grep depth|post-only",
+  "cwd": "apps/retro-ui"
+}

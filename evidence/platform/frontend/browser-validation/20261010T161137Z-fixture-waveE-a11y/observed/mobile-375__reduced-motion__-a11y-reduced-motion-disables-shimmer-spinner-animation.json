@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 23
+}

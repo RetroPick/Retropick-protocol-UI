@@ -1,0 +1,12 @@
+{
+  "test": "live/resume-hydration.spec.ts > @resume-hydration ACTIVE RPC economic hydration independently qualifies the indexed shell",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 34
+}

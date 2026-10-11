@@ -1,0 +1,2 @@
+{"mode":"frontend-multicall-candidate","httpBatch":true,"multicall":true,"samples":30,"attempts":31,"errors":1,"warmup":"PASS","status":"QUALIFIED","p50Ms":178.84,"p95Ms":529.92,"meanRequests":1,"meanRpcCalls":1,"meanEthCalls":1,"meanBytesFetched":4649.966666666666}
+{"evidence":"evidence/launchpad/productization/resume/sdk/rpc-public-multicall-default.json","status":"PARTIAL","winner":null}

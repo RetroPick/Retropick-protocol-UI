@@ -1,0 +1,6 @@
+{"test":"live/resume-readonly.spec.ts > resume dark > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)","project":"desktop-1440","app":4,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/resume-readonly.spec.ts > resume light > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/resume-readonly.spec.ts > resume dark > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/resume-readonly.spec.ts > resume light > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/resume-readonly.spec.ts > resume dark > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/resume-readonly.spec.ts > resume light > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

@@ -1,0 +1,2025 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/fixture/a11y.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/a11y.spec.ts",
+      "file": "fixture/a11y.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:14.571Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-695f8b24ccae5b28addf",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2270,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:14.522Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-fb68ca315aded962b7bd",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 46,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:14.556Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 46,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-01038f3d4142cc5c458f",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:16.998Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-9866812e52d659e011ab",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2954,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:19.632Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-2c5d550737772f295b2e",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:20.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-d3b2b24847da71847074",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 46,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 290,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:21.890Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 46,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-d9aed5176e0de1ac24da",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2807,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:22.992Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-2088852f9b3875fa1197",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:26.587Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-c6e5937bb679c9193f1f",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2247,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:27.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-87e5fbd46fb02b08aa79",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 46,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 302,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:30.144Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 46,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-bc7c67b5143069277513",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:30.711Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-e07858e3455bb9c44a92",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3615,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:34.182Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-a42b81a4962937756cf6",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2169,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:35.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-90f3239ee00b1cff76a0",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 46,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 323,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:36.907Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 46,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-867a40f324024e05e34b",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:38.067Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-3cc329f616e172c3ff46",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "hardware keyboard",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 6,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "skipped",
+                  "duration": 505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:41.764Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "hardware keyboard",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 6,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-c9486e08fdbcc4a414cf",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": false,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11143,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                      "column": 160,
+                      "line": 34
+                    },
+                    "snippet": "  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 160,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n\n  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:42.632Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "column": 160,
+                    "line": 34
+                  }
+                },
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10808,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                      "column": 160,
+                      "line": 34
+                    },
+                    "snippet": "  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 160,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n\n  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:10:56.046Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-390-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "column": 160,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-765768fc9f373a9797f8",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:42.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-0ac36eeb760a95c90bd3",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2676,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:47.227Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-6d5f0543e91904f43f67",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "hardware keyboard",
+                  "location": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "line": 6,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 291,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:51.088Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "hardware keyboard",
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "line": 6,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-41d36d6df48a63ddc135",
+          "file": "fixture/a11y.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+          "ok": false,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 10343,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                      "column": 160,
+                      "line": 34
+                    },
+                    "snippet": "  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 160,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n\n  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:51.639Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "column": 160,
+                    "line": 34
+                  }
+                },
+                {
+                  "workerIndex": 24,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 9714,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                      "column": 160,
+                      "line": 34
+                    },
+                    "snippet": "  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 160,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeAttached\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('radiogroup', { name: 'Chart type' }).first()\nExpected: attached\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeAttached\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('radiogroup', { name: 'Chart type' }).first()\u001b[22m\n\n\n  32 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n  33 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n> 34 |   for (const name of ['Order type', 'Trade side', 'Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n     |                                                                                                                                                                ^\n  35 |   const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a[href], input, select')].filter((el) => {\n  36 |     const h = el as HTMLElement;\n  37 |     if (h.offsetParent === null) return false;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:34:160"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:11:02.994Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160932Z-fixture-waveE-a11y/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-mobile-375-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                    "column": 160,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-25cb9dd806985e6f9767",
+          "file": "fixture/a11y.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+          "ok": true,
+          "tags": [
+            "a11y"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2561,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:52.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-8888aca6996e3f68c8bd",
+          "file": "fixture/a11y.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+          "ok": true,
+          "tags": [
+            "resilience"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1920,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:10:58.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2ff992ed6a9354b5447-37319dd827f1c57ff7e2",
+          "file": "fixture/a11y.spec.ts",
+          "line": 84,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "reduced motion",
+          "file": "fixture/a11y.spec.ts",
+          "line": 55,
+          "column": 6,
+          "specs": [
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1730,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:14.562Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-b209a5364ad82b6928f0",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1751,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:22.751Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-3d2dd6538f49f418251b",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1951,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:30.492Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-eac4e311a58980749de3",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1941,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:37.675Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-8a1dea43e69c8096f10c",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1687,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:45.270Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-96807e182f1d49188748",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "@a11y reduced motion disables shimmer/spinner animation",
+              "ok": true,
+              "tags": [
+                "a11y"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1624,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:51.579Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-cf8a82a7fbf15521689c",
+              "file": "fixture/a11y.spec.ts",
+              "line": 57,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "theme dark",
+          "file": "fixture/a11y.spec.ts",
+          "line": 67,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5457,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:15.146Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-1807c0f368d3ff801874",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6408,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:22.417Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-6a5de551194fec58c1da",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5201,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:30.175Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-fb1434f23925e80482e9",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6428,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:37.492Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-357bba3a4220fc559c02",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5583,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:45.288Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-d51082d86fa2e63f24fc",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5629,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:53.236Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-a28d85676d5b2c1e1a44",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "theme light",
+          "file": "fixture/a11y.spec.ts",
+          "line": 67,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5094,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:16.517Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-cbbc516f453a57083ffc",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6320,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:22.896Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-5fd3b83545e2633ebf2c",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5755,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:30.559Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-7b55a520a3c6f12375b4",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6263,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:37.670Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-0fe2be3edd2495232dcf",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5504,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:45.119Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-500865ecae0d5cfe1c70",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5253,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T16:10:54.947Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-e82d730635bea8c6478d",
+              "file": "fixture/a11y.spec.ts",
+              "line": 69,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T16:09:34.004Z",
+    "duration": 99129.829,
+    "expected": 34,
+    "skipped": 6,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

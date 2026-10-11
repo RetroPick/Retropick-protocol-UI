@@ -1,0 +1,10 @@
+{
+  "previousPid": 106536,
+  "newPid": 132553,
+  "port": 8787,
+  "databasePreserved": true,
+  "backup": "/tmp/retropick-resume-indexer-before.sqlite",
+  "config": ".env.local",
+  "finalPid": 153232,
+  "finalBackup": "/tmp/retropick-resume-indexer-envelope.sqlite"
+}

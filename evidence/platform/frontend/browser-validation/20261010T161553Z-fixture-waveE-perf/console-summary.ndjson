@@ -1,0 +1,6 @@
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

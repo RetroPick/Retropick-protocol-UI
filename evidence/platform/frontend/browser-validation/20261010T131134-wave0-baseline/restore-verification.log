@@ -1,0 +1,12 @@
+artifact integrity: 36 of 36 artifacts match manifest sha256
+scratch: /tmp/retropick-restore-verify-20261010T131134 (git archive c41d35d3a57de05fc26f78476554e352d9b08b56)
+apply staged.patch: empty patch (no changes of this kind), skipped
+apply unstaged.patch: OK
+extract untracked.tar.gz: OK
+baseline paths (dirty tracked + untracked): matched 153 of 153
+full tracked tree (non-gitlink): matched 1761 of 1761
+index.copy stage listing == live index stage listing: true
+index.copy reproduces staged.patch: true
+stash-create object 8f54243776f0 reproduces tracked delta: true
+scratch removed: true
+RESTORE VERIFICATION: PASS

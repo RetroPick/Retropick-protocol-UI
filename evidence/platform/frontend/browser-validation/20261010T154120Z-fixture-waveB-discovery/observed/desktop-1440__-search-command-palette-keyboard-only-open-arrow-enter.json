@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 37
+}

@@ -1,0 +1,51 @@
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: the server responded with a status of 404 ()
+[warning] [.WebGL-0x267400923c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[error] Failed to load resource: the server responded with a status of 404 ()
+[error] Error checking Cross-Origin-Opener-Policy: HTTP error! status: 404
+[warning] [.WebGL-0x267400923c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[warning] [.WebGL-0x267400923c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[warning] [.WebGL-0x267400923c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: the server responded with a status of 404 ()
+[error] Failed to load resource: the server responded with a status of 404 ()
+[error] Error checking Cross-Origin-Opener-Policy: HTTP error! status: 404
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: the server responded with a status of 404 ()
+[error] Failed to load resource: the server responded with a status of 404 ()
+[error] Error checking Cross-Origin-Opener-Policy: HTTP error! status: 404
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError}
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError}
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError}
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
+[error] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError}

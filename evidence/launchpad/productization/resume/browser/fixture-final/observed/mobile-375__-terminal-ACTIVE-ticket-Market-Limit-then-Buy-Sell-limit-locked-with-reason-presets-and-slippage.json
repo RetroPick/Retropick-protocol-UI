@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+  "project": "mobile-375",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

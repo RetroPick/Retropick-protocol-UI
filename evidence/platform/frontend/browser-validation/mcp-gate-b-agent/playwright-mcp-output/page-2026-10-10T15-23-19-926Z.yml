@@ -1,0 +1,236 @@
+- generic [active] [ref=f1e1]:
+  - complementary "Sidebar" [ref=f1e2]:
+    - link "Pons home" [ref=f1e3] [cursor=pointer]:
+      - /url: /launchpad
+      - img [ref=f1e5]: Pons
+    - generic [ref=f1e8]:
+      - combobox "Search tokens and people" [ref=f1e13]
+      - generic [aria-hidden] [ref=f1e14]: /
+    - navigation "Primary" [ref=f1e15]:
+      - link "Create a token" [ref=f1e16] [cursor=pointer]:
+        - /url: /launchpad/create
+      - link "Launches" [ref=f1e22] [cursor=pointer]:
+        - /url: /launchpad
+      - link "PLP" [ref=f1e29] [cursor=pointer]:
+        - /url: /plp
+      - link "Analytics" [ref=f1e35] [cursor=pointer]:
+        - /url: /analytics
+    - generic [ref=f1e40]:
+      - 'button "Theme: light. Switch to dark" [ref=f1e41] [cursor=pointer]':
+        - generic [ref=f1e45]: Theme
+      - button "Sign in" [ref=f1e53] [cursor=pointer]
+  - main [ref=f1e60]:
+    - generic [ref=f1e61]:
+      - generic [ref=f1e62]:
+        - link "Launches" [ref=f1e63] [cursor=pointer]:
+          - /url: /launchpad
+        - generic [ref=f1e66]:
+          - button "View the Pons image" [ref=f1e67]
+          - generic [ref=f1e69]:
+            - generic [ref=f1e70]:
+              - heading "Pons" [level=1] [ref=f1e71]:
+                - generic [aria-hidden] [ref=f1e72]: Pons
+              - generic [ref=f1e73]: PONS
+              - button "Pin PONS" [ref=f1e74] [cursor=pointer]
+            - paragraph [ref=f1e77]:
+              - generic [ref=f1e78]:
+                - text: by
+                - link "SlowNeonThrush" [ref=f1e79] [cursor=pointer]:
+                  - /url: /profile/0xb9f5f4ea1af1f5d3678470eb98e8fbdcadeb24b0
+              - time [ref=f1e96]: 2mo ago
+              - generic [ref=f1e97]: WETH pair
+              - button "0x39dbed…3c4571" [ref=f1e98] [cursor=pointer]
+              - link "View on explorer" [ref=f1e102] [cursor=pointer]:
+                - /url: https://robin.etherscan.io/address/0x39dbed3a2bd333467115de45665cc57f813c4571
+        - button "Market cap $251.6M, price $0.3710. Show price first" [ref=f1e106] [cursor=pointer]:
+          - generic [ref=f1e107]: Market cap
+          - generic "$251.6M" [ref=f1e109]:
+            - generic [aria-hidden] [ref=f1e111]: $
+            - generic [ref=f1e113]: "2"
+            - generic [ref=f1e115]: "5"
+            - generic [ref=f1e117]: "1"
+            - generic [aria-hidden] [ref=f1e118]: .
+            - generic [ref=f1e120]: "6"
+            - generic [aria-hidden] [ref=f1e121]: M
+          - generic [ref=f1e122]: $0.3710 price
+      - generic [ref=f1e123]:
+        - generic [ref=f1e124]:
+          - region "Price chart" [ref=f1e126]:
+            - generic [ref=f1e129]:
+              - button "Indicators 2" [ref=f1e131] [cursor=pointer]:
+                - text: Indicators
+                - generic [ref=f1e135]: "2"
+              - group "Chart style" [ref=f1e136]:
+                - button "Line" [ref=f1e137] [cursor=pointer]
+                - button "Candles" [pressed] [ref=f1e139] [cursor=pointer]
+              - group "Candle size" [ref=f1e141]:
+                - button "1m" [ref=f1e142] [cursor=pointer]
+                - button "5m" [ref=f1e144] [cursor=pointer]
+                - button "1h" [ref=f1e146] [cursor=pointer]
+                - button "6h" [pressed] [ref=f1e148] [cursor=pointer]
+                - button "7D" [ref=f1e150] [cursor=pointer]
+                - button "All" [ref=f1e152] [cursor=pointer]
+            - generic [ref=f1e154]:
+              - application "PONS price in 6h candles. Drag or scroll sideways to move through time, scroll to zoom, arrow keys step through candles, plus and minus zoom, End returns to now." [ref=f1e155]
+              - generic: Loading 6h candles
+          - region "Figures" [ref=f1e157]:
+            - generic [ref=f1e158]:
+              - generic [ref=f1e159]:
+                - term [ref=f1e160]: Market cap
+                - definition [ref=f1e161]:
+                  - generic "$251.6M" [ref=f1e163]:
+                    - generic [aria-hidden] [ref=f1e165]: $
+                    - generic [ref=f1e167]: "2"
+                    - generic [ref=f1e169]: "5"
+                    - generic [ref=f1e171]: "1"
+                    - generic [aria-hidden] [ref=f1e172]: .
+                    - generic [ref=f1e174]: "6"
+                    - generic [aria-hidden] [ref=f1e175]: M
+              - generic [ref=f1e176]:
+                - term [ref=f1e177]: Holders
+                - definition [ref=f1e178]: —
+              - generic [ref=f1e179]:
+                - term [ref=f1e180]: Trades
+                - definition [ref=f1e181]:
+                  - generic "503,869" [ref=f1e183]:
+                    - generic [ref=f1e186]: "5"
+                    - generic [ref=f1e188]: "0"
+                    - generic [ref=f1e190]: "3"
+                    - generic [aria-hidden] [ref=f1e191]: ","
+                    - generic [ref=f1e193]: "8"
+                    - generic [ref=f1e195]: "6"
+                    - generic [ref=f1e197]: "9"
+              - generic [ref=f1e198]:
+                - term [ref=f1e199]: Supply
+                - definition [ref=f1e200]:
+                  - generic "1B" [ref=f1e202]:
+                    - generic [ref=f1e205]: "1"
+                    - generic [aria-hidden] [ref=f1e206]: B
+              - generic [ref=f1e207]:
+                - term [ref=f1e208]: Creator fee
+                - definition [ref=f1e209]:
+                  - generic "0%" [ref=f1e211]:
+                    - generic [ref=f1e214]: "0"
+                    - generic [aria-hidden] [ref=f1e215]: "%"
+            - generic [ref=f1e216]:
+              - generic [ref=f1e217]:
+                - term [ref=f1e218]: Token
+                - definition [ref=f1e219]:
+                  - link "0x39dbed…3c4571" [ref=f1e220] [cursor=pointer]:
+                    - /url: https://robin.etherscan.io/address/0x39dbed3a2bd333467115de45665cc57f813c4571
+              - generic [ref=f1e221]:
+                - term [ref=f1e222]: Pool
+                - definition [ref=f1e223]:
+                  - link "0x10cc6b…9526ba" [ref=f1e224] [cursor=pointer]:
+                    - /url: https://robin.etherscan.io/address/0x10cc6bd38112cac182db90b6a71d8bb5939526ba
+              - generic [ref=f1e225]:
+                - term [ref=f1e226]: Launched
+                - definition [ref=f1e227]: Jul 13, 2026, 8:42 PM
+          - region [ref=f1e229]:
+            - heading "About" [level=2] [ref=f1e231]
+            - paragraph [ref=f1e232]: 100% of fees go back to Pons
+          - region "Trades" [ref=f1e234]:
+            - group "Activity" [ref=f1e236]:
+              - button "Trades" [pressed] [ref=f1e237] [cursor=pointer]
+              - button "Holders" [ref=f1e239] [cursor=pointer]
+            - paragraph [ref=f1e241]: Reading trades.
+        - complementary [ref=f1e242]:
+          - region "Trade" [ref=f1e243]:
+            - paragraph [ref=f1e244]: A first generation launch. Trades on its Uniswap v3 pool.
+            - group "Order type" [ref=f1e245]:
+              - button "Market" [pressed] [ref=f1e246] [cursor=pointer]
+              - button "Limit" [ref=f1e248] [cursor=pointer]
+            - group "Side" [ref=f1e250]:
+              - button "Buy" [pressed] [ref=f1e251] [cursor=pointer]
+              - button "Sell" [ref=f1e253] [cursor=pointer]
+            - generic [ref=f1e255]:
+              - generic [ref=f1e256]: Pay
+              - generic [ref=f1e258]:
+                - textbox "Pay" [ref=f1e259]:
+                  - /placeholder: "0"
+                - generic [ref=f1e260]: WETH
+              - group "Quick amounts" [ref=f1e261]:
+                - button "25%" [disabled] [ref=f1e262]
+                - button "50%" [disabled] [ref=f1e263]
+                - button "75%" [disabled] [ref=f1e264]
+                - button "Max" [disabled] [ref=f1e265]
+            - generic [ref=f1e266]:
+              - generic [ref=f1e267]: You receive
+              - generic [ref=f1e268]:
+                - text: "0"
+                - generic [ref=f1e269]: PONS
+            - group [ref=f1e270]:
+              - generic "Slippage 1.0%" [ref=f1e271] [cursor=pointer]
+            - button "Sign in" [ref=f1e273] [cursor=pointer]
+  - contentinfo [ref=f1e274]:
+    - generic [ref=f1e276]:
+      - navigation "Footer" [ref=f1e277]:
+        - generic [ref=f1e278]:
+          - heading "Launchpad" [level=2] [ref=f1e279]
+          - list [ref=f1e280]:
+            - listitem [ref=f1e281]:
+              - link "Create a token" [ref=f1e282] [cursor=pointer]:
+                - /url: /launchpad/create
+            - listitem [ref=f1e284]:
+              - link "Launches" [ref=f1e285] [cursor=pointer]:
+                - /url: /launchpad
+            - listitem [ref=f1e287]:
+              - link "PLP" [ref=f1e288] [cursor=pointer]:
+                - /url: /plp
+            - listitem [ref=f1e290]:
+              - link "Analytics" [ref=f1e291] [cursor=pointer]:
+                - /url: /analytics
+            - listitem [ref=f1e293]:
+              - link "Profile" [ref=f1e294] [cursor=pointer]:
+                - /url: /profile
+        - generic [ref=f1e296]:
+          - heading "Resources" [level=2] [ref=f1e297]
+          - list [ref=f1e298]:
+            - listitem [ref=f1e299]:
+              - link "Docs" [ref=f1e300] [cursor=pointer]:
+                - /url: https://docs.ponsfamily.com
+            - listitem [ref=f1e304]:
+              - link "Support" [ref=f1e305] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=f1e307]:
+              - link "Builders" [ref=f1e308] [cursor=pointer]:
+                - /url: /builders
+            - listitem [ref=f1e310]:
+              - link "Explorer" [ref=f1e311] [cursor=pointer]:
+                - /url: https://robin.etherscan.io
+            - listitem [ref=f1e315]:
+              - link "PONS token" [ref=f1e316] [cursor=pointer]:
+                - /url: /launchpad/0x39dBED3a2bd333467115dE45665cC57F813C4571
+            - listitem [ref=f1e318]:
+              - link "Updates on X" [ref=f1e319] [cursor=pointer]:
+                - /url: https://x.com/ponsdotfamily
+            - listitem [ref=f1e323]:
+              - link "GitHub" [ref=f1e324] [cursor=pointer]:
+                - /url: https://github.com/pons-labs
+        - generic [ref=f1e328]:
+          - heading "Legal" [level=2] [ref=f1e329]
+          - list [ref=f1e330]:
+            - listitem [ref=f1e331]:
+              - link "Terms of Use" [ref=f1e332] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=f1e334]:
+              - link "Privacy Policy" [ref=f1e335] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=f1e337]:
+              - link "MiCA Whitepaper" [ref=f1e338] [cursor=pointer]:
+                - /url: /mica
+            - listitem [ref=f1e340]:
+              - link "Takedown Requests" [ref=f1e341] [cursor=pointer]:
+                - /url: /takedown
+            - listitem [ref=f1e343]:
+              - link "Law Enforcement Requests" [ref=f1e344] [cursor=pointer]:
+                - /url: /law-enforcement
+      - generic [ref=f1e346]:
+        - paragraph [ref=f1e347]: © 2026 Pons Labs, LLC. All rights reserved.
+        - generic [ref=f1e348]:
+          - link "Pons on X" [ref=f1e349] [cursor=pointer]:
+            - /url: https://x.com/ponsdotfamily
+          - link "Pons on GitHub" [ref=f1e352] [cursor=pointer]:
+            - /url: https://github.com/pons-labs
+      - paragraph [ref=f1e356]: Pons is a noncustodial software interface operated by Pons Labs, LLC. Pons does not hold your assets or keys, does not execute or reverse transactions, and is not a bank, broker, exchange, custodian, or investment adviser. Nothing on this site is financial, legal, or tax advice. Tokens are issued by their creators, not by Pons. They are highly volatile, may lose all value, and may have no liquidity. Listing or ranking a token is not an endorsement. You are responsible for your decisions, your wallet, and compliance with local law. Not available in restricted regions. Pons is not affiliated with Robinhood Markets, Inc.
+  - alert [ref=f1e357]

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+  "project": "tablet-768",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 24
+}

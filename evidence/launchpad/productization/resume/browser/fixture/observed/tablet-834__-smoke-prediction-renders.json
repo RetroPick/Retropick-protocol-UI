@@ -1,0 +1,17 @@
+{
+  "test": "fixture/smoke.spec.ts > @smoke prediction renders",
+  "project": "tablet-834",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:4317/launchpad/prediction/btc-150k",
+      "failure": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 1
+}

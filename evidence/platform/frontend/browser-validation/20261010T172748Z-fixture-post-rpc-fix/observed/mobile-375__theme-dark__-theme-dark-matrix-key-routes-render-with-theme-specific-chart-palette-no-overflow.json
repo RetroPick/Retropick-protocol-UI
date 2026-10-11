@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 148
+}

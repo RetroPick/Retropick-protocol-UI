@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 62
+}

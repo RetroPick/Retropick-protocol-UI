@@ -1,0 +1,17 @@
+=== POST /api/media/upload (multipart, Origin allowed) ===
+{"uri":"http://127.0.0.1:8790/api/media/c414cd0e204de974f73753c7e28d7638e7b3691bb8b1a2bab6b25bb7fed7ce77.png","https":null,"hash":"c414cd0e204de974f73753c7e28d7638e7b3691bb8b1a2bab6b25bb7fed7ce77","bytes":70,"mime":"image/png","mode":"local"}
+=== health ===
+{"chainId":10143,"mediaOnly":true,"mode":"local"}
+
+=== GET stored file (headers + bytes round-trip) ===
+GET http://127.0.0.1:8790/api/media/c414cd0e204de974f73753c7e28d7638e7b3691bb8b1a2bab6b25bb7fed7ce77.png
+HTTP/1.1 200 OK | Content-Type: image/png | Cache-Control: public, max-age=31536000, immutable | X-Content-Type-Options: nosniff | Content-Security-Policy: default-src 'none'; sandbox
+BYTES MATCH: sha-keyed file round-trips identically (cmp vs source png)
+
+=== re-upload idempotency ===
+same content -> same key c414cd0e...ce77 (200)
+
+=== origin rejection ===
+wrong-origin status 403 | no-origin status 403
+=== non-image rejection (declared image/png, content text) ===
+{"error":"UNSUPPORTED_MEDIA_TYPE"}

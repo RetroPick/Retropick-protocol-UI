@@ -1,0 +1,12 @@
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

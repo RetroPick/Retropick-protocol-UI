@@ -1,0 +1,2089 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--grep",
+      "@earn"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/earn.spec.ts",
+      "file": "fixture/earn.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 9028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:22:46.654Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-8d4129d5c1859c5ff75b",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 6156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:22:46.020Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-a60e9b666e325cf47c25",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3594,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:24:31.563Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-839c2791a54eacd356ae",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1971,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:24:32.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-b538a691fe4a359f5d3f",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:24:42.407Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-595aa2438d20cf49abc7",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1789,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:24:45.359Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-b04d0bb9fdb3d0e593f5",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": false,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 3706,
+                  "error": {
+                    "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m",
+                    "stack": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:43:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 51,
+                      "line": 96
+                    },
+                    "snippet": "   at helpers/test.ts:96\n\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  97 | }\n  98 |\n  99 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 51,
+                        "line": 96
+                      },
+                      "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m\n\n   at helpers/test.ts:96\n\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  97 | }\n  98 |\n  99 | export { expect };\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:43:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:26:17.541Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 51,
+                    "line": 96
+                  }
+                },
+                {
+                  "workerIndex": 25,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 4087,
+                  "error": {
+                    "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m",
+                    "stack": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:43:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 51,
+                      "line": 96
+                    },
+                    "snippet": "   at helpers/test.ts:96\n\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  97 | }\n  98 |\n  99 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 51,
+                        "line": 96
+                      },
+                      "message": "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m\n\n   at helpers/test.ts:96\n\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  97 | }\n  98 |\n  99 | export { expect };\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:43:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T18:26:23.627Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 51,
+                    "line": 96
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-3a7ed331515a42feddd2",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1853,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:26:19.438Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-ae41efa9f8d3084637bb",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 4838,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:26:29.114Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-5165f40072e36c6c2da5",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 28,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2444,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:26:31.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-7858cb0b8e961f6d6201",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@earn referral copy, section tabs, demo positions toggle",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 35,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:28:04.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-ac5808df657763b145b2",
+          "file": "fixture/earn.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@earn legacy /portfolio route still renders demo portfolio",
+          "ok": true,
+          "tags": [
+            "earn"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 36,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2815,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:28:13.388Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "95a549467a8681ae8e3c-c5822d8941e10164818f",
+          "file": "fixture/earn.spec.ts",
+          "line": 47,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "earn dark",
+          "file": "fixture/earn.spec.ts",
+          "line": 5,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 46972,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:22:46.480Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 46960,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:23:39.759Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1440-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-b3c02ae07cedeabc0a1b",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 47368,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:22:57.114Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 46478,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:23:51.012Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-desktop-1280-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-13b12e8711824f140b7d",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 46421,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:24:36.668Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 45749,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:25:28.365Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-834-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-4756f8fbc12910d91acd",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 46371,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:24:49.542Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 45869,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:25:39.895Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-tablet-768-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-7ef22fc83408eb828491",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 24,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 47271,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:26:22.918Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 31,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 46768,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:27:14.284Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-390-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-420507fdd1214011403c",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 29,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 46313,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:26:35.890Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 33,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 48890,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:27:24.330Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-dark-ear-7c53b-no-copied-competitor-policy-mobile-375-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-4c13c8e50658fe9ec27a",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "earn light",
+          "file": "fixture/earn.spec.ts",
+          "line": 5,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 47085,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:22:48.159Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 46789,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:23:41.314Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1440-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-28506fca5eadf6ba152c",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 47358,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:22:59.458Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 47020,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:23:52.488Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-desktop-1280-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-9c06f09752ef6269beaf",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 46794,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:24:38.263Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 45707,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:25:31.004Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-834-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-e63ef45d51a05ee057a5",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 46189,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:24:49.774Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 45863,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:25:39.961Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-tablet-768-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-ca9ff707d9c6886a6e2f",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 26,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 46565,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:26:29.055Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 32,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 47249,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:27:18.694Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-390-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-720a8735488d61ee1ed7",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            },
+            {
+              "title": "@earn hub shows honest capabilities, no copied competitor policy",
+              "ok": false,
+              "tags": [
+                "earn"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 30,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 46229,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:26:36.008Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 34,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 47584,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts",
+                            "column": 48,
+                            "line": 15
+                          },
+                          "message": "Error: locator.innerText: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('earn-hub').locator('.rp-hub-send')\u001b[22m\n\n\n  13 |       expect(text).not.toMatch(/\\bSOL\\b|Bags|50% of protocol fees|0\\.20%|Robinhood|\\$0(\\.00)?\\b/);\n  14 |       // Section 23: no exchange/third-party destinations implied for Send (provider capability rows above are disabled + explained).\n> 15 |       expect(await hub.locator('.rp-hub-send').innerText()).not.toMatch(/Coinbase|Binance|Solana|Robinhood/);\n     |                                                ^\n  16 |       // No claimable amount and no active claim CTA without a claim contract.\n  17 |       await expect(page.getByTestId('claimable-total')).toHaveText('—');\n  18 |       await expect(hub.getByRole('button', { name: 'Claim all' })).toBeDisabled();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:15:48"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:27:24.477Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T182110Z-fixture-earn-redesign/test-output/fixture-earn-earn-light-ea-4c9a9-no-copied-competitor-policy-mobile-375-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "95a549467a8681ae8e3c-de4b6bdeeca6b9e28391",
+              "file": "fixture/earn.spec.ts",
+              "line": 7,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T18:21:17.300Z",
+    "duration": 420419.308,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 13,
+    "flaky": 0
+  }
+}

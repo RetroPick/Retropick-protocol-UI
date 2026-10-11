@@ -1,0 +1,114 @@
+[
+  {
+    "variant": "strict-clean",
+    "errors": 0,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1468,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1886,
+        "terminal": 1,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 849,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "no-strict-clean",
+    "errors": 0,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1468,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1886,
+        "terminal": 1,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 860,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "strict-no-performance-measure",
+    "errors": 0,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 635,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 263,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 849,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "strict-devtools-hook",
+    "errors": 0,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1469,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1415,
+        "terminal": 1,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 849,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  }
+]

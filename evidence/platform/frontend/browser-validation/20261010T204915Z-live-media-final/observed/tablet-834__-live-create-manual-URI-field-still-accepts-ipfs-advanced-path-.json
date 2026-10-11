@@ -1,0 +1,12 @@
+{
+  "test": "live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)",
+  "project": "tablet-834",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 32
+}

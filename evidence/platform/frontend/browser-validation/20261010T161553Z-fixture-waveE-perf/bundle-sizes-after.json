@@ -1,0 +1,1 @@
+{"js_before":{"bytes":1624974,"gzip":483947,"count":60},"js_after":{"bytes":1690214,"gzip":509199,"count":71},"entry_before":{"bytes":203378,"gzip":63955},"entry_after":{"bytes":204959,"gzip":64610},"new_dependencies":0,"build":"vite build --outDir /tmp/rp-perf-dist"}

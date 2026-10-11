@@ -1,0 +1,37 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+  "project": "desktop-1280",
+  "status": "timedOut",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/services/tx-pipeline.ts",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/services/tx-pipeline.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "%o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4317/src/features/launchpad/token-detail.tsx The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, RouteErrorBoundary.",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom_client.js?v=5d9dc021",
+      "classification": "provider-rpc"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:4317/src/services/tx-pipeline.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 186
+}

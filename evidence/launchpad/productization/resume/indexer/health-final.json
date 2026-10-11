@@ -1,0 +1,64 @@
+{
+  "freshness": {
+    "chainId": 10143,
+    "indexedBlock": 69897512,
+    "indexedBlockHash": "0x0d91a552a0d4f1bafc0b7faef6cdb06c390f39cc8a3399524124f315baa98fca",
+    "headBlock": 69897520,
+    "confirmations": 8,
+    "lagBlocks": 8,
+    "indexedAt": "2026-10-10T18:32:15.438Z",
+    "syncing": false,
+    "error": null,
+    "source": "MONAD_EVENT_INDEXER",
+    "projectionVersion": 2,
+    "reorgRevision": 0,
+    "beneficiaryIndexedBlock": 69897512
+  },
+  "ready": true,
+  "projection": {
+    "expected": 2,
+    "published": 2
+  },
+  "progress": {
+    "passes": 4,
+    "passStartedAt": "2026-10-10T18:32:10.132Z",
+    "passTarget": 69897512,
+    "headTarget": 69897512,
+    "lastSyncedAt": "2026-10-10T18:32:15.450Z",
+    "lastPassMs": 5318,
+    "lastPassBlocks": 51,
+    "blocksPerSecond": 10,
+    "lastError": null,
+    "catchingUp": false,
+    "cursors": {
+      "root": 69897512,
+      "dynamic": 69897512,
+      "beneficiary": 69897512
+    }
+  },
+  "providers": [
+    {
+      "endpoint": "monad-testnet.infura.io",
+      "state": "circuit-open",
+      "chainId": 10143,
+      "requests": 7,
+      "failures": 2,
+      "lastFailure": "NETWORK",
+      "lastFailureMessage": "RPC_NETWORK",
+      "retryAt": 1791657164348,
+      "latencyMs": 916
+    },
+    {
+      "endpoint": "testnet-rpc.monad.xyz",
+      "state": "healthy",
+      "chainId": 10143,
+      "requests": 75,
+      "failures": 0,
+      "lastFailure": null,
+      "lastFailureMessage": null,
+      "retryAt": null,
+      "latencyMs": 681
+    }
+  ],
+  "observedAt": "2026-10-10T18:32:21.404642+00:00"
+}

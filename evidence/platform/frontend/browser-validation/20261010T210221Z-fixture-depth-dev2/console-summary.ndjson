@@ -1,0 +1,2 @@
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED post-only toggle switches order policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

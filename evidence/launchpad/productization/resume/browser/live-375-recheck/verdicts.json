@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "startTime": "2026-10-10T18:23:27.789Z",
+    "duration": 65648.332,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "PASS": 2,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "appConsoleErrors": 0,
+  "uncaughtPageErrors": 0,
+  "signingBroadcastViolations": 0,
+  "screenshots": 6,
+  "cases": [
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 22008,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 22152,
+      "reasons": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.local/node-v24.11.0/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "e2e/resume.config.ts",
+      "live/resume-readonly.spec.ts",
+      "--workers=2"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/resume.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 2,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-resume-live-4324-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-resume-live-4324-dist --port 4324 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4324/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "pipe",
+      "stderr": "pipe",
+      "cwd": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/resume-readonly.spec.ts",
+      "file": "live/resume-readonly.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "resume dark",
+          "file": "live/resume-readonly.spec.ts",
+          "line": 7,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 243335,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('discovery')\nExpected: \u001b[32m\"live\"\u001b[39m\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('discovery')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('discovery')\nExpected: \u001b[32m\"live\"\u001b[39m\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('discovery')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:21:51",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                          "column": 51,
+                          "line": 21
+                        },
+                        "snippet": "  19 |       test.skip(!active || !graduated, 'ENVIRONMENT: requires indexed ACTIVE and GRADUATED launch');\n  20 |       await page.goto('/launchpad');\n> 21 |       await expect(page.getByTestId('discovery')).toHaveAttribute('data-data-mode', 'live');\n     |                                                   ^\n  22 |       await expect(page.getByTestId('launch-row').first()).toBeVisible();\n  23 |       await expectNoHorizontalOverflow(page);\n  24 |       await snap(`resume-discovery-${theme}`);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                            "column": 51,
+                            "line": 21
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('discovery')\nExpected: \u001b[32m\"live\"\u001b[39m\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('discovery')\u001b[22m\n\n\n  19 |       test.skip(!active || !graduated, 'ENVIRONMENT: requires indexed ACTIVE and GRADUATED launch');\n  20 |       await page.goto('/launchpad');\n> 21 |       await expect(page.getByTestId('discovery')).toHaveAttribute('data-data-mode', 'live');\n     |                                                   ^\n  22 |       await expect(page.getByTestId('launch-row').first()).toBeVisible();\n  23 |       await expectNoHorizontalOverflow(page);\n  24 |       await snap(`resume-discovery-${theme}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:21:51"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:36:30.896Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--desktop-1440/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                        "column": 51,
+                        "line": 21
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 54799,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:40:52.091Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-b25bf792bc7bc44d86f4",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 34186,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:41:56.540Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-78e65fcecd715563ce96",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 4,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:42:37.795Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--tablet-834/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-8de034f7ac8e82dff4b1",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-432570210c0434785996",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-3c24567418f2ad6831e7",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-a9cb524f2e81a354b97d",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "resume light",
+          "file": "live/resume-readonly.spec.ts",
+          "line": 7,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 251512,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                            "column": 18,
+                            "line": 51
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5\", waiting until \"load\"\u001b[22m\n\n\n  49 |       await expect(page.locator('[data-wallet-status=\"connected\"]:visible').first()).toBeVisible();\n  50 |       if (info.project.name.startsWith('mobile')) await page.keyboard.press('Escape');\n> 51 |       await page.goto(`/launchpad/token/${graduated!.token}`);\n     |                  ^\n  52 |       await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATED');\n  53 |       await expect(page.getByTestId('token-terminal')).toContainText(graduated!.symbol);\n  54 |       await expect(page.getByTestId('token-terminal').locator('[data-provenance=\"demo\"]')).toHaveCount(0);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:51:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:36:30.969Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1440/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 48595,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T18:41:08.639Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-ccb03eac416322dc5d36",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "interrupted",
+                      "duration": 26478,
+                      "error": {
+                        "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5\", waiting until \"load\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:51:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                          "column": 18,
+                          "line": 51
+                        },
+                        "snippet": "  49 |       await expect(page.locator('[data-wallet-status=\"connected\"]:visible').first()).toBeVisible();\n  50 |       if (info.project.name.startsWith('mobile')) await page.keyboard.press('Escape');\n> 51 |       await page.goto(`/launchpad/token/${graduated!.token}`);\n     |                  ^\n  52 |       await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATED');\n  53 |       await expect(page.getByTestId('token-terminal')).toContainText(graduated!.symbol);\n  54 |       await expect(page.getByTestId('token-terminal').locator('[data-provenance=\"demo\"]')).toHaveCount(0);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                            "column": 18,
+                            "line": 51
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5\", waiting until \"load\"\u001b[22m\n\n\n  49 |       await expect(page.locator('[data-wallet-status=\"connected\"]:visible').first()).toBeVisible();\n  50 |       if (info.project.name.startsWith('mobile')) await page.keyboard.press('Escape');\n> 51 |       await page.goto(`/launchpad/token/${graduated!.token}`);\n     |                  ^\n  52 |       await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATED');\n  53 |       await expect(page.getByTestId('token-terminal')).toContainText(graduated!.symbol);\n  54 |       await expect(page.getByTestId('token-terminal').locator('[data-provenance=\"demo\"]')).toHaveCount(0);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:51:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T18:42:12.006Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts",
+                        "column": 18,
+                        "line": 51
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-dd1ab7194cb9ba8ae4a4",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-cbca1851ceae1f0a45db",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-5fe93e5f0302acdb060b",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-9dc01f2cfe6d35da1574",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            },
+            {
+              "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+              "ok": true,
+              "tags": [
+                "resume-live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a98f509727cda6b9f511-4b45571fa30739ceb4af",
+              "file": "live/resume-readonly.spec.ts",
+              "line": 9,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T18:35:47.704Z",
+    "duration": 421502.176,
+    "expected": 1,
+    "skipped": 9,
+    "unexpected": 0,
+    "flaky": 2
+  }
+}

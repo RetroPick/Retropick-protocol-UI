@@ -1,0 +1,370 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.local/node-v24.11.0/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "e2e/resume.config.ts",
+      "live/resume-hydration.spec.ts",
+      "--project=desktop-1440",
+      "--workers=1"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/resume.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-resume-live-4327-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-resume-live-4327-dist --port 4327 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4327/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "pipe",
+      "stderr": "pipe",
+      "cwd": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/resume-hydration.spec.ts",
+      "file": "live/resume-hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@resume-hydration ACTIVE RPC economic hydration independently qualifies the indexed shell",
+          "ok": true,
+          "tags": [
+            "resume-hydration"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:59:38.851Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "RPC-hydration",
+                      "contentType": "application/json",
+                      "body": "ewogICJwaGFzZSI6ICJBQ1RJVkUiLAogICJ3YWxsZXQiOiAiYWJzZW50OyBubyB3YWxsZXQgYWNjb3VudCBvciBlY29ub21pYyB3cml0ZSByZXF1ZXN0ZWQiLAogICJzaGVsbFJlYWR5IjogdHJ1ZSwKICAidGlja2V0UmVhZHkiOiB0cnVlLAogICJib3VuZE1zIjogNzUwMDAsCiAgInN0YWdlcyI6IFsKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAicmVzdWx0IjogIlBBU1MiCiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVjb25vbWljIiwKICAgICAgInJlc3VsdCI6ICJQQVNTIgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJyZXN1bHQiOiAiUEFTUyIKICAgIH0KICBdLAogICJyZWNvcmRzIjogWwogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDE1NDMuNzAwMDAwMDAyOTgwMiwKICAgICAgImR1cmF0aW9uIjogNzk4LjEwMDAwMDAwMTQ5MDEKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAxNzk2LjkwMDAwMDAwMjIzNTIsCiAgICAgICJkdXJhdGlvbiI6IDIzOC45MDAwMDAwMDIyMzUxNwogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDE4MDQuMjAwMDAwMDAyOTgwMgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "631585c32c05b4c379be-c68ffad64b36920d2e80",
+          "file": "live/resume-hydration.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "@resume-hydration GRADUATED RPC economic hydration independently qualifies the indexed shell",
+          "ok": false,
+          "tags": [
+            "resume-hydration"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 36787,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                      "column": 60,
+                      "line": 39
+                    },
+                    "snippet": "  37 |         await page.getByTestId('ticket-limit-price').fill('0.004');\n  38 |         await page.getByTestId('ticket-amount').fill('1');\n> 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');\n     |                                                            ^\n  40 |         await expect(ticket).toContainText('Normalized to market tick');\n  41 |       }\n  42 |       ticketReady = true;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                        "column": 60,
+                        "line": 39
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n\n\n  37 |         await page.getByTestId('ticket-limit-price').fill('0.004');\n  38 |         await page.getByTestId('ticket-amount').fill('1');\n> 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');\n     |                                                            ^\n  40 |         await expect(ticket).toContainText('Normalized to market tick');\n  41 |       }\n  42 |       ticketReady = true;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T18:59:42.245Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "RPC-hydration",
+                      "contentType": "application/json",
+                      "body": "ewogICJwaGFzZSI6ICJHUkFEVUFURUQiLAogICJ3YWxsZXQiOiAiYWJzZW50OyBubyB3YWxsZXQgYWNjb3VudCBvciBlY29ub21pYyB3cml0ZSByZXF1ZXN0ZWQiLAogICJzaGVsbFJlYWR5IjogdHJ1ZSwKICAidGlja2V0UmVhZHkiOiBmYWxzZSwKICAiYm91bmRNcyI6IDc1MDAwLAogICJzdGFnZXMiOiBbCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgInJlc3VsdCI6ICJQQVNTIgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJyZXN1bHQiOiAiUEFTUyIKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAicmVzdWx0IjogIlBBU1MiCiAgICB9CiAgXSwKICAicmVjb3JkcyI6IFsKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiAxMzc1LjQwMDAwMDAwMjIzNTIsCiAgICAgICJkdXJhdGlvbiI6IDgwMi4xOTk5OTk5OTkyNTQ5CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVjb25vbWljIiwKICAgICAgImF0IjogMTU2Ny4zMDAwMDAwMDA3NDUsCiAgICAgICJkdXJhdGlvbiI6IDE4NS4zOTk5OTk5OTg1MDk4OAogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDE1NzYuMzAwMDAwMDAwNzQ1CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDQ4ODIuOTAwMDAwMDAyMjM1LAogICAgICAiZHVyYXRpb24iOiA1MDYuNTk5OTk5OTk3NzY0OAogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDUxNDcuNDAwMDAwMDAyMjM1LAogICAgICAiZHVyYXRpb24iOiAyNDQuMTAwMDAwMDAxNDkwMTIKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAiYXQiOiA1MTUxCiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDg0NDMuODAwMDAwMDAwNzQ1LAogICAgICAiZHVyYXRpb24iOiA1NjAuMTk5OTk5OTk5MjU0OQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDg2MzAuMjAwMDAwMDAyOTgsCiAgICAgICJkdXJhdGlvbiI6IDE3NC4xOTk5OTk5OTkyNTQ5NAogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDg2NDQuNzAwMDAwMDAyOTgKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgImF0IjogMTE5NTQuNDAwMDAwMDAyMjM1LAogICAgICAiZHVyYXRpb24iOiA1MDkuNjk5OTk5OTk5MjU0OTQKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAxMjEzMiwKICAgICAgImR1cmF0aW9uIjogMTY1LjM5OTk5OTk5ODUwOTg4CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogMTIxMzcuNQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiAxNTUxOSwKICAgICAgImR1cmF0aW9uIjogNTYzLjc5OTk5OTk5NzAxOTgKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAxNTY5OC40MDAwMDAwMDIyMzUsCiAgICAgICJkdXJhdGlvbiI6IDE3NC44MDAwMDAwMDA3NDUwNgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDE1NzAyCiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDE4OTk2LjEwMDAwMDAwMTQ5LAogICAgICAiZHVyYXRpb24iOiA0NzYuNjAwMDAwMDAxNDkwMQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDE5MTg3LAogICAgICAiZHVyYXRpb24iOiAxODcuNjk5OTk5OTk5MjU0OTQKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAiYXQiOiAxOTE5OC41CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDIyNjE2LjYwMDAwMDAwMTQ5LAogICAgICAiZHVyYXRpb24iOiA2MjAKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAyMjgxMC4yMDAwMDAwMDI5OCwKICAgICAgImR1cmF0aW9uIjogMTkwLjgwMDAwMDAwMDc0NTA2CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogMjI4MTMuMjAwMDAwMDAyOTgKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgImF0IjogMjYxMTQsCiAgICAgICJkdXJhdGlvbiI6IDQ5Ni41OTk5OTk5OTc3NjQ4CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVjb25vbWljIiwKICAgICAgImF0IjogMjYyOTIuMjAwMDAwMDAyOTgsCiAgICAgICJkdXJhdGlvbiI6IDE3NC41CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogMjYyOTgKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgImF0IjogMjk3MTkuNDAwMDAwMDAyMjM1LAogICAgICAiZHVyYXRpb24iOiA2MDUKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAyOTkxMS40MDAwMDAwMDIyMzUsCiAgICAgICJkdXJhdGlvbiI6IDE4Ny40MDAwMDAwMDIyMzUxNwogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDI5OTE1LjEwMDAwMDAwMTQ5CiAgICB9CiAgXQp9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                    "column": 60,
+                    "line": 39
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 38240,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                      "column": 60,
+                      "line": 39
+                    },
+                    "snippet": "  37 |         await page.getByTestId('ticket-limit-price').fill('0.004');\n  38 |         await page.getByTestId('ticket-amount').fill('1');\n> 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');\n     |                                                            ^\n  40 |         await expect(ticket).toContainText('Normalized to market tick');\n  41 |       }\n  42 |       ticketReady = true;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                        "column": 60,
+                        "line": 39
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('ticket-total')\nExpected: not \u001b[32m\"—\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m—\u001b[27m\"\u001b[39m\nTimeout:  30000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveText\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('ticket-total')\u001b[22m\n\u001b[2m    63 × locator resolved to <dd data-testid=\"ticket-total\">—</dd>\u001b[22m\n\u001b[2m       - unexpected value \"—\"\u001b[22m\n\n\n  37 |         await page.getByTestId('ticket-limit-price').fill('0.004');\n  38 |         await page.getByTestId('ticket-amount').fill('1');\n> 39 |         await expect(page.getByTestId('ticket-total')).not.toHaveText('—');\n     |                                                            ^\n  40 |         await expect(ticket).toContainText('Normalized to market tick');\n  41 |       }\n  42 |       ticketReady = true;\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts:39:60"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T19:00:23.754Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "RPC-hydration",
+                      "contentType": "application/json",
+                      "body": "ewogICJwaGFzZSI6ICJHUkFEVUFURUQiLAogICJ3YWxsZXQiOiAiYWJzZW50OyBubyB3YWxsZXQgYWNjb3VudCBvciBlY29ub21pYyB3cml0ZSByZXF1ZXN0ZWQiLAogICJzaGVsbFJlYWR5IjogdHJ1ZSwKICAidGlja2V0UmVhZHkiOiBmYWxzZSwKICAiYm91bmRNcyI6IDc1MDAwLAogICJzdGFnZXMiOiBbCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgInJlc3VsdCI6ICJQQVNTIgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJyZXN1bHQiOiAiUEFTUyIKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAicmVzdWx0IjogIlBBU1MiCiAgICB9CiAgXSwKICAicmVjb3JkcyI6IFsKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiAxNjY3LjUsCiAgICAgICJkdXJhdGlvbiI6IDEwMDYuMTk5OTk5OTk5MjU0OQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDE4OTAsCiAgICAgICJkdXJhdGlvbiI6IDIwMC40MDAwMDAwMDIyMzUxNwogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDE5MjEuMzk5OTk5OTk4NTA5OQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiA1MTg5LjgwMDAwMDAwMDc0NSwKICAgICAgImR1cmF0aW9uIjogNTIxLjUKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiA1Mzg0LjY5OTk5OTk5OTI1NSwKICAgICAgImR1cmF0aW9uIjogMTg3LjgwMDAwMDAwMDc0NTA2CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogNTM4OS4zOTk5OTk5OTg1MQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiA4Nzk1LjY5OTk5OTk5OTI1NSwKICAgICAgImR1cmF0aW9uIjogNjA1CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVjb25vbWljIiwKICAgICAgImF0IjogODk3Mi41LAogICAgICAiZHVyYXRpb24iOiAxNzIKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAiYXQiOiA4OTc2Ljg5OTk5OTk5ODUxCiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDEyMjg0LjU5OTk5OTk5Nzc2NSwKICAgICAgImR1cmF0aW9uIjogNDg4LjUKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAxMjQ3NC41OTk5OTk5OTc3NjUsCiAgICAgICJkdXJhdGlvbiI6IDE4Ni42OTk5OTk5OTkyNTQ5NAogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDEyNDc3LjY5OTk5OTk5OTI1NQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiAxNTg3OS4zOTk5OTk5OTg1MSwKICAgICAgImR1cmF0aW9uIjogNTkzLjg5OTk5OTk5ODUwOTkKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAxNjA1OC4zMDAwMDAwMDA3NDUsCiAgICAgICJkdXJhdGlvbiI6IDE3NS40MDAwMDAwMDIyMzUxNwogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDE2MDYxLjU5OTk5OTk5Nzc2NQogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplc3NlbnRpYWwiLAogICAgICAiYXQiOiAxOTM4My44MDAwMDAwMDA3NDUsCiAgICAgICJkdXJhdGlvbiI6IDUwMy43MDAwMDAwMDI5ODAyMwogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDE5NjY3LjA5OTk5OTk5Nzc2NSwKICAgICAgImR1cmF0aW9uIjogMjgwLjI5OTk5OTk5NzAxOTc3CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogMTk2NzAKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgImF0IjogMjI5NTQsCiAgICAgICJkdXJhdGlvbiI6IDU2OS42MDAwMDAwMDE0OTAxCiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVjb25vbWljIiwKICAgICAgImF0IjogMjMxMzUuNTk5OTk5OTk3NzY1LAogICAgICAiZHVyYXRpb24iOiAxNzcuMzk5OTk5OTk4NTA5ODgKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6dHJhZGUtaW50ZXJhY3RpdmUiLAogICAgICAiYXQiOiAyMzEzOC41OTk5OTk5OTc3NjUKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZXNzZW50aWFsIiwKICAgICAgImF0IjogMjY0OTQuODAwMDAwMDAwNzQ1LAogICAgICAiZHVyYXRpb24iOiA1MzkuMjAwMDAwMDAyOTgwMgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDplY29ub21pYyIsCiAgICAgICJhdCI6IDI2NzM4LjA5OTk5OTk5Nzc2NSwKICAgICAgImR1cmF0aW9uIjogMjM5CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOnRyYWRlLWludGVyYWN0aXZlIiwKICAgICAgImF0IjogMjY3NDIuMzAwMDAwMDAwNzQ1CiAgICB9LAogICAgewogICAgICAic3RhZ2UiOiAiZGV0YWlsOmVzc2VudGlhbCIsCiAgICAgICJhdCI6IDMwMDM4LjE5OTk5OTk5OTI1NSwKICAgICAgImR1cmF0aW9uIjogNTQxLjM5OTk5OTk5ODUwOTkKICAgIH0sCiAgICB7CiAgICAgICJzdGFnZSI6ICJkZXRhaWw6ZWNvbm9taWMiLAogICAgICAiYXQiOiAzMDIyNy4xOTk5OTk5OTkyNTUsCiAgICAgICJkdXJhdGlvbiI6IDE4NC42MDAwMDAwMDE0OTAxMgogICAgfSwKICAgIHsKICAgICAgInN0YWdlIjogImRldGFpbDp0cmFkZS1pbnRlcmFjdGl2ZSIsCiAgICAgICJhdCI6IDMwMjM1LjUKICAgIH0KICBdCn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/launchpad/productization/resume/browser/live-hydration/test-output/live-resume-hydration--res-e1bce-qualifies-the-indexed-shell-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-hydration.spec.ts",
+                    "column": 60,
+                    "line": 39
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "631585c32c05b4c379be-33e79b3692d5a5e0ef06",
+          "file": "live/resume-hydration.spec.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T18:59:30.494Z",
+    "duration": 97338.515,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

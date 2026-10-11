@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+  "project": "mobile-390",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 20
+}

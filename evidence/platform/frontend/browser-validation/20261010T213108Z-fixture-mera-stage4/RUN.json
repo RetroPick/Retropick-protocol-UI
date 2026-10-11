@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "mera-stage4",
+  "startedAt": "2026-10-10T21:31:08.170Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts",
+  "cwd": "apps/retro-ui"
+}

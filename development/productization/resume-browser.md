@@ -1,0 +1,43 @@
+# Resume browser verification
+
+Baseline: integrated main `f643cb62`; verification against the current working tree, with concurrent GLM Earn/Portfolio work preserved. No commits, pushes, CSS redesign, contract changes, signatures or broadcasts were performed by this lane.
+
+## Crash diagnosis and correction
+
+Installed React/React DOM `19.2.6` throws `Do not know how to serialize a BigInt` while profiling updated component props in development. The observed stack is `JSON.stringify → addValueToProperties → addObjectToProperties → addObjectDiffToProperties → logComponentRender`. The captured offending value is `KuruState.params`, the 11-field `getMarketParams` tuple containing exact bigint values. The profiler's `getArrayKind` incorrectly classifies that tuple as a JSON-safe primitive array. Launch reserve/completion tuples expose the same dependency hazard.
+
+Reproduction used a fresh Chromium context without extensions, a real localhost indexer and public Monad Testnet RPC. The error also occurred after removing StrictMode only in the served response, and with a synthetic DevTools hook. Actual extension-installed testing is SKIP: no extension was available; clean-browser reproduction establishes that an extension is not required. Disabling `performance.measure` avoided the profiler error but prevented terminal readiness in this application, so it was rejected as a fix.
+
+The application boundary now projects only ticket inputs: reserve quote/token values become named exact bigint fields; Kuru contributes only exact quote/base balances. SDK ABI tuples and transaction preparation remain intact. `ticketLaunch` and `ticketKuru` are defined in `apps/retro-ui/src/lib/live/trade-ticket-inputs.ts`, applied by `token-detail.tsx`, and consumed by `live-trading-ticket.tsx`. Root approved these specific paths after ownership verification. GLM-owned Earn/Portfolio, shared manifests/providers, and CSS were not edited by this lane.
+
+The supported upstream fix is present in the [React 19.3.0 tagged source](https://github.com/react/react/blob/v19.3.0/packages/shared/ReactPerformanceTrackProperties.js): bigint elements are classified as complex arrays. [React issue 35004](https://github.com/react/react/issues/35004) documents the same development failure. A dependency update is a separate coordinated change because package manifests and running tests are shared.
+
+## Verification and evidence
+
+- `node --test e2e/tools/trade-ticket-inputs.test.mjs`: 2 PASS. Values above Number precision are preserved, raw SDK tuples remain unchanged, and unnecessary ABI tuples do not reach ticket props.
+- `pnpm typecheck`: PASS after the root lane corrected its indexed-record query type.
+- Initial live matrix: 10 PASS / 0 FAIL / 2 SKIP (indexer restarted during the 375px cases). Fresh 375px rerun: 2 PASS / 0 FAIL / 0 SKIP. All 12 required cases therefore passed before the application projection; the original skips remain recorded.
+- Before/after dev traces: `evidence/launchpad/productization/resume/browser/investigation/`. Post-fix StrictMode and no-StrictMode contexts rendered the graduated terminal with zero page/console errors. An asserted ACTIVE/GRADUATED final probe and fresh production matrix are pending final verification.
+- Initial live screenshots/observations: `live/` and `live-375-recheck/` under the same evidence root; zero app console errors, uncaught page errors, signing/broadcast violations, or failed requests in those passed cases.
+
+Each fresh live matrix case covers indexed discovery, ACTIVE SPA navigation, mock EIP-1193 wallet retention, range/resolution independence, wrong-chain detection and switching, GRADUATED direct navigation, honest live provenance, and horizontal overflow. The displayed token price may use indexed fallback: these 12 cases do not independently prove RPC economic hydration, nor do they prove real extension wallet persistence. Dark/light themes run across 375, 390, 768, 834, 1280 and 1440px. Existing fixtures additionally cover mobile trade sheets, keyboard controls, lifecycle states, protocol/holder/order tabs, demo failures and accessibility. A separate focused hydration spec asserts `detail:essential`, `detail:economic` and `detail:trade-interactive` stages and ready ticket content with a bounded wait for both ACTIVE and GRADUATED.
+
+## Harness isolation and incomplete attempts
+
+The first full fixture attempt shared the default port/build directory with a concurrent GLM run; served assets were replaced and the run was interrupted. A second isolated run coincided with dependency links changing during the root's archived-baseline build; worker failures occurred before observation fixtures. These attempts are preserved and excluded from final gate counts. A later concurrent final live attempt was interrupted after host contention caused long timeouts; it is also preserved and excluded from gate counts. No other agent's processes were stopped.
+
+`e2e/resume.config.ts` gives each run an explicit `E2E_RESUME_PORT` and matching unique `/tmp` output directory. The final fixture target is 4323. Subsequent live/dev runs execute sequentially once fixture work releases browser load. Console messages and URLs are sanitized; signing RPC method families and HTTP URL credentials are blocked/redacted by the browser harness.
+
+## Pending handoff
+
+Final isolated fixture run (`E2E_RESUME_PORT=4323 E2E_TARGET=fixture E2E_EVIDENCE_DIR=.../fixture-final pnpm exec playwright test --config e2e/resume.config.ts --workers=4`) completed 270 cases: 224 clean PASS, 5 retried PASS (flaky), 5 FAIL, 36 intentional viewport applicability SKIP. Thus `verdicts.json` reports 229 final-attempt PASS / 5 FAIL / 36 SKIP, while retaining retry numbers and original `results.json`. The suite is FAIL, not a clean 234-pass claim. Four failures were desktop-1440 accessibility checks with 45s test timeout and context teardown timeout during contention; a focused lower-load recheck is pending. The fifth failure is the protected Earn defect below. All observed app console errors, page errors and signing/broadcast violation counts were zero; 163 screenshots were captured.
+
+Final post-fix live matrix (`E2E_RESUME_PORT=4325 E2E_TARGET=live E2E_EVIDENCE_DIR=.../live-after-fix VITE_DATA_MODE=live VITE_INDEXER_URL=http://127.0.0.1:8787 VITE_MONAD_RPC_URL=https://testnet-rpc.monad.xyz VITE_MONAD_RPC_FALLBACK_URL=https://testnet-rpc.monad.xyz VITE_WALLET_BRIDGE_URL='' pnpm exec playwright test --config e2e/resume.config.ts live/resume-readonly.spec.ts --workers=1`) completed 12 PASS / 0 FAIL / 0 SKIP / 0 flaky in 170.1s. All 12 individual verdicts appear in `live-after-fix/verdicts.json`; 36 screenshots, zero app console errors, zero uncaught page errors and zero signing/broadcast violations. The earlier 375px environment skips and interrupted attempts remain preserved, without contributing to this final matrix.
+
+Focused recheck (`E2E_RESUME_PORT=4326 E2E_TARGET=fixture E2E_EVIDENCE_DIR=.../fixture-a11y-recheck pnpm exec playwright test --config e2e/resume.config.ts --project=desktop-1440 --grep '@a11y keyboard|@a11y semantics|@a11y reduced|@theme dark' --workers=1`) completed 4 PASS / 0 FAIL / 0 SKIP / 0 flaky in 22.0s. These four original timeout failures remain in the 270-case suite; their focused recheck supports a host-contention diagnosis. Combining each case's latest observation yields 233 PASS / 1 protected Earn FAIL / 36 intentional SKIP, with original suite retries still disclosed. This is not a clean full-suite rerun.
+
+Asserted dev regression (`E2E_ASSERT_CLEAN=1 E2E_PROBE_VARIANTS=strict-clean,no-strict-clean,strict-devtools-hook E2E_EVIDENCE_DIR=.../investigation/dev-final node e2e/tools/resume-dev-probe.mjs`) exited 0: all three controls rendered ACTIVE and GRADUATED terminals, with zero page errors, console errors or write blocks. The probe confirms crash absence and terminal rendering; RPC economic stage qualification is separately pending in `live-hydration/`. A real extension-installed browser remains SKIP, while the synthetic hook is explicitly a diagnostic control.
+
+No testnet economic writes are authorized by this resumed verification.
+
+Protected GLM defect confirmed in the final fixture run: `tablet-768`, `@earn referral copy, section tabs, demo positions toggle` produced 11px document horizontal overflow (allowed ≤1px) on both attempts. See `fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/error-context.md`, its `test-failed-1.png`, and `trace.zip`. No app exception, failed request, or signing/broadcast violation accompanied this assertion failure. Earn CSS and this test remain owned by GLM; this lane reports the defect without editing them.

@@ -1,0 +1,31 @@
+{
+  "test": "live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)",
+  "project": "mobile-375",
+  "status": "failed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 35
+}

@@ -1,0 +1,63 @@
+{
+  "version": "0.0.83",
+  "url": "https://ponsfamily.com",
+  "steps": [
+    {
+      "step": "initialize",
+      "ok": true,
+      "server": {
+        "name": "Playwright",
+        "version": "1.64.0-alpha-1790635538000"
+      }
+    },
+    {
+      "step": "tools/list",
+      "ok": true,
+      "count": 25,
+      "tools": [
+        "browser_close",
+        "browser_resize",
+        "browser_console_messages",
+        "browser_handle_dialog",
+        "browser_emulate_media",
+        "browser_evaluate",
+        "browser_file_upload",
+        "browser_drop",
+        "browser_find",
+        "browser_fill_form",
+        "browser_press_key",
+        "browser_type",
+        "browser_navigate",
+        "browser_navigate_back",
+        "browser_network_requests",
+        "browser_network_request",
+        "browser_run_code_unsafe",
+        "browser_take_screenshot",
+        "browser_snapshot",
+        "browser_click",
+        "browser_drag",
+        "browser_hover",
+        "browser_select_option",
+        "browser_tabs",
+        "browser_wait_for"
+      ]
+    },
+    {
+      "step": "browser_navigate",
+      "ok": true,
+      "chars": 327
+    },
+    {
+      "step": "browser_snapshot",
+      "ok": true,
+      "chars": 71399
+    },
+    {
+      "step": "browser_take_screenshot",
+      "ok": true,
+      "text": "### Result\n- [Screenshot of viewport](./mcp-pons-screenshot.png)\n### Ran Playwright code\n```js\n// Screenshot viewport and save it as ./mcp-pons-screenshot.png\nawait page.screenshot({\n  fullPage: false,\n  path: './mcp-pons-screenshot.png',\n  scale: 'css',\n  type: 'png'\n});\n```"
+    }
+  ],
+  "ok": true,
+  "stderr": ""
+}

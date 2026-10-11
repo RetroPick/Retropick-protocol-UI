@@ -1,0 +1,4 @@
+$ pnpm --dir apps/retro-ui typecheck
+# started 2026-10-10T13:17:01Z HEAD c41d35d3a57de05fc26f78476554e352d9b08b56
+$ tsc --noEmit
+# exit=0 duration_s=13.081440202

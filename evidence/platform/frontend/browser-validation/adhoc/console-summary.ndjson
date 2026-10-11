@@ -1,0 +1,13 @@
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

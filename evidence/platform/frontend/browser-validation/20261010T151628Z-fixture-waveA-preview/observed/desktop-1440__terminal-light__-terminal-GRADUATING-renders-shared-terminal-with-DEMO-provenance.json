@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 29
+}

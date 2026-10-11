@@ -1,0 +1,12 @@
+{
+  "test": "fixture/vault.spec.ts > @vault real WebAuthn PRF ceremony: create → save entry → lock → unlock (or handled PRF_UNAVAILABLE)",
+  "project": "desktop-1440",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

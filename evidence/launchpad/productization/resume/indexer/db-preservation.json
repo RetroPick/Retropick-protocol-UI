@@ -1,0 +1,12 @@
+{
+  "integrityCheck": "ok",
+  "baselineEvents": 512,
+  "currentEvents": 523,
+  "missingBaselineEvents": 0,
+  "lockOwner": "153232",
+  "checkpointCursors": {
+    "beneficiary": 69897611,
+    "dynamic": 69897611,
+    "root": 69897665
+  }
+}

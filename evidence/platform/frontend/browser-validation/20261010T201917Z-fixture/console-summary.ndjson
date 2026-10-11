@@ -1,0 +1,270 @@
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/perf.spec.ts > @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

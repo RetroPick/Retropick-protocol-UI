@@ -1,0 +1,40 @@
+- generic [active] [ref=e1]:
+  - complementary "Sidebar" [ref=e2]:
+    - link "Pons home" [ref=e3] [cursor=pointer]:
+      - /url: /launchpad
+      - img [ref=e5]: Pons
+    - generic [ref=e8]:
+      - combobox "Search tokens and people" [ref=e13]
+      - generic [aria-hidden] [ref=e14]: /
+    - navigation "Primary" [ref=e15]:
+      - link "Create a token" [ref=e16] [cursor=pointer]:
+        - /url: /launchpad/create
+      - link "Launches" [ref=e22] [cursor=pointer]:
+        - /url: /launchpad
+      - link "PLP" [ref=e29] [cursor=pointer]:
+        - /url: /plp
+      - link "Analytics" [ref=e35] [cursor=pointer]:
+        - /url: /analytics
+    - generic [ref=e40]:
+      - 'button "Theme: light. Switch to dark" [ref=e41] [cursor=pointer]':
+        - generic [ref=e45]: Theme
+      - button "Sign in" [ref=e53] [cursor=pointer]
+  - main [ref=e60]:
+    - region "Launches" [ref=e62]:
+      - generic [ref=e159]:
+        - generic [ref=e160]
+        - region "Trending" [ref=e174]
+        - generic [ref=e782]
+        - list [ref=e818]
+        - button "Show more" [ref=e2867] [cursor=pointer]
+  - contentinfo [ref=e76]:
+    - generic [ref=e78]:
+      - navigation "Footer" [ref=e79]:
+        - generic [ref=e80]
+        - generic [ref=e98]
+        - generic [ref=e130]
+      - generic [ref=e148]:
+        - paragraph [ref=e149]: © 2026 Pons Labs, LLC. All rights reserved.
+        - generic [ref=e150]
+      - paragraph [ref=e158]: Pons is a noncustodial software interface operated by Pons Labs, LLC. Pons does not hold your assets or keys, does not execute or reverse transactions, and is not a bank, broker, exchange, custodian, or investment adviser. Nothing on this site is financial, legal, or tax advice. Tokens are issued by their creators, not by Pons. They are highly volatile, may lose all value, and may have no liquidity. Listing or ranking a token is not an endorsement. You are responsible for your decisions, your wallet, and compliance with local law. Not available in restricted regions. Pons is not affiliated with Robinhood Markets, Inc.
+  - alert [ref=e2868]

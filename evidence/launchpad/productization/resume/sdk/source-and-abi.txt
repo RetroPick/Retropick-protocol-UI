@@ -1,0 +1,7 @@
+Baseline f643cb62
+Pinned source https://raw.githubusercontent.com/Kuru-Labs/Kuru-contracts-dex-public/2060bb2736080c175d80d568bfdb6226bb5abd04/contracts/OrderBook.sol
+SHA256 6c1af0eab70bfd7c1404119539304f97ff9e5f932ca0e8ad3b8f5f946e37cb1f
+Read-only source semantics: zero-address quote early return bypasses FOK/minimum (buy lines758-760; sell lines814-816); executable account call required.
+ABI identity command: git diff --exit-code f643cb62 -- packages/launchpad-sdk/src/abis deployments/monad-testnet/abi apps/abi
+Result: PASS (exit0, no changes).
+No transactions, secrets, ABI/contract/deployment changes or git mutation.

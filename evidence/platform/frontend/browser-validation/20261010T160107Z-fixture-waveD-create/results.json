@@ -1,0 +1,1179 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/fixture/create.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/create.spec.ts",
+      "file": "fixture/create.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9991,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:15.252Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9439,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:26.550Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-4c1106e648d4e480f078",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1792,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:15.276Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-ad90027e3b3ee197d2c2",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 9917,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    19 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    19 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    19 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:15.266Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 9485,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:26.488Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-2ea61c765c996c56738a",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:15.278Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-aa86d2306086bb213ca0",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 9543,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:18.272Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 9428,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:29.046Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d575886cc9b902ac418c",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1287,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:18.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d97551b8ba9a7882d678",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 9270,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:20.523Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 9478,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:31.041Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-e09009899b5ac1bcfb30",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:37.220Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-5d105c41e5718fbf76e1",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9486,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:37.212Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9229,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:47.796Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-e92a71d961595c1d7d58",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:39.611Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-4765cbb80ed3c5b3e033",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 9618,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:39.731Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 9375,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 42,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main')\nExpected pattern: not \u001b[32m/\\bETH\\b|\\bSOL\\b/\u001b[39m\nReceived string: \u001b[31m\"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · \u001b[7mETH\u001b[27m pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\u001b[2m    20 × locator resolved to <main id=\"main\" class=\"main\">…</main>\u001b[22m\n\u001b[2m       - unexpected value \"Launch a token.Token, market & economics, then review. DEMO draft: nothing is deployed or signed from this interface.DEMO · NOT DEPLOYED1Token2Market & economics3Review1 · TokenGive it a name and a face.ImageChoose imageNo file chosenSquare, up to 5 MBName0/32Ticker0/10Description0/256XTelegramWebsiteBackContinue ON THE BOARDTYour tokenCRYPTOTOKEN · ETH pairSupply1,000,000,000Graduates atSet by launch config · DEMOCreator fee0%Launch feeSet by factory · DEMOLocal DEMO draft only. No asset is minted, deployed, or submitted to any venue from this interface.\"\u001b[22m\n\n\n   6 |   await expect(page.getByLabel('Token launch progress')).toContainText('Review');\n   7 |   await expect(page.locator('main')).toContainText('DEMO · NOT DEPLOYED');\n>  8 |   await expect(page.locator('main')).not.toContainText(/\\bETH\\b|\\bSOL\\b/);\n     |                                          ^\n   9 |   await page.getByRole('button', { name: 'Continue' }).click();\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:8:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:01:50.562Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160107Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 42,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-a1149d363b97eda76fea",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:01:41.941Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d2ed76650b02288dfc57",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T16:01:09.236Z",
+    "duration": 51121.471000000005,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

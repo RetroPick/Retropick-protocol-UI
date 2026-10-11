@@ -1,0 +1,7 @@
+[    3050ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    3144ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    9139ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    9641ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://cca-lite.coinbase.com/metrics:0
+[    9642ms] [ERROR] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError} @ :0

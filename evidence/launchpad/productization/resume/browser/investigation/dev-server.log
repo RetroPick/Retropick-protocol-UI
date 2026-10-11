@@ -1,0 +1,212 @@
+1:14:15 AM [vite] (client) Re-optimizing dependencies because vite config has changed
+
+  VITE v8.3.4  ready in 1009 ms
+
+  ➜  Local:   http://127.0.0.1:4319/
+1:14:17 AM [vite] (client) [optimizer] bundling dependencies...
+1:16:01 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+
+1:16:23 AM [vite] (client) hmr update /src/index.css
+1:16:38 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+
+1:17:38 AM [vite] (client) [Unhandled error] TypeError: Cannot read properties of undefined (reading 'forEach')
+ > injectIntoGlobalHook ../../../../../../../@react-refresh:389:18
+ > ../../../../../../../launchpad:5:1
+
+1:17:40 AM [vite] (client) [Unhandled error] Error: @vitejs/plugin-react can't detect preamble. Something is wrong.
+ > src/components/product/provider.tsx:140:11
+    
+
+1:17:41 AM [vite] (client) hmr update /src/index.css
+1:17:51 AM [vite] (client) [Unhandled error] TypeError: Cannot read properties of undefined (reading 'forEach')
+ > injectIntoGlobalHook ../../../../../../../@react-refresh:389:18
+ > ../../../../../../../launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5:5:1
+
+1:17:52 AM [vite] (client) [Unhandled error] Error: @vitejs/plugin-react can't detect preamble. Something is wrong.
+ > src/components/product/provider.tsx:140:11
+    
+
+1:17:56 AM [vite] (client) hmr update /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx, /src/features/launchpad/create-launch.tsx
+1:18:04 AM [vite] (client) [Unhandled error] TypeError: Cannot read properties of undefined (reading 'forEach')
+ > injectIntoGlobalHook ../../../../../../../@react-refresh:389:18
+ > ../../../../../../../launchpad/create:5:1
+
+1:18:06 AM [vite] (client) [Unhandled error] Error: @vitejs/plugin-react can't detect preamble. Something is wrong.
+ > src/components/product/provider.tsx:140:11
+    
+
+1:18:20 AM [vite] (client) hmr update /src/index.css
+1:18:21 AM [vite] (client) hmr update /src/index.css, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx
+1:18:57 AM [vite] (client) hmr update /src/main.tsx, /src/components/shell/command-palette.tsx, /src/features/launchpad/discovery.tsx, /src/features/launchpad/token-detail.tsx, /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx, /src/features/launchpad/create-launch.tsx, /src/wallet/provider.tsx, /src/wallet/wallet-picker.tsx, /src/components/trading/primitives.tsx
+1:19:31 AM [vite] (client) hmr update /src/index.css
+1:20:36 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+
+1:20:49 AM [vite] (client) hmr update /src/main.tsx, /src/components/shell/command-palette.tsx, /src/features/launchpad/discovery.tsx, /src/features/launchpad/token-detail.tsx, /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx, /src/features/launchpad/create-launch.tsx, /src/wallet/provider.tsx, /src/wallet/wallet-picker.tsx, /src/components/trading/primitives.tsx
+1:20:50 AM [vite] (client) [console.error] You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it.
+1:20:51 AM [vite] (client) hmr invalidate /src/main.tsx No exports
+1:20:51 AM [vite] (client) page reload src/main.tsx
+1:20:51 AM [vite] (client) hmr invalidate /src/wallet/provider.tsx Could not Fast Refresh ("useWallet" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:20:51 AM [vite] (client) hmr update /src/main.tsx, /src/components/shell/shell.tsx, /src/wallet/wallet-picker.tsx, /src/components/shell/sidebar.tsx, /src/features/launchpad/token-detail.tsx, /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx, /src/features/launchpad/create-launch.tsx
+1:20:51 AM [vite] (client) hmr invalidate /src/components/trading/primitives.tsx Could not Fast Refresh ("cx" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:20:51 AM [vite] (client) hmr update /src/components/shell/command-palette.tsx, /src/features/launchpad/discovery.tsx, /src/features/launchpad/launch-table.tsx, /src/features/launchpad/token-detail.tsx, /src/features/launchpad/terminal/token-terminal.tsx, /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/terminal/demo-ticket.tsx, /src/features/trading/ticket-shell.tsx, /src/features/launchpad/kuru-ticket.tsx
+1:20:52 AM [vite] (client) [Unhandled error] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+ > removeChildFromContainer ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:22213:8
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14306:16
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14419:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14555:10
+ > commitMutationEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14591:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14576:10
+
+1:20:52 AM [vite] (client) [console.warn] An error occurred in the <a> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:20:52 AM [vite] (client) [Unhandled error] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+ > removeChildFromContainer ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:22213:8
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14306:16
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14419:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14555:10
+
+1:20:52 AM [vite] (client) [console.warn] An error occurred in the <aside> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:20:52 AM [vite] (client) [Unhandled error] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+ > removeChildFromContainer ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:22213:8
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14306:16
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14419:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14555:10
+ > commitMutationEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14591:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14576:10
+
+1:20:52 AM [vite] (client) [console.warn] An error occurred in the <div> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:20:52 AM [vite] (client) [Unhandled error] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+ > removeChildFromContainer ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:22213:8
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14306:16
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14419:10
+ > recursivelyTraverseMutationEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14555:10
+
+1:20:52 AM [vite] (client) [console.warn] An error occurred in the <nav> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:20:52 AM [vite] (client) [Unhandled error] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+ > removeChildFromContainer ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:22213:8
+ > runWithFiberInDEV ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14306:16
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+ > commitDeletionEffectsOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14378:10
+ > recursivelyTraverseDeletionEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:14223:8
+
+1:20:52 AM [vite] (client) [console.warn] An error occurred in the <section> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:20:52 AM [vite] (client) hmr invalidate /src/main.tsx No exports
+1:20:52 AM [vite] (client) page reload src/main.tsx
+1:21:36 AM [vite] (client) hmr update /src/index.css
+1:22:39 AM [vite] (client) hmr update /src/index.css
+1:22:39 AM [vite] (client) hmr update /src/index.css
+1:23:51 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+
+1:24:31 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+
+1:25:56 AM [vite] (client) [Unhandled error] TypeError: Do not know how to serialize a BigInt
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3862:29
+ > addObjectToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3787:10
+ > addValueToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:3933:14
+ > addObjectDiffToProperties ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4050:14
+ > logComponentRender ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:4130:21
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15469:12
+ > recursivelyTraversePassiveMountEffects ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15439:10
+ > commitPassiveMountOnFiber ../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js:15666:16
+
+1:32:22 AM [vite] (client) hmr update /src/main.tsx, /src/components/shell/command-palette.tsx, /src/features/launchpad/discovery.tsx, /src/features/launchpad/token-detail.tsx, /src/features/launchpad/terminal/live-orders.tsx, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx, /src/features/launchpad/create-launch.tsx, /src/wallet/provider.tsx, /src/wallet/wallet-picker.tsx, /src/components/trading/primitives.tsx
+1:32:43 AM [vite] (client) hmr update /src/index.css
+1:32:46 AM [vite] vite.config.ts changed, restarting server...
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+1:32:48 AM [vite] server restarted.
+1:34:45 AM [vite] (client) hmr update /src/index.css
+1:35:15 AM [vite] (client) hmr update /src/index.css, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx
+1:35:27 AM [vite] (client) hmr update /src/index.css
+1:36:06 AM [vite] (client) hmr update /src/index.css
+1:43:45 AM [vite] (client) hmr update /src/index.css
+1:43:45 AM [vite] (client) hmr update /src/index.css
+1:46:10 AM [vite] (client) hmr update /src/index.css, /src/features/launchpad/live-trading-ticket.tsx, /src/features/launchpad/kuru-ticket.tsx
+1:46:10 AM [vite] (client) hmr update /src/index.css

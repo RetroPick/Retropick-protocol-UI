@@ -1,0 +1,471 @@
+{
+  "sampleCaveat": "N=5 per scenario/cache cohort; economic failures retained; shell metrics include successful shells even when subsequent economic readiness fails. Warm is HTTP cache with a new document, not SPA query cache. Shared host had concurrent GLM/QA browser activity, so no causal speed-up or stable production guarantee is claimed.",
+  "builds": [
+    {
+      "build": "baseline-final",
+      "groups": [
+        {
+          "scenario": "detail-active",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 1051.1488549999995,
+              "p95": 1565.2787360000002
+            },
+            "ticketMs": {
+              "successful": 5,
+              "p50": 3252.0441439999995,
+              "p95": 6345.217503
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 836.3081959999981,
+              "p95": 1550.0492830000003
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 5,
+              "p95": 9
+            },
+            "rpcCalls": {
+              "p50": 20,
+              "p95": 32
+            },
+            "bytes": {
+              "p50": 1359543,
+              "p95": 1366076
+            }
+          }
+        },
+        {
+          "scenario": "detail-active",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 811.7412919999988,
+              "p95": 841.5415560000038
+            },
+            "ticketMs": {
+              "successful": 5,
+              "p50": 5080.384743999995,
+              "p95": 5302.321814000003
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 800.7596889999986,
+              "p95": 837.3273120000013
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 9,
+              "p95": 9
+            },
+            "rpcCalls": {
+              "p50": 32,
+              "p95": 32
+            },
+            "bytes": {
+              "p50": 1365180,
+              "p95": 1366076
+            }
+          }
+        },
+        {
+          "scenario": "detail-graduated",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 3,
+          "errors": 2,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 1010.9927299999981,
+              "p95": 1065.2136969999992
+            },
+            "ticketMs": {
+              "successful": 3,
+              "p50": 1964.0900799999945,
+              "p95": 2378.5580099999934
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 864.2701769999985,
+              "p95": 1043.3256030000048
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 6,
+              "p95": 6
+            },
+            "rpcCalls": {
+              "p50": 29,
+              "p95": 29
+            },
+            "bytes": {
+              "p50": 1362592,
+              "p95": 1362592
+            }
+          }
+        },
+        {
+          "scenario": "detail-graduated",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 3,
+          "errors": 2,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 804.9597309999954,
+              "p95": 913.0641040000046
+            },
+            "ticketMs": {
+              "successful": 3,
+              "p50": 1831.0186260000046,
+              "p95": 5243.115288000001
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 773.7105600000068,
+              "p95": 812.695200999995
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 5,
+              "p95": 13
+            },
+            "rpcCalls": {
+              "p50": 20,
+              "p95": 42
+            },
+            "bytes": {
+              "p50": 1362592,
+              "p95": 1370970
+            }
+          }
+        },
+        {
+          "scenario": "discovery",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 3458.030175000001,
+              "p95": 4350.994935999999
+            },
+            "ticketMs": {
+              "successful": 0,
+              "p50": null,
+              "p95": null
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 2843.6256330000006,
+              "p95": 3981.143342
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 1,
+              "p95": 1
+            },
+            "rpcCalls": {
+              "p50": 2,
+              "p95": 2
+            },
+            "bytes": {
+              "p50": 1018015,
+              "p95": 1018015
+            }
+          }
+        },
+        {
+          "scenario": "discovery",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 2370.140432999997,
+              "p95": 4166.100804999998
+            },
+            "ticketMs": {
+              "successful": 0,
+              "p50": null,
+              "p95": null
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 2165.430835000003,
+              "p95": 3721.010624999999
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 1,
+              "p95": 1
+            },
+            "rpcCalls": {
+              "p50": 2,
+              "p95": 2
+            },
+            "bytes": {
+              "p50": 1018015,
+              "p95": 1018015
+            }
+          }
+        }
+      ]
+    },
+    {
+      "build": "after-final",
+      "groups": [
+        {
+          "scenario": "detail-active",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 3,
+          "errors": 2,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 1111.9555499999988,
+              "p95": 2541.447285000002
+            },
+            "ticketMs": {
+              "successful": 3,
+              "p50": 5481.460471999999,
+              "p95": 5939.109595999998
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 975.7077900000004,
+              "p95": 2085.720723000002
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 8,
+              "p95": 9
+            },
+            "rpcCalls": {
+              "p50": 27,
+              "p95": 32
+            },
+            "bytes": {
+              "p50": 1376141,
+              "p95": 1376810
+            }
+          }
+        },
+        {
+          "scenario": "detail-active",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 3,
+          "errors": 2,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 896.4296600000016,
+              "p95": 935.5866889999961
+            },
+            "ticketMs": {
+              "successful": 3,
+              "p50": 1642.394975000003,
+              "p95": 5086.134817999991
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 769.7831629999928,
+              "p95": 803.349768
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 5,
+              "p95": 9
+            },
+            "rpcCalls": {
+              "p50": 20,
+              "p95": 32
+            },
+            "bytes": {
+              "p50": 1371109,
+              "p95": 1377706
+            }
+          }
+        },
+        {
+          "scenario": "detail-graduated",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 1,
+          "errors": 4,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 843.859719,
+              "p95": 880.6430139999866
+            },
+            "ticketMs": {
+              "successful": 1,
+              "p50": 5105.732762,
+              "p95": 5105.732762
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 724.2161979999946,
+              "p95": 782.4339970000001
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 12,
+              "p95": 12
+            },
+            "rpcCalls": {
+              "p50": 41,
+              "p95": 41
+            },
+            "bytes": {
+              "p50": 1382487,
+              "p95": 1382487
+            }
+          }
+        },
+        {
+          "scenario": "detail-graduated",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 3,
+          "errors": 2,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 761.2117570000119,
+              "p95": 1193.4430539999885
+            },
+            "ticketMs": {
+              "successful": 3,
+              "p50": 1879.9798459999874,
+              "p95": 5061.553626000008
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 661.5034970000124,
+              "p95": 1054.7123849999916
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 5,
+              "p95": 14
+            },
+            "rpcCalls": {
+              "p50": 20,
+              "p95": 50
+            },
+            "bytes": {
+              "p50": 1374158,
+              "p95": 1383080
+            }
+          }
+        },
+        {
+          "scenario": "discovery",
+          "temperature": "cold",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 1593.1437959999998,
+              "p95": 1642.6192730000002
+            },
+            "ticketMs": {
+              "successful": 0,
+              "p50": null,
+              "p95": null
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 1119.3723360000004,
+              "p95": 1464.0656840000001
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 1,
+              "p95": 1
+            },
+            "rpcCalls": {
+              "p50": 2,
+              "p95": 2
+            },
+            "bytes": {
+              "p50": 1028077,
+              "p95": 1028077
+            }
+          }
+        },
+        {
+          "scenario": "discovery",
+          "temperature": "warm",
+          "attempts": 5,
+          "complete": 5,
+          "errors": 0,
+          "metrics": {
+            "contentMs": {
+              "successful": 5,
+              "p50": 1115.070271999999,
+              "p95": 3612.5609160000004
+            },
+            "ticketMs": {
+              "successful": 0,
+              "p50": null,
+              "p95": null
+            },
+            "indexerMs": {
+              "successful": 5,
+              "p50": 969.130310999999,
+              "p95": 3373.1719939999984
+            }
+          },
+          "completedSampleCounts": {
+            "rpcRequests": {
+              "p50": 1,
+              "p95": 1
+            },
+            "rpcCalls": {
+              "p50": 2,
+              "p95": 2
+            },
+            "bytes": {
+              "p50": 1028077,
+              "p95": 1028077
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

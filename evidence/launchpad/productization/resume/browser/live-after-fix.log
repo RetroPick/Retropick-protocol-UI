@@ -1,0 +1,44 @@
+[WebServer] (node:180471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:180529) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:180645) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:180685) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer]   ➜  Local:   http://127.0.0.1:4325/
+
+Running 12 tests using 1 worker
+
+(node:180749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (6.9s)
+  ✓   2 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (5.4s)
+(node:180931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (9.2s)
+  ✓   4 [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (6.8s)
+(node:181289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [tablet-834] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (13.0s)
+  ✓   6 [tablet-834] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (7.9s)
+(node:181690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [tablet-768] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (5.8s)
+  ✓   8 [tablet-768] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (4.8s)
+(node:181903) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [mobile-390] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (8.8s)
+  ✓  10 [mobile-390] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (5.8s)
+(node:182144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [mobile-375] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (36.1s)
+  ✓  12 [mobile-375] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (36.0s)
+
+  12 passed (2.8m)

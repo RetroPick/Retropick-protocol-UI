@@ -1,0 +1,1506 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/live/media-upload.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-live-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-live-dist --port 4318 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4318/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/media-upload.spec.ts",
+      "file": "live/media-upload.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3378,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:11.677Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-b22b3145a881b66dce3f",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 3523,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:11.687Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 2130,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:17.361Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-270a4f45578232bca8d8",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2919,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:11.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-8e7d9082d333609627f2",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3458,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:11.672Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-9900de6d14aa55551b2e",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2346,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:16.575Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1280/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1280/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--desktop-1280/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:20.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-cb7d5e6a75e2bfaa3192",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1805,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:16.915Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-157508058d26daa65702",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2283,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:17.004Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-26fbc2f663a0c6043dec",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2012,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:20.205Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2180,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:23.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-834-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-d36c3e0bfcc440436a81",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1203,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:19.675Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-2966ad01b86bab31ad62",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1886,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:21.310Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-21982b24a7a716297932",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 1835,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:22.226Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 2570,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:26.169Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--tablet-768-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-9f11b6a807c4398a19dd",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:23.849Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-90d53d71c6a8a6a63813",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 96164,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts",
+                        "column": 56,
+                        "line": 36
+                      },
+                      "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Continue' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"btn primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <input maxlength=\"64\" value=\"Media Check\" placeholder=\"Retro Coin\"/> from <label class=\"field\">…</label> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <textarea maxlength=\"2048\" placeholder=\"What is it, in a sentence or two. No links.\"></textarea> from <label class=\"field\">…</label> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <input maxlength=\"64\" value=\"Media Check\" placeholder=\"Retro Coin\"/> from <label class=\"field\">…</label> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  43 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"form-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <label class=\"field\">…</label> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"form-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <label class=\"field\">…</label> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  34 |   await page.getByPlaceholder('Retro Coin', { exact: true }).fill('Media Check');\n  35 |   await page.getByPlaceholder('RETRO', { exact: true }).fill('MEDA');\n> 36 |   await page.getByRole('button', { name: 'Continue' }).click();\n     |                                                        ^\n  37 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible(); // Uploaded URI passes metadata validation.\n  38 |   await snap('live-create-media-upload');\n  39 |   expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:36:56"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:24.758Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390/trace.zip"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 95111,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts",
+                        "column": 56,
+                        "line": 36
+                      },
+                      "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Continue' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"btn primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <input maxlength=\"64\" value=\"Media Check\" placeholder=\"Retro Coin\"/> from <label class=\"field\">…</label> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <section class=\"panel\">…</section> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <input maxlength=\"64\" value=\"Media Check\" placeholder=\"Retro Coin\"/> from <label class=\"field\">…</label> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  44 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"form-actions\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <label class=\"field\">…</label> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  34 |   await page.getByPlaceholder('Retro Coin', { exact: true }).fill('Media Check');\n  35 |   await page.getByPlaceholder('RETRO', { exact: true }).fill('MEDA');\n> 36 |   await page.getByRole('button', { name: 'Continue' }).click();\n     |                                                        ^\n  37 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible(); // Uploaded URI passes metadata validation.\n  38 |   await snap('live-create-media-upload');\n  39 |   expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:36:56"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:26:09.221Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-390-retry1/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-23505c3eeaf08e3295bc",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 3237,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:27.128Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 4776,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:32.371Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-390-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-cd37bc838fea1a71e473",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2122,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:28.683Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-7f7f75bdd7addebdb75f",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "@live create: local image upload stores a logo URI and previews it",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 3,
+                  "status": "timedOut",
+                  "duration": 96586,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts",
+                        "column": 56,
+                        "line": 36
+                      },
+                      "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Continue' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"btn primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <section class=\"panel\">…</section> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <input value=\"\" maxlength=\"256\" placeholder=\"handle or URL\"/> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <span class=\"field-head\">…</span> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  44 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"form-grid\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <span>Telegram</span> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  34 |   await page.getByPlaceholder('Retro Coin', { exact: true }).fill('Media Check');\n  35 |   await page.getByPlaceholder('RETRO', { exact: true }).fill('MEDA');\n> 36 |   await page.getByRole('button', { name: 'Continue' }).click();\n     |                                                        ^\n  37 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible(); // Uploaded URI passes metadata validation.\n  38 |   await snap('live-create-media-upload');\n  39 |   expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:36:56"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:31.338Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375/trace.zip"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 24,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 95958,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts",
+                        "column": 56,
+                        "line": 36
+                      },
+                      "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Continue' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"btn primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <section class=\"panel\">…</section> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <span class=\"char-counter\">4/16 bytes</span> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <input value=\"MEDA\" maxlength=\"16\" placeholder=\"RETRO\"/> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <span class=\"field-head\">…</span> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  45 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"form-grid\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <span>Telegram</span> from <div class=\"form-grid\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"mobilebar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n\n  34 |   await page.getByPlaceholder('Retro Coin', { exact: true }).fill('Media Check');\n  35 |   await page.getByPlaceholder('RETRO', { exact: true }).fill('MEDA');\n> 36 |   await page.getByRole('button', { name: 'Continue' }).click();\n     |                                                        ^\n  37 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible(); // Uploaded URI passes metadata validation.\n  38 |   await snap('live-create-media-upload');\n  39 |   expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:36:56"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:26:16.072Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-9fa14--a-logo-URI-and-previews-it-mobile-375-retry1/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-0497cf5ec2f335d9ce2f",
+          "file": "live/media-upload.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "@live create: manual URI field still accepts ipfs:// (advanced path)",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3790,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:32.358Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                },
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3931,
+                  "error": {
+                    "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                      "column": 136,
+                      "line": 91
+                    },
+                    "snippet": "   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                        "column": 136,
+                        "line": 91
+                      },
+                      "message": "Error: no app console errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at helpers/test.ts:91\n\n  89 |   expect(observed.guard.violations, 'no signing/broadcast request may leave the browser').toEqual([]);\n  90 |   expect(observed.pageErrors, 'no uncaught page errors').toEqual([]);\n> 91 |   expect(observed.console.filter((c) => c.type === 'error' && c.classification === 'app').map((c) => c.text), 'no app console errors').toEqual([]);\n     |                                                                                                                                        ^\n  92 | }\n  93 |\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n    at expectClean (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:91:136)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/media-upload.spec.ts:50:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T20:24:38.054Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T202359Z-live-media/test-output/live-media-upload--live-cr-c0ece-accepts-ipfs-advanced-path--mobile-375-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts",
+                    "column": 136,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-5dd0b7e5e4279a7aec26",
+          "file": "live/media-upload.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "@live discovery renders an ipfs:// logo through the public gateway",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1441,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T20:24:38.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-d5d1b8bfdcf143c5012b",
+          "file": "live/media-upload.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T20:24:03.454Z",
+    "duration": 233994.955,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 1
+  }
+}

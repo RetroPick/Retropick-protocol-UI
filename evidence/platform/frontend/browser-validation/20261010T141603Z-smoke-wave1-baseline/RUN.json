@@ -1,0 +1,7 @@
+{
+  "target": "smoke",
+  "label": "wave1-baseline",
+  "startedAt": "2026-10-10T14:16:03.367Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --grep @smoke --project=desktop-1440 --project=mobile-390",
+  "cwd": "apps/retro-ui"
+}

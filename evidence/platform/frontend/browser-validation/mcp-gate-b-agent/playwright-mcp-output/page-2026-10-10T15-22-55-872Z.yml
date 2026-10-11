@@ -1,0 +1,105 @@
+- generic [active] [ref=e1]:
+  - complementary "Sidebar" [ref=e2]:
+    - link "Pons home" [ref=e3] [cursor=pointer]:
+      - /url: /launchpad
+      - img [ref=e5]: Pons
+    - generic [ref=e8]:
+      - combobox "Search tokens and people" [ref=e13]
+      - generic [aria-hidden] [ref=e14]: /
+    - navigation "Primary" [ref=e15]:
+      - link "Create a token" [ref=e16] [cursor=pointer]:
+        - /url: /launchpad/create
+      - link "Launches" [ref=e22] [cursor=pointer]:
+        - /url: /launchpad
+      - link "PLP" [ref=e29] [cursor=pointer]:
+        - /url: /plp
+      - link "Analytics" [ref=e35] [cursor=pointer]:
+        - /url: /analytics
+    - generic [ref=e40]:
+      - 'button "Theme: light. Switch to dark" [ref=e41] [cursor=pointer]':
+        - generic [ref=e45]: Theme
+      - button "Sign in" [ref=e53] [cursor=pointer]
+  - main [ref=e60]:
+    - region "Launches" [ref=e62]:
+      - generic "Loading launches" [ref=e63]:
+        - heading "Launches" [level=1] [ref=e66]
+        - list [ref=e67]:
+          - listitem [ref=e68]
+          - listitem [ref=e69]
+          - listitem [ref=e70]
+          - listitem [ref=e71]
+          - listitem [ref=e72]
+          - listitem [ref=e73]
+          - listitem [ref=e74]
+          - listitem [ref=e75]
+  - contentinfo [ref=e76]:
+    - generic [ref=e78]:
+      - navigation "Footer" [ref=e79]:
+        - generic [ref=e80]:
+          - heading "Launchpad" [level=2] [ref=e81]
+          - list [ref=e82]:
+            - listitem [ref=e83]:
+              - link "Create a token" [ref=e84] [cursor=pointer]:
+                - /url: /launchpad/create
+            - listitem [ref=e86]:
+              - link "Launches" [ref=e87] [cursor=pointer]:
+                - /url: /launchpad
+            - listitem [ref=e89]:
+              - link "PLP" [ref=e90] [cursor=pointer]:
+                - /url: /plp
+            - listitem [ref=e92]:
+              - link "Analytics" [ref=e93] [cursor=pointer]:
+                - /url: /analytics
+            - listitem [ref=e95]:
+              - link "Profile" [ref=e96] [cursor=pointer]:
+                - /url: /profile
+        - generic [ref=e98]:
+          - heading "Resources" [level=2] [ref=e99]
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Docs" [ref=e102] [cursor=pointer]:
+                - /url: https://docs.ponsfamily.com
+            - listitem [ref=e106]:
+              - link "Support" [ref=e107] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=e109]:
+              - link "Builders" [ref=e110] [cursor=pointer]:
+                - /url: /builders
+            - listitem [ref=e112]:
+              - link "Explorer" [ref=e113] [cursor=pointer]:
+                - /url: https://robin.etherscan.io
+            - listitem [ref=e117]:
+              - link "PONS token" [ref=e118] [cursor=pointer]:
+                - /url: /launchpad/0x39dBED3a2bd333467115dE45665cC57F813C4571
+            - listitem [ref=e120]:
+              - link "Updates on X" [ref=e121] [cursor=pointer]:
+                - /url: https://x.com/ponsdotfamily
+            - listitem [ref=e125]:
+              - link "GitHub" [ref=e126] [cursor=pointer]:
+                - /url: https://github.com/pons-labs
+        - generic [ref=e130]:
+          - heading "Legal" [level=2] [ref=e131]
+          - list [ref=e132]:
+            - listitem [ref=e133]:
+              - link "Terms of Use" [ref=e134] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e136]:
+              - link "Privacy Policy" [ref=e137] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e139]:
+              - link "MiCA Whitepaper" [ref=e140] [cursor=pointer]:
+                - /url: /mica
+            - listitem [ref=e142]:
+              - link "Takedown Requests" [ref=e143] [cursor=pointer]:
+                - /url: /takedown
+            - listitem [ref=e145]:
+              - link "Law Enforcement Requests" [ref=e146] [cursor=pointer]:
+                - /url: /law-enforcement
+      - generic [ref=e148]:
+        - paragraph [ref=e149]: © 2026 Pons Labs, LLC. All rights reserved.
+        - generic [ref=e150]:
+          - link "Pons on X" [ref=e151] [cursor=pointer]:
+            - /url: https://x.com/ponsdotfamily
+          - link "Pons on GitHub" [ref=e154] [cursor=pointer]:
+            - /url: https://github.com/pons-labs
+      - paragraph [ref=e158]: Pons is a noncustodial software interface operated by Pons Labs, LLC. Pons does not hold your assets or keys, does not execute or reverse transactions, and is not a bank, broker, exchange, custodian, or investment adviser. Nothing on this site is financial, legal, or tax advice. Tokens are issued by their creators, not by Pons. They are highly volatile, may lose all value, and may have no liquidity. Listing or ranking a token is not an endorsement. You are responsible for your decisions, your wallet, and compliance with local law. Not available in restricted regions. Pons is not affiliated with Robinhood Markets, Inc.

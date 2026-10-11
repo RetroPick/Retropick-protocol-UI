@@ -1,0 +1,26 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ local referral capture is first touch, expires at 30 days and rejects malformed wallets (22.324349ms)
+✔ every fiat adapter fails closed for Monad Testnet MON and USDC and unqualified networks (55.996348ms)
+✔ only one referral writer acquires a database; release allows restart (12.036307ms)
+✔ uncertain or invalid ownership is not silently removed (5.477199ms)
+(node:173488) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose (94.033809ms)
+✔ message tampering and expired challenges cannot establish attribution (26.711938ms)
+✔ concurrent verification consumes nonce once and existing referrer stays immutable (43.512529ms)
+✔ invalid addresses, self referral and unbounded first-touch dates fail closed (6.161066ms)
+✔ confirmed actor activity qualifies after association; volumes stay exact and separated by quote (49.4877ms)
+✔ full canonical replay removes orphaned qualification, launch count and volume (37.765253ms)
+✔ pagination error, malformed event and unconfirmed windows never partially replace projection (52.321923ms)
+✔ deep reorg revision replays from earliest association instead of retaining older orphaned rows (28.928017ms)
+✔ HTTP Origin, cookie ownership, invalid parameters, session expiry and logout boundaries (496.731958ms)
+✔ activity page size stays within the actual indexer API contract (82.083625ms)
+✔ canonical head falling below association clears orphaned qualification and records pending freshness (44.696361ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7637.586048

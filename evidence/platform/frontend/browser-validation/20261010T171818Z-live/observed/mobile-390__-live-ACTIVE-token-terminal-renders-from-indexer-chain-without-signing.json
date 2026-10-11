@@ -1,0 +1,29 @@
+{
+  "test": "live/live-readonly.spec.ts > @live ACTIVE token terminal renders from indexer + chain without signing",
+  "project": "mobile-390",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/candles?resolution=15m&range=24h",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/trades?limit=50",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://testnet-rpc.monad.xyz/",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 146
+}

@@ -33,3 +33,18 @@ apps/media-service/.data/
 
 # browser-automation artifacts
 .playwright-cli/
+
+# generated browser-evidence artifacts (playwright reports/traces)
+evidence/**/html-report/
+evidence/**/test-output/
+.playwright-mcp/
+
+# local agent/session tooling state
+.agents/
+.cursor/
+.zcode/
+.zcodeignore
+.v2c/
+.video_agent/
+valkey-mcp-server.log
+*:Zone.Identifier

@@ -1,0 +1,17 @@
+[    1220ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rJ (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:62716)
+    at rZ (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:63749)
+    at https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:158441
+    at sy (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:163602)
+    at sh (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:154854)
+    at https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:149672
+    at sr (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:149773)
+    at sq (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:176354)
+    at MessagePort.O (https://ponsfamily.com/_next/static/immutable/chunks/12u9gokwrlp0h.js:1:3361)
+[    2019ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    2020ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    5961ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/amp:0
+[    7141ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://cca-lite.coinbase.com/metrics:0
+[    7141ms] [ERROR] Analytics SDK: TypeError: Failed to fetch
+    at _t (<anonymous>:1:64025)
+    at <anonymous>:1:68106 {context: AnalyticsSDKApiError} @ :0

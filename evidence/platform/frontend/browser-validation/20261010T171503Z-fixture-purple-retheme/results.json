@@ -1,0 +1,1197 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--grep",
+      "@theme"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/a11y.spec.ts",
+      "file": "fixture/a11y.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "theme dark",
+          "file": "fixture/a11y.spec.ts",
+          "line": 71,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19009,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:17.902Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12242,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:15:42.425Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-1807c0f368d3ff801874",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 19200,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:17.966Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 11922,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:15:42.575Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1280-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-6a5de551194fec58c1da",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 13093,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:40.782Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 9970,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:15:56.560Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-834-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-fb1434f23925e80482e9",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9261,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:55.272Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9904,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:16:07.570Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-tablet-768-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-357bba3a4220fc559c02",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10171,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:57.035Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8561,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:16:11.132Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-390-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-d51082d86fa2e63f24fc",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": false,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 10070,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:16:09.282Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    },
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 5539,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18",
+                        "location": {
+                          "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                          "column": 18,
+                          "line": 81
+                        },
+                        "snippet": "  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                            "column": 18,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"#5\u001b[7mFEDDF\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"#5\u001b[7mfeddf\u001b[27m\"\u001b[39m\n\n  79 |       await page.goto('/launchpad/token/demo-active');\n  80 |       const up = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--chart-up').trim());\n> 81 |       expect(up).toBe(theme === 'dark' ? '#5FEDDF' : '#0a7d73');\n     |                  ^\n  82 |       await snap(`theme-${theme}-terminal`, page, { fullPage: false });\n  83 |       expectClean(observed);\n  84 |     });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:81:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-10T17:16:22.038Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T171503Z-fixture-purple-retheme/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-mobile-375-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts",
+                        "column": 18,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-a28d85676d5b2c1e1a44",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "theme light",
+          "file": "fixture/a11y.spec.ts",
+          "line": 71,
+          "column": 8,
+          "specs": [
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 18604,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:18.047Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-cbbc516f453a57083ffc",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1280",
+                  "projectName": "desktop-1280",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 17963,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:17.988Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-5fd3b83545e2633ebf2c",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-834",
+                  "projectName": "tablet-834",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12075,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:40.967Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-7b55a520a3c6f12375b4",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet-768",
+                  "projectName": "tablet-768",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 9432,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:15:56.825Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-0fe2be3edd2495232dcf",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 9989,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:16:07.981Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-500865ecae0d5cfe1c70",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            },
+            {
+              "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+              "ok": true,
+              "tags": [
+                "theme"
+              ],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-375",
+                  "projectName": "mobile-375",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5440,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-10T17:16:19.783Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c2ff992ed6a9354b5447-e82d730635bea8c6478d",
+              "file": "fixture/a11y.spec.ts",
+              "line": 73,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T17:15:08.371Z",
+    "duration": 79964.35800000001,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

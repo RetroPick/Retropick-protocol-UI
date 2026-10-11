@@ -1,0 +1,14 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls",
+  "project": "desktop-1440",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [
+    "Object is disposed"
+  ],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 98
+}

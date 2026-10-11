@@ -1,0 +1,12 @@
+{
+  "test": "live/resume-readonly.spec.ts > resume light > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 90
+}

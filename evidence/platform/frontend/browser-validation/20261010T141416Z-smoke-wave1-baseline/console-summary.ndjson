@@ -1,0 +1,14 @@
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":2}

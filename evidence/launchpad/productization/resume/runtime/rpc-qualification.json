@@ -1,0 +1,188 @@
+{
+  "baseline": "f643cb62c7713c561cd4a95a9ffbabad5e620eb9",
+  "measuredAt": "2026-10-10T18:17:45.442Z",
+  "network": 10143,
+  "infuraStatus": "INFURA_MONAD_TESTNET_NOT_QUALIFIED",
+  "reports": [
+    {
+      "category": "configured-primary",
+      "host": "monad-testnet.infura.io",
+      "chainId": 10143,
+      "qualified": false,
+      "probes": [
+        {
+          "name": "chainId",
+          "status": 200,
+          "ms": 1047.85,
+          "failure": null,
+          "bytes": 42
+        },
+        {
+          "name": "head",
+          "status": 200,
+          "ms": 305.74,
+          "failure": null,
+          "bytes": 45
+        },
+        {
+          "name": "deployed-factory-code",
+          "status": 200,
+          "ms": 369.24,
+          "failure": null,
+          "bytes": 46884
+        },
+        {
+          "name": "deployed-token-decimals",
+          "status": 200,
+          "ms": 371.34,
+          "failure": null,
+          "bytes": 102
+        },
+        {
+          "name": "batch-pinned-reads",
+          "status": 200,
+          "ms": 320.53,
+          "failure": null,
+          "bytes": 147
+        },
+        {
+          "name": "multicall-runtime",
+          "status": 200,
+          "ms": 325.4,
+          "failure": null,
+          "bytes": 7654
+        },
+        {
+          "name": "multicall-aggregate3",
+          "status": 200,
+          "ms": 312.47,
+          "failure": null,
+          "bytes": 486
+        },
+        {
+          "name": "logs-head-window-1",
+          "status": 429,
+          "ms": 304.39,
+          "failure": "RATE_LIMIT",
+          "bytes": 90
+        },
+        {
+          "name": "logs-head-window-50",
+          "status": 429,
+          "ms": 309.65,
+          "failure": "RATE_LIMIT",
+          "bytes": 90
+        },
+        {
+          "name": "logs-head-window-100",
+          "status": 200,
+          "ms": 374.87,
+          "failure": null,
+          "bytes": 36
+        },
+        {
+          "name": "logs-deployment-window-100",
+          "status": 200,
+          "ms": 292.05,
+          "failure": null,
+          "bytes": 36
+        }
+      ],
+      "head": 69894569,
+      "factoryCodeHash": "0x85b1d2c58c6f52ac97e558c5ec7f00f9636a943d5d6bc8a201d285ccab40f226",
+      "decimals": 18,
+      "multicallCodeHash": "0xd5c15df687b16f2ff992fc8d767b4216323184a2bbc6ee2f9c398c318e770891",
+      "multicallMatchesDirect": true
+    },
+    {
+      "category": "qualified-public-fallback",
+      "host": "testnet-rpc.monad.xyz",
+      "chainId": 10143,
+      "qualified": true,
+      "probes": [
+        {
+          "name": "chainId",
+          "status": 200,
+          "ms": 478.49,
+          "failure": null,
+          "bytes": 42
+        },
+        {
+          "name": "head",
+          "status": 200,
+          "ms": 156.34,
+          "failure": null,
+          "bytes": 45
+        },
+        {
+          "name": "deployed-factory-code",
+          "status": 200,
+          "ms": 191.84,
+          "failure": null,
+          "bytes": 46884
+        },
+        {
+          "name": "deployed-token-decimals",
+          "status": 200,
+          "ms": 172.08,
+          "failure": null,
+          "bytes": 102
+        },
+        {
+          "name": "batch-pinned-reads",
+          "status": 200,
+          "ms": 220.43,
+          "failure": null,
+          "bytes": 148
+        },
+        {
+          "name": "multicall-runtime",
+          "status": 200,
+          "ms": 174.36,
+          "failure": null,
+          "bytes": 7654
+        },
+        {
+          "name": "multicall-aggregate3",
+          "status": 200,
+          "ms": 213.65,
+          "failure": null,
+          "bytes": 486
+        },
+        {
+          "name": "logs-head-window-1",
+          "status": 200,
+          "ms": 421.73,
+          "failure": null,
+          "bytes": 37
+        },
+        {
+          "name": "logs-head-window-50",
+          "status": 200,
+          "ms": 529.22,
+          "failure": null,
+          "bytes": 36
+        },
+        {
+          "name": "logs-head-window-100",
+          "status": 200,
+          "ms": 310.26,
+          "failure": null,
+          "bytes": 36
+        },
+        {
+          "name": "logs-deployment-window-100",
+          "status": 200,
+          "ms": 713.15,
+          "failure": null,
+          "bytes": 36
+        }
+      ],
+      "head": 69894617,
+      "factoryCodeHash": "0x85b1d2c58c6f52ac97e558c5ec7f00f9636a943d5d6bc8a201d285ccab40f226",
+      "decimals": 18,
+      "multicallCodeHash": "0xd5c15df687b16f2ff992fc8d767b4216323184a2bbc6ee2f9c398c318e770891",
+      "multicallMatchesDirect": true
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "kuru-consumer-stage1",
+  "startedAt": "2026-10-10T21:03:52.182Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts",
+  "cwd": "apps/retro-ui"
+}

@@ -1,0 +1,2700 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/fixture/create.spec.ts",
+      "e2e/fixture/smoke.spec.ts"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/create.spec.ts",
+      "file": "fixture/create.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2520,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:07.989Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2250,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:03:12.739Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-4c1106e648d4e480f078",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2035,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:08.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-ad90027e3b3ee197d2c2",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 2288,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:15.723Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 3112,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:03:20.675Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-desktop-1280-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-2ea61c765c996c56738a",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:16.754Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-aa86d2306086bb213ca0",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2527,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:26.143Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2681,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:03:31.061Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-834-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d575886cc9b902ac418c",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1694,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:26.166Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d97551b8ba9a7882d678",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 2664,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:35.457Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 2714,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:03:40.873Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-tablet-768-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-e09009899b5ac1bcfb30",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1931,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:35.750Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-5d105c41e5718fbf76e1",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3404,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:45.249Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 24,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4278,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:03:51.253Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-e92a71d961595c1d7d58",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2276,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:45.503Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-4765cbb80ed3c5b3e033",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+          "ok": false,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 25,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2684,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:58.054Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 29,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2951,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                      "column": 40,
+                      "line": 12
+                    },
+                    "snippet": "  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                        "column": 40,
+                        "line": 12
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByPlaceholder('RETRO') resolved to 2 elements:\n    1) <input maxlength=\"32\" value=\"Test Comet\" placeholder=\"Retro Coin\"/> aka getByRole('textbox', { name: 'Name 10/' })\n    2) <input value=\"\" maxlength=\"10\" placeholder=\"RETRO\"/> aka getByRole('textbox', { name: 'Ticker 0/' })\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('RETRO')\u001b[22m\n\n\n  10 |   await expect(page.getByRole('alert')).toContainText('name');\n  11 |   await page.getByPlaceholder('Retro Coin').fill('Test Comet');\n> 12 |   await page.getByPlaceholder('RETRO').fill('TCOM');\n     |                                        ^\n  13 |   await page.getByRole('button', { name: 'Continue' }).click();\n  14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();\n  15 |   const holders = page.getByRole('radio', { name: /Holders/ });\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:12:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T16:04:03.414Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T160252Z-fixture-waveD-create/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-375-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts",
+                    "column": 40,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-a1149d363b97eda76fea",
+          "file": "fixture/create.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "@create prediction market wizard still renders (regression)",
+          "ok": true,
+          "tags": [
+            "create"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:00.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96219176a177d2c45f2-d2ed76650b02288dfc57",
+          "file": "fixture/create.spec.ts",
+          "line": 33,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fixture/smoke.spec.ts",
+      "file": "fixture/smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2543,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:07.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-27900b5598a8caee3dc4",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:07.976Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9604c55fbc32bb35069f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3075,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:10.353Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-8250635d3e75e9a35449",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2518,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:10.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-164245eb3a5e59d10583",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2489,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:11.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0a2be16b80bb14268480",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:13.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-9c5a128e15e7c990c549",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2056,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:13.474Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b31b41ab956989a89727",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:16.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0d0fb32a54cfd8b171d8",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 4010,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:16.814Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-264cc3ef8ec548ec5487",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:19.130Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-490180d7b094b2b379a2",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:19.828Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-f66ee8f0b1f6912363fd",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:21.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d857f6cf9b3ba52d9ec6",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2283,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:23.458Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-4a6fa3fe7101e30d2ea9",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1280",
+              "projectName": "desktop-1280",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2311,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:23.747Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-f71ab4c840ccb8a0c43d",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:27.336Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b8e9bc2f2294d0d2a9bb",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:27.787Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-74a792ab260e70c5cb45",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:28.213Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d11699943566492cf579",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:30.342Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-53f1f56e2d67ddf0b08a",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2755,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:31.294Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ad2734a195f8afe5e638",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:31.921Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-87791694bc9ef01041ae",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-834",
+              "projectName": "tablet-834",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:33.106Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ca0296cc2f6e22c03d06",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:35.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-ced610c9f1fb07f4121b",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3804,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:36.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-00a886dc16190916c59c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3464,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:38.005Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-890243490d94951cf248",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:39.119Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-700b5be84b0c4aa1a531",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:41.224Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d9c696b91c64875f3681",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2611,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:41.549Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-53d83925f7836643475d",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet-768",
+              "projectName": "tablet-768",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:42.504Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e17bccd280221948a8ab",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:45.570Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-04e1c2fca685a5a91a29",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7755,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:46.497Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cd07ebf176ffbe4307d3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 8138,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:48.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-e0d67492dce1a7a5fc68",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 5328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:49.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-d08378a1015b4f94dd4c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3980,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:54.682Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-356fdb0b79e133892516",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 3628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:54.787Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-c6dd685070ad1411d84c",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2873,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:03:56.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-989063ad2f0dcb25194f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke launchpad renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:00.472Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-cba50ae66203027e99b6",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-active renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 28,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 7180,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:01.016Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-1cbee558ce1cda6f78c0",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke token-graduated renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 5867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:02.622Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-95a1d229d27c10fadd9f",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prediction renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:04.064Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-b76543fc124d88f3f8b3",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke prism renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 30,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:08.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-6fa6823ec7aec1d2c680",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke earn renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:08.070Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-37b618bd18f24ceb2b3e",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        },
+        {
+          "title": "@smoke create renders",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-375",
+              "projectName": "mobile-375",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T16:04:08.551Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db31aec52605bb57c922-0f55ef036850598fa019",
+          "file": "fixture/smoke.spec.ts",
+          "line": 16,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T16:02:55.004Z",
+    "duration": 77083.50099999999,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

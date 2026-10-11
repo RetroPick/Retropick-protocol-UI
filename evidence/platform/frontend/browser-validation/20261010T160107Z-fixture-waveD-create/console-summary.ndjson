@@ -1,0 +1,18 @@
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

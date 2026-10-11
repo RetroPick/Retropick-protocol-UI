@@ -1,0 +1,79 @@
+{
+  "test": "research/competitors.spec.ts > @research pons read-only capture",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://authproxy.turnkey.com/v1/wallet_kit_config",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://authproxy.turnkey.com/v1/REDACTED",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://cca-lite.coinbase.com/amp",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://cca-lite.coinbase.com/amp",
+      "classification": "guard-blocked"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://authproxy.turnkey.com/v1/wallet_kit_config",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://authproxy.turnkey.com/v1/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://ponsfamily.com/launchpad",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://cca-lite.coinbase.com/amp",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://cca-lite.coinbase.com/amp",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [
+    {
+      "url": "https://authproxy.turnkey.com/v1/wallet_kit_config",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://authproxy.turnkey.com/v1/REDACTED",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://cca-lite.coinbase.com/amp",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://cca-lite.coinbase.com/amp",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    }
+  ],
+  "requestCount": 151
+}

@@ -1,0 +1,2543 @@
+{
+  "stats": {
+    "startTime": "2026-10-10T18:35:46.562Z",
+    "duration": 987177.564,
+    "expected": 224,
+    "skipped": 36,
+    "unexpected": 5,
+    "flaky": 5
+  },
+  "counts": {
+    "PASS": 229,
+    "FAIL": 5,
+    "SKIP": 36
+  },
+  "appConsoleErrors": 0,
+  "uncaughtPageErrors": 0,
+  "signingBroadcastViolations": 0,
+  "screenshots": 163,
+  "cases": [
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "desktop-1440",
+      "result": "FAIL",
+      "retry": 1,
+      "durationMs": 92736,
+      "reasons": [],
+      "errors": [
+        "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+        "\u001b[31mTearing down \"context\" exceeded the test timeout of 45000ms.\u001b[39m",
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('link', { name: 'Skip to content' })\nExpected: focused\nReceived: undefined\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Skip to content' })\u001b[22m\n\n\n   7 |   await page.goto('/launchpad/token/demo-active');\n   8 |   await page.keyboard.press('Tab');\n>  9 |   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();\n     |                                                                     ^\n  10 |   // Tab until a ticket radio receives focus; each focused element must show an outline or ring.\n  11 |   let reached = false;\n  12 |   for (let i = 0; i < 80 && !reached; i++) {\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:9:69"
+      ]
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "desktop-1440",
+      "result": "FAIL",
+      "retry": 1,
+      "durationMs": 93815,
+      "reasons": [],
+      "errors": [
+        "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+        "\u001b[31mTearing down \"context\" exceeded the test timeout of 45000ms.\u001b[39m",
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()\nExpected pattern: \u001b[32m/Buy|Sell/\u001b[39m\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()\u001b[22m\n\n\n  30 |   await page.goto('/launchpad/token/demo-graduated');\n  31 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');\n> 32 |   await expect(rows.first()).toContainText(/Buy|Sell/);\n     |                              ^\n  33 |   for (const name of ['Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();\n  34 |   // Mobile: the ticket lives in a modal bottom sheet (background correctly hidden from assistive tech while open).\n  35 |   if (info.project.name.startsWith('mobile')) await page.getByTestId('mobile-trade-bar').getByRole('button', { name: 'Trade' }).tap();\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:32:30",
+        "Error: browserContext.close: Target page, context or browser has been closed"
+      ]
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "desktop-1440",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 19062,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 19923,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7488,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6139,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 893,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4396,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6754,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4887,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 489,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3171,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7154,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4079,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 711,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7887,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "mobile-390",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 896,
+      "reasons": [
+        "hardware keyboard"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8121,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7909,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5857,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 1314,
+      "reasons": [
+        "hardware keyboard"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4732,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y touch targets ≥ 40px on mobile for primary trading controls",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4494,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resilience unknown route and unknown demo token keep the shell with a recovery action",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3879,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "desktop-1440",
+      "result": "FAIL",
+      "retry": 1,
+      "durationMs": 93101,
+      "reasons": [],
+      "errors": [
+        "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+        "\u001b[31mTearing down \"context\" exceeded the test timeout of 45000ms.\u001b[39m",
+        "Error: page.goto: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"[source] waiting until \"load\"\u001b[22m\n\n\n  61 |   test('@a11y reduced motion disables shimmer/spinner animation', async ({ page, observed }) => {\n  62 |     await page.emulateMedia({ reducedMotion: 'reduce' });\n> 63 |     await page.goto('/launchpad/token/demo-active?scenario=slow-rpc');\n     |                ^\n  64 |     const anim = await page.evaluate(() => { const el = document.createElement('span'); el.className = 'rp-skel'; document.body.append(el); const v = getComputedStyle(el).animationName; el.remove(); return v; });\n  65 |     expect(anim).toBe('none');\n  66 |     expectClean(observed);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:63:16"
+      ]
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4024,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 1874,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3935,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5374,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2419,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "desktop-1440",
+      "result": "FAIL",
+      "retry": 1,
+      "durationMs": 90740,
+      "reasons": [],
+      "errors": [
+        "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+        "\u001b[31mTearing down \"context\" exceeded the test timeout of 45000ms.\u001b[39m",
+        "Error: page.goto: net::ERR_ABORTED at [source]\nCall log:\n\u001b[2m  - navigating to \"[source] waiting until \"load\"\u001b[22m\n\n\n  73 |     test(`@theme ${theme} matrix: key routes render with theme-specific chart palette, no overflow`, async ({ page, observed, snap }) => {\n  74 |       for (const route of ROUTES) {\n> 75 |         await page.goto(route);\n     |                    ^\n  76 |         await expect(page.locator('html')).toHaveAttribute('data-theme', theme);\n  77 |         await expectNoHorizontalOverflow(page);\n  78 |       }\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:75:20",
+        "Error: browserContext.close: Target page, context or browser has been closed"
+      ]
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14518,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12695,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15386,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14307,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8468,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 1,
+      "durationMs": 31963,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11243,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11124,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16432,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12016,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme light matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9219,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 27006,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8649,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5538,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2069,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4887,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2194,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9531,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3801,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 1,
+      "durationMs": 15940,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2349,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5827,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@create prediction market wizard still renders (regression)",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 1871,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 33178,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 41448,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 20193,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "desktop-1440",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 708,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10773,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15828,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11440,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 482,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8478,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11213,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 514,
+      "reasons": [
+        "hardware-keyboard shortcut"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 500,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11356,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14718,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 359,
+      "reasons": [
+        "hardware-keyboard shortcut"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 352,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11378,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 13738,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "mobile-390",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 615,
+      "reasons": [
+        "hardware-keyboard shortcut"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7286,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery lifecycle filters, pair dropdown, grid toggle persists, open token",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7265,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery Prediction, Crypto and PRISM navigation still work",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8818,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@search command palette: keyboard-only open, arrow, enter",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 356,
+      "reasons": [
+        "hardware-keyboard shortcut"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@search mobile search button opens palette",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3630,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16149,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4539,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4538,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5824,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5217,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3261,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 19701,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4572,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4870,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4695,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5362,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3142,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10967,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7226,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5649,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3389,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3595,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2385,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "tablet-768",
+      "result": "FAIL",
+      "retry": 1,
+      "durationMs": 41152,
+      "reasons": [],
+      "errors": [
+        "Error: no horizontal page overflow\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m11\u001b[39m\n\n   at helpers/test.ts:96\n\n  94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {\n  95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);\n> 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);\n     |                                                   ^\n  97 | }\n  98 |\n  99 | export { expect };\n    at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:49:3"
+      ]
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3031,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7754,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4612,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn referral copy, section tabs, demo positions toggle",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4110,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn legacy /portfolio route still renders demo portfolio",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2022,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15898,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8322,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6398,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7577,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8738,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6920,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16239,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7766,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6394,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7972,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9075,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@earn hub shows honest capabilities, no copied competitor policy",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6173,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9036,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7303,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6496,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 470,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 537,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 645,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 282,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 266,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 272,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 477,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 568,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 708,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5499,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5920,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5987,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 550,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 297,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 388,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8147,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14109,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12319,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8084,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5874,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5335,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4577,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4661,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7398,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6865,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5635,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3652,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2678,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2594,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2391,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3724,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3680,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3492,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2491,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2174,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2241,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4541,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6801,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7405,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 13426,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8924,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9517,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 34800,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5390,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 21306,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 22719,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9931,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8340,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12032,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9887,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke launchpad renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2951,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-active renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8214,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke token-graduated renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8189,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prediction renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3775,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke prism renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4181,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke earn renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5221,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@smoke create renders",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4011,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8617,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16474,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11386,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15706,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12783,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 17890,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5309,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "desktop-1440",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 651,
+      "reasons": [
+        "mobile only"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15215,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 32975,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 19708,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 34467,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 1,
+      "durationMs": 9153,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 30858,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12014,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "desktop-1280",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 502,
+      "reasons": [
+        "mobile only"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6295,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10357,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7417,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8513,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6564,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8241,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2700,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "tablet-834",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 478,
+      "reasons": [
+        "mobile only"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7624,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12660,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8055,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11432,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9134,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12832,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3343,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "tablet-768",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 334,
+      "reasons": [
+        "mobile only"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6295,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "mobile-390",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 683,
+      "reasons": [
+        "mobile ticket covered in sheet test"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "mobile-390",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 574,
+      "reasons": [
+        "mobile ticket covered in sheet test"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "mobile-390",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 611,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7715,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9728,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4113,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12931,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal chart: Line/Candles and range vs interval are independent controls",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7336,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 664,
+      "reasons": [
+        "mobile ticket covered in sheet test"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 735,
+      "reasons": [
+        "mobile ticket covered in sheet test"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit",
+      "project": "mobile-375",
+      "result": "SKIP",
+      "retry": 0,
+      "durationMs": 506,
+      "reasons": [
+        "Intentional viewport-specific applicability skip; see spec condition"
+      ],
+      "errors": []
+    },
+    {
+      "title": "@terminal tabs: trades, holders with classification, protocol groups, orders by status",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15858,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal empty scenarios: no holders, no orders, stale indexer, slow RPC",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 18647,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE orders tab is disabled until graduation",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9757,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal mobile: sticky Trade bar opens bottom-sheet ticket",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16426,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10310,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12766,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15452,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15624,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8107,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7753,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14255,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11722,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4477,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4636,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4749,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5526,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 1,
+      "durationMs": 12817,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 1,
+      "durationMs": 15166,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 18191,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10187,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15871,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 16771,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14325,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14212,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11905,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11922,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12348,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11586,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11966,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10095,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9059,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 10674,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15888,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15893,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14138,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 18752,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5591,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5950,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5937,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7086,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 11980,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8748,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7011,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7755,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15976,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 15857,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14601,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 14454,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal ACTIVE renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 17320,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATION_READY renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 18550,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATING renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 17657,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@terminal GRADUATED renders shared terminal with DEMO provenance",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 19169,
+      "reasons": [],
+      "errors": []
+    }
+  ]
+}

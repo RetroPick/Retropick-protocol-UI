@@ -1,0 +1,36 @@
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

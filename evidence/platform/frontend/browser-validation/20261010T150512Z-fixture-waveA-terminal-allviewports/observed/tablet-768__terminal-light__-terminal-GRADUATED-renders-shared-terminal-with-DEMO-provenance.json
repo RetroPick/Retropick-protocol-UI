@@ -1,0 +1,17 @@
+{
+  "test": "fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance",
+  "project": "tablet-768",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:4317/launchpad/token/demo-graduated",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 1
+}

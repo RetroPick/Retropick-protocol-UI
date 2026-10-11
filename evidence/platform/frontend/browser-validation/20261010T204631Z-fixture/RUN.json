@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "",
+  "startedAt": "2026-10-10T20:46:31.181Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts",
+  "cwd": "apps/retro-ui"
+}

@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "waveA-terminal",
+  "startedAt": "2026-10-10T14:47:24.740Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --project=desktop-1440 --project=mobile-390 e2e/fixture/token-terminal.spec.ts",
+  "cwd": "apps/retro-ui"
+}

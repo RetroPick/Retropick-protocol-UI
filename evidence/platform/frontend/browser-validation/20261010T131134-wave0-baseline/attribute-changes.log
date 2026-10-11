@@ -1,0 +1,40 @@
+attribute-changes: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56 (153 pre-existing entries)
+CAMPAIGN_NEW: 35
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/campaign-sections.md
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/campaign-spec.md
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/context.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-001.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-002.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-003.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-004.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-005.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-006.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-007.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-008.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-009.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-010.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-011.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-012.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-013.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/features/FEAT-014.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/handoffs/WAVE-0.md
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/task.json
+  task-state	.agents/tasks/task-retro-ui-trading-redesign/traceability.md
+  retro-ui	apps/retro-ui/e2e/tools/attribute-changes.mjs
+  retro-ui	apps/retro-ui/e2e/tools/guard-forbidden-paths.mjs
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/BASELINE.md
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/baseline-entries.tsv
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/bundle-sizes-before.json
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/gate-build.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/gate-test-product.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/gate-test.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/gate-typecheck.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/guard-forbidden-paths.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/guard-selftest.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/restore-verification.log
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/snapshot-tools/build-manifest.mjs
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/snapshot-tools/capture-baseline.sh
+  evidence	evidence/platform/frontend/browser-validation/20261010T131134-wave0-baseline/snapshot-tools/verify-restore.mjs
+CAMPAIGN_MODIFIED_PREEXISTING: 0
+PREEXISTING_REVERTED: 0
+PREEXISTING_UNCHANGED: 153

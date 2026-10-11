@@ -1,0 +1,52 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ curve buy calldata matches cast ground truth (9.767536ms)
+✔ margin deposit calldata matches cast ground truth (1.483565ms)
+✔ margin withdraw calldata matches cast ground truth (1.177119ms)
+✔ orderbook addBuyOrder calldata matches cast ground truth (17.135968ms)
+✔ orderbook batchCancelOrders calldata matches cast ground truth (4.77942ms)
+✔ orderbook batchCancelOrdersNoRevert calldata matches cast ground truth (1.321797ms)
+✔ fee escrow claimToken calldata matches cast ground truth (4.114127ms)
+✔ margin batchWithdrawMaxTokens calldata matches cast ground truth (7.636601ms)
+✔ launchToken venue overload selects a distinct selector from the 3-arg overload (17.614598ms)
+✔ grid: size round-trips exactly through units (1.397485ms)
+✔ grid: sub-precision size is rejected, not rounded (1.878759ms)
+✔ grid: price snaps to tick away from crossing (pricePrecision-scaled per token) (1.828386ms)
+✔ grid: resting buy quote cost mirrors the book (ceil then scale) (0.358369ms)
+✔ grid: market-buy quote units use price precision (0.305642ms)
+✔ OrderCreated logs decode to numeric order ids (no indexed params: all in data) (6.737633ms)
+✔ TokenLaunched decodes from a synthetic log (18.619917ms)
+✔ custom errors decode through the selector map (70.231911ms)
+✔ classifyError recognises user rejection and decoded reverts (3.704751ms)
+✔ randomSalt is 32 bytes of entropy and unique (12.885472ms)
+✔ escrow credit reads recipient then token, matching deployed storage (16.520953ms)
+✔ buyback release requires current vest beneficiary (2.745145ms)
+✔ Tier A excludes wallet, completion, fee and custody; Tier B anchors same block (13.115003ms)
+✔ market order min output derives from fresh fee-inclusive quote (3.895557ms)
+✔ registered market still must match coordinator receipt (2.153285ms)
+✔ cancel validates ownership while gone IDs use NoRevert (3.831454ms)
+✔ create reads current hook policy and rejects combined hook fee (5.518797ms)
+✔ same-chain send rejects zero recipient, gas overspend and false ERC20 (2.834551ms)
+✔ unhealthy fallback is excluded; contract revert does not trip primary circuit (656.130143ms)
+✔ nonzero stale order storage does not imply an open order after its price head advances (16.385113ms)
+✔ market execution simulation enforces connected-account FOK and positive minimum (1.82483ms)
+✔ market sell derives a fresh minimum and exact sell grid (3.385765ms)
+✔ zero output and precision-floor minimum never produce a prepared market write (2.579248ms)
+✔ quote sizing rejects fractional grids and uint32 max price is rejected (1.328175ms)
+✔ release admits both current recipients but rejects empty vest and old creator (2.830697ms)
+✔ execution transfer rechecks chain, gas, false return and descriptor integrity (66.041267ms)
+✔ wrong chain and authorization permanently disable providers and health reveals host only (1004.023129ms)
+✔ 429, 5xx, timeout and internal RPC failures fall back and respect cooldown (1902.535581ms)
+✔ application revert stays on primary, retains ABI data and redacts raw gateway messages (116.481592ms)
+✔ logs range limits remain application errors without fallback or circuit opening (89.095417ms)
+✔ malformed envelopes fail over transiently instead of NaN permanent wrong-chain classification (76.950995ms)
+✔ non-hex chain/head responses are transient malformed data rather than wrong-chain ids (115.378079ms)
+﹣ canonical launch transaction replays and decodes TokenLaunched (3.992372ms) # set RUN_SDK_NETWORK_TESTS=1 (needs Monad testnet RPC)
+﹣ demo launch reads back GRADUATED via the SDK read model (0.862167ms) # set RUN_SDK_NETWORK_TESTS=1 (needs Monad testnet RPC)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 7248.29134

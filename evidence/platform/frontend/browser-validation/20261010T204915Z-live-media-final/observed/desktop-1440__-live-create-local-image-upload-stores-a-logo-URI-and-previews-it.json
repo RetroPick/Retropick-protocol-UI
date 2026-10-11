@@ -1,0 +1,12 @@
+{
+  "test": "live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 34
+}

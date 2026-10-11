@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls",
+  "project": "tablet-834",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

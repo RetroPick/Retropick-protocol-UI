@@ -1,0 +1,6 @@
+{"mode":"parallel-http","httpBatch":false,"multicall":false,"samples":30,"attempts":30,"errors":0,"warmup":"PASS","status":"QUALIFIED","p50Ms":948.53,"p95Ms":1550.53,"meanRequests":9,"meanRpcCalls":9,"meanEthCalls":9,"meanBytesFetched":2533.233333333333}
+{"mode":"json-rpc-batch","httpBatch":true,"multicall":false,"samples":30,"attempts":37,"errors":7,"warmup":"PASS","status":"QUALIFIED","p50Ms":334.45,"p95Ms":394.53,"meanRequests":1,"meanRpcCalls":9,"meanEthCalls":9,"meanBytesFetched":2546}
+{"mode":"multicall3","httpBatch":false,"multicall":true,"samples":0,"attempts":3,"errors":3,"warmup":"RPC_UNAVAILABLE","status":"PARTIAL","p50Ms":null,"p95Ms":null,"meanRequests":null,"meanRpcCalls":null,"meanEthCalls":null,"meanBytesFetched":null}
+{"mode":"frontend-default","httpBatch":true,"multicall":false,"samples":0,"attempts":3,"errors":3,"warmup":"PASS","status":"PARTIAL","p50Ms":null,"p95Ms":null,"meanRequests":null,"meanRpcCalls":null,"meanEthCalls":null,"meanBytesFetched":null}
+{"mode":"frontend-multicall-candidate","httpBatch":true,"multicall":true,"samples":30,"attempts":32,"errors":2,"warmup":"PASS","status":"QUALIFIED","p50Ms":702.6,"p95Ms":3651.27,"meanRequests":1,"meanRpcCalls":1,"meanEthCalls":1,"meanBytesFetched":4650}
+{"evidence":"evidence/launchpad/productization/resume/sdk/rpc-infura.json","status":"PARTIAL","winner":null}

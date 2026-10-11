@@ -1,0 +1,12 @@
+{
+  "test": "fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy",
+  "project": "tablet-768",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 28
+}

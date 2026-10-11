@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter",
+  "project": "tablet-834",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

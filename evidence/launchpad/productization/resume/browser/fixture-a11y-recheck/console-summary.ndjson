@@ -1,0 +1,4 @@
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

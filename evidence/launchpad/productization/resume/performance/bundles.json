@@ -1,0 +1,630 @@
+{
+  "sourceBaseline": "f643cb62c7713c561cd4a95a9ffbabad5e620eb9",
+  "method": "Same locked dependency versions and Vite production live mode; total gzip is sum of standalone gzip chunks, not initial transfer. After includes active GLM snapshot, not final integration.",
+  "builds": [
+    {
+      "name": "baseline-f643",
+      "totalJs": 1680476,
+      "totalGzipJs": 495953,
+      "chunks": [
+        {
+          "chunk": "create-launch-B6SDLg0S.js",
+          "bytes": 39740,
+          "gzip": 11323
+        },
+        {
+          "chunk": "checkbox-CrRxGEC9.js",
+          "bytes": 4627,
+          "gzip": 1959
+        },
+        {
+          "chunk": "table-8RLwMPmo.js",
+          "bytes": 1296,
+          "gzip": 514
+        },
+        {
+          "chunk": "fixtures-CP4RI90W.js",
+          "bytes": 4106,
+          "gzip": 2141
+        },
+        {
+          "chunk": "jsx-runtime-C7oxC63R.js",
+          "bytes": 8557,
+          "gzip": 3274
+        },
+        {
+          "chunk": "arrow-right-BWPtPmvF.js",
+          "bytes": 165,
+          "gzip": 161
+        },
+        {
+          "chunk": "detail-DfVrm-FO.js",
+          "bytes": 364064,
+          "gzip": 104580
+        },
+        {
+          "chunk": "chevron-down-CbBrjkXg.js",
+          "bytes": 128,
+          "gzip": 139
+        },
+        {
+          "chunk": "docs-CMfyRyYq.js",
+          "bytes": 3698,
+          "gzip": 1619
+        },
+        {
+          "chunk": "launch-table-1Yn4iG9R.js",
+          "bytes": 6200,
+          "gzip": 1916
+        },
+        {
+          "chunk": "token-detail-CfSV08eX.js",
+          "bytes": 52095,
+          "gzip": 16285
+        },
+        {
+          "chunk": "tx-pipeline-JWHkEP4R.js",
+          "bytes": 94662,
+          "gzip": 13440
+        },
+        {
+          "chunk": "registry-mAx6CPOn.js",
+          "bytes": 1187,
+          "gzip": 635
+        },
+        {
+          "chunk": "select-DRzo0aVq.js",
+          "bytes": 22537,
+          "gzip": 7599
+        },
+        {
+          "chunk": "earn-DF3EAIwA.js",
+          "bytes": 22248,
+          "gzip": 6773
+        },
+        {
+          "chunk": "layers-GmQcxKdH.js",
+          "bytes": 421,
+          "gzip": 235
+        },
+        {
+          "chunk": "createLucideIcon-BpqcA8cq.js",
+          "bytes": 1669,
+          "gzip": 908
+        },
+        {
+          "chunk": "format-CMn7XJDw.js",
+          "bytes": 568,
+          "gzip": 344
+        },
+        {
+          "chunk": "live-trading-ticket-Brdy9hQw.js",
+          "bytes": 14423,
+          "gzip": 5104
+        },
+        {
+          "chunk": "utils-Bpv4vmSW.js",
+          "bytes": 2194,
+          "gzip": 981
+        },
+        {
+          "chunk": "queries-wiPskFMs.js",
+          "bytes": 216582,
+          "gzip": 54294
+        },
+        {
+          "chunk": "dist-D6vDQfHf.js",
+          "bytes": 14545,
+          "gzip": 5272
+        },
+        {
+          "chunk": "ticket-DO8CXhBi.js",
+          "bytes": 8173,
+          "gzip": 3065
+        },
+        {
+          "chunk": "prism-B6indouV.js",
+          "bytes": 15601,
+          "gzip": 4439
+        },
+        {
+          "chunk": "sheet-5tKnsvWw.js",
+          "bytes": 2168,
+          "gzip": 795
+        },
+        {
+          "chunk": "secp256k1-CLmdrhHM.js",
+          "bytes": 29922,
+          "gzip": 11737
+        },
+        {
+          "chunk": "ui-B_4jpxdw.js",
+          "bytes": 3789,
+          "gzip": 1302
+        },
+        {
+          "chunk": "trading-chart-BGYJb5ET.js",
+          "bytes": 184335,
+          "gzip": 59133
+        },
+        {
+          "chunk": "math-B-JDr_2y.js",
+          "bytes": 357,
+          "gzip": 256
+        },
+        {
+          "chunk": "shield-check-DLvU80GQ.js",
+          "bytes": 320,
+          "gzip": 250
+        },
+        {
+          "chunk": "creator-DVRXNMhs.js",
+          "bytes": 1194,
+          "gzip": 568
+        },
+        {
+          "chunk": "dist-BKqlcUA_.js",
+          "bytes": 13579,
+          "gzip": 4865
+        },
+        {
+          "chunk": "demo-discovery-U8lrX5Su.js",
+          "bytes": 13859,
+          "gzip": 4489
+        },
+        {
+          "chunk": "discovery-hKx5x1Qr.js",
+          "bytes": 8300,
+          "gzip": 3321
+        },
+        {
+          "chunk": "portfolio-D0Y54Hbs.js",
+          "bytes": 13272,
+          "gzip": 4182
+        },
+        {
+          "chunk": "index-Cg3fwvi0.js",
+          "bytes": 393834,
+          "gzip": 124074
+        },
+        {
+          "chunk": "activity-DHt1u-KV.js",
+          "bytes": 3947,
+          "gzip": 1711
+        },
+        {
+          "chunk": "ccip-Bxj2eZ54.js",
+          "bytes": 2868,
+          "gzip": 1330
+        },
+        {
+          "chunk": "localBatchGatewayRequest-dv1kvGHA.js",
+          "bytes": 108791,
+          "gzip": 30548
+        },
+        {
+          "chunk": "send-CtdbkAOJ.js",
+          "bytes": 290,
+          "gzip": 229
+        },
+        {
+          "chunk": "arrow-left-DcKp-L-p.js",
+          "bytes": 165,
+          "gzip": 163
+        }
+      ],
+      "initialStaticJs": {
+        "chunks": [
+          "createLucideIcon-BpqcA8cq.js",
+          "dist-D6vDQfHf.js",
+          "fixtures-CP4RI90W.js",
+          "index-Cg3fwvi0.js",
+          "jsx-runtime-C7oxC63R.js",
+          "localBatchGatewayRequest-dv1kvGHA.js",
+          "queries-wiPskFMs.js",
+          "registry-mAx6CPOn.js",
+          "secp256k1-CLmdrhHM.js",
+          "utils-Bpv4vmSW.js"
+        ],
+        "bytes": 781387,
+        "gzip": 233864
+      }
+    },
+    {
+      "name": "after-working-snapshot",
+      "totalJs": 1832818,
+      "totalGzipJs": 552765,
+      "chunks": [
+        {
+          "chunk": "useQuery-BMRp0TW3.js",
+          "bytes": 8240,
+          "gzip": 3041
+        },
+        {
+          "chunk": "jsx-runtime-DIzu-bOv.js",
+          "bytes": 8742,
+          "gzip": 3349
+        },
+        {
+          "chunk": "select-NMt2Ncjy.js",
+          "bytes": 22590,
+          "gzip": 7608
+        },
+        {
+          "chunk": "fixtures-CP4RI90W.js",
+          "bytes": 4106,
+          "gzip": 2141
+        },
+        {
+          "chunk": "plus-svvZQKAn.js",
+          "bytes": 153,
+          "gzip": 150
+        },
+        {
+          "chunk": "dist-cyT8bBWF.js",
+          "bytes": 14566,
+          "gzip": 5279
+        },
+        {
+          "chunk": "checkbox-KspgMZWA.js",
+          "bytes": 4656,
+          "gzip": 1968
+        },
+        {
+          "chunk": "table-BWYJFX3z.js",
+          "bytes": 1295,
+          "gzip": 516
+        },
+        {
+          "chunk": "skeleton-g7wEakBH.js",
+          "bytes": 409,
+          "gzip": 309
+        },
+        {
+          "chunk": "primitives-CM0qyhlP.js",
+          "bytes": 18803,
+          "gzip": 6888
+        },
+        {
+          "chunk": "dist-DB6Lmjp-.js",
+          "bytes": 4466,
+          "gzip": 1650
+        },
+        {
+          "chunk": "arrow-left-DFCQeTjf.js",
+          "bytes": 165,
+          "gzip": 162
+        },
+        {
+          "chunk": "safe-link-B2IU8NNN.js",
+          "bytes": 1486,
+          "gzip": 741
+        },
+        {
+          "chunk": "format-DHcRHVXJ.js",
+          "bytes": 742,
+          "gzip": 428
+        },
+        {
+          "chunk": "ticket-BZhVzcaA.js",
+          "bytes": 8240,
+          "gzip": 3084
+        },
+        {
+          "chunk": "portfolio-CD4p9pWH.js",
+          "bytes": 14680,
+          "gzip": 4538
+        },
+        {
+          "chunk": "launchpad-repository-Bt60OqHd.js",
+          "bytes": 4198,
+          "gzip": 1573
+        },
+        {
+          "chunk": "theme-Bt_O3-Ep.js",
+          "bytes": 740,
+          "gzip": 429
+        },
+        {
+          "chunk": "send-spvCEVZY.js",
+          "bytes": 290,
+          "gzip": 229
+        },
+        {
+          "chunk": "ui-Bf8sturI.js",
+          "bytes": 3824,
+          "gzip": 1312
+        },
+        {
+          "chunk": "deposit-order-machine-CKnGV9WM.js",
+          "bytes": 7848,
+          "gzip": 2922
+        },
+        {
+          "chunk": "dist-CxmBm7T4.js",
+          "bytes": 33093,
+          "gzip": 12206
+        },
+        {
+          "chunk": "prism-C_o0UFKb.js",
+          "bytes": 15711,
+          "gzip": 4480
+        },
+        {
+          "chunk": "layers-CrtSlXxU.js",
+          "bytes": 421,
+          "gzip": 237
+        },
+        {
+          "chunk": "launchpad-fixtures-zmRvikgV.js",
+          "bytes": 2815,
+          "gzip": 961
+        },
+        {
+          "chunk": "registry-mAx6CPOn.js",
+          "bytes": 1187,
+          "gzip": 635
+        },
+        {
+          "chunk": "trading-chart-CJ6YcK-L.js",
+          "bytes": 184335,
+          "gzip": 59130
+        },
+        {
+          "chunk": "live-trading-ticket-XlwLxGEu.js",
+          "bytes": 15655,
+          "gzip": 5601
+        },
+        {
+          "chunk": "loader-circle-D5TNUoO6.js",
+          "bytes": 144,
+          "gzip": 154
+        },
+        {
+          "chunk": "session-bridge-DOLrXnjh.js",
+          "bytes": 1151,
+          "gzip": 600
+        },
+        {
+          "chunk": "arrow-up-right-hSPb4TDX.js",
+          "bytes": 167,
+          "gzip": 158
+        },
+        {
+          "chunk": "circle-check-DqiG2CmQ.js",
+          "bytes": 178,
+          "gzip": 165
+        },
+        {
+          "chunk": "demo-discovery-BQsZsHEY.js",
+          "bytes": 14011,
+          "gzip": 4531
+        },
+        {
+          "chunk": "token-detail-BQRPbUiG.js",
+          "bytes": 45563,
+          "gzip": 14395
+        },
+        {
+          "chunk": "activity-Dn4bgtdP.js",
+          "bytes": 4017,
+          "gzip": 1737
+        },
+        {
+          "chunk": "secp256k1-CMTKsvrn.js",
+          "bytes": 52,
+          "gzip": 65
+        },
+        {
+          "chunk": "tx-pipeline-DBNk-wGs.js",
+          "bytes": 94662,
+          "gzip": 13440
+        },
+        {
+          "chunk": "dialog-SVel6Z5O.js",
+          "bytes": 4513,
+          "gzip": 1621
+        },
+        {
+          "chunk": "dist-CwDK86qi.js",
+          "bytes": 33537,
+          "gzip": 9260
+        },
+        {
+          "chunk": "creator-C6hJBAdU.js",
+          "bytes": 1238,
+          "gzip": 590
+        },
+        {
+          "chunk": "discovery-CjbK4BUQ.js",
+          "bytes": 2151,
+          "gzip": 979
+        },
+        {
+          "chunk": "utils-Bpv4vmSW.js",
+          "bytes": 2194,
+          "gzip": 981
+        },
+        {
+          "chunk": "createLucideIcon-rl_fu48B.js",
+          "bytes": 1669,
+          "gzip": 909
+        },
+        {
+          "chunk": "referral-client-2v48I6oK.js",
+          "bytes": 2075,
+          "gzip": 1061
+        },
+        {
+          "chunk": "x-COjG93bn.js",
+          "bytes": 154,
+          "gzip": 148
+        },
+        {
+          "chunk": "dist-Cv-bjbbA.js",
+          "bytes": 641,
+          "gzip": 391
+        },
+        {
+          "chunk": "queries-CKoIuNWq.js",
+          "bytes": 216567,
+          "gzip": 54276
+        },
+        {
+          "chunk": "portfolio-Db2Aadi4.js",
+          "bytes": 50,
+          "gzip": 68
+        },
+        {
+          "chunk": "sheet-dTfbEp26.js",
+          "bytes": 2220,
+          "gzip": 826
+        },
+        {
+          "chunk": "arrow-right-Bl_LzRit.js",
+          "bytes": 165,
+          "gzip": 162
+        },
+        {
+          "chunk": "utils-COM2Uj-P.js",
+          "bytes": 29413,
+          "gzip": 9533
+        },
+        {
+          "chunk": "math-B-JDr_2y.js",
+          "bytes": 357,
+          "gzip": 256
+        },
+        {
+          "chunk": "demo-terminal-fixtures-ukQWe1uX.js",
+          "bytes": 8189,
+          "gzip": 3474
+        },
+        {
+          "chunk": "index-BT0-rYmL.js",
+          "bytes": 204910,
+          "gzip": 64403
+        },
+        {
+          "chunk": "es2015-BGUf55OZ.js",
+          "bytes": 16833,
+          "gzip": 6385
+        },
+        {
+          "chunk": "use-live-launches-BijSSyNP.js",
+          "bytes": 1773,
+          "gzip": 1015
+        },
+        {
+          "chunk": "provider-DQo0HHDS.js",
+          "bytes": 22041,
+          "gzip": 6847
+        },
+        {
+          "chunk": "ccip-Bxj2eZ54.js",
+          "bytes": 2868,
+          "gzip": 1330
+        },
+        {
+          "chunk": "earn-DuO6lem5.js",
+          "bytes": 161674,
+          "gzip": 51408
+        },
+        {
+          "chunk": "secp256k1-Dg0yy6bC.js",
+          "bytes": 29833,
+          "gzip": 11681
+        },
+        {
+          "chunk": "localBatchGatewayRequest-dv1kvGHA.js",
+          "bytes": 108791,
+          "gzip": 30548
+        },
+        {
+          "chunk": "shield-check-C-yeE1Hb.js",
+          "bytes": 320,
+          "gzip": 249
+        },
+        {
+          "chunk": "docs-CpXLHqx5.js",
+          "bytes": 3742,
+          "gzip": 1636
+        },
+        {
+          "chunk": "launch-table-CPU2u20-.js",
+          "bytes": 5781,
+          "gzip": 1792
+        },
+        {
+          "chunk": "list-CIBuP-SM.js",
+          "bytes": 595,
+          "gzip": 279
+        },
+        {
+          "chunk": "create-launch-B7l990uB.js",
+          "bytes": 39994,
+          "gzip": 11424
+        },
+        {
+          "chunk": "discovery-VUNFyiGB.js",
+          "bytes": 7273,
+          "gzip": 2792
+        },
+        {
+          "chunk": "dist-D1UquslH.js",
+          "bytes": 13579,
+          "gzip": 4859
+        },
+        {
+          "chunk": "chevron-down-D_CZD7Si.js",
+          "bytes": 128,
+          "gzip": 140
+        },
+        {
+          "chunk": "detail-C4xIanMB.js",
+          "bytes": 364149,
+          "gzip": 104630
+        }
+      ],
+      "initialStaticJs": {
+        "chunks": [
+          "arrow-up-right-hSPb4TDX.js",
+          "circle-check-DqiG2CmQ.js",
+          "createLucideIcon-rl_fu48B.js",
+          "demo-terminal-fixtures-ukQWe1uX.js",
+          "dialog-SVel6Z5O.js",
+          "discovery-CjbK4BUQ.js",
+          "dist-Cv-bjbbA.js",
+          "dist-CwDK86qi.js",
+          "dist-CxmBm7T4.js",
+          "dist-DB6Lmjp-.js",
+          "dist-cyT8bBWF.js",
+          "es2015-BGUf55OZ.js",
+          "fixtures-CP4RI90W.js",
+          "index-BT0-rYmL.js",
+          "jsx-runtime-DIzu-bOv.js",
+          "launchpad-fixtures-zmRvikgV.js",
+          "launchpad-repository-Bt60OqHd.js",
+          "loader-circle-D5TNUoO6.js",
+          "localBatchGatewayRequest-dv1kvGHA.js",
+          "plus-svvZQKAn.js",
+          "primitives-CM0qyhlP.js",
+          "provider-DQo0HHDS.js",
+          "queries-CKoIuNWq.js",
+          "referral-client-2v48I6oK.js",
+          "registry-mAx6CPOn.js",
+          "safe-link-B2IU8NNN.js",
+          "secp256k1-Dg0yy6bC.js",
+          "skeleton-g7wEakBH.js",
+          "theme-Bt_O3-Ep.js",
+          "useQuery-BMRp0TW3.js",
+          "utils-Bpv4vmSW.js",
+          "utils-COM2Uj-P.js",
+          "x-COjG93bn.js"
+        ],
+        "bytes": 787004,
+        "gzip": 242326
+      }
+    }
+  ]
+}

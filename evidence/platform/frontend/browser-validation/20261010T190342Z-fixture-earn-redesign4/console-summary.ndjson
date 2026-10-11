@@ -1,0 +1,25 @@
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn legacy /portfolio route still renders demo portfolio","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/earn.spec.ts > earn light > @earn hub shows honest capabilities, no copied competitor policy","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

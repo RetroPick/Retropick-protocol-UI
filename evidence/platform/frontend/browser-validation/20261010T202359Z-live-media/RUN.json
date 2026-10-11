@@ -1,0 +1,7 @@
+{
+  "target": "live",
+  "label": "media",
+  "startedAt": "2026-10-10T20:23:59.504Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts e2e/live/media-upload.spec.ts",
+  "cwd": "apps/retro-ui"
+}

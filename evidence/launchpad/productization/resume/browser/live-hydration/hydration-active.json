@@ -1,0 +1,37 @@
+{
+  "phase": "ACTIVE",
+  "wallet": "absent; no wallet account or economic write requested",
+  "shellReady": true,
+  "ticketReady": true,
+  "boundMs": 75000,
+  "stages": [
+    {
+      "stage": "detail:essential",
+      "result": "PASS"
+    },
+    {
+      "stage": "detail:economic",
+      "result": "PASS"
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "result": "PASS"
+    }
+  ],
+  "records": [
+    {
+      "stage": "detail:essential",
+      "at": 1543.7000000029802,
+      "duration": 798.1000000014901
+    },
+    {
+      "stage": "detail:economic",
+      "at": 1796.9000000022352,
+      "duration": 238.90000000223517
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 1804.2000000029802
+    }
+  ]
+}

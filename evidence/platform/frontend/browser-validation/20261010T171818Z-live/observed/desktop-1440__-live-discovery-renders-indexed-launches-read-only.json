@@ -1,0 +1,21 @@
+{
+  "test": "live/live-readonly.spec.ts > @live discovery renders indexed launches read-only",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:8787/v1/launches?limit=50&sort=marketCap",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8787/v1/pairs",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 81
+}

@@ -1,0 +1,12 @@
+{
+  "test": "live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway",
+  "project": "tablet-834",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

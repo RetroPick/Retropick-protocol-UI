@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "purple-retheme",
+  "startedAt": "2026-10-10T17:15:03.752Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --grep @theme",
+  "cwd": "apps/retro-ui"
+}

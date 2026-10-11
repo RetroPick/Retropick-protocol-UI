@@ -1,0 +1,96 @@
+{
+  "measuredAt": "2026-10-10T18:38:45.427Z",
+  "chainId": 10143,
+  "method": "Disposable generated in-memory EOA; offchain referral message only; no financial wallet methods or transactions",
+  "records": [
+    {
+      "name": "health",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "origin rejected",
+      "status": 403,
+      "expected": 403,
+      "pass": true
+    },
+    {
+      "name": "self-referral rejected",
+      "status": 400,
+      "expected": 400,
+      "pass": true
+    },
+    {
+      "name": "challenge",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "ownership verification",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "nonce replay rejected",
+      "status": 401,
+      "expected": 401,
+      "pass": true
+    },
+    {
+      "name": "authenticated summary",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "immutable association",
+      "status": 409,
+      "expected": 409,
+      "pass": true
+    },
+    {
+      "name": "logout",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "session revoked",
+      "status": 401,
+      "expected": 401,
+      "pass": true
+    },
+    {
+      "name": "same-origin dev proxy",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    }
+  ],
+  "earningsEnabled": false,
+  "health": {
+    "chainId": 10143,
+    "attributionOnly": true,
+    "earningsEnabled": false,
+    "syncError": null
+  },
+  "summaryFields": [
+    "wallet",
+    "referralCode",
+    "earningsEnabled",
+    "referralPayoutRequiresProtocolChange",
+    "referredBy",
+    "referredWallets",
+    "qualifiedWallets",
+    "createdLaunches",
+    "volumeByQuote",
+    "referrals",
+    "freshness",
+    "syncError"
+  ],
+  "signaturesPersisted": false,
+  "productionProxyQualified": false
+}

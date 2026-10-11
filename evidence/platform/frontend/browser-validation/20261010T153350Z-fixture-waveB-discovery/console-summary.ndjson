@@ -1,0 +1,26 @@
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":3}
+{"test":"fixture/discovery.spec.ts > discovery light > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search command palette: keyboard-only open, arrow, enter","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @search mobile search button opens palette","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery lifecycle filters, pair dropdown, grid toggle persists, open token","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > discovery dark > @discovery list renders real-shape rows with DEMO provenance and no USD/SOL",
+  "project": "tablet-834",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 21
+}

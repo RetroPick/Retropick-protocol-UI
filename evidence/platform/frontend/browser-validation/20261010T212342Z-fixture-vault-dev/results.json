@@ -1,0 +1,486 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project",
+      "desktop-1440",
+      "--grep",
+      "@vault"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "fixture/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-fixture-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-fixture-dist --port 4317 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4317/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_DATA_MODE": "mock",
+        "VITE_INDEXER_URL": "",
+        "VITE_WALLET_BRIDGE_URL": "",
+        "VITE_E2E_FIXTURE": "1",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "fixture/vault.spec.ts",
+      "file": "fixture/vault.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@vault tab mounts in the Earn hub with the passkey explainer",
+          "ok": false,
+          "tags": [
+            "vault"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9318,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:16:23",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                      "column": 23,
+                      "line": 16
+                    },
+                    "snippet": "  14 |   await expect(page.getByTestId('vault-create')).toBeVisible();\n  15 |   await expect(vault).toContainText(/never stored, never transmitted/i);\n> 16 |   await expect(vault).toContainText(/does not grant any spending authority/i, { ignoreCase: true });\n     |                       ^\n  17 |   await expectClean(observed);\n  18 | });\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                        "column": 23,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n\n\n  14 |   await expect(page.getByTestId('vault-create')).toBeVisible();\n  15 |   await expect(vault).toContainText(/never stored, never transmitted/i);\n> 16 |   await expect(vault).toContainText(/does not grant any spending authority/i, { ignoreCase: true });\n     |                       ^\n  17 |   await expectClean(observed);\n  18 | });\n  19 |\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:16:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T21:23:48.997Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                    "column": 23,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9145,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:16:23",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                      "column": 23,
+                      "line": 16
+                    },
+                    "snippet": "  14 |   await expect(page.getByTestId('vault-create')).toBeVisible();\n  15 |   await expect(vault).toContainText(/never stored, never transmitted/i);\n> 16 |   await expect(vault).toContainText(/does not grant any spending authority/i, { ignoreCase: true });\n     |                       ^\n  17 |   await expectClean(observed);\n  18 | });\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                        "column": 23,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('strategy-vault')\nExpected pattern: \u001b[32m/does not grant any spending authority/i\u001b[39m\nReceived string:  \u001b[31m\"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('strategy-vault')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-state=\"none\" class=\"rp-hub-section\" data-testid=\"strategy-vault\" aria-label=\"Private strategy vault\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"Private Strategy VaultMera · passkey PRFDEMOProtect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived from the passkey's WebAuthn PRF output inside your browser — never stored, never transmitted. The vault is data protection only and works independently of your trading wallet.Create vault with a passkeyImport an exported vaultFor cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.Import vault\"\u001b[22m\n\n\n  14 |   await expect(page.getByTestId('vault-create')).toBeVisible();\n  15 |   await expect(vault).toContainText(/never stored, never transmitted/i);\n> 16 |   await expect(vault).toContainText(/does not grant any spending authority/i, { ignoreCase: true });\n     |                       ^\n  17 |   await expectClean(observed);\n  18 | });\n  19 |\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:16:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T21:23:59.220Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-tab-m-2c284--with-the-passkey-explainer-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                    "column": 23,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db310d63b5b60c5c204f-3e5932bdfcac3604ca58",
+          "file": "fixture/vault.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "@vault tampered import is rejected without any passkey ceremony",
+          "ok": true,
+          "tags": [
+            "vault"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T21:23:49.009Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db310d63b5b60c5c204f-84dd2f3ea553fbb360d9",
+          "file": "fixture/vault.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "@vault real WebAuthn PRF ceremony: create → save entry → lock → unlock (or handled PRF_UNAVAILABLE)",
+          "ok": false,
+          "tags": [
+            "vault"
+          ],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 397,
+                  "error": {
+                    "message": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters",
+                    "stack": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:43:22\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:40:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                      "column": 22,
+                      "line": 43
+                    },
+                    "snippet": "  41 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  42 |     isUserVerified: true, automaticPresenceSimulation: true, prf: true,\n> 43 |   }).catch(() => cdp.send('WebAuthn.addVirtualAuthenticator', {\n     |                      ^\n  44 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  45 |     isUserVerified: true, automaticPresenceSimulation: true,\n  46 |   }));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                        "column": 22,
+                        "line": 43
+                      },
+                      "message": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters\n\n  41 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  42 |     isUserVerified: true, automaticPresenceSimulation: true, prf: true,\n> 43 |   }).catch(() => cdp.send('WebAuthn.addVirtualAuthenticator', {\n     |                      ^\n  44 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  45 |     isUserVerified: true, automaticPresenceSimulation: true,\n  46 |   }));\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:43:22\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:40:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-10T21:23:49.013Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                    "column": 22,
+                    "line": 43
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 303,
+                  "error": {
+                    "message": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters",
+                    "stack": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:43:22\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:40:3",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                      "column": 22,
+                      "line": 43
+                    },
+                    "snippet": "  41 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  42 |     isUserVerified: true, automaticPresenceSimulation: true, prf: true,\n> 43 |   }).catch(() => cdp.send('WebAuthn.addVirtualAuthenticator', {\n     |                      ^\n  44 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  45 |     isUserVerified: true, automaticPresenceSimulation: true,\n  46 |   }));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                        "column": 22,
+                        "line": 43
+                      },
+                      "message": "Error: cdpSession.send: Protocol error (WebAuthn.addVirtualAuthenticator): Invalid parameters\n\n  41 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  42 |     isUserVerified: true, automaticPresenceSimulation: true, prf: true,\n> 43 |   }).catch(() => cdp.send('WebAuthn.addVirtualAuthenticator', {\n     |                      ^\n  44 |     protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true,\n  45 |     isUserVerified: true, automaticPresenceSimulation: true,\n  46 |   }));\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:43:22\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts:40:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-10T21:23:50.521Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261010T212342Z-fixture-vault-dev/test-output/fixture-vault--vault-real--a3725-or-handled-PRF-UNAVAILABLE--desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/vault.spec.ts",
+                    "column": 22,
+                    "line": 43
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "db310d63b5b60c5c204f-ae0091fa0faaf2310fb1",
+          "file": "fixture/vault.spec.ts",
+          "line": 35,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-10T21:23:44.174Z",
+    "duration": 24512.433999999997,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

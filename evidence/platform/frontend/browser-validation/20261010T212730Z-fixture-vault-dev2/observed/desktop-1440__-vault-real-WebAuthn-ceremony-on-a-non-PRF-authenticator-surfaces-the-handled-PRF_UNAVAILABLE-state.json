@@ -1,0 +1,12 @@
+{
+  "test": "fixture/vault.spec.ts > @vault real WebAuthn ceremony on a non-PRF authenticator surfaces the handled PRF_UNAVAILABLE state",
+  "project": "desktop-1440",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

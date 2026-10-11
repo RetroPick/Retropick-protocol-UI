@@ -1,0 +1,3 @@
+forbidden: apps/web/ contracts/ packages/launchpad-sdk/ apps/indexer/ apps/abi/ deployments/ development/fullstack-integration/write-allowlist.md
+pre-existing forbidden-prefix entries in baseline: 40; unchanged now: 40
+RESULT: PASS (no forbidden path changed relative to the baseline)

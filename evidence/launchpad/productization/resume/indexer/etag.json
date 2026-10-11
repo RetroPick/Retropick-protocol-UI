@@ -1,0 +1,6 @@
+{
+  "conditionalStatuses": [
+    304
+  ],
+  "note": "ETag includes freshness; changing head/syncing/snapshot correctly returns200"
+}

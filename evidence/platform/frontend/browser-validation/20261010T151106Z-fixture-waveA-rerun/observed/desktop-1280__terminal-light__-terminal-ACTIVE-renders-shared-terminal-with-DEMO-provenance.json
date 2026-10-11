@@ -1,0 +1,185 @@
+{
+  "test": "fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance",
+  "project": "desktop-1280",
+  "status": "failed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/live/public-client.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react_jsx-runtime.js?v=5d9dc021",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/radix-ui.js?v=5d9dc021",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/utils.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/components/ui/button.tsx",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/components/ui/tabs.tsx",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/launchpad-fixtures.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/prism-fixtures.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/contract-registry.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/live/public-client.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/live/indexer-client.ts",
+      "classification": "provider-rpc"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react_jsx-runtime.js?v=5d9dc021",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/radix-ui.js?v=5d9dc021",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/utils.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/components/ui/button.tsx",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/components/ui/tabs.tsx",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/launchpad-fixtures.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/prism-fixtures.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/src/lib/domain/contract-registry.ts",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "classification": "app"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:4317/src/lib/live/public-client.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/lib/live/indexer-client.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react_jsx-runtime.js?v=5d9dc021",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/radix-ui.js?v=5d9dc021",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/lib/utils.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/components/ui/button.tsx",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/components/ui/tabs.tsx",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/lib/domain/launchpad-fixtures.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/lib/domain/prism-fixtures.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/src/lib/domain/contract-registry.ts",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "http://127.0.0.1:4317/node_modules/.vite/deps/react-dom.js?v=5d9dc021",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 53
+}

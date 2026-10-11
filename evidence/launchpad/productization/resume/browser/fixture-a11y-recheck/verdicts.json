@@ -1,0 +1,57 @@
+{
+  "stats": {
+    "startTime": "2026-10-10T18:56:08.475Z",
+    "duration": 21978.853,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "PASS": 4,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "appConsoleErrors": 0,
+  "uncaughtPageErrors": 0,
+  "signingBroadcastViolations": 0,
+  "screenshots": 1,
+  "cases": [
+    {
+      "title": "@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 2420,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 1384,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@a11y reduced motion disables shimmer/spinner animation",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 1630,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@theme dark matrix: key routes render with theme-specific chart palette, no overflow",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 3641,
+      "reasons": [],
+      "errors": []
+    }
+  ]
+}

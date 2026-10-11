@@ -1,0 +1,11 @@
+{
+  "head": "f643cb62c7713c561cd4a95a9ffbabad5e620eb9",
+  "originMain": "f643cb62c7713c561cd4a95a9ffbabad5e620eb9",
+  "branch": "main",
+  "worktrees": "/home/ubuntu/project/retropick/retropick-protocol                       f643cb6 [main]\n/home/ubuntu/project/retropick/retropick-protocol-main-merge            84861f5 [codex/merge-v2-to-main]\n/home/ubuntu/project/retropick/retropick-protocol-metropolis            8a5fc1f [codex/metropolis-market-creation]\n/home/ubuntu/project/retropick/retropick-protocol-v2-monad-testnet-e2e  a8a81f5 [codex/v2-monad-testnet-e2e]",
+  "trackedDiff": "apps/indexer/src/cli.ts\napps/indexer/src/providers.ts\napps/indexer/src/query.ts\napps/indexer/src/server.ts\napps/indexer/src/sync.ts\napps/indexer/test/providers.test.ts\napps/indexer/test/query.test.ts\napps/indexer/test/sync.test.ts\napps/referral-service/src/server.ts\napps/referral-service/src/sync.ts\napps/referral-service/test/referrals.test.ts\napps/retro-ui/e2e/README.md\napps/retro-ui/e2e/fixture/earn.spec.ts\napps/retro-ui/e2e/helpers/network-guard.ts\napps/retro-ui/e2e/helpers/test.ts\napps/retro-ui/package.json\napps/retro-ui/src/features/earn/earn-hub.css\napps/retro-ui/src/features/earn/earn.tsx\napps/retro-ui/src/features/earn/live-earn.tsx\napps/retro-ui/src/features/launchpad/live-trading-ticket.tsx\napps/retro-ui/src/features/launchpad/token-detail.tsx\napps/retro-ui/src/features/portfolio/live-portfolio.tsx\napps/retro-ui/src/hooks/use-indexed-record.ts\napps/retro-ui/vite.config.ts\npackages/launchpad-sdk/scripts/benchmark-rpc.ts\npackages/launchpad-sdk/src/chain.ts\npackages/launchpad-sdk/src/prepare.ts\npackages/launchpad-sdk/src/transfer.ts\npackages/launchpad-sdk/test/productization.test.ts",
+  "staged": "",
+  "untrackedCount": 9831,
+  "baseline": "f643cb62c7713c561cd4a95a9ffbabad5e620eb9",
+  "integratedBaselinePreserved": true
+}

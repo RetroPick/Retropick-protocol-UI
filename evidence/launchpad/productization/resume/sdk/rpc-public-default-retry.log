@@ -1,0 +1,2 @@
+{"mode":"frontend-default","providerHealth":[{"provider":0,"origin":"testnet-rpc.monad.xyz","chainId":10143,"latencyMs":449,"health":"healthy","failures":0,"retryAfter":0}],"httpBatch":true,"multicall":false,"samples":30,"attempts":32,"errors":2,"warmup":"PASS","status":"QUALIFIED","p50Ms":191.69,"p95Ms":311,"meanRequests":1,"meanRpcCalls":9,"meanEthCalls":9,"meanBytesFetched":2544.6}
+{"evidence":"evidence/launchpad/productization/resume/sdk/rpc-public-default-retry.json","status":"PARTIAL","winner":null}

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow",
+  "project": "tablet-768",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 148
+}

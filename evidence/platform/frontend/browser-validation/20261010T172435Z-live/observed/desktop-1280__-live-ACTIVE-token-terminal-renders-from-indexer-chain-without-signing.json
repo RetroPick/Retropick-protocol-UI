@@ -1,0 +1,12 @@
+{
+  "test": "live/live-readonly.spec.ts > @live ACTIVE token terminal renders from indexer + chain without signing",
+  "project": "desktop-1280",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 35
+}

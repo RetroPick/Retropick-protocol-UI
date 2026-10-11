@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "post-rpc-fix",
+  "startedAt": "2026-10-10T17:27:48.435Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts",
+  "cwd": "apps/retro-ui"
+}

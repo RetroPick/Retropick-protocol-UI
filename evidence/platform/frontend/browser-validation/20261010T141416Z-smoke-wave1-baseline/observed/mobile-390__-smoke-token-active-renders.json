@@ -1,0 +1,45 @@
+{
+  "test": "fixture/smoke.spec.ts > @smoke token-active renders",
+  "project": "mobile-390",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://monad-testnet.infura.io/v3/REDACTED",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://testnet-rpc.monad.xyz/",
+      "classification": "guard-blocked"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://monad-testnet.infura.io/v3/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://testnet-rpc.monad.xyz/",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [
+    {
+      "url": "https://monad-testnet.infura.io/v3/REDACTED",
+      "method": "POST",
+      "reason": "fixture target is offline-only"
+    },
+    {
+      "url": "https://testnet-rpc.monad.xyz/",
+      "method": "POST",
+      "reason": "fixture target is offline-only"
+    }
+  ],
+  "requestCount": 89
+}

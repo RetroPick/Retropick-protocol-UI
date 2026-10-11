@@ -1,0 +1,225 @@
+{
+  "test": "research/competitors.spec.ts > @research bags read-only capture",
+  "project": "mobile-390",
+  "status": "passed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()",
+      "url": "https://api2.bags.fm/api/v1/user/notifications",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "warning",
+      "text": "[Upstash Redis] Unable to find environment variable: `UPSTASH_REDIS_REST_URL`",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "warning",
+      "text": "[Upstash Redis] Unable to find environment variable: `UPSTASH_REDIS_REST_TOKEN`",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "warning",
+      "text": "[Upstash Redis] The 'url' property is missing or undefined in your Redis config.",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "warning",
+      "text": "[Upstash Redis] The 'token' property is missing or undefined in your Redis config.",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "warning",
+      "text": "[DEPRECATED] atomFamily is deprecated and will be removed in v3. Please use the `jotai-family` package instead: https://github.com/jotaijs/jotai-family",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()",
+      "url": "https://api2.bags.fm/api/v1/user/notifications",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://auth.privy.io/api/v1/analytics_events",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://api2.amplitude.com/2/httpapi",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Amplitude Logger [Error]: Failed to fetch",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "provider-rpc"
+    },
+    {
+      "type": "warning",
+      "text": "Amplitude Logger [Warn]: {code: 0, error: \"Status 'failed' provided for 3 events\"}",
+      "url": "https://bags.fm/_next/static/chunks/8456-590f3b2998b8e7de.js",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://api-iam.intercom.io/messenger/web/launcher_settings",
+      "classification": "guard-blocked"
+    },
+    {
+      "type": "error",
+      "text": "Error: Network request failed for URL: https://api-iam.intercom.io/messenger/web/ping\n    at h.onerror (https://js.intercomcdn.com/frame-modern.fae49e9d.js:1:159711)",
+      "url": "https://js.intercomcdn.com/frame-modern.fae49e9d.js",
+      "classification": "third-party"
+    },
+    {
+      "type": "error",
+      "text": "Error: Network request failed for URL: https://api-iam.intercom.io/messenger/web/ping\n    at h.onerror (https://js.intercomcdn.com/frame-modern.fae49e9d.js:1:159711)",
+      "url": "https://js.intercomcdn.com/frame-modern.fae49e9d.js",
+      "classification": "third-party"
+    },
+    {
+      "type": "error",
+      "text": "Error: Network request failed for URL: https://api-iam.intercom.io/messenger/web/ping\n    at h.onerror (https://js.intercomcdn.com/frame-modern.fae49e9d.js:1:159711)",
+      "url": "https://js.intercomcdn.com/frame-modern.fae49e9d.js",
+      "classification": "third-party"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "url": "https://api-iam.intercom.io/messenger/web/ping",
+      "classification": "guard-blocked"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://auth.privy.io/api/v1/analytics_events",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://bags.fm/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api2.amplitude.com/2/httpapi",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://bags.fm/REDACTED?_rsc=10vac",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://bags.fm/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://api-iam.intercom.io/messenger/web/launcher_settings",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://api-iam.intercom.io/messenger/web/ping",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://auth.privy.io/api/v1/analytics_events",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://datapi.jup.ag/v1/pools/gems",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://api2.amplitude.com/2/httpapi",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://api-iam.intercom.io/messenger/web/launcher_settings",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://api-iam.intercom.io/messenger/web/ping",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    },
+    {
+      "url": "https://api2.amplitude.com/2/httpapi",
+      "method": "POST",
+      "reason": "non-RPC write request blocked"
+    }
+  ],
+  "requestCount": 185
+}

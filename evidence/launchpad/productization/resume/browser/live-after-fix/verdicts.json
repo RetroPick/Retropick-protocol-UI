@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "startTime": "2026-10-10T18:52:58.869Z",
+    "duration": 170146.08899999998,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "PASS": 12,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "appConsoleErrors": 0,
+  "uncaughtPageErrors": 0,
+  "signingBroadcastViolations": 0,
+  "screenshots": 36,
+  "cases": [
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6900,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 9181,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 12988,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5821,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 8838,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 36128,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "desktop-1440",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5354,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "desktop-1280",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 6813,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "tablet-834",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 7851,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "tablet-768",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 4806,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "mobile-390",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 5761,
+      "reasons": [],
+      "errors": []
+    },
+    {
+      "title": "@resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light)",
+      "project": "mobile-375",
+      "result": "PASS",
+      "retry": 0,
+      "durationMs": 36016,
+      "reasons": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/earn.spec.ts > @earn referral copy, section nav, demo positions toggle",
+  "project": "mobile-375",
+  "status": "failed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 28
+}

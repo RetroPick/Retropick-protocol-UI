@@ -1,0 +1,17 @@
+{
+  "test": "live/resume-readonly.spec.ts > resume dark > @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://testnet-rpc.monad.xyz/",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 89
+}

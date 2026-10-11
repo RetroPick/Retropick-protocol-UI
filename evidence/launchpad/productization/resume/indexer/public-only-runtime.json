@@ -1,0 +1,12 @@
+{
+  "previousPid": 153232,
+  "pid": 176876,
+  "port": 8787,
+  "operationalProviderHosts": [
+    "testnet-rpc.monad.xyz"
+  ],
+  "infuraProbeVariable": "MONAD_TESTNET_INFURA_PROBE_URL",
+  "dbPreserved": true,
+  "privateEnvBackup": "/tmp/retropick-resume-private-env-before-us4ypoye",
+  "sqliteBackup": "/tmp/retropick-resume-indexer-public-only.sqlite"
+}

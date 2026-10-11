@@ -1,0 +1,1370 @@
+- generic [active] [ref=e1]:
+  - complementary "Sidebar" [ref=e2]:
+    - link "Pons home" [ref=e3] [cursor=pointer]:
+      - /url: /launchpad
+      - img [ref=e5]: Pons
+    - generic [ref=e8]:
+      - combobox "Search tokens and people" [ref=e13]
+      - generic [aria-hidden] [ref=e14]: /
+    - navigation "Primary" [ref=e15]:
+      - link "Create a token" [ref=e16] [cursor=pointer]:
+        - /url: /launchpad/create
+      - link "Launches" [ref=e22] [cursor=pointer]:
+        - /url: /launchpad
+      - link "PLP" [ref=e29] [cursor=pointer]:
+        - /url: /plp
+      - link "Analytics" [ref=e35] [cursor=pointer]:
+        - /url: /analytics
+    - generic [ref=e40]:
+      - 'button "Theme: light. Switch to dark" [ref=e41] [cursor=pointer]':
+        - generic [ref=e45]: Theme
+      - button "Sign in" [ref=e53] [cursor=pointer]
+  - main [ref=e60]:
+    - region "Launches" [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - heading "Launches" [level=1] [ref=e66]:
+            - generic [aria-hidden] [ref=e67]: L
+            - generic [aria-hidden] [ref=e68]: a
+            - generic [aria-hidden] [ref=e69]: u
+            - generic [aria-hidden] [ref=e70]: "n"
+            - generic [aria-hidden] [ref=e71]: c
+            - generic [aria-hidden] [ref=e72]: h
+            - generic [aria-hidden] [ref=e73]: e
+            - generic [aria-hidden] [ref=e74]: s
+          - link "Launch a token" [ref=e77] [cursor=pointer]:
+            - /url: /launchpad/create
+        - region [ref=e78]:
+          - generic [ref=e79]:
+            - heading "Trending" [level=2] [ref=e80]
+            - generic [ref=e81]:
+              - button "Previous" [ref=e82] [cursor=pointer]
+              - button "Next" [ref=e85] [cursor=pointer]
+          - generic [ref=e89]:
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - link "1 Delta $9.8M +0.6%" [ref=e92] [cursor=pointer]:
+                  - /url: /launchpad/0xe8ffd7e24187f72afb08d75b1bb13088a989a791
+                  - generic [ref=e94]:
+                    - generic [ref=e95]: "1"
+                    - generic [ref=e96]: Delta
+                  - generic [ref=e97]:
+                    - generic "$9.8M" [ref=e100]:
+                      - generic [aria-hidden] [ref=e102]: $
+                      - generic [ref=e104]: "9"
+                      - generic [aria-hidden] [ref=e105]: .
+                      - generic [ref=e107]: "8"
+                      - generic [aria-hidden] [ref=e108]: M
+                    - generic "+0.6%" [ref=e110]:
+                      - generic [aria-hidden] [ref=e112]: +
+                      - generic [ref=e114]: "0"
+                      - generic [aria-hidden] [ref=e115]: .
+                      - generic [ref=e117]: "6"
+                      - generic [aria-hidden] [ref=e118]: "%"
+              - listitem [ref=e119]:
+                - link "2 Pons $251.6M -0.5%" [ref=e120] [cursor=pointer]:
+                  - /url: /launchpad/0x39dbed3a2bd333467115de45665cc57f813c4571
+                  - generic [ref=e122]:
+                    - generic [ref=e123]: "2"
+                    - generic [ref=e124]: Pons
+                  - generic [ref=e125]:
+                    - generic "$251.6M" [ref=e128]:
+                      - generic [aria-hidden] [ref=e130]: $
+                      - generic [ref=e132]: "2"
+                      - generic [ref=e134]: "5"
+                      - generic [ref=e136]: "1"
+                      - generic [aria-hidden] [ref=e137]: .
+                      - generic [ref=e139]: "6"
+                      - generic [aria-hidden] [ref=e140]: M
+                    - generic "-0.5%" [ref=e142]:
+                      - generic [aria-hidden] [ref=e144]: "-"
+                      - generic [ref=e146]: "0"
+                      - generic [aria-hidden] [ref=e147]: .
+                      - generic [ref=e149]: "5"
+                      - generic [aria-hidden] [ref=e150]: "%"
+              - listitem [ref=e151]:
+                - link "3 World is Flat $909.8K -0.2%" [ref=e152] [cursor=pointer]:
+                  - /url: /launchpad/0x5173b8ea6923c2d40267890d45c46a3480954773
+                  - generic [ref=e154]:
+                    - generic [ref=e155]: "3"
+                    - generic [ref=e156]: World is Flat
+                  - generic [ref=e157]:
+                    - generic "$909.8K" [ref=e160]:
+                      - generic [aria-hidden] [ref=e162]: $
+                      - generic [ref=e164]: "9"
+                      - generic [ref=e166]: "0"
+                      - generic [ref=e168]: "9"
+                      - generic [aria-hidden] [ref=e169]: .
+                      - generic [ref=e171]: "8"
+                      - generic [aria-hidden] [ref=e172]: K
+                    - generic "-0.2%" [ref=e174]:
+                      - generic [aria-hidden] [ref=e176]: "-"
+                      - generic [ref=e178]: "0"
+                      - generic [aria-hidden] [ref=e179]: .
+                      - generic [ref=e181]: "2"
+                      - generic [aria-hidden] [ref=e182]: "%"
+              - listitem [ref=e183]:
+                - link "4 ZZZ $9.8M -2.4%" [ref=e184] [cursor=pointer]:
+                  - /url: /launchpad/0x7dbf38976f6d3b9c529e7d9484a71898b409ee6a
+                  - generic [ref=e186]:
+                    - generic [ref=e187]: "4"
+                    - generic [ref=e188]: ZZZ
+                  - generic [ref=e189]:
+                    - generic "$9.8M" [ref=e192]:
+                      - generic [aria-hidden] [ref=e194]: $
+                      - generic [ref=e196]: "9"
+                      - generic [aria-hidden] [ref=e197]: .
+                      - generic [ref=e199]: "8"
+                      - generic [aria-hidden] [ref=e200]: M
+                    - generic "-2.4%" [ref=e202]:
+                      - generic [aria-hidden] [ref=e204]: "-"
+                      - generic [ref=e206]: "2"
+                      - generic [aria-hidden] [ref=e207]: .
+                      - generic [ref=e209]: "4"
+                      - generic [aria-hidden] [ref=e210]: "%"
+              - listitem [ref=e211]:
+                - link "5 Orbio.so $65M +0.3%" [ref=e212] [cursor=pointer]:
+                  - /url: /launchpad/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3
+                  - generic [ref=e214]:
+                    - generic [ref=e215]: "5"
+                    - generic [ref=e216]: Orbio.so
+                  - generic [ref=e217]:
+                    - generic "$65M" [ref=e220]:
+                      - generic [aria-hidden] [ref=e222]: $
+                      - generic [ref=e224]: "6"
+                      - generic [ref=e226]: "5"
+                      - generic [aria-hidden] [ref=e227]: M
+                    - generic "+0.3%" [ref=e229]:
+                      - generic [aria-hidden] [ref=e231]: +
+                      - generic [ref=e233]: "0"
+                      - generic [aria-hidden] [ref=e234]: .
+                      - generic [ref=e236]: "3"
+                      - generic [aria-hidden] [ref=e237]: "%"
+              - listitem [ref=e238]:
+                - link "6 HyperDex $1.8M -2.4%" [ref=e239] [cursor=pointer]:
+                  - /url: /launchpad/0xaa5751ff3fb61e613993b2eb4eab1fce017081fc
+                  - generic [ref=e241]:
+                    - generic [ref=e242]: "6"
+                    - generic [ref=e243]: HyperDex
+                  - generic [ref=e244]:
+                    - generic "$1.8M" [ref=e247]:
+                      - generic [aria-hidden] [ref=e249]: $
+                      - generic [ref=e251]: "1"
+                      - generic [aria-hidden] [ref=e252]: .
+                      - generic [ref=e254]: "8"
+                      - generic [aria-hidden] [ref=e255]: M
+                    - generic "-2.4%" [ref=e257]:
+                      - generic [aria-hidden] [ref=e259]: "-"
+                      - generic [ref=e261]: "2"
+                      - generic [aria-hidden] [ref=e262]: .
+                      - generic [ref=e264]: "4"
+                      - generic [aria-hidden] [ref=e265]: "%"
+              - listitem [ref=e266]:
+                - link "7 Longbow $4.4M -4.2%" [ref=e267] [cursor=pointer]:
+                  - /url: /launchpad/0x451b42a15100c340ca12f7c66de06fac5ea2d751
+                  - generic [ref=e269]:
+                    - generic [ref=e270]: "7"
+                    - generic [ref=e271]: Longbow
+                  - generic [ref=e272]:
+                    - generic "$4.4M" [ref=e275]:
+                      - generic [aria-hidden] [ref=e277]: $
+                      - generic [ref=e279]: "4"
+                      - generic [aria-hidden] [ref=e280]: .
+                      - generic [ref=e282]: "4"
+                      - generic [aria-hidden] [ref=e283]: M
+                    - generic "-4.2%" [ref=e285]:
+                      - generic [aria-hidden] [ref=e287]: "-"
+                      - generic [ref=e289]: "4"
+                      - generic [aria-hidden] [ref=e290]: .
+                      - generic [ref=e292]: "2"
+                      - generic [aria-hidden] [ref=e293]: "%"
+              - listitem [ref=e294]:
+                - link "8 Thinking Cat $10.7M -0.6%" [ref=e295] [cursor=pointer]:
+                  - /url: /launchpad/0x7fe995a80075df3dc8ae11a9b82c7fe4202cd87f
+                  - generic [ref=e297]:
+                    - generic [ref=e298]: "8"
+                    - generic [ref=e299]: Thinking Cat
+                  - generic [ref=e300]:
+                    - generic "$10.7M" [ref=e303]:
+                      - generic [aria-hidden] [ref=e305]: $
+                      - generic [ref=e307]: "1"
+                      - generic [ref=e309]: "0"
+                      - generic [aria-hidden] [ref=e310]: .
+                      - generic [ref=e312]: "7"
+                      - generic [aria-hidden] [ref=e313]: M
+                    - generic "-0.6%" [ref=e315]:
+                      - generic [aria-hidden] [ref=e317]: "-"
+                      - generic [ref=e319]: "0"
+                      - generic [aria-hidden] [ref=e320]: .
+                      - generic [ref=e322]: "6"
+                      - generic [aria-hidden] [ref=e323]: "%"
+              - listitem [ref=e324]:
+                - link "9 YOLO $1.2M -2.1%" [ref=e325] [cursor=pointer]:
+                  - /url: /launchpad/0x62c71cd34a52c30d894419cbcc55db2afa8032ea
+                  - generic [ref=e327]:
+                    - generic [ref=e328]: "9"
+                    - generic [ref=e329]: YOLO
+                  - generic [ref=e330]:
+                    - generic "$1.2M" [ref=e333]:
+                      - generic [aria-hidden] [ref=e335]: $
+                      - generic [ref=e337]: "1"
+                      - generic [aria-hidden] [ref=e338]: .
+                      - generic [ref=e340]: "2"
+                      - generic [aria-hidden] [ref=e341]: M
+                    - generic "-2.1%" [ref=e343]:
+                      - generic [aria-hidden] [ref=e345]: "-"
+                      - generic [ref=e347]: "2"
+                      - generic [aria-hidden] [ref=e348]: .
+                      - generic [ref=e350]: "1"
+                      - generic [aria-hidden] [ref=e351]: "%"
+              - listitem [ref=e352]:
+                - link "10 ZEAL $969K +3.2%" [ref=e353] [cursor=pointer]:
+                  - /url: /launchpad/0x9fa1c5e90a11294f83a9f135b81ad1b537a5ffdc
+                  - generic [ref=e355]:
+                    - generic [ref=e356]: "10"
+                    - generic [ref=e357]: ZEAL
+                  - generic [ref=e358]:
+                    - generic "$969K" [ref=e361]:
+                      - generic [aria-hidden] [ref=e363]: $
+                      - generic [ref=e365]: "9"
+                      - generic [ref=e367]: "6"
+                      - generic [ref=e369]: "9"
+                      - generic [aria-hidden] [ref=e370]: K
+                    - generic "+3.2%" [ref=e372]:
+                      - generic [aria-hidden] [ref=e374]: +
+                      - generic [ref=e376]: "3"
+                      - generic [aria-hidden] [ref=e377]: .
+                      - generic [ref=e379]: "2"
+                      - generic [aria-hidden] [ref=e380]: "%"
+            - list [aria-hidden] [ref=e381]:
+              - listitem [ref=e382]:
+                - link [ref=e383] [cursor=pointer]:
+                  - /url: /launchpad/0xe8ffd7e24187f72afb08d75b1bb13088a989a791
+                  - generic [ref=e385]:
+                    - generic [ref=e386]: "1"
+                    - generic [ref=e387]: Delta
+                  - generic [ref=e388]:
+                    - generic [ref=e391]:
+                      - generic [ref=e392]: $9.8M
+                      - generic [aria-hidden] [ref=e393]: $
+                      - generic [ref=e395]: "9"
+                      - generic [aria-hidden] [ref=e396]: .
+                      - generic [ref=e398]: "8"
+                      - generic [aria-hidden] [ref=e399]: M
+                    - generic [ref=e401]:
+                      - generic [ref=e402]: +0.6%
+                      - generic [aria-hidden] [ref=e403]: +
+                      - generic [ref=e405]: "0"
+                      - generic [aria-hidden] [ref=e406]: .
+                      - generic [ref=e408]: "6"
+                      - generic [aria-hidden] [ref=e409]: "%"
+              - listitem [ref=e410]:
+                - link [ref=e411] [cursor=pointer]:
+                  - /url: /launchpad/0x39dbed3a2bd333467115de45665cc57f813c4571
+                  - generic [ref=e413]:
+                    - generic [ref=e414]: "2"
+                    - generic [ref=e415]: Pons
+                  - generic [ref=e416]:
+                    - generic [ref=e419]:
+                      - generic [ref=e420]: $251.6M
+                      - generic [aria-hidden] [ref=e421]: $
+                      - generic [ref=e423]: "2"
+                      - generic [ref=e425]: "5"
+                      - generic [ref=e427]: "1"
+                      - generic [aria-hidden] [ref=e428]: .
+                      - generic [ref=e430]: "6"
+                      - generic [aria-hidden] [ref=e431]: M
+                    - generic [ref=e433]:
+                      - generic [ref=e434]: "-0.5%"
+                      - generic [aria-hidden] [ref=e435]: "-"
+                      - generic [ref=e437]: "0"
+                      - generic [aria-hidden] [ref=e438]: .
+                      - generic [ref=e440]: "5"
+                      - generic [aria-hidden] [ref=e441]: "%"
+              - listitem [ref=e442]:
+                - link [ref=e443] [cursor=pointer]:
+                  - /url: /launchpad/0x5173b8ea6923c2d40267890d45c46a3480954773
+                  - generic [ref=e445]:
+                    - generic [ref=e446]: "3"
+                    - generic [ref=e447]: World is Flat
+                  - generic [ref=e448]:
+                    - generic [ref=e451]:
+                      - generic [ref=e452]: $909.8K
+                      - generic [aria-hidden] [ref=e453]: $
+                      - generic [ref=e455]: "9"
+                      - generic [ref=e457]: "0"
+                      - generic [ref=e459]: "9"
+                      - generic [aria-hidden] [ref=e460]: .
+                      - generic [ref=e462]: "8"
+                      - generic [aria-hidden] [ref=e463]: K
+                    - generic [ref=e465]:
+                      - generic [ref=e466]: "-0.2%"
+                      - generic [aria-hidden] [ref=e467]: "-"
+                      - generic [ref=e469]: "0"
+                      - generic [aria-hidden] [ref=e470]: .
+                      - generic [ref=e472]: "2"
+                      - generic [aria-hidden] [ref=e473]: "%"
+              - listitem [ref=e474]:
+                - link [ref=e475] [cursor=pointer]:
+                  - /url: /launchpad/0x7dbf38976f6d3b9c529e7d9484a71898b409ee6a
+                  - generic [ref=e477]:
+                    - generic [ref=e478]: "4"
+                    - generic [ref=e479]: ZZZ
+                  - generic [ref=e480]:
+                    - generic [ref=e483]:
+                      - generic [ref=e484]: $9.8M
+                      - generic [aria-hidden] [ref=e485]: $
+                      - generic [ref=e487]: "9"
+                      - generic [aria-hidden] [ref=e488]: .
+                      - generic [ref=e490]: "8"
+                      - generic [aria-hidden] [ref=e491]: M
+                    - generic [ref=e493]:
+                      - generic [ref=e494]: "-2.4%"
+                      - generic [aria-hidden] [ref=e495]: "-"
+                      - generic [ref=e497]: "2"
+                      - generic [aria-hidden] [ref=e498]: .
+                      - generic [ref=e500]: "4"
+                      - generic [aria-hidden] [ref=e501]: "%"
+              - listitem [ref=e502]:
+                - link [ref=e503] [cursor=pointer]:
+                  - /url: /launchpad/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3
+                  - generic [ref=e505]:
+                    - generic [ref=e506]: "5"
+                    - generic [ref=e507]: Orbio.so
+                  - generic [ref=e508]:
+                    - generic [ref=e511]:
+                      - generic [ref=e512]: $65M
+                      - generic [aria-hidden] [ref=e513]: $
+                      - generic [ref=e515]: "6"
+                      - generic [ref=e517]: "5"
+                      - generic [aria-hidden] [ref=e518]: M
+                    - generic [ref=e520]:
+                      - generic [ref=e521]: +0.3%
+                      - generic [aria-hidden] [ref=e522]: +
+                      - generic [ref=e524]: "0"
+                      - generic [aria-hidden] [ref=e525]: .
+                      - generic [ref=e527]: "3"
+                      - generic [aria-hidden] [ref=e528]: "%"
+              - listitem [ref=e529]:
+                - link [ref=e530] [cursor=pointer]:
+                  - /url: /launchpad/0xaa5751ff3fb61e613993b2eb4eab1fce017081fc
+                  - generic [ref=e532]:
+                    - generic [ref=e533]: "6"
+                    - generic [ref=e534]: HyperDex
+                  - generic [ref=e535]:
+                    - generic [ref=e538]:
+                      - generic [ref=e539]: $1.8M
+                      - generic [aria-hidden] [ref=e540]: $
+                      - generic [ref=e542]: "1"
+                      - generic [aria-hidden] [ref=e543]: .
+                      - generic [ref=e545]: "8"
+                      - generic [aria-hidden] [ref=e546]: M
+                    - generic [ref=e548]:
+                      - generic [ref=e549]: "-2.4%"
+                      - generic [aria-hidden] [ref=e550]: "-"
+                      - generic [ref=e552]: "2"
+                      - generic [aria-hidden] [ref=e553]: .
+                      - generic [ref=e555]: "4"
+                      - generic [aria-hidden] [ref=e556]: "%"
+              - listitem [ref=e557]:
+                - link [ref=e558] [cursor=pointer]:
+                  - /url: /launchpad/0x451b42a15100c340ca12f7c66de06fac5ea2d751
+                  - generic [ref=e560]:
+                    - generic [ref=e561]: "7"
+                    - generic [ref=e562]: Longbow
+                  - generic [ref=e563]:
+                    - generic [ref=e566]:
+                      - generic [ref=e567]: $4.4M
+                      - generic [aria-hidden] [ref=e568]: $
+                      - generic [ref=e570]: "4"
+                      - generic [aria-hidden] [ref=e571]: .
+                      - generic [ref=e573]: "4"
+                      - generic [aria-hidden] [ref=e574]: M
+                    - generic [ref=e576]:
+                      - generic [ref=e577]: "-4.2%"
+                      - generic [aria-hidden] [ref=e578]: "-"
+                      - generic [ref=e580]: "4"
+                      - generic [aria-hidden] [ref=e581]: .
+                      - generic [ref=e583]: "2"
+                      - generic [aria-hidden] [ref=e584]: "%"
+              - listitem [ref=e585]:
+                - link [ref=e586] [cursor=pointer]:
+                  - /url: /launchpad/0x7fe995a80075df3dc8ae11a9b82c7fe4202cd87f
+                  - generic [ref=e588]:
+                    - generic [ref=e589]: "8"
+                    - generic [ref=e590]: Thinking Cat
+                  - generic [ref=e591]:
+                    - generic [ref=e594]:
+                      - generic [ref=e595]: $10.7M
+                      - generic [aria-hidden] [ref=e596]: $
+                      - generic [ref=e598]: "1"
+                      - generic [ref=e600]: "0"
+                      - generic [aria-hidden] [ref=e601]: .
+                      - generic [ref=e603]: "7"
+                      - generic [aria-hidden] [ref=e604]: M
+                    - generic [ref=e606]:
+                      - generic [ref=e607]: "-0.6%"
+                      - generic [aria-hidden] [ref=e608]: "-"
+                      - generic [ref=e610]: "0"
+                      - generic [aria-hidden] [ref=e611]: .
+                      - generic [ref=e613]: "6"
+                      - generic [aria-hidden] [ref=e614]: "%"
+              - listitem [ref=e615]:
+                - link [ref=e616] [cursor=pointer]:
+                  - /url: /launchpad/0x62c71cd34a52c30d894419cbcc55db2afa8032ea
+                  - generic [ref=e618]:
+                    - generic [ref=e619]: "9"
+                    - generic [ref=e620]: YOLO
+                  - generic [ref=e621]:
+                    - generic [ref=e624]:
+                      - generic [ref=e625]: $1.2M
+                      - generic [aria-hidden] [ref=e626]: $
+                      - generic [ref=e628]: "1"
+                      - generic [aria-hidden] [ref=e629]: .
+                      - generic [ref=e631]: "2"
+                      - generic [aria-hidden] [ref=e632]: M
+                    - generic [ref=e634]:
+                      - generic [ref=e635]: "-2.1%"
+                      - generic [aria-hidden] [ref=e636]: "-"
+                      - generic [ref=e638]: "2"
+                      - generic [aria-hidden] [ref=e639]: .
+                      - generic [ref=e641]: "1"
+                      - generic [aria-hidden] [ref=e642]: "%"
+              - listitem [ref=e643]:
+                - link [ref=e644] [cursor=pointer]:
+                  - /url: /launchpad/0x9fa1c5e90a11294f83a9f135b81ad1b537a5ffdc
+                  - generic [ref=e646]:
+                    - generic [ref=e647]: "10"
+                    - generic [ref=e648]: ZEAL
+                  - generic [ref=e649]:
+                    - generic [ref=e652]:
+                      - generic [ref=e653]: $969K
+                      - generic [aria-hidden] [ref=e654]: $
+                      - generic [ref=e656]: "9"
+                      - generic [ref=e658]: "6"
+                      - generic [ref=e660]: "9"
+                      - generic [aria-hidden] [ref=e661]: K
+                    - generic [ref=e663]:
+                      - generic [ref=e664]: +3.2%
+                      - generic [aria-hidden] [ref=e665]: +
+                      - generic [ref=e667]: "3"
+                      - generic [aria-hidden] [ref=e668]: .
+                      - generic [ref=e670]: "2"
+                      - generic [aria-hidden] [ref=e671]: "%"
+        - generic [ref=e672]:
+          - group "View" [ref=e673]:
+            - button "Market cap" [pressed] [ref=e674] [cursor=pointer]
+            - button "New" [ref=e676] [cursor=pointer]
+            - button "Active" [ref=e678] [cursor=pointer]
+            - button "Near graduation" [ref=e680] [cursor=pointer]
+            - button "Graduated" [ref=e682] [cursor=pointer]
+          - generic [ref=e684]:
+            - button "Pair asset" [ref=e686] [cursor=pointer]:
+              - generic [ref=e687]: Any pair
+            - group "Layout" [ref=e691]:
+              - button "List" [pressed] [ref=e692] [cursor=pointer]
+              - button "Grid" [ref=e699] [cursor=pointer]
+        - list [ref=e708]:
+          - listitem [aria-hidden] [ref=e709]:
+            - generic [ref=e710]: Token
+            - generic [ref=e711]: Pair
+            - generic [ref=e712]: Graph
+            - generic [ref=e713]: Market cap
+          - listitem [ref=e714]:
+            - generic [ref=e716]:
+              - generic [ref=e717]:
+                - link "NovaAI" [ref=e718] [cursor=pointer]:
+                  - /url: /launchpad/0x51250b135174ca09450ec01c4aff73cf69dbb590
+                - generic [ref=e719]: NOVAAI
+                - button "Pin NOVAAI" [ref=e720] [cursor=pointer]
+              - paragraph [ref=e723]:
+                - link "TinyMintQuail" [ref=e724] [cursor=pointer]:
+                  - /url: /profile/0x15d24b87794b22c283138149560136fce2e0aca1
+                - time [ref=e744]: 1mo
+            - generic [ref=e745]: ETH
+            - generic [ref=e748]:
+              - generic [ref=e749]: Market cap
+              - generic "$386.7M" [ref=e751]:
+                - generic [aria-hidden] [ref=e753]: $
+                - generic [ref=e755]: "3"
+                - generic [ref=e757]: "8"
+                - generic [ref=e759]: "6"
+                - generic [aria-hidden] [ref=e760]: .
+                - generic [ref=e762]: "7"
+                - generic [aria-hidden] [ref=e763]: M
+          - listitem [ref=e764]:
+            - generic [ref=e766]:
+              - generic [ref=e767]:
+                - link "Pons" [ref=e768] [cursor=pointer]:
+                  - /url: /launchpad/0x39dbed3a2bd333467115de45665cc57f813c4571
+                - generic [ref=e769]: PONS
+                - button "Pin PONS" [ref=e770] [cursor=pointer]
+              - paragraph [ref=e773]:
+                - link "SlowNeonThrush" [ref=e774] [cursor=pointer]:
+                  - /url: /profile/0xb9f5f4ea1af1f5d3678470eb98e8fbdcadeb24b0
+                - time [ref=e791]: 2mo
+            - generic [ref=e792]: ETH
+            - generic [ref=e795]:
+              - generic [ref=e796]: Market cap
+              - generic "$251.6M" [ref=e798]:
+                - generic [aria-hidden] [ref=e800]: $
+                - generic [ref=e802]: "2"
+                - generic [ref=e804]: "5"
+                - generic [ref=e806]: "1"
+                - generic [aria-hidden] [ref=e807]: .
+                - generic [ref=e809]: "6"
+                - generic [aria-hidden] [ref=e810]: M
+          - listitem [ref=e811]:
+            - generic [ref=e813]:
+              - generic [ref=e814]:
+                - link "Orbio.so" [ref=e815] [cursor=pointer]:
+                  - /url: /launchpad/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3
+                - generic [ref=e816]: ORBIO
+                - button "Pin ORBIO" [ref=e817] [cursor=pointer]
+              - paragraph [ref=e820]:
+                - link "SecretMintLemur" [ref=e821] [cursor=pointer]:
+                  - /url: /profile/0xbfabe94a454947f0f98bc92d3e052413928b04b8
+                - time [ref=e845]: 1mo
+            - generic [ref=e846]: NVDA
+            - generic [ref=e849]:
+              - generic [ref=e850]: Market cap
+              - generic "$65M" [ref=e852]:
+                - generic [aria-hidden] [ref=e854]: $
+                - generic [ref=e856]: "6"
+                - generic [ref=e858]: "5"
+                - generic [aria-hidden] [ref=e859]: M
+          - listitem [ref=e860]:
+            - generic [ref=e862]:
+              - generic [ref=e863]:
+                - link "Bundle Cat" [ref=e864] [cursor=pointer]:
+                  - /url: /launchpad/0x07ebb29a38fbcb41563817e5e19f2cec619c90d2
+                - generic [ref=e865]: BUN
+                - button "Pin BUN" [ref=e866] [cursor=pointer]
+              - paragraph [ref=e869]:
+                - link "MerryPearlShark" [ref=e870] [cursor=pointer]:
+                  - /url: /profile/0x232f26ff2c2f4cb6f548ef1be7e817bdb4c397cd
+                - time [ref=e894]: 1mo
+                - img "Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open." [ref=e895]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open.
+            - generic [ref=e899]: ETH
+            - generic [ref=e902]:
+              - generic [ref=e903]: Market cap
+              - generic "$56.6M" [ref=e905]:
+                - generic [aria-hidden] [ref=e907]: $
+                - generic [ref=e909]: "5"
+                - generic [ref=e911]: "6"
+                - generic [aria-hidden] [ref=e912]: .
+                - generic [ref=e914]: "6"
+                - generic [aria-hidden] [ref=e915]: M
+          - listitem [ref=e916]:
+            - generic [ref=e918]:
+              - generic [ref=e919]:
+                - link "Thinking Cat" [ref=e920] [cursor=pointer]:
+                  - /url: /launchpad/0x7fe995a80075df3dc8ae11a9b82c7fe4202cd87f
+                - generic [ref=e921]: HMM
+                - button "Pin HMM" [ref=e922] [cursor=pointer]
+              - paragraph [ref=e925]:
+                - link "ArcticMintCrane" [ref=e926] [cursor=pointer]:
+                  - /url: /profile/0x934e92e1c82020fc4e1ee55712c6d9fb19c6782a
+                - time [ref=e948]: 2mo
+            - generic [ref=e949]: ETH
+            - generic [ref=e952]:
+              - generic [ref=e953]: Market cap
+              - generic "$10.7M" [ref=e955]:
+                - generic [aria-hidden] [ref=e957]: $
+                - generic [ref=e959]: "1"
+                - generic [ref=e961]: "0"
+                - generic [aria-hidden] [ref=e962]: .
+                - generic [ref=e964]: "7"
+                - generic [aria-hidden] [ref=e965]: M
+          - listitem [ref=e966]:
+            - generic [ref=e968]:
+              - generic [ref=e969]:
+                - link "ZZZ" [ref=e970] [cursor=pointer]:
+                  - /url: /launchpad/0x7dbf38976f6d3b9c529e7d9484a71898b409ee6a
+                - generic [ref=e971]: ZZZ
+                - button "Pin ZZZ" [ref=e972] [cursor=pointer]
+              - paragraph [ref=e975]:
+                - link "CandidSilverMoose" [ref=e976] [cursor=pointer]:
+                  - /url: /profile/0x5f799f365fa8a2b60ac0429c48b153ca5a6f0cf8
+                - time [ref=e1000]: 1mo
+            - generic [ref=e1001]: ETH
+            - generic [ref=e1004]:
+              - generic [ref=e1005]: Market cap
+              - generic "$9.8M" [ref=e1007]:
+                - generic [aria-hidden] [ref=e1009]: $
+                - generic [ref=e1011]: "9"
+                - generic [aria-hidden] [ref=e1012]: .
+                - generic [ref=e1014]: "8"
+                - generic [aria-hidden] [ref=e1015]: M
+          - listitem [ref=e1016]:
+            - generic [ref=e1018]:
+              - generic [ref=e1019]:
+                - link "Delta" [ref=e1020] [cursor=pointer]:
+                  - /url: /launchpad/0xe8ffd7e24187f72afb08d75b1bb13088a989a791
+                - generic [ref=e1021]: DELTA
+                - button "Pin DELTA" [ref=e1022] [cursor=pointer]
+              - paragraph [ref=e1025]:
+                - link "UpperMarbleBeaver" [ref=e1026] [cursor=pointer]:
+                  - /url: /profile/0x1eafc3e30f9f6ddfc53dc3eab028a31ba4b8b0f8
+                - time [ref=e1043]: 2mo
+            - generic [ref=e1044]: ETH
+            - generic [ref=e1047]:
+              - generic [ref=e1048]: Market cap
+              - generic "$9.8M" [ref=e1050]:
+                - generic [aria-hidden] [ref=e1052]: $
+                - generic [ref=e1054]: "9"
+                - generic [aria-hidden] [ref=e1055]: .
+                - generic [ref=e1057]: "8"
+                - generic [aria-hidden] [ref=e1058]: M
+          - listitem [ref=e1059]:
+            - generic [ref=e1061]:
+              - generic [ref=e1062]:
+                - link "Priors Agents" [ref=e1063] [cursor=pointer]:
+                  - /url: /launchpad/0xedbf91223639800bcd5756815caf908df3b890be
+                - generic [ref=e1064]: PRIORS
+                - button "Pin PRIORS" [ref=e1065] [cursor=pointer]
+              - paragraph [ref=e1068]:
+                - link "BoldMarbleWren" [ref=e1069] [cursor=pointer]:
+                  - /url: /profile/0x9f05f7d48653d248c90c41ee97730a05b8f8ac0f
+                - time [ref=e1091]: 20d
+                - img "Whitelist used. The creator exempted 32 wallets from the launch snipe tax, so they could buy untaxed at the open." [ref=e1092]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 32 wallets from the launch snipe tax, so they could buy untaxed at the open.
+            - generic [ref=e1096]: USDG
+            - generic [ref=e1099]:
+              - generic [ref=e1100]: Market cap
+              - generic "$9.1M" [ref=e1102]:
+                - generic [aria-hidden] [ref=e1104]: $
+                - generic [ref=e1106]: "9"
+                - generic [aria-hidden] [ref=e1107]: .
+                - generic [ref=e1109]: "1"
+                - generic [aria-hidden] [ref=e1110]: M
+          - listitem [ref=e1111]:
+            - generic [ref=e1113]:
+              - generic [ref=e1114]:
+                - link "ubik" [ref=e1115] [cursor=pointer]:
+                  - /url: /launchpad/0x812486eaea648819853f8e372dc9f1516c7868bd
+                - generic [ref=e1116]: UBIK
+                - button "Pin UBIK" [ref=e1117] [cursor=pointer]
+              - paragraph [ref=e1120]:
+                - link "SmartHoneyBadger" [ref=e1121] [cursor=pointer]:
+                  - /url: /profile/0xc08ce6ff78e5a45011bfc38f11556f1ee9dfc362
+                - time [ref=e1147]: 1mo
+            - generic [ref=e1148]: GLD
+            - generic [ref=e1151]:
+              - generic [ref=e1152]: Market cap
+              - generic "$7M" [ref=e1154]:
+                - generic [aria-hidden] [ref=e1156]: $
+                - generic [ref=e1158]: "7"
+                - generic [aria-hidden] [ref=e1159]: M
+          - listitem [ref=e1160]:
+            - generic [ref=e1162]:
+              - generic [ref=e1163]:
+                - link "MUSHROOM" [ref=e1164] [cursor=pointer]:
+                  - /url: /launchpad/0xab093def657f15df31b33922a95e047add645b29
+                - generic [ref=e1165]: SHROOM
+                - button "Pin SHROOM" [ref=e1166] [cursor=pointer]
+              - paragraph [ref=e1169]:
+                - link "CoolBlueSwan" [ref=e1170] [cursor=pointer]:
+                  - /url: /profile/0xad5bc794c2829e671a7f5c135ca85ff97a62638b
+                - time [ref=e1193]: 1mo
+                - generic "The creator fee is shared with holders" [ref=e1194]: Community
+            - generic [ref=e1202]: MU
+            - generic [ref=e1205]:
+              - generic [ref=e1206]: Market cap
+              - generic "$5.2M" [ref=e1208]:
+                - generic [aria-hidden] [ref=e1210]: $
+                - generic [ref=e1212]: "5"
+                - generic [aria-hidden] [ref=e1213]: .
+                - generic [ref=e1215]: "2"
+                - generic [aria-hidden] [ref=e1216]: M
+          - listitem [ref=e1217]:
+            - generic [ref=e1219]:
+              - generic [ref=e1220]:
+                - link "Longbow" [ref=e1221] [cursor=pointer]:
+                  - /url: /launchpad/0x451b42a15100c340ca12f7c66de06fac5ea2d751
+                - generic [ref=e1222]: BOW
+                - button "Pin BOW" [ref=e1223] [cursor=pointer]
+              - paragraph [ref=e1226]:
+                - link "SecretStormToucan" [ref=e1227] [cursor=pointer]:
+                  - /url: /profile/0x69c3eadc15cb2b505193d94e041299ca885a7da9
+                - time [ref=e1255]: 2mo
+            - generic [ref=e1256]: SPY
+            - generic [ref=e1259]:
+              - generic [ref=e1260]: Market cap
+              - generic "$4.4M" [ref=e1262]:
+                - generic [aria-hidden] [ref=e1264]: $
+                - generic [ref=e1266]: "4"
+                - generic [aria-hidden] [ref=e1267]: .
+                - generic [ref=e1269]: "4"
+                - generic [aria-hidden] [ref=e1270]: M
+          - listitem [ref=e1271]:
+            - generic [ref=e1273]:
+              - generic [ref=e1274]:
+                - link "Harmonic Agent" [ref=e1275] [cursor=pointer]:
+                  - /url: /launchpad/0xdee52f2ab639b6942b0d0f0565400b93b7a0fbe5
+                - generic [ref=e1276]: HARMONIC
+                - button "Pin HARMONIC" [ref=e1277] [cursor=pointer]
+              - paragraph [ref=e1280]:
+                - link "WarmZincMeadow" [ref=e1281] [cursor=pointer]:
+                  - /url: /profile/0x046c58b10eef3b19154da71955815f05c0010a8a
+                - time [ref=e1302]: 1mo
+            - generic [ref=e1303]: ETH
+            - generic [ref=e1306]:
+              - generic [ref=e1307]: Market cap
+              - generic "$3.8M" [ref=e1309]:
+                - generic [aria-hidden] [ref=e1311]: $
+                - generic [ref=e1313]: "3"
+                - generic [aria-hidden] [ref=e1314]: .
+                - generic [ref=e1316]: "8"
+                - generic [aria-hidden] [ref=e1317]: M
+          - listitem [ref=e1318]:
+            - generic [ref=e1320]:
+              - generic [ref=e1321]:
+                - link "Wojak" [ref=e1322] [cursor=pointer]:
+                  - /url: /launchpad/0x806ba27b5e1c4c2e989a3757a8def9fe1145ed10
+                - generic [ref=e1323]: WOJAK
+                - button "Pin WOJAK" [ref=e1324] [cursor=pointer]
+              - paragraph [ref=e1327]:
+                - link "SureVioletOrca" [ref=e1328] [cursor=pointer]:
+                  - /url: /profile/0x1a80162e5e86debedcae107b1ec26eeaa7565dcc
+                - time [ref=e1353]: 2d
+                - img "Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open." [ref=e1354]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open.
+            - generic [ref=e1358]: ETH
+            - generic [ref=e1361]:
+              - generic [ref=e1362]: Market cap
+              - generic "$3.7M" [ref=e1364]:
+                - generic [aria-hidden] [ref=e1366]: $
+                - generic [ref=e1368]: "3"
+                - generic [aria-hidden] [ref=e1369]: .
+                - generic [ref=e1371]: "7"
+                - generic [aria-hidden] [ref=e1372]: M
+          - listitem [ref=e1373]:
+            - generic [ref=e1375]:
+              - generic [ref=e1376]:
+                - link "Optimus" [ref=e1377] [cursor=pointer]:
+                  - /url: /launchpad/0x0ff9072a1ead154d92c2d2fef16afba6028ce2b2
+                - generic [ref=e1378]: OPTIMUS
+                - button "Pin OPTIMUS" [ref=e1379] [cursor=pointer]
+              - paragraph [ref=e1382]:
+                - link "PureOpalMarlin" [ref=e1383] [cursor=pointer]:
+                  - /url: /profile/0x3057ffd14fc4b22da9a7c85a162b83fc262a1fe5
+                - time [ref=e1401]: 1mo
+                - generic "The creator fee is shared with holders" [ref=e1402]: Community
+            - generic [ref=e1410]: TSLA
+            - generic [ref=e1413]:
+              - generic [ref=e1414]: Market cap
+              - generic "$3.1M" [ref=e1416]:
+                - generic [aria-hidden] [ref=e1418]: $
+                - generic [ref=e1420]: "3"
+                - generic [aria-hidden] [ref=e1421]: .
+                - generic [ref=e1423]: "1"
+                - generic [aria-hidden] [ref=e1424]: M
+          - listitem [ref=e1425]:
+            - generic [ref=e1427]:
+              - generic [ref=e1428]:
+                - link "Pare" [ref=e1429] [cursor=pointer]:
+                  - /url: /launchpad/0x15d36b6a28d8327abc7afabf0f106ae2c9af5c4d
+                - generic [ref=e1430]: PARE
+                - button "Pin PARE" [ref=e1431] [cursor=pointer]
+              - paragraph [ref=e1434]:
+                - link "ReadyLimeRaven" [ref=e1435] [cursor=pointer]:
+                  - /url: /profile/0x854dba23be5ca2b647855ab32a38f635e5277022
+                - time [ref=e1462]: 1mo
+            - generic [ref=e1463]: ETH
+            - generic [ref=e1466]:
+              - generic [ref=e1467]: Market cap
+              - generic "$2.8M" [ref=e1469]:
+                - generic [aria-hidden] [ref=e1471]: $
+                - generic [ref=e1473]: "2"
+                - generic [aria-hidden] [ref=e1474]: .
+                - generic [ref=e1476]: "8"
+                - generic [aria-hidden] [ref=e1477]: M
+          - listitem [ref=e1478]:
+            - generic [ref=e1480]:
+              - generic [ref=e1481]:
+                - link "rocket strategy" [ref=e1482] [cursor=pointer]:
+                  - /url: /launchpad/0x8d1612b4b78ebf08cfbf01a04fa270ccbb0509a2
+                - generic [ref=e1483]: RKST
+                - button "Pin RKST" [ref=e1484] [cursor=pointer]
+              - paragraph [ref=e1487]:
+                - link "SacredSlateLemur" [ref=e1488] [cursor=pointer]:
+                  - /url: /profile/0xc0fc15882356ceeaff3e7b3a82c84a6aa047d72c
+                - time [ref=e1514]: 1mo
+            - generic [ref=e1515]: SPCX
+            - generic [ref=e1518]:
+              - generic [ref=e1519]: Market cap
+              - generic "$2.7M" [ref=e1521]:
+                - generic [aria-hidden] [ref=e1523]: $
+                - generic [ref=e1525]: "2"
+                - generic [aria-hidden] [ref=e1526]: .
+                - generic [ref=e1528]: "7"
+                - generic [aria-hidden] [ref=e1529]: M
+          - listitem [ref=e1530]:
+            - generic [ref=e1532]:
+              - generic [ref=e1533]:
+                - link "Agemica" [ref=e1534] [cursor=pointer]:
+                  - /url: /launchpad/0x5733507868f46d96907132f98431dceef67c69cc
+                - generic [ref=e1535]: AGE
+                - button "Pin AGE" [ref=e1536] [cursor=pointer]
+              - paragraph [ref=e1539]:
+                - link "SleekCedarTiger" [ref=e1540] [cursor=pointer]:
+                  - /url: /profile/0xd3d6837ade0b80648852ce176b824f3718f0a16e
+                - time [ref=e1566]: 18d
+            - generic [ref=e1567]: ETH
+            - generic [ref=e1570]:
+              - generic [ref=e1571]: Market cap
+              - generic "$2.5M" [ref=e1573]:
+                - generic [aria-hidden] [ref=e1575]: $
+                - generic [ref=e1577]: "2"
+                - generic [aria-hidden] [ref=e1578]: .
+                - generic [ref=e1580]: "5"
+                - generic [aria-hidden] [ref=e1581]: M
+          - listitem [ref=e1582]:
+            - generic [ref=e1584]:
+              - generic [ref=e1585]:
+                - link "Darkwoods" [ref=e1586] [cursor=pointer]:
+                  - /url: /launchpad/0xdc45b71d7203c2e8baafc43a19bca0eb993bb54e
+                - generic [ref=e1587]: DARK
+                - button "Pin DARK" [ref=e1588] [cursor=pointer]
+              - paragraph [ref=e1591]:
+                - link "IdleSiennaLynx" [ref=e1592] [cursor=pointer]:
+                  - /url: /profile/0x5d93d37141ef8d567c4b947c949f9304481769e6
+                - time [ref=e1619]: 23d
+                - img "Whitelist used. The creator exempted 15 wallets from the launch snipe tax, so they could buy untaxed at the open." [ref=e1620]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 15 wallets from the launch snipe tax, so they could buy untaxed at the open.
+            - generic [ref=e1624]: NVDA
+            - generic [ref=e1627]:
+              - generic [ref=e1628]: Market cap
+              - generic "$2.3M" [ref=e1630]:
+                - generic [aria-hidden] [ref=e1632]: $
+                - generic [ref=e1634]: "2"
+                - generic [aria-hidden] [ref=e1635]: .
+                - generic [ref=e1637]: "3"
+                - generic [aria-hidden] [ref=e1638]: M
+          - listitem [ref=e1639]:
+            - generic [ref=e1641]:
+              - generic [ref=e1642]:
+                - link "COPY" [ref=e1643] [cursor=pointer]:
+                  - /url: /launchpad/0x63ee90921eac3c3f87961c17556bb3ebdf2490a9
+                - generic [ref=e1644]: COPY
+                - button "Pin COPY" [ref=e1645] [cursor=pointer]
+              - paragraph [ref=e1648]:
+                - link "DeftSugarSpruce" [ref=e1649] [cursor=pointer]:
+                  - /url: /profile/0xe2e8f4eea9dcba0ba83a35d8598e3451fc22c66b
+                - time [ref=e1669]: 1mo
+            - generic [ref=e1670]: COIN
+            - generic [ref=e1673]:
+              - generic [ref=e1674]: Market cap
+              - generic "$2.3M" [ref=e1676]:
+                - generic [aria-hidden] [ref=e1678]: $
+                - generic [ref=e1680]: "2"
+                - generic [aria-hidden] [ref=e1681]: .
+                - generic [ref=e1683]: "3"
+                - generic [aria-hidden] [ref=e1684]: M
+          - listitem [ref=e1685]:
+            - generic [ref=e1687]:
+              - generic [ref=e1688]:
+                - link "Copper Inu" [ref=e1689] [cursor=pointer]:
+                  - /url: /launchpad/0x5317c0d077d2eeb639448939b930d49c4984b63b
+                - generic [ref=e1690]: COPPERINU
+                - button "Pin COPPERINU" [ref=e1691] [cursor=pointer]
+              - paragraph [ref=e1694]:
+                - link "WildClayWeasel" [ref=e1695] [cursor=pointer]:
+                  - /url: /profile/0x98469ccf8b1807870f61557aea293adf959bc212
+                - time [ref=e1716]: 1mo
+            - generic [ref=e1717]: ETH
+            - generic [ref=e1720]:
+              - generic [ref=e1721]: Market cap
+              - generic "$2.2M" [ref=e1723]:
+                - generic [aria-hidden] [ref=e1725]: $
+                - generic [ref=e1727]: "2"
+                - generic [aria-hidden] [ref=e1728]: .
+                - generic [ref=e1730]: "2"
+                - generic [aria-hidden] [ref=e1731]: M
+          - listitem [ref=e1732]:
+            - generic [ref=e1734]:
+              - generic [ref=e1735]:
+                - link "Route" [ref=e1736] [cursor=pointer]:
+                  - /url: /launchpad/0x4a72b9702f991b790788f8afa9e7112541f4e8f8
+                - generic [ref=e1737]: ROUTE
+                - button "Pin ROUTE" [ref=e1738] [cursor=pointer]
+              - paragraph [ref=e1741]:
+                - link "FaintStoneSparrow" [ref=e1742] [cursor=pointer]:
+                  - /url: /profile/0x6f6afe1e23a59cdc5901f2626301d6d408d72d9b
+                - time [ref=e1769]: 1mo
+            - generic [ref=e1770]: ETH
+            - generic [ref=e1773]:
+              - generic [ref=e1774]: Market cap
+              - generic "$2M" [ref=e1776]:
+                - generic [aria-hidden] [ref=e1778]: $
+                - generic [ref=e1780]: "2"
+                - generic [aria-hidden] [ref=e1781]: M
+          - listitem [ref=e1782]:
+            - generic [ref=e1784]:
+              - generic [ref=e1785]:
+                - link "microduck" [ref=e1786] [cursor=pointer]:
+                  - /url: /launchpad/0xd5f1afea47b1a9eab414d2ee740cf1d6d039e725
+                - generic [ref=e1787]: microduck
+                - button "Pin microduck" [ref=e1788] [cursor=pointer]
+              - paragraph [ref=e1791]:
+                - link "SpryLemonHorizon" [ref=e1792] [cursor=pointer]:
+                  - /url: /profile/0x0dabee4b5983fb4b7d19caea80ec54e7246ce52d
+                - time [ref=e1809]: 1mo
+                - generic "The creator fee is shared with holders" [ref=e1810]: Community
+            - generic [ref=e1818]: NVDA
+            - generic [ref=e1821]:
+              - generic [ref=e1822]: Market cap
+              - generic "$1.9M" [ref=e1824]:
+                - generic [aria-hidden] [ref=e1826]: $
+                - generic [ref=e1828]: "1"
+                - generic [aria-hidden] [ref=e1829]: .
+                - generic [ref=e1831]: "9"
+                - generic [aria-hidden] [ref=e1832]: M
+          - listitem [ref=e1833]:
+            - generic [ref=e1835]:
+              - generic [ref=e1836]:
+                - link "HyperDex" [ref=e1837] [cursor=pointer]:
+                  - /url: /launchpad/0xaa5751ff3fb61e613993b2eb4eab1fce017081fc
+                - generic [ref=e1838]: HYDX
+                - button "Pin HYDX" [ref=e1839] [cursor=pointer]
+              - paragraph [ref=e1842]:
+                - link "CleverTealOriole" [ref=e1843] [cursor=pointer]:
+                  - /url: /profile/0x50d68ede4a8ee71777d356d727115df1c81faf5f
+                - time [ref=e1868]: 15d
+            - generic [ref=e1869]: ETH
+            - generic [ref=e1872]:
+              - generic [ref=e1873]: Market cap
+              - generic "$1.8M" [ref=e1875]:
+                - generic [aria-hidden] [ref=e1877]: $
+                - generic [ref=e1879]: "1"
+                - generic [aria-hidden] [ref=e1880]: .
+                - generic [ref=e1882]: "8"
+                - generic [aria-hidden] [ref=e1883]: M
+          - listitem [ref=e1884]:
+            - generic [ref=e1886]:
+              - generic [ref=e1887]:
+                - link "TSUKI" [ref=e1888] [cursor=pointer]:
+                  - /url: /launchpad/0xed6a144a9b4269f4474d2cb042db78c1c0711092
+                - generic [ref=e1889]: TSUKI
+                - button "Pin TSUKI" [ref=e1890] [cursor=pointer]
+              - paragraph [ref=e1893]:
+                - link "KindCoalCrow" [ref=e1894] [cursor=pointer]:
+                  - /url: /profile/0xdfd5468991d4a3bcd07031c3b56ad60c2e5864b1
+                - time [ref=e1919]: 1mo
+            - generic [ref=e1920]: GME
+            - generic [ref=e1923]:
+              - generic [ref=e1924]: Market cap
+              - generic "$1.8M" [ref=e1926]:
+                - generic [aria-hidden] [ref=e1928]: $
+                - generic [ref=e1930]: "1"
+                - generic [aria-hidden] [ref=e1931]: .
+                - generic [ref=e1933]: "8"
+                - generic [aria-hidden] [ref=e1934]: M
+          - listitem [ref=e1935]:
+            - generic [ref=e1937]:
+              - generic [ref=e1938]:
+                - link "United Founders Group" [ref=e1939] [cursor=pointer]:
+                  - /url: /launchpad/0xefab538cf3c29237a47c6afb145d50ddf204a0a3
+                - generic [ref=e1940]: UFG
+                - button "Pin UFG" [ref=e1941] [cursor=pointer]
+              - paragraph [ref=e1944]:
+                - link "KeenPlumTurtle" [ref=e1945] [cursor=pointer]:
+                  - /url: /profile/0x8ed5a3bb08bb52fbe1b6b1c9bca7b217a6c1d76f
+                - time [ref=e1963]: 1mo
+            - generic [ref=e1964]: ETH
+            - generic [ref=e1967]:
+              - generic [ref=e1968]: Market cap
+              - generic "$1.8M" [ref=e1970]:
+                - generic [aria-hidden] [ref=e1972]: $
+                - generic [ref=e1974]: "1"
+                - generic [aria-hidden] [ref=e1975]: .
+                - generic [ref=e1977]: "8"
+                - generic [aria-hidden] [ref=e1978]: M
+          - listitem [ref=e1979]:
+            - generic [ref=e1981]:
+              - generic [ref=e1982]:
+                - link "Agent Wormhole" [ref=e1983] [cursor=pointer]:
+                  - /url: /launchpad/0x3ba500f1ababbcf0f0247d06d1c56fd7e6c4c09d
+                - generic [ref=e1984]: WORM
+                - button "Pin WORM" [ref=e1985] [cursor=pointer]
+              - paragraph [ref=e1988]:
+                - link "LunarWhiteAtlas" [ref=e1989] [cursor=pointer]:
+                  - /url: /profile/0x6e1a191893608307b7de09bbb9b652bd4c608cc5
+                - time [ref=e2013]: 1mo
+                - img "Whitelist used. The creator exempted 30 wallets from the launch snipe tax, so they could buy untaxed at the open." [ref=e2014]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 30 wallets from the launch snipe tax, so they could buy untaxed at the open.
+            - generic [ref=e2018]: PLTR
+            - generic [ref=e2021]:
+              - generic [ref=e2022]: Market cap
+              - generic "$1.7M" [ref=e2024]:
+                - generic [aria-hidden] [ref=e2026]: $
+                - generic [ref=e2028]: "1"
+                - generic [aria-hidden] [ref=e2029]: .
+                - generic [ref=e2031]: "7"
+                - generic [aria-hidden] [ref=e2032]: M
+          - listitem [ref=e2033]:
+            - generic [ref=e2035]:
+              - generic [ref=e2036]:
+                - link "Sinjoh" [ref=e2037] [cursor=pointer]:
+                  - /url: /launchpad/0x2cc0fac44b8252f6b10208b091aff2c94b4da77d
+                - generic [ref=e2038]: INJOH
+                - button "Pin INJOH" [ref=e2039] [cursor=pointer]
+              - paragraph [ref=e2042]:
+                - link "HonestShaleFox" [ref=e2043] [cursor=pointer]:
+                  - /url: /profile/0x7e97eadea120321c65cc09b6fdecc6eb15d55b2f
+                - time [ref=e2069]: 2mo
+            - generic [ref=e2070]: ETH
+            - generic [ref=e2073]:
+              - generic [ref=e2074]: Market cap
+              - generic "$1.4M" [ref=e2076]:
+                - generic [aria-hidden] [ref=e2078]: $
+                - generic [ref=e2080]: "1"
+                - generic [aria-hidden] [ref=e2081]: .
+                - generic [ref=e2083]: "4"
+                - generic [aria-hidden] [ref=e2084]: M
+          - listitem [ref=e2085]:
+            - generic [ref=e2087]:
+              - generic [ref=e2088]:
+                - link "NASDANQ" [ref=e2089] [cursor=pointer]:
+                  - /url: /launchpad/0x4dc9da81fa378181e113d7c67f77adc5cd857602
+                - generic [ref=e2090]: NASDANQ
+                - button "Pin NASDANQ" [ref=e2091] [cursor=pointer]
+              - paragraph [ref=e2094]:
+                - link "VividPineLeopard" [ref=e2095] [cursor=pointer]:
+                  - /url: /profile/0x2598fe4fb788e9b6acd28038068fe782da605bb5
+                - time [ref=e2110]: 22h
+                - img "Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open." [ref=e2111]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 1 wallet from the launch snipe tax, so it could buy untaxed at the open.
+            - generic [ref=e2115]: QQQ
+            - generic [ref=e2118]:
+              - generic [ref=e2119]: Market cap
+              - generic "$1.3M" [ref=e2121]:
+                - generic [aria-hidden] [ref=e2123]: $
+                - generic [ref=e2125]: "1"
+                - generic [aria-hidden] [ref=e2126]: .
+                - generic [ref=e2128]: "3"
+                - generic [aria-hidden] [ref=e2129]: M
+          - listitem [ref=e2130]:
+            - generic [ref=e2132]:
+              - generic [ref=e2133]:
+                - link "Kudo" [ref=e2134] [cursor=pointer]:
+                  - /url: /launchpad/0x80877fe12ede96f807422d5d4ee4f4c47cebc8ff
+                - generic [ref=e2135]: KUDO
+                - button "Pin KUDO" [ref=e2136] [cursor=pointer]
+              - paragraph [ref=e2139]:
+                - link "MildPineReef" [ref=e2140] [cursor=pointer]:
+                  - /url: /profile/0x1179b7372d9ed5be3f8c6cb292d0f5a0092de0c7
+                - time [ref=e2161]: 8d
+            - generic [ref=e2162]: USDG
+            - generic [ref=e2165]:
+              - generic [ref=e2166]: Market cap
+              - generic "$1.3M" [ref=e2168]:
+                - generic [aria-hidden] [ref=e2170]: $
+                - generic [ref=e2172]: "1"
+                - generic [aria-hidden] [ref=e2173]: .
+                - generic [ref=e2175]: "3"
+                - generic [aria-hidden] [ref=e2176]: M
+          - listitem [ref=e2177]:
+            - generic [ref=e2179]:
+              - generic [ref=e2180]:
+                - link "normie" [ref=e2181] [cursor=pointer]:
+                  - /url: /launchpad/0x92ef7caa35f85f50311fa5ed7ade2d9786c61612
+                - generic [ref=e2182]: NORMIE
+                - button "Pin NORMIE" [ref=e2183] [cursor=pointer]
+              - paragraph [ref=e2186]:
+                - link "HumbleWalnutAtlas" [ref=e2187] [cursor=pointer]:
+                  - /url: /profile/0x24db8d856f43b7855ad1103346dff570cb6a6199
+                - time [ref=e2208]: 1mo
+            - generic [ref=e2209]: SPY
+            - generic [ref=e2212]:
+              - generic [ref=e2213]: Market cap
+              - generic "$1.3M" [ref=e2215]:
+                - generic [aria-hidden] [ref=e2217]: $
+                - generic [ref=e2219]: "1"
+                - generic [aria-hidden] [ref=e2220]: .
+                - generic [ref=e2222]: "3"
+                - generic [aria-hidden] [ref=e2223]: M
+          - listitem [ref=e2224]:
+            - generic [ref=e2226]:
+              - generic [ref=e2227]:
+                - link "Robinhood" [ref=e2228] [cursor=pointer]:
+                  - /url: /launchpad/0x008df4b3e857d06c4603aeb11f267ccd32ce2005
+                - generic [ref=e2229]: ROBINHOOD
+                - button "Pin ROBINHOOD" [ref=e2230] [cursor=pointer]
+              - paragraph [ref=e2233]:
+                - link "WiseGingerHill" [ref=e2234] [cursor=pointer]:
+                  - /url: /profile/0x9a8096aab239e44b3bb2cf0ff73b75300f9b45f6
+                - time [ref=e2255]: 1mo
+            - generic [ref=e2256]: ETH
+            - generic [ref=e2259]:
+              - generic [ref=e2260]: Market cap
+              - generic "$1.2M" [ref=e2262]:
+                - generic [aria-hidden] [ref=e2264]: $
+                - generic [ref=e2266]: "1"
+                - generic [aria-hidden] [ref=e2267]: .
+                - generic [ref=e2269]: "2"
+                - generic [aria-hidden] [ref=e2270]: M
+          - listitem [ref=e2271]:
+            - generic [ref=e2273]:
+              - generic [ref=e2274]:
+                - link "YOLO" [ref=e2275] [cursor=pointer]:
+                  - /url: /launchpad/0x62c71cd34a52c30d894419cbcc55db2afa8032ea
+                - generic [ref=e2276]: YOLO
+                - button "Pin YOLO" [ref=e2277] [cursor=pointer]
+              - paragraph [ref=e2280]:
+                - link "FairGingerFerret" [ref=e2281] [cursor=pointer]:
+                  - /url: /profile/0xe0b5ee397c1684565e581c1566370c39d6393e55
+                - time [ref=e2298]: 2mo
+            - generic [ref=e2299]: ETH
+            - generic [ref=e2302]:
+              - generic [ref=e2303]: Market cap
+              - generic "$1.2M" [ref=e2305]:
+                - generic [aria-hidden] [ref=e2307]: $
+                - generic [ref=e2309]: "1"
+                - generic [aria-hidden] [ref=e2310]: .
+                - generic [ref=e2312]: "2"
+                - generic [aria-hidden] [ref=e2313]: M
+          - listitem [ref=e2314]:
+            - generic [ref=e2316]:
+              - generic [ref=e2317]:
+                - link "GAGE" [ref=e2318] [cursor=pointer]:
+                  - /url: /launchpad/0x7163ae1b5aea2f09ebc609c52b4dcac0a7a4bc2d
+                - generic [ref=e2319]: GAGE
+                - button "Pin GAGE" [ref=e2320] [cursor=pointer]
+              - paragraph [ref=e2323]:
+                - link "SouthJetStarling" [ref=e2324] [cursor=pointer]:
+                  - /url: /profile/0x86514e45293fcf111ed8a6bda7c8bca4a64dd9e5
+                - time [ref=e2345]: 1mo
+            - generic [ref=e2346]: ETH
+            - generic [ref=e2349]:
+              - generic [ref=e2350]: Market cap
+              - generic "$1.2M" [ref=e2352]:
+                - generic [aria-hidden] [ref=e2354]: $
+                - generic [ref=e2356]: "1"
+                - generic [aria-hidden] [ref=e2357]: .
+                - generic [ref=e2359]: "2"
+                - generic [aria-hidden] [ref=e2360]: M
+          - listitem [ref=e2361]:
+            - generic [ref=e2363]:
+              - generic [ref=e2364]:
+                - link "Aurum" [ref=e2365] [cursor=pointer]:
+                  - /url: /launchpad/0xb0788f5f65a9f4c0d8a634c45c391234f46221ab
+                - generic [ref=e2366]: AUR
+                - button "Pin AUR" [ref=e2367] [cursor=pointer]
+              - paragraph [ref=e2370]:
+                - link "FairPlumTapir" [ref=e2371] [cursor=pointer]:
+                  - /url: /profile/0x8e3d92e5e18f04db4e00f742cca55ed64d4ca6b5
+                - time [ref=e2395]: 16d
+                - img "Whitelist used. The creator exempted 4 wallets from the launch snipe tax, so they could buy untaxed at the open." [ref=e2396]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 4 wallets from the launch snipe tax, so they could buy untaxed at the open.
+            - generic [ref=e2400]: GLD
+            - generic [ref=e2403]:
+              - generic [ref=e2404]: Market cap
+              - generic "$1.1M" [ref=e2406]:
+                - generic [aria-hidden] [ref=e2408]: $
+                - generic [ref=e2410]: "1"
+                - generic [aria-hidden] [ref=e2411]: .
+                - generic [ref=e2413]: "1"
+                - generic [aria-hidden] [ref=e2414]: M
+          - listitem [ref=e2415]:
+            - generic [ref=e2417]:
+              - generic [ref=e2418]:
+                - link "Starship" [ref=e2419] [cursor=pointer]:
+                  - /url: /launchpad/0xc0e6a1e1e37129b839ac8ec12a24ceedaf2b13f7
+                - generic [ref=e2420]: STARSHIP
+                - button "Pin STARSHIP" [ref=e2421] [cursor=pointer]
+              - paragraph [ref=e2424]:
+                - link "NeatAmberQuail" [ref=e2425] [cursor=pointer]:
+                  - /url: /profile/0xfba5a96f41e878e4120008812c1f06d3227dd17d
+                - time [ref=e2443]: 8d
+            - generic [ref=e2444]: SPCX
+            - generic [ref=e2447]:
+              - generic [ref=e2448]: Market cap
+              - generic "$1.1M" [ref=e2450]:
+                - generic [aria-hidden] [ref=e2452]: $
+                - generic [ref=e2454]: "1"
+                - generic [aria-hidden] [ref=e2455]: .
+                - generic [ref=e2457]: "1"
+                - generic [aria-hidden] [ref=e2458]: M
+          - listitem [ref=e2459]:
+            - generic [ref=e2461]:
+              - generic [ref=e2462]:
+                - link "Biscotti" [ref=e2463] [cursor=pointer]:
+                  - /url: /launchpad/0x7cd7073a71eaf5f6e4febfa98460ee66cd97deb1
+                - generic [ref=e2464]: BISCOTTI
+                - button "Pin BISCOTTI" [ref=e2465] [cursor=pointer]
+              - paragraph [ref=e2468]:
+                - link "WittyChalkIsland" [ref=e2469] [cursor=pointer]:
+                  - /url: /profile/0xfedf034e9520968cbb92c01e0afb93f6d8644952
+                - time [ref=e2496]: 1mo
+            - generic [ref=e2497]: ETH
+            - generic [ref=e2500]:
+              - generic [ref=e2501]: Market cap
+              - generic "$1.1M" [ref=e2503]:
+                - generic [aria-hidden] [ref=e2505]: $
+                - generic [ref=e2507]: "1"
+                - generic [aria-hidden] [ref=e2508]: .
+                - generic [ref=e2510]: "1"
+                - generic [aria-hidden] [ref=e2511]: M
+          - listitem [ref=e2512]:
+            - generic [ref=e2514]:
+              - generic [ref=e2515]:
+                - link "Looping" [ref=e2516] [cursor=pointer]:
+                  - /url: /launchpad/0x2205c2232914f3a962fb25eda51f2d063dc9e532
+                - generic [ref=e2517]: GG
+                - button "Pin GG" [ref=e2518] [cursor=pointer]
+              - paragraph [ref=e2521]:
+                - link "QuietMintLantern" [ref=e2522] [cursor=pointer]:
+                  - /url: /profile/0x8887bf188c133068ef6a5ff172a1a1955334ddf3
+                - time [ref=e2545]: 24d
+                - img "Whitelist used. The creator exempted 22 wallets from the launch snipe tax, so they could buy untaxed at the open." [ref=e2546]:
+                  - generic [aria-hidden]: Whitelist used. The creator exempted 22 wallets from the launch snipe tax, so they could buy untaxed at the open.
+            - generic [ref=e2550]: ETH
+            - generic [ref=e2553]:
+              - generic [ref=e2554]: Market cap
+              - generic "$989.5K" [ref=e2556]:
+                - generic [aria-hidden] [ref=e2558]: $
+                - generic [ref=e2560]: "9"
+                - generic [ref=e2562]: "8"
+                - generic [ref=e2564]: "9"
+                - generic [aria-hidden] [ref=e2565]: .
+                - generic [ref=e2567]: "5"
+                - generic [aria-hidden] [ref=e2568]: K
+          - listitem [ref=e2569]:
+            - generic [ref=e2571]:
+              - generic [ref=e2572]:
+                - link "ZEAL" [ref=e2573] [cursor=pointer]:
+                  - /url: /launchpad/0x9fa1c5e90a11294f83a9f135b81ad1b537a5ffdc
+                - generic [ref=e2574]: ZEAL
+                - button "Pin ZEAL" [ref=e2575] [cursor=pointer]
+              - paragraph [ref=e2578]:
+                - link "DawnSaltAntler" [ref=e2579] [cursor=pointer]:
+                  - /url: /profile/0x1c083f2f85acadae452c7512c45cd7c8a3ddbf03
+                - time [ref=e2606]: 1mo
+            - generic [ref=e2607]: ETH
+            - generic [ref=e2610]:
+              - generic [ref=e2611]: Market cap
+              - generic "$969K" [ref=e2613]:
+                - generic [aria-hidden] [ref=e2615]: $
+                - generic [ref=e2617]: "9"
+                - generic [ref=e2619]: "6"
+                - generic [ref=e2621]: "9"
+                - generic [aria-hidden] [ref=e2622]: K
+          - listitem [ref=e2623]:
+            - generic [ref=e2625]:
+              - generic [ref=e2626]:
+                - link "GOLD" [ref=e2627] [cursor=pointer]:
+                  - /url: /launchpad/0xa62f748f8d16009cb19366da8d1160fb29de428f
+                - generic [ref=e2628]: GOLD
+                - button "Pin GOLD" [ref=e2629] [cursor=pointer]
+              - paragraph [ref=e2632]:
+                - link "SpryBrassAnchor" [ref=e2633] [cursor=pointer]:
+                  - /url: /profile/0x33be12b458cdad2e2048002598aeffb0a5c2dd48
+                - time [ref=e2658]: 17d
+            - generic [ref=e2659]: GLD
+            - generic [ref=e2662]:
+              - generic [ref=e2663]: Market cap
+              - generic "$962.6K" [ref=e2665]:
+                - generic [aria-hidden] [ref=e2667]: $
+                - generic [ref=e2669]: "9"
+                - generic [ref=e2671]: "6"
+                - generic [ref=e2673]: "2"
+                - generic [aria-hidden] [ref=e2674]: .
+                - generic [ref=e2676]: "6"
+                - generic [aria-hidden] [ref=e2677]: K
+          - listitem [ref=e2678]:
+            - generic [ref=e2680]:
+              - generic [ref=e2681]:
+                - link "World is Flat" [ref=e2682] [cursor=pointer]:
+                  - /url: /launchpad/0x5173b8ea6923c2d40267890d45c46a3480954773
+                - generic [ref=e2683]: WIF
+                - button "Pin WIF" [ref=e2684] [cursor=pointer]
+              - paragraph [ref=e2687]:
+                - link "VividCoralMeadow" [ref=e2688] [cursor=pointer]:
+                  - /url: /profile/0x205b1b3cdb04f5b0e55076b800347e0078286827
+                - time [ref=e2712]: 2mo
+            - generic [ref=e2713]: ETH
+            - generic [ref=e2716]:
+              - generic [ref=e2717]: Market cap
+              - generic "$909.8K" [ref=e2719]:
+                - generic [aria-hidden] [ref=e2721]: $
+                - generic [ref=e2723]: "9"
+                - generic [ref=e2725]: "0"
+                - generic [ref=e2727]: "9"
+                - generic [aria-hidden] [ref=e2728]: .
+                - generic [ref=e2730]: "8"
+                - generic [aria-hidden] [ref=e2731]: K
+        - button "Show more" [ref=e2733] [cursor=pointer]
+  - contentinfo [ref=e2734]:
+    - generic [ref=e2736]:
+      - navigation "Footer" [ref=e2737]:
+        - generic [ref=e2738]:
+          - heading "Launchpad" [level=2] [ref=e2739]
+          - list [ref=e2740]:
+            - listitem [ref=e2741]:
+              - link "Create a token" [ref=e2742] [cursor=pointer]:
+                - /url: /launchpad/create
+            - listitem [ref=e2744]:
+              - link "Launches" [ref=e2745] [cursor=pointer]:
+                - /url: /launchpad
+            - listitem [ref=e2747]:
+              - link "PLP" [ref=e2748] [cursor=pointer]:
+                - /url: /plp
+            - listitem [ref=e2750]:
+              - link "Analytics" [ref=e2751] [cursor=pointer]:
+                - /url: /analytics
+            - listitem [ref=e2753]:
+              - link "Profile" [ref=e2754] [cursor=pointer]:
+                - /url: /profile
+        - generic [ref=e2756]:
+          - heading "Resources" [level=2] [ref=e2757]
+          - list [ref=e2758]:
+            - listitem [ref=e2759]:
+              - link "Docs" [ref=e2760] [cursor=pointer]:
+                - /url: https://docs.ponsfamily.com
+            - listitem [ref=e2764]:
+              - link "Support" [ref=e2765] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=e2767]:
+              - link "Builders" [ref=e2768] [cursor=pointer]:
+                - /url: /builders
+            - listitem [ref=e2770]:
+              - link "Explorer" [ref=e2771] [cursor=pointer]:
+                - /url: https://robin.etherscan.io
+            - listitem [ref=e2775]:
+              - link "PONS token" [ref=e2776] [cursor=pointer]:
+                - /url: /launchpad/0x39dBED3a2bd333467115dE45665cC57F813C4571
+            - listitem [ref=e2778]:
+              - link "Updates on X" [ref=e2779] [cursor=pointer]:
+                - /url: https://x.com/ponsdotfamily
+            - listitem [ref=e2783]:
+              - link "GitHub" [ref=e2784] [cursor=pointer]:
+                - /url: https://github.com/pons-labs
+        - generic [ref=e2788]:
+          - heading "Legal" [level=2] [ref=e2789]
+          - list [ref=e2790]:
+            - listitem [ref=e2791]:
+              - link "Terms of Use" [ref=e2792] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e2794]:
+              - link "Privacy Policy" [ref=e2795] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e2797]:
+              - link "MiCA Whitepaper" [ref=e2798] [cursor=pointer]:
+                - /url: /mica
+            - listitem [ref=e2800]:
+              - link "Takedown Requests" [ref=e2801] [cursor=pointer]:
+                - /url: /takedown
+            - listitem [ref=e2803]:
+              - link "Law Enforcement Requests" [ref=e2804] [cursor=pointer]:
+                - /url: /law-enforcement
+      - generic [ref=e2806]:
+        - paragraph [ref=e2807]: © 2026 Pons Labs, LLC. All rights reserved.
+        - generic [ref=e2808]:
+          - link "Pons on X" [ref=e2809] [cursor=pointer]:
+            - /url: https://x.com/ponsdotfamily
+          - link "Pons on GitHub" [ref=e2812] [cursor=pointer]:
+            - /url: https://github.com/pons-labs
+      - paragraph [ref=e2816]: Pons is a noncustodial software interface operated by Pons Labs, LLC. Pons does not hold your assets or keys, does not execute or reverse transactions, and is not a bank, broker, exchange, custodian, or investment adviser. Nothing on this site is financial, legal, or tax advice. Tokens are issued by their creators, not by Pons. They are highly volatile, may lose all value, and may have no liquidity. Listing or ranking a token is not an endorsement. You are responsible for your decisions, your wallet, and compliance with local law. Not available in restricted regions. Pons is not affiliated with Robinhood Markets, Inc.

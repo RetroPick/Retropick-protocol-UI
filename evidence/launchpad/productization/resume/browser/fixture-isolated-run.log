@@ -1,0 +1,202 @@
+[WebServer] (node:148351) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:148378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:148531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:148572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer]   ➜  Local:   http://127.0.0.1:4320/
+
+Running 270 tests using 2 workers
+
+(node:148629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:148625) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    2 [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (2.7s)
+  -    3 [desktop-1440] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓    1 [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (3.9s)
+  ✓    4 [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (1.5s)
+  ✓    5 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (13.6s)
+  ✓    6 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (14.0s)
+  ✓    7 [desktop-1440] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (6.0s)
+  ✓    8 [desktop-1440] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (7.0s)
+  ✓    9 [desktop-1440] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (2.4s)
+  ✓   10 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (3.1s)
+  ✓   11 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (3.0s)
+  ✓   12 [desktop-1440] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (6.8s)
+  ✓   13 [desktop-1440] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (9.4s)
+  -   15 [desktop-1440] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓   14 [desktop-1440] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter (6.8s)
+  ✘   16 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (46.6s)
+(node:150521) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   17 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (46.5s)
+(node:150611) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   18 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (retry #1) (47.3s)
+  ✘   19 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (retry #1) (46.5s)
+(node:151899) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:151914) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   20 [desktop-1440] › e2e/fixture/earn.spec.ts:32:1 › @earn referral copy, section tabs, demo positions toggle (0ms)
+  ✘   21 [desktop-1440] › e2e/fixture/earn.spec.ts:47:1 › @earn legacy /portfolio route still renders demo portfolio (0ms)
+(node:151965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152022) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   22 [desktop-1440] › e2e/fixture/earn.spec.ts:32:1 › @earn referral copy, section tabs, demo positions toggle (retry #1) (0ms)
+  ✘   23 [desktop-1440] › e2e/fixture/earn.spec.ts:47:1 › @earn legacy /portfolio route still renders demo portfolio (retry #1) (0ms)
+(node:152074) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   24 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (0ms)
+  ✘   25 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (0ms)
+(node:152224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152258) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   26 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (retry #1) (0ms)
+  ✘   27 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (retry #1) (0ms)
+(node:152348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152386) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   28 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (0ms)
+(node:152427) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   29 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (0ms)
+(node:152461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   30 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (retry #1) (0ms)
+(node:152487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   31 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (retry #1) (0ms)
+(node:152514) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   32 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (0ms)
+(node:152539) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   33 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (0ms)
+(node:152603) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   34 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (retry #1) (0ms)
+(node:152653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   35 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (retry #1) (0ms)
+  ✘   36 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (0ms)
+(node:152734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152761) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   37 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (0ms)
+  ✘   38 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (retry #1) (0ms)
+(node:152845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:152876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   39 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (retry #1) (0ms)
+(node:152996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   40 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (0ms)
+  ✘   41 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (0ms)
+(node:153036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153063) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   42 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (retry #1) (0ms)
+  ✘   43 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (retry #1) (0ms)
+(node:153105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153155) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   44 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (0ms)
+  ✘   45 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (0ms)
+(node:153223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153263) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   46 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (retry #1) (0ms)
+  ✘   47 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153315) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   48 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (0ms)
+(node:153340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   49 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (0ms)
+(node:153396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   50 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153407) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   51 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   52 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (0ms)
+(node:153439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   53 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (0ms)
+(node:153453) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   54 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   55 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   56 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (0ms)
+(node:153560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   57 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (0ms)
+  ✘   58 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (retry #1) (0ms)
+(node:153577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153586) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   59 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (retry #1) (0ms)
+  ✘   60 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (0ms)
+(node:153595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153610) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   61 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (0ms)
+  ✘   62 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (retry #1) (0ms)
+(node:153618) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   63 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (retry #1) (0ms)
+  ✘   64 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (0ms)
+(node:153641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   65 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (0ms)
+  ✘   66 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (retry #1) (0ms)
+(node:153667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   67 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (retry #1) (0ms)
+  ✘   68 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (0ms)
+(node:153697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   69 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (0ms)
+  ✘   70 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (retry #1) (0ms)
+(node:153736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:153753) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   71 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (retry #1) (0ms)
+  ✘   72 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (0ms)
+(node:153769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+undefined
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command was killed with SIGTERM (Termination): playwright test --config e2e/resume.config.ts

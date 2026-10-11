@@ -1,0 +1,43 @@
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y touch targets ≥ 40px on mobile for primary trading controls","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > reduced motion > @a11y reduced motion disables shimmer/spinner animation","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > @resilience unknown route and unknown demo token keep the shell with a recovery action","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme light > @theme light matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/a11y.spec.ts > theme dark > @theme dark matrix: key routes render with theme-specific chart palette, no overflow","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

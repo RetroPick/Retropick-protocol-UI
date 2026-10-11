@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "earn-interior",
+  "startedAt": "2026-10-10T19:39:26.501Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --grep @earn",
+  "cwd": "apps/retro-ui"
+}

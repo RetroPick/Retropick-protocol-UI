@@ -1,0 +1,14 @@
+guard-forbidden-paths: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56
+HEAD c41d35d3a57de05fc26f78476554e352d9b08b56
+forbidden: apps/web/ contracts/ packages/launchpad-sdk/ apps/indexer/ apps/abi/ deployments/ development/fullstack-integration/write-allowlist.md
+pre-existing forbidden-prefix entries in baseline: 40; unchanged now: 40
+RESULT: PASS (no forbidden path changed relative to the baseline)
+exit=0
+
+# final re-run 2026-10-10T13:25:35Z
+guard-forbidden-paths: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56
+HEAD c41d35d3a57de05fc26f78476554e352d9b08b56
+forbidden: apps/web/ contracts/ packages/launchpad-sdk/ apps/indexer/ apps/abi/ deployments/ development/fullstack-integration/write-allowlist.md
+pre-existing forbidden-prefix entries in baseline: 40; unchanged now: 40
+RESULT: PASS (no forbidden path changed relative to the baseline)
+exit=0

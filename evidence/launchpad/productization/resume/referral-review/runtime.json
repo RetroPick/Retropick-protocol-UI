@@ -1,0 +1,34 @@
+{
+  "pid": 174982,
+  "port": 8788,
+  "origin": "http://127.0.0.1:3000",
+  "lockOwnerMatches": true,
+  "beforeAssociationCount": 1,
+  "afterAssociationCount": 1,
+  "missingAssociations": 0,
+  "integrityCheck": "ok",
+  "signaturesStored": false,
+  "sessionStorage": "SHA256 token_hash only",
+  "health": {
+    "chainId": 10143,
+    "attributionOnly": true,
+    "earningsEnabled": false,
+    "syncError": null
+  },
+  "unauthSummary": 401,
+  "attributionFreshness": {
+    "chainId": 10143,
+    "indexedBlock": 69901064,
+    "indexedBlockHash": "0x8fa4a09a002e3a2400121c95a4834259133f0eb683694867cb52474a8edb1547",
+    "headBlock": 69901121,
+    "confirmations": 8,
+    "lagBlocks": 57,
+    "indexedAt": "2026-10-10T18:50:07.736Z",
+    "syncing": true,
+    "error": null,
+    "source": "MONAD_EVENT_INDEXER",
+    "projectionVersion": 2,
+    "reorgRevision": 0,
+    "beneficiaryIndexedBlock": 69901064
+  }
+}

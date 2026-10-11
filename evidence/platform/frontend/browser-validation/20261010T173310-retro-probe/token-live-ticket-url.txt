@@ -1,0 +1,1 @@
+http://localhost:3000/launchpad/token/0x30ccb65006665022dfc97bb5c1985610503fd1cf

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/a11y.spec.ts > @a11y semantics: buy/sell not colour-only, tables have captions, controls named",
+  "project": "tablet-768",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 24
+}

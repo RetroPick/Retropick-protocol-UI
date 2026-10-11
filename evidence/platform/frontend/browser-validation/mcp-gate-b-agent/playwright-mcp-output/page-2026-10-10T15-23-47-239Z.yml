@@ -1,0 +1,103 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - generic [ref=f2e6]:
+          - link "Bags home" [ref=f2e7] [cursor=pointer]:
+            - /url: /
+          - navigation "Primary" [ref=f2e8]:
+            - list [ref=f2e9]:
+              - listitem [ref=f2e10]:
+                - link "Home" [ref=f2e11] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f2e16]:
+                - link "Earn" [ref=f2e17] [cursor=pointer]:
+                  - /url: /earn
+              - listitem [ref=f2e21]:
+                - link "Trade" [ref=f2e22] [cursor=pointer]:
+                  - /url: /trade
+            - link "Launch a coin" [ref=f2e32] [cursor=pointer]:
+              - /url: /launch
+              - text: Launch
+        - generic [ref=f2e33]:
+          - navigation "Account" [ref=f2e34]:
+            - list [ref=f2e35]:
+              - listitem [ref=f2e36]:
+                - link "Docs" [ref=f2e37] [cursor=pointer]:
+                  - /url: https://docs.bags.fm
+          - link "Bags on X (@BagsApp)" [ref=f2e44] [cursor=pointer]:
+            - /url: https://x.com/BagsApp
+            - generic [ref=f2e46]:
+              - generic [ref=f2e47]:
+                - generic [ref=f2e48]: Bags
+                - img "Verified organization" [ref=f2e49]
+              - generic [ref=f2e52]: "@BagsApp"
+      - button "Collapse sidebar" [ref=f2e55]
+    - generic [ref=f2e59]:
+      - banner:
+        - generic [ref=f2e61]:
+          - generic [ref=f2e62]:
+            - textbox "Search coins" [ref=f2e70]
+            - combobox "Select launchpad network" [ref=f2e72] [cursor=pointer]
+          - generic [ref=f2e73]:
+            - link [ref=f2e75] [cursor=pointer]:
+              - /url: /launch
+              - button "Launch" [ref=f2e76]:
+                - generic [ref=f2e77]:
+                  - img "Plus icon" [ref=f2e80]
+                  - generic [ref=f2e81]: Launch
+            - button "log in" [ref=f2e82] [cursor=pointer]
+      - main [ref=f2e90]:
+        - generic [ref=f2e91]:
+          - generic [ref=f2e92]:
+            - paragraph [ref=f2e93]: Creator Earnings
+            - paragraph [ref=f2e94]: Lifetime · Solana
+          - generic [ref=f2e95]: ‌
+          - paragraph [ref=f2e98]: 1% of every trade, earned by creators
+          - generic [ref=f2e99]:
+            - generic [ref=f2e100]:
+              - generic [ref=f2e101]:
+                - paragraph [ref=f2e102]: Volume
+                - generic [ref=f2e103]: ‌
+              - generic [ref=f2e105]:
+                - paragraph [ref=f2e106]: Creators funded
+                - generic [ref=f2e107]: ‌
+              - generic [ref=f2e109]:
+                - paragraph [ref=f2e110]: Traders
+                - generic [ref=f2e111]: ‌
+            - link [ref=f2e113] [cursor=pointer]:
+              - /url: /launch
+              - button "Launch" [ref=f2e114]:
+                - generic [ref=f2e115]:
+                  - img "Plus icon" [ref=f2e118]
+                  - generic [ref=f2e119]: Launch
+        - generic [ref=f2e121]:
+          - tablist "Scanner view" [ref=f2e123]:
+            - tab "Pulse" [selected] [ref=f2e124] [cursor=pointer]
+            - tab "Trending" [ref=f2e125] [cursor=pointer]
+          - heading "New" [level=2] [ref=f2e136]
+      - contentinfo [ref=f2e270]:
+        - generic [ref=f2e271]:
+          - paragraph [ref=f2e272]: © 2026 Bags Holdings, Inc.
+          - generic [ref=f2e273]:
+            - navigation [ref=f2e274]:
+              - link "About" [ref=f2e275] [cursor=pointer]:
+                - /url: /about
+              - link "Contact" [ref=f2e276] [cursor=pointer]:
+                - /url: /contact
+              - link "Terms" [ref=f2e277] [cursor=pointer]:
+                - /url: /terms
+              - link "Docs" [ref=f2e278] [cursor=pointer]:
+                - /url: https://docs.bags.fm
+              - link "Discord" [ref=f2e279] [cursor=pointer]:
+                - /url: https://discord.gg/bagsapp
+              - link "Support" [ref=f2e280] [cursor=pointer]:
+                - /url: https://support.bags.fm
+            - generic [ref=f2e281]:
+              - link [ref=f2e282] [cursor=pointer]:
+                - /url: https://apps.apple.com/app/bags-financial-messenger/id6473196333
+                - img "Download on the App Store" [ref=f2e283]
+              - link [ref=f2e284] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.bags.bagsfm
+                - img "Get it on Google Play" [ref=f2e285]
+  - alert [ref=f2e286]

@@ -1,0 +1,5 @@
+{"test":"fixture/vault.spec.ts > @vault real WebAuthn PRF ceremony: create → save entry → lock → unlock (or handled PRF_UNAVAILABLE)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/vault.spec.ts > @vault real WebAuthn PRF ceremony: create → save entry → lock → unlock (or handled PRF_UNAVAILABLE)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/vault.spec.ts > @vault tampered import is rejected without any passkey ceremony","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/vault.spec.ts > @vault tab mounts in the Earn hub with the passkey explainer","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/vault.spec.ts > @vault tab mounts in the Earn hub with the passkey explainer","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

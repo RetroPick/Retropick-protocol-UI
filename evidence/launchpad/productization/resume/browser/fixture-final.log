@@ -1,0 +1,862 @@
+[WebServer] (node:159608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:159705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:160146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:160318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer]   ➜  Local:   http://127.0.0.1:4323/
+
+Running 270 tests using 4 workers
+
+(node:160630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:160618) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:160623) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:160616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -    3 [desktop-1440] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✘    5 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (1.5m)
+  ✘    4 [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (1.8m)
+  ✘    2 [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (57.2s)
+(node:161360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘    1 [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.1m)
+(node:161412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:161427) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:161449) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘    9 [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (retry #1) (1.6m)
+  ✘    8 [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (retry #1) (1.6m)
+  ✘    7 [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (retry #1) (1.5m)
+  ✘    6 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (retry #1) (1.5m)
+(node:161967) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:161953) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:161927) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:161935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   11 [desktop-1440] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (8.6s)
+  ✓   13 [desktop-1440] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (19.9s)
+  ✓   14 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (16.1s)
+  ✓   10 [desktop-1440] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (27.0s)
+  ✓   15 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (19.7s)
+  ✘   12 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (55.1s)
+  ✓   16 [desktop-1440] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (33.2s)
+  -   19 [desktop-1440] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+(node:163468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   18 [desktop-1440] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter (20.2s)
+  ✓   17 [desktop-1440] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (41.4s)
+  ✓   20 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (15.9s)
+  ✓   21 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (16.2s)
+  ✓   23 [desktop-1440] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (11.0s)
+  ✓   24 [desktop-1440] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (7.2s)
+  ✓   25 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (9.0s)
+  ✓   26 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (7.3s)
+  ✓   27 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (6.5s)
+  ✓   28 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (8.1s)
+  ✓   22 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (retry #1) (32.0s)
+  ✓   29 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (14.1s)
+  ✓   30 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (12.3s)
+  ✓   32 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (5.9s)
+  ✓   31 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (8.1s)
+  ✓   33 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (5.3s)
+  ✓   34 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (4.6s)
+  ✓   35 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (10.3s)
+  ✓   36 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (12.8s)
+  ✓   37 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (15.5s)
+  ✓   38 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (15.6s)
+  ✓   39 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (12.0s)
+  ✓   40 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (10.1s)
+  ✓   41 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (9.1s)
+  ✓   42 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (10.7s)
+  ✓   43 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (8.6s)
+  ✓   45 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (11.4s)
+  ✓   44 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (16.5s)
+  ✓   47 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (12.8s)
+  -   50 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓   49 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (5.3s)
+  ✓   46 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (15.7s)
+(node:166876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:166933) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:167004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   52 [desktop-1280] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓   48 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (17.9s)
+  ✓   54 [desktop-1280] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (4.0s)
+  ✓   51 [desktop-1280] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (6.1s)
+(node:167631) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   53 [desktop-1280] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (7.5s)
+  ✓   56 [desktop-1280] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.4s)
+  ✓   59 [desktop-1280] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (2.1s)
+  ✓   57 [desktop-1280] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (5.5s)
+  ✓   55 [desktop-1280] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (11.2s)
+  ✓   60 [desktop-1280] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.5s)
+  ✓   61 [desktop-1280] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.6s)
+  ✓   58 [desktop-1280] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (14.5s)
+  -   65 [desktop-1280] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓   62 [desktop-1280] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (10.8s)
+  ✓   64 [desktop-1280] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter (11.4s)
+  ✓   63 [desktop-1280] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (15.8s)
+  ✓   66 [desktop-1280] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (8.3s)
+  -   70 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -   71 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -   72 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓   67 [desktop-1280] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (7.8s)
+  ✓   68 [desktop-1280] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (5.6s)
+  ✓   69 [desktop-1280] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (3.4s)
+  ✓   73 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (4.7s)
+  ✓   76 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (5.6s)
+  ✓   75 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (6.9s)
+  ✓   74 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (7.4s)
+  ✓   77 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (3.7s)
+  ✓   78 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (2.7s)
+  ✓   79 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.6s)
+  ✓   80 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (8.1s)
+  ✓   81 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (7.8s)
+  ✓   83 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (11.7s)
+  ✓   82 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (14.3s)
+  ✓   84 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (15.9s)
+  ✓   85 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (15.9s)
+  ✓   86 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (14.1s)
+  ✓   87 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (18.8s)
+  ✓   88 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (15.2s)
+  ✓   90 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (19.7s)
+  ✓   89 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (33.0s)
+  ✘   92 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (24.1s)
+  ✓   94 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (12.0s)
+  ✓   91 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (34.5s)
+  -   95 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+(node:170038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:170135) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:170127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   93 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (30.9s)
+  ✓   97 [tablet-834] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (4.9s)
+(node:170534) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   96 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (retry #1) (9.2s)
+  ✓   98 [tablet-834] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (6.8s)
+  ✓   99 [tablet-834] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (1.9s)
+  -  100 [tablet-834] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+(node:170585) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  102 [tablet-834] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (3.2s)
+  ✓  105 [tablet-834] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (2.2s)
+  ✓  103 [tablet-834] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (4.9s)
+  ✓  106 [tablet-834] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.5s)
+  ✓  107 [tablet-834] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.9s)
+  ✓  101 [tablet-834] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (11.1s)
+  -  110 [tablet-834] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  -  111 [tablet-834] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓  104 [tablet-834] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (12.7s)
+  ✓  108 [tablet-834] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (8.5s)
+  ✓  112 [tablet-834] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (6.4s)
+  ✓  115 [tablet-834] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (2.4s)
+  ✓  113 [tablet-834] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (6.4s)
+  -  116 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  117 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  118 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  109 [tablet-834] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (11.2s)
+  ✓  114 [tablet-834] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (3.6s)
+  ✓  119 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.4s)
+  ✓  121 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (3.7s)
+  ✓  120 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (3.7s)
+  ✓  122 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (3.5s)
+  ✓  123 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (2.5s)
+  ✓  124 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (2.2s)
+  ✓  125 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.2s)
+  ✓  126 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (4.5s)
+  ✓  127 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (4.6s)
+  ✓  128 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (4.7s)
+  ✓  129 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (5.5s)
+  ✓  130 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (5.6s)
+  ✓  131 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (6.0s)
+  ✓  132 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (5.9s)
+  ✓  133 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (7.1s)
+  ✓  134 [tablet-834] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (6.3s)
+  ✓  136 [tablet-834] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (7.4s)
+  ✓  135 [tablet-834] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (10.4s)
+  ✓  138 [tablet-834] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (6.6s)
+  ✓  137 [tablet-834] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (8.5s)
+  -  141 [tablet-834] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓  140 [tablet-834] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.7s)
+(node:171851) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:171867) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:171881) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  139 [tablet-834] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (8.2s)
+  -  144 [tablet-768] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+(node:172138) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  143 [tablet-768] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (4.1s)
+  ✓  142 [tablet-768] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (7.2s)
+  ✓  147 [tablet-768] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (3.9s)
+  ✓  148 [tablet-768] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (7.9s)
+  ✓  145 [tablet-768] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (15.4s)
+  ✓  149 [tablet-768] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (9.5s)
+  ✓  150 [tablet-768] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (3.8s)
+  ✓  146 [tablet-768] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (16.4s)
+  ✓  151 [tablet-768] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (5.8s)
+  -  155 [tablet-768] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  ✓  152 [tablet-768] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.7s)
+  -  156 [tablet-768] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓  153 [tablet-768] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (11.4s)
+  ✓  157 [tablet-768] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (7.6s)
+  ✓  158 [tablet-768] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (8.0s)
+  -  161 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  162 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  163 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  160 [tablet-768] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (3.0s)
+  ✓  154 [tablet-768] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (14.7s)
+  ✓  164 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (4.5s)
+  ✘  159 [tablet-768] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (6.7s)
+  ✓  165 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (6.8s)
+  ✓  166 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (7.4s)
+(node:172976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  168 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (8.9s)
+  ✓  167 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (13.4s)
+  ✓  169 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (9.5s)
+  ✓  171 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (34.8s)
+  ✘  173 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (37.7s)
+  ✘  172 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (38.1s)
+(node:173506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  170 [tablet-768] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (retry #1) (41.2s)
+(node:173517) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:173549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  174 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (18.2s)
+  ✓  175 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (retry #1) (12.8s)
+  ✓  177 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (12.0s)
+  ✓  178 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (10.2s)
+  ✓  176 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (retry #1) (15.2s)
+  ✓  179 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (8.7s)
+  ✓  180 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (7.0s)
+  ✓  181 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (7.8s)
+  ✓  182 [tablet-768] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (7.6s)
+  ✓  184 [tablet-768] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (8.1s)
+  ✓  183 [tablet-768] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (12.7s)
+  ✓  186 [tablet-768] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (9.1s)
+  -  189 [tablet-768] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓  185 [tablet-768] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (11.4s)
+  ✓  188 [tablet-768] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (3.3s)
+(node:174594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:174622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:174629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  190 [mobile-390] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls
+  ✓  187 [tablet-768] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (12.8s)
+  ✓  193 [mobile-390] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (5.4s)
+(node:174955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  191 [mobile-390] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (8.1s)
+  ✓  192 [mobile-390] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls (7.9s)
+  ✓  195 [mobile-390] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (5.9s)
+  ✓  198 [mobile-390] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (2.3s)
+  ✓  194 [mobile-390] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (12.0s)
+  ✓  199 [mobile-390] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (5.2s)
+  ✘  196 [mobile-390] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (13.2s)
+  ✓  200 [mobile-390] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (5.4s)
+  ✓  197 [mobile-390] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (14.3s)
+  -  203 [mobile-390] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+(node:175338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  204 [mobile-390] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette (7.3s)
+  ✓  201 [mobile-390] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (11.4s)
+  ✓  202 [mobile-390] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (13.7s)
+  ✓  206 [mobile-390] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (8.7s)
+  ✓  207 [mobile-390] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (9.1s)
+  ✓  205 [mobile-390] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (retry #1) (15.9s)
+  ✓  208 [mobile-390] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (7.8s)
+  ✓  209 [mobile-390] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (4.6s)
+  ✓  210 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (5.5s)
+  ✓  211 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (5.9s)
+  ✓  213 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (5.4s)
+  ✓  212 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (6.0s)
+  ✓  217 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (8.3s)
+  ✓  216 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (9.9s)
+  ✓  214 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (21.3s)
+  ✓  219 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (9.9s)
+  ✓  218 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (12.0s)
+  ✓  215 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (22.7s)
+  ✓  220 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (15.9s)
+  ✓  222 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (14.3s)
+  ✓  223 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (14.2s)
+  ✓  221 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (16.8s)
+  ✓  224 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (16.0s)
+  ✓  226 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (14.6s)
+  ✓  225 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (15.9s)
+  ✓  227 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (14.5s)
+  -  230 [mobile-390] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding
+  -  229 [mobile-390] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage
+  -  231 [mobile-390] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit
+  ✓  234 [mobile-390] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (4.1s)
+  ✓  228 [mobile-390] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (6.3s)
+  ✓  232 [mobile-390] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (7.7s)
+(node:177722) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  233 [mobile-390] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (9.7s)
+(node:177729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  236 [mobile-375] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls
+(node:177763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  238 [mobile-375] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.4s)
+  ✓  237 [mobile-375] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (4.7s)
+  ✓  235 [mobile-390] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket (12.9s)
+  ✓  239 [mobile-375] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls (4.5s)
+(node:178086) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  240 [mobile-375] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (8.5s)
+  ✓  242 [mobile-375] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (5.8s)
+  ✓  244 [mobile-375] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.9s)
+  ✓  243 [mobile-375] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (3.9s)
+  ✓  241 [mobile-375] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (9.2s)
+  ✓  245 [mobile-375] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (3.3s)
+  -  249 [mobile-375] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  ✓  246 [mobile-375] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (3.1s)
+  ✓  250 [mobile-375] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette (3.6s)
+  ✓  247 [mobile-375] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (7.3s)
+  ✓  251 [mobile-375] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (6.9s)
+  ✓  248 [mobile-375] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (8.8s)
+  -  255 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  256 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  257 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  253 [mobile-375] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (4.1s)
+  ✓  254 [mobile-375] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (2.0s)
+  ✓  252 [mobile-375] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (6.2s)
+  ✓  258 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (3.0s)
+  ✓  261 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (3.8s)
+  ✓  262 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (4.2s)
+  ✓  259 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (8.2s)
+  ✓  260 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (8.2s)
+  ✓  263 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (5.2s)
+  ✓  264 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (4.0s)
+  ✓  265 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (11.9s)
+  ✓  266 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (11.9s)
+  ✓  267 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (12.3s)
+  ✓  268 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (11.6s)
+  ✓  269 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (17.3s)
+  ✓  270 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (18.6s)
+  ✓  271 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (17.7s)
+  -  274 [mobile-375] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage
+  -  276 [mobile-375] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit
+  -  275 [mobile-375] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding
+  ✓  272 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (19.2s)
+  ✓  273 [mobile-375] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (7.3s)
+  ✓  279 [mobile-375] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (9.8s)
+  ✓  277 [mobile-375] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (15.9s)
+  ✓  278 [mobile-375] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (18.6s)
+  ✓  280 [mobile-375] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket (16.4s)
+
+
+  1) [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls 
+
+    Test timeout of 45000ms exceeded while setting up "page".
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 45000ms exceeded.
+
+    Tearing down "context" exceeded the test timeout of 45000ms.
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('link', { name: 'Skip to content' })
+    Expected: focused
+    Received: undefined
+
+    Call log:
+      - Expect "toBeFocused" with timeout 8000ms
+      - waiting for getByRole('link', { name: 'Skip to content' })
+
+
+       7 |   await page.goto('/launchpad/token/demo-active');
+       8 |   await page.keyboard.press('Tab');
+    >  9 |   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
+         |                                                                     ^
+      10 |   // Tab until a ticket radio receives focus; each focused element must show an outline or ring.
+      11 |   let reached = false;
+      12 |   for (let i = 0; i < 80 && !reached; i++) {
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:9:69
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440-retry1/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-keyboar-de507-tab-reaches-ticket-controls-desktop-1440-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()
+    Expected pattern: /Buy|Sell/
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 8000ms
+      - waiting for getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()
+      - Protocol error (Runtime.callFunctionOn): Internal server error, session closed.
+
+
+      30 |   await page.goto('/launchpad/token/demo-graduated');
+      31 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');
+    > 32 |   await expect(rows.first()).toContainText(/Buy|Sell/);
+         |                              ^
+      33 |   for (const name of ['Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();
+      34 |   // Mobile: the ticket lives in a modal bottom sheet (background correctly hidden from assistive tech while open).
+      35 |   if (info.project.name.startsWith('mobile')) await page.getByTestId('mobile-trade-bar').getByRole('button', { name: 'Trade' }).tap();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:32:30
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 45000ms exceeded.
+
+    Tearing down "context" exceeded the test timeout of 45000ms.
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()
+    Expected pattern: /Buy|Sell/
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 8000ms
+      - waiting for getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()
+
+
+      30 |   await page.goto('/launchpad/token/demo-graduated');
+      31 |   const rows = page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr');
+    > 32 |   await expect(rows.first()).toContainText(/Buy|Sell/);
+         |                              ^
+      33 |   for (const name of ['Chart type', 'Time range', 'Candle interval']) await expect(page.getByRole('radiogroup', { name }).first()).toBeAttached();
+      34 |   // Mobile: the ticket lives in a modal bottom sheet (background correctly hidden from assistive tech while open).
+      35 |   if (info.project.name.startsWith('mobile')) await page.getByTestId('mobile-trade-bar').getByRole('button', { name: 'Trade' }).tap();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:32:30
+
+    Error: browserContext.close: Target page, context or browser has been closed
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440-retry1/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y--a11y-semanti-1651d-ave-captions-controls-named-desktop-1440-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation 
+
+    Test timeout of 45000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 45000ms exceeded.
+
+    Tearing down "context" exceeded the test timeout of 45000ms.
+
+    Error: page.goto: Test timeout of 45000ms exceeded.
+    Call log:
+      - navigating to "http://127.0.0.1:4323/launchpad/token/demo-active?scenario=slow-rpc", waiting until "load"
+
+
+      61 |   test('@a11y reduced motion disables shimmer/spinner animation', async ({ page, observed }) => {
+      62 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+    > 63 |     await page.goto('/launchpad/token/demo-active?scenario=slow-rpc');
+         |                ^
+      64 |     const anim = await page.evaluate(() => { const el = document.createElement('span'); el.className = 'rp-skel'; document.body.append(el); const v = getComputedStyle(el).animationName; el.remove(); return v; });
+      65 |     expect(anim).toBe('none');
+      66 |     expectClean(observed);
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:63:16
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440-retry1/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-reduced-motio-99f9b-s-shimmer-spinner-animation-desktop-1440-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow 
+
+    Test timeout of 45000ms exceeded while setting up "context".
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 45000ms exceeded.
+
+    Tearing down "context" exceeded the test timeout of 45000ms.
+
+    Error: page.goto: net::ERR_ABORTED at http://127.0.0.1:4323/launchpad/token/demo-active
+    Call log:
+      - navigating to "http://127.0.0.1:4323/launchpad/token/demo-active", waiting until "load"
+
+
+      73 |     test(`@theme ${theme} matrix: key routes render with theme-specific chart palette, no overflow`, async ({ page, observed, snap }) => {
+      74 |       for (const route of ROUTES) {
+    > 75 |         await page.goto(route);
+         |                    ^
+      76 |         await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+      77 |         await expectNoHorizontalOverflow(page);
+      78 |       }
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:75:20
+
+    Error: browserContext.close: Target page, context or browser has been closed
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-dark-th-9b01e-c-chart-palette-no-overflow-desktop-1440-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [tablet-768] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle 
+
+    Error: no horizontal page overflow
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    11
+
+       at helpers/test.ts:96
+
+      94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {
+      95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    > 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);
+         |                                                   ^
+      97 | }
+      98 |
+      99 | export { expect };
+        at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:49:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: no horizontal page overflow
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    11
+
+       at helpers/test.ts:96
+
+      94 | export async function expectNoHorizontalOverflow(page: Page): Promise<void> {
+      95 |   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    > 96 |   expect(overflow, 'no horizontal page overflow').toBeLessThanOrEqual(1);
+         |                                                   ^
+      97 | }
+      98 |
+      99 | export { expect };
+        at expectNoHorizontalOverflow (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:96:51)
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/earn.spec.ts:49:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-earn--earn-referra-0071a--tabs-demo-positions-toggle-tablet-768-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: page.screenshot: Test timeout of 45000ms exceeded.
+    Call log:
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+       at helpers/test.ts:62
+
+      60 |       mkdirSync(dir, { recursive: true });
+      61 |       const file = join(dir, `${name}.png`);
+    > 62 |       await p.screenshot({ path: file, fullPage: opts.fullPage ?? true, animations: 'disabled' });
+         |               ^
+      63 |       return file;
+      64 |     });
+      65 |   },
+        at snap (/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/helpers/test.ts:62:15)
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/a11y.spec.ts:82:13
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-light-t-04781-c-chart-palette-no-overflow-desktop-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-light-t-04781-c-chart-palette-no-overflow-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-a11y-theme-light-t-04781-c-chart-palette-no-overflow-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [desktop-1280] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('table', { name: /Recent trades/ })
+    Expected: visible
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for getByRole('table', { name: /Recent trades/ })
+
+
+      136 |   await page.goto('/launchpad/token/demo-graduated');
+      137 |   const tabs = page.getByRole('tablist', { name: 'Token data' });
+    > 138 |   await expect(page.getByRole('table', { name: /Recent trades/ })).toBeVisible();
+          |                                                                    ^
+      139 |   await expect(page.getByRole('table', { name: /Recent trades/ }).locator('tbody tr').first()).toContainText(/Buy|Sell/);
+      140 |   await tabs.getByRole('tab', { name: /Holders/ }).click();
+      141 |   await expect(page.getByRole('table', { name: /Holders of/ })).toContainText('Liquidity');
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:138:68
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal--te-273bb-col-groups-orders-by-status-desktop-1280/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal--te-273bb-col-groups-orders-by-status-desktop-1280/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal--te-273bb-col-groups-orders-by-status-desktop-1280/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: getByTestId('token-terminal')
+    Expected: "ACTIVE"
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveAttribute" with timeout 8000ms
+      - waiting for getByTestId('token-terminal')
+
+
+      16 |         await page.goto(`/launchpad/token/${id}`);
+      17 |         const terminal = page.getByTestId('token-terminal');
+    > 18 |         await expect(terminal).toHaveAttribute('data-lifecycle', state);
+         |                                ^
+      19 |         await expect(terminal).toHaveAttribute('data-data-mode', 'demo');
+      20 |         await expect(terminal).toHaveAttribute('data-fixture-version', 'demo-terminal-v1');
+      21 |         await expect(terminal.locator('[data-provenance="demo"]').first()).toBeVisible();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:18:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-119f3-rminal-with-DEMO-provenance-tablet-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-119f3-rminal-with-DEMO-provenance-tablet-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-119f3-rminal-with-DEMO-provenance-tablet-768/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-119f3-rminal-with-DEMO-provenance-tablet-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: getByTestId('token-terminal')
+    Expected: "GRADUATION_READY"
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveAttribute" with timeout 8000ms
+      - waiting for getByTestId('token-terminal')
+
+
+      16 |         await page.goto(`/launchpad/token/${id}`);
+      17 |         const terminal = page.getByTestId('token-terminal');
+    > 18 |         await expect(terminal).toHaveAttribute('data-lifecycle', state);
+         |                                ^
+      19 |         await expect(terminal).toHaveAttribute('data-data-mode', 'demo');
+      20 |         await expect(terminal).toHaveAttribute('data-fixture-version', 'demo-terminal-v1');
+      21 |         await expect(terminal.locator('[data-provenance="demo"]').first()).toBeVisible();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/token-terminal.spec.ts:18:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-tablet-768/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-tablet-768/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-tablet-768/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-token-terminal-ter-ff280-rminal-with-DEMO-provenance-tablet-768/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [mobile-390] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: /2 · Market & economics/ })
+    Expected: visible
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for getByRole('heading', { name: /2 · Market & economics/ })
+
+
+      12 |   await page.getByPlaceholder('RETRO', { exact: true }).fill('TCOM');
+      13 |   await page.getByRole('button', { name: 'Continue' }).click();
+    > 14 |   await expect(page.getByRole('heading', { name: /2 · Market & economics/ })).toBeVisible();
+         |                                                                               ^
+      15 |   const holders = page.getByRole('radio', { name: /Holders/ });
+      16 |   await expect(holders).toBeDisabled();
+      17 |   await page.getByPlaceholder('0').first().fill('1');
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/fixture/create.spec.ts:14:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/fixture-final/test-output/fixture-create--create-wiz-08be4-supported-option-no-signing-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls 
+    [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named 
+    [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation 
+    [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow 
+    [tablet-768] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle 
+  5 flaky
+    [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow 
+    [desktop-1280] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status 
+    [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance 
+    [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance 
+    [mobile-390] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing 
+  36 skipped
+  224 passed (16.5m)

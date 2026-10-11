@@ -1,0 +1,22 @@
+# guard self-test against synthetic copies of the baseline in a private /tmp dir (live repo untouched)
+## case=modify
+guard-forbidden-paths: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56
+VIOLATION MODIFIED_SINCE_BASELINE apps/web/package-lock.json
+RESULT: FAIL (1 violation(s))
+exit=1
+## case=new
+guard-forbidden-paths: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56
+VIOLATION NEW_SINCE_BASELINE apps/indexer/src/query.ts
+RESULT: FAIL (1 violation(s))
+exit=1
+## case=revert
+guard-forbidden-paths: baseline 20261010T131134 BASE c41d35d3a57de05fc26f78476554e352d9b08b56
+VIOLATION REVERTED_SINCE_BASELINE contracts/src/NotDirty.sol
+RESULT: FAIL (1 violation(s))
+exit=1
+## case=tamper
+guard-forbidden-paths: baseline-fingerprint.txt does not match manifest.baseline_fingerprint_sha256 (snapshot altered?)
+exit=2
+## case=no-arg
+guard-forbidden-paths: snapshot dir required: pass it as the first argument or set CAMPAIGN_BASELINE_DIR
+exit=2

@@ -1,0 +1,448 @@
+{
+  "measured_at": "2026-10-10T13:17:48.272Z",
+  "method": "raw bytes and zlib gzip level 9 of each emitted file (vite reports its own gzip in gate-build.log)",
+  "build_command": "pnpm --dir apps/retro-ui build --outDir /tmp/retropick-wave0-build-20261010T131134 --emptyOutDir",
+  "totals": {
+    "all": {
+      "bytes": 1754645,
+      "gzip": 535590,
+      "count": 65
+    },
+    "js": {
+      "bytes": 1624974,
+      "gzip": 483947,
+      "count": 60
+    },
+    "css": {
+      "bytes": 91085,
+      "gzip": 18003,
+      "count": 2
+    },
+    "html": {
+      "bytes": 3476,
+      "gzip": 1020,
+      "count": 1
+    },
+    "other": {
+      "bytes": 35110,
+      "gzip": 32620,
+      "count": 2
+    }
+  },
+  "entry": [
+    {
+      "file": "assets/index-Y8ZPlWt5.js",
+      "bytes": 203378,
+      "gzip": 63955
+    },
+    {
+      "file": "assets/index-Cd7UjCuY.css",
+      "bytes": 88475,
+      "gzip": 17124
+    }
+  ],
+  "largest_15": [
+    {
+      "file": "assets/detail-MXvPGRDw.js",
+      "bytes": 366093,
+      "gzip": 105614
+    },
+    {
+      "file": "assets/queries-DARs29cW.js",
+      "bytes": 216516,
+      "gzip": 54271
+    },
+    {
+      "file": "assets/index-Y8ZPlWt5.js",
+      "bytes": 203378,
+      "gzip": 63955
+    },
+    {
+      "file": "assets/trading-chart-WS7FRc6i.js",
+      "bytes": 179937,
+      "gzip": 57543
+    },
+    {
+      "file": "assets/localBatchGatewayRequest-dv1kvGHA.js",
+      "bytes": 108791,
+      "gzip": 30601
+    },
+    {
+      "file": "assets/index-Cd7UjCuY.css",
+      "bytes": 88475,
+      "gzip": 17124
+    },
+    {
+      "file": "assets/tx-pipeline-Bf47sDfx.js",
+      "bytes": 61319,
+      "gzip": 10508
+    },
+    {
+      "file": "assets/ui-BPwmVchD.js",
+      "bytes": 56829,
+      "gzip": 18719
+    },
+    {
+      "file": "assets/select-fW-SYybi.js",
+      "bytes": 48646,
+      "gzip": 16988
+    },
+    {
+      "file": "assets/create-launch-DiIKHYpJ.js",
+      "bytes": 38336,
+      "gzip": 11167
+    },
+    {
+      "file": "brand/retropick.png",
+      "bytes": 34398,
+      "gzip": 32281
+    },
+    {
+      "file": "assets/routerAbi-Bm1401_I.js",
+      "bytes": 33784,
+      "gzip": 3024
+    },
+    {
+      "file": "assets/dist-BZ64k2kw.js",
+      "bytes": 33535,
+      "gzip": 9320
+    },
+    {
+      "file": "assets/secp256k1-Dg0yy6bC.js",
+      "bytes": 29833,
+      "gzip": 11802
+    },
+    {
+      "file": "assets/es2015-D1oowVLK.js",
+      "bytes": 25077,
+      "gzip": 8828
+    }
+  ],
+  "files": [
+    {
+      "file": "assets/detail-MXvPGRDw.js",
+      "bytes": 366093,
+      "gzip": 105614
+    },
+    {
+      "file": "assets/queries-DARs29cW.js",
+      "bytes": 216516,
+      "gzip": 54271
+    },
+    {
+      "file": "assets/index-Y8ZPlWt5.js",
+      "bytes": 203378,
+      "gzip": 63955
+    },
+    {
+      "file": "assets/trading-chart-WS7FRc6i.js",
+      "bytes": 179937,
+      "gzip": 57543
+    },
+    {
+      "file": "assets/localBatchGatewayRequest-dv1kvGHA.js",
+      "bytes": 108791,
+      "gzip": 30601
+    },
+    {
+      "file": "assets/index-Cd7UjCuY.css",
+      "bytes": 88475,
+      "gzip": 17124
+    },
+    {
+      "file": "assets/tx-pipeline-Bf47sDfx.js",
+      "bytes": 61319,
+      "gzip": 10508
+    },
+    {
+      "file": "assets/ui-BPwmVchD.js",
+      "bytes": 56829,
+      "gzip": 18719
+    },
+    {
+      "file": "assets/select-fW-SYybi.js",
+      "bytes": 48646,
+      "gzip": 16988
+    },
+    {
+      "file": "assets/create-launch-DiIKHYpJ.js",
+      "bytes": 38336,
+      "gzip": 11167
+    },
+    {
+      "file": "brand/retropick.png",
+      "bytes": 34398,
+      "gzip": 32281
+    },
+    {
+      "file": "assets/routerAbi-Bm1401_I.js",
+      "bytes": 33784,
+      "gzip": 3024
+    },
+    {
+      "file": "assets/dist-BZ64k2kw.js",
+      "bytes": 33535,
+      "gzip": 9320
+    },
+    {
+      "file": "assets/secp256k1-Dg0yy6bC.js",
+      "bytes": 29833,
+      "gzip": 11802
+    },
+    {
+      "file": "assets/es2015-D1oowVLK.js",
+      "bytes": 25077,
+      "gzip": 8828
+    },
+    {
+      "file": "assets/provider-B9WmTyY2.js",
+      "bytes": 22041,
+      "gzip": 6820
+    },
+    {
+      "file": "assets/earn-CHSWDLoc.js",
+      "bytes": 21942,
+      "gzip": 6411
+    },
+    {
+      "file": "assets/demo-token-detail-BdrElboS.js",
+      "bytes": 18579,
+      "gzip": 6440
+    },
+    {
+      "file": "assets/prism-De8ar0dX.js",
+      "bytes": 15706,
+      "gzip": 4451
+    },
+    {
+      "file": "assets/demo-discovery-cdArSnrR.js",
+      "bytes": 14626,
+      "gzip": 4758
+    },
+    {
+      "file": "assets/portfolio-CYYW58H-.js",
+      "bytes": 13557,
+      "gzip": 4274
+    },
+    {
+      "file": "assets/token-detail-FFI-F-7_.js",
+      "bytes": 10977,
+      "gzip": 3878
+    },
+    {
+      "file": "assets/kuru-ticket-5oLbxl6t.js",
+      "bytes": 9829,
+      "gzip": 3570
+    },
+    {
+      "file": "assets/jsx-runtime-C7oxC63R.js",
+      "bytes": 8557,
+      "gzip": 3265
+    },
+    {
+      "file": "assets/ticket-3cSpuzRX.js",
+      "bytes": 8248,
+      "gzip": 3090
+    },
+    {
+      "file": "assets/useQuery-DcN9bQDF.js",
+      "bytes": 8240,
+      "gzip": 3033
+    },
+    {
+      "file": "assets/dialog-BaEGMGeB.js",
+      "bytes": 8069,
+      "gzip": 2881
+    },
+    {
+      "file": "assets/discovery-37CxQCDz.js",
+      "bytes": 6022,
+      "gzip": 2467
+    },
+    {
+      "file": "assets/use-launch-detail-DncwWN47.js",
+      "bytes": 5419,
+      "gzip": 2123
+    },
+    {
+      "file": "assets/live-trading-ticket-DM826mf1.js",
+      "bytes": 5120,
+      "gzip": 2073
+    },
+    {
+      "file": "assets/checkbox-BUEo1V6p.js",
+      "bytes": 4690,
+      "gzip": 1979
+    },
+    {
+      "file": "assets/launchpad-repository-_Ny3WEtX.js",
+      "bytes": 4246,
+      "gzip": 1598
+    },
+    {
+      "file": "assets/fixtures-CP4RI90W.js",
+      "bytes": 4106,
+      "gzip": 2159
+    },
+    {
+      "file": "assets/activity-uFOwdnMt.js",
+      "bytes": 4010,
+      "gzip": 1722
+    },
+    {
+      "file": "assets/docs-DGNzX1yJ.js",
+      "bytes": 3742,
+      "gzip": 1620
+    },
+    {
+      "file": "index.html",
+      "bytes": 3476,
+      "gzip": 1020
+    },
+    {
+      "file": "assets/ccip-Bxj2eZ54.js",
+      "bytes": 2868,
+      "gzip": 1325
+    },
+    {
+      "file": "assets/launchpad-fixtures-zmRvikgV.js",
+      "bytes": 2815,
+      "gzip": 959
+    },
+    {
+      "file": "assets/use-live-launches-BGwqRq59.css",
+      "bytes": 2610,
+      "gzip": 879
+    },
+    {
+      "file": "assets/provider-C2iy6QGy.js",
+      "bytes": 2196,
+      "gzip": 1065
+    },
+    {
+      "file": "assets/utils-Bpv4vmSW.js",
+      "bytes": 2194,
+      "gzip": 977
+    },
+    {
+      "file": "assets/referral-client-CeCwmjk-.js",
+      "bytes": 1803,
+      "gzip": 883
+    },
+    {
+      "file": "assets/use-live-launches-CS_X6SOl.js",
+      "bytes": 1773,
+      "gzip": 1001
+    },
+    {
+      "file": "assets/safe-link-C1tF80zP.js",
+      "bytes": 1481,
+      "gzip": 737
+    },
+    {
+      "file": "assets/table-oIWYF8O4.js",
+      "bytes": 1292,
+      "gzip": 513
+    },
+    {
+      "file": "assets/creator-DLvakIJ_.js",
+      "bytes": 1238,
+      "gzip": 587
+    },
+    {
+      "file": "assets/registry-mAx6CPOn.js",
+      "bytes": 1187,
+      "gzip": 634
+    },
+    {
+      "file": "assets/createLucideIcon-CHM5RwPD.js",
+      "bytes": 1186,
+      "gzip": 689
+    },
+    {
+      "file": "assets/session-bridge-DOLrXnjh.js",
+      "bytes": 1151,
+      "gzip": 595
+    },
+    {
+      "file": "assets/format-BrnFEY7Z.js",
+      "bytes": 742,
+      "gzip": 433
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 712,
+      "gzip": 339
+    },
+    {
+      "file": "assets/performance-BreJWmdJ.js",
+      "bytes": 481,
+      "gzip": 277
+    },
+    {
+      "file": "assets/layers-C4I5FX8D.js",
+      "bytes": 421,
+      "gzip": 242
+    },
+    {
+      "file": "assets/skeleton-BQ7B4qoG.js",
+      "bytes": 411,
+      "gzip": 311
+    },
+    {
+      "file": "assets/math-B-JDr_2y.js",
+      "bytes": 357,
+      "gzip": 256
+    },
+    {
+      "file": "assets/shield-check-DQ6a_zi_.js",
+      "bytes": 320,
+      "gzip": 252
+    },
+    {
+      "file": "assets/info-CFIDReKW.js",
+      "bytes": 204,
+      "gzip": 180
+    },
+    {
+      "file": "assets/circle-check-B6MUoy5R.js",
+      "bytes": 178,
+      "gzip": 170
+    },
+    {
+      "file": "assets/arrow-up-right-JRiEGqX6.js",
+      "bytes": 167,
+      "gzip": 160
+    },
+    {
+      "file": "assets/arrow-left-C6BqT05t.js",
+      "bytes": 165,
+      "gzip": 163
+    },
+    {
+      "file": "assets/arrow-right-Bs3DDfdd.js",
+      "bytes": 165,
+      "gzip": 162
+    },
+    {
+      "file": "assets/plus-D1yhrDhi.js",
+      "bytes": 153,
+      "gzip": 151
+    },
+    {
+      "file": "assets/check-B7OhRMFr.js",
+      "bytes": 124,
+      "gzip": 140
+    },
+    {
+      "file": "assets/secp256k1-CMTKsvrn.js",
+      "bytes": 52,
+      "gzip": 65
+    },
+    {
+      "file": "assets/portfolio-BzG2hJdK.js",
+      "bytes": 50,
+      "gzip": 68
+    }
+  ]
+}

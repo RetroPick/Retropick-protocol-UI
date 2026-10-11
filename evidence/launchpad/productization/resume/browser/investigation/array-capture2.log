@@ -1,0 +1,255 @@
+[
+  {
+    "variant": "strict-clean",
+    "errors": 1,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1488,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1442,
+        "terminal": 1,
+        "failedArrays": [
+          [
+            {
+              "type": "number",
+              "value": "100000000"
+            },
+            {
+              "type": "bigint",
+              "value": "100000000"
+            },
+            {
+              "type": "string",
+              "value": "0x9BAE085e25c940Ed311d15D423C602B1C5d3CCf5"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "string",
+              "value": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "number",
+              "value": "1"
+            },
+            {
+              "type": "bigint",
+              "value": "1000000"
+            },
+            {
+              "type": "bigint",
+              "value": "10000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "30"
+            },
+            {
+              "type": "bigint",
+              "value": "0"
+            }
+          ]
+        ],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 849,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "no-strict-clean",
+    "errors": 1,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1488,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1404,
+        "terminal": 1,
+        "failedArrays": [
+          [
+            {
+              "type": "number",
+              "value": "100000000"
+            },
+            {
+              "type": "bigint",
+              "value": "100000000"
+            },
+            {
+              "type": "string",
+              "value": "0x9BAE085e25c940Ed311d15D423C602B1C5d3CCf5"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "string",
+              "value": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "number",
+              "value": "1"
+            },
+            {
+              "type": "bigint",
+              "value": "1000000"
+            },
+            {
+              "type": "bigint",
+              "value": "10000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "30"
+            },
+            {
+              "type": "bigint",
+              "value": "0"
+            }
+          ]
+        ],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 860,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "strict-no-performance-measure",
+    "errors": 0,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 635,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 263,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 860,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  },
+  {
+    "variant": "strict-devtools-hook",
+    "errors": 1,
+    "consoleErrors": 0,
+    "routes": [
+      {
+        "route": "/launchpad",
+        "bodyLength": 1488,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+        "bodyLength": 1573,
+        "terminal": 1,
+        "failedArrays": [
+          [
+            {
+              "type": "number",
+              "value": "100000000"
+            },
+            {
+              "type": "bigint",
+              "value": "100000000"
+            },
+            {
+              "type": "string",
+              "value": "0x9BAE085e25c940Ed311d15D423C602B1C5d3CCf5"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "string",
+              "value": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "18"
+            },
+            {
+              "type": "number",
+              "value": "1"
+            },
+            {
+              "type": "bigint",
+              "value": "1000000"
+            },
+            {
+              "type": "bigint",
+              "value": "10000000000000000"
+            },
+            {
+              "type": "bigint",
+              "value": "30"
+            },
+            {
+              "type": "bigint",
+              "value": "0"
+            }
+          ]
+        ],
+        "profilerFailure": null
+      },
+      {
+        "route": "/launchpad/create",
+        "bodyLength": 849,
+        "terminal": 0,
+        "failedArrays": [],
+        "profilerFailure": null
+      }
+    ]
+  }
+]

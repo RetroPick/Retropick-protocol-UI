@@ -1,0 +1,53 @@
+{
+  "freshness": {
+    "chainId": 10143,
+    "indexedBlock": 69901311,
+    "indexedBlockHash": "0x0ad1a7effab9808046eacaeac16059b6814e6910bda3d748c6d6e393cf7a291f",
+    "headBlock": 69901368,
+    "confirmations": 8,
+    "lagBlocks": 57,
+    "indexedAt": "2026-10-10T18:51:20.422Z",
+    "syncing": true,
+    "error": null,
+    "source": "MONAD_EVENT_INDEXER",
+    "projectionVersion": 2,
+    "reorgRevision": 0,
+    "beneficiaryIndexedBlock": 69901311
+  },
+  "ready": true,
+  "projection": {
+    "expected": 2,
+    "published": 2
+  },
+  "progress": {
+    "passes": 6,
+    "passStartedAt": "2026-10-10T18:51:32.045Z",
+    "passTarget": 69901360,
+    "headTarget": 69901360,
+    "lastSyncedAt": "2026-10-10T18:51:20.463Z",
+    "lastPassMs": 3433,
+    "lastPassBlocks": 50,
+    "blocksPerSecond": 15,
+    "lastError": null,
+    "catchingUp": false,
+    "cursors": {
+      "root": 69901360,
+      "dynamic": 69901311,
+      "beneficiary": 69901311
+    }
+  },
+  "providers": [
+    {
+      "endpoint": "testnet-rpc.monad.xyz",
+      "state": "healthy",
+      "chainId": 10143,
+      "requests": 93,
+      "failures": 0,
+      "lastFailure": null,
+      "lastFailureMessage": null,
+      "retryAt": null,
+      "latencyMs": 762
+    }
+  ],
+  "observedAt": "2026-10-10T18:51:33.504064+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "shell-regression",
+  "startedAt": "2026-10-10T19:09:07.708Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --grep @a11y|@theme|@smoke",
+  "cwd": "apps/retro-ui"
+}

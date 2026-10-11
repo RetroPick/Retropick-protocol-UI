@@ -1,0 +1,149 @@
+{
+  "phase": "GRADUATED",
+  "wallet": "absent; no wallet account or economic write requested",
+  "shellReady": true,
+  "ticketReady": false,
+  "boundMs": 75000,
+  "stages": [
+    {
+      "stage": "detail:essential",
+      "result": "PASS"
+    },
+    {
+      "stage": "detail:economic",
+      "result": "PASS"
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "result": "PASS"
+    }
+  ],
+  "records": [
+    {
+      "stage": "detail:essential",
+      "at": 1667.5,
+      "duration": 1006.1999999992549
+    },
+    {
+      "stage": "detail:economic",
+      "at": 1890,
+      "duration": 200.40000000223517
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 1921.3999999985099
+    },
+    {
+      "stage": "detail:essential",
+      "at": 5189.800000000745,
+      "duration": 521.5
+    },
+    {
+      "stage": "detail:economic",
+      "at": 5384.699999999255,
+      "duration": 187.80000000074506
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 5389.39999999851
+    },
+    {
+      "stage": "detail:essential",
+      "at": 8795.699999999255,
+      "duration": 605
+    },
+    {
+      "stage": "detail:economic",
+      "at": 8972.5,
+      "duration": 172
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 8976.89999999851
+    },
+    {
+      "stage": "detail:essential",
+      "at": 12284.599999997765,
+      "duration": 488.5
+    },
+    {
+      "stage": "detail:economic",
+      "at": 12474.599999997765,
+      "duration": 186.69999999925494
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 12477.699999999255
+    },
+    {
+      "stage": "detail:essential",
+      "at": 15879.39999999851,
+      "duration": 593.8999999985099
+    },
+    {
+      "stage": "detail:economic",
+      "at": 16058.300000000745,
+      "duration": 175.40000000223517
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 16061.599999997765
+    },
+    {
+      "stage": "detail:essential",
+      "at": 19383.800000000745,
+      "duration": 503.70000000298023
+    },
+    {
+      "stage": "detail:economic",
+      "at": 19667.099999997765,
+      "duration": 280.29999999701977
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 19670
+    },
+    {
+      "stage": "detail:essential",
+      "at": 22954,
+      "duration": 569.6000000014901
+    },
+    {
+      "stage": "detail:economic",
+      "at": 23135.599999997765,
+      "duration": 177.39999999850988
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 23138.599999997765
+    },
+    {
+      "stage": "detail:essential",
+      "at": 26494.800000000745,
+      "duration": 539.2000000029802
+    },
+    {
+      "stage": "detail:economic",
+      "at": 26738.099999997765,
+      "duration": 239
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 26742.300000000745
+    },
+    {
+      "stage": "detail:essential",
+      "at": 30038.199999999255,
+      "duration": 541.3999999985099
+    },
+    {
+      "stage": "detail:economic",
+      "at": 30227.199999999255,
+      "duration": 184.60000000149012
+    },
+    {
+      "stage": "detail:trade-interactive",
+      "at": 30235.5
+    }
+  ]
+}

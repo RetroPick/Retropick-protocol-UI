@@ -1,0 +1,726 @@
+{
+  "base": "http://127.0.0.1:4381",
+  "samples": 5,
+  "results": [
+    {
+      "scenario": "discovery",
+      "temperature": "cold",
+      "sample": 1,
+      "contentMs": 1593.1437959999998,
+      "ticketMs": null,
+      "indexerMs": 1464.0656840000001,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 524
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 1256
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "cold",
+      "sample": 2,
+      "contentMs": 1068.8725430000004,
+      "ticketMs": null,
+      "indexerMs": 989.4102290000001,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 392
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 708
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "cold",
+      "sample": 3,
+      "contentMs": 1445.144746,
+      "ticketMs": null,
+      "indexerMs": 1292.3106189999999,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 360
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 1056
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "cold",
+      "sample": 4,
+      "contentMs": 1596.5023680000004,
+      "ticketMs": null,
+      "indexerMs": 1078.0090100000007,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 312
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 796
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "cold",
+      "sample": 5,
+      "contentMs": 1642.6192730000002,
+      "ticketMs": null,
+      "indexerMs": 1119.3723360000004,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 344
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 828
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "warm",
+      "sample": 1,
+      "contentMs": 1115.070271999999,
+      "ticketMs": null,
+      "indexerMs": 1003.648541999999,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 316
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 728
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "warm",
+      "sample": 2,
+      "contentMs": 912.6507849999998,
+      "ticketMs": null,
+      "indexerMs": 849.3298749999994,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 172
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 636
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "warm",
+      "sample": 3,
+      "contentMs": 920.5007129999995,
+      "ticketMs": null,
+      "indexerMs": 863.1450719999993,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 208
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 640
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "warm",
+      "sample": 4,
+      "contentMs": 1359.9188450000001,
+      "ticketMs": null,
+      "indexerMs": 969.130310999999,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 236
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 744
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "discovery",
+      "temperature": "warm",
+      "sample": 5,
+      "contentMs": 3612.5609160000004,
+      "ticketMs": null,
+      "indexerMs": 3373.1719939999984,
+      "rpcRequests": 1,
+      "rpcCalls": 2,
+      "indexerRequests": 2,
+      "bytes": 1028077,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 1740
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 3116
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "cold",
+      "sample": 1,
+      "contentMs": 2541.447285000002,
+      "ticketMs": null,
+      "indexerMs": 2085.720723000002,
+      "rpcRequests": 8,
+      "rpcCalls": 27,
+      "indexerRequests": 4,
+      "bytes": 1375219,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 640
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 1944
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "cold",
+      "sample": 2,
+      "contentMs": 1215.818378,
+      "ticketMs": 5939.109595999998,
+      "indexerMs": 1212.9491179999968,
+      "rpcRequests": 8,
+      "rpcCalls": 27,
+      "indexerRequests": 4,
+      "bytes": 1376141,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 380
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 984
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "cold",
+      "sample": 3,
+      "contentMs": 1111.9555499999988,
+      "ticketMs": 5481.460471999999,
+      "indexerMs": 975.7077900000004,
+      "rpcRequests": 9,
+      "rpcCalls": 32,
+      "indexerRequests": 4,
+      "bytes": 1376810,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 288
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 772
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "cold",
+      "sample": 4,
+      "contentMs": 1099.6517769999991,
+      "ticketMs": 1766.5492779999986,
+      "indexerMs": 897.455833999993,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1371109,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 280
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 652
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "cold",
+      "sample": 5,
+      "contentMs": 979.6014359999972,
+      "ticketMs": null,
+      "indexerMs": 867.5567189999929,
+      "rpcRequests": 9,
+      "rpcCalls": 32,
+      "indexerRequests": 4,
+      "bytes": 1375775,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 268
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 652
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "warm",
+      "sample": 1,
+      "contentMs": 888.6894629999952,
+      "ticketMs": 1633.912350999999,
+      "indexerMs": 769.7831629999928,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1371109,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 236
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 528
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "warm",
+      "sample": 2,
+      "contentMs": 935.5866889999961,
+      "ticketMs": null,
+      "indexerMs": 803.349768,
+      "rpcRequests": 7,
+      "rpcCalls": 24,
+      "indexerRequests": 4,
+      "bytes": 1374265,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 196
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 568
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "warm",
+      "sample": 3,
+      "contentMs": 896.4296600000016,
+      "ticketMs": null,
+      "indexerMs": 764.6148850000027,
+      "rpcRequests": 9,
+      "rpcCalls": 32,
+      "indexerRequests": 4,
+      "bytes": 1376671,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 204
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 532
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "warm",
+      "sample": 4,
+      "contentMs": 913.3164049999978,
+      "ticketMs": 1642.394975000003,
+      "indexerMs": 780.7502270000041,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1371109,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 172
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 548
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-active",
+      "temperature": "warm",
+      "sample": 5,
+      "contentMs": 850.005118000001,
+      "ticketMs": 5086.134817999991,
+      "indexerMs": 735.1660879999981,
+      "rpcRequests": 9,
+      "rpcCalls": 32,
+      "indexerRequests": 4,
+      "bytes": 1377706,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 172
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 504
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "cold",
+      "sample": 1,
+      "contentMs": 872.1063770000037,
+      "ticketMs": null,
+      "indexerMs": 769.4736059999996,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1377011,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 228
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 536
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "cold",
+      "sample": 2,
+      "contentMs": 843.859719,
+      "ticketMs": null,
+      "indexerMs": 724.2161979999946,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1377011,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 220
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 500
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "cold",
+      "sample": 3,
+      "contentMs": 880.6430139999866,
+      "ticketMs": 5105.732762,
+      "indexerMs": 782.4339970000001,
+      "rpcRequests": 12,
+      "rpcCalls": 41,
+      "indexerRequests": 4,
+      "bytes": 1382487,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 348
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 504
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "cold",
+      "sample": 4,
+      "contentMs": 827.3108189999912,
+      "ticketMs": null,
+      "indexerMs": 711.0529489999899,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1376085,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 236
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 484
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "cold",
+      "sample": 5,
+      "contentMs": 757.8226580000046,
+      "ticketMs": null,
+      "indexerMs": 669.3173919999972,
+      "rpcRequests": 7,
+      "rpcCalls": 30,
+      "indexerRequests": 4,
+      "bytes": 1379508,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 288
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 420
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "warm",
+      "sample": 1,
+      "contentMs": 1193.4430539999885,
+      "ticketMs": 1879.9798459999874,
+      "indexerMs": 1054.7123849999916,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1374158,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 660
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 824
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "warm",
+      "sample": 2,
+      "contentMs": 766.2016500000027,
+      "ticketMs": null,
+      "indexerMs": 666.4001470000076,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1376085,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 120
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 428
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "warm",
+      "sample": 3,
+      "contentMs": 750.7212309999886,
+      "ticketMs": null,
+      "indexerMs": 645.0015009999915,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1377011,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 124
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 420
+        }
+      ],
+      "error": "CONTENT_OR_ECONOMIC_STATE_TIMEOUT",
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "warm",
+      "sample": 4,
+      "contentMs": 677.831388999999,
+      "ticketMs": 1299.5920189999888,
+      "indexerMs": 620.6733569999924,
+      "rpcRequests": 5,
+      "rpcCalls": 20,
+      "indexerRequests": 4,
+      "bytes": 1374158,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 112
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 372
+        }
+      ],
+      "error": null,
+      "errors": []
+    },
+    {
+      "scenario": "detail-graduated",
+      "temperature": "warm",
+      "sample": 5,
+      "contentMs": 761.2117570000119,
+      "ticketMs": 5061.553626000008,
+      "indexerMs": 661.5034970000124,
+      "rpcRequests": 14,
+      "rpcCalls": 50,
+      "indexerRequests": 4,
+      "bytes": 1383080,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 116
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 412
+        }
+      ],
+      "error": null,
+      "errors": []
+    }
+  ]
+}

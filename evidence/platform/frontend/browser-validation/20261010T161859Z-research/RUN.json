@@ -1,0 +1,7 @@
+{
+  "target": "research",
+  "label": "",
+  "startedAt": "2026-10-10T16:18:59.495Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts",
+  "cwd": "apps/retro-ui"
+}

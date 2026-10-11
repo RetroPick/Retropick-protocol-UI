@@ -1,0 +1,116 @@
+$ pnpm --dir apps/retro-ui test
+# started 2026-10-10T13:17:14Z HEAD c41d35d3a57de05fc26f78476554e352d9b08b56
+$ node scripts/test-frontend.mjs
+TAP version 13
+# Subtest: canonical pFEDBTC payoff and exact backing
+ok 1 - canonical pFEDBTC payoff and exact backing
+  ---
+  duration_ms: 2.419062
+  type: 'test'
+  ...
+# Subtest: nonnegative normalized allocation rejects negative and overweight baskets
+ok 2 - nonnegative normalized allocation rejects negative and overweight baskets
+  ---
+  duration_ms: 0.354973
+  type: 'test'
+  ...
+# Subtest: zero allocation is supported, never negative liability
+ok 3 - zero allocation is supported, never negative liability
+  ---
+  duration_ms: 0.139924
+  type: 'test'
+  ...
+# Subtest: supply rejects fractional, negative, zero and unbounded inputs
+ok 4 - supply rejects fractional, negative, zero and unbounded inputs
+  ---
+  duration_ms: 0.179279
+  type: 'test'
+  ...
+# Subtest: RESOLVED alone cannot redeem even if marked funded
+ok 5 - RESOLVED alone cannot redeem even if marked funded
+  ---
+  duration_ms: 0.234359
+  type: 'test'
+  ...
+# Subtest: unfunded REDEEMABLE and zero payouts do not produce positive claims
+ok 6 - unfunded REDEEMABLE and zero payouts do not produce positive claims
+  ---
+  duration_ms: 0.136823
+  type: 'test'
+  ...
+# Subtest: funded winning claim can redeem
+ok 7 - funded winning claim can redeem
+  ---
+  duration_ms: 0.168607
+  type: 'test'
+  ...
+# Subtest: settlement balance must cover all liabilities
+ok 8 - settlement balance must cover all liabilities
+  ---
+  duration_ms: 0.151602
+  type: 'test'
+  ...
+# Subtest: trade amounts reject malformed, nonpositive and out-of-range values
+ok 9 - trade amounts reject malformed, nonpositive and out-of-range values
+  ---
+  duration_ms: 0.476
+  type: 'test'
+  ...
+# Subtest: bounded normalized baskets preserve canonical maximum and component sum
+ok 10 - bounded normalized baskets preserve canonical maximum and component sum
+  ---
+  duration_ms: 1.246452
+  type: 'test'
+  ...
+# Subtest: each source normalizes to one canonical instrument with distinct semantics
+ok 11 - each source normalizes to one canonical instrument with distinct semantics
+  ---
+  duration_ms: 1.938687
+  type: 'test'
+  ...
+# Subtest: kind, reference and pair are orthogonal
+ok 12 - kind, reference and pair are orthogonal
+  ---
+  duration_ms: 0.578451
+  type: 'test'
+  ...
+# Subtest: all tabs, watchlist and prediction topics query the same dataset
+ok 13 - all tabs, watchlist and prediction topics query the same dataset
+  ---
+  duration_ms: 0.430992
+  type: 'test'
+  ...
+# Subtest: missing financial metrics remain missing
+ok 14 - missing financial metrics remain missing
+  ---
+  duration_ms: 0.239151
+  type: 'test'
+  ...
+# Subtest: family dispatch owns detail routing and unavailable trade intent
+ok 15 - family dispatch owns detail routing and unavailable trade intent
+  ---
+  duration_ms: 0.355383
+  type: 'test'
+  ...
+# Subtest: exact chain and family registry lookup cannot route Monad to another chain
+ok 16 - exact chain and family registry lookup cannot route Monad to another chain
+  ---
+  duration_ms: 0.248827
+  type: 'test'
+  ...
+# Subtest: repository deduplicates shared featured/feed ID and rejects conflicting identities
+ok 17 - repository deduplicates shared featured/feed ID and rejects conflicting identities
+  ---
+  duration_ms: 0.719893
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 112.846936
+# exit=0 duration_s=2.601600881

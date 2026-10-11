@@ -1,0 +1,1224 @@
+{
+  "measuredAt": "2026-10-10T18:42:04.087Z",
+  "providerHost": "testnet-rpc.monad.xyz",
+  "samplesPerMode": 30,
+  "qualificationMinimum": 30,
+  "scenario": "Nine identical launch reads at one pinned block; decoded results compared exactly",
+  "protocol": {
+    "modeDeadlineMs": 120000,
+    "ethCallLimitPerSecond": 10,
+    "maxConcurrentHttpRequests": 3,
+    "warmupSamples": 1,
+    "probesExcluded": true,
+    "failedCallsFullySettled": true,
+    "maxAttempts": 40,
+    "maxConsecutiveErrors": 3
+  },
+  "verification": {
+    "address": "0xcA11bde05977b3631167028862bE2a173976CA11",
+    "chainId": 10143,
+    "blockNumber": "69896160",
+    "codeHash": "0xd5c15df687b16f2ff992fc8d767b4216323184a2bbc6ee2f9c398c318e770891",
+    "codeBytes": 3808,
+    "aggregate3MatchesDirect": true
+  },
+  "results": [
+    {
+      "mode": "parallel-http",
+      "providerHealth": [
+        {
+          "provider": 0,
+          "origin": "testnet-rpc.monad.xyz",
+          "chainId": 10143,
+          "latencyMs": 659,
+          "health": "healthy",
+          "failures": 0,
+          "retryAfter": 0
+        }
+      ],
+      "httpBatch": false,
+      "multicall": false,
+      "samples": 30,
+      "attempts": 33,
+      "errors": 3,
+      "warmup": "PASS",
+      "status": "QUALIFIED",
+      "p50Ms": 660.41,
+      "p95Ms": 1344.29,
+      "meanRequests": 9,
+      "meanRpcCalls": 9,
+      "meanEthCalls": 9,
+      "meanBytesFetched": 2533.233333333333,
+      "samplesDetail": [
+        {
+          "ms": 587.12,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 660.41,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 580.84,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 751.5,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 539.27,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 500.48,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 1344.29,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 571.3,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 596.3,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2527
+        },
+        {
+          "ms": 749.29,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2534
+        },
+        {
+          "ms": 1129.19,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 1070.18,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 774.58,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 636.21,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 644.46,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 898.83,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 837.08,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 577.87,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 822.06,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 3230.95,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 555.55,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 602.79,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 687.36,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 659.95,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 583.82,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 636.54,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 1004.13,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 842.51,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 664.22,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        },
+        {
+          "ms": 949.61,
+          "requests": 9,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2536
+        }
+      ],
+      "errorClasses": [
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE"
+      ]
+    },
+    {
+      "mode": "json-rpc-batch",
+      "providerHealth": [
+        {
+          "provider": 0,
+          "origin": "testnet-rpc.monad.xyz",
+          "chainId": 10143,
+          "latencyMs": 192,
+          "health": "healthy",
+          "failures": 0,
+          "retryAfter": 0
+        }
+      ],
+      "httpBatch": true,
+      "multicall": false,
+      "samples": 30,
+      "attempts": 30,
+      "errors": 0,
+      "warmup": "PASS",
+      "status": "QUALIFIED",
+      "p50Ms": 198.49,
+      "p95Ms": 278.52,
+      "meanRequests": 1,
+      "meanRpcCalls": 9,
+      "meanEthCalls": 9,
+      "meanBytesFetched": 2547,
+      "samplesDetail": [
+        {
+          "ms": 294.71,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 272.74,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 197.36,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 267.27,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 175.3,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 201.17,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 255.31,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 202.18,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 187.17,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 198.49,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 184.74,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 158.19,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 278.52,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 206.66,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 164.64,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 247.37,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 213.8,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 162.31,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 171.27,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 173.44,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 223.38,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 219.72,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 170.62,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 165.47,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 273.03,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 222.81,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 204.49,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 174.45,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 169.57,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 197.55,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        }
+      ],
+      "errorClasses": []
+    },
+    {
+      "mode": "multicall3",
+      "providerHealth": [
+        {
+          "provider": 0,
+          "origin": "testnet-rpc.monad.xyz",
+          "chainId": 10143,
+          "latencyMs": 466,
+          "health": "healthy",
+          "failures": 0,
+          "retryAfter": 0
+        }
+      ],
+      "httpBatch": false,
+      "multicall": true,
+      "samples": 30,
+      "attempts": 30,
+      "errors": 0,
+      "warmup": "PASS",
+      "status": "QUALIFIED",
+      "p50Ms": 235.95,
+      "p95Ms": 375.03,
+      "meanRequests": 1,
+      "meanRpcCalls": 1,
+      "meanEthCalls": 1,
+      "meanBytesFetched": 4648,
+      "samplesDetail": [
+        {
+          "ms": 190.95,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 274.19,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 199.99,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 191.57,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 243.01,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 194.92,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 232.34,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 235.91,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 375.03,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 223.6,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 215.13,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 210.27,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 222.62,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 263.33,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 286.3,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 312.1,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 439.23,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 275.82,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 289.04,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 300.72,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 235.95,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 303.48,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 295.44,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 203.12,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 206.37,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 178.77,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 255.31,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 234.89,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 242.19,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        },
+        {
+          "ms": 288.75,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4648
+        }
+      ],
+      "errorClasses": []
+    },
+    {
+      "mode": "frontend-default",
+      "providerHealth": [
+        {
+          "provider": 0,
+          "origin": "testnet-rpc.monad.xyz",
+          "chainId": 10143,
+          "latencyMs": 455,
+          "health": "healthy",
+          "failures": 0,
+          "retryAfter": 0
+        }
+      ],
+      "httpBatch": true,
+      "multicall": false,
+      "samples": 26,
+      "attempts": 31,
+      "errors": 5,
+      "warmup": "PASS",
+      "status": "PARTIAL",
+      "p50Ms": 236.34,
+      "p95Ms": 983.12,
+      "meanRequests": 1,
+      "meanRpcCalls": 9,
+      "meanEthCalls": 9,
+      "meanBytesFetched": 2547,
+      "samplesDetail": [
+        {
+          "ms": 178.14,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 402.49,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 983.12,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 443.1,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 284.87,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 709.68,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 300.93,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 768.41,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 1671.05,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 386.35,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 345.07,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 270.1,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 165.41,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 293.13,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 521.09,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 211.67,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 158.92,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 176.43,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 189.25,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 213.1,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 191.73,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 172.27,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 206.34,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 231.21,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 204.25,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        },
+        {
+          "ms": 236.34,
+          "requests": 1,
+          "rpcCalls": 9,
+          "ethCalls": 9,
+          "bytesFetched": 2547
+        }
+      ],
+      "errorClasses": [
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE",
+        "RPC_UNAVAILABLE"
+      ]
+    },
+    {
+      "mode": "frontend-multicall-candidate",
+      "providerHealth": [
+        {
+          "provider": 0,
+          "origin": "testnet-rpc.monad.xyz",
+          "chainId": 10143,
+          "latencyMs": 140,
+          "health": "healthy",
+          "failures": 0,
+          "retryAfter": 0
+        }
+      ],
+      "httpBatch": true,
+      "multicall": true,
+      "samples": 30,
+      "attempts": 30,
+      "errors": 0,
+      "warmup": "PASS",
+      "status": "QUALIFIED",
+      "p50Ms": 212.32,
+      "p95Ms": 257.74,
+      "meanRequests": 1,
+      "meanRpcCalls": 1,
+      "meanEthCalls": 1,
+      "meanBytesFetched": 4651,
+      "samplesDetail": [
+        {
+          "ms": 210.06,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 184.64,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 252.25,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 200.07,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 182.07,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 215.15,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 220.35,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 229.45,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 209.59,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 206.49,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 222.67,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 211.06,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 215.58,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 225.79,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 257.74,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 188.49,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 227.05,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 202.35,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 240.64,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 212.32,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 262.02,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 196.06,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 193.82,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 245.34,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 171.33,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 237.34,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 208.24,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 218.96,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 248.68,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        },
+        {
+          "ms": 167.53,
+          "requests": 1,
+          "rpcCalls": 1,
+          "ethCalls": 1,
+          "bytesFetched": 4651
+        }
+      ],
+      "errorClasses": []
+    }
+  ],
+  "winner": null,
+  "status": "PARTIAL",
+  "stage": "frontend-multicall-candidate",
+  "bootstrapHealth": [
+    {
+      "provider": 0,
+      "origin": "testnet-rpc.monad.xyz",
+      "chainId": 10143,
+      "latencyMs": 2327,
+      "health": "healthy",
+      "failures": 0,
+      "retryAfter": 0
+    }
+  ],
+  "selectionPolicy": "Descriptive sequential samples only; no automatic transport winner"
+}

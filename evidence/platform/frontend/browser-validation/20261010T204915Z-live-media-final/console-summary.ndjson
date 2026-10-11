@@ -1,0 +1,18 @@
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"desktop-1280","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"tablet-834","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"tablet-768","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: local image upload stores a logo URI and previews it","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live discovery renders an ipfs:// logo through the public gateway","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live create: manual URI field still accepts ipfs:// (advanced path)","project":"mobile-375","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

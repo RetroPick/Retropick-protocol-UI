@@ -1,0 +1,141 @@
+[WebServer] (node:159671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:159719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:160158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:160319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer]   ➜  Local:   http://127.0.0.1:4324/
+
+Running 12 tests using 2 workers
+
+(node:160594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:160600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (4.1m)
+(node:161943) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (4.2m)
+(node:162778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (retry #1) (54.8s)
+(node:163487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (retry #1) (48.6s)
+(node:163972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) (34.2s)
+(node:164656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   7 [tablet-834] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark)
+  ✘   6 [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) (26.5s)
+
+
+  1) [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: getByTestId('discovery')
+    Expected: "live"
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveAttribute" with timeout 30000ms
+      - waiting for getByTestId('discovery')
+
+
+      19 |       test.skip(!active || !graduated, 'ENVIRONMENT: requires indexed ACTIVE and GRADUATED launch');
+      20 |       await page.goto('/launchpad');
+    > 21 |       await expect(page.getByTestId('discovery')).toHaveAttribute('data-data-mode', 'live');
+         |                                                   ^
+      22 |       await expect(page.getByTestId('launch-row').first()).toBeVisible();
+      23 |       await expectNoHorizontalOverflow(page);
+      24 |       await snap(`resume-discovery-${theme}`);
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:21:51
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--desktop-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-7b84e-allet-and-wrong-chain-dark--desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.goto: net::ERR_ABORTED; maybe frame was detached?
+    Call log:
+      - navigating to "http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5", waiting until "load"
+
+
+      49 |       await expect(page.locator('[data-wallet-status="connected"]:visible').first()).toBeVisible();
+      50 |       if (info.project.name.startsWith('mobile')) await page.keyboard.press('Escape');
+    > 51 |       await page.goto(`/launchpad/token/${graduated!.token}`);
+         |                  ^
+      52 |       await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATED');
+      53 |       await expect(page.getByTestId('token-terminal')).toContainText(graduated!.symbol);
+      54 |       await expect(page.getByTestId('token-terminal').locator('[data-provenance="demo"]')).toHaveCount(0);
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:51:18
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) 
+
+    Test was interrupted.
+
+    Error: page.goto: net::ERR_ABORTED; maybe frame was detached?
+    Call log:
+      - navigating to "http://127.0.0.1:4324/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5", waiting until "load"
+
+
+      49 |       await expect(page.locator('[data-wallet-status="connected"]:visible').first()).toBeVisible();
+      50 |       if (info.project.name.startsWith('mobile')) await page.keyboard.press('Escape');
+    > 51 |       await page.goto(`/launchpad/token/${graduated!.token}`);
+         |                  ^
+      52 |       await expect(page.getByTestId('token-terminal')).toHaveAttribute('data-lifecycle', 'GRADUATED');
+      53 |       await expect(page.getByTestId('token-terminal')).toContainText(graduated!.symbol);
+      54 |       await expect(page.getByTestId('token-terminal').locator('[data-provenance="demo"]')).toHaveCount(0);
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/resume-readonly.spec.ts:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/launchpad/productization/resume/browser/live-final/test-output/live-resume-readonly-resum-20c3b-llet-and-wrong-chain-light--desktop-1280/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 interrupted
+    [desktop-1280] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) 
+  2 flaky
+    [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume dark › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (dark) 
+    [desktop-1440] › e2e/live/resume-readonly.spec.ts:9:5 › resume light › @resume-live discovery, deep terminal, chart, SPA wallet and wrong chain (light) 
+  8 did not run
+  1 passed (7.0m)

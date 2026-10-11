@@ -1,0 +1,7 @@
+{
+  "target": "fixture",
+  "label": "vault-dev4",
+  "startedAt": "2026-10-10T21:29:44.390Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts --project desktop-1440 --grep @vault",
+  "cwd": "apps/retro-ui"
+}

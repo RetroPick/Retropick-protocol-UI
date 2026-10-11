@@ -1,0 +1,12 @@
+{
+  "test": "fixture/smoke.spec.ts > @smoke launchpad renders",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 29
+}
