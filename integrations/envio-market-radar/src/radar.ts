@@ -42,6 +42,19 @@ export interface RadarMetrics {
   tokens: TokenLifecycle[];
   markets: MarketActivity[];
   computedAt: number;
+  /** Separated freshness metrics (operator correction — never conflate these). */
+  freshness: {
+    /** Latest chain height observed from the stream/source. */
+    headHeight: number;
+    /** Block of the last RELEVANT event ingested (0 when none). */
+    lastEventBlock: number;
+    /** Next block the stream will read (processing cursor). */
+    cursorBlock: number;
+    /** headHeight − lastEventBlock (informational; events are sparse by nature). */
+    headMinusEvent: number;
+  };
+  /** Decoding failures — counted, never silently dropped. */
+  decodeErrors: number;
 }
 
 export class RadarAggregator {
@@ -52,10 +65,51 @@ export class RadarAggregator {
   #lastBlock = 0;
   /** market address → token, discovered from caller config or the launch journal upstream. */
   #marketTokens: Map<string, string>;
+  /** Decode failures are COUNTED, never silently discarded (operator correction). */
+  #decodeErrors = 0;
+  #lastEventBlock = 0;
+  #headHeight = 0;
 
   constructor(marketTokens: Record<string, string> = {}) {
     this.#marketTokens = new Map(Object.entries(marketTokens));
   }
+
+  /** Restore from a persisted snapshot (durability resume). */
+  static restore(state: { seen?: string[]; tokens?: [string, TokenLifecycle][]; markets?: Array<[string, string | null, MarketActivity] | [string, MarketActivity]>; counts?: RadarMetrics['counts']; lastBlock?: number; decodeErrors?: number; lastEventBlock?: number }, marketTokens: Record<string, string> = {}): RadarAggregator {
+    const agg = new RadarAggregator(marketTokens);
+    for (const id of state.seen ?? []) agg.#seen.add(id);
+    for (const [k, v] of state.tokens ?? []) agg.#tokens.set(k, v);
+    for (const entry of state.markets ?? []) {
+      // persist() writes [key, token, value] triples; accept legacy pairs too.
+      const key = entry[0];
+      const value = (entry.length >= 3 ? entry[2] : entry[1]) as MarketActivity;
+      agg.#markets.set(key, value);
+    }
+    if (state.counts) agg.#counts = { ...state.counts };
+    agg.#lastBlock = state.lastBlock ?? 0;
+    agg.#lastEventBlock = state.lastEventBlock ?? state.lastBlock ?? 0;
+    agg.#decodeErrors = state.decodeErrors ?? 0;
+    return agg;
+  }
+
+  /** Serializable state for the durability snapshot. */
+  persist(): { seen: string[]; tokens: [string, TokenLifecycle][]; markets: [string, string, MarketActivity][]; counts: RadarMetrics['counts']; lastBlock: number; decodeErrors: number; lastEventBlock: number } {
+    return {
+      seen: [...this.#seen],
+      tokens: [...this.#tokens.entries()],
+      // markets keyed lowercased already; bigint values stringified by radarJson rules at
+      // the snapshot boundary via a replacer in journal.writeSnapshot caller.
+      markets: [...this.#markets.entries()].map(([k, v]) => [k, v.token, v]),
+      counts: { ...this.#counts },
+      lastBlock: this.#lastBlock,
+      decodeErrors: this.#decodeErrors,
+      lastEventBlock: this.#lastEventBlock,
+    };
+  }
+
+  recordDecodeError(): void { this.#decodeErrors++; }
+
+  observeHead(height: number): void { this.#headHeight = Math.max(this.#headHeight, height); }
 
   /** Idempotent ingest: each (block, logIndex, tx) is processed exactly once. */
   ingest(events: RadarEvent[]): { accepted: number; duplicates: number } {
@@ -65,6 +119,7 @@ export class RadarAggregator {
       if (this.#seen.has(key)) { duplicates++; continue; }
       this.#seen.add(key);
       this.#lastBlock = Math.max(this.#lastBlock, e.blockNumber);
+      this.#lastEventBlock = Math.max(this.#lastEventBlock, e.blockNumber);
       this.#apply(e);
       accepted++;
     }
@@ -149,6 +204,13 @@ export class RadarAggregator {
       tokens: tokens.sort((a, b) => (b.launchedAt ?? 0) - (a.launchedAt ?? 0)),
       markets: [...this.#markets.values()].map((m) => ({ ...m })),
       computedAt: Math.floor(Date.now() / 1000),
+      freshness: {
+        headHeight: this.#headHeight,
+        lastEventBlock: this.#lastEventBlock,
+        cursorBlock: 0, // filled by the server from the stream cursor
+        headMinusEvent: this.#headHeight - this.#lastEventBlock,
+      },
+      decodeErrors: this.#decodeErrors,
     };
     return json;
   }
