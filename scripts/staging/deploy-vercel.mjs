@@ -61,22 +61,15 @@ export function publicEnv(origin) {
 
 async function upsertEnv(cwd, key, value, target) {
   const ls = () => sh('vercel', ['env', 'ls', target], { cwd });
-  let existing = '';
-  try { existing = ls(); } catch (error) { console.error(`env ${key} (${target}): 'vercel env ls' FAILED — aborting: ${String(error).slice(0, 160)}`); process.exit(1); }
-  if (existing.split('\n').some((line) => line.trim().startsWith(key + ' '))) {
-    sh('vercel', ['env', 'rm', key, target, '--yes'], { cwd });
-    console.log(`env ${key} (${target}): removed stale value`);
-  }
-  // Vercel env writes propagate asynchronously — verify with bounded retries.
-  for (let attempt = 1; attempt <= 5; attempt++) {
-    try { sh('vercel', ['env', 'add', key, target], { cwd, input: value + '\n' }); }
-    catch (error) { if (!/already exists|ENVIRONMENT_VARIABLE_ALREADY_EXISTS/i.test(String(error))) { console.error(`env ${key} (${target}): add FAILED: ${String(error).slice(0, 160)}`); process.exit(1); } }
-    for (let wait = 0; wait < 4; wait++) {
-      await new Promise((r) => setTimeout(r, 1500 * (wait + 1)));
-      let after = ''; try { after = ls(); } catch { /* retry */ }
-      if (after.split('\n').some((line) => line.trim().startsWith(key + ' '))) { console.log(`env ${key} (${target}): set + verified`); return; }
-    }
-    console.log(`env ${key} (${target}): attempt ${attempt} not visible yet — retrying`);
+  // Single idempotent write (CLI ≥ 62: --value/--force/--non-interactive). The earlier
+  // rm→add(stdin) sequence hung or silently dropped values on CLI 62.1 (observed 2026-10-12).
+  try { sh('vercel', ['env', 'add', key, target, '--value', value, '--no-sensitive', '--yes', '--force', '--non-interactive'], { cwd, timeout: 60_000 }); }
+  catch (error) { console.error(`env ${key} (${target}): add FAILED: ${String(error.stderr ?? error).slice(0, 200)}`); process.exit(1); }
+  // Vercel env writes propagate asynchronously — verify presence with bounded retries.
+  for (let wait = 0; wait < 6; wait++) {
+    let after = ''; try { after = ls(); } catch { /* retry */ }
+    if (after.split('\n').some((line) => line.trim().startsWith(key + ' '))) { console.log(`env ${key} (${target}): set + verified present`); return; }
+    await new Promise((r) => setTimeout(r, 2000 * (wait + 1)));
   }
   console.error(`env ${key} (${target}): verification FAILED after retries`); process.exit(1);
 }
