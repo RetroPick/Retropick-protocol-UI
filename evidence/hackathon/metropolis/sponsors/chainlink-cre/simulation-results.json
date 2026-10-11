@@ -1,0 +1,24 @@
+{
+  "kind": "cre-official-simulation-results",
+  "date": "2026-10-11",
+  "host": "Ubuntu-VPS-Clone (same user 'ubuntu' that completed cre login)",
+  "cli": "CRE CLI v1.38.0 (authenticated: org_UnKUJyHDVyfgVrlO / My Org — verified via cre whoami)",
+  "workflow": "retropick-graduation-safety (integrations/chainlink-cre/graduation-safety)",
+  "target": "monad-testnet-settings · chain monad-testnet (selector 2183018362218727504) · RPC testnet-rpc.monad.xyz",
+  "fixesRequiredToRun": [
+    "project.yaml: rpcs must be nested UNDER the target key (cre v1.38 convention) — global rpcs block produced 'no RPC URLs found'",
+    "main.ts entrypoint: canonical `export async function main()` without parameters (javy rejects exported functions with parameters; top-level await also unsupported)",
+    "Sourcify v1 retired 2026-07: migrated to v2 /server/v2/contract/{chain}/{address}?fields=runtimeMatch (fields=all returns 1.7MB bytecode exceeding the 250KB production-mirroring simulation limit)",
+    "anchor blockNumber is a proto BigInt object: use SDK protoBigIntToBigint (timestamp is plain bigint)",
+    "ROBUSTNESS FIX found by negative testing: HTTP transport failures (DNS etc.) threw outside the catch and crashed the workflow — now wrapped, producing the designed INCOMPLETE_EXTERNAL verdict"
+  ],
+  "results": {
+    "positive": { "verdict": "PASS", "anchorBlock": "70100439", "checks": "graduated=true, marketIdentity=true, custodyAgreement=true", "external": "Sourcify v2 runtimeMatch=exact_match → externalFactoryVerified=verified" },
+    "negative-wrong-market": { "verdict": "FAIL", "observed": "marketIdentity=false (expectedMarket 0x…dEaD ≠ receipt.market)" },
+    "negative-sourcify-unreachable": { "verdict": "INCOMPLETE_EXTERNAL", "observed": "core checks pass, sourcifyStatus=unavailable (DNS failure handled, no crash)" },
+    "negative-not-graduated": { "verdict": "FAIL", "observed": "ledgerPhase=0, graduated=false, custodyAgreement=false (on-curve token 0x8c2d…)" },
+    "duplicate-run-determinism": { "observed": "consecutive positives both PASS; anchorBlock advances with chain head as designed; rules deterministic/idempotent" }
+  },
+  "classification": "SIMULATED (official cre workflow simulate with real read-only Monad Testnet reads + real Sourcify HTTP input). NOT LIVE_DON — no DON deployment claimed.",
+  "evidenceLogs": "simulation/{positive,negative-wrong-market,negative-sourcify-down,negative-not-graduated}.log (sanitized: private-key notices filtered)"
+}

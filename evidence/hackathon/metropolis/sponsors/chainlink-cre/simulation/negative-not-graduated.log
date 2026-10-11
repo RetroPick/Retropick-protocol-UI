@@ -1,0 +1,51 @@
+=== NEG not-graduated ===
+Initializing...
+Loading settings...
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+✓ Simulation limits enabled
+  HTTP: req=120kb resp=250kb timeout=10s | ConfHTTP: req=125kb resp=500kb timeout=1m30s | Consensus obs=25kb | ChainWrite evm_report=50kb evm_gas=10000000 solana_report=265b solana_cu=300000 | WASM binary=100mb compressed=20mb
+  Binary hash: ff67caacd9dd6a54168909c8b1d11258d7aee4a301b833e1551673fbbbce27de
+  Config hash: 7bbc0bb318f3ed21844523980e803e1d392658e2602438e7a8ee6569bfcb304f
+2026-10-11T18:35:03Z [SIMULATION] Simulator Initialized
+
+2026-10-11T18:35:03Z [SIMULATION] Running trigger trigger=cron-trigger@1.0.0
+2026-10-11T18:35:04Z [USER LOG] graduation-safety: verdict=FAIL block=70100808
+
+✓ Workflow Simulation Result:
+{
+  "anchorBlock": "70100808",
+  "anchorTimestamp": "1791718508",
+  "chain": {
+    "id": 10143,
+    "name": "monad-testnet"
+  },
+  "checks": {
+    "custodyAgreement": false,
+    "externalFactoryVerified": "verified",
+    "graduated": false,
+    "marketIdentity": false
+  },
+  "generatedAt": "2026-10-11T11:35:04.230Z",
+  "observed": {
+    "ledgerPhase": 0,
+    "protectedExcessAmount": "0",
+    "protectedLpAmount": "0",
+    "receiptMarket": "0x0000000000000000000000000000000000000000",
+    "sourcifyStatus": "exact_match"
+  },
+  "token": "0x8c2d16ec3712d0b58fcc61171fde6233ee854c94",
+  "verdict": "FAIL",
+  "version": 1,
+  "workflow": "retropick-graduation-safety"
+}
+
+2026-10-11T18:35:04Z [SIMULATION] Execution finished signal received
+2026-10-11T18:35:04Z [SIMULATION] Skipping WorkflowEngineV2
+
+╭──────────────────────────────────────────────────────╮
+│ Simulation complete! Ready to deploy your workflow?  │
+│                                                      │
+│ Run cre account access to request deployment access. │
+╰──────────────────────────────────────────────────────╯
