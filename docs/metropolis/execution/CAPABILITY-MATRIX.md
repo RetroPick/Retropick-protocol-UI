@@ -12,7 +12,8 @@ Every status beyond `MISSING` requires evidence.
 | 3 | Envio — Best Use of Envio | `BLOCKED_EXTERNAL` (token-gated endpoint) + `TESTED_LOCAL` core (2026-10-11) | `sponsors/envio/capability-check.json`; integrations/envio-market-radar (8/8 tests) |
 | 4 | Mera — One Passkey, Many Keys | `TESTED_LOCAL` + `BROWSER_E2E` failure-states (2026-10-11) | `sponsors/mera/`; SDK 0.2.0; full PRF path needs real authenticator (manual) |
 
-| 5 | MetaMask Agent Wallet | `MISSING` | `mm` CLI not installed; node 22.23 satisfies ≥22.18 |
+| 5 | MetaMask Agent Wallet | `TESTED_LOCAL` (typecheck + policy 8/8 + manifest validated by mm); install `BLOCKED_EXTERNAL` (2026-10-11) | `sponsors/metamask-agent/`; integrations/metamask-agent-retropick |
+
 | 6 | Aurora — Any-Chain Liquidity to Monad | `NOT_INSPECTED` | route capability check pending |
 | 8 | Chainlink — Best Workflow with CRE | `TESTED_LOCAL` (typechecked, SDK-verified API); sim `BLOCKED_EXTERNAL` (cre login) | `sponsors/chainlink-cre/capability-check.json`; integrations/chainlink-cre |
 | 9 | Nansen — Best Use of Nansen | `NOT_INSPECTED` | no API entitlement known |

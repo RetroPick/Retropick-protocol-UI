@@ -50,4 +50,6 @@ valkey-mcp-server.log
 *:Zone.Identifier
 integrations/chainlink-cre/graduation-safety/node_modules/
 integrations/chainlink-cre/graduation-safety/bun.lock
-
+integrations/metamask-agent-retropick/node_modules/
+integrations/metamask-agent-retropick/dist/
+integrations/metamask-agent-retropick/oclif.manifest.json

@@ -68,6 +68,28 @@ Format per mission §22. Never print credentials.
 - Next owner action: `cre login`, then `cd integrations/chainlink-cre && cre workflow
   simulate graduation-safety --target monad-testnet-settings --non-interactive --trigger-index 0`
 >>>>>>> a1e2224 (feat(metropolis): chainlink CRE graduation safety workflow (simulation auth-gated))
+## BLOCKER-005 — MetaMask Agent Wallet plugin install (npm-publish or CLI local-install bug)
+
+- Sponsor: MetaMask Agent Wallet
+- Required service: `mm plugins install <source>` with a verifiable source (npm) — local
+  path/tarball installs hit a CLI 6.2.1 bug: the source is rewritten to
+  `https://github.com//<abs-path>` and npm fails (verified with both directory and tgz)
+- Credential/access: npm publish of @retropick/mm-plugin (operator decision) OR an
+  upstream-fixed/newer CLI local-install path; wallet provisioning (`mm init`, auth) is
+  additionally operator-interactive for any signing flow
+- Current status: OPEN
+- What was tested: mm CLI 6.2.1 installed (`mm doctor` ok, node 22.23 satisfies ≥22.18);
+  plugin typechecks against @metamask/agent-wallet 6.2.1; bun-bundled dist +
+  oclif.manifest.json generated; the CLI's own consent screen parsed the manifest and
+  listed all 7 commands with their capabilities (wallet-submit flagged) — i.e. the plugin
+  is structurally valid; install itself fails on the URL-mangling bug
+- Blocking error category: external tooling bug + publish authorization
+- Can local implementation continue: YES — done (policy core 8/8 unit tests)
+- Can real E2E continue: NO (command execution needs successful install + init/auth)
+- Next owner action: `npm publish` the plugin (or install from a git URL hosted on GitHub,
+  which is a supported verifiable source), then `mm plugins install @retropick/mm-plugin
+  --accept-permissions` and run the read-only commands
+>>>>>>> 4d145f9 (feat(metropolis): metamask agent wallet plugin — risk-controlled trading agent)
 
 ## PENDING PROBES (Stage 6/7): MetaMask `mm` CLI installability, Aurora Intents route
 support for the required source/destination assets, Nansen API entitlement.

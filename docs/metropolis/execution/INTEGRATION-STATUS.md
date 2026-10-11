@@ -12,7 +12,8 @@ Updated after every stage. Verdicts: `QUALIFIED / CONDITIONAL / BLOCKED / DEFERR
 
 | Chainlink CRE | LOCAL_TEST_VERIFIED; simulation BLOCKED_EXTERNAL (login) | PR #14 (`feat/metropolis-chainlink-cre`) | Graduation Safety workflow (5 checks incl. real Sourcify external input, deterministic verdicts) | CLI 1.38 + SDK 1.23.0 typecheck PASS; simulate requires cre login (BLOCKER-004) | operator `cre login` then documented simulate command | merged with operator authorization | `sponsors/chainlink-cre/` + integrations/chainlink-cre |
 
-| MetaMask agent | NOT_STARTED | — | — | — | — | Stage 6 | — |
+| MetaMask agent plugin | LOCAL_TEST_VERIFIED; install BLOCKED_EXTERNAL | PR #15 (`feat/metropolis-metamask-agent`) | oclif mm plugin: 7 commands, pure policy core (chain/market/notional/expiry/tick/ownership), fails-closed place/cancel | typecheck vs agent-wallet 6.2.1; policy 8/8; manifest parsed by mm consent screen; local-install CLI bug (BLOCKER-005) | npm publish (operator) → mm plugins install | merged with operator authorization | `sponsors/metamask-agent/` + integrations/metamask-agent-retropick |
+
 | Aurora | NOT_STARTED | — | — | — | — | Stage 7 | — |
 | Nansen | NOT_STARTED | — | — | — | — | Stage 7 | — |
 | Kuru new assets (Stage 7) | DEFERRED — authorization-gated | — | kernels P0_CONDITIONAL, deployment plan + adapter plan issued; authorization requested twice (2026-10-11), no operator answer | local qualification stands (forge 210/0/1) | operator go + funded wallet would reopen this lane before the Oct-13 content stop | await operator | `execution/stages/P0_*.md` |
