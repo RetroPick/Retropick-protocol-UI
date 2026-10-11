@@ -19,9 +19,11 @@
     "e2e:live": "node e2e/run.mjs live",
     "e2e:research": "node e2e/run.mjs research",
     "test:indexed-record": "node --test tests/indexed-record.test.mjs",
-    "test:media": "node --test tests/media.test.mjs"
+    "test:media": "node --test tests/media.test.mjs",
+    "test:vault": "node --test tests/vault.test.mjs"
   },
   "dependencies": {
+    "@category-labs/mera": "0.2.0",
     "@retropick/abi": "workspace:*",
     "@retropick/launchpad-sdk": "workspace:*",
     "@tailwindcss/vite": "^4.3.3",

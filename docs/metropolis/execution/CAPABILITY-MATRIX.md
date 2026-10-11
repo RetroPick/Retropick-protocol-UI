@@ -10,7 +10,7 @@ Every status beyond `MISSING` requires evidence.
 | 1b | Kuru — Bring New Assets and Markets | `TESTED_LOCAL` (kernels), onchain `BLOCKED_EXTERNAL` | P0 kernels qualified @ `4f3c70b` (`research/reports/hackathon-p0-gates.yaml`); KURU-H2..H7 need funded signer; graduation of new asset class evidenced (`frontend-e2e-launch.json`) |
 | 2 | P0 qualification gate (internal) | `TESTED_LOCAL` → `P0_CONDITIONAL` (2026-10-11: zero drift confirmed, gate docs issued) | `execution/stages/P0_*.md` |
 | 3 | Envio — Best Use of Envio | `MISSING` | no SDK, no config; HyperSync 10143 endpoint returns 401 on bare GET (token policy?) |
-| 4 | Mera — One Passkey, Many Keys | `MISSING` | `@category-labs/mera` not installed |
+| 4 | Mera — One Passkey, Many Keys | `TESTED_LOCAL` + `BROWSER_E2E` failure-states (2026-10-11) | `sponsors/mera/`; SDK 0.2.0; full PRF path needs real authenticator (manual) |
 | 5 | MetaMask Agent Wallet | `MISSING` | `mm` CLI not installed; node 22.23 satisfies ≥22.18 |
 | 6 | Aurora — Any-Chain Liquidity to Monad | `NOT_INSPECTED` | route capability check pending |
 | 8 | Chainlink — Best Workflow with CRE | `MISSING` | no CRE project; simulation support ≥ CLI v1.30.0 |

@@ -1,0 +1,22 @@
+{
+  "kind": "mera-stage-results",
+  "date": "2026-10-11",
+  "branch": "feat/metropolis-mera-prf",
+  "commands": [
+    { "cmd": "pnpm --filter @retropick/retro-ui typecheck", "result": "PASS" },
+    { "cmd": "pnpm --filter @retropick/retro-ui build", "result": "PASS" },
+    { "cmd": "pnpm --filter @retropick/retro-ui run test:vault", "result": "7 pass / 0 fail (schema bounds, roundtrip, storage tamper via real mera parseSecretVault, error mapping)" },
+    { "cmd": "node e2e/run.mjs fixture mera-stage4", "result": "see INTEGRATION-STATUS (full suite incl. 3 new @vault specs x viewport matrix)", "evidence": "evidence/platform/frontend/browser-validation/<mera-stage4 run>" }
+  ],
+  "newCoverage": [
+    "@vault tab mounts in the Earn hub with the passkey explainer (incl. spending-authority + lost-passkey disclosures)",
+    "@vault tampered import and tampered storage are rejected without any passkey ceremony (corrupt state banner)",
+    "@vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state"
+  ],
+  "labels": {
+    "source": "SOURCE_VERIFIED (SDK tarball inspected, API from shipped source)",
+    "localTests": "LOCAL_TEST_VERIFIED",
+    "browserE2E": "BROWSER_E2E_VERIFIED (mount, tamper, handled-ceremony-failure; encrypted-at-rest assertion)",
+    "fullPrfCeremony": "NOT_RUN in automation — headless chromium build has no WebAuthn virtual-authenticator backend (CDP addVirtualAuthenticator rejected; verified by probe) and no PRF option exists in playwright 1.62.1. Requires operator's real platform authenticator (manual evidence steps in README)."
+  }
+}

@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { formatUnits } from 'viem';
 import { motion } from 'motion/react';
 import { Tabs as RTabs } from 'radix-ui';
-import { ArrowUpRight, Coins, Gift, Layers, Link2, Rocket, Send, Wallet } from 'lucide-react';
+import { ArrowUpRight, Coins, Gift, Layers, Link2, Lock, Rocket, Send, Wallet } from 'lucide-react';
 import Link from '@/components/product/safe-link';
 import Portfolio from '@/features/portfolio/portfolio';
 import { LivePortfolio } from '@/features/portfolio/live-portfolio';
@@ -21,6 +21,7 @@ import { ClaimSheet } from './claim-sheet';
 import { EarnHero, HideValuesProvider, Money } from './earn-hero';
 import { useEarnWallet } from './use-claims';
 import { ReferralQr } from './referral-qr';
+import { StrategyVault } from './strategy-vault';
 import { Reveal } from './amount';
 import { DATA_MODE, INDEXER_URL } from '@/lib/live/env';
 import { fetchSearch } from '@/lib/live/indexer-client';
@@ -39,6 +40,7 @@ const TABS: Array<[string, string, ReactNode]> = [
   ['created', 'Created', <Rocket key="l" size={14} aria-hidden />],
   ['referrals', 'Referrals', <Gift key="r" size={14} aria-hidden />],
   ['funding', 'Fund & send', <Send key="f" size={14} aria-hidden />],
+  ['vault', 'Vault', <Lock key="v" size={14} aria-hidden />],
 ];
 
 function initialTab(): string {
@@ -117,6 +119,7 @@ function LiveHub() {
         created: <CreatedLaunches />,
         referrals: <Reveal delay={0.05}><ReferralCard /></Reveal>,
         funding: <Reveal delay={0.05}><FundWallet><SendToWallet /></FundWallet></Reveal>,
+        vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
       }} />
       <ClaimSheet open={sheetOpen} onOpenChange={setSheetOpen} earn={earn} />
     </div>
@@ -187,6 +190,7 @@ function DemoHub() {
           </div>
         </section></Reveal>,
         funding: <Reveal><section className="rp-hub-section"><FundWallet /><div className="rp-hub-send"><h3 className="rp-section-title"><Send size={15} aria-hidden />Send</h3><p className="rp-note">Transfers to an EVM address on Monad Testnet. Connect a live wallet in live mode; demo mode never sends.</p></div></section></Reveal>,
+        vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
       }} />
     </div>
   </HideValuesProvider>;

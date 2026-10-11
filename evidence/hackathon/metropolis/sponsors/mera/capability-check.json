@@ -1,0 +1,24 @@
+{
+  "sponsor": "Mera (Category Labs)",
+  "bounty": "One Passkey, Many Keys",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-mera-prf",
+  "sdk": { "package": "@category-labs/mera", "version": "0.2.0", "source": "npm registry (inspected tarball; API read from shipped src/dist, not invented)", "functions": ["createSecretVaultWithNewPasskey", "createSecretVaultWithExistingPasskey", "decryptSecretVaultWithPasskey", "parseSecretVault"] },
+  "feature": "RetroPick Private Strategy Vault — Earn hub Vault tab",
+  "requirements": {
+    "webauthnPrfDerivedSecret": "SDK derives a non-extractable AES-256-GCM key from the passkey PRF output (HKDF-SHA-256, fixed info) — all cryptography is the SDK's, no custom crypto",
+    "stableRelyingPartyId": "rpFromLocation() = current hostname (localhost in dev, deployment host in prod)",
+    "realUserVerification": "every create/unlock/save runs a real WebAuthn ceremony (no mocked credentials)",
+    "encryptedStorage": "localStorage holds only the v1 PasskeySecretVault JSON (credential metadata + prfSalt + nonce + ciphertext)",
+    "noPlaintextAtRest": "verified by e2e assertion on stored value",
+    "noPersistedKeys": "keys are derived per-ceremony and never stored (SDK zeroes PRF buffers; wrapper zeroes plaintext buffers on lock)",
+    "saltAndNonceManagement": "SDK-generated fresh 32-byte salt per vault/save, 12-byte GCM nonce internal to the SDK",
+    "schemaVersioning": "VAULT_SCHEMA_VERSION=1 plaintext envelope {v, entries[]}; unknown/future versions rejected fail-closed",
+    "prfUnavailableHandled": "MeraError PRF_UNAVAILABLE mapped to actionable user text (implemented; automated ceremony-path evidence limited by headless browser without authenticator — see README)",
+    "lostPasskeyDisclosure": "visible disclosure: no synced copy ⇒ unrecoverable",
+    "crossDeviceRecovery": "export vault JSON + import on another device with the same synced passkey (manual path; honest limitation recorded)"
+  },
+  "nonWalletUse": "Vault stores strategy theses, draft prediction markets, watchlists, agent risk budgets, market-making configs — independent of any trading-wallet signing; unlocking grants zero spending authority (disclosed in UI)",
+  "innovation": "Confidential Trader Intent: users can store a bounded instruction/strategy privately; the vault never becomes a signing authority",
+  "verdict": "LOCAL_TEST_VERIFIED + BROWSER_E2E_VERIFIED (failure states); full PRF happy-path ceremony requires a real platform authenticator — operator manual evidence pending (see README)"
+}
