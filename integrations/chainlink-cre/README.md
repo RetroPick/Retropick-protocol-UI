@@ -52,3 +52,14 @@ make the Sourcify URL unreachable → `INCOMPLETE_EXTERNAL`.
   workspace member so its installs never touch `apps/web`).
 - `graduation-safety/workflow.yaml`, `config.monad-testnet.json`, `package.json`,
   `tsconfig.json` per the documented TS project structure.
+
+
+---
+## Proposed new workflow: creator-continuity (NOT IMPLEMENTED)
+Current graduation-safety workflow is read-only and should be qualified with cre workflow simulate FIRST. A follow-up Creator Continuity Watch may provide an independent onchain+external verification report for 3-day creator-fee-recipient overrides.
+
+**Inputs:** RetroPickLaunchFactoryV2.getLaunchedToken(token), pendingCreatorFeeRecipient(token), CreatorFeeRecipientChangeProposed/Cancelled/Updated events; external reviewed pre-enrollment record containing creator wallet-signature proof plus WebAuthn credential proof metadata, recent case revision, expected recipient and expiry. Do not transmit Mera PRF material, unencrypted private case content or protocol-owner key.
+
+**Output:** anchored deterministic statuses ALIGNED, UNVERIFIED, UNMATCHED, WAITING, EXECUTABLE, EXPIRED, REPLACED, CANCELLED, CONFIRMED, INCOMPLETE_EXTERNAL. No CRE-mediated admin call or fake authority. Actual creator-fee redirect requires protocol owner proposing onchain and anyone executing within 3-day post-delay window; no creator veto exists. Existing credit to old FeeEscrow beneficiary is not recoverable, and graduated Kuru revenue path is unqualified. Time travel via Foundry is not live completion.
+
+**Implementation:** independent sibling folder integrations/chainlink-cre/creator-continuity with SDK types discovered from the installed version; no modifications to current graduation-safety until its own simulation qualified. Unit and negative cases required: wrong recipient; stale/compromised external case; missing enrollment; cross-chain mismatch; owner cancel; replaced proposal; expired window; replay and chain reorg. Link to [full architecture](../../docs/metropolis/13-CREATOR-CONTINUITY-MERA-CRE.md) and https://docs.chain.link/cre/overview . THIS IS A DESIGN, NOT DELIVERED EXECUTION.

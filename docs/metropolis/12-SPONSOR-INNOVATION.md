@@ -43,3 +43,8 @@ Longer-term: state-liquidity clearing engine, claim transformation, agent-assist
 
 ## Submission drafting rule
 For every sponsor explicitly answer: (a) why this integration is core; (b) how it is built (exact source paths/version); (c) where is the proof (link and block/trace); (d) what is genuinely innovative; (e) what users want and what data proves that; (f) what remains unbuilt. No fake probability, depth, volume, approval or live asset coverage.
+
+
+---
+## New Mera × CRE sponsor story: Creator Continuity (proposed, not shipped)
+Instead of encrypted notes only, pre-enroll a creator's fee-wallet identity against a passkey before account loss; Mera vault securely stores the recovery dossier and a verified passkey can later authenticate a request for independent admin approval. Existing Factory owner timelock is 3 days, followed by a 3-day execution window; future creator fee routing and unreleased buyback beneficiary may change, but wallet authority, immutable ERC20 deployer and already credited escrow funds cannot. Alternatively new launches can opt into a passkey-derived fee wallet after SDK signer and cross-device qualification. CRE independently audits mismatches between authentic pre-enrollment, owner pending changes, and beneficiary/escrow/vest state. See [13 Creator Continuity](13-CREATOR-CONTINUITY-MERA-CRE.md). No wallet restoration or CRE-onchain write is claimed.
