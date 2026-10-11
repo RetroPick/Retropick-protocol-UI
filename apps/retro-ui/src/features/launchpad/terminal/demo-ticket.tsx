@@ -25,6 +25,7 @@ export function DemoTicket({ fixture }: { fixture: DemoFixture }) {
   const [amount, setAmount] = useState('');
   const [price, setPrice] = useState('');
   const [slippage, setSlippage] = useState('50');
+  const [postOnly, setPostOnly] = useState(false);
   const [stage, setStage] = useState<TicketStage | null>(null);
   const [flow, setFlow] = useState<FlowState>({ step: 'idle' });
   const [margin, setMargin] = useState({ quote: w.quoteMargin, base: w.tokenMargin });
@@ -110,10 +111,11 @@ export function DemoTicket({ fixture }: { fixture: DemoFixture }) {
     footer={<><DemoBadge text="SIMULATED"/> Quotes use RetroPick SDK math over simulated fixture state. No wallet request is made.{graduated && kind === 'Limit' ? ' Limit orders are good till cancelled (GTC).' : ''}</>}>
     {closed ? <p className="rp-note" role="status">{vm.lifecycle === 'GRADUATING' ? 'Graduation is in progress; curve trading is closed until the Kuru market is live.' : 'The curve is complete. Graduation moves liquidity to Kuru, then trading continues on the orderbook.'}</p> : <>
       {graduated && kind === 'Limit' && <div className="rp-field"><div className="rp-field-top"><label htmlFor="demo-limit-price">Limit price</label><span className="rp-muted">{q} per {s} · best ask {formatPriceX18(kuru?.bestAskX18.toString())}</span></div><div className="rp-input"><input id="demo-limit-price" data-testid="ticket-limit-price" inputMode="decimal" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="0.0"/><span className="rp-input-unit">{q}</span></div></div>}
+      {graduated && kind === 'Limit' && <label className="rp-check"><input type="checkbox" data-testid="ticket-post-only" checked={postOnly} onChange={(e) => setPostOnly(e.target.checked)}/><span>Post-only (maker only)<span className="rp-muted"> — rejects if it would cross the spread</span></span></label>}
       <AmountField testId="ticket-amount" label={kind === 'Limit' ? 'Amount' : side === 'Buy' ? 'Pay' : 'Sell'} unit={kind === 'Market' && side === 'Buy' ? q : s} value={amount} onChange={setAmount} balanceRaw={balance} decimals={kind === 'Market' && side === 'Buy' ? qd : bd} maxDisabledReason={side === 'Buy' && vm.quote.native && !graduated ? 'Keep some MON for network gas.' : undefined}/>
       <QuoteLines rows={graduated
         ? kind === 'Limit'
-          ? [['Order total', kuruPreview ? `${trim(formatUnits(kuruPreview.total, qd))} ${q}` : '—', 'ticket-total'], ['You receive', kuruPreview?.receive ?? '—', 'ticket-receive'], ['Order policy', 'Good till cancelled']]
+          ? [['Order total', kuruPreview ? `${trim(formatUnits(kuruPreview.total, qd))} ${q}` : '—', 'ticket-total'], ['You receive', kuruPreview?.receive ?? '—', 'ticket-receive'], ['Order policy', postOnly ? 'Post-only · maker only' : 'Good till cancelled']]
           : [['You receive', kuruPreview?.receive ?? '—', 'ticket-receive'], ['Minimum received', kuruPreview && 'min' in kuruPreview && kuruPreview.min !== undefined ? trim(formatUnits(kuruPreview.min, side === 'Buy' ? bd : qd)) : '—']]
         : [['You receive', curveQuote ? `${trim(formatUnits(curveQuote.out, curveQuote.dec))} ${curveQuote.unit}` : '—', 'ticket-receive'], ['Minimum received', curveQuote ? `${trim(formatUnits(curveQuote.min, curveQuote.dec))} ${curveQuote.unit}` : '—'], ['Fees', curve ? `${Number(curve.feeBps) / 100}% curve + ${Number(curve.taxBps) / 100}% creator` : '—']]}/>
       {kind === 'Market' && <SlippageControl bps={slippage} onChange={setSlippage}/>}

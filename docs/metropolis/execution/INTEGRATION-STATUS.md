@@ -5,7 +5,7 @@ Updated after every stage. Verdicts: `QUALIFIED / CONDITIONAL / BLOCKED / DEFERR
 | Sponsor | Status | Branch/PR | Implemented feature | Validation | Missing | Next action | Evidence |
 |---------|--------|-----------|---------------------|------------|---------|-------------|----------|
 | (baseline) | COMPLETE | main (rebased: `0454932`..`6ed65bf`, landed via `63524ab`) | land in-flight work | all suites green (see 00-BASELINE-AUDIT.md); final-campaign revalidation 234/0/38 green (`20261011T045252Z-fixture-final-campaign`) | — | — | `evidence/platform/frontend/browser-validation/` |
-| Kuru consumer | PENDING | — | — | — | depth panel, post-only, evidence refresh | start Stage 1 | — |
+| Kuru consumer | TESTED_E2E (QUALIFIED pending deployment access) | PR #10 (`feat/metropolis-kuru-consumer`) | aggregated depth panel + post-only orders (gaps closed; core pre-existing) | typecheck/build PASS, terminal 14/0, fixture e2e 244/0, onchain read-only revalidation PASS @ block 69927875 | judge-accessible deployment (BLOCKER-001); optional live re-sign (BLOCKER-002) | merged with operator authorization | `evidence/hackathon/metropolis/sponsors/kuru/` |
 | P0 gate | PENDING | — | — | forge 210/0/1 green @ baseline | drift check + docs | Stage 2 | — |
 | Mera | NOT_STARTED | — | — | — | — | Stage 3 | — |
 | Envio | NOT_STARTED | — | — | — | — | Stage 4 | — |

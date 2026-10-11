@@ -42,6 +42,7 @@ export function KuruTicket({ market, token, tokenSymbol, quoteSymbol = 'MON', in
   const wallet = useWallet(), account = wallet.account;
   const [side, setSide] = useState<Side>('Buy'), [localKind, setLocalKind] = useState<OrderKind>('Market'), [price, setPrice] = useState(''), [size, setSize] = useState('');
   const [slippage, setSlippage] = useState('50');
+  const [postOnly, setPostOnly] = useState(false);
   const kind = (orderKind ?? localKind) as OrderKind, setKind = (k: OrderKind) => (onKindChange ?? ((v: string) => setLocalKind(v as OrderKind)))(k);
   const [depositAmount, setDepositAmount] = useState(''), [withdrawAmount, setWithdrawAmount] = useState(''), [fundAsset, setFundAsset] = useState<'quote' | 'base'>('quote');
   const [tx, setTx] = useState<TxPhase | { kind: 'idle' }>({ kind: 'idle' }), [error, setError] = useState('');
@@ -82,7 +83,7 @@ export function KuruTicket({ market, token, tokenSymbol, quoteSymbol = 'MON', in
     } catch (cause) { const reason = cause instanceof Error ? cause.message : 'Transaction failed.'; setError(reason); setTx({ kind: 'failed', reason, failure: 'unknown' }); return { kind: 'failed', reason, failure: 'unknown' }; }
   };
   const prepareOrder = () => kind === 'Limit'
-    ? prepareKuruLimitOrder(publicClient, account!, { market, token, side: side === 'Buy' ? 'buy' : 'sell', priceRaw: parseExact(price, Number(params!.quoteDecimals)), sizeRaw: parseExact(size, Number(params!.baseDecimals)), postOnly: false })
+    ? prepareKuruLimitOrder(publicClient, account!, { market, token, side: side === 'Buy' ? 'buy' : 'sell', priceRaw: parseExact(price, Number(params!.quoteDecimals)), sizeRaw: parseExact(size, Number(params!.baseDecimals)), postOnly })
     : prepareKuruMarketOrder(publicClient, account!, { market, token, side: side === 'Buy' ? 'buy' : 'sell', amountRaw: parseExact(size, Number(side === 'Buy' ? params!.quoteDecimals : params!.baseDecimals)), minOutcomeRaw: 0n, slippageBps: BigInt(slippage) });
 
   const need = params ? requiredCollateral(params, kind, side, price, size) : null;
@@ -122,12 +123,13 @@ export function KuruTicket({ market, token, tokenSymbol, quoteSymbol = 'MON', in
       {flowText && <div className={`rp-tx ${flow.step === 'order-failed' && flow.depositHash ? 'rp-tx-warn' : flow.step.endsWith('failed') ? 'rp-tx-neutral' : ''}`} role="status" data-flow={flow.step}>{flowText}</div>}
       <TxProgress stage={stage} message={error && flow.step === 'idle' ? error : null} hash={'hash' in tx ? tx.hash : placed}/>
     </>}
-    footer={kind === 'Limit' ? 'Good till cancelled (GTC). Resting orders use your Kuru margin balance.' : 'Market orders use a fresh quote, a minimum output and fill-or-kill.'}>
+    footer={kind === 'Limit' ? (postOnly ? 'Post-only limit order · good till cancelled (GTC). Rejects instead of crossing the spread, so it rests as maker liquidity.' : 'Good till cancelled (GTC). Resting orders use your Kuru margin balance.') : 'Market orders use a fresh quote, a minimum output and fill-or-kill.'}>
     {kind === 'Limit' && <div className="rp-field"><div className="rp-field-top"><label htmlFor="kuru-limit-price">Limit price</label><span className="rp-muted">{quoteSymbol} per {tokenSymbol}</span></div><div className="rp-input"><input id="kuru-limit-price" data-testid="ticket-limit-price" inputMode="decimal" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="0.0"/><span className="rp-input-unit">{quoteSymbol}</span></div>{preview && <p className="rp-note">Normalized to market tick: {trim(preview.price)} {quoteSymbol}</p>}</div>}
+    {kind === 'Limit' && <label className="rp-check"><input type="checkbox" data-testid="ticket-post-only" checked={postOnly} onChange={(e) => setPostOnly(e.target.checked)}/><span>Post-only (maker only)<span className="rp-muted"> — rejects if it would cross the spread</span></span></label>}
     <AmountField testId="ticket-amount" label={kind === 'Market' && side === 'Buy' ? 'Pay' : kind === 'Limit' ? 'Amount' : 'Sell'} unit={kind === 'Market' && side === 'Buy' ? quoteSymbol : tokenSymbol} value={size} onChange={setSize}
       balanceRaw={account ? (kind === 'Market' && side === 'Buy' ? marginQuote : side === 'Sell' ? marginBase : null) : null} decimals={kind === 'Market' && side === 'Buy' ? Number(params?.quoteDecimals ?? 18n) : Number(params?.baseDecimals ?? 18n)}/>
     <QuoteLines rows={kind === 'Limit'
-      ? [['Order total', preview ? `${trim(preview.quote)} ${quoteSymbol}` : '—', 'ticket-total'], ['You receive', preview ? (side === 'Buy' ? `${trim(preview.base)} ${tokenSymbol}` : `${trim(preview.quote)} ${quoteSymbol}`) : '—'], ['Order policy', 'Good till cancelled']]
+      ? [['Order total', preview ? `${trim(preview.quote)} ${quoteSymbol}` : '—', 'ticket-total'], ['You receive', preview ? (side === 'Buy' ? `${trim(preview.base)} ${tokenSymbol}` : `${trim(preview.quote)} ${quoteSymbol}`) : '—'], ['Order policy', postOnly ? 'Post-only · maker only' : 'Good till cancelled']]
       : [['You receive', marketPreview && params ? `${trim(formatUnits(marketPreview, Number(side === 'Buy' ? params.baseDecimals : params.quoteDecimals)))} ${side === 'Buy' ? tokenSymbol : quoteSymbol}` : '—', 'ticket-receive'], ['Minimum received', marketPreview && params ? `${trim(formatUnits(minOutput(marketPreview, BigInt(slippage)), Number(side === 'Buy' ? params.baseDecimals : params.quoteDecimals)))}` : '—']]}/>
     {kind === 'Market' && <SlippageControl bps={slippage} onChange={setSlippage}/>}
     <details className="rp-advanced"><summary>Advanced · Kuru margin</summary>

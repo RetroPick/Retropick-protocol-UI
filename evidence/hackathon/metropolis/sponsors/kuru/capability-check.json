@@ -1,0 +1,34 @@
+{
+  "sponsor": "Kuru",
+  "bounty": "Build the Next Consumer Trading App on Kuru",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-kuru-consumer",
+  "baseSHA": "f643cb6",
+  "sdkApproach": "Bespoke viem wrappers over deployed Kuru OrderBook/MarginAccount/Router ABIs in packages/launchpad-sdk (no official npm SDK exists for Kuru; ABIs pinned in apps/abi + SDK abis/, verified against deployments/monad-testnet/v2.json)",
+  "network": { "chainId": 10143, "name": "Monad Testnet", "market": "0x1F5dE72616a7fe645Cf45aC66dfce8Ac7452C57F", "token": "0x43e7e9b1b7d9A143573307b13D14B51580c18f15", "vault": "0xc88DED06eB0081430Ff02d124C22b532e122CbE7" },
+  "consumerChecklist": {
+    "marketDiscovery": "PRESENT — /launchpad discovery from indexer (/v1/launches, /v1/search)",
+    "tokenDetailPage": "PRESENT — /launchpad/token/:id shared terminal (demo+live)",
+    "walletConnection": "PRESENT — EIP-6963 picker, chain-10143 enforcement",
+    "chainHandling": "PRESENT — switch-chain CTA + typed wrong-chain states",
+    "orderbookIdentity": "PRESENT — readKuru qualify() (router registration, implementations, token binding), fail-closed",
+    "bestBidAsk": "PRESENT — bestBidAsk polled 1.5s in ticket + terminal",
+    "restingOrderDepth": "ADDED THIS STAGE — aggregated L2 depth ladder panel (readKuruBook, cumulative bars, spread/mid)",
+    "marginDepositsWithdrawals": "PRESENT — margin panel both assets, 3s refresh, batch withdraw max",
+    "limitBuySell": "PRESENT — tick-normalized via kuruGrid, GTC",
+    "postOnly": "ADDED THIS STAGE — ticket toggle wired to prepareKuruLimitOrder postOnly (contract addBuyOrder/addSellOrder _postOnly, PostOnlyError honored)",
+    "marketOrders": "PRESENT — fill-or-kill with fresh quote + min output + simulateContract preview",
+    "partialFills": "PRESENT — orders tab PARTIALLY_FILLED status + on-chain re-validation",
+    "orderCancellation": "PRESENT — batch cancel by orderIds via prepareKuruCancel",
+    "realReceipts": "PRESENT — tx-pipeline receipt decode + useIndexedRecord confirmation",
+    "balanceReconciliation": "PRESENT — margin balances re-read after writes; balances query invalidated on success",
+    "errorHandling": "PRESENT — typed RPC-failure error states; simulate-before-sign",
+    "networkSwitching": "PRESENT — ordered RPC failover with circuit breaker (SDK chain.ts)",
+    "responsiveAndroid": "PRESENT — mobile-390/375 projects in fixture suite; bottom-sheet ticket"
+  },
+  "gapsClosedThisStage": [
+    "aggregated orderbook depth panel (SDK readKuruBook was unused by the UI)",
+    "post-only order option (SDK param existed; ticket hard-coded false)"
+  ],
+  "verdict": "ALREADY_INTEGRATED_CORE_WITH_GAPS_CLOSED"
+}

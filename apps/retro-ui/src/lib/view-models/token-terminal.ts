@@ -112,6 +112,50 @@ export interface TerminalData {
   orders: Paged<IndexedOrder> | null;
 }
 
+// ── Orderbook depth (aggregated Kuru L2 book; display-only, exact bigint) ──────
+
+export interface DepthLevel { priceX18: bigint; sizeRaw: bigint; cumulativeRaw: bigint }
+export interface DepthLadder {
+  /** Ascending by price; asks[0] is the best (lowest) ask. */
+  asks: DepthLevel[];
+  /** Descending by price; bids[0] is the best (highest) bid. */
+  bids: DepthLevel[];
+  spreadX18: bigint | null;
+  /** Integer midpoint (truncating halves); null when a side is empty. */
+  midX18: bigint | null;
+}
+export interface TerminalDepth {
+  status: 'ready' | 'loading' | 'error' | 'unavailable';
+  ladder: DepthLadder | null;
+  /** Chain block the book was read at (live) or '0' (demo fixture). */
+  block: string | null;
+  observedAt: number | null;
+}
+
+/**
+ * Aggregate raw orderbook levels into a cumulative ladder. The on-chain L2 book is already
+ * tick-aggregated, but levels are deduped and re-sorted here so malformed or replayed inputs
+ * can never produce a crossed-looking display. Same-price levels merge (sizes sum).
+ */
+export function buildDepthLadder(book: { bids: Array<{ price: bigint; size: bigint }>; asks: Array<{ price: bigint; size: bigint }> }): DepthLadder {
+  const merge = (levels: Array<{ price: bigint; size: bigint }>, descending: boolean): DepthLevel[] => {
+    const byPrice = new Map<bigint, bigint>();
+    for (const level of levels) {
+      if (level.price <= 0n || level.size <= 0n) continue;
+      byPrice.set(level.price, (byPrice.get(level.price) ?? 0n) + level.size);
+    }
+    const sorted = [...byPrice.entries()].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
+    if (descending) sorted.reverse();
+    let cumulative = 0n;
+    return sorted.map(([priceX18, sizeRaw]) => { cumulative += sizeRaw; return { priceX18, sizeRaw, cumulativeRaw: cumulative }; });
+  };
+  const asks = merge(book.asks, false), bids = merge(book.bids, true);
+  const bestAsk = asks.length ? asks[0].priceX18 : null, bestBid = bids.length ? bids[0].priceX18 : null;
+  const spreadX18 = bestAsk !== null && bestBid !== null && bestAsk >= bestBid ? bestAsk - bestBid : null;
+  const midX18 = bestAsk !== null && bestBid !== null ? (bestAsk + bestBid) / 2n : null;
+  return { asks, bids, spreadX18, midX18 };
+}
+
 // ── Exact display helpers (string/bigint only) ─────────────────────────────────
 
 /** Exact decimal formatting of a raw integer, truncating (never rounding up) to `digits` fractional digits. */

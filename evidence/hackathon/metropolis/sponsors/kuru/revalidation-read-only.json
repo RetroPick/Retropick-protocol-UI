@@ -1,0 +1,37 @@
+{
+  "kind": "kuru-consumer-revalidation",
+  "mode": "READ_ONLY",
+  "network": {
+    "chainId": 10143,
+    "name": "Monad Testnet",
+    "rpc": "public"
+  },
+  "runAt": "2026-10-10T21:08:31.360Z",
+  "blockNumber": "69928589",
+  "market": "0x1F5dE72616a7fe645Cf45aC66dfce8Ac7452C57F",
+  "token": "0x43e7e9b1b7d9A143573307b13D14B51580c18f15",
+  "vault": "0xc88DED06eB0081430Ff02d124C22b532e122CbE7",
+  "identity": "PASS (readKuru qualify: router verified-market registration, margin account, orderbook/vault implementations, token binding)",
+  "bestBidX18": "3960396039603960",
+  "bestAskX18": "4000000000000000",
+  "historicOrders": [
+    {
+      "orderId": 1,
+      "owner": "0xB505cBaab3ACdF287af1366b9B1229404757913b",
+      "sizeRaw": "0",
+      "price": 398019,
+      "isBuy": false,
+      "bookActive": false
+    },
+    {
+      "orderId": 2,
+      "owner": "0x0000000000000000000000000000000000000000",
+      "sizeRaw": "0",
+      "price": 0,
+      "isBuy": false,
+      "bookActive": false
+    }
+  ],
+  "orderIdCounter": "3",
+  "verdict": "HISTORICAL_ORDER_FILL_CANCEL_EVIDENCE_REVALIDATED_READ_ONLY"
+}

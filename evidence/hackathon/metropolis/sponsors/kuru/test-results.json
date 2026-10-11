@@ -1,0 +1,23 @@
+{
+  "kind": "kuru-consumer-stage1-results",
+  "date": "2026-10-11",
+  "branch": "feat/metropolis-kuru-consumer",
+  "commands": [
+    { "cmd": "pnpm --filter @retropick/retro-ui typecheck", "result": "PASS" },
+    { "cmd": "pnpm --filter @retropick/retro-ui build", "result": "PASS (1.35s)" },
+    { "cmd": "pnpm --filter @retropick/retro-ui test:terminal", "result": "14 pass / 0 fail (incl. 3 new depth-ladder suites)" },
+    { "cmd": "node e2e/run.mjs fixture kuru-consumer-stage1", "result": "244 pass / 0 fail / 38 skipped (matrix skips), exit 0", "evidence": "evidence/platform/frontend/browser-validation/20261010T210352Z-fixture-kuru-consumer-stage1" },
+    { "cmd": "node --experimental-strip-types scripts/kuru-revalidate.ts <market> <token> <vault>", "result": "PASS — identity PASS, best bid/ask live, historic orders re-read", "evidence": "evidence/hackathon/metropolis/sponsors/kuru/revalidation-read-only.json" }
+  ],
+  "labels": {
+    "source": "SOURCE_VERIFIED",
+    "localTests": "LOCAL_TEST_VERIFIED",
+    "onchainReads": "ONCHAIN_VERIFIED (read-only revalidation at block 69927875)",
+    "browserE2E": "BROWSER_E2E_VERIFIED (fixture suite incl. new depth + post-only specs, 6 viewports)",
+    "onchainSigning": "NOT_RUN this stage (historical two-actor signing evidence stands; live re-signing is authorization-gated, see EXTERNAL-BLOCKERS BLOCKER-002)"
+  },
+  "newCoverage": [
+    "@terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state",
+    "@terminal GRADUATED post-only toggle switches order policy"
+  ]
+}
