@@ -1,178 +1,307 @@
-// Envio HyperSync stream wiring for the market radar. Fails closed without a token:
-// Envio's HyperSync endpoints require an API token (verified 2026-10-11 — the client
-// rejects construction without `apiToken` and the endpoint answers 401 anonymously).
-//
-// Durability (operator-corrected): every decoded event is journaled (append-only) with
-// its block identity; the snapshot (cursor + full aggregator state) is atomically
-// replaced after each batch. Resume replays from the snapshot cursor; duplicate
-// deliveries are idempotent by event id; decode failures are COUNTED (never silently
-// discarded); reorg detection compares the snapshot's anchor block hash against the
-// chain and falls back to a conservative full replay on mismatch.
-import { decodeEventLog, type Hex } from 'viem';
-// Relative import keeps this integration standalone (not a pnpm workspace member) so
-// installing its deps never triggers a root-wide install that would write into apps/web.
+// Envio HyperSync stream for the market radar — written against the INSTALLED
+// @envio-dev/hypersync-client 1.4.1 typings (index.d.ts):
+//   * FieldSelection uses PascalCase enums: BlockField 'Number'|'Hash'|'ParentHash'|'Timestamp',
+//     LogField 'Address'|'BlockNumber'|'LogIndex'|'TransactionHash'|'BlockHash'|'Data'|'Topic0..3'|'Removed'
+//     (there is no 'topics' field; the response Log.topics array is filled from Topic0..3).
+//   * client.stream(query, config) → Promise<QueryResponseStream>; consume with recv() until null, then close().
+//   * QueryResponse.nextBlock is the pagination cursor (advances on empty batches too);
+//     rollbackGuard {blockNumber, hash, firstBlockNumber, firstParentHash} detects rollbacks.
+//   * The client has no getBlockHash; a single-block get({includeAllBlocks}) is used instead,
+//     with an optional read-only RPC fallback.
+// Fails closed without a token or when the endpoint's chain id is not the configured one.
+import { decodeEventLog, toEventSelector, type Hex } from 'viem';
+import type { Query, QueryResponse, StreamConfig } from '@envio-dev/hypersync-client';
+// Relative import keeps this integration standalone (not a pnpm workspace member).
 import { indexerAbi } from '../../../packages/launchpad-sdk/src/events.ts';
-import { RadarAggregator, type RadarEvent, type RadarMetrics } from './radar.ts';
-import { appendJournal, loadState, resolveResume, writeSnapshot, STATE_SCHEMA_VERSION, type JournalRecord, type SnapshotState } from './journal.ts';
+import { RadarAggregator, eventId, type RadarEvent, type RadarMetrics } from './radar.ts';
+import {
+  appendJournal, findForkBlock, loadSnapshot, readJournal, resetState, rewriteJournal, ringGet, ringPut, sameIdentity,
+  writeSnapshot, STATE_SCHEMA_VERSION, type Identity, type JournalEvent, type SnapshotState,
+} from './journal.ts';
 
 export const MONAD_TESTNET_HYPERSYNC = 'https://10143.hypersync.xyz';
+export const DEFAULT_COORDINATOR = '0xaD62309242EA65BB07C833669EC6a4ED23AF738F';
+const KURU_EVENTS = new Set(['Trade', 'OrderCreated', 'OrderCanceled', 'OrdersCanceled']);
+const RELEVANT = new Set(['TokenLaunched', 'LaunchCommitted', 'GraduationSecured', 'GraduationCompleted', ...KURU_EVENTS]);
+
+export const LOG_FIELDS = ['Address', 'BlockNumber', 'LogIndex', 'TransactionHash', 'BlockHash', 'Data', 'Topic0', 'Topic1', 'Topic2', 'Topic3', 'Removed'] as const;
+export const BLOCK_FIELDS = ['Number', 'Hash', 'ParentHash', 'Timestamp'] as const;
+
+export interface ResponseStream { recv(): Promise<QueryResponse | null>; close(): Promise<void> }
+export interface HyperClient {
+  getChainId(): Promise<number>;
+  getHeight(): Promise<number>;
+  get(query: Query): Promise<QueryResponse>;
+  stream(query: Query, config: StreamConfig): Promise<ResponseStream>;
+}
 
 export interface RadarStreamOptions {
   url?: string;
-  /** Required. Create one at envio.dev (operator action — see EXTERNAL-BLOCKERS). */
   apiToken: string;
   factory: string;
-  /** Kuru market addresses to watch (market → token map for lifecycle join). */
+  coordinator?: string;
+  /** Optional bootstrap market → token map; GraduationCompleted is authoritative. */
   marketTokens: Record<string, string>;
   fromBlock: number;
   chainId: number;
   deployment: string;
-  /** Durable state directory (journal + snapshot). */
   stateDir: string;
-  onMetrics?: (metrics: RadarMetrics & { cursorBlock: number }) => void;
+  /** Read-only JSON-RPC used only as a block-hash fallback. */
+  rpcUrl?: string;
+  pollMs?: number;
+  /** Explicit operator choice: discard state whose identity differs instead of refusing. */
+  resetOnIdentityMismatch?: boolean;
+  log?: (msg: string) => void;
+}
+
+export interface RadarStatus {
+  cursorBlock: number;
+  anchorVerified: boolean;
+  lastError: string | null;
+  lastErrorAt: number | null;
+  lastBatchAt: number | null;
+  recovery: string;
+  counters: SnapshotState['counters'];
+  journalCount: number;
 }
 
 export interface RadarStream {
-  aggregator: RadarAggregator;
-  /** Current processing cursor (next block to read). */
+  aggregator(): RadarAggregator;
   cursor(): number;
-  /** Resolves when the consumer stops it or the stream ends. */
+  status(): RadarStatus;
+  metrics(): RadarMetrics;
+  /** Process one stream session (until the stream ends at head, a reorg, or stop()). Exposed for tests. */
+  runOnce(): Promise<'end' | 'reorg' | 'stopped'>;
   run(): Promise<void>;
   stop(): void;
 }
 
-interface MinimalClient {
-  stream: (query: unknown, options?: unknown) => AsyncIterable<{ data?: { blocks?: Array<{ number?: number; timestamp?: number; hash?: string }>; logs?: Array<{ address?: string; blockNumber?: number; logIndex?: number; transactionHash?: string; data?: string; topics?: string[] }> } }>;
-  getHeight: () => Promise<number>;
-  getBlockHash?: (block: number) => Promise<string | null>;
-  destroy?: () => Promise<void>;
+/** Block timestamps arrive as number seconds; tolerate bigint / hex / ms defensively. */
+export function normalizeTimestamp(value: unknown): number {
+  if (value === undefined || value === null) return 0;
+  let n: number;
+  if (typeof value === 'bigint') n = Number(value);
+  else if (typeof value === 'string') n = value.startsWith('0x') ? Number(BigInt(value)) : Number(value);
+  else n = Number(value);
+  if (!Number.isFinite(n) || n < 0) return 0;
+  return n > 1e12 ? Math.floor(n / 1000) : Math.floor(n);
 }
 
-/** BigInt-aware JSON for snapshot state. */
-function snapshotJson(state: unknown): string {
-  return JSON.stringify(state, (_, v) => (typeof v === 'bigint' ? v.toString() : v));
-}
-/** Restore bigint fields inside persisted market state (best-effort, schema-known keys). */
-function reviveAggregator(raw: unknown): unknown {
-  if (!raw || typeof raw !== 'object') return raw;
-  const obj = raw as Record<string, unknown>;
-  if (Array.isArray(obj.markets)) {
-    obj.markets = obj.markets.map((m) => {
-      const mm = m as Record<string, unknown>;
-      for (const k of ['filledBaseUnits', 'quoteVolume18']) if (typeof mm[k] === 'string') mm[k] = BigInt(mm[k] as string);
-      return mm;
-    });
-  }
-  return obj;
+const kuruTopics = [...new Set(indexerAbi.filter((e) => e.type === 'event' && KURU_EVENTS.has(e.name)).map((e) => toEventSelector(e as never)))];
+
+export function buildQuery(fromBlock: number, addresses: string[]): Query {
+  return {
+    fromBlock,
+    logs: [{ address: addresses }, { topics: [kuruTopics] }],
+    fieldSelection: { log: [...LOG_FIELDS], block: [...BLOCK_FIELDS] },
+  } as Query;
 }
 
-export async function createRadarStream(options: RadarStreamOptions, clientFactory?: (url: string, token: string) => Promise<MinimalClient>): Promise<RadarStream> {
-  if (!options.apiToken) throw Error('Envio HyperSync requires an API token (ENVIO_API_TOKEN). Get one at envio.dev; see docs/metropolis/execution/EXTERNAL-BLOCKERS.md.');
+async function rpcBlockHash(rpcUrl: string, block: number): Promise<string | null> {
+  const r = await fetch(rpcUrl, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_getBlockByNumber', params: ['0x' + block.toString(16), false] }), signal: AbortSignal.timeout(8000) });
+  const j = await r.json() as { result?: { hash?: string } | null };
+  return j.result?.hash ?? null;
+}
+
+export async function createRadarStream(options: RadarStreamOptions, clientFactory?: (url: string, token: string) => Promise<HyperClient>): Promise<RadarStream> {
+  if (!options.apiToken) throw Error('Envio HyperSync requires an API token (ENVIO_API_TOKEN).');
+  const log = options.log ?? ((m: string) => console.log(`[radar] ${m}`));
   const url = options.url ?? MONAD_TESTNET_HYPERSYNC;
-  const makeClient = clientFactory ?? (async () => {
-    const { HypersyncClient } = await import('@envio-dev/hypersync-client');
-    return new HypersyncClient({ url, apiToken: options.apiToken }) as unknown as MinimalClient;
-  });
-  const client = await makeClient(url, options.apiToken);
+  const client = clientFactory
+    ? await clientFactory(url, options.apiToken)
+    : await (async () => {
+      const { HypersyncClient } = await import('@envio-dev/hypersync-client');
+      return new HypersyncClient({ url, apiToken: options.apiToken, httpReqTimeoutMillis: 20_000 }) as unknown as HyperClient;
+    })();
 
-  // ---- durability resume ----
-  const loaded = loadState(options.stateDir);
-  let fromBlock = options.fromBlock;
-  let journalLines = loaded.snapshot?.counters.journalLines ?? 0;
-  let decodeErrors = loaded.snapshot?.counters.decodeErrors ?? 0;
-  let replays = loaded.snapshot?.counters.replays ?? 0;
-  if (loaded.snapshot) {
-    const resume = await resolveResume(loaded.snapshot, async (block) => {
-      try { return await client.getBlockHash?.(block) ?? null; } catch { return null; }
-    }, options.fromBlock);
-    fromBlock = resume.fromBlock;
-    if (resume.reorged) replays++;
-  }
-  const aggregator = loaded.snapshot
-    ? RadarAggregator.restore(reviveAggregator(loaded.snapshot.aggregator) as never, options.marketTokens)
-    : new RadarAggregator(options.marketTokens);
-  let cursorBlock = fromBlock;
+  const endpointChain = Number(await client.getChainId());
+  if (endpointChain !== options.chainId) throw Error(`HyperSync endpoint chain ${endpointChain} ≠ configured ${options.chainId} — refusing`);
 
-  const addresses = [options.factory, ...Object.keys(options.marketTokens)].map((a) => a.toLowerCase());
+  const identity: Identity = { chainId: options.chainId, deployment: options.deployment, factory: options.factory.toLowerCase(), fromBlock: options.fromBlock };
+  const dir = options.stateDir;
+  const coordinator = (options.coordinator ?? DEFAULT_COORDINATOR).toLowerCase();
+  const addresses = [...new Set([options.factory, coordinator, ...Object.keys(options.marketTokens)].map((a) => a.toLowerCase()))];
+
+  const verify = async (block: number): Promise<string | null> => {
+    try {
+      const res = await client.get({ fromBlock: block, toBlock: block + 1, includeAllBlocks: true, fieldSelection: { block: ['Number', 'Hash'] } } as Query);
+      const hit = res.data?.blocks?.find((b) => Number(b.number) === block)?.hash;
+      if (hit) return hit.toLowerCase();
+    } catch { /* fall through to RPC */ }
+    if (options.rpcUrl) { try { return (await rpcBlockHash(options.rpcUrl, block))?.toLowerCase() ?? null; } catch { /* unavailable */ } }
+    return null;
+  };
+
+  // ---------------- state ----------------
+  let agg: RadarAggregator;
+  let cursor = options.fromBlock;
+  let ring: Array<[number, string]> = [];
+  let journalCount = 0;
+  let counters: SnapshotState['counters'] = { decodeErrors: 0, reorgs: 0, rebuilds: 0, removedLogs: 0, foreignLogs: 0 };
+  const status = { anchorVerified: false, lastError: null as string | null, lastErrorAt: null as number | null, lastBatchAt: null as number | null, recovery: 'fresh' };
   let stopped = false;
-  let lastAnchor: { block: number; hash: string } | null = loaded.snapshot
-    ? { block: loaded.snapshot.checkpoint.anchorBlock, hash: loaded.snapshot.checkpoint.anchorBlockHash }
-    : null;
+  let active: ResponseStream | null = null;
 
-  const persist = (headHeight: number) => {
-    const state: SnapshotState = {
-      schemaVersion: STATE_SCHEMA_VERSION,
-      chainId: options.chainId,
-      deployment: options.deployment,
-      checkpoint: { cursorBlock, anchorBlock: lastAnchor?.block ?? Math.max(0, cursorBlock - 1), anchorBlockHash: lastAnchor?.hash ?? '', ts: Date.now() },
-      aggregator: aggregator.persist(),
-      counters: { journalLines, decodeErrors, replays },
-    };
-    writeSnapshot(options.stateDir, state);
-    aggregator.observeHead(Math.max(headHeight, cursorBlock));
+  const rebuildFrom = (events: JournalEvent[]) => {
+    const a = new RadarAggregator(options.marketTokens);
+    a.ingest(events);
+    a.recordDecodeError(counters.decodeErrors);
+    return a;
+  };
+  const persist = () => writeSnapshot(dir, { schemaVersion: STATE_SCHEMA_VERSION, identity, cursorBlock: cursor, journalCount, ring, aggregator: agg.persist(), counters, ts: Date.now() });
+
+  /** Roll back to the fork point and rebuild the aggregate from canonical journal events only. */
+  const rollback = async (why: string): Promise<boolean> => {
+    const fork = await findForkBlock(ring, verify);
+    if (fork.unverifiable) { status.lastError = `reorg suspected (${why}) but canonical hashes unavailable — not mutating state`; status.lastErrorAt = Date.now(); return false; }
+    const { events } = readJournal(dir);
+    const forkBlock = fork.forkBlock ?? options.fromBlock; // deeper than the ring → full replay
+    const kept = fork.forkBlock === null ? [] : events.filter((e) => e.blockNumber < forkBlock);
+    rewriteJournal(dir, kept);
+    journalCount = kept.length;
+    counters = { ...counters, reorgs: counters.reorgs + 1 };
+    agg = rebuildFrom(kept);
+    ring = ring.filter(([b]) => b < forkBlock);
+    cursor = forkBlock;
+    persist();
+    log(`reorg (${why}): rolled back to block ${forkBlock}, kept ${kept.length}/${events.length} journal events, aggregate rebuilt`);
+    return true;
+  };
+
+  // ---------------- recovery ----------------
+  {
+    const { snapshot, reason } = loadSnapshot(dir);
+    if (snapshot && !sameIdentity(snapshot.identity, identity)) {
+      if (!options.resetOnIdentityMismatch) throw Error(`radar state in ${dir} belongs to ${JSON.stringify(snapshot.identity)}, not ${JSON.stringify(identity)} — refusing (set RADAR_RESET_ON_IDENTITY_MISMATCH=1 to discard)`);
+      resetState(dir);
+      log('identity mismatch: state discarded by explicit operator flag');
+    }
+    const journal = readJournal(dir);
+    const usable = snapshot && sameIdentity(snapshot.identity, identity) && snapshot.journalCount <= journal.events.length ? snapshot : null;
+    if (usable) {
+      counters = { ...counters, ...usable.counters };
+      agg = RadarAggregator.restore(usable.aggregator as never, options.marketTokens);
+      const tail = journal.events.slice(usable.journalCount);
+      agg.ingest(tail); // crash between journal append and snapshot: fold the tail (idempotent)
+      ring = usable.ring;
+      for (const e of tail) if (e.blockHash) ring = ringPut(ring, e.blockNumber, e.blockHash);
+      cursor = Math.max(usable.cursorBlock, ...tail.map((e) => e.blockNumber + 1));
+      journalCount = journal.events.length;
+      status.recovery = tail.length ? `snapshot+journal-tail(${tail.length})` : 'snapshot';
+    } else {
+      // Missing/corrupt/foreign snapshot or journal shorter than snapshot → rebuild from journal.
+      counters = { ...counters, rebuilds: counters.rebuilds + (journal.events.length ? 1 : 0) };
+      agg = rebuildFrom(journal.events);
+      for (const e of journal.events) if (e.blockHash) ring = ringPut(ring, e.blockNumber, e.blockHash);
+      cursor = journal.events.length ? Math.max(options.fromBlock, ...journal.events.map((e) => e.blockNumber + 1)) : options.fromBlock;
+      journalCount = journal.events.length;
+      status.recovery = journal.events.length ? `rebuilt-from-journal(${reason}${journal.tornTail ? ',torn-tail-truncated' : ''})` : 'fresh';
+    }
+    // Verify the newest recorded block is still canonical before streaming past it.
+    const anchor = ring.at(-1);
+    if (!anchor) status.anchorVerified = true;
+    else {
+      const canonical = await verify(anchor[0]);
+      if (canonical === null) status.anchorVerified = false;
+      else if (canonical === anchor[1]) status.anchorVerified = true;
+      else { await rollback('anchor hash mismatch on restart'); status.anchorVerified = true; }
+    }
+    persist();
+    log(`recovered: ${status.recovery}; cursor ${cursor}; journal ${journalCount}; anchorVerified ${status.anchorVerified}`);
+  }
+
+  // ---------------- processing ----------------
+  const handle = async (res: QueryResponse): Promise<'ok' | 'reorg'> => {
+    const blocks = res.data?.blocks ?? [];
+    // Rollback detection BEFORE any mutation.
+    for (const b of blocks) {
+      if (b.number === undefined || !b.hash) continue;
+      const known = ringGet(ring, Number(b.number));
+      if (known && known !== b.hash.toLowerCase()) { await rollback(`block ${b.number} hash changed`); return 'reorg'; }
+      const parent = ringGet(ring, Number(b.number) - 1);
+      if (parent && b.parentHash && parent !== b.parentHash.toLowerCase()) { await rollback(`block ${b.number} parent mismatch`); return 'reorg'; }
+    }
+    const guard = res.rollbackGuard;
+    if (guard?.firstParentHash) {
+      const parent = ringGet(ring, guard.firstBlockNumber - 1);
+      if (parent && parent !== guard.firstParentHash.toLowerCase()) { await rollback(`rollbackGuard parent mismatch at ${guard.firstBlockNumber}`); return 'reorg'; }
+    }
+    const byNumber = new Map(blocks.filter((b) => b.number !== undefined).map((b) => [Number(b.number), b]));
+    const logs = [...(res.data?.logs ?? [])].sort((a, b) => (Number(a.blockNumber) - Number(b.blockNumber)) || (Number(a.logIndex) - Number(b.logIndex)));
+    const fresh: JournalEvent[] = [];
+    let decodeErrors = 0, removed = 0, foreign = 0;
+    for (const l of logs) {
+      if (l.removed) { removed++; continue; }
+      const topics = (l.topics ?? []).filter((t): t is string => typeof t === 'string');
+      let decoded: { eventName?: string; args?: unknown };
+      try { decoded = decodeEventLog({ abi: indexerAbi, data: (l.data ?? '0x') as Hex, topics: topics as [Hex, ...Hex[]] }); }
+      catch { decodeErrors++; continue; }
+      const name = decoded.eventName ?? '';
+      if (!RELEVANT.has(name)) continue;
+      const address = (l.address ?? '').toLowerCase();
+      const blockNumber = Number(l.blockNumber);
+      const block = byNumber.get(blockNumber);
+      const e: JournalEvent = {
+        id: '', name, address, blockNumber, logIndex: Number(l.logIndex ?? 0), transactionHash: (l.transactionHash ?? '').toLowerCase(),
+        blockTimestamp: normalizeTimestamp(block?.timestamp), blockHash: (l.blockHash ?? block?.hash ?? '').toLowerCase(),
+        args: decoded.args as Record<string, unknown>,
+      };
+      e.id = eventId(e);
+      if (KURU_EVENTS.has(name) && !agg.isTrackedMarket(address)) { foreign++; continue; }
+      if (agg.has(e.id)) continue;
+      agg.ingest([e]); // sequential: a GraduationCompleted earlier in the batch maps its market for later trades
+      fresh.push(e);
+    }
+    // Durable order: journal (fsync) → snapshot (tmp+fsync+rename).
+    appendJournal(dir, fresh);
+    journalCount += fresh.length;
+    if (decodeErrors) agg.recordDecodeError(decodeErrors);
+    counters = { ...counters, decodeErrors: counters.decodeErrors + decodeErrors, removedLogs: counters.removedLogs + removed, foreignLogs: counters.foreignLogs + foreign };
+    for (const b of blocks) if (b.number !== undefined && b.hash) ring = ringPut(ring, Number(b.number), b.hash);
+    if (guard?.hash) ring = ringPut(ring, guard.blockNumber, guard.hash);
+    if (Number.isFinite(res.nextBlock) && res.nextBlock > cursor) cursor = res.nextBlock;
+    if (res.archiveHeight) agg.observeHead(Number(res.archiveHeight));
+    status.lastBatchAt = Date.now();
+    persist();
+    return 'ok';
+  };
+
+  const runOnce = async (): Promise<'end' | 'reorg' | 'stopped'> => {
+    const s = await client.stream(buildQuery(cursor, addresses), {});
+    active = s;
+    try {
+      for (;;) {
+        if (stopped) return 'stopped';
+        const res = await s.recv();
+        if (!res) return 'end';
+        if (await handle(res) === 'reorg') return 'reorg';
+      }
+    } finally { active = null; await s.close().catch(() => undefined); }
   };
 
   return {
-    aggregator,
-    cursor: () => cursorBlock,
-    stop() { stopped = true; void client.destroy?.(); },
+    aggregator: () => agg,
+    cursor: () => cursor,
+    status: () => ({ cursorBlock: cursor, ...status, counters: { ...counters }, journalCount }),
+    metrics: () => agg.snapshot(cursor),
+    runOnce,
+    stop() { stopped = true; void active?.close().catch(() => undefined); },
     async run() {
-      const stream = client.stream({
-        fromBlock,
-        logs: [{ address: addresses, topics: [[]] }],
-        fieldSelection: {
-          log: ['address', 'block_number', 'log_index', 'transaction_hash', 'data', 'topics'],
-          block: ['number', 'timestamp', 'hash'],
-        },
-      });
-      for await (const message of stream) {
-        if (stopped) break;
-        const logs = message.data?.logs ?? [];
-        const blocks = message.data?.blocks ?? [];
-        const blockTimestamps = new Map<number, number>();
-        const blockHashes = new Map<number, string>();
-        for (const block of blocks) {
-          if (block.number !== undefined && block.timestamp !== undefined) blockTimestamps.set(Number(block.number), Number(block.timestamp));
-          if (block.number !== undefined && block.hash) blockHashes.set(Number(block.number), block.hash);
+      let backoff = 1000;
+      while (!stopped) {
+        try {
+          try { agg.observeHead(Number(await client.getHeight())); } catch { /* informational */ }
+          const r = await runOnce();
+          status.lastError = null;
+          backoff = 1000;
+          if (r === 'end') await new Promise((ok) => setTimeout(ok, options.pollMs ?? 2000));
+        } catch (error) {
+          status.lastError = error instanceof Error ? error.message.slice(0, 300) : String(error).slice(0, 300);
+          status.lastErrorAt = Date.now();
+          log(`stream error (retry in ${backoff}ms): ${status.lastError}`);
+          await new Promise((ok) => setTimeout(ok, backoff));
+          backoff = Math.min(backoff * 2, 60_000);
         }
-        const events: RadarEvent[] = [];
-        const journalBatch: JournalRecord[] = [];
-        for (const log of logs) {
-          const blockNumber = Number(log.blockNumber ?? 0);
-          try {
-            const decoded = decodeEventLog({ abi: indexerAbi, data: (log.data ?? '0x') as Hex, topics: (log.topics ?? []) as [Hex, ...Hex[]] });
-            if (!decoded.eventName) continue;
-            events.push({
-              name: decoded.eventName,
-              address: (log.address ?? '').toLowerCase(),
-              blockNumber,
-              blockTimestamp: blockTimestamps.get(blockNumber) ?? 0,
-              logIndex: Number(log.logIndex ?? 0),
-              transactionHash: log.transactionHash ?? '',
-              args: decoded.args as Record<string, unknown>,
-            });
-          } catch {
-            // Decode failures are COUNTED and journaled as errors — never silent.
-            aggregator.recordDecodeError();
-            decodeErrors++;
-          }
-        }
-        const { accepted } = aggregator.ingest(events);
-        journalLines += accepted;
-        for (const e of events) {
-          journalBatch.push({ id: `${e.blockNumber}:${e.logIndex}:${e.transactionHash}`, blockNumber: e.blockNumber, blockHash: blockHashes.get(e.blockNumber) ?? '', name: e.name, ts: Date.now() });
-        }
-        appendJournal(options.stateDir, journalBatch);
-        // Advance cursor + anchor to the newest observed block identity.
-        for (const [number, hash] of blockHashes) {
-          if (number >= cursorBlock) { cursorBlock = number + 1; lastAnchor = { block: number, hash }; }
-        }
-        let head = cursorBlock;
-        try { head = Number(await client.getHeight()); } catch { /* informational */ }
-        aggregator.observeHead(head);
-        persist(head);
-        const snap = aggregator.snapshot();
-        options.onMetrics?.({ ...snap, freshness: { ...snap.freshness, cursorBlock } });
       }
     },
   };

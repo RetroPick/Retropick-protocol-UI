@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/
 import { AddressChip, DataTable, DemoBadge, EmptyState, ErrorState, FreshnessIndicator, InfoHint, LifecycleBadge, Metric, MetricStrip, PairBadge, SegmentedControl, SkeletonLine, TokenIdentity, cx, type Column } from '@/components/trading/primitives';
 import { RANGE_INTERVALS, RANGE_LABELS, ageFrom, changeDirection, formatBps, formatPriceX18, formatRaw, formatRawCompact, holderValueRaw, lifecycleLabel, orderSizeRaw, type CandleInterval, type ChartRange, type TerminalData, type TerminalDepth, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
 import type { IndexedHolder, IndexedOrder, IndexedTrade } from '@retropick/launchpad-sdk/read-model';
+import { MarketRadarPanel } from './market-radar';
 
 const TradingChart = lazy(() => import('../trading-chart'));
 
@@ -112,6 +113,8 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
       <p>{vm.description || <span className="rp-muted">The creator has not provided a description.</span>}</p>
       <Socials socials={vm.socials}/>
     </section>
+
+    {vm.addresses.token && <MarketRadarPanel token={vm.addresses.token} quoteSymbol={q}/>}
 
     <RTabs.Root className="rp-tabs" value={tab} onValueChange={(v) => onTab(v as TerminalTab)}>
       <RTabs.List className="rp-tablist" aria-label="Token data">

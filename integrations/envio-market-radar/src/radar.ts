@@ -2,6 +2,11 @@
 // events. No I/O: the stream module feeds decoded events in, snapshots come out.
 // All quantities are exact bigints; quote volume is 18-decimal normalized
 // (priceX18 × filledSize / 1e18) and labeled as such downstream.
+//
+// Addresses are normalised to lowercase everywhere (config, event args, log address).
+// Market → token mapping is AUTHORITATIVELY derived onchain from the coordinator's
+// GraduationCompleted(token, destination=bytes32(market), …); configured mappings are a
+// bootstrap only and a conflict with the onchain value is counted, never silently merged.
 export interface RadarEvent {
   name: string;
   address: string;
@@ -20,6 +25,11 @@ export interface TokenLifecycle {
   completedAt: number | null;
   /** Graduation latency = GraduationCompleted − TokenLaunched (seconds), null until both. */
   graduationLatencyS: number | null;
+  /** Kuru market from GraduationCompleted.destination (lowercase) */
+  market: string | null;
+  launchTx: string | null;
+  graduationTx: string | null;
+  graduationBlock: number | null;
 }
 
 export interface MarketActivity {
@@ -31,18 +41,24 @@ export interface MarketActivity {
   filledBaseUnits: bigint;
   /** 18-decimal-normalized quote volume (see module comment). */
   quoteVolume18: bigint;
+  firstTradeBlock: number | null;
+  firstTradeAt: number | null;
+  firstTradeTx: string | null;
   lastTradeBlock: number | null;
   lastTradeAt: number | null;
+  lastTradeTx: string | null;
 }
+
+export type Phase = 'LAUNCHED' | 'COMMITTED' | 'GRADUATION_SECURED' | 'GRADUATED' | 'UNKNOWN';
 
 export interface RadarMetrics {
   lastBlock: number;
   counts: { launched: number; committed: number; secured: number; completed: number };
   activeOnCurve: number;
-  tokens: TokenLifecycle[];
+  tokens: Array<TokenLifecycle & { phase: Phase; timeToFirstKuruTradeS: number | null }>;
   markets: MarketActivity[];
   computedAt: number;
-  /** Separated freshness metrics (operator correction — never conflate these). */
+  /** Separated freshness metrics (never conflate these). */
   freshness: {
     /** Latest chain height observed from the stream/source. */
     headHeight: number;
@@ -50,11 +66,37 @@ export interface RadarMetrics {
     lastEventBlock: number;
     /** Next block the stream will read (processing cursor). */
     cursorBlock: number;
+    /** headHeight − cursorBlock: true processing lag. */
+    lagBlocks: number;
     /** headHeight − lastEventBlock (informational; events are sparse by nature). */
     headMinusEvent: number;
   };
   /** Decoding failures — counted, never silently dropped. */
   decodeErrors: number;
+  mappingConflicts: number;
+}
+
+const lc = (v: unknown) => String(v ?? '').toLowerCase();
+const BIG_KEYS = ['filledBaseUnits', 'quoteVolume18'] as const;
+
+/** bytes32 left-padded address → lowercase 20-byte address, or null if not address-shaped. */
+export function bytes32ToAddress(value: unknown): string | null {
+  const s = lc(value);
+  const m = s.match(/^0x0{24}([0-9a-f]{40})$/);
+  if (m) return '0x' + m[1];
+  return /^0x[0-9a-f]{40}$/.test(s) ? s : null;
+}
+
+export interface PersistedAggregator {
+  seen: string[];
+  tokens: [string, TokenLifecycle][];
+  markets: [string, MarketActivity][];
+  marketTokens: [string, string][];
+  counts: RadarMetrics['counts'];
+  lastBlock: number;
+  decodeErrors: number;
+  mappingConflicts: number;
+  lastEventBlock: number;
 }
 
 export class RadarAggregator {
@@ -63,59 +105,62 @@ export class RadarAggregator {
   #markets = new Map<string, MarketActivity>();
   #counts = { launched: 0, committed: 0, secured: 0, completed: 0 };
   #lastBlock = 0;
-  /** market address → token, discovered from caller config or the launch journal upstream. */
   #marketTokens: Map<string, string>;
-  /** Decode failures are COUNTED, never silently discarded (operator correction). */
   #decodeErrors = 0;
+  #mappingConflicts = 0;
   #lastEventBlock = 0;
   #headHeight = 0;
 
   constructor(marketTokens: Record<string, string> = {}) {
-    this.#marketTokens = new Map(Object.entries(marketTokens));
+    this.#marketTokens = new Map(Object.entries(marketTokens).map(([m, t]) => [lc(m), lc(t)]));
   }
 
-  /** Restore from a persisted snapshot (durability resume). */
-  static restore(state: { seen?: string[]; tokens?: [string, TokenLifecycle][]; markets?: Array<[string, string | null, MarketActivity] | [string, MarketActivity]>; counts?: RadarMetrics['counts']; lastBlock?: number; decodeErrors?: number; lastEventBlock?: number }, marketTokens: Record<string, string> = {}): RadarAggregator {
+  /** Restore from a persisted snapshot. Accepts bigint fields as strings (JSON). */
+  static restore(state: Partial<PersistedAggregator>, marketTokens: Record<string, string> = {}): RadarAggregator {
     const agg = new RadarAggregator(marketTokens);
+    for (const [m, t] of state.marketTokens ?? []) agg.#marketTokens.set(lc(m), lc(t));
     for (const id of state.seen ?? []) agg.#seen.add(id);
-    for (const [k, v] of state.tokens ?? []) agg.#tokens.set(k, v);
+    for (const [k, v] of state.tokens ?? []) agg.#tokens.set(lc(k), { ...v });
     for (const entry of state.markets ?? []) {
-      // persist() writes [key, token, value] triples; accept legacy pairs too.
-      const key = entry[0];
-      const value = (entry.length >= 3 ? entry[2] : entry[1]) as MarketActivity;
-      agg.#markets.set(key, value);
+      const [key, raw] = entry as [string, MarketActivity];
+      const m = { ...raw } as MarketActivity & Record<string, unknown>;
+      for (const k of BIG_KEYS) m[k] = BigInt((raw as unknown as Record<string, unknown>)[k] as string | bigint ?? 0);
+      agg.#markets.set(lc(key), m);
     }
     if (state.counts) agg.#counts = { ...state.counts };
     agg.#lastBlock = state.lastBlock ?? 0;
     agg.#lastEventBlock = state.lastEventBlock ?? state.lastBlock ?? 0;
     agg.#decodeErrors = state.decodeErrors ?? 0;
+    agg.#mappingConflicts = state.mappingConflicts ?? 0;
     return agg;
   }
 
-  /** Serializable state for the durability snapshot. */
-  persist(): { seen: string[]; tokens: [string, TokenLifecycle][]; markets: [string, string, MarketActivity][]; counts: RadarMetrics['counts']; lastBlock: number; decodeErrors: number; lastEventBlock: number } {
+  /** Serializable state (bigints remain bigint; the snapshot writer stringifies). */
+  persist(): PersistedAggregator {
     return {
       seen: [...this.#seen],
-      tokens: [...this.#tokens.entries()],
-      // markets keyed lowercased already; bigint values stringified by radarJson rules at
-      // the snapshot boundary via a replacer in journal.writeSnapshot caller.
-      markets: [...this.#markets.entries()].map(([k, v]) => [k, v.token, v]),
+      tokens: [...this.#tokens.entries()].map(([k, v]) => [k, { ...v }]),
+      markets: [...this.#markets.entries()].map(([k, v]) => [k, { ...v }]),
+      marketTokens: [...this.#marketTokens.entries()],
       counts: { ...this.#counts },
       lastBlock: this.#lastBlock,
       decodeErrors: this.#decodeErrors,
+      mappingConflicts: this.#mappingConflicts,
       lastEventBlock: this.#lastEventBlock,
     };
   }
 
-  recordDecodeError(): void { this.#decodeErrors++; }
-
+  recordDecodeError(n = 1): void { this.#decodeErrors += n; }
   observeHead(height: number): void { this.#headHeight = Math.max(this.#headHeight, height); }
+  has(id: string): boolean { return this.#seen.has(id); }
+  /** Kuru logs are only aggregated for markets mapped to a RetroPick token. */
+  isTrackedMarket(address: string): boolean { return this.#marketTokens.has(lc(address)); }
 
   /** Idempotent ingest: each (block, logIndex, tx) is processed exactly once. */
   ingest(events: RadarEvent[]): { accepted: number; duplicates: number } {
     let accepted = 0, duplicates = 0;
     for (const e of events) {
-      const key = `${e.blockNumber}:${e.logIndex}:${e.transactionHash}`;
+      const key = eventId(e);
       if (this.#seen.has(key)) { duplicates++; continue; }
       this.#seen.add(key);
       this.#lastBlock = Math.max(this.#lastBlock, e.blockNumber);
@@ -129,49 +174,52 @@ export class RadarAggregator {
   #apply(e: RadarEvent): void {
     switch (e.name) {
       case 'TokenLaunched': {
-        const token = String(e.args.token);
-        this.#tokens.set(token, { token, launchedAt: e.blockTimestamp, committedAt: null, securedAt: null, completedAt: null, graduationLatencyS: null });
-        this.#counts.launched++;
+        const t = this.#lifecycle(lc(e.args.token));
+        if (t.launchedAt === null) this.#counts.launched++;
+        t.launchedAt = e.blockTimestamp; t.launchTx = e.transactionHash;
+        if (t.completedAt !== null) t.graduationLatencyS = t.completedAt - t.launchedAt;
         break;
       }
       case 'LaunchCommitted': {
-        const t = this.#lifecycle(String(e.args.token));
-        t.committedAt = e.blockTimestamp;
+        this.#lifecycle(lc(e.args.token)).committedAt = e.blockTimestamp;
         this.#counts.committed++;
         break;
       }
       case 'GraduationSecured': {
-        const t = this.#lifecycle(String(e.args.token));
-        t.securedAt = e.blockTimestamp;
+        this.#lifecycle(lc(e.args.token)).securedAt = e.blockTimestamp;
         this.#counts.secured++;
         break;
       }
       case 'GraduationCompleted': {
-        const t = this.#lifecycle(String(e.args.token));
-        t.completedAt = e.blockTimestamp;
+        const token = lc(e.args.token);
+        const t = this.#lifecycle(token);
+        t.completedAt = e.blockTimestamp; t.graduationTx = e.transactionHash; t.graduationBlock = e.blockNumber;
         this.#counts.completed++;
         if (t.launchedAt !== null) t.graduationLatencyS = e.blockTimestamp - t.launchedAt;
+        const market = bytes32ToAddress(e.args.destination);
+        if (market && market !== '0x' + '0'.repeat(40)) {
+          t.market = market;
+          const prior = this.#marketTokens.get(market);
+          if (prior && prior !== token) this.#mappingConflicts++;
+          this.#marketTokens.set(market, token);
+          const m = this.#markets.get(market);
+          if (m) m.token = token;
+        }
         break;
       }
       case 'Trade': {
         const m = this.#market(e.address);
         m.trades++;
-        m.lastTradeBlock = e.blockNumber;
-        m.lastTradeAt = e.blockTimestamp;
-        const filled = BigInt(e.args.filledSize ?? 0n);
-        const price = BigInt(e.args.price ?? 0n);
+        if (m.firstTradeBlock === null) { m.firstTradeBlock = e.blockNumber; m.firstTradeAt = e.blockTimestamp; m.firstTradeTx = e.transactionHash; }
+        m.lastTradeBlock = e.blockNumber; m.lastTradeAt = e.blockTimestamp; m.lastTradeTx = e.transactionHash;
+        const filled = BigInt((e.args.filledSize as bigint | undefined) ?? 0n);
+        const price = BigInt((e.args.price as bigint | undefined) ?? 0n);
         m.filledBaseUnits += filled;
         m.quoteVolume18 += (price * filled) / 10n ** 18n;
         break;
       }
-      case 'OrderCreated': {
-        this.#market(e.address).ordersCreated++;
-        break;
-      }
-      case 'OrderCanceled': {
-        this.#market(e.address).ordersCanceled++;
-        break;
-      }
+      case 'OrderCreated': this.#market(e.address).ordersCreated++; break;
+      case 'OrderCanceled': this.#market(e.address).ordersCanceled++; break;
       case 'OrdersCanceled': {
         const ids = Array.isArray(e.args.orderId) ? e.args.orderId : [];
         this.#market(e.address).ordersCanceled += ids.length;
@@ -183,21 +231,26 @@ export class RadarAggregator {
 
   #lifecycle(token: string): TokenLifecycle {
     let t = this.#tokens.get(token);
-    if (!t) { t = { token, launchedAt: null, committedAt: null, securedAt: null, completedAt: null, graduationLatencyS: null }; this.#tokens.set(token, t); }
+    if (!t) { t = { token, launchedAt: null, committedAt: null, securedAt: null, completedAt: null, graduationLatencyS: null, market: null, launchTx: null, graduationTx: null, graduationBlock: null }; this.#tokens.set(token, t); }
     return t;
   }
 
   #market(address: string): MarketActivity {
-    const key = address.toLowerCase();
+    const key = lc(address);
     let m = this.#markets.get(key);
-    if (!m) { m = { market: key, token: this.#marketTokens.get(key) ?? null, trades: 0, ordersCreated: 0, ordersCanceled: 0, filledBaseUnits: 0n, quoteVolume18: 0n, lastTradeBlock: null, lastTradeAt: null }; this.#markets.set(key, m); }
+    if (!m) { m = { market: key, token: this.#marketTokens.get(key) ?? null, trades: 0, ordersCreated: 0, ordersCanceled: 0, filledBaseUnits: 0n, quoteVolume18: 0n, firstTradeBlock: null, firstTradeAt: null, firstTradeTx: null, lastTradeBlock: null, lastTradeAt: null, lastTradeTx: null }; this.#markets.set(key, m); }
     return m;
   }
 
-  snapshot(): RadarMetrics {
-    const tokens = [...this.#tokens.values()];
+  snapshot(cursorBlock = 0): RadarMetrics {
+    const tokens = [...this.#tokens.values()].map((t) => {
+      const m = t.market ? this.#markets.get(t.market) : undefined;
+      const phase: Phase = t.completedAt !== null ? 'GRADUATED' : t.securedAt !== null ? 'GRADUATION_SECURED' : t.committedAt !== null ? 'COMMITTED' : t.launchedAt !== null ? 'LAUNCHED' : 'UNKNOWN';
+      const timeToFirstKuruTradeS = t.completedAt !== null && m?.firstTradeAt != null ? Math.max(0, m.firstTradeAt - t.completedAt) : null;
+      return { ...t, phase, timeToFirstKuruTradeS };
+    });
     const activeOnCurve = tokens.filter((t) => t.launchedAt !== null && t.completedAt === null).length;
-    const json: RadarMetrics = {
+    return {
       lastBlock: this.#lastBlock,
       counts: { ...this.#counts },
       activeOnCurve,
@@ -207,14 +260,17 @@ export class RadarAggregator {
       freshness: {
         headHeight: this.#headHeight,
         lastEventBlock: this.#lastEventBlock,
-        cursorBlock: 0, // filled by the server from the stream cursor
+        cursorBlock,
+        lagBlocks: Math.max(0, this.#headHeight - cursorBlock),
         headMinusEvent: this.#headHeight - this.#lastEventBlock,
       },
       decodeErrors: this.#decodeErrors,
+      mappingConflicts: this.#mappingConflicts,
     };
-    return json;
   }
 }
+
+export const eventId = (e: Pick<RadarEvent, 'blockNumber' | 'logIndex' | 'transactionHash'>) => `${e.blockNumber}:${e.logIndex}:${e.transactionHash.toLowerCase()}`;
 
 /** JSON-safe rendering (bigint → string), the only wire format the server emits. */
 export function radarJson(metrics: RadarMetrics): string {
