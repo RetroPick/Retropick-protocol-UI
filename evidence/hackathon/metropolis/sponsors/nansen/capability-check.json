@@ -1,0 +1,18 @@
+{
+  "sponsor": "Nansen",
+  "bounty": "Best Use of Nansen",
+  "checkedAt": "2026-10-11",
+  "branch": "feat/metropolis-aurora-nansen",
+  "sources": [
+    "https://docs.nansen.ai/reference/chains",
+    "https://docs.nansen.ai/guides/redistribution-guide (official, fetched 2026-10-11)"
+  ],
+  "findings": {
+    "monadMainnet": "SUPPORTED (38 networks incl. 'monad'; full Smart Money/Token God Mode/Profiler coverage)",
+    "monadTestnet": "NOT LISTED \u2014 newly minted RetroPick testnet launch tokens are outside Nansen coverage regardless of entitlement",
+    "apiAccess": "Requires an API key on an entitled (paid) plan \u2014 none exists in this environment",
+    "redistribution": "Tiered: attribution-required for most tgm/* endpoints; Smart-Money flows RESTRICTED (approval + significant transformation); labels/holdings/leaderboards PROHIBITED for redistribution"
+  },
+  "decision": "BLOCKED_EXTERNAL \u2014 no API entitlement AND no testnet coverage of the product's assets. No Nansen-derived data is displayed anywhere (ungrounded scores prohibited).",
+  "honestAlternative": "The 'Risk Before Ape' experience ships from local RetroPick signals only: holder concentration (indexed transfers), Kuru spread/executable depth (Stage 1 panel), activity freshness (indexer) \u2014 each with real source and timestamp. Nansen integration is designed as a server-side licensed add-on (key never client-side) for post-campaign."
+}

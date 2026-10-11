@@ -14,6 +14,7 @@ Updated after every stage. Verdicts: `QUALIFIED / CONDITIONAL / BLOCKED / DEFERR
 
 | MetaMask agent plugin | LOCAL_TEST_VERIFIED; install BLOCKED_EXTERNAL | PR #15 (`feat/metropolis-metamask-agent`) | oclif mm plugin: 7 commands, pure policy core (chain/market/notional/expiry/tick/ownership), fails-closed place/cancel | typecheck vs agent-wallet 6.2.1; policy 8/8; manifest parsed by mm consent screen; local-install CLI bug (BLOCKER-005) | npm publish (operator) → mm plugins install | merged with operator authorization | `sponsors/metamask-agent/` + integrations/metamask-agent-retropick |
 
-| Aurora | NOT_STARTED | — | — | — | — | Stage 7 | — |
-| Nansen | NOT_STARTED | — | — | — | — | Stage 7 | — |
+| Aurora Intents | BLOCKED_EXTERNAL (closed: no testnet route; mainnet out of scope) | PR #16 (`feat/metropolis-aurora-nansen`) | capability check only — no widget built (insufficient per rules) | official supported-chains doc: Monad mainnet yes, testnet absent | — (revisit only if Aurora ships a testnet route) | merged with operator authorization | `sponsors/aurora/` |
+| Nansen | BLOCKED_EXTERNAL (closed: no key + no testnet coverage) | PR #16 (`feat/metropolis-aurora-nansen`) | local-signal risk factors shipped instead (spread/depth/holders/freshness with sources); no Nansen-derived data displayed | official chains/redistribution docs quoted | licensed server-side adapter is the post-campaign path | merged with operator authorization | `sponsors/nansen/` |
 | Kuru new assets (Stage 7) | DEFERRED — authorization-gated | — | kernels P0_CONDITIONAL, deployment plan + adapter plan issued; authorization requested twice (2026-10-11), no operator answer | local qualification stands (forge 210/0/1) | operator go + funded wallet would reopen this lane before the Oct-13 content stop | await operator | `execution/stages/P0_*.md` |
+RNAL)

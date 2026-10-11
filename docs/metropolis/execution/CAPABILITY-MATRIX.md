@@ -14,9 +14,10 @@ Every status beyond `MISSING` requires evidence.
 
 | 5 | MetaMask Agent Wallet | `TESTED_LOCAL` (typecheck + policy 8/8 + manifest validated by mm); install `BLOCKED_EXTERNAL` (2026-10-11) | `sponsors/metamask-agent/`; integrations/metamask-agent-retropick |
 
-| 6 | Aurora — Any-Chain Liquidity to Monad | `NOT_INSPECTED` | route capability check pending |
+| 6 | Aurora — Any-Chain Liquidity to Monad | `BLOCKED_EXTERNAL` (closed 2026-10-11) | `sponsors/aurora/` — Monad mainnet supported, no testnet route; mainnet out of scope |
 | 8 | Chainlink — Best Workflow with CRE | `TESTED_LOCAL` (typechecked, SDK-verified API); sim `BLOCKED_EXTERNAL` (cre login) | `sponsors/chainlink-cre/capability-check.json`; integrations/chainlink-cre |
-| 9 | Nansen — Best Use of Nansen | `NOT_INSPECTED` | no API entitlement known |
+| 9 | Nansen — Best Use of Nansen | `BLOCKED_EXTERNAL` (closed 2026-10-11) | `sponsors/nansen/` — no key + no testnet coverage; local-signal risk factors shipped instead |
+ (docs(metropolis): aurora + nansen capability checks — both closed BLOCKED_EXTERNAL)
 
 Cross-cutting infrastructure already in place: Monad RPC failover SDK, indexer
 (event journal + GET read model), referral service, media service, Playwright fixture/live/
