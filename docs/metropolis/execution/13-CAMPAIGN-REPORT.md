@@ -41,16 +41,21 @@ records under `docs/metropolis/execution/`.
   historical order/fill/cancel records).
 - `apps/web` zero-write guard: verified per commit and per PR (all empty).
 
-## D. Operator decision queue (time-ordered by deadline value)
+## D. Operator decision queue (updated 2026-10-11 — PRs #10–#16 are ALL MERGED; queue refresh)
 
-1. **Merge PR #10 and #12** (product features, fully green) → deploy retro-ui (B-001).
-2. **Mera manual run** (~2 min, PRF-capable browser): steps in
-   `evidence/hackathon/metropolis/sponsors/mera/README.md`.
-3. **Stage 7 go/no-go** (Kuru New Assets onchain): if yes, provide a funded testnet wallet
+1. ~~Merge PR #10 and #12~~ **DONE** (all seven merged with operator authorization;
+   post-merge main re-validated green: e2e 260/0, forge 210/0/1).
+2. **retro-ui public staging deployment** — in progress on
+   `feat/metropolis-retro-ui-staging` (Vercel staging project + quick-tunnel backends;
+   see the STAGING-* docs once landed). Legacy `retropick-metropolis.vercel.app` still
+   serves apps/web until an approved cutover.
+3. **Mera manual run** (~2 min, PRF-capable browser): steps in
+   `evidence/hackathon/metropolis/sponsors/mera/README.md` (best on the stable staging host).
+4. **Stage 7 go/no-go** (Kuru New Assets onchain): if yes, provide a funded testnet wallet
    (≤2 MON cap) before the Oct-13 23:59 ET content stop.
-4. Tokens/logins that unblock bounties: `ENVIO_API_TOKEN`, `cre login`, npm publish of
+5. Tokens/logins that unblock bounties: `ENVIO_API_TOKEN`, `cre login`, npm publish of
    `@retropick/mm-plugin`.
-5. Submission answers + demo video per `docs/hackathon/SUBMISSION_CHECKLIST.md` (founder
+6. Submission answers + demo video per `docs/hackathon/SUBMISSION_CHECKLIST.md` (founder
    approval gates remain unchecked).
 
 ## E. Known limitations (honesty ledger)

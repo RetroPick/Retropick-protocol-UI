@@ -67,7 +67,6 @@ Format per mission §22. Never print credentials.
 - Can real E2E continue: NO (simulation requires login)
 - Next owner action: `cre login`, then `cd integrations/chainlink-cre && cre workflow
   simulate graduation-safety --target monad-testnet-settings --non-interactive --trigger-index 0`
->>>>>>> a1e2224 (feat(metropolis): chainlink CRE graduation safety workflow (simulation auth-gated))
 ## BLOCKER-005 — MetaMask Agent Wallet plugin install (npm-publish or CLI local-install bug)
 
 - Sponsor: MetaMask Agent Wallet
@@ -89,10 +88,10 @@ Format per mission §22. Never print credentials.
 - Next owner action: `npm publish` the plugin (or install from a git URL hosted on GitHub,
   which is a supported verifiable source), then `mm plugins install @retropick/mm-plugin
   --accept-permissions` and run the read-only commands
->>>>>>> 4d145f9 (feat(metropolis): metamask agent wallet plugin — risk-controlled trading agent)
 
-## PENDING PROBES (Stage 6/7): MetaMask `mm` CLI installability, Aurora Intents route
-support for the required source/destination assets, Nansen API entitlement.
+_Stage-6/7 probes (mm CLI installability, Aurora route support, Nansen entitlement) were
+completed 2026-10-11 and recorded as BLOCKER-005/006/007 below._
+
 ## BLOCKER-006 — Aurora Intents: no testnet route
 
 - Sponsor: Aurora ("Bring Any-Chain Liquidity to Monad")
@@ -121,4 +120,3 @@ support for the required source/destination assets, Nansen API entitlement.
   no Nansen-derived data is displayed anywhere
 - Next owner action: if a key is obtained, wire the server-side adapter per the mission
   architecture (key never in the browser) and respect the redistribution tiers
->>>>>>> 4400c16 (docs(metropolis): aurora + nansen capability checks — both closed BLOCKED_EXTERNAL)
