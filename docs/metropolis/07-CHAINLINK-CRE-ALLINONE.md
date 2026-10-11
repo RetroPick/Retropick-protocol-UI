@@ -85,3 +85,14 @@ Most hackathon oracle uses are price feeds. Here CRE automates the **operational
 
 ### Acceptance and evidence
 Committed workflow source+config, reproducible `cre workflow simulate` console output, testnet onchain read trace, external source evidence, negative failure result, <=2-minute video. Live-chain state mutation is optional ONLY if official sponsor allows simulation; do not claim it was achieved without a deployed receipt.
+
+
+---
+## 2026-10-11 CRE expansion — creator recovery and launchpad integrity
+Read [13 Creator Continuity](13-CREATOR-CONTINUITY-MERA-CRE.md) and the updated [Chainlink integration README](../../integrations/chainlink-cre/README.md). apps/retro-ui ONLY; never modify apps/web.
+
+**First gate:** Existing integrations/chainlink-cre/graduation-safety/main.ts is a real typed CRE Cron+EVM+HTTP Sourcify read-only workflow. User reported cre login successful, but recorded positive/negative official simulator output is still required. Run cre whoami, inspect help and simulate existing workflow before developing a second. Current SDK and CLI versions must be checked.
+
+**High-value P1 proposal: CRE Creator Continuity Watch.** Read FactoryV2 getLaunchedToken and pendingCreatorFeeRecipient, change proposal/cancel/updated events; compare to timestamped authentic external wallet/passkey enrollment case metadata and beneficiary proof. Deterministically report ALIGNED, WRONG_RECIPIENT, NO_VERIFIED_CASE, WAITING, EXECUTABLE, EXPIRED, CANCELLED, REPLACED, CONFIRMED, or INCOMPLETE_EXTERNAL. Anchor block/time, bound URL and chain, use replay-safe case IDs, fail closed on stale HTTP. Public UI surfaces change timeline, with explicit admin decision and 3-day timelock. CRE does not sign on behalf of factory owner, cannot veto arbitrary owner override, and cannot itself restore old EOA or old FeeEscrow credits. Existing factory forwarding is V4-versus-curve and does NOT demonstrate post-graduation Kuru creator revenue migration.
+
+**Further P1:** Creator Revenue Continuity Auditor compares future fee recipient, vest beneficiary and historical old-wallet escrow credits. **P2:** post-graduation live Kuru depth/first-trade safety; P0 prediction resolution only after trusted resolution spec/deployment. Never claim DON execution for local simulation. Official docs: https://docs.chain.link/cre/overview ; https://docs.chain.link/cre/guides/operations/deploying-workflows . Challenge wrong-recipient, stale offchain case, cross-launch replay, owner cancellation, superseded proposal, 3-day window via fork simulation and historical escrow assets not movable.
