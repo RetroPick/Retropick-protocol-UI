@@ -252,3 +252,28 @@
 .rp-vault-draft .rp-field input { border: 1px solid var(--border-soft); border-radius: var(--rp-radius-sm); background: var(--inset); color: var(--text); padding: 8px 10px; font: inherit }
 .rp-vault-draft .rp-field input:focus, .rp-vault-draft textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px }
 .rp-vault-entry-head code, .rp-note code { font-family: var(--rp-mono); font-size: 11.5px }
+
+
+/* Protected Earn (Mera creator-continuity) */
+.rp-protect { display: flex; flex-direction: column; gap: 18px }
+.rp-protect header h2 { display: flex; align-items: center; gap: 8px; font-size: 16px; margin: 0 0 4px }
+.rp-protect-modes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
+.rp-protect-mode { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); padding: 12px 14px; background: var(--panel) }
+.rp-protect-mode[data-mode="PASSKEY_SIGNER"] { border-color: color-mix(in srgb, var(--rp-accent, #836ef9) 55%, var(--border-soft)) }
+.rp-protect-mode[data-available="false"] { opacity: .62 }
+.rp-protect-mode-head { display: flex; align-items: center; gap: 7px; margin-bottom: 5px }
+.rp-protect-mode-head strong { font-size: 13.5px }
+.rp-protect-mode p { margin: 0 0 6px; font-size: 12.5px; color: var(--text-2) }
+.rp-protect-honesty { color: var(--text-3) !important; font-size: 11.5px !important }
+.rp-badge-warn { background: color-mix(in srgb, #f5a623 24%, transparent); color: #f5a623; border-radius: 999px; padding: 1px 7px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em }
+.rp-protect-signer, .rp-protect-handoff { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); padding: 14px 16px; background: var(--panel) }
+.rp-protect-signer h3, .rp-protect-handoff h3 { display: flex; align-items: center; gap: 7px; font-size: 13.5px; margin: 0 0 6px }
+.rp-protect-addr { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; font-size: 12px }
+.rp-protect-addr span { color: var(--text-3) }
+.rp-protect-row { display: flex; gap: 8px; margin-top: 8px }
+.rp-protect-row input { flex: 1; min-width: 0; padding: 8px 10px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--bg-1, var(--panel)); color: var(--text-1); font-family: var(--mono, monospace); font-size: 12px }
+.rp-protect-prepared { margin-top: 12px; border: 1px dashed var(--border-soft); border-radius: 8px; padding: 10px 12px; font-size: 12px }
+.rp-protect-prepared code { display: block; margin: 6px 0; word-break: break-all; color: var(--text-2) }
+.rp-protect-prepared ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-3) }
+.rp-protect-foot { font-size: 11px }
+@media (max-width: 560px) { .rp-protect-modes { grid-template-columns: 1fr } }

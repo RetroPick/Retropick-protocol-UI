@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { formatUnits } from 'viem';
 import { motion } from 'motion/react';
 import { Tabs as RTabs } from 'radix-ui';
-import { ArrowUpRight, Coins, Gift, Layers, Link2, Lock, Rocket, Send, Wallet } from 'lucide-react';
+import { ArrowUpRight, Coins, Gift, Layers, Link2, Lock, Rocket, Send, ShieldCheck, Wallet } from 'lucide-react';
 import Link from '@/components/product/safe-link';
 import Portfolio from '@/features/portfolio/portfolio';
 import { LivePortfolio } from '@/features/portfolio/live-portfolio';
@@ -22,6 +22,7 @@ import { EarnHero, HideValuesProvider, Money } from './earn-hero';
 import { useEarnWallet } from './use-claims';
 import { ReferralQr } from './referral-qr';
 import { StrategyVault } from './strategy-vault';
+import { ProtectedEarn } from './protected-earn';
 import { Reveal } from './amount';
 import { DATA_MODE, INDEXER_URL } from '@/lib/live/env';
 import { fetchSearch } from '@/lib/live/indexer-client';
@@ -41,6 +42,7 @@ const TABS: Array<[string, string, ReactNode]> = [
   ['referrals', 'Referrals', <Gift key="r" size={14} aria-hidden />],
   ['funding', 'Fund & send', <Send key="f" size={14} aria-hidden />],
   ['vault', 'Vault', <Lock key="v" size={14} aria-hidden />],
+  ['protection', 'Protection', <ShieldCheck key="s" size={14} aria-hidden />],
 ];
 
 function initialTab(): string {
@@ -120,6 +122,7 @@ function LiveHub() {
         referrals: <Reveal delay={0.05}><ReferralCard /></Reveal>,
         funding: <Reveal delay={0.05}><FundWallet><SendToWallet /></FundWallet></Reveal>,
         vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
+        protection: <Reveal delay={0.05}><ProtectedEarn /></Reveal>,
       }} />
       <ClaimSheet open={sheetOpen} onOpenChange={setSheetOpen} earn={earn} />
     </div>
@@ -191,6 +194,7 @@ function DemoHub() {
         </section></Reveal>,
         funding: <Reveal><section className="rp-hub-section"><FundWallet /><div className="rp-hub-send"><h3 className="rp-section-title"><Send size={15} aria-hidden />Send</h3><p className="rp-note">Transfers to an EVM address on Monad Testnet. Connect a live wallet in live mode; demo mode never sends.</p></div></section></Reveal>,
         vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
+        protection: <Reveal delay={0.05}><div className="rp-hub-section"><p className="rp-note">Protected Earn (passkey-controlled creator-fee wallet) is a live-mode feature. Switch to live mode and connect a wallet to derive your protected wallet and review a fee-recipient handoff.</p></div></Reveal>,
       }} />
     </div>
   </HideValuesProvider>;
