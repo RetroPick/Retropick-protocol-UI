@@ -654,3 +654,36 @@ export async function missingApprovals(chain: ChainClient, write: PreparedWrite)
   }
   return missing;
 }
+
+
+/**
+ * Prepare the VOLUNTARY transfer of a launch's creator-fee recipient to a new address, callable
+ * ONLY by the current recipient (Factory.transferCreatorFeeRecipient — immediate, no timelock).
+ *
+ * This redirects FUTURE creator fees only. It does NOT move already-escrowed credits (those stay
+ * claimable by the original msg.sender), does NOT change the immutable ERC-20 `deployer`
+ * attribution, and is distinct from the owner-administered, timelocked `setCreatorFeeRecipient`
+ * override. Reverts (previewed here as a precondition) if the caller is not the current recipient.
+ */
+export async function prepareTransferCreatorFeeRecipient(chain: ChainClient, token: Address, account: Address, newRecipient: Address): Promise<PreparedWrite> {
+  if (!/^0x[0-9a-fA-F]{40}$/.test(newRecipient) || /^0x0{40}$/.test(newRecipient)) fail('New recipient must be a non-zero address.');
+  const launched = await chain.readContract({ address: addresses.factory, abi: factoryAbi, functionName: 'getLaunchedToken', args: [token] }) as { creatorFeeRecipient: Address; deployer: Address; exists: boolean };
+  if (!launched.exists) fail('Token is not a RetroPick launch.');
+  if (launched.creatorFeeRecipient.toLowerCase() !== account.toLowerCase()) fail('Only the current creator-fee recipient can transfer future fee rights.');
+  if (launched.creatorFeeRecipient.toLowerCase() === newRecipient.toLowerCase()) fail('New recipient equals the current recipient.');
+  return {
+    to: addresses.factory,
+    abi: factoryAbi as unknown as readonly unknown[],
+    functionName: 'transferCreatorFeeRecipient',
+    args: [token, newRecipient],
+    value: 0n,
+    account,
+    approvals: [],
+    label: 'Transfer future creator fees',
+    checks: [
+      `current recipient ${launched.creatorFeeRecipient} == caller`,
+      `immutable deployer ${launched.deployer} (attribution unchanged)`,
+      `redirects FUTURE fees only; escrowed credits stay with the original recipient`,
+    ],
+  };
+}
