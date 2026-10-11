@@ -36,5 +36,22 @@ Format per mission §22. Never print credentials.
   the public endpoint. To be re-verified with the actual HyperSync client protocol in
   Stage 4; if a token is required and unavailable → BLOCKED_EXTERNAL for Envio.
 
+## BLOCKER-003 — Envio HyperSync API token
+
+- Sponsor: Envio ("Best Use of Envio")
+- Required service: HyperSync data access at https://10143.hypersync.xyz (chain 10143)
+- Credential/access: Envio API token (envio.dev dashboard) — operator action
+- Environment variable: `ENVIO_API_TOKEN`
+- Current status: OPEN — verified hard blocker
+- What was tested: bare GET → HTTP 401; `@envio-dev/hypersync-client` 1.4.1 client
+  construction → `Missing field apiToken` (mandatory field); envio CLI 3.14.0 and docker
+  29.8.2 both work, so only the token is missing
+- Blocking error category: credential/access
+- Can local implementation continue: YES — done: aggregation core implemented + 8/8
+  unit tests (`integrations/envio-market-radar`)
+- Can real E2E continue: NO (needs the token)
+- Next owner action: create the Envio token, set ENVIO_API_TOKEN, `npm install && npm start`
+  in integrations/envio-market-radar, then wire the retro-ui consumption panel
+
 ## PENDING PROBES (Stage 6/7): MetaMask `mm` CLI installability, Aurora Intents route
 support for the required source/destination assets, Nansen API entitlement.
