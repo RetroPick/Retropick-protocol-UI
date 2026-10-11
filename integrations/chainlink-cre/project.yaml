@@ -1,5 +1,7 @@
 # RetroPick × Chainlink CRE — project config
-# Chains available to workflows in this project. Values interpolate from .env.
-rpcs:
-  - chain-name: monad-testnet
-    url: ${MONAD_TESTNET_RPC_URL}
+# Target-scoped settings (structure per cre v1.38 generated convention: rpcs live
+# UNDER the target key). Values interpolate from .env (MONAD_TESTNET_RPC_URL).
+monad-testnet-settings:
+  rpcs:
+    - chain-name: monad-testnet
+      url: ${MONAD_TESTNET_RPC_URL}

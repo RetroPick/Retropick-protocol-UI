@@ -41,6 +41,9 @@ async function main() {
   sh('vercel', ['link', '--yes', '--project', PROJECT]);
   console.log('linked repo root → staging project');
 
+  // Env rotation with VERIFICATION — a generic catch around `env add` misclassifies real
+  // failures as "already set" (operator-noted bug). Instead: list what exists, rm the
+  // stale value, add the fresh one, then re-list to prove the written value took effect.
   const env = [
     ['VITE_DATA_MODE', 'live'],
     ['VITE_INDEXER_URL', tunnelUrl],
@@ -48,8 +51,24 @@ async function main() {
   ];
   for (const [key, value] of env) {
     for (const target of ['production', 'preview']) {
-      try { sh('vercel', ['env', 'add', key, target], { input: value + '\n' }); console.log(`env ${key} (${target}) set`); }
-      catch { console.log(`env ${key} (${target}) already set — leaving unchanged`); }
+      let existing = '';
+      try { existing = sh('vercel', ['env', 'ls', target]); } catch (error) {
+        console.error(`env ${key} (${target}): 'vercel env ls' FAILED — aborting rather than guessing: ${String(error).slice(0, 160)}`);
+        process.exit(1);
+      }
+      const wasSet = existing.split('\n').some((line) => line.trim().startsWith(key));
+      if (wasSet) {
+        sh('vercel', ['env', 'rm', key, target, '--yes']);
+        console.log(`env ${key} (${target}): removed stale value for rotation`);
+      }
+      try { sh('vercel', ['env', 'add', key, target], { input: value + '\n' }); }
+      catch (error) { console.error(`env ${key} (${target}): add FAILED: ${String(error).slice(0, 160)}`); process.exit(1); }
+      const after = (() => { try { return sh('vercel', ['env', 'ls', target]); } catch { return ''; } })();
+      if (!after.split('\n').some((line) => line.trim().startsWith(key))) {
+        console.error(`env ${key} (${target}): post-write verification FAILED — value not present after add`);
+        process.exit(1);
+      }
+      console.log(`env ${key} (${target}): set + verified`);
     }
   }
 

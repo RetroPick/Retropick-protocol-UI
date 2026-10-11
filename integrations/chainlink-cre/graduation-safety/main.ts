@@ -22,6 +22,7 @@ import {
   Runner,
   consensusIdenticalAggregation,
   encodeCallMsg,
+  protoBigIntToBigint,
   LATEST_BLOCK_NUMBER,
   type CronPayload,
   type Runtime,
@@ -92,8 +93,8 @@ async function graduationSafety(runtime: Runtime<Config>, _trigger: CronPayload)
 
   // 1. Chain anchor
   const header = evm.headerByNumber(runtime, {}).result();
-  const anchorBlock = header.header?.blockNumber?.toString() ?? '0';
-  const anchorTimestamp = header.header?.timestamp?.toString() ?? '0';
+  const anchorBlock = header.header?.blockNumber ? protoBigIntToBigint(header.header.blockNumber).toString() : '0';
+  const anchorTimestamp = header.header?.timestamp !== undefined && header.header.timestamp !== null ? header.header.timestamp.toString() : '0';
 
   // 2–4. On-chain graduation ledger, receipt, custody agreement
   const ledger = decodeFunctionResult({
@@ -118,24 +119,27 @@ async function graduationSafety(runtime: Runtime<Config>, _trigger: CronPayload)
 
   // 5. Real external input: Sourcify verification status of the launch factory.
   // HTTP sends execute in node mode; DON consensus aggregates the single deterministic result.
-  const external = runtime.runInNodeMode(
-    (nodeRuntime) => {
-      const response = http.sendRequest(nodeRuntime, { url: cfg.sourcifyCheckUrl, method: 'GET' }).result();
-      return { statusCode: response.statusCode ?? 0, body: bytesToText(response.body) };
-    },
-    consensusIdenticalAggregation<{ statusCode: number; body: string }>(),
-  )().result();
+  // Transport failures (DNS, timeout, refused) must surface as the designed
+  // INCOMPLETE_EXTERNAL verdict — never crash the workflow.
+  let external: { statusCode: number; body: string } = { statusCode: 0, body: '' };
   let sourcifyStatus = 'unavailable';
-  if (external.statusCode === 200) {
-    try {
-      const parsed = JSON.parse(external.body) as Array<{ status?: string }>;
-      sourcifyStatus = parsed[0]?.status ?? 'unknown';
-    } catch {
-      sourcifyStatus = 'unparseable';
+  try {
+    external = runtime.runInNodeMode(
+      (nodeRuntime) => {
+        const response = http.sendRequest(nodeRuntime, { url: cfg.sourcifyCheckUrl, method: 'GET' }).result();
+        return { statusCode: response.statusCode ?? 0, body: bytesToText(response.body) };
+      },
+      consensusIdenticalAggregation<{ statusCode: number; body: string }>(),
+    )().result();
+    if (external.statusCode === 200) {
+      const parsed = JSON.parse(external.body) as { runtimeMatch?: string };
+      sourcifyStatus = parsed.runtimeMatch ?? 'unknown';
     }
+  } catch {
+    sourcifyStatus = 'unavailable';
   }
   const externalFactoryVerified: ExternalCheck =
-    sourcifyStatus === 'perfect' ? 'verified' : sourcifyStatus === 'partial' ? 'mismatch' : 'unavailable';
+    sourcifyStatus === 'exact_match' ? 'verified' : sourcifyStatus === 'partial_match' ? 'mismatch' : 'unavailable';
 
   const coreChecksPass = graduated && marketIdentity && custodyAgreement;
   const verdict: SafetyReport['verdict'] = !coreChecksPass
@@ -168,15 +172,15 @@ async function graduationSafety(runtime: Runtime<Config>, _trigger: CronPayload)
   };
 }
 
-const workflow = [
-  // Hourly cadence; the simulator fires cron triggers immediately on run.
+// Hourly cadence; the simulator fires cron triggers immediately on run.
+const initWorkflow = () => [
   cre.handler(cron.trigger({ schedule: '0 * * * *' }), graduationSafety),
 ];
 
-export { workflow, graduationSafety };
-
-// CRE entrypoint
-const runner = await Runner.newRunner<Config>({
-  configParser: (raw) => JSON.parse(new TextDecoder().decode(raw)) as Config,
-});
-runner.run(() => workflow);
+// Canonical CRE entrypoint (javy requires exported functions without parameters).
+export async function main() {
+  const runner = await Runner.newRunner<Config>({
+    configParser: (raw) => JSON.parse(new TextDecoder().decode(raw)) as Config,
+  });
+  await runner.run(initWorkflow);
+}
