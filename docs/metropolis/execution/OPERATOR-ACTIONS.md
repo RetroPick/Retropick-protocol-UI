@@ -1,52 +1,34 @@
-# Operator Actions — ordered queue (2026-10-11, post-staging)
+# Operator Action Queue — RetroPick Metropolis
 
-Staging is LIVE and validated: https://retropick-metropolis-retro-ui-stagi.vercel.app
-(evidence: `staging/deployment.json`, STAGING-VALIDATION.md). Items below are the ones
-that genuinely need you — everything else is done or documented.
+Value-ordered. Items are gated: the agent prepared everything; these need a human.
 
-## 1. Durability upgrade for judges (recommended before demo recording)
+## 1. Rotate the Envio API token (unblocks public Market Radar)
+The development token was shared in chat (exposed). Rotate it at envio.dev → place the new value in
+the gitignored 0600 file `.staging/radar.env` (`ENVIO_API_TOKEN=…`). Then the agent starts
+`retropick-radar` and sets `STAGING_GATEWAY_RADAR=1` to expose same-origin `/api/radar/*`. Until then
+the retro-ui radar panel renders its honest unavailable state. (Lane: `20261012-envio-live.md`.)
 
-Quick tunnel + WSL host is non-durable (URL rotates on restart; host sleep kills it).
-Pick one:
-- **Named tunnel (~10 min):** run `cloudflared tunnel login` once, then ask the agent to
-  migrate start-backend.mjs to a named tunnel with a stable hostname — redeploy once,
-  done. Best effort/reliability ratio.
-- Or provide a small always-on host for the three services.
+## 2. Real Mera passkey ceremony evidence (Gate E)
+On `https://retropick-metropolis-retro-ui-stagi.vercel.app` → Earn → Protection: derive the protected
+wallet, lock/reload, derive again (same address), screenshot both; optionally "Prepare handoff" for a
+token you own and screenshot the prepared (unsent) `transferCreatorFeeRecipient`. No broadcast.
+(Lane: `20261012-mera-signer.md`.)
 
-## 2. Production cutover decision (approval checkpoint)
+## 3. SSH-agent unlock for Contabo read-only inspection
+In a local terminal: `eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519_yubie_contabo`. Then the agent
+runs the READ-ONLY VPS inventory (Yubie untouched). No host writes without a separate approval.
+(Lane: VPS durability.)
 
-Staging is qualified (12/12 read-only e2e green, honest market states verified). To make
-`retropick-metropolis.vercel.app` (the URL already in README/HACKATHON.md) serve
-retro-ui: approve the cutover — the agent will prepare the proposal per RELEASE-GATES
-(SHA, config, env, rollback = `vercel rollout undo`) and execute on your go. Until then
-judges should use the staging URL.
+## 4. MetaMask Agent plugin — publish + provision (HARD GATE)
+Approve `npm publish --access public` of `@retropick/mm-plugin@0.1.0` (2FA), then `mm login` +
+provision/fund an agent wallet for the bounded live demo. CLI 6.2.1 local-path install is broken
+(BLOCKER-005 confirmed); publish or git URL is required. Full packet in `20261012-metamask-agent.md`.
 
-## 3. Credential unblocks (each = one sponsor bounty)
+## 5. Any testnet financial transaction (per-tx approval)
+Creator-fee handoff broadcast, Kuru orders, Kuru New Assets P0 deployment/liquidity. Each needs a
+fresh, transaction-specific authorization with an exact summary. None performed autonomously.
 
-- **Envio:** create an API token at envio.dev → `ENVIO_API_TOKEN` for the radar service
-  (then the agent finishes persistence hardening + the retro-ui radar panel).
-- **Chainlink CRE:** run `cre login` on the host → the agent runs the documented
-  `cre workflow simulate` (success + negative cases) and records sanitized traces.
-- **MetaMask:** approve `npm publish` of `@retropick/mm-plugin` (or host it as a GitHub
-  source), then `mm plugins install` + wallet provisioning for the real signed-order demo.
-- **Media (optional):** provide `PINATA_JWT` (server-side only) to switch logo storage to
-  IPFS mode (local mode works today through the tunnel).
-
-## 4. Mera PRF manual evidence (~2 min, any PRF-capable browser)
-
-Open the staging URL → Earn → Vault → create vault with a passkey → add a thesis → Lock
-→ Unlock → confirm the entry returns → export JSON and confirm no plaintext inside.
-Note: vaults are bound to the hostname (RP ID) — run this on the domain judges will see,
-and record it (steps also in `sponsors/mera/README.md`).
-
-## 5. Stage 7 / Kuru New Assets (unchanged gate)
-
-P0 kernels remain locally qualified and deployment-ready; onchain deployment still needs
-your explicit go + a funded testnet wallet (≤2 MON cap) before the Oct-13 content stop.
-The evidenced market's book is currently empty — the same authorized flow would also
-re-seed demonstrable liquidity.
-
-## 6. Submission window
-
-Demo videos (3-min technical, 2-min founder, sponsor clips), portal answers, founder
-approval gates — checklist: `docs/hackathon/SUBMISSION_CHECKLIST.md`.
+## Deferred (not blocking submission)
+- Pinata IPFS media (token rotation required; local media works).
+- Named Cloudflare tunnel / Contabo migration (durable ingress; quick tunnel auto-recovers meanwhile).
+- Aurora / Nansen (no supported Monad Testnet capability — BLOCKED_EXTERNAL).
