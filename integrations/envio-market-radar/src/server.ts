@@ -14,8 +14,23 @@ const PORT = Number(process.env.RADAR_PORT ?? 8791);
 const API_TOKEN = process.env.ENVIO_API_TOKEN ?? '';
 const FACTORY = process.env.RADAR_FACTORY ?? '0xa7f18b9eceb0A9852b08408854A45D00fc682454';
 const COORDINATOR = process.env.RADAR_COORDINATOR ?? '0xaD62309242EA65BB07C833669EC6a4ED23AF738F';
-const MARKET_TOKENS: Record<string, string> = JSON.parse(process.env.RADAR_MARKET_TOKENS ?? '{}');
 const FROM_BLOCK = Number(process.env.RADAR_FROM_BLOCK ?? 69_509_526);
+/**
+ * Market→token map. Accepts JSON (`{"0xmarket":"0xtoken"}`) OR a bare `0xmarket:0xtoken,…` list —
+ * the latter survives systemd EnvironmentFile quote-stripping, which mangles JSON double-quotes.
+ */
+export function parseMarketTokens(raw: string): Record<string, string> {
+  const value = (raw ?? '').trim();
+  if (!value || value === '{}') return {};
+  try { return JSON.parse(value) as Record<string, string>; } catch { /* fall through to bare form */ }
+  const out: Record<string, string> = {};
+  for (const pair of value.replace(/^\{|\}$/g, '').split(',')) {
+    const [m, t] = pair.split(':').map((s) => s.trim().replace(/^["']|["']$/g, ''));
+    if (/^0x[0-9a-fA-F]{40}$/.test(m ?? '') && /^0x[0-9a-fA-F]{40}$/.test(t ?? '')) out[m.toLowerCase()] = t.toLowerCase();
+  }
+  return out;
+}
+const MARKET_TOKENS: Record<string, string> = parseMarketTokens(process.env.RADAR_MARKET_TOKENS ?? '{}');
 const CHAIN_ID = Number(process.env.RADAR_CHAIN_ID ?? 10_143);
 const DEPLOYMENT = process.env.RADAR_DEPLOYMENT ?? 'retropick-monad-testnet-v2';
 const STATE_DIR = process.env.RADAR_STATE_DIR ?? resolve(here, '../../../.data/radar');
@@ -69,4 +84,7 @@ async function main() {
   await stream.run();
 }
 
-main().catch((error) => { console.error('radar failed to start:', error instanceof Error ? error.message : error); process.exit(1); });
+import { pathToFileURL } from 'node:url';
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  main().catch((error) => { console.error('radar failed to start:', error instanceof Error ? error.message : error); process.exit(1); });
+}
