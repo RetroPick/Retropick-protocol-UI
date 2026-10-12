@@ -85,3 +85,50 @@ See OPERATOR-ACTIONS.md item 3 (ssh-agent unlock) → then item for migration go
 
 ## Next lane
 Pinata deferral record + Aurora/Nansen closures (`20261012-closures.md`).
+
+
+## 2026-10-12 (update) — ACCESS RESOLVED, read-only inventory COMPLETE
+
+Operator configured a persistent ssh-agent (socket `~/.ssh/retropick-agent.sock`, ED25519
+`yubie-contabo-staging`). `SSH_AUTH_SOCK=$HOME/.ssh/retropick-agent.sock` + BatchMode connect
+succeeds with no password. Full read-only inventory captured; Yubie untouched; zero host mutation.
+Evidence: `evidence/hackathon/metropolis/staging/vps-inventory-20261012.txt`.
+
+### Real figures
+| Dimension | Observed | Headroom for RetroPick |
+|---|---|---|
+| Host | `vmi3646941`, Ubuntu 24.04.5, kernel 6.8 | — |
+| CPU | 4 vCPU, load ~0.1 | ample (stack is I/O-light) |
+| Memory | 7.8 GiB, **7.1 GiB available**, no swap | ample (stack ≈ 300–500 MiB) |
+| Disk / inodes | 87 GB free (10% used), inodes 3% | ample (SQLite journals + media ≈ MBs) |
+| Public listeners | 22 (ssh), 53 (dns) only | — |
+| Host ports 8787/8788/8790/8791/8799 | **all free on the host** | RetroPick binds cleanly |
+| Yubie containers (operator-confirmed) | `staging-api-1` healthy (container :8787/tcp), `staging-postgres-1` healthy (:5432/tcp) | **not published to host** → no host-port conflict |
+| compose | docker compose v5.6.0 | available |
+| ingress | no host nginx/caddy/traefik; cloudflared NOT installed | named tunnel/proxy must be installed (gated) |
+| isolation | no `retropick-staging` user (clean); lingering `Linger=no` | create user + `loginctl enable-linger` at deploy |
+
+### Port-conflict analysis (important)
+Yubie's `staging-api-1` listens on container port 8787 but is **not host-published** (host shows no
+8787 listener). The RetroPick indexer's host `127.0.0.1:8787` therefore does not collide. All five
+RetroPick host ports are free. RetroPick containers would still use an isolated Docker network and
+project name, so even container-internal names never clash with Yubie's.
+
+### Confirmed deployment plan (figures-backed, still GATED — no writes performed)
+Mirror the WSL `systemd --user` stack onto Contabo as an isolated system-level stack:
+- `retropick-staging` system user (non-root, no docker-socket grant); `loginctl enable-linger`.
+- `/opt/retropick/staging` (code) · `/var/lib/retropick-staging` (SQLite + media) ·
+  `/etc/retropick/staging` 0700 (0600 env files: radar.env, media.env) · `/var/log/retropick-staging`.
+- Services loopback-bound 8787/8788/8790/8791/8799 behind the existing allowlist gateway; a **named
+  Cloudflare tunnel** (stable hostname — needs cloudflared install + DNS/account = operator) or an
+  authorized reverse proxy for durable HTTPS, replacing the quick tunnel.
+- Reuses the exact scripts already written (`install-user-units.mjs` adapts to system units;
+  gateway/tunnel-runner/deploy unchanged).
+- Backup/rollback: WAL-safe `sqlite3 .backup` of indexer+referral + media tar from WSL, checksum
+  manifest, parallel install, private smoke, cut the named tunnel over, 12 read-only Playwright,
+  rollback = repoint to the WSL quick tunnel (stacks share nothing).
+
+### Still a HARD GATE
+No package install (cloudflared), no user creation, no filesystem write, no DNS/Cloudflare change, no
+deployment on Contabo without a separate explicit operator-approved change scope. Capacity is proven
+sufficient; this remains preparation only. The exact approval request is in OPERATOR-ACTIONS.md.

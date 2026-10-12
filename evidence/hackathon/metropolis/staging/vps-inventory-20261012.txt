@@ -1,0 +1,27 @@
+RetroPick Contabo read-only inventory — 2026-10-12 (SSH vps-contabo-yubie-1, user yubie-deploy)
+Access: persistent ssh-agent socket ~/.ssh/retropick-agent.sock, ED25519 yubie-contabo-staging; BatchMode OK, no password.
+
+HOST
+  hostname           vmi3646941
+  os                 Ubuntu 24.04.5 LTS, kernel 6.8.0-146-generic
+  uptime/load        up 3d 11h, load ~0.1-0.3 (idle)
+RESOURCES
+  cpu                4 vCPU
+  memory             7.8 GiB total · 650 MiB used · 7.1 GiB available
+  swap               none
+  disk /             96 GB total · 9.3 GB used · 87 GB free (10%)
+  inodes /           12.97M total · 270k used (3%)
+PORTS
+  public listeners   22 (ssh), 53 (dns resolver) only
+  8787/8788/8790/8791/8799  ALL FREE on host (RetroPick stack can bind cleanly)
+DOCKER (operator-confirmed; agent sudo is interactive-gated, not repeated)
+  staging-api-1       healthy, container port 8787/tcp   [YUBIE — DO NOT TOUCH]
+  staging-postgres-1  healthy, container port 5432/tcp   [YUBIE — DO NOT TOUCH]
+  compose             docker compose v5.6.0 installed
+INGRESS
+  no host-level nginx/caddy/traefik/haproxy/apache process visible to yubie-deploy
+  cloudflared NOT installed on PATH
+ISOLATION READINESS
+  no retropick-staging user (clean); /opt and /var/lib root-owned (install paths available)
+  user lingering currently Linger=no (enable at deploy time for durable --user units)
+NOTE: Yubie container DB contents / env / secrets were NOT inspected. Zero host mutation performed.
