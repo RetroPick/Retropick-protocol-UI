@@ -103,3 +103,29 @@ start `retropick-radar` and set `STAGING_GATEWAY_RADAR=1` to expose `/api/radar/
 ## Next lane
 
 Mera signer compatibility proof → Protected Earn (`20261012-mera-signer.md`).
+
+
+## 2026-10-12 (later) — PUBLIC ACTIVATION DONE (operator authorized the dev token, no rotation)
+
+Operator explicitly authorized the existing `.staging/radar.env` dev token for the hackathon.
+Public Market Quality Radar is now live end-to-end:
+
+- `retropick-radar` systemd --user unit (`install-user-units.mjs --radar`) reads `ENVIO_API_TOKEN`
+  from the 0600 EnvironmentFile (never inlined/printed); gateway `STAGING_GATEWAY_RADAR=1`;
+  Vercel forwards `/api/radar/*` to the tunnel (deployed SHA `5d19b83`).
+- Local radar health: status OK, cursor at head, **lag 0**, 37 journaled events, **0 decode errors**,
+  2 markets / 9 tokens, mapping auto-discovered onchain.
+- Public `/api/radar/radar` (through Vercel → tunnel → gateway → radar): `source ENVIO_HYPERSYNC`,
+  chain 10143, `health.ok true`, graduation latencies (6s / 246s / 1808s), time-to-first-Kuru-trade
+  (180s / 636s), trade counts + first-trade tx hashes (`0x93e0…5415`, `0x53c0…862`).
+- Frontend panel on the live public terminal: `data-radar-state=ready`, phase GRADUATED, all metrics
+  + tx-proof chips rendered. Staging Playwright **12/12** on the deployed SHA.
+- Evidence: `evidence/hackathon/metropolis/sponsors/envio/20261012/{radar-public-live.json,
+  radar-public-health.json,radar-panel-live-public.png}`.
+
+A quote-stripping gotcha was fixed: systemd EnvironmentFile (and shell `source`) strip JSON
+double-quotes from `RADAR_MARKET_TOKENS`, so `parseMarketTokens` now also accepts the bare
+`0xmarket:0xtoken,…` form (3/3 tests).
+
+**Verdict: Envio RUNTIME_VERIFIED (public).** The dev token's 15 req/15s rate limit is handled by the
+client's built-in backoff; ingestion stays at head.
