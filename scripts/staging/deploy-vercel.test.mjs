@@ -9,7 +9,7 @@ const template = readFileSync(new URL('./vercel.template.json', import.meta.url)
 test('rewrites: same-origin API routes precede the SPA catch-all', () => {
   const out = JSON.parse(renderVercelJson(template, 'https://abc-def.trycloudflare.com'));
   const src = out.rewrites.map((r) => r.source);
-  assert.deepEqual(src, ['/v1/:path*', '/health', '/api/referrals/:path*', '/api/media/:path*', '/(.*)']);
+  assert.deepEqual(src, ['/v1/:path*', '/health', '/api/referrals/:path*', '/api/media/:path*', '/api/radar/:path*', '/(.*)']);
   assert.equal(out.rewrites[0].destination, 'https://abc-def.trycloudflare.com/v1/:path*');
   assert.equal(out.outputDirectory, 'apps/retro-ui/dist');
 });

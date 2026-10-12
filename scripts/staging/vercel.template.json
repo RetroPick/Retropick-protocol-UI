@@ -21,6 +21,10 @@
       "destination": "TUNNEL_URL/api/media/:path*"
     },
     {
+      "source": "/api/radar/:path*",
+      "destination": "TUNNEL_URL/api/radar/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
