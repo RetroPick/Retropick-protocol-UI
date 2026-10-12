@@ -1,0 +1,17 @@
+{
+  "lane": "Pinata IPFS media (infrastructure)",
+  "date": "2026-10-12",
+  "credential": "development JWT in .staging/media.env (0600, gitignored); operator-authorized, no rotation required; never printed",
+  "isolatedAuth": { "endpoint": "data/testAuthentication", "status": 200, "message": "Congratulations! You are communicating with the Pinata API!" },
+  "isolatedPin": { "status": 200, "cid": "QmaeV6kMUa8NCDHUAYmTBBocxukK6cDUH2aMbrnehLy5Gt", "cidVersion": 0, "gatewayFetch": "gateway.pinata.cloud 200, bytes match uploaded" },
+  "mediaServicePinataMode": {
+    "correctOrigin": "200 mode=pinata uri=ipfs://QmaeV6...y5Gt",
+    "wrongOrigin": "403 INVALID_ORIGIN",
+    "nonImage": "415 UNSUPPORTED_MEDIA_TYPE",
+    "contentAddressed": "same bytes -> same CID (idempotent)"
+  },
+  "backwardCompat": { "existingLocalImageInPinataMode": "GET 200 image/webp (local files still served)", "onchainLocalUris": "unchanged, still resolve same-origin" },
+  "stagingActivation": { "publicHealthMode": "pinata", "existingImageViaPublicOrigin": "200 image/webp", "publicUpload": "200 ipfs://QmaeV6...y5Gt" },
+  "rollback": "remove PINATA_JWT from .staging/media.env + restart retropick-media -> local mode (verified mechanism)",
+  "verdict": "CONDITIONAL -> ACTIVATED on staging (compat + rollback verified)"
+}
