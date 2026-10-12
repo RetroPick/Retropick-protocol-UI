@@ -25,7 +25,7 @@ import { StrategyVault } from './strategy-vault';
 import { ProtectedEarn } from './protected-earn';
 import { Reveal } from './amount';
 import { DATA_MODE, INDEXER_URL } from '@/lib/live/env';
-import { fetchSearch } from '@/lib/live/indexer-client';
+import { useCreatedLaunches } from '@/hooks/use-created-launches';
 import { launchKeys } from '@/lib/live/queries';
 import { useWallet } from '@/wallet/provider';
 import { useDemo } from '@/components/product/provider';
@@ -70,8 +70,9 @@ function HubTabs({ tab, onTab, contents }: { tab: string; onTab: (value: string)
 /** Created launches. The indexer has no creator filter; search by the wallet address is capped at 20 results. */
 function CreatedLaunches() {
   const { account } = useWallet();
-  const q = useQuery({ queryKey: [...launchKeys.all, 'created', account ?? ''], enabled: !!INDEXER_URL && !!account, queryFn: ({ signal }) => fetchSearch(INDEXER_URL!, account!, signal), staleTime: 10000 });
-  const rows = (q.data?.data ?? []).filter((l) => l.creator.toLowerCase() === account?.toLowerCase()).map(liveRow);
+  const q = useCreatedLaunches(account);
+  const rows = (q.data?.pages.flatMap(page => page.data) ?? []).map(liveRow);
+  if (q.isPending && account) return <p role="status">Loading created launches…</p>;
   if (!account) return <Reveal><div className="rp-empty-panel">
     <span className="rp-empty-disc"><Rocket size={22} aria-hidden /></span>
     <strong>Connect a wallet to see launches you created</strong>
@@ -79,6 +80,7 @@ function CreatedLaunches() {
   </div></Reveal>;
   if (q.isError) return <ErrorState title="Launch search is unavailable" text="The indexer search did not respond. Retry in a moment." onRetry={() => void q.refetch()} />;
   return <div className="rp-hub-section">
+    {q.hasNextPage && <button className="rp-btn rp-btn-ghost" disabled={q.isFetchingNextPage} onClick={() => void q.fetchNextPage()}>Load more created launches</button>}
     {rows.length
       ? <Reveal><LaunchTable rows={rows} view="list" now={Date.now()} /></Reveal>
       : <Reveal><div className="rp-empty-panel">
@@ -90,7 +92,7 @@ function CreatedLaunches() {
           <Link className="rp-btn rp-btn-ghost" href="/launchpad">Explore launches</Link>
         </div>
       </div></Reveal>}
-    <p className="rp-note">Matched by creator address through indexer search (first 20 matches). {(q.data?.data.length ?? 0) >= 20 ? 'More launches may exist — this list is not complete.' : 'This list may still be incomplete until the indexer exposes a creator filter.'}</p>
+    <p className="rp-note">Created launches are paginated by creator address. Indexing may be delayed; current fee-recipient rights are verified onchain in Protected Earn.</p>
   </div>;
 }
 

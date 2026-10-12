@@ -26,7 +26,7 @@ export const PROTECTION_MODES: Record<ProtectionMode, ProtectionModeInfo> = {
   },
   APP_ONLY: {
     mode: 'APP_ONLY', title: 'App-level passkey confirmation', bypassable: true, available: true,
-    summary: 'RetroPick asks for a passkey confirmation in this app before preparing an Earn action.',
+    summary: 'RetroPick asks for a passkey confirmation in this app before signing an Earn action.',
     honesty: 'Passkey confirmation in RetroPick only — NOT an onchain lock. It is bypassable by anyone holding your wallet key through any other app or a direct contract call. It adds friction, not custody.',
   },
   PASSKEY_SIGNER: {
@@ -82,6 +82,8 @@ export function newNonce(): Hex {
 export class ConfirmationError extends Error {}
 
 /**
+ * Check digest integrity and replay AFTER cryptographic signature verification.
+ * This helper alone is not passkey authentication. See verifySignedConfirmation.
  * Verify an app-level confirmation: the digest must match the intent, the nonce must be unused,
  * and it must not be expired. This is deliberately in-app (bypassable) — see APP_ONLY.honesty.
  * Returns the digest to record as spent.

@@ -97,3 +97,15 @@ test('receipt transaction filter finds exact trades/orders before bounded pagina
   const rows = run(s, `/v1/launches/${TOKEN}/orders?status=all&transactionHash=${target}`) as IndexEnvelope<unknown[]>; assert.deepEqual(rows.data, []);
   assert.throws(() => run(s, `/v1/launches/${TOKEN}/trades?transactionHash=bad`), (e: unknown) => e instanceof QueryError && e.code === 'INVALID_TRANSACTION_HASH');
 });
+
+test('creator filter is validated, case-insensitive and paginated past 25 with bound cursors', () => {
+ const s=snapshot([...Array.from({length:27},(_,i)=>seed({token:token(i+1),creator:ALICE,createdBlock:i+1})),seed({token:token(99),creator:BOB})]);
+ assert.throws(()=>run(s,'/v1/launches?creator=not-an-address'),(e:unknown)=>e instanceof QueryError&&e.code==='INVALID_CREATOR');
+ const first=run(s,`/v1/launches?creator=${ALICE.toUpperCase().replace('0X','0x')}&sort=new&limit=25`) as IndexEnvelope<IndexedLaunch[]>;
+ assert.equal(first.data.length,25);assert.ok(first.data.every(row=>row.creator===ALICE));assert.ok(first.nextCursor);
+ const next=run(s,`/v1/launches?creator=${ALICE.toUpperCase().replace('0X','0x')}&sort=new&limit=25&cursor=${first.nextCursor}`) as IndexEnvelope<IndexedLaunch[]>;
+ assert.equal(next.data.length,2);assert.equal(next.nextCursor,null);
+ assert.equal((run(s,`/v1/launches?creator=${token(100)}`) as IndexEnvelope<IndexedLaunch[]>).data.length,0);
+ assert.equal((run(s,`/v1/launches?creator=${BOB}`) as IndexEnvelope<IndexedLaunch[]>).data.length,1);
+ assert.throws(()=>run({...s,reorgRevision:s.reorgRevision+1},`/v1/launches?creator=${ALICE.toUpperCase().replace('0X','0x')}&sort=new&limit=25&cursor=${first.nextCursor}`),(e:unknown)=>e instanceof QueryError&&e.status===409);
+});

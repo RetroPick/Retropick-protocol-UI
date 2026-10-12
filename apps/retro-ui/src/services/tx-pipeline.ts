@@ -1,9 +1,9 @@
 'use client';
 
-import type { Address, Hex, TransactionReceipt } from 'viem';
+import type { Abi, Address, Hex, TransactionReceipt } from 'viem';
 import { encodeFunctionData, parseAbi } from 'viem';
 import type { ChainClient } from '@retropick/launchpad-sdk/chain';
-import type { EvmWallet } from '@retropick/launchpad-sdk/wallet';
+import { authorizeEarnAction, revalidateEarnAction, transactionData, type PreparedAction } from '@/lib/mera-signer/authorization';
 import { classifyError, decodeEvents, type DecodedEvent } from '@retropick/launchpad-sdk/decode';
 import { missingApprovals, type PreparedWrite } from '@retropick/launchpad-sdk/prepare';
 import { markStage, measureStage } from '@/lib/live/performance';
@@ -22,7 +22,17 @@ export type TxPhase =
 
 export type TxPhaseListener = (phase: TxPhase) => void;
 
+export interface ExecutionWallet {
+  getChainId(): Promise<number>;
+  getAddresses(): Promise<readonly Address[]>;
+  writeContract(parameters: { address: Address; abi: Abi; functionName: string; args?: readonly unknown[] }): Promise<Hex>;
+  sendTransaction(parameters: { to: Address; data?: Hex; value?: bigint }): Promise<Hex>;
+}
 export interface ExecuteOptions {
+  contextValid?: () => boolean;
+  beforeSign?: (prepared: PreparedAction) => Promise<void>;
+  /** Used by a contained passkey signer; never changes the connected EOA. */
+  protectedSigner?: boolean;
   confirmations?: number;
   onPhase?: TxPhaseListener;
 }
@@ -38,7 +48,7 @@ const approveAbi = parseAbi(['function approve(address spender, uint256 amount) 
  */
 export async function executePreparedWrite(
   chain: ChainClient,
-  wallet: EvmWallet,
+  wallet: ExecutionWallet,
   prepared: PreparedWrite | PreparedTransfer,
   options: ExecuteOptions = {},
 ): Promise<Extract<TxPhase, { kind: 'success' | 'failed' }>> {
@@ -60,6 +70,7 @@ export async function executePreparedWrite(
     if (await wallet.getChainId() !== 10143 || (await wallet.getAddresses())[0]?.toLowerCase() !== prepared.account.toLowerCase()) return fail('Wallet account or network changed. Prepare this action again.', 'unknown');
     const transfer = 'kind' in prepared && prepared.kind === 'transfer';
     const pending = transfer ? [] : await missingApprovals(chain, prepared as PreparedWrite);
+    if (options.protectedSigner && pending.length) throw Error('Protected Earn actions cannot authorize token approvals.');
     for (const approval of pending) {
       stage = 'approval';
       emit({ kind: 'approving', token: approval.token, amount: approval.amount });
@@ -77,6 +88,7 @@ export async function executePreparedWrite(
     stage = 'simulate';
     emit({ kind: 'simulating' });
     mark('simulation');
+    await revalidateEarnAction(chain, prepared);
     if (transfer) await simulateTransfer(chain, prepared as PreparedTransfer);
     else await chain.simulateContract({
       address: prepared.to,
@@ -90,6 +102,15 @@ export async function executePreparedWrite(
     // 3. Sign + broadcast through the wallet (EIP-1193 eth_sendTransaction).
     stage = 'sign';
     if (await wallet.getChainId() !== 10143 || (await wallet.getAddresses())[0]?.toLowerCase() !== prepared.account.toLowerCase()) return fail('Wallet account or network changed before signing.', 'unknown');
+    if (!options.protectedSigner) await authorizeEarnAction(prepared);
+    await options.beforeSign?.(prepared);
+    if (await wallet.getChainId() !== 10143 || (await wallet.getAddresses())[0]?.toLowerCase() !== prepared.account.toLowerCase()) return fail('Wallet account or network changed during confirmation.', 'unknown');
+    await revalidateEarnAction(chain, prepared);
+    if (transfer) await simulateTransfer(chain, prepared as PreparedTransfer);
+    else await chain.simulateContract({ address: prepared.to, abi: (prepared as PreparedWrite).abi as Abi, functionName: (prepared as PreparedWrite).functionName, args: (prepared as PreparedWrite).args, account: prepared.account, value: prepared.value });
+    const [gas, fees, balance] = await Promise.all([chain.estimateGas({ to: prepared.to, data: transactionData(prepared), value: prepared.value, account: prepared.account }), chain.estimateFeesPerGas(), chain.getBalance({ address: prepared.account })]);
+    if (balance < prepared.value + gas * fees.maxFeePerGas) throw Error('This signing account needs MON for network gas. Fund it separately before signing.');
+    if (options.contextValid?.() === false || await wallet.getChainId() !== 10143 || (await wallet.getAddresses())[0]?.toLowerCase() !== prepared.account.toLowerCase()) return fail('Wallet or action changed before signing. Review again.', 'unknown');
     mark('wallet-prompt');
     emit({ kind: 'awaiting-signature' });
     const hash = await wallet.sendTransaction({

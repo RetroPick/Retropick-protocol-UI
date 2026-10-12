@@ -85,7 +85,7 @@ export async function readLaunchPreconditions(chain: ChainClient, account?: Addr
     chain.readContract({ address: factory, abi: factoryAbi, functionName: 'getLaunchConfig', args: [id], blockNumber })
   ));
   const attempts = await Promise.all(([VENUE.UNISWAP_V4, VENUE.KURU] as VenueId[]).flatMap(venue => candidates.map(async candidate => {
-    const config = await chain.readContract({ address: addresses.quoteRegistry, abi: registryAbi, functionName: 'admitted', args: [candidate.address, venue], blockNumber }).catch(() => undefined);
+    const config = await chain.readContract({ address: addresses.quoteRegistry, abi: registryAbi, functionName: 'admitted', args: [candidate.address, venue], blockNumber });
     return config?.enabled ? { venue, ...candidate, phantomQuote: config.phantomQuote, graduationThreshold: config.graduationThreshold } : undefined;
   })));
   const quotes = attempts.filter((q): q is AdmittedQuote => q !== undefined);

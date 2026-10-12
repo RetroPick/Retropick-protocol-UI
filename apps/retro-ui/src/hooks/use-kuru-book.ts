@@ -15,17 +15,17 @@ export function useKuruBook(token: string | null, market: string | null, enabled
     queryKey: launchKeys.resource((token ?? '').toLowerCase(), 'kuru-book', { market: market?.toLowerCase() ?? '' }),
     enabled: usable,
     queryFn: () => readKuruBook(publicClient, market as Address),
-    staleTime: 1000,
-    refetchInterval: 1500,
+    staleTime: 5000,
+    refetchInterval: 10000,
     structuralSharing: false,
   });
   if (!usable) return null;
-  if (query.isError) return { status: 'error', ladder: null, block: null, observedAt: null };
+  if (query.isError && !query.data) return { status: 'error', ladder: null, block: null, observedAt: null };
   if (!query.data) return { status: 'loading', ladder: null, block: null, observedAt: null };
   return {
-    status: 'ready',
+    status: query.isError || Date.now() - query.dataUpdatedAt >= 20000 ? 'stale' : 'ready',
     ladder: buildDepthLadder(query.data),
     block: query.data.block.toString(),
-    observedAt: Date.now(),
+    observedAt: query.dataUpdatedAt,
   };
 }

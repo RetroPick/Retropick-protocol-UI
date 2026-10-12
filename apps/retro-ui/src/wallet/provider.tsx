@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { Address } from 'viem';
+import { WalletPickerDialog } from './wallet-picker';
 import {
   activeChainId,
   requestAccounts,
@@ -23,7 +24,7 @@ export interface WalletState {
   announcements: Eip6963Announcement[];
   provider: Eip1193Provider | null;
   error: string | null;
-  connect: (announcement?: Eip6963Announcement) => Promise<void>;
+  connect: (announcement?: Eip6963Announcement | null) => Promise<void>;
   disconnect: () => void;
   switchChain: () => Promise<void>;
   wallet: EvmWallet | null;
@@ -54,6 +55,9 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [walletName, setWalletName] = useState<string | null>(null);
   const providerRef = useRef<Eip1193Provider | null>(null);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const unwatch = useRef<(() => void) | null>(null);
+  useEffect(() => () => unwatch.current?.(), []);
 
   const refreshAnnouncements = useCallback(() => {
     void discoverEip6963().then(setAnnouncements);
@@ -65,36 +69,38 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   }, [refreshAnnouncements]);
 
   const watch = useCallback((connected: Eip1193Provider) => {
-    connected.on?.('accountsChanged', ((accounts: string[]) => {
+    unwatch.current?.();
+    const accountsChanged = ((accounts: string[]) => {
       const next = accounts[0] as Address | undefined;
       if (!next) {
-        setAccount(null);
+        setAccount(null); setProvider(null); setChainId(null); providerRef.current = null;
+        unwatch.current?.(); unwatch.current = null;
         setStatus('disconnected');
       } else {
         setAccount(next);
       }
-    }) as never);
-    connected.on?.('chainChanged', ((chain: string) => {
+    }) as (...args: never[]) => void;
+    const chainChanged = ((chain: string) => {
       const id = Number(chain);
       setChainId(id);
       setStatus((prev) => (prev === 'disconnected' ? prev : id === MONAD_TESTNET ? 'connected' : 'wrong-chain'));
-    }) as never);
+    }) as (...args: never[]) => void;
+    connected.on?.('accountsChanged', accountsChanged);
+    connected.on?.('chainChanged', chainChanged);
+    unwatch.current = () => { connected.removeListener?.('accountsChanged', accountsChanged); connected.removeListener?.('chainChanged', chainChanged); };
   }, []);
 
-  const connect = useCallback(async (announcement?: Eip6963Announcement) => {
+  const connect = useCallback(async (announcement?: Eip6963Announcement | null) => {
+    if (announcement === undefined) { setPickerOpen(true); return; }
+    unwatch.current?.(); unwatch.current = null;
+    providerRef.current = null; setProvider(null); setAccount(null); setChainId(null);
     setStatus('connecting');
     setError(null);
     try {
       let selected = announcement?.provider;
       let chosenName = announcement?.info.name;
       if (!selected) {
-        let remembered: Eip6963Announcement | undefined;
-        try { const rdns = localStorage.getItem(RDNS_KEY); remembered = announcements.find((entry) => entry.info.rdns === rdns); } catch { /* ignore */ }
-        const ordered = remembered ? [remembered, ...announcements.filter((entry) => entry !== remembered)] : announcements;
-        if (ordered.length > 1) throw Error('WALLET_PICKER_REQUIRED: choose which wallet to use.');
-        const first = ordered[0];
-        if (first) { selected = first.provider; chosenName = first.info.name; }
-        else { selected = injectedProvider(); chosenName = 'Browser wallet'; }
+        selected = injectedProvider(); chosenName = 'Browser wallet';
       }
       if (!selected) throw Error('No wallet found. Install Rabby, MetaMask or another EIP-1193 wallet.');
       if (announcement) {
@@ -104,7 +110,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
         } catch { /* ignore */ }
         setWalletName(announcement.info.name);
       }
-      void chosenName;
+      setWalletName(chosenName ?? 'Browser wallet');
       const accounts = await requestAccounts(selected);
       if (!accounts.length) throw Error('Wallet returned no accounts.');
       const id = await ensureMonadTestnet(selected);
@@ -123,6 +129,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   }, [announcements, watch]);
 
   const disconnect = useCallback(() => {
+    unwatch.current?.(); unwatch.current = null;
     providerRef.current = null;
     setProvider(null);
     setAccount(null);
@@ -150,7 +157,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
     status, account, chainId, announcements, provider, error, connect, disconnect, switchChain, wallet, walletName, refreshAnnouncements,
   }), [status, account, chainId, announcements, provider, error, connect, disconnect, switchChain, wallet, walletName, refreshAnnouncements]);
 
-  return <WalletContext.Provider value={value}>{children}</WalletContext.Provider>;
+  return <WalletContext.Provider value={value}>{children}<WalletPickerDialog open={pickerOpen} onOpenChange={setPickerOpen}/></WalletContext.Provider>;
 }
 
 export function useWallet(): WalletState {

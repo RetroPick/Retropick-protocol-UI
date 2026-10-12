@@ -30,7 +30,7 @@ export function WalletPickerDialog({ open, onOpenChange }: { open: boolean; onOp
     setBusyRdns(entry?.info.rdns ?? 'injected');
     setError(null);
     try {
-      await connect(entry ?? undefined);
+      await connect(entry);
       onOpenChange(false);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'Wallet connection failed.');
@@ -47,11 +47,10 @@ export function WalletPickerDialog({ open, onOpenChange }: { open: boolean; onOp
     <DialogContent className="product-dialog">
       <DialogTitle>Connect a wallet</DialogTitle>
       <DialogDescription>Choose which wallet to use for this session.</DialogDescription>
-      <div className="search-results" role="list">
+      <div className="search-results" role="group" aria-label="Wallet choices">
         {entries.map((entry) => (
           <button
             key={entry.info.rdns}
-            role="listitem"
             className="wallet-option"
             disabled={busyRdns !== null}
             onClick={() => void pick(entry)}
@@ -63,7 +62,7 @@ export function WalletPickerDialog({ open, onOpenChange }: { open: boolean; onOp
           </button>
         ))}
         {showInjectedFallback && (
-          <button role="listitem" className="wallet-option" disabled={busyRdns !== null} onClick={() => void pick(null)}>
+          <button className="wallet-option" disabled={busyRdns !== null} onClick={() => void pick(null)}>
             <Wallet size={18}/>
             <span>Browser wallet</span>
             <small>window.ethereum</small>

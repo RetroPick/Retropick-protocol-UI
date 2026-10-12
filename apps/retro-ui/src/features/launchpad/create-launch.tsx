@@ -1,9 +1,11 @@
 'use client';
 import './launch-table.css';
 
+import { useQuery } from '@tanstack/react-query';
+import { loadEnrollments } from '@/lib/mera-signer/enrollment';
 import Link from '@/components/product/safe-link';
 import { Check, ChevronRight, ImagePlus, ShieldCheck } from 'lucide-react';
-import { useEffect, useMemo, useState, type ChangeEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import { approvedPairAssets } from '@/lib/domain/launchpad-fixtures';
 import type { LaunchpadType } from '@/lib/domain/launchpad-types';
 import { useDemo } from '@/components/product/provider';
@@ -15,7 +17,7 @@ import { useRouter } from '@/lib/next-compat';
 import { seedLaunch } from '@/lib/live/queries';
 import { markStage } from '@/lib/live/performance';
 import { confirmedLaunchSeed, LAUNCH_METADATA_LIMITS, utf8Bytes, validFeeRecipient, validateCreatorFee, validateLaunchMetadata, type LaunchMetadata } from '@/lib/live/create-validation';
-import { resolveMediaSrc } from '@/lib/media/resolve';
+import { ipfsGatewayCandidates, resolveMediaSrc } from '@/lib/media/resolve';
 import { prepareLogoFile, uploadLogo } from '@/lib/media/upload';
 import { addresses } from '@retropick/launchpad-sdk/chain';
 import { readLaunchPreconditions, type LaunchPreconditions } from '@retropick/launchpad-sdk/registry';
@@ -66,25 +68,20 @@ function TokenLaunchWizard({ type }: { type: 'crypto' | 'stocks' }) {
   const [showVestDetail, setShowVestDetail] = useState(false);
   const [venue, setVenue] = useState<'KURU' | 'UNISWAP_V4'>('KURU');
   const [form, setForm] = useState({ name: '', ticker: '', logo: '', description: '', x: '', telegram: '', discord: '', website: '', farcaster: '', pair: 'MON', configId: '', feeWallet: '', creatorFee: '0', openingBuy: '0' });
-  const [preconditions, setPreconditions] = useState<LaunchPreconditions | null>(null);
-  const [preconditionsError, setPreconditionsError] = useState<string | null>(null);
   const [phase, setPhase] = useState<LivePhase>({ kind: 'idle' });
   const fixturePairs = approvedPairAssets.filter((asset) => isStock ? asset.assetClass === 'STOCK_QUOTE' : asset.assetClass === 'CRYPTO');
   const pairOptions = live ? [] : fixturePairs;
   const set = (key: keyof typeof form, value: string) => setForm((current) => ({ ...current, [key]: value }));
 
-  // Live launch terms come from the deployed factory/registry, never constants.
-  useEffect(() => {
-    if (!live) return;
-    let active = true;
-    setPreconditions(null);
-    setPreconditionsError(null);
-    void readLaunchPreconditions(publicClient, wallet.account ?? undefined)
-      .then((value) => { if (active) { setPreconditions(value); setPreconditionsError(null); } })
-      .catch((cause) => { if (active) setPreconditionsError(cause instanceof Error ? cause.message : 'Could not read launch terms.'); });
-    return () => { active = false; };
-  }, [live, wallet.account]);
-
+  const terms = useQuery({ queryKey: ['launchpad', 10143, 'launch-terms', wallet.account], enabled: live, queryFn: () => readLaunchPreconditions(publicClient, wallet.account ?? undefined), staleTime: 10000, refetchInterval: 30000 });
+  const preconditions = terms.isError ? null : terms.data ?? null;
+  const preconditionsError = terms.error instanceof Error ? 'Launch terms unavailable. Retry without losing your draft.' : null;
+  const uploadGeneration = useRef(0);
+  const localPreview = useRef<string | null>(null);
+  const selectedFile = useRef<File | null>(null);
+  const [previewLocal, setPreviewLocal] = useState('');
+  useEffect(() => () => { uploadGeneration.current++; if (localPreview.current) URL.revokeObjectURL(localPreview.current); }, []);
+  const protectedWallets = loadEnrollments().filter(entry => entry.associatedCreatorWallet?.toLowerCase() === wallet.account?.toLowerCase());
   const config = useMemo(() => preconditions?.configs.find((entry) => entry.enabled && entry.id.toString() === form.configId) ?? preconditions?.configs.find((entry) => entry.enabled) ?? null, [preconditions, form.configId]);
   const admittedQuotes = useMemo(() => {
     if (!preconditions) return [] as { id: string; symbol: string; name: string; venues: ('KURU' | 'UNISWAP_V4')[]; thresholdRaw: bigint; decimals: number }[];
@@ -108,7 +105,7 @@ function TokenLaunchWizard({ type }: { type: 'crypto' | 'stocks' }) {
   const maxCreatorFeePercent = formatUnits(maxCreatorFeeBps > 0n ? maxCreatorFeeBps : 0n, 2);
   const pair = live ? { symbol: livePair?.symbol ?? 'MON', name: livePair?.name ?? 'Native Monad' } : (pairOptions.find((asset) => asset.id.toLowerCase() === form.pair.toLowerCase()) ?? pairOptions[0]);
   const metadata: LaunchMetadata = { name: form.name.trim(), ticker: form.ticker.trim(), logo: form.logo.trim(), description: form.description, x: form.x.trim(), telegram: form.telegram.trim(), discord: form.discord.trim(), website: form.website.trim(), farcaster: form.farcaster.trim() };
-  const previewImage = live ? resolveMediaSrc(metadata.logo) : image;
+  const previewImage = live ? previewLocal || resolveMediaSrc(metadata.logo) : image;
 
   const onImage = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -123,23 +120,36 @@ function TokenLaunchWizard({ type }: { type: 'crypto' | 'stocks' }) {
     reader.readAsDataURL(file);
   };
 
-  const onLiveImage = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    event.target.value = '';
-    if (!file) return;
+  const uploadSelected = async (file: File) => {
+    const generation = ++uploadGeneration.current;
+    selectedFile.current = file;
+    if (localPreview.current) URL.revokeObjectURL(localPreview.current);
+    localPreview.current = URL.createObjectURL(file);
+    setPreviewLocal(localPreview.current);
+    set('logo', '');
+    setUpload({ kind: 'busy' }); setError('');
     try {
-      setUpload({ kind: 'busy' }); setError('');
       const result = await uploadLogo(await prepareLogoFile(file));
-      setForm((current) => ({ ...current, logo: result.uri }));
+      if (generation !== uploadGeneration.current) return;
+      setForm(current => ({ ...current, logo: result.uri }));
       setUpload({ kind: 'done', uri: result.uri, gateway: result.https });
     } catch (cause) {
-      setUpload({ kind: 'error', message: cause instanceof Error ? cause.message : 'Image upload failed.' });
+      if (generation === uploadGeneration.current) setUpload({ kind: 'error', message: cause instanceof Error ? cause.message : 'Image upload failed.' });
     }
   };
-  const onManualLogo = (event: ChangeEvent<HTMLInputElement>) => { setUpload({ kind: 'idle' }); set('logo', event.target.value); };
+  const onLiveImage = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]; event.target.value = '';
+    if (file) void uploadSelected(file);
+  };
+  const onManualLogo = (event: ChangeEvent<HTMLInputElement>) => {
+    uploadGeneration.current++; selectedFile.current = null;
+    if (localPreview.current) URL.revokeObjectURL(localPreview.current);
+    localPreview.current = null; setPreviewLocal('');
+    setUpload({ kind: 'idle' }); set('logo', event.target.value);
+  };
 
   const canContinue = () => {
-    if (live) return upload.kind === 'busy' ? 'Wait for the image upload to finish.' : validateLaunchMetadata(metadata);
+    if (live) return upload.kind === 'busy' ? 'Wait for the image upload to finish.' : upload.kind === 'error' ? 'Retry the selected image upload or choose a URI.' : validateLaunchMetadata(metadata);
     if (!form.name.trim()) return 'Give your token a name.';
     if (!/^[A-Z0-9]{2,10}$/.test(form.ticker)) return 'Ticker needs 2\u201310 uppercase letters or digits.';
     if (form.description.length > 256) return 'Keep the description within 256 characters.';
@@ -149,6 +159,8 @@ function TokenLaunchWizard({ type }: { type: 'crypto' | 'stocks' }) {
     const fee = Number(form.creatorFee);
     if (!Number.isFinite(fee) || fee < 0) return 'Creator fee must be zero or greater.';
     if (live) {
+      const metadataIssue = canContinue(); if (metadataIssue) return metadataIssue;
+      if (!preconditions || terms.isError) return 'Refresh launch terms before continuing.';
       const issue = validateCreatorFee(form.creatorFee, maxCreatorFeeBps > 0n ? maxCreatorFeeBps : 0n);
       if (issue) return issue;
       if (!preconditions?.launchEnabled) return 'The factory is not accepting launches right now.';
@@ -243,15 +255,15 @@ function TokenLaunchWizard({ type }: { type: 'crypto' | 'stocks' }) {
   const busy = phase.kind !== 'idle' && phase.kind !== 'failed';
 
   return <><div className="page-heading"><div><h1>Launch a token.</h1><p>Token, market &amp; economics, then review. {live ? 'The curve opens when your launch transaction confirms.' : 'DEMO draft: nothing is deployed or signed from this interface.'}</p></div><span className="tag">{live ? 'LIVE · 10143' : 'DEMO · NOT DEPLOYED'}</span></div><LaunchStepper active={step}/><div className="workspace token-create-workspace"><section className="panel">{step === 0 && <><div className="form-title"><h2>1 · Token</h2><p>Give it a name and a face.</p></div>{live ? <>
-      <div className="image-picker"><span className="field-label">Image</span><div className="image-picker-row">{previewImage ? <img src={previewImage} alt="Token image preview" className="image-preview"/> : <span className="image-empty"><ImagePlus size={22}/></span>}<div><label className="btn image-choose"><input type="file" accept="image/png,image/jpeg,image/webp,image/gif" onChange={onLiveImage} aria-label="Choose token image"/>Choose image</label>{upload.kind === 'busy' && <small role="status">Uploading image…</small>}{upload.kind === 'done' && <small>Stored at <span className="tx-hash">{upload.uri}</span>{upload.gateway ? <> · <a className="text-link" href={upload.gateway} target="_blank" rel="noreferrer">view</a></> : null} · {utf8Bytes(upload.uri)}/{LAUNCH_METADATA_LIMITS.logo} bytes onchain</small>}{upload.kind === 'error' && <small role="alert">{upload.message}</small>}{upload.kind === 'idle' && !metadata.logo && <small>Square PNG, JPEG, WebP or GIF up to 5 MB.</small>}<button type="button" className="text-link" onClick={() => setShowManualUri((open) => !open)}>{showManualUri ? 'Hide URI field — upload instead' : 'Paste a URI instead'}</button></div></div></div>
+      <div className="image-picker"><span className="field-label">Image</span><div className="image-picker-row">{previewImage ? <img src={previewImage} alt="Token image preview" onError={event => { const candidates = ipfsGatewayCandidates(previewImage); if (candidates.length > 1 && event.currentTarget.src !== candidates[1]) event.currentTarget.src = candidates[1]!; }} className="image-preview"/> : <span className="image-empty"><ImagePlus size={22}/></span>}<div><label className="btn image-choose"><input type="file" accept="image/png,image/jpeg,image/webp,image/gif" onChange={onLiveImage} aria-label="Choose token image"/>Choose image</label>{upload.kind === 'busy' && <small role="status">Uploading image…</small>}{upload.kind === 'done' && <small>Stored at <span className="tx-hash">{upload.uri}</span>{upload.gateway ? <> · <a className="text-link" href={upload.gateway} target="_blank" rel="noreferrer">view</a></> : null} · {utf8Bytes(upload.uri)}/{LAUNCH_METADATA_LIMITS.logo} bytes onchain</small>}{upload.kind === 'error' && <small role="alert">{upload.message}<button type="button" className="text-link" onClick={() => selectedFile.current && void uploadSelected(selectedFile.current)}>Retry upload</button></small>}{upload.kind === 'idle' && !metadata.logo && <small>Square PNG, JPEG, WebP or GIF up to 5 MB.</small>}<button type="button" className="text-link" onClick={() => setShowManualUri((open) => !open)}>{showManualUri ? 'Hide URI field — upload instead' : 'Paste a URI instead'}</button></div></div></div>
       {showManualUri && <label className="field"><span className="field-head"><span>Logo URI</span>{counter(form.logo, LAUNCH_METADATA_LIMITS.logo)}</span><input value={form.logo} maxLength={LAUNCH_METADATA_LIMITS.logo} onChange={onManualLogo} placeholder="https://… or ipfs://…"/><small>Optional public HTTPS, IPFS or Arweave URI stored in token metadata.</small></label>}
     </> : <div className="image-picker"><span className="field-label">Image</span><div className="image-picker-row">{image ? <img src={image} alt="Token image preview" className="image-preview"/> : <span className="image-empty"><ImagePlus size={22}/></span>}<div><label className="btn image-choose"><input type="file" accept="image/png,image/jpeg,image/webp" onChange={onImage} aria-label="Choose token image"/>Choose image</label><small>{imageName || 'No file chosen'}</small><small>Square, up to 5 MB</small></div></div></div>}{fieldWithCounter('Name', 'name', 'Retro Coin', live ? LAUNCH_METADATA_LIMITS.name : 32)}<div className="form-grid">{fieldWithCounter('Ticker', 'ticker', 'RETRO', live ? LAUNCH_METADATA_LIMITS.ticker : 10)}<div/></div><label className="field"><span className="field-head"><span>Description</span>{counter(form.description, live ? LAUNCH_METADATA_LIMITS.description : 256)}</span><textarea maxLength={live ? LAUNCH_METADATA_LIMITS.description : 256} value={form.description} onChange={(event) => set('description', event.target.value)} placeholder="What is it, in a sentence or two. No links."/></label><div className="form-grid"><label className="field"><span>X</span><input maxLength={live ? LAUNCH_METADATA_LIMITS.x : undefined} value={form.x} onChange={(event) => set('x', event.target.value)} placeholder="handle or URL"/></label><label className="field"><span>Telegram</span><input maxLength={live ? LAUNCH_METADATA_LIMITS.telegram : undefined} value={form.telegram} onChange={(event) => set('telegram', event.target.value)} placeholder="username or t.me"/></label></div><label className="field"><span>Website</span><input maxLength={live ? LAUNCH_METADATA_LIMITS.website : undefined} value={form.website} onChange={(event) => set('website', event.target.value)} placeholder="https://"/></label>{live && <div className="form-grid">{fieldWithCounter('Discord', 'discord', 'Discord invite or URL', LAUNCH_METADATA_LIMITS.discord)}{fieldWithCounter('Farcaster', 'farcaster', 'Handle or URL', LAUNCH_METADATA_LIMITS.farcaster)}</div>}</>}{step === 1 && <>{live ? <>
     <div className="form-title"><h2>2 · Market &amp; economics</h2><p>Terms read live from the deployed factory.</p></div>
-    {preconditionsError && <div role="alert" className="form-error">{preconditionsError}</div>}
+    {preconditionsError && <div role="alert" className="form-error">{preconditionsError}<button type="button" className="btn ghost" onClick={() => void terms.refetch()}>Retry launch terms</button></div>}
     {!preconditions && !preconditionsError && <p className="empty-copy">Loading launch terms from the factory…</p>}
     {preconditions && <>{preconditions.configs.filter((entry) => entry.enabled).length > 1 && <label className="field"><span>Launch configuration</span><select value={config?.id.toString() ?? ''} onChange={(event) => set('configId', event.target.value)}>{preconditions.configs.filter((entry) => entry.enabled).map((entry) => <option value={entry.id.toString()} key={entry.id.toString()}>Configuration {entry.id.toString()} · {exactAmount(entry.supply, 18, 0)} token supply</option>)}</select></label>}<label className="field"><span>Paired with</span><select value={livePair?.id ?? ''} onChange={(event) => set('pair', event.target.value)}>{admittedQuotes.map((quote) => <option value={quote.id} key={quote.id}>{quote.symbol} · {quote.name}</option>)}</select><small>Admitted by the on-chain quote registry. Buyers pay {livePair?.symbol} on the curve.</small></label>
     <div className="form-grid"><label className="field"><span>Graduates to</span><select value={activeVenue} onChange={(event) => setVenue(event.target.value === 'UNISWAP_V4' ? 'UNISWAP_V4' : 'KURU')}>{venuesForPair.map((name) => <option value={name} key={name}>{name === 'KURU' ? 'Kuru orderbook' : 'Uniswap V4'}</option>)}</select><small>Fixed by the venue you choose; {livePair?.venues.length === 2 ? 'both venues are admitted for this pair.' : 'only this venue is admitted for this pair.'}</small></label>
-    <label className="field"><span>Creator fee wallet</span><input value={form.feeWallet} onChange={(event) => set('feeWallet', event.target.value)} placeholder="0x…"/><small>Defaults to your wallet.</small></label></div>
+    <label className="field"><span>Creator fee wallet</span><input value={form.feeWallet} onChange={(event) => set('feeWallet', event.target.value)} placeholder="0x…"/><small>Defaults to your wallet. Protected wallets require an explicit choice.</small>{protectedWallets.length > 0 && <select aria-label="Choose protected fee recipient" value="" onChange={event => set('feeWallet', event.target.value)}><option value="">Choose a protected wallet…</option>{protectedWallets.map(entry => <option key={entry.credentialId} value={entry.address}>{entry.address}</option>)}</select>}</label></div>
     <div className="form-grid"><label className="field"><span>Creator fee</span><input inputMode="decimal" value={form.creatorFee} onChange={(event) => set('creatorFee', event.target.value)} placeholder="0"/><small>Up to {maxCreatorFeePercent}% of each trade, on top of the {config ? formatUnits(config.curveFeeBps, 2) : '—'}% curve fee. Unit: %.</small></label><div/></div>
     <div className="fee-section"><span className="field-label">Where your creator fees go</span><div className="fee-options">{feeDestinations.filter((option) => option.supportedLive).map((option) => <label key={option.id} className={`fee-option${feeDestination === option.id ? ' selected' : ''}`}><input type="radio" name="feeDestination" value={option.id} disabled={!option.supportedLive} checked={feeDestination === option.id} onChange={() => option.supportedLive && setFeeDestination(option.id)}/><strong>{option.title}</strong><p>{option.body}</p></label>)}</div></div>
     <p className="launch-info-line">Launch fee {launchFeeMon !== null ? `${launchFeeMon} MON` : '—'}. Graduates at {thresholdDisplay !== null ? `${thresholdDisplay} ${livePair?.symbol}` : '—'}. Curve fee {config ? `${formatUnits(config.curveFeeBps, 2)}%` : '—'}.</p>

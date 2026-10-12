@@ -277,3 +277,11 @@
 .rp-protect-prepared ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-3) }
 .rp-protect-foot { font-size: 11px }
 @media (max-width: 560px) { .rp-protect-modes { grid-template-columns: 1fr } }
+
+/* Protected account controls retain the Earn hub's existing fields and density. */
+.rp-protect { min-width: 0; overflow-wrap: anywhere }
+.rp-protect-row { flex-wrap: wrap }
+.rp-protect label { display: block; font-size: 13px; margin-block: 8px }
+.rp-protect input:not([type="checkbox"]):not([type="radio"]), .rp-protect select { display: block; width: 100%; min-width: 0; margin-top: 5px; padding: 9px 10px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--panel); color: var(--text-1) }
+.rp-protect input[type="radio"], .rp-protect input[type="checkbox"] { accent-color: var(--rp-accent, #836ef9) }
+.rp-protect button:focus-visible, .rp-protect input:focus-visible, .rp-protect select:focus-visible { outline: 2px solid var(--rp-accent, #836ef9); outline-offset: 3px }

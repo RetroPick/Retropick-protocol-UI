@@ -120,7 +120,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}
     ordersPanel={vm.lifecycle === 'GRADUATED' ? <LiveOrdersPanel token={vm.id} market={vm.addresses.market} quoteSymbol={vm.quote.symbol}/> : undefined}
-    ticket={<Suspense fallback={TICKET_FALLBACK}>{detail.essential ? <Ticket token={id as Address} launch={ticketLaunch(detail.launch)} kuru={ticketKuru(detail.kuru)} quoteSymbol={vm.quote.symbol} readyToGraduate={detail.readyToGraduate} reload={detail.reload}/> : TICKET_FALLBACK}</Suspense>}/>;
+    ticket={<Suspense fallback={TICKET_FALLBACK}>{detail.essential ? <Ticket token={id as Address} launch={ticketLaunch(detail.launch)} kuru={ticketKuru(detail.kuru)} quoteSymbol={vm.quote.symbol} readyToGraduate={detail.readyToGraduate} reload={detail.reload} essential={detail.essential} economicFresh={detail.economicFresh} resourceError={detail.essentialError ?? detail.economicError}/> : <section className="rp-ticket"><p role="status">{detail.essentialStatus === 'error' ? 'On-chain state unavailable.' : 'Loading on-chain state…'}</p><button className="rp-btn rp-btn-ghost" onClick={detail.reload}>Retry on-chain reads</button></section>}</Suspense>}/>;
 }
 
 export default function TokenDetail({ id }: { id: string }) {

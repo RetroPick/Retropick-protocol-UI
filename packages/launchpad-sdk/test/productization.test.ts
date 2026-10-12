@@ -82,3 +82,17 @@ test('execution transfer rechecks chain, gas, false return and descriptor integr
  chain.getChainId=async()=>10143;chain.getBalance=async()=>1n;await assert.rejects(()=>simulateTransfer(chain,prepared),/network gas/);chain.getBalance=async()=>10n**24n;await assert.rejects(()=>simulateTransfer(chain,{...prepared,to:token}),/descriptor/);
  chain.simulateContract=async()=>({result:true}) as never;const erc20=await prepareTransfer(chain,account,{recipient:curve,asset:token,amount:1n});chain.simulateContract=async()=>({result:false}) as never;await assert.rejects(()=>simulateTransfer(chain,erc20),/return success/);
 });
+
+test('voluntary handoff verifies current recipient and active owner override at one block',async()=>{
+ const {prepareTransferCreatorFeeRecipient}=await import('../src/prepare.ts');
+ const setup=(overrides:Record<string,unknown>={})=>{
+  const value=mock({getLaunchedToken:{exists:true,deployer:curve,creatorFeeRecipient:account},pendingCreatorFeeRecipient:[zeroAddress,0n,0n],...overrides});
+  (value.chain as unknown as {getBlock:()=>Promise<{timestamp:bigint}>}).getBlock=async()=>({timestamp:100n});return value;
+ };
+ const {chain,calls}=setup();const p=await prepareTransferCreatorFeeRecipient(chain,token,account,market);
+ assert.equal(p.functionName,'transferCreatorFeeRecipient');assert.deepEqual(p.args,[token,market]);assert.ok(p.checks.some(check=>check.includes('escrowed credits stay')));assert.ok(calls.every(call=>call.blockNumber===77n));
+ await assert.rejects(()=>prepareTransferCreatorFeeRecipient(setup({getLaunchedToken:{exists:true,deployer:account,creatorFeeRecipient:curve}}).chain,token,account,market),/Only the current/);
+ await assert.rejects(()=>prepareTransferCreatorFeeRecipient(setup({pendingCreatorFeeRecipient:[market,200n,300n]}).chain,token,account,market),/pending owner/);
+ assert.equal((await prepareTransferCreatorFeeRecipient(setup({pendingCreatorFeeRecipient:[market,10n,99n]}).chain,token,account,market)).functionName,'transferCreatorFeeRecipient');
+ await assert.rejects(()=>prepareTransferCreatorFeeRecipient(chain,token,account,account),/equals/);
+});

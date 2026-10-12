@@ -3,7 +3,7 @@
 // One wallet-state query powers the hero, claim rows and the claim sheet (LiveEarn and LivePortfolio
 // already share this query key, so all views stay in sync). Actions go through the existing SDK
 // prepare functions only — no new contract calls, and "claim all" is a sequential per-asset batch.
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { Address } from 'viem';
 import { publicClient } from '@/lib/live/public-client';
@@ -50,6 +50,7 @@ export function useEarnWallet() {
   const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
   const batchKey = useRef<string | null>(null);
   const timers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+  useEffect(() => { batchKey.current = null; setBatch(null); setRowPhase({}); return () => { for (const timer of Object.values(timers.current)) clearTimeout(timer); }; }, [account, wallet.chainId]);
 
   const setPhase = useCallback((key: string, phase: RowPhase) => {
     setRowPhase((current) => ({ ...current, [key]: phase }));
@@ -121,18 +122,20 @@ export function useEarnWallet() {
   const claimAll = useCallback(async () => {
     const rows = claimRows.filter((row) => row.ready);
     if (!rows.length || !wallet.wallet || !account || batchKey.current) return;
-    batchKey.current = 'claim-all';
+    const batchId = `${account.toLowerCase()}:${Date.now()}`;
+    batchKey.current = batchId;
     setBatch({ done: 0, total: rows.length });
     let confirmed = 0;
     for (const [index, row] of rows.entries()) {
+      if (batchKey.current !== batchId) break;
       setBatch({ done: index, total: rows.length });
       const prepare = row.kind === 'fee-native'
         ? () => prepareFeeClaim(publicClient, account)
         : () => prepareFeeClaimToken(publicClient, account, row.token!);
       if (await runRow(row.key, prepare)) confirmed += 1;
+      else break;
     }
-    setBatch(null);
-    batchKey.current = null;
+    if (batchKey.current === batchId) { setBatch(null); batchKey.current = null; }
     if (confirmed === rows.length) toast.success(`Claim all complete — ${confirmed} claim${confirmed === 1 ? '' : 's'} confirmed`);
     else toast.warning(`Claimed ${confirmed} of ${rows.length}`, { description: 'Some claims did not confirm. Retry them individually from the list.' });
   }, [claimRows, wallet.wallet, account, runRow]);

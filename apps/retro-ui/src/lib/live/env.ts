@@ -16,7 +16,7 @@ export const RPC_URL = (import.meta.env.VITE_MONAD_RPC_URL as string | undefined
 
 /** Ordered failover target for the read client; null when the primary already is the public RPC. */
 export const RPC_FALLBACK_URL = (import.meta.env.VITE_MONAD_RPC_FALLBACK_URL as string | undefined)
-  ?? (RPC_URL === PUBLIC_RPC_URL ? null : PUBLIC_RPC_URL);
+  ?? (RPC_URL === PUBLIC_RPC_URL ? 'https://rpc.ankr.com/monad_testnet' : PUBLIC_RPC_URL);
 
 export const CHAIN_ID = 10143;
 

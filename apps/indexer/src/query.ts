@@ -47,7 +47,9 @@ export function query(snapshot: Snapshot, url: URL, freshness: IndexFreshness): 
     const sort = params.get('sort') ?? (path === '/v1/search' ? 'new' : 'marketCap'); if (!['marketCap', 'new', 'volume', 'liquidity', 'price'].includes(sort)) fail('INVALID_SORT');
     const phase = params.get('phase'); if (phase && !['active', 'near-graduation', 'graduated'].includes(phase)) fail('INVALID_PHASE');
     const quote = params.get('quote')?.toLowerCase();
-    let rows = snapshot.launches.filter(matches).filter(l => !quote || l.quoteAsset === quote || l.quoteSymbol.toLowerCase() === quote).filter(l => !phase || (phase === 'active' ? l.phase === 'ACTIVE' : phase === 'graduated' ? l.phase === 'GRADUATED' : ['ACTIVE', 'GRADUATION_READY'].includes(l.phase) && l.bondingProgressBps >= NEAR_GRADUATION_BPS));
+    const creator = params.get('creator');
+    if (creator !== null && !address(creator)) fail('INVALID_CREATOR');
+    let rows = snapshot.launches.filter(matches).filter(l => !creator || l.creator.toLowerCase() === creator.toLowerCase()).filter(l => !quote || l.quoteAsset === quote || l.quoteSymbol.toLowerCase() === quote).filter(l => !phase || (phase === 'active' ? l.phase === 'ACTIVE' : phase === 'graduated' ? l.phase === 'GRADUATED' : ['ACTIVE', 'GRADUATION_READY'].includes(l.phase) && l.bondingProgressBps >= NEAR_GRADUATION_BPS));
     if (path === '/v1/search' && !term) rows = [];
     rows = [...rows].sort((a, b) => {
       const tie = b.createdBlock - a.createdBlock || a.token.localeCompare(b.token);

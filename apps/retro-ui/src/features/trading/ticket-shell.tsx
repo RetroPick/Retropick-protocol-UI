@@ -37,12 +37,12 @@ export function TicketShell({ title = 'Trade', venue, demo, kind, onKind, limitD
 const PCTS = [25, 50, 75, 100] as const;
 
 /** Amount input with exact bigint percentage presets (pct × balance / 100, truncated). */
-export function AmountField({ label, value, onChange, unit, balanceRaw, decimals, maxDisabledReason, testId }: {
-  label: string; value: string; onChange: (v: string) => void; unit: string; balanceRaw?: bigint | null; decimals: number; maxDisabledReason?: string; testId?: string;
+export function AmountField({ label, value, onChange, unit, balanceRaw, decimals, maxDisabledReason, testId, balanceLabel = 'Balance' }: {
+  label: string; value: string; onChange: (v: string) => void; unit: string; balanceRaw?: bigint | null; decimals: number; maxDisabledReason?: string; testId?: string; balanceLabel?: string;
 }) {
   const id = `amt-${testId ?? label.replace(/\W+/g, '-').toLowerCase()}`;
   return <div className="rp-field">
-    <div className="rp-field-top"><label htmlFor={id}>{label}</label>{balanceRaw != null && <span className="rp-muted">Balance {trim(formatUnits(balanceRaw, decimals))} {unit}</span>}</div>
+    <div className="rp-field-top"><label htmlFor={id}>{label}</label>{balanceRaw != null && <span className="rp-muted">{balanceLabel} {trim(formatUnits(balanceRaw, decimals))} {unit}</span>}</div>
     <div className="rp-input"><input id={id} data-testid={testId} inputMode="decimal" autoComplete="off" placeholder="0.0" value={value} onChange={(e) => onChange(e.target.value.replace(/,/g, '.'))} aria-describedby={`${id}-unit`}/><span id={`${id}-unit`} className="rp-input-unit">{unit}</span></div>
     <div className="rp-pcts" role="group" aria-label={`${label} presets`}>
       {PCTS.map((pct) => {

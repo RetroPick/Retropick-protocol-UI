@@ -50,6 +50,7 @@ export interface SignerCeremonyOptions {
   rp?: PasskeyRelyingParty;
   credentialId?: string;
   timeout?: number;
+  expectedAddress?: `0x${string}`;
   /** Test seam: inject a WebAuthn client so unit tests run without a real authenticator. */
   webAuthnClient?: WebAuthnClient;
 }
@@ -64,15 +65,21 @@ async function openSession(options: SignerCeremonyOptions): Promise<{ session: S
     rpId: rp.id,
     credential: options.credentialId ? { credentialId: options.credentialId } : undefined,
     prfSalt: SIGNER_PRF_SALT,
-    timeout: options.timeout,
+    timeout: options.timeout ?? 60000,
     webAuthnClient: options.webAuthnClient,
   });
   // prf.prfOutput is the 32-byte scalar. Open the session, then zero our copy immediately.
   let session: Secp256k1SigningSession;
-  try { session = createSecp256k1SigningSession({ privateKey: prf.prfOutput }); }
+  try {
+    if (options.credentialId && prf.credentialId !== options.credentialId) throw Error('Authenticator returned a different credential. Signing stopped.');
+    session = createSecp256k1SigningSession({ privateKey: prf.prfOutput });
+  }
   finally { prf.prfOutput.fill(0); }
-  const address = getEvmAddress(session.publicKey) as `0x${string}`;
-  return { session, identity: { address, credentialId: prf.credentialId } };
+  try {
+    const address = getEvmAddress(session.publicKey) as `0x${string}`;
+    if (options.expectedAddress && address.toLowerCase() !== options.expectedAddress.toLowerCase()) throw Error('Passkey recovered a different address. Signing stopped.');
+    return { session, identity: { address, credentialId: prf.credentialId } };
+  } catch (error) { session.end(); throw error; }
 }
 
 /** Derive the signer's public identity (address + credentialId) WITHOUT keeping a session. */
