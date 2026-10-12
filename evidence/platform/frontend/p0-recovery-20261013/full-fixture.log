@@ -1,0 +1,377 @@
+$ node e2e/run.mjs fixture
+[WebServer] (node:45023) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:45147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+Running 306 tests using 4 workers
+
+(node:45210) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45217) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -    2 [desktop-1440] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓    3 [desktop-1440] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (3.1s)
+  ✓    4 [desktop-1440] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (4.0s)
+  ✓    1 [desktop-1440] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (5.6s)
+  ✓    7 [desktop-1440] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.5s)
+  ✓    8 [desktop-1440] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (4.3s)
+  ✓    9 [desktop-1440] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.5s)
+  ✓    5 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (9.3s)
+  ✓    6 [desktop-1440] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (8.5s)
+  ✓   10 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.1s)
+  ✓   11 [desktop-1440] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.1s)
+  -   15 [desktop-1440] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓   12 [desktop-1440] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (6.9s)
+  ✓   14 [desktop-1440] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter (6.0s)
+  ✓   16 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (6.1s)
+  ✓   19 [desktop-1440] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (2.7s)
+  ✓   13 [desktop-1440] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (10.5s)
+  ✓   18 [desktop-1440] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (4.3s)
+  ✓   17 [desktop-1440] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (5.9s)
+  ✓   20 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (2.9s)
+  ✓   23 [desktop-1440] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (1.3s)
+  ✓   21 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (2.7s)
+  ✓   22 [desktop-1440] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (2.8s)
+  ✓   24 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (1.9s)
+  ✓   25 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (3.2s)
+  ✓   27 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (2.7s)
+  ✓   26 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (3.5s)
+  ✓   28 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (2.7s)
+  ✓   29 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (1.9s)
+  ✓   30 [desktop-1440] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.1s)
+  ✓   31 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (3.7s)
+  ✓   32 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (3.5s)
+  ✓   33 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (3.8s)
+  ✓   34 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (4.2s)
+  ✓   35 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (3.7s)
+  ✓   36 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (3.8s)
+  ✓   37 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (3.6s)
+  ✓   38 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (4.3s)
+  ✓   39 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (4.1s)
+  ✓   41 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (5.2s)
+  ✓   40 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (6.9s)
+  ✓   43 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (5.1s)
+  ✓   42 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (6.6s)
+  ✓   45 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.6s)
+  -   48 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓   49 [desktop-1440] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (2.5s)
+  ✓   47 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy (4.0s)
+  ✓   44 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (7.6s)
+(node:46569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   51 [desktop-1440] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state (2.6s)
+  ✓   50 [desktop-1440] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (3.7s)
+  ✓   46 [desktop-1440] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (7.7s)
+(node:46583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   55 [desktop-1280] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓   54 [desktop-1280] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.3s)
+  ✓   53 [desktop-1280] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (3.4s)
+  ✓   52 [desktop-1280] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (4.9s)
+  ✓   58 [desktop-1280] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.0s)
+  ✓   59 [desktop-1280] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (4.2s)
+  ✓   60 [desktop-1280] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.8s)
+  ✓   61 [desktop-1280] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.9s)
+  ✓   56 [desktop-1280] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (9.2s)
+  ✓   62 [desktop-1280] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.8s)
+  ✓   57 [desktop-1280] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (9.3s)
+  -   66 [desktop-1280] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓   63 [desktop-1280] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (7.0s)
+  ✓   65 [desktop-1280] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter (5.9s)
+  ✓   67 [desktop-1280] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (5.5s)
+  ✓   64 [desktop-1280] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (9.8s)
+  ✓   70 [desktop-1280] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (1.9s)
+  -   71 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -   72 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -   73 [desktop-1280] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓   69 [desktop-1280] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (3.4s)
+  ✓   68 [desktop-1280] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (4.8s)
+  ✓   74 [desktop-1280] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (1.8s)
+  ✓   75 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.7s)
+  ✓   76 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (3.9s)
+  ✓   78 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (2.9s)
+  ✓   77 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (4.2s)
+  ✓   79 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (3.0s)
+  ✓   81 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.8s)
+  ✓   80 [desktop-1280] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (3.2s)
+  ✓   83 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (5.9s)
+  ✓   82 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (6.3s)
+  ✓   84 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (5.7s)
+  ✓   85 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (6.5s)
+  ✓   87 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (4.8s)
+  ✓   86 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (5.0s)
+  ✓   88 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (5.5s)
+  ✓   89 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (5.4s)
+  ✓   90 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (4.5s)
+  ✓   92 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (4.8s)
+  ✓   91 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (6.9s)
+  ✓   94 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (4.2s)
+  ✓   93 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (6.1s)
+  ✓   96 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.1s)
+  -   99 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓  100 [desktop-1280] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (2.2s)
+  ✓   98 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy (3.4s)
+  ✓   95 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (6.8s)
+  ✓  102 [desktop-1280] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state (2.3s)
+(node:48111) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  101 [desktop-1280] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (3.6s)
+(node:48123) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   97 [desktop-1280] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (7.5s)
+(node:48130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48210) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  105 [tablet-834] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓  104 [tablet-834] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (2.7s)
+  ✓  103 [tablet-834] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (3.7s)
+  ✓  107 [tablet-834] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (1.7s)
+  ✓  109 [tablet-834] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.0s)
+  ✓  110 [tablet-834] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (4.4s)
+  ✓  111 [tablet-834] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.6s)
+  ✓  106 [tablet-834] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (8.0s)
+  ✓  112 [tablet-834] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.2s)
+  ✓  108 [tablet-834] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (7.9s)
+  ✓  113 [tablet-834] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.2s)
+  -  117 [tablet-834] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  -  116 [tablet-834] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  ✓  114 [tablet-834] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (6.0s)
+  ✓  119 [tablet-834] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (4.8s)
+  ✓  118 [tablet-834] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (4.8s)
+  -  122 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  123 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  124 [tablet-834] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  121 [tablet-834] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (1.7s)
+  ✓  115 [tablet-834] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (7.9s)
+  ✓  120 [tablet-834] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (3.1s)
+  ✓  125 [tablet-834] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (1.7s)
+  ✓  126 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.1s)
+  ✓  127 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (2.9s)
+  ✓  129 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (2.7s)
+  ✓  128 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (3.2s)
+  ✓  130 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (2.0s)
+  ✓  131 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (2.1s)
+  ✓  132 [tablet-834] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.2s)
+  ✓  133 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (3.5s)
+  ✓  134 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (3.7s)
+  ✓  135 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (3.9s)
+  ✓  136 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (3.9s)
+  ✓  137 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (4.2s)
+  ✓  138 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (4.0s)
+  ✓  139 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (5.2s)
+  ✓  140 [tablet-834] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (5.8s)
+  ✓  141 [tablet-834] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (5.3s)
+  ✓  143 [tablet-834] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (5.1s)
+  ✓  142 [tablet-834] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (7.8s)
+  ✓  144 [tablet-834] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (6.3s)
+  ✓  145 [tablet-834] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (5.2s)
+  ✓  147 [tablet-834] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.4s)
+  -  150 [tablet-834] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓  151 [tablet-834] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (2.7s)
+  ✓  149 [tablet-834] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy (4.2s)
+  ✓  146 [tablet-834] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (8.1s)
+  ✓  153 [tablet-834] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state (2.6s)
+  ✓  152 [tablet-834] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (4.1s)
+(node:49790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  148 [tablet-834] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (8.6s)
+(node:49799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:49806) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:49892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  156 [tablet-768] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls
+  ✓  155 [tablet-768] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (3.2s)
+  ✓  154 [tablet-768] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls (4.7s)
+  ✓  158 [tablet-768] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.3s)
+  ✓  160 [tablet-768] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.2s)
+  ✓  161 [tablet-768] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (4.5s)
+  ✓  162 [tablet-768] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.9s)
+  ✓  157 [tablet-768] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (9.2s)
+  ✓  163 [tablet-768] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (3.7s)
+  ✓  159 [tablet-768] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (10.7s)
+  ✓  164 [tablet-768] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (4.5s)
+  -  167 [tablet-768] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  -  168 [tablet-768] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette
+  ✓  165 [tablet-768] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (10.4s)
+  ✓  169 [tablet-768] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (7.5s)
+  ✓  170 [tablet-768] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (7.9s)
+  -  173 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  174 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  175 [tablet-768] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  172 [tablet-768] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (2.2s)
+  ✓  166 [tablet-768] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (12.5s)
+  ✓  171 [tablet-768] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (4.0s)
+  ✓  176 [tablet-768] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (2.2s)
+  ✓  177 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.7s)
+  ✓  178 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (3.6s)
+  ✓  179 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (3.8s)
+  ✓  180 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (3.2s)
+  ✓  181 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (2.5s)
+  ✓  182 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (2.6s)
+  ✓  183 [tablet-768] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.6s)
+  ✓  184 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (5.3s)
+  ✓  185 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (5.2s)
+  ✓  186 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (5.1s)
+  ✓  187 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (5.4s)
+  ✓  188 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (5.0s)
+  ✓  189 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (5.3s)
+  ✓  190 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (5.2s)
+  ✓  191 [tablet-768] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (6.0s)
+  ✓  192 [tablet-768] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (5.2s)
+  ✓  194 [tablet-768] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding (6.9s)
+  ✓  193 [tablet-768] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage (8.9s)
+  ✓  196 [tablet-768] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (6.7s)
+  ✓  195 [tablet-768] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit (8.8s)
+  ✓  198 [tablet-768] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.8s)
+  -  201 [tablet-768] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket
+  ✓  202 [tablet-768] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (2.9s)
+  ✓  200 [tablet-768] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy (4.0s)
+  ✓  197 [tablet-768] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (8.8s)
+  ✓  204 [tablet-768] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state (2.4s)
+  ✓  203 [tablet-768] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (3.3s)
+(node:51764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  199 [tablet-768] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (8.0s)
+(node:51771) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  205 [mobile-390] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls
+(node:51794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  209 [mobile-390] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.2s)
+  ✓  206 [mobile-390] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (3.9s)
+  ✓  208 [mobile-390] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls (3.6s)
+  ✓  211 [mobile-390] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (3.6s)
+  ✓  207 [mobile-390] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (8.1s)
+  ✓  213 [mobile-390] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.5s)
+  ✓  214 [mobile-390] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.6s)
+  ✓  212 [mobile-390] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (7.1s)
+  ✓  210 [mobile-390] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (7.9s)
+  ✓  215 [mobile-390] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.9s)
+  -  218 [mobile-390] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  ✓  219 [mobile-390] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette (5.1s)
+  ✓  216 [mobile-390] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (8.4s)
+  ✓  220 [mobile-390] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (7.8s)
+  ✓  217 [mobile-390] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (10.5s)
+  ✓  223 [mobile-390] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (1.9s)
+  ✓  221 [mobile-390] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (6.1s)
+  ✓  222 [mobile-390] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (5.0s)
+  ✓  224 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo (3.0s)
+  ✓  225 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo (3.1s)
+  ✓  226 [mobile-390] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo (3.0s)
+  ✓  227 [mobile-390] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (2.3s)
+  ✓  228 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.9s)
+  ✓  231 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (3.6s)
+  ✓  229 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (6.2s)
+  ✓  232 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (3.8s)
+  ✓  230 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (6.3s)
+  ✓  233 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (3.7s)
+  ✓  234 [mobile-390] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.6s)
+  ✓  235 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (7.0s)
+  ✓  236 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (6.4s)
+  ✓  237 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (7.5s)
+  ✓  238 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (7.5s)
+  ✓  240 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (6.3s)
+  ✓  239 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (7.1s)
+  -  244 [mobile-390] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage
+  -  245 [mobile-390] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding
+  -  246 [mobile-390] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit
+  ✓  241 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (7.0s)
+  ✓  242 [mobile-390] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (7.2s)
+  ✓  243 [mobile-390] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (4.4s)
+  ✓  249 [mobile-390] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.8s)
+  -  251 [mobile-390] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy
+  ✓  247 [mobile-390] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (6.8s)
+  ✓  253 [mobile-390] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (3.1s)
+  ✓  248 [mobile-390] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (8.9s)
+  -  255 [mobile-390] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state
+(node:53531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  250 [mobile-390] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (10.3s)
+  -  256 [mobile-375] › e2e/fixture/a11y.spec.ts:5:1 › @a11y keyboard: skip link, visible focus ring, tab reaches ticket controls
+  ✓  252 [mobile-390] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket (9.6s)
+(node:53612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  254 [mobile-390] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (5.3s)
+(node:53641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  257 [mobile-375] › e2e/fixture/a11y.spec.ts:47:1 › @a11y touch targets ≥ 40px on mobile for primary trading controls (3.0s)
+(node:53692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  258 [mobile-375] › e2e/fixture/a11y.spec.ts:29:1 › @a11y semantics: buy/sell not colour-only, tables have captions, controls named (3.6s)
+  ✓  259 [mobile-375] › e2e/fixture/a11y.spec.ts:61:3 › reduced motion › @a11y reduced motion disables shimmer/spinner animation (2.5s)
+  ✓  262 [mobile-375] › e2e/fixture/a11y.spec.ts:88:1 › @resilience unknown route and unknown demo token keep the shell with a recovery action (4.2s)
+  ✓  263 [mobile-375] › e2e/fixture/create.spec.ts:4:1 › @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing (5.6s)
+  ✓  264 [mobile-375] › e2e/fixture/create.spec.ts:33:1 › @create prediction market wizard still renders (regression) (1.8s)
+  ✓  260 [mobile-375] › e2e/fixture/a11y.spec.ts:73:5 › theme light › @theme light matrix: key routes render with theme-specific chart palette, no overflow (9.1s)
+  ✓  261 [mobile-375] › e2e/fixture/a11y.spec.ts:73:5 › theme dark › @theme dark matrix: key routes render with theme-specific chart palette, no overflow (9.5s)
+  ✓  265 [mobile-375] › e2e/fixture/discovery.spec.ts:6:5 › discovery dark › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.9s)
+  ✓  266 [mobile-375] › e2e/fixture/discovery.spec.ts:6:5 › discovery light › @discovery list renders real-shape rows with DEMO provenance and no USD/SOL (2.8s)
+  -  269 [mobile-375] › e2e/fixture/discovery.spec.ts:62:1 › @search command palette: keyboard-only open, arrow, enter
+  ✓  270 [mobile-375] › e2e/fixture/discovery.spec.ts:91:1 › @search mobile search button opens palette (3.9s)
+  ✓  267 [mobile-375] › e2e/fixture/discovery.spec.ts:21:1 › @discovery lifecycle filters, pair dropdown, grid toggle persists, open token (6.7s)
+  ✓  271 [mobile-375] › e2e/fixture/earn.spec.ts:7:5 › earn dark › @earn hub shows honest capabilities, no copied competitor policy (6.8s)
+  ✓  268 [mobile-375] › e2e/fixture/discovery.spec.ts:46:1 › @discovery Prediction, Crypto and PRISM navigation still work (8.1s)
+  -  275 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  276 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  -  277 [mobile-375] › e2e/fixture/perf.spec.ts:4:3 › @perf /launchpad/token/demo-graduated: cumulative layout shift < 0.1, no RPC/indexer calls in demo
+  ✓  274 [mobile-375] › e2e/fixture/earn.spec.ts:53:1 › @earn legacy /portfolio route still renders demo portfolio (1.4s)
+  ✓  273 [mobile-375] › e2e/fixture/earn.spec.ts:38:1 › @earn referral copy, section tabs, demo positions toggle (4.4s)
+  ✓  272 [mobile-375] › e2e/fixture/earn.spec.ts:7:5 › earn light › @earn hub shows honest capabilities, no copied competitor policy (5.3s)
+  ✓  278 [mobile-375] › e2e/fixture/protected-earn.spec.ts:6:1 › @smoke Earn Protection tab shows honest protection modes (2.1s)
+  ✓  279 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke launchpad renders (2.6s)
+  ✓  282 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prediction renders (2.6s)
+  ✓  283 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke prism renders (2.8s)
+  ✓  280 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-active renders (5.3s)
+  ✓  281 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke token-graduated renders (5.5s)
+  ✓  285 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke create renders (2.2s)
+  ✓  284 [mobile-375] › e2e/fixture/smoke.spec.ts:16:3 › @smoke earn renders (3.2s)
+  ✓  286 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal ACTIVE renders shared terminal with DEMO provenance (4.9s)
+  ✓  287 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (6.2s)
+  ✓  288 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATING renders shared terminal with DEMO provenance (6.4s)
+  ✓  289 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal dark › @terminal GRADUATED renders shared terminal with DEMO provenance (6.8s)
+  ✓  290 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal ACTIVE renders shared terminal with DEMO provenance (6.8s)
+  ✓  291 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATION_READY renders shared terminal with DEMO provenance (6.1s)
+  -  295 [mobile-375] › e2e/fixture/token-terminal.spec.ts:66:1 › @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage
+  -  296 [mobile-375] › e2e/fixture/token-terminal.spec.ts:93:1 › @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding
+  -  297 [mobile-375] › e2e/fixture/token-terminal.spec.ts:114:1 › @terminal deposit rejected → no order; order rejected → "Margin deposited; order not placed" → retry without re-deposit
+  ✓  292 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATING renders shared terminal with DEMO provenance (5.9s)
+  ✓  294 [mobile-375] › e2e/fixture/token-terminal.spec.ts:41:1 › @terminal chart: Line/Candles and range vs interval are independent controls (2.9s)
+  ✓  293 [mobile-375] › e2e/fixture/token-terminal.spec.ts:15:7 › terminal light › @terminal GRADUATED renders shared terminal with DEMO provenance (6.2s)
+  ✓  300 [mobile-375] › e2e/fixture/token-terminal.spec.ts:175:1 › @terminal ACTIVE orders tab is disabled until graduation (2.2s)
+  -  302 [mobile-375] › e2e/fixture/token-terminal.spec.ts:210:1 › @terminal GRADUATED post-only toggle switches order policy
+  ✓  298 [mobile-375] › e2e/fixture/token-terminal.spec.ts:135:1 › @terminal tabs: trades, holders with classification, protocol groups, orders by status (5.1s)
+  ✓  299 [mobile-375] › e2e/fixture/token-terminal.spec.ts:159:1 › @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC (6.1s)
+  ✓  304 [mobile-375] › e2e/fixture/vault.spec.ts:11:1 › @vault tab mounts in the Earn hub with the passkey explainer (2.4s)
+  -  306 [mobile-375] › e2e/fixture/vault.spec.ts:39:1 › @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state
+  ✓  301 [mobile-375] › e2e/fixture/token-terminal.spec.ts:181:1 › @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state (9.0s)
+  ✓  305 [mobile-375] › e2e/fixture/vault.spec.ts:24:1 › @vault tampered import and tampered storage are rejected without any passkey ceremony (3.7s)
+  ✓  303 [mobile-375] › e2e/fixture/token-terminal.spec.ts:227:1 › @terminal mobile: sticky Trade bar opens bottom-sheet ticket (8.1s)
+
+  40 skipped
+  266 passed (5.7m)
+
+evidence: /home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261012T180325Z-fixture

@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 // no signing, no /api writes. Asserts real data (not fixtures), SPA deep links, the
 // referral/media rewrite path, and honest degradation states.
 
-const GRADUATED_TOKEN = '0x43e7e9b1b7d9A143573307b13D14B51580c18f15'; // evidenced launch
+const GRADUATED_TOKEN = '0x30ccb65006665022dfc97bb5c1985610503fd1cf'; // evidenced launch
 
 test('staging serves the live retro-ui build (no DEMO/mock leakage on discovery)', async ({ page }) => {
   await page.goto('/launchpad');
@@ -12,12 +12,7 @@ test('staging serves the live retro-ui build (no DEMO/mock leakage on discovery)
   await expect(terminal).toBeVisible();
   // Live mode must never show the DEMO provenance badge or fixture version.
   await expect(page.locator('[data-provenance="demo"]')).toHaveCount(0);
-  await expect(page.getByText('SIMULATED', { exact: false }).first()).toHaveCount(0).catch(() => { /* tab labels may legitimately contain the word in hidden tabs — the strict check is data-mode below */ });
-  await expect(page.locator('html')).toHaveAttribute('data-mode', 'live', { timeout: 5_000 }).catch(async () => {
-    // data-mode attribute may live on the app shell instead of <html>; accept either marker.
-    const shellMode = await page.locator('[data-data-mode="live"]').first().isVisible().catch(() => false);
-    expect(shellMode || (await page.content()).includes('"live"')).toBeTruthy();
-  });
+  await expect(page.getByText('LIVE', { exact: true })).toBeVisible();
   // Real indexed rows eventually render (indexer is live through the tunnel).
   await expect(page.locator('a[href^="/launchpad/token/0x"]').first()).toBeVisible({ timeout: 30_000 });
 });
@@ -88,11 +83,20 @@ test('wallet connect prompts the EIP-6963 picker (no implicit connect), read-onl
   await expect(page.getByTestId('token-terminal')).toBeVisible({ timeout: 30_000 });
   // In a clean browser with no injected wallets the ticket shows the connect CTA;
   // clicking opens the picker (or its empty state) — never signs anything.
-  const connect = page.getByRole('button', { name: /connect wallet/i }).first();
-  if (await connect.isVisible().catch(() => false)) {
-    await connect.click();
-    await page.waitForTimeout(500);
-  }
-  // No transaction was attempted: the eth_send* guard is implicit (no wallet present).
-  expect(true).toBe(true);
+  const connect = page.getByRole('button', { name: 'Connect wallet', exact: true }).first();
+  await connect.click();
+  await expect(page.getByRole('dialog')).toHaveCount(1);
+  await expect(page.getByRole('heading', { name: 'Connect a wallet' })).toBeVisible();
+  await expect(page.getByText(/No wallet found/)).toBeVisible();
+});
+
+test('public release and indexer projection match the reviewed source', async ({ request }) => {
+  const release = await request.get('/release.json'); expect(release.status()).toBe(200);
+  const record = await release.json(); expect(record.chainId).toBe(10143);
+  if (process.env.STAGING_SOURCE_SHA) expect(record.sourceSha).toBe(process.env.STAGING_SOURCE_SHA);
+  const health = await request.get('/health'); expect(health.status()).toBe(200);
+  const value = await health.json(); expect(value.ready).toBe(true);
+  expect(value.projection).toEqual({expected:2,published:2});
+  expect(value.freshness.chainId).toBe(10143); expect(value.freshness.source).toBe('MONAD_EVENT_INDEXER');
+  expect(value.freshness.lagBlocks).toBeLessThanOrEqual(64);
 });

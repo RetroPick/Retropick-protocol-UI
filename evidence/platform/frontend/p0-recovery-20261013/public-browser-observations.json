@@ -1,0 +1,60 @@
+[
+  {
+    "width": 1440,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches?limit=50&sort=marketCap",
+    "status": 200
+  },
+  {
+    "width": 1440,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+    "status": 200
+  },
+  {
+    "width": 1440,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/candles?resolution=15m&range=24h",
+    "status": 200
+  },
+  {
+    "width": 1440,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+    "status": 200
+  },
+  {
+    "width": 1440,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+    "status": 200
+  },
+  {
+    "width": 1440,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches?limit=50&sort=marketCap",
+    "status": 200
+  },
+  {
+    "width": 390,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+    "status": 200
+  },
+  {
+    "width": 390,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/candles?resolution=15m&range=24h",
+    "status": 200
+  },
+  {
+    "width": 390,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+    "status": 200
+  },
+  {
+    "width": 390,
+    "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+    "status": 200
+  },
+  {
+    "width": 390,
+    "pageErrors": []
+  }
+]

@@ -1,7 +1,7 @@
 'use client';
 // Send-to-wallet transfer form. Same prepareTransfer flow, two-step review and tx phases as before;
 // presented with a radix Select, balance presets and a proper review summary card.
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { formatUnits, isAddress, zeroAddress, type Address } from 'viem';
 import { AlertCircle, CheckCircle2, Send } from 'lucide-react';
@@ -21,6 +21,7 @@ export function SendToWallet() {
  const state=useQuery({queryKey:launchKeys.wallet(account??'disconnected','state'),enabled:!!account,queryFn:({signal})=>fetchWalletState(account!,signal),structuralSharing:false});
  const [asset,setAsset]=useState<string>(zeroAddress),[recipient,setRecipient]=useState(''),[amount,setAmount]=useState(''),[error,setError]=useState('');
  const [tx,setTx]=useState<TxPhase|{kind:'idle'}>({kind:'idle'}),[reviewed,setReviewed]=useState(false);
+ useEffect(()=>{setReviewed(false);setError('');},[account,wallet.chainId]);
  const busy=!['idle','failed','success'].includes(tx.kind);
  const options=[{token:zeroAddress,symbol:'MON',decimals:18,walletRaw:state.data?.monRaw??0n},...(state.data?.assets.filter(a=>a.decimals!==null&&a.walletRaw>0n)??[])];
  const selected=options.find(a=>a.token===asset)??options[0];
@@ -28,7 +29,7 @@ export function SendToWallet() {
  const recipientOk=isAddress(recipient)&&recipient!==zeroAddress;
  const reset=()=>setReviewed(false);
  const setPreset=(pct:number)=>{if(selected.decimals===null)return;const value=selected.walletRaw*BigInt(pct)/100n;setAmount(formatUnits(value,selected.decimals));reset();};
- const send=async()=>{if(!wallet.wallet||!account||!valid||selected.decimals===null)return;setError('');setTx({kind:'preparing'});try{const prepared=await prepareTransfer(publicClient,account,{recipient:recipient as Address,asset:selected.token as Address,amount:parseExact(amount,selected.decimals)});const result=await executePreparedWrite(publicClient,wallet.wallet,prepared,{onPhase:setTx});if(result.kind==='failed')setError(result.reason);else{toast.success('Wallet transfer confirmed',{description:result.hash});setAmount('');setReviewed(false);void state.refetch();}}catch(e){setError(e instanceof Error?e.message:'Transfer failed.');}finally{setTx({kind:'idle'});}};
+ const send=async()=>{if(state.isError||!state.data||!wallet.wallet||!account||!valid||selected.decimals===null)return;setError('');setTx({kind:'preparing'});try{const prepared=await prepareTransfer(publicClient,account,{recipient:recipient as Address,asset:selected.token as Address,amount:parseExact(amount,selected.decimals)});const result=await executePreparedWrite(publicClient,wallet.wallet,prepared,{onPhase:setTx});if(result.kind==='failed')setError(result.reason);else{toast.success('Wallet transfer confirmed',{description:result.hash});setAmount('');setReviewed(false);void state.refetch();}}catch(e){setError(e instanceof Error?e.message:'Transfer failed.');}finally{setTx({kind:'idle'});}};
  return <section className="rp-hub-card" aria-label="Send to wallet">
   <div className="rp-hub-card-head">
     <span className="rp-card-icon"><Send size={15} aria-hidden/></span>
@@ -42,7 +43,7 @@ export function SendToWallet() {
         <SelectTrigger aria-labelledby="send-asset-label"><SelectValue/></SelectTrigger>
         <SelectContent>{options.map(a=><SelectItem key={a.token} value={a.token}>{a.symbol}</SelectItem>)}</SelectContent>
       </Select>
-      <small className="rp-send-balance">Wallet balance {selected.decimals!==null?<MonoAmount raw={selected.walletRaw} decimals={selected.decimals} unit={selected.symbol}/>:'unavailable'}</small>
+      <small className="rp-send-balance">Wallet balance {selected.decimals!==null&&state.data&&!state.isError?<MonoAmount raw={selected.walletRaw} decimals={selected.decimals} unit={selected.symbol}/>:'unavailable'}</small>
     </div>
     <label className="rp-send-field"><span>Recipient EVM address</span>
       <div className="rp-field-input">
@@ -57,8 +58,8 @@ export function SendToWallet() {
         <span className="rp-unit">{selected.symbol}</span>
       </div>
       <div className="rp-presets" role="group" aria-label="Amount presets">
-        {[25,50,75].map(p=><button key={p} type="button" className="rp-preset" disabled={selected.decimals===null||state.isPending} onClick={()=>setPreset(p)}>{p}%</button>)}
-        <button type="button" className="rp-preset" disabled={selected.decimals===null||state.isPending} onClick={()=>setPreset(100)}>Max</button>
+        {[25,50,75].map(p=><button key={p} type="button" className="rp-preset" disabled={selected.decimals===null||state.isPending||state.isError||!state.data} onClick={()=>setPreset(p)}>{p}%</button>)}
+        <button type="button" className="rp-preset" disabled={selected.decimals===null||state.isPending||state.isError||!state.data} onClick={()=>setPreset(100)}>Max</button>
       </div>
     </div>
     {reviewed&&<div className="rp-review" role="status">
@@ -69,7 +70,7 @@ export function SendToWallet() {
       <div className="rp-review-actions"><button type="button" className="btn ghost" disabled={busy} onClick={()=>setReviewed(false)}>Edit</button></div>
     </div>}
     {error&&<p role="alert" className="form-error">{error}</p>}{busy&&<p role="status" data-tx-phase={tx.kind}>{tx.kind==='awaiting-signature'?'Confirm in wallet…':`${tx.kind}…`}</p>}
-    <button className="btn primary" disabled={busy||!wallet.wallet||!valid||state.isPending} onClick={()=>reviewed?void send():setReviewed(true)}>{busy?'Working…':reviewed?'Send to wallet':'Review transfer'}</button>
+    <button className="btn primary" disabled={busy||!wallet.wallet||!valid||state.isPending||state.isError||!state.data} onClick={()=>reviewed?void send():setReviewed(true)}>{busy?'Working…':reviewed?'Send to wallet':'Review transfer'}</button>
   </div>
  </section>;
 }

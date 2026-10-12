@@ -1,0 +1,14 @@
+✔ enrollment and explicit recovery preserve the address without persisted key material (52.771805ms)
+✔ no PRF support and canceled authenticator cannot enroll or authorize (0.734586ms)
+✔ fresh signature binds exact ABI calldata, value, account, amount and RP and rejects replay (84.87016ms)
+✔ margin withdrawal binds ABI argument order (amount, asset) (0.945423ms)
+✔ signing sessions end on success and callback failure (4.692259ms)
+✔ NONE never asks for a passkey; changing native claim credit invalidates a prepared amount (68.458227ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 724.428457

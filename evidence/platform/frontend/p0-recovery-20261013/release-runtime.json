@@ -1,0 +1,310 @@
+{
+  "capturedAt": "2026-10-12T18:31:22.373Z",
+  "record": {
+    "url": "https://retropick-metropolis-retro-ui-staging-7hn1bzqlg-asyams-projects.vercel.app",
+    "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+    "sourceSha": "695ae7764f72cb0fb5cfee5af205fc2975bcd32f",
+    "tunnelUrl": "https://duration-install-platforms-internet.trycloudflare.com",
+    "deployedAt": "2026-10-12T18:30:19.778Z"
+  },
+  "deployment": {
+    "id": "dpl_Bxs9HF1J5qtsETpEpttf177wkmzL",
+    "name": "retropick-metropolis-retro-ui-staging",
+    "url": "retropick-metropolis-retro-ui-staging-7hn1bzqlg-asyams-projects.vercel.app",
+    "readyState": "READY"
+  },
+  "reconciliation": {
+    "tunnelUrl": "https://duration-install-platforms-internet.trycloudflare.com",
+    "state": "ready",
+    "attempt": 0,
+    "checkedAt": "2026-10-12T18:31:21.684Z"
+  },
+  "services": {
+    "indexer": "active",
+    "referral": "active",
+    "media": "active",
+    "radar": "active",
+    "gateway": "active",
+    "tunnel": "active"
+  },
+  "endpoints": {
+    "/release.json": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "body": {
+        "sourceSha": "695ae7764f72cb0fb5cfee5af205fc2975bcd32f",
+        "chainId": 10143
+      }
+    },
+    "/health": {
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "no-store",
+      "body": {
+        "freshness": {
+          "chainId": 10143,
+          "indexedBlock": 70469601,
+          "indexedBlockHash": "0xac7256d0a2009e1aaa0e02b28c40df2b258edb37c4ccc9485dafc87610bf9542",
+          "headBlock": 70469609,
+          "confirmations": 8,
+          "lagBlocks": 8,
+          "indexedAt": "2026-10-12T18:31:11.324Z",
+          "syncing": false,
+          "error": null,
+          "source": "MONAD_EVENT_INDEXER",
+          "projectionVersion": 2,
+          "reorgRevision": 0,
+          "beneficiaryIndexedBlock": 70469601
+        },
+        "ready": true,
+        "projection": {
+          "expected": 2,
+          "published": 2
+        },
+        "progress": {
+          "passes": 112,
+          "passStartedAt": "2026-10-12T18:31:09.024Z",
+          "passTarget": 70469601,
+          "headTarget": 70469601,
+          "lastSyncedAt": "2026-10-12T18:31:11.339Z",
+          "lastPassMs": 2315,
+          "lastPassBlocks": 50,
+          "blocksPerSecond": 22,
+          "lastError": null,
+          "catchingUp": false,
+          "cursors": {
+            "root": 70469601,
+            "dynamic": 70469601,
+            "beneficiary": 70469601
+          }
+        },
+        "providers": [
+          {
+            "endpoint": "testnet-rpc.monad.xyz",
+            "state": "healthy",
+            "chainId": 10143,
+            "requests": 1571,
+            "failures": 0,
+            "lastFailure": null,
+            "lastFailureMessage": null,
+            "retryAt": null,
+            "latencyMs": 392
+          }
+        ]
+      }
+    },
+    "/v1/launches?limit=1": {
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "public, max-age=1, stale-while-revalidate=10",
+      "body": {
+        "data": [
+          {
+            "token": "0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+            "curve": "0x6d9eb9005f2b3bc78f94ea28961cfa1301576e1c",
+            "creator": "0xb505cbaab3acdf287af1366b9b1229404757913b",
+            "quoteAsset": "0x0000000000000000000000000000000000000000",
+            "quoteSymbol": "MON",
+            "quoteDecimals": 18,
+            "baseDecimals": 18,
+            "name": "Retro Live 43916",
+            "symbol": "RTL916",
+            "description": "",
+            "logo": "",
+            "socials": {
+              "twitter": "",
+              "telegram": "",
+              "discord": "",
+              "website": "",
+              "farcaster": ""
+            },
+            "supplyRaw": "1000000000000000000000",
+            "launchSupplyRaw": "1000000000000000000000",
+            "createdBlock": 69717593,
+            "createdAt": "2026-10-10T03:26:25.000Z",
+            "phase": "GRADUATED",
+            "venue": "KURU",
+            "market": "0x7402dee487b1517764a220946b99255fab9d1206",
+            "vault": "0x023ef4745f4dfb0a39a69b671bbf7f6af48d4d29",
+            "lpLock": "0xe35c4a10e9106f650164dc073de60c0c61acd955",
+            "policyVersion": 1,
+            "quoteReserveRaw": "1000000000000000002",
+            "liquidityRaw": null,
+            "liquiditySource": "UNAVAILABLE",
+            "priceRaw": "15948907789043909",
+            "priceX18": "15948907789043909",
+            "priceSource": "KURU_LAST_TRADE",
+            "marketCapRaw": "15948907789043909000",
+            "bondingProgressBps": 10000,
+            "marketParams": {
+              "pricePrecision": "100000000",
+              "sizePrecision": "100000000",
+              "baseAsset": "0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+              "baseDecimals": 18,
+              "quoteAsset": "0x0000000000000000000000000000000000000000",
+              "quoteDecimals": 18
+            },
+            "launchTransactionHash": "0x34bb210c5953ca80f24f5596becb9c795b7df08ec6682ac551fe2d80f38476b5",
+            "graduationBlock": 69723575,
+            "graduationTimestamp": 1791604593,
+            "graduationTransactionHash": "0x713e22d6512e667dbc00b52e318bdd05c19f2988ac2c4370247799596f186d9d",
+            "candles": [
+              {
+                "timestamp": 1791603060,
+                "open": "1000990000000000",
+                "high": "1000990000000000",
+                "low": "1000990000000000",
+                "close": "1000990000000000",
+                "quoteVolumeRaw": "990000000000000",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791603240,
+                "open": "1002971960200000",
+                "high": "1002971960200000",
+                "low": "1002971960200000",
+                "close": "1002971960200000",
+                "quoteVolumeRaw": "990000000000000",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791603420,
+                "open": "1004955880600000",
+                "high": "1004955880600000",
+                "low": "1004955880600000",
+                "close": "1004955880600000",
+                "quoteVolumeRaw": "990000000000000",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791603600,
+                "open": "1006941761200000",
+                "high": "1006941761200000",
+                "low": "1006941761200000",
+                "close": "1006941761200000",
+                "quoteVolumeRaw": "990000000000000",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791604260,
+                "open": "1008929602000000",
+                "high": "1012911164200000",
+                "low": "1008929602000000",
+                "close": "1012911164200000",
+                "quoteVolumeRaw": "2970000000000000",
+                "tradeCount": 3
+              },
+              {
+                "timestamp": 1791604320,
+                "open": "1014904885600000",
+                "high": "1014904885600000",
+                "low": "1014904885600000",
+                "close": "1014904885600000",
+                "quoteVolumeRaw": "990000000000000",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791604380,
+                "open": "2015840000000000",
+                "high": "2015840000000000",
+                "low": "2015840000000000",
+                "close": "2015840000000000",
+                "quoteVolumeRaw": "992080000000000002",
+                "tradeCount": 1
+              },
+              {
+                "timestamp": 1791776940,
+                "open": "4000000000000000",
+                "high": "15948907789043909",
+                "low": "4000000000000000",
+                "close": "15948907789043909",
+                "quoteVolumeRaw": "999999999904019897",
+                "tradeCount": 140
+              }
+            ],
+            "volume24hRaw": "999999999904019897",
+            "lifetimeVolumeRaw": "1999999999904019899",
+            "trades24h": 140,
+            "holderCount": 3,
+            "change24hBps": "69117"
+          }
+        ],
+        "freshness": {
+          "chainId": 10143,
+          "indexedBlock": 70469601,
+          "indexedBlockHash": "0xac7256d0a2009e1aaa0e02b28c40df2b258edb37c4ccc9485dafc87610bf9542",
+          "headBlock": 70469609,
+          "confirmations": 8,
+          "lagBlocks": 8,
+          "indexedAt": "2026-10-12T18:31:11.324Z",
+          "syncing": false,
+          "error": null,
+          "source": "MONAD_EVENT_INDEXER",
+          "projectionVersion": 2,
+          "reorgRevision": 0,
+          "beneficiaryIndexedBlock": 70469601
+        },
+        "nextCursor": "eyJ2IjoiMjowOjcwNDY5NjAxOjB4YWM3MjU2ZDBhMjAwOWUxYWFhMGUwMmIyOGM0MGRmMmIyNThlZGIzN2M0Y2NjOTQ4NWRhZmM4NzYxMGJmOTU0MiIsInEiOiIyNjFhYzI4NjlmZDBkY2FlYWU5NjdmOWQ3YTdhMzI2YjI1YmM4MjlhNTM2NTA5ZGE5YWJiNDEwY2I2ZDBiM2JkIiwiYWZ0ZXIiOiIweDMwY2NiNjUwMDY2NjUwMjJkZmM5N2JiNWMxOTg1NjEwNTAzZmQxY2YifQ",
+        "sortGrouping": "QUOTE_ASSET"
+      }
+    },
+    "/api/referrals/health": {
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "no-store",
+      "body": {
+        "chainId": 10143,
+        "attributionOnly": true,
+        "earningsEnabled": false,
+        "syncError": "INDEXER_UNAVAILABLE"
+      }
+    },
+    "/api/media/health": {
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "no-store",
+      "body": {
+        "chainId": 10143,
+        "mediaOnly": true,
+        "mode": "pinata"
+      }
+    },
+    "/api/radar/health": {
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "no-store",
+      "body": {
+        "ok": true,
+        "source": "ENVIO_HYPERSYNC",
+        "provider": "10143.hypersync.xyz",
+        "configured": true,
+        "chainId": 10143,
+        "deployment": "retropick-monad-testnet-v2",
+        "status": "OK",
+        "cursorBlock": 70469649,
+        "freshness": {
+          "headHeight": 70469648,
+          "lastEventBlock": 70294322,
+          "cursorBlock": 70469649,
+          "lagBlocks": 0,
+          "headMinusEvent": 175326
+        },
+        "anchorVerified": true,
+        "recovery": "snapshot",
+        "journalCount": 178,
+        "counters": {
+          "decodeErrors": 0,
+          "reorgs": 0,
+          "rebuilds": 0,
+          "removedLogs": 0,
+          "foreignLogs": 17201
+        },
+        "lastError": null,
+        "lastBatchAt": 1791829881430,
+        "markets": 3,
+        "tokens": 9
+      }
+    }
+  }
+}

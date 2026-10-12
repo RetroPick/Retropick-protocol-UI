@@ -125,7 +125,7 @@ export interface DepthLadder {
   midX18: bigint | null;
 }
 export interface TerminalDepth {
-  status: 'ready' | 'loading' | 'error' | 'unavailable';
+  status: 'ready' | 'loading' | 'error' | 'stale' | 'unavailable';
   ladder: DepthLadder | null;
   /** Chain block the book was read at (live) or '0' (demo fixture). */
   block: string | null;

@@ -20,10 +20,11 @@
 //   6. record deployment URL + source SHA in .staging/staging-deploy.json
 //
 // No secrets are involved: every value here is public-by-design (VITE_* / public RPC).
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, renameSync, openSync, closeSync, unlinkSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { stagingReady } from './readiness.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, '..', '..');
@@ -55,29 +56,37 @@ export function publicEnv(origin) {
   return [
     ['VITE_DATA_MODE', 'live'],
     ['VITE_INDEXER_URL', origin],
-    ['VITE_MONAD_RPC_FALLBACK_URL', 'https://testnet-rpc.monad.xyz'],
+    ['VITE_MONAD_RPC_FALLBACK_URL', 'https://rpc.ankr.com/monad_testnet'],
   ];
 }
 
+export function deploymentUrl(output) {
+  let value;
+  try { value = JSON.parse(output); } catch { value = null; }
+  const candidate = value?.deployment?.url ?? output.trim();
+  if (!/^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(candidate)) throw Error('Vercel did not return a valid deployment URL.');
+  return candidate;
+}
+
 async function upsertEnv(cwd, key, value, target) {
-  const ls = () => sh('vercel', ['env', 'ls', target], { cwd });
+  const ls = () => sh('vercel', ['env', 'ls', target, '--scope', process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects'], { cwd });
   // Single idempotent write (CLI ≥ 62: --value/--force/--non-interactive). The earlier
   // rm→add(stdin) sequence hung or silently dropped values on CLI 62.1 (observed 2026-10-12).
-  try { sh('vercel', ['env', 'add', key, target, '--value', value, '--no-sensitive', '--yes', '--force', '--non-interactive'], { cwd, timeout: 60_000 }); }
-  catch (error) { console.error(`env ${key} (${target}): add FAILED: ${String(error.stderr ?? error).slice(0, 200)}`); process.exit(1); }
+  try { sh('vercel', ['env', 'add', key, target, '--value', value, '--no-sensitive', '--yes', '--force', '--non-interactive', '--scope', process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects'], { cwd, timeout: 60_000 }); }
+  catch (error) { throw Error(/not authorized|unauthorized|forbidden/i.test(String(error.stderr ?? error.message)) ? 'Staging environment authorization blocked.' : `Public environment write failed for ${key}.`); }
   // Vercel env writes propagate asynchronously — verify presence with bounded retries.
   for (let wait = 0; wait < 6; wait++) {
     let after = ''; try { after = ls(); } catch { /* retry */ }
     if (after.split('\n').some((line) => line.trim().startsWith(key + ' '))) { console.log(`env ${key} (${target}): set + verified present`); return; }
     await new Promise((r) => setTimeout(r, 2000 * (wait + 1)));
   }
-  console.error(`env ${key} (${target}): verification FAILED after retries`); process.exit(1);
+  throw Error(`Public environment presence verification failed for ${key}.`);
 }
 
 async function main() {
-  if (PROJECT === LEGACY) { console.error('refusing: legacy production project'); process.exit(1); }
+  if (PROJECT === LEGACY || PROJECT !== 'retropick-metropolis-retro-ui-staging') throw Error('Refusing: not the authorized staging project.');
   const tunnelPath = resolve(runDir, 'tunnel-url');
-  if (!existsSync(tunnelPath)) { console.error('missing .staging/tunnel-url — start the tunnel first'); process.exit(1); }
+  if (!existsSync(tunnelPath)) throw Error('Missing tunnel URL.');
   const tunnelUrl = readFileSync(tunnelPath, 'utf8').trim().replace(/\/$/, '');
   const vercelJson = renderVercelJson(readFileSync(resolve(here, 'vercel.template.json'), 'utf8'), tunnelUrl);
   // Source SHA: explicit --sha, else the SHA of the last staging deploy (tunnel-rotation
@@ -93,17 +102,18 @@ async function main() {
   // force re-add so tunnel-rotation redeploys never crash on a vanished worktree dir.
   const dir = `/tmp/retro-staging-release-${sha.slice(0, 12)}`;
   try { sh('git', ['worktree', 'prune']); } catch { /* best effort */ }
-  if (existsSync(resolve(dir, '.git'))) { try { sh('git', ['-C', dir, 'checkout', '--detach', sha]); } catch { sh('git', ['worktree', 'remove', '--force', dir]); } }
+  if (existsSync(resolve(dir, '.git')) && sh('git', ['status', '--porcelain=v1', '--untracked-files=no'], { cwd: dir })) throw Error('Release worktree contains tracked edits; preserve it and use another path.');
   if (!existsSync(resolve(dir, '.git'))) {
-    try { sh('git', ['worktree', 'add', '--detach', '--force', dir, sha]); }
-    catch { sh('git', ['worktree', 'remove', '--force', dir]); sh('git', ['worktree', 'prune']); sh('git', ['worktree', 'add', '--detach', '--force', dir, sha]); }
+    sh('git', ['worktree', 'add', '--detach', dir, sha]);
   }
-  if (sh('git', ['status', '--porcelain=v1', '--untracked-files=no'], { cwd: dir })) { console.error(`worktree ${dir} is dirty — refusing`); process.exit(1); }
+  if (sh('git', ['status', '--porcelain=v1', '--untracked-files=no'], { cwd: dir })) throw Error('Release worktree contains tracked changes.');
   mkdirSync(resolve(dir, '.vercel'), { recursive: true });
   copyFileSync(resolve(repo, '.vercel/project.json'), resolve(dir, '.vercel/project.json'));
   const linked = JSON.parse(readFileSync(resolve(dir, '.vercel/project.json'), 'utf8'));
-  if (linked.projectName !== PROJECT) { console.error(`linked project is ${linked.projectName}, expected ${PROJECT} — refusing`); process.exit(1); }
+  if (linked.projectName !== PROJECT || linked.projectId !== 'prj_dKwt5xQUlhZg6shbOWyFvZbZXSIO' || linked.orgId !== 'team_wDDjfSztM78LKthTsosnF3qw') throw Error('Linked staging project identity mismatch.');
   writeFileSync(resolve(dir, 'vercel.json'), vercelJson);
+  mkdirSync(resolve(dir, 'apps/retro-ui/public'), { recursive: true });
+  writeFileSync(resolve(dir, 'apps/retro-ui/public/release.json'), JSON.stringify({ sourceSha: sha, chainId: 10143 }) + '\n');
 
   // Env: only rotate when the public value actually changed.
   const statePath = resolve(runDir, 'vercel-env.json');
@@ -119,11 +129,39 @@ async function main() {
   }
 
   console.log('deploying (prod target of the STAGING project — its own *.vercel.app domain)…');
-  const url = sh('vercel', ['deploy', '--prod', '--yes'], { cwd: dir });
+  const scope = process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects';
+  const url = deploymentUrl(sh('vercel', ['deploy', '--prod', '--yes', '--scope', scope], { cwd: dir, timeout: 600_000 }));
+  // Do not publish local success state until the public alias serves this exact
+  // release and both projection endpoints are ready through its rewrites.
+  let verified = false;
+  for (let attempt = 0; attempt < 12 && !verified; attempt++) {
+    try {
+      const [releaseResponse, ready] = await Promise.all([fetch(ORIGIN + '/release.json', { cache: 'no-store', signal: AbortSignal.timeout(10000) }), stagingReady(ORIGIN)]);
+      if (!releaseResponse.ok || !ready) throw Error('Alias not ready');
+      const release = await releaseResponse.json();
+      const deployment = JSON.parse(sh('vercel', ['inspect', url, '--scope', scope, '--json'], { cwd: dir, timeout: 30000 }));
+      const alias = JSON.parse(sh('vercel', ['inspect', ORIGIN, '--scope', scope, '--json'], { cwd: dir, timeout: 30000 }));
+      verified = release.sourceSha === sha && release.chainId === 10143 && deployment.id === alias.id && alias.name === PROJECT && alias.readyState === 'READY';
+    } catch { /* bounded propagation retry */ }
+    if (!verified) await new Promise(resolve => setTimeout(resolve, 5000));
+  }
+  if (!verified) throw Error('Deployment submitted, but public alias verification failed; success record retained unchanged.');
   const record = { url, origin: ORIGIN, sourceSha: sha, tunnelUrl, deployedAt: new Date().toISOString() };
-  writeFileSync(resolve(runDir, 'staging-deploy.json'), JSON.stringify(record, null, 2) + '\n');
+  const recordPath = resolve(runDir, 'staging-deploy.json');
+  writeFileSync(recordPath + '.tmp', JSON.stringify(record, null, 2) + '\n');
+  renameSync(recordPath + '.tmp', recordPath);
   writeFileSync(resolve(runDir, 'staging-url'), ORIGIN + '\n');
   console.log(`\ndeployment: ${url}\nalias: ${ORIGIN}`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) await main();
+if (import.meta.url === `file://${process.argv[1]}`) {
+  let lock;
+  try {
+    if (!DRY) { mkdirSync(runDir, { recursive: true }); lock = openSync(resolve(runDir, 'deploy.lock'), 'wx'); writeFileSync(lock, String(process.pid)); }
+    await main();
+  } catch (error) {
+    const text = String(error.stderr ?? error.message);
+    console.error(/not authorized|unauthorized|forbidden|authentication/i.test(text) ? 'Staging deployment authorization blocked.' : error.code === 'EEXIST' ? 'Another staging deployment holds deploy.lock; retry after it completes.' : 'Staging deployment failed; success record was not replaced.');
+    process.exitCode = 1;
+  } finally { if (lock !== undefined) { closeSync(lock); unlinkSync(resolve(runDir, 'deploy.lock')); } }
+}

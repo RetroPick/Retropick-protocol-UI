@@ -1,0 +1,9 @@
+{
+  "id": "prj_ky4QI5snU41pTK7oMDcM8WQyFnC7",
+  "name": "retropick-metropolis",
+  "rootDirectory": "apps/web",
+  "link": null,
+  "gitProviderOptions": {
+    "createDeployments": "enabled"
+  }
+}

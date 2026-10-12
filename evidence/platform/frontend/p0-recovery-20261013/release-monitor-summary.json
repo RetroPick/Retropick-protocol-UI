@@ -1,0 +1,13 @@
+{
+  "sourceSha": "695ae7764f72cb0fb5cfee5af205fc2975bcd32f",
+  "result": "passed",
+  "samples": 41,
+  "failed": 0,
+  "durationMs": 1215975,
+  "firstAt": "2026-10-12T18:31:00.708Z",
+  "lastAt": "2026-10-12T18:51:16.198Z",
+  "lagBlocksMin": 8,
+  "lagBlocksMax": 59,
+  "syncingSamples": 6,
+  "allSourceMatched": true
+}

@@ -1,0 +1,170 @@
+[WebServer] (node:49154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49225) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[WebServer] (node:49421) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[WebServer]   - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+[WebServer] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+Running 18 tests using 1 worker
+
+(node:49627) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:13:1 › live ticket connect uses the shared picker and the actual injected wallet (3.8s)
+  ✘   2 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry (3.9s)
+(node:50239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:27:1 › Kuru empty book and zero executable quote do not enable a market order (7.2s)
+  ✓   4 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:37:1 › in-progress graduation exposes a completion retry (5.9s)
+  ✓   5 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:42:1 › indexer 502 is shown as unavailable instead of an empty launch list (2.0s)
+  ✓   6 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:47:1 › selected image retains a local preview on upload failure and retry (2.5s)
+  ✓   7 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:59:1 › Mera enrollment, reload and address recovery exercise the live panel with fixture WebAuthn (7.8s)
+  ✓   8 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:85:1 › a completed older upload cannot replace the most recently selected image (2.3s)
+  ✓   9 [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:100:1 › multiple announced wallets keep the injected fallback explicit and usable (3.4s)
+(node:51236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:13:1 › live ticket connect uses the shared picker and the actual injected wallet (6.2s)
+  ✘  11 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry (32.8s)
+(node:52745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:27:1 › Kuru empty book and zero executable quote do not enable a market order (4.5s)
+(node:53021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:37:1 › in-progress graduation exposes a completion retry (4.3s)
+  ✓  14 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:42:1 › indexer 502 is shown as unavailable instead of an empty launch list (1.7s)
+  ✓  15 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:47:1 › selected image retains a local preview on upload failure and retry (2.4s)
+  ✓  16 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:59:1 › Mera enrollment, reload and address recovery exercise the live panel with fixture WebAuthn (7.1s)
+  ✓  17 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:85:1 › a completed older upload cannot replace the most recently selected image (2.6s)
+  ✓  18 [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:100:1 › multiple announced wallets keep the injected fallback explicit and usable (2.9s)
+
+
+  1) [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.rp-ticket')
+    Expected pattern: /unavailable/
+    Error: strict mode violation: locator('.rp-ticket') resolved to 2 elements:
+        1) <section class="rp-ticket">…</section> aka getByText('Loading on-chain state…Retry')
+        2) <section class="rp-ticket" aria-label="Trade ticket" data-testid="trade-ticket">…</section> aka getByTestId('trade-ticket')
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for locator('.rp-ticket')
+        5 × locator resolved to <section class="rp-ticket">…</section>
+          - unexpected value "Loading on-chain state…Retry on-chain reads"
+
+
+      22 |   await page.goto(`/launchpad/token/${TOKEN}`); await openTicket(page);
+      23 |   await expect(page.getByRole('button',{name:'Retry on-chain reads'})).toBeVisible({timeout:30000});
+    > 24 |   await expect(page.locator('.rp-ticket')).toContainText(/unavailable/);
+         |                                            ^
+      25 |   await expect(page.locator('.rp-ticket')).not.toContainText('Syncing on-chain state');
+      26 | });
+      27 | test('Kuru empty book and zero executable quote do not enable a market order',async({page,faults})=>{
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/recovery/recovery.spec.ts:24:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-desktop-1440/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Retry on-chain reads' })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByRole('button', { name: 'Retry on-chain reads' })
+
+
+      21 |   faults.economic=true;
+      22 |   await page.goto(`/launchpad/token/${TOKEN}`); await openTicket(page);
+    > 23 |   await expect(page.getByRole('button',{name:'Retry on-chain reads'})).toBeVisible({timeout:30000});
+         |                                                                        ^
+      24 |   await expect(page.locator('.rp-ticket')).toContainText(/unavailable/);
+      25 |   await expect(page.locator('.rp-ticket')).not.toContainText('Syncing on-chain state');
+      26 | });
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/recovery/recovery.spec.ts:23:72
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-mobile-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-mobile-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-mobile-390/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/recovery-economic-provider-f033f-s-loading-and-exposes-Retry-recovery-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:27:1 › Kuru empty book and zero executable quote do not enable a market order
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('depth-panel')
+    Expected pattern: /No resting orders|No two-sided book/
+    Error: strict mode violation: getByTestId('depth-panel') resolved to 2 elements:
+        1) <section class="rp-depth" data-data-mode="live" data-status="loading" data-testid="depth-panel" aria-label="Orderbook depth">…</section> aka getByTestId('depth-panel').first()
+        2) <section class="rp-depth" data-data-mode="live" data-status="loading" data-testid="depth-panel" aria-label="Orderbook depth">…</section> aka getByTestId('depth-panel').nth(1)
+
+    Call log:
+      - Expect "toContainText" with timeout 30000ms
+      - waiting for getByTestId('depth-panel')
+
+
+      28 |   faults.phase=2;faults.quote=0n;
+      29 |   await page.goto(`/launchpad/token/${TOKEN}`);
+    > 30 |   await expect(page.getByTestId('depth-panel')).toContainText(/No resting orders|No two-sided book/,{timeout:30000});
+         |                                                 ^
+      31 |   await connect(page); await openTicket(page);
+      32 |   await page.getByTestId('ticket-amount').fill('0.1');
+      33 |   await expect(page.getByRole('button',{name:/Deposit & place order|Buy RCVR/})).toBeDisabled();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/recovery/recovery.spec.ts:30:49
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/recovery-Kuru-empty-book-a-aff76-o-not-enable-a-market-order-recovery-mobile-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/recovery-Kuru-empty-book-a-aff76-o-not-enable-a-market-order-recovery-mobile-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/recovery-Kuru-empty-book-a-aff76-o-not-enable-a-market-order-recovery-mobile-390/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/recovery-Kuru-empty-book-a-aff76-o-not-enable-a-market-order-recovery-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [recovery-desktop-1440] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry
+    [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:20:1 › economic provider failure ends loading and exposes Retry
+    [recovery-mobile-390] › e2e/recovery/recovery.spec.ts:27:1 › Kuru empty book and zero executable quote do not enable a market order
+  15 passed (2.5m)
+undefined
+/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: playwright test --config e2e/recovery.config.ts

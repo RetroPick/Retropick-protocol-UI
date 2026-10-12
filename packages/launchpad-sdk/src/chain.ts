@@ -4,7 +4,7 @@ export { release };
 export const monad = defineChain({ id: 10143, name: 'Monad Testnet', nativeCurrency: { name: 'MON', symbol: 'MON', decimals: 18 }, rpcUrls: { default: { http: ['https://testnet-rpc.monad.xyz'] } }, contracts: { multicall3: { address: '0xcA11bde05977b3631167028862bE2a173976CA11', blockCreated: 251449 } }, blockExplorers: { default: { name: 'Monad Explorer', url: 'https://testnet.monadexplorer.com' } }, testnet: true });
 export const addresses = Object.fromEntries(Object.entries(release.addresses).filter(([, v]) => typeof v === 'string' && v.startsWith('0x'))) as Record<string, Address>;
 export type RpcHealth = { provider: number; origin: string; chainId: number | null; latencyMs: number | null; health: 'probing' | 'healthy' | 'circuit-open' | 'disabled'; failures: number; retryAfter: number };
-export type ChainOptions = { timeoutMs?: number; httpBatch?: boolean; /** Enable only after independently qualifying this chain's Multicall3 runtime. */ multicall?: boolean };
+export type ChainOptions = { timeoutMs?: number; httpBatch?: boolean; maxConcurrent?: number; requestsPerSecond?: number; /** Enable only after independently qualifying this chain's Multicall3 runtime. */ multicall?: boolean };
 type RpcFailure = 'AUTH' | 'WRONG_CHAIN' | 'RATE_LIMIT' | 'TIMEOUT' | 'HTTP_5XX' | 'NETWORK' | 'RPC_INTERNAL';
 /** Revert phrasing geth-family nodes use, across several JSON-RPC codes. */
 const REVERT_TEXT = /execution reverted|VM execution error/i;
@@ -24,7 +24,7 @@ function rpcFailure(error: unknown): RpcFailure | 'APPLICATION' {
     // under several codes (-32000 included), so the phrasing decides, not
     // the code.
     if (!e.status && (RANGE_TEXT.test(text) || e.code === REVERT_CODE || REVERT_TEXT.test(text))) return 'APPLICATION';
-    if (e.status === 429 || e.code === -32005) return 'RATE_LIMIT';
+    if (e.status === 429 || e.code === -32005 || e.code === -32011 || /rate limit|too many requests|requests per second/i.test(text)) return 'RATE_LIMIT';
     if (e.status && e.status >= 500) return 'HTTP_5XX';
     if (e.name === 'TimeoutError') return 'TIMEOUT';
     if (e.code === -32603) return 'RPC_INTERNAL';
@@ -41,6 +41,7 @@ function safeRpcError(failure: RpcFailure): Error {
   safe.name = 'RpcError';
   return safe;
 }
+class ProviderUnavailable extends Error {}
 /**
  * Reverts and response-size limits must reach the ABI decoders intact, so they
  * are re-thrown typed rather than flattened: only the redacted hex revert
@@ -90,6 +91,27 @@ const validatedFetch: typeof fetch = async (input, init) => {
 };
 /** Public endpoints only. Unauthorized/wrong-chain providers never remain in the failover path. */
 export const createChain = (input: string | string[], options: ChainOptions = {}) => {
+  for (const value of [options.maxConcurrent, options.requestsPerSecond]) if (value !== undefined && (!Number.isSafeInteger(value) || value < 1)) throw Error('RPC request limits must be positive integers.');
+  // Schedule logical JSON-RPC calls, before HTTP batching. A batch of ten
+  // eth_call requests uses ten permits, rather than one HTTP permit.
+  let active = 0;
+  const starts: number[] = [];
+  const queue: Array<() => void> = [];
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const drain = () => {
+    if (timer) { clearTimeout(timer); timer = undefined; }
+    const now = Date.now();
+    while (starts.length && starts[0]! <= now - 1000) starts.shift();
+    while (queue.length && active < (options.maxConcurrent ?? Infinity) && starts.length < (options.requestsPerSecond ?? Infinity)) {
+      active++; starts.push(Date.now()); queue.shift()!();
+    }
+    if (queue.length && starts.length >= (options.requestsPerSecond ?? Infinity)) timer = setTimeout(drain, Math.max(1, starts[0]! + 1000 - Date.now()));
+    if (!options.requestsPerSecond) starts.length = 0;
+  };
+  const scheduled = async <T>(fn: () => Promise<T>): Promise<T> => {
+    await new Promise<void>(resolve => { queue.push(resolve); drain(); });
+    try { return await fn(); } finally { active--; drain(); }
+  };
   const urls = [...new Set(Array.isArray(input) ? input : [input])];
   if (!urls.length) throw Error('A public Monad RPC endpoint is required.');
   const providers = urls.map((url, provider) => {
@@ -112,7 +134,7 @@ export const createChain = (input: string | string[], options: ChainOptions = {}
     const start = performance.now();
     entry.probe = (async () => {
       try {
-        const [id, head] = await Promise.all([entry.rpc.getChainId(), entry.rpc.getBlockNumber({ cacheTime: 0 })]);
+        const [id, head] = await Promise.all([scheduled(() => entry.rpc.getChainId()), scheduled(() => entry.rpc.getBlockNumber({ cacheTime: 0 }))]);
         if (!Number.isSafeInteger(id) || id <= 0 || typeof head !== 'bigint' || head < 0n) throw Error('Network error: invalid RPC probe result.');
         entry.health.chainId = id;
         if (id !== monad.id) throw Error('Wrong chain RPC provider');
@@ -125,7 +147,7 @@ export const createChain = (input: string | string[], options: ChainOptions = {}
   // Probe independently: a bad fallback does not delay requests to the healthy primary.
   for (const entry of providers) void probe(entry);
   const transport = custom({ request: async ({ method, params }) => {
-    let last: unknown = Error('No healthy Monad RPC provider.');
+    let last: unknown = safeRpcError('NETWORK');
     for (const entry of providers) {
       if (entry.health.health === 'probing') await entry.probe;
       if (entry.health.health === 'disabled') continue;
@@ -134,8 +156,14 @@ export const createChain = (input: string | string[], options: ChainOptions = {}
         await probe(entry);
         if ((entry.health as RpcHealth).health !== 'healthy') continue;
       }
-      try { return await entry.rpc.request({ method, params } as never); }
+      try { return await scheduled(() => {
+        // A concurrent request may have opened this circuit while this call
+        // waited for its permit. Do not keep hammering it or extend cooldown.
+        if (entry.health.health !== 'healthy') throw new ProviderUnavailable();
+        return entry.rpc.request({ method, params } as never);
+      }); }
       catch (error) {
+        if (error instanceof ProviderUnavailable) continue;
         // A contract revert is valid RPC output, not an unhealthy provider:
         // it is re-thrown typed for the ABI decoder instead of failing over.
         const outcome = rpcFailure(error);
@@ -147,10 +175,10 @@ export const createChain = (input: string | string[], options: ChainOptions = {}
   } }, { retryCount: 0 });
   return createPublicClient({ chain: monad, batch: options.multicall ? { multicall: { batchSize: 4096, wait: 10 } } : undefined, transport }).extend(() => ({
     rpcHealth: () => providers.map(({ health }) => ({ ...health })),
-    probeProviders: async () => { await Promise.all(providers.filter(p => p.health.health !== 'disabled').map(probe)); return providers.map(p => ({ ...p.health })); },
+    probeProviders: async () => { await Promise.all(providers.filter(p => p.health.health !== 'disabled' && p.health.retryAfter <= Date.now()).map(probe)); return providers.map(p => ({ ...p.health })); },
   }));
 };
 export type ChainClient = ReturnType<typeof createChain>;
 export const explorer = (value: string, kind = 'address') => `${monad.blockExplorers.default.url}/${kind}/${value}`;
 export const short = (value: string) => `${value.slice(0, 6)}…${value.slice(-4)}`;
-export function errorText(error: unknown) { if (error && typeof error === 'object' && 'shortMessage' in error) return String(error.shortMessage); return error instanceof Error ? error.message : 'Network unavailable. Please retry.'; }
+export function errorText(error: unknown) { const seen = new Set<unknown>(); for (let cause = error; cause && typeof cause === 'object' && !seen.has(cause); cause = (cause as { cause?: unknown }).cause) { seen.add(cause); const message = (cause as { message?: string }).message; const safe = message?.match(/RPC_(?:AUTH|WRONG_CHAIN|RATE_LIMIT|TIMEOUT|HTTP_5XX|NETWORK|RPC_INTERNAL)\b/); if (safe) return safe[0]; } if (error && typeof error === 'object' && 'shortMessage' in error) return String(error.shortMessage); return error instanceof Error ? error.message : 'Network unavailable. Please retry.'; }

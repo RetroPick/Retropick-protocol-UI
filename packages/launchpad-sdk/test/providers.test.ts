@@ -11,6 +11,7 @@ async function fixture(initial = 'healthy') {
    if(mode==='timeout')return;
    const handle=(r:{id:number;method:string})=>{
     if(mode==='revert-geth'&&r.method==='eth_call')return {jsonrpc:'2.0',id:r.id,error:{code:-32000,message:'execution reverted private-path-token',data:'0x12345678'}};
+    if(mode==='rate-code')return {jsonrpc:'2.0',id:r.id,error:{code:-32011,message:'rate limit private-path-token'}};
     if(mode==='notfound')return {jsonrpc:'2.0',id:r.id,error:{code:-32000,message:'header not found private-path-token'}};
     if(mode==='unmapped')return {jsonrpc:'2.0',id:r.id,error:{code:-31999,message:'gateway private-path-token'}};
     if(r.method==='eth_call')return {jsonrpc:'2.0',id:r.id,error:{code:3,message:'execution reverted private-path-token',data:'0x12345678'}};
@@ -55,4 +56,34 @@ test('malformed envelopes fail over transiently instead of NaN permanent wrong-c
 
 test('non-hex chain/head responses are transient malformed data rather than wrong-chain ids',async()=>{
  const bad=await fixture('invalid-probe'),good=await fixture();try{const client=createChain([bad.url,good.url],{httpBatch:false});await client.probeProviders();assert.equal(client.rpcHealth()[0].health,'circuit-open');assert.equal(client.rpcHealth()[0].chainId,null);assert.equal(await client.getChainId(),10143);}finally{await bad.close();await good.close();}
+});
+
+test('provider -32011 rate limits fail over and half-open recovery is single flight', async (t) => {
+ const bad=await fixture(), good=await fixture();
+ try {
+  t.mock.timers.enable({apis:['Date'],now:1000000});
+  const client=createChain([bad.url,good.url],{httpBatch:false});await client.probeProviders();
+  bad.mode('rate-code');assert.equal(await client.getBlockNumber({cacheTime:0}),7n);
+  const hits=bad.hits();assert.equal(client.rpcHealth()[0].health,'circuit-open');
+  await client.probeProviders();assert.equal(bad.hits(),hits,'manual probes respect cooldown');
+  bad.mode('healthy');t.mock.timers.tick(30001);
+  await Promise.all(Array.from({length:8},()=>client.request({method:'eth_getBalance',params:['0x1111111111111111111111111111111111111111','latest']})));
+  assert.equal(client.rpcHealth()[0].health,'healthy');assert.equal(bad.hits()-hits,10,'one chain/head probe, eight requests');
+ } finally {t.mock.timers.reset();await bad.close();await good.close();}
+});
+
+test('browser request budget counts every logical call inside HTTP batches',async()=>{
+ const received:number[]=[];let active=0,maxActive=0;
+ const server=createServer((req,res)=>{let body='';req.on('data',chunk=>body+=chunk);req.on('end',()=>{
+  const parsed=JSON.parse(body), rows=Array.isArray(parsed)?parsed:[parsed];
+  for(const _ of rows)received.push(Date.now());active+=rows.length;maxActive=Math.max(maxActive,active);
+  setTimeout(()=>{const results=rows.map((r:{id:number;method:string})=>({jsonrpc:'2.0',id:r.id,result:r.method==='eth_chainId'?'0x279f':'0x7'}));res.setHeader('content-type','application/json');res.end(JSON.stringify(Array.isArray(parsed)?results:results[0]));active-=rows.length;},20);
+ });});
+ await new Promise<void>(resolve=>server.listen(0,'127.0.0.1',resolve));
+ try {
+  const client=createChain(`http://127.0.0.1:${(server.address() as {port:number}).port}`,{maxConcurrent:2,requestsPerSecond:4});await client.probeProviders();
+  await Promise.all(Array.from({length:8},()=>client.request({method:'eth_getBalance',params:['0x1111111111111111111111111111111111111111','latest']})));
+  assert.ok(maxActive<=2,`concurrent ${maxActive}`);
+  for(const start of received)assert.ok(received.filter(at=>at>=start&&at<start+980).length<=4,'logical calls exceed rolling request budget');
+ }finally{server.closeAllConnections();await new Promise<void>(resolve=>server.close(()=>resolve()));}
 });

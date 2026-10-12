@@ -36,6 +36,8 @@ export type PreparedWrite = {
   value: bigint;
   account: Address;
   approvals: Approval[];
+  /** Exact reviewed economic intent for passkey confirmation; authority remains onchain. */
+  intent?: { asset: Address; destination: Address; amount: bigint };
   label: string;
   /** Preconditions that were verified while preparing (for the review UI). */
   checks: string[];
@@ -410,6 +412,7 @@ export async function prepareMarginWithdraw(
     value: 0n,
     account,
     approvals: [],
+    intent: { asset: options.token, destination: account, amount: options.amount },
     label: 'Withdraw from Kuru margin',
     checks: [`margin balance ${balance}`],
   };
@@ -598,6 +601,7 @@ export async function prepareFeeClaim(chain: ChainClient, account: Address): Pro
     value: 0n,
     account,
     approvals: [],
+    intent: { asset: zeroAddress, destination: account, amount: credit },
     label: 'Claim creator fees',
     checks: [`escrow credit ${credit} wei`],
   };
@@ -618,6 +622,7 @@ export async function prepareBuybackRelease(chain: ChainClient, token: Address, 
     value: 0n,
     account,
     approvals: [],
+    intent: { asset: token, destination: account, amount: releasable },
     label: 'Release buyback proceeds',
     checks: [`releasable ${releasable}`, 'proceeds land as FeeEscrow token credit'],
   };
@@ -640,6 +645,7 @@ export async function prepareFeeClaimToken(chain: ChainClient, account: Address,
     value: 0n,
     account,
     approvals: [],
+    intent: { asset: token, destination: account, amount: credit },
     label: 'Claim token fees',
     checks: [`escrow credit ${credit}`],
   };
@@ -667,7 +673,13 @@ export async function missingApprovals(chain: ChainClient, write: PreparedWrite)
  */
 export async function prepareTransferCreatorFeeRecipient(chain: ChainClient, token: Address, account: Address, newRecipient: Address): Promise<PreparedWrite> {
   if (!/^0x[0-9a-fA-F]{40}$/.test(newRecipient) || /^0x0{40}$/.test(newRecipient)) fail('New recipient must be a non-zero address.');
-  const launched = await chain.readContract({ address: addresses.factory, abi: factoryAbi, functionName: 'getLaunchedToken', args: [token] }) as { creatorFeeRecipient: Address; deployer: Address; exists: boolean };
+  const blockNumber = await chain.getBlockNumber({ cacheTime: 0 });
+  const [launched, pending] = await Promise.all([
+    chain.readContract({ address: addresses.factory, abi: factoryAbi, functionName: 'getLaunchedToken', args: [token], blockNumber }),
+    chain.readContract({ address: addresses.factory, abi: factoryAbi, functionName: 'pendingCreatorFeeRecipient', args: [token], blockNumber }),
+  ]);
+  const block = await chain.getBlock({ blockNumber });
+  if (pending[0] !== zeroAddress && pending[2] >= block.timestamp) fail('A pending owner recipient override is active. Resolve it before a voluntary handoff.');
   if (!launched.exists) fail('Token is not a RetroPick launch.');
   if (launched.creatorFeeRecipient.toLowerCase() !== account.toLowerCase()) fail('Only the current creator-fee recipient can transfer future fee rights.');
   if (launched.creatorFeeRecipient.toLowerCase() === newRecipient.toLowerCase()) fail('New recipient equals the current recipient.');
@@ -679,6 +691,7 @@ export async function prepareTransferCreatorFeeRecipient(chain: ChainClient, tok
     value: 0n,
     account,
     approvals: [],
+    intent: { asset: token, destination: newRecipient, amount: 0n },
     label: 'Transfer future creator fees',
     checks: [
       `current recipient ${launched.creatorFeeRecipient} == caller`,

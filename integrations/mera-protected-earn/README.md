@@ -1,5 +1,5 @@
 # Mera × Protected Earn — source-grounded implementation README
-**Status: DESIGN ONLY; NOT PROTECTED / NOT IMPLEMENTED.** Canonical UI `apps/retro-ui` ONLY, never `apps/web`.
+**Status: IMPLEMENTED / LOCAL FAILURE-STATE VERIFIED; HARDWARE PRF AND FINANCIAL RECEIPTS PENDING.** Canonical UI `apps/retro-ui` ONLY, never `apps/web`.
 Master architecture: [Protected Earn and Withdrawals](../../docs/metropolis/14-MERA-PROTECTED-EARN-WITHDRAWALS.md). Creator recovery: [Creator Continuity](../../docs/metropolis/13-CREATOR-CONTINUITY-MERA-CRE.md).
 
 ## Must not confuse
@@ -18,7 +18,7 @@ Master architecture: [Protected Earn and Withdrawals](../../docs/metropolis/14-M
 `apps/retro-ui/src/services/tx-pipeline.ts`,
 `apps/retro-ui/src/lib/vault/strategy-vault.ts`, SDK `prepareFeeClaim`, `prepareFeeClaimToken`, `prepareBuybackRelease`, `prepareMarginWithdraw`, `prepareTransfer`.
 
-## Implementation sequence
+## Original implementation sequence (historical scope)
 1. Read `14-MERA-PROTECTED-EARN-WITHDRAWALS.md`, confirm deployed manifest and Mera 0.2.0 official exported APIs. Audit signer interface and FeeEscrow `msg.sender`.
 2. Add typed capability matrix `action × current wallet × custody path × protection tier`; presentation only and explicit non-custody warning.
 3. Optional APP_ONLY opt-in fresh WebAuthn step-up limited to app-controlled actions; no security claims against compromised EOA, no unsafely persistent bypass. Scope wallet account, calldataHash, value, nonce, expiry and domain.
@@ -35,3 +35,8 @@ Real Mera PRF ceremony on stable RP ID; deterministically restored passkey accou
 ## Sources
 https://github.com/category-labs/mera ; https://docs.erc4337.io/core-standards/erc-4337 ;
 https://github.com/RetroPick/retropick-protocol/tree/main/apps/retro-ui/src/features/earn
+
+
+## 2026-10-13 implementation checkpoint
+
+The canonical retro-ui now implements versioned enrollment/recovery, fresh transaction-bound APP_ONLY proofs, isolated passkey-account signing, paginated creator discovery, explicit fee-recipient handoff, and separate protected-account balances/actions. See [the recovery report](../../docs/metropolis/integration/stages/20261012-mera-protected-earn-recovery.md) for evidence and remaining operator acceptance. The original sequence above records scope, not a claim that its financial acceptance steps passed. Real hardware PRF and low-value financial receipts are still pending; no smart-account enforcement or Gate E qualification is claimed.

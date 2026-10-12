@@ -3,7 +3,6 @@
 import Link from '@/components/product/safe-link';
 import { useDemo } from '@/components/product/provider';
 import { useWallet } from '@/wallet/provider';
-import { WalletPickerDialog } from '@/wallet/wallet-picker';
 import { DATA_MODE } from '@/lib/live/env';
 import { CommandPalette } from './command-palette';
 import { RetroLogo } from '@/components/Icons';
@@ -37,10 +36,8 @@ export function Shell({ children }: { children: ReactNode }) {
 function MobileWalletButton() {
   const demo = useDemo();
   const wallet = useWallet(); // provider is always mounted; mock mode ignores it
-  const [pickerOpen, setPickerOpen] = useState(false);
   if (DATA_MODE !== 'live') return <button className="icon-btn" onClick={() => demo.setConnected(!demo.connected)} aria-label={demo.connected ? 'Demo wallet' : 'Connect wallet'}><Wallet size={18}/></button>;
   return <>
-    <button className="icon-btn" onClick={() => (wallet.status === 'disconnected' ? setPickerOpen(true) : wallet.disconnect())} aria-label={wallet.status === 'connected' ? `Wallet ${wallet.account}` : 'Connect wallet'} data-wallet-status={wallet.status}><Wallet size={18}/></button>
-    <WalletPickerDialog open={pickerOpen} onOpenChange={setPickerOpen}/>
+    <button className="icon-btn" onClick={() => (wallet.status === 'disconnected' ? void wallet.connect() : wallet.disconnect())} aria-label={wallet.status === 'connected' ? `Wallet ${wallet.account}` : 'Connect wallet'} data-wallet-status={wallet.status}><Wallet size={18}/></button>
   </>;
 }

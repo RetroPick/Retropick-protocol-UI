@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://testnet-rpc.monad.xyz",
+    "status": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x279f"
+    },
+    "elapsedMs": 414,
+    "browserOrigin": "https://retropick-metropolis-retro-ui-stagi.vercel.app"
+  },
+  {
+    "url": "https://rpc.ankr.com/monad_testnet",
+    "status": 200,
+    "body": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": "0x279f"
+    },
+    "elapsedMs": 35,
+    "browserOrigin": "https://retropick-metropolis-retro-ui-stagi.vercel.app"
+  }
+]

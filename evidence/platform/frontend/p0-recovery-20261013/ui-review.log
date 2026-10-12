@@ -1,0 +1,2 @@
+apps/retro-ui/src/features/launchpad/create-launch.tsx:276:468 info design-hardcoded-color Hardcoded color may drift from project design tokens.
+3 file(s), 1 finding(s), 0 fixed.

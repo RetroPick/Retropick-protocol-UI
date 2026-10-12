@@ -249,6 +249,7 @@ function MarketDepth({ vm, depth }: { vm: TokenTerminalVM; depth: TerminalDepth 
       {vm.dataMode === 'demo' ? <DemoBadge text="SIMULATED"/> : depth.block ? <span className="rp-muted">block {depth.block}</span> : null}
     </header>
     {depth.status === 'loading' && <div role="status" aria-label="Loading orderbook depth">{Array.from({ length: 5 }, (_, i) => <SkeletonLine key={i} height={16}/>)}</div>}
+    {depth.status === 'stale' && <p className="rp-note" role="status">Orderbook snapshot is stale. The current book is unavailable; this snapshot cannot qualify a market order.</p>}
     {depth.status === 'error' && <p className="rp-note" role="status">Live orderbook depth is unavailable. Trading reads current on-chain state when you place an order.</p>}
     {empty && <EmptyState title="No resting orders" text="The book has no open depth right now. Market orders may fail until liquidity is posted."/>}
     {depth.status === 'ready' && ladder && !empty && <>

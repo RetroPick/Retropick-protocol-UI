@@ -17,6 +17,7 @@ export const MONAD_TESTNET_CHAIN_ID_HEX = '0x279f' as const;
 interface Eip6963Window {
   addEventListener(event: 'eip6963:announceProvider', handler: (event: CustomEvent<Eip6963Announcement>) => void): void;
   dispatchEvent(event: Event): boolean;
+  removeEventListener(event: string, handler: (event: CustomEvent<Eip6963Announcement>) => void): void;
 }
 
 /** Discover wallets via EIP-6963 multi-injected-provider discovery. */
@@ -28,11 +29,11 @@ export function discoverEip6963(timeoutMs = 250): Promise<Eip6963Announcement[]>
   return new Promise((resolve) => {
     const found: Eip6963Announcement[] = [];
     const onAnnounce = (event: CustomEvent<Eip6963Announcement>) => {
-      if (event.detail?.provider) found.push(event.detail);
+      if (event.detail?.provider && !found.some(entry => entry.provider === event.detail.provider || entry.info.uuid === event.detail.info.uuid)) found.push(event.detail);
     };
     addEventListener.call(w, 'eip6963:announceProvider', onAnnounce as never);
     dispatch.call(w, new Event('eip6963:requestProvider'));
-    setTimeout(() => resolve(found), timeoutMs);
+    setTimeout(() => { w.removeEventListener?.('eip6963:announceProvider', onAnnounce); resolve(found); }, timeoutMs);
   });
 }
 
