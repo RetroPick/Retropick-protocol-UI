@@ -1,0 +1,19 @@
+✔ lifecycle counts, active-on-curve, phase and graduation latency are exact (2.798235ms)
+✔ GraduationCompleted maps the market so later trades in the same batch join the token (0.58871ms)
+✔ duplicate delivery (same block/logIndex/tx) is idempotent (0.364949ms)
+✔ kuru trade volume math is exact bigint (18-dec normalized) (0.873972ms)
+✔ mapping conflict is counted, never silently merged (0.444117ms)
+✔ addresses are normalised to lowercase (config, args, log address) (0.559532ms)
+✔ out-of-order events across blocks are tolerated; lastBlock is the max (0.679623ms)
+✔ persist → restore roundtrip preserves exact bigints, mapping and counters (1.441891ms)
+✔ staleness is null before the first trade and monotonic after (0.412291ms)
+✔ wire format renders bigints as strings (0.584582ms)
+✔ unknown events are ignored without failing (0.276577ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 196.647001

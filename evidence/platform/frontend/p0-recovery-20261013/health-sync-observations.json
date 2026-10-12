@@ -1,0 +1,186 @@
+[
+  {
+    "at": "2026-10-12T18:17:56.113Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466917,
+      "indexedBlockHash": "0x6ece02e94e371b26c1865491d9bffc1dc16f8c0a753f39b74254b0a1a3dfb4d5",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 58,
+      "indexedAt": "2026-10-12T18:17:41.199Z",
+      "syncing": true,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466917
+    }
+  },
+  {
+    "at": "2026-10-12T18:17:57.220Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:17:58.346Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:17:59.451Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:18:00.543Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:18:01.666Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:18:02.747Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  },
+  {
+    "at": "2026-10-12T18:18:03.834Z",
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70466967,
+      "indexedBlockHash": "0x495dde591b4f49a334b5ac14df4020dd510b62799c1c73cfa10270ebfb022c13",
+      "headBlock": 70466975,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-12T18:17:56.285Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70466967
+    }
+  }
+]

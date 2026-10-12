@@ -1,0 +1,90 @@
+$ vite build
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 3398 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                     4.13 kB │ gzip:   1.13 kB
+dist/assets/use-live-launches-BGwqRq59.css          2.61 kB │ gzip:   0.88 kB
+dist/assets/launch-table-0utuT8-1.css               4.06 kB │ gzip:   1.22 kB
+dist/assets/earn-BaWiVIYY.css                      20.52 kB │ gzip:   4.44 kB
+dist/assets/primitives-D9q9y6dw.css                21.83 kB │ gzip:   4.84 kB
+dist/assets/index-mOH9__oo.css                     88.88 kB │ gzip:  17.29 kB
+dist/assets/portfolio-s0e0Vm39.js                   0.05 kB │ gzip:   0.06 kB
+dist/assets/secp256k1-CMTKsvrn.js                   0.05 kB │ gzip:   0.06 kB
+dist/assets/chevron-down-D_CZD7Si.js                0.12 kB │ gzip:   0.14 kB
+dist/assets/loader-circle-D5TNUoO6.js               0.14 kB │ gzip:   0.15 kB
+dist/assets/plus-svvZQKAn.js                        0.15 kB │ gzip:   0.15 kB
+dist/assets/arrow-left-DFCQeTjf.js                  0.16 kB │ gzip:   0.16 kB
+dist/assets/arrow-right-Bl_LzRit.js                 0.16 kB │ gzip:   0.16 kB
+dist/assets/arrow-up-right-hSPb4TDX.js              0.16 kB │ gzip:   0.15 kB
+dist/assets/circle-check-DqiG2CmQ.js                0.17 kB │ gzip:   0.16 kB
+dist/assets/send-spvCEVZY.js                        0.29 kB │ gzip:   0.22 kB
+dist/assets/shield-check-C-yeE1Hb.js                0.32 kB │ gzip:   0.24 kB
+dist/assets/math-B-JDr_2y.js                        0.35 kB │ gzip:   0.25 kB
+dist/assets/droplets-DVmqeS0h.js                    0.37 kB │ gzip:   0.28 kB
+dist/assets/skeleton-C4bKXdy6.js                    0.40 kB │ gzip:   0.30 kB
+dist/assets/layers-CrtSlXxU.js                      0.42 kB │ gzip:   0.24 kB
+dist/assets/list-CIBuP-SM.js                        0.59 kB │ gzip:   0.28 kB
+dist/assets/theme-Bt_O3-Ep.js                       0.74 kB │ gzip:   0.43 kB
+dist/assets/format-CK2LE_-6.js                      0.74 kB │ gzip:   0.43 kB
+dist/assets/resolve-CBGDdDHe.js                     0.85 kB │ gzip:   0.54 kB
+dist/assets/session-bridge-DOLrXnjh.js              1.15 kB │ gzip:   0.59 kB
+dist/assets/registry-mAx6CPOn.js                    1.18 kB │ gzip:   0.63 kB
+dist/assets/creator-C6hJBAdU.js                     1.23 kB │ gzip:   0.58 kB
+dist/assets/table-D2-Q6lCI.js                       1.28 kB │ gzip:   0.50 kB
+dist/assets/safe-link-B2IU8NNN.js                   1.48 kB │ gzip:   0.74 kB
+dist/assets/createLucideIcon-rl_fu48B.js            1.66 kB │ gzip:   0.90 kB
+dist/assets/use-live-launches-KfprvL1G.js           1.79 kB │ gzip:   1.01 kB
+dist/assets/referral-client-2v48I6oK.js             2.07 kB │ gzip:   1.06 kB
+dist/assets/discovery-V1eqPa0j.js                   2.16 kB │ gzip:   0.94 kB
+dist/assets/sheet-zrGsR7tI.js                       2.19 kB │ gzip:   0.81 kB
+dist/assets/utils-Bpv4vmSW.js                       2.19 kB │ gzip:   0.97 kB
+dist/assets/provider-DccXqJcb.js                    2.19 kB │ gzip:   1.06 kB
+dist/assets/launchpad-fixtures-zmRvikgV.js          2.81 kB │ gzip:   0.96 kB
+dist/assets/ccip-Co_4d-KW.js                        2.89 kB │ gzip:   1.34 kB
+dist/assets/docs-CpXLHqx5.js                        3.74 kB │ gzip:   1.62 kB
+dist/assets/ui-BOLc0eQL.js                          3.78 kB │ gzip:   1.29 kB
+dist/assets/activity-UVPYRHwL.js                    4.02 kB │ gzip:   1.72 kB
+dist/assets/fixtures-CP4RI90W.js                    4.10 kB │ gzip:   2.16 kB
+dist/assets/launchpad-repository-Bt60OqHd.js        4.19 kB │ gzip:   1.58 kB
+dist/assets/checkbox-B_eRFNM0.js                    4.65 kB │ gzip:   1.96 kB
+dist/assets/viem-xLVUtN4Z.js                        5.46 kB │ gzip:   2.03 kB
+dist/assets/launch-table-_8MSPjGG.js                5.78 kB │ gzip:   1.79 kB
+dist/assets/discovery-dHQU3AIO.js                   7.84 kB │ gzip:   3.00 kB
+dist/assets/deposit-order-machine-DO92vwlR.js       7.87 kB │ gzip:   2.93 kB
+dist/assets/ticket-BzbpTIfO.js                      8.24 kB │ gzip:   3.10 kB
+dist/assets/serializeSignature-CeBfrT1Z.js          8.54 kB │ gzip:   3.27 kB
+dist/assets/demo-terminal-fixtures-3ftsXfEb.js      8.55 kB │ gzip:   3.62 kB
+dist/assets/jsx-runtime-DIzu-bOv.js                 8.74 kB │ gzip:   3.34 kB
+dist/assets/dialog-9KHsHQN2.js                      8.84 kB │ gzip:   3.10 kB
+dist/assets/dist-D1UquslH.js                       13.57 kB │ gzip:   4.86 kB
+dist/assets/demo-discovery-BMiEmZ8S.js             13.74 kB │ gzip:   4.43 kB
+dist/assets/dist-cyT8bBWF.js                       14.56 kB │ gzip:   5.29 kB
+dist/assets/prism-BFJUwyJR.js                      15.71 kB │ gzip:   4.48 kB
+dist/assets/es2015-BGUf55OZ.js                     16.83 kB │ gzip:   6.43 kB
+dist/assets/live-trading-ticket-CM3HNDkn.js        17.85 kB │ gzip:   6.39 kB
+dist/assets/primitives-C06aWie3.js                 19.47 kB │ gzip:   7.22 kB
+dist/assets/select-DyBGzV9s.js                     22.58 kB │ gzip:   7.62 kB
+dist/assets/provider-8mR2VbcF.js                   24.25 kB │ gzip:   7.56 kB
+dist/assets/dist-ClIzJGHk.js                       27.79 kB │ gzip:   8.96 kB
+dist/assets/secp256k1-Dg0yy6bC.js                  29.83 kB │ gzip:  11.89 kB
+dist/assets/dist-CxmBm7T4.js                       33.09 kB │ gzip:  12.29 kB
+dist/assets/dist-CwDK86qi.js                       33.53 kB │ gzip:   9.35 kB
+dist/assets/chain-Ct7SNR5k.js                      38.75 kB │ gzip:  11.59 kB
+dist/assets/create-launch-DotHSihq.js              44.99 kB │ gzip:  13.04 kB
+dist/assets/evm-yLxbaXwz.js                        46.55 kB │ gzip:  17.59 kB
+dist/assets/token-detail-Biv0III-.js               57.51 kB │ gzip:  18.00 kB
+dist/assets/localBatchGatewayRequest-D8aVWX5p.js   71.31 kB │ gzip:  21.27 kB
+dist/assets/earn-DEdU4GEk.js                      103.00 kB │ gzip:  31.35 kB
+dist/assets/tx-pipeline-BINtp_d5.js               109.30 kB │ gzip:  18.66 kB
+dist/assets/portfolio-CQamEI5C.js                 139.53 kB │ gzip:  44.61 kB
+dist/assets/trading-chart-CJ6YcK-L.js             184.33 kB │ gzip:  60.22 kB
+dist/assets/index-fVA47L9C.js                     203.18 kB │ gzip:  64.79 kB
+dist/assets/queries-BF_lFLcg.js                   221.76 kB │ gzip:  56.42 kB
+dist/assets/detail-CvXlCyWh.js                    364.14 kB │ gzip: 106.10 kB
+
+✓ built in 1.38s

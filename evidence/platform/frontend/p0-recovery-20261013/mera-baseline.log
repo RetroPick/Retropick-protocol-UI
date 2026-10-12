@@ -1,0 +1,19 @@
+✔ derivation matches the raw SDK chain and is stable across ceremonies (57.143545ms)
+✔ local ECDSA signature recovers to the derived address (proves control, no broadcast) (63.447482ms)
+✔ viem account signs a message that recovers to the same address (28.293737ms)
+✔ a different passkey (different PRF) yields a different address (4.167484ms)
+✔ derived EVM key is independent of a vault key on the same passkey (distinct salt) (0.358732ms)
+✔ wrong-credential / cancelled ceremony surfaces as an error (no silent empty signer) (1.818324ms)
+✔ digest changes when ANY bound field changes (11.620983ms)
+✔ valid confirmation verifies once; replay rejected (4.188931ms)
+✔ wrong digest and expiry are rejected (1.185043ms)
+✔ mode labels are honest: APP_ONLY bypassable, PASSKEY_SIGNER not, ONCHAIN_POLICY unavailable (0.322284ms)
+✔ nonce is random 32-byte hex (0.354205ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 852.330588

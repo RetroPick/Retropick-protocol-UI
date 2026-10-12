@@ -31,3 +31,10 @@ Legend: ✅ met · ⏳ gated on an operator action (not a code gap) · ⛔ exter
 - Aurora/Nansen have no supported Monad Testnet capability.
 - Staging rides a Cloudflare quick tunnel (auto-recovers on rotation ~40 s); durable ingress is the
   Contabo proposal, pending operator unlock.
+
+
+## 2026-10-13 P0 recovery checkpoint
+
+Code `695ae7764f72cb0fb5cfee5af205fc2975bcd32f` implements RPC budgeting/fallback and trading gates, one shared wallet picker, resilient launch terms/media, paginated creator discovery, and Mera Protected Earn enrollment/action signing. Local verification: SDK 46 pass / 2 intentional network skips; indexer 43 pass; dedicated recovery browsers 20 pass; full fixture campaign 266 pass / 40 intentional skips. Public deployment, rotation and sustained monitoring are tracked in [the incident report](../integration/stages/20261013-indexer-502-kuru-trading-incident.md).
+
+Mera is now implemented and locally tested; actual secure-origin hardware PRF recovery, fee-recipient handoff and protected financial receipts remain operator pending. APP_ONLY is bypassable outside RetroPick. No sponsor A–E gate is promoted by these results; prior evidence and outstanding qualifications stand. Quick-tunnel staging remains non-durable. Freeze begins October 14, 2026 02:59 WIB; submission 10:59 WIB remains subject to portal verification.

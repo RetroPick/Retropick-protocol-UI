@@ -1,0 +1,13 @@
+tunnel: https://things-midlands-days-insight.trycloudflare.com
+origin: https://retropick-metropolis-retro-ui-stagi.vercel.app
+source sha: e71dbc1ee9fcd8c52c42c3a05ba594b1f017fccf
+env VITE_DATA_MODE (production): unchanged
+env VITE_DATA_MODE (preview): unchanged
+env VITE_INDEXER_URL (production): unchanged
+env VITE_INDEXER_URL (preview): unchanged
+env VITE_MONAD_RPC_FALLBACK_URL (production): unchanged
+env VITE_MONAD_RPC_FALLBACK_URL (preview): unchanged
+deploying (prod target of the STAGING project — its own *.vercel.app domain)…
+
+deployment: https://retropick-metropolis-retro-ui-staging-7ddgnanwt-asyams-projects.vercel.app
+alias: https://retropick-metropolis-retro-ui-stagi.vercel.app

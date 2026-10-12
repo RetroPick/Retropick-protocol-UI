@@ -1,0 +1,20 @@
+# Trading, wallet and launch recovery — 2026-10-13
+
+Reviewed code: `695ae7764f72cb0fb5cfee5af205fc2975bcd32f` on `codex/metropolis-p0-recovery`. Canonical staging: https://retropick-metropolis-retro-ui-stagi.vercel.app. This report records implementation and read-only verification; it does not qualify a financial transaction or promote sponsor gates A–E.
+
+| Reported symptom | Root cause | Result / source |
+|---|---|---|
+| Connected wallet, unavailable terminal or repeated RPC failures | Browser polling and per-block economic query keys amplified logical RPC calls; rate-limit codes did not reliably open the circuit | `packages/launchpad-sdk/src/chain.ts` budgets logical calls (4 concurrent, 10/s in browser), classifies -32011, uses independent Ankr fallback and bounded recovery. `apps/retro-ui/src/hooks/use-launch-detail.ts` separates essential and economic readiness and retains explicit retries. |
+| Graduated empty book / unknown margin allowed misleading trading state | Quote readiness and cached margin were insufficiently tied to current account, market and parameters | `hooks/use-kuru-book.ts`, `features/launchpad/kuru-ticket.tsx`, `features/launchpad/terminal/token-terminal.tsx`: current quote required for market orders, positive executable output, explicit unknown margin and stale/empty/unavailable book states; limit orders use their own prerequisites. |
+| Connect buttons skipped wallet choice | Callers used an implicit provider, with duplicate local pickers | `wallet/provider.tsx` owns one EIP-6963 picker. Explicit legacy provider choice, deduplication and listener cleanup; disconnect/account loss invalidate writes. |
+| Factory terms failed or image upload disappeared | Terms failure became a dead end; upload response races overwrote newer choices | `features/launchpad/create-launch.tsx` retries terms without clearing drafts, keeps a local blob preview, ignores old upload generations and blocks unresolved image submission. Fee recipient remains an explicit reviewed choice. |
+
+## Reproduction and verification
+
+Open a live token terminal, connect through the picker, then reject economic RPC reads in the isolated recovery harness. Essential token data remains visible, actions fail closed, and retry recovers. Test phases 0, 1 and 2 separately. In phase 2, open the mobile Trade sheet, verify no market order when the book is empty and margin is unknown. In launch creation, select an image, fail upload, replace it before an older response resolves, and retry without losing form terms or the chosen preview.
+
+SDK: 46 passed, two intentional network skips; indexer: 43 passed; UI domain: 17 passed; targeted UI: 41 passed. Full fixture campaign: 266 passed, 40 intentional viewport skips. Dedicated live-component recovery fixtures: 20 passed across desktop 1440 and mobile 390. Additional post-gate/context checks passed. Typechecks and scoped retro-ui build passed. Logs: [recovery evidence](../../../../evidence/platform/frontend/p0-recovery-20261013/); full fixture evidence: `evidence/platform/frontend/browser-validation/20261012T180325Z-fixture/`.
+
+Read-only SDK qualification used the official Monad testnet endpoint and `https://rpc.ankr.com/monad_testnet`: chain 10143, token `0x30ccb65006665022dfc97bb5c1985610503fd1cf`, market `0x7402dEE487b1517764A220946b99255faB9d1206`, phase 2, fee 100, decimals 18; both returned a healthy empty book. This is an observation at blocks 70465730–70465747, not a permanent liquidity claim. Provider limits were checked against official Monad testnet documentation. Browser fetches from the public staging HTTPS origin returned HTTP 200 and chain `0x279f` (10143) on both providers: primary 414 ms, fallback 35 ms in this one sampled check (`public-rpc-cors.json`). These observations establish current CORS/chain access, not an uptime guarantee. Browser fixtures isolate RPC and credentials; they are not public-chain receipts.
+
+Public browser and sustained readiness results are recorded in the incident report alongside deployment identity. No `apps/web` or contract edits, contract deployment, user financial broadcast, or sponsor qualification upgrade occurred.

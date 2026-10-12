@@ -1,0 +1,16 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ sniffImage types content by magic bytes only (7.505145ms)
+✔ health reports mode and stays read-open (252.957609ms)
+✔ local mode stores content-addressed files and serves them immutably (213.143704ms)
+✔ upload boundaries: origin, method, body kind, size, type and unknown routes fail closed (153.163455ms)
+✔ uploads are rate limited per peer per minute (306.461433ms)
+✔ pinata mode pins sniffed bytes and returns an ipfs:// uri (65.429753ms)
+✔ pinata failures map to bounded upstream errors (155.202133ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1969.053822

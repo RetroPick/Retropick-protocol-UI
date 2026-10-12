@@ -1,0 +1,13 @@
+tunnel: https://entered-chairs-ports-prozac.trycloudflare.com
+origin: https://retropick-metropolis-retro-ui-stagi.vercel.app
+source sha: 695ae7764f72cb0fb5cfee5af205fc2975bcd32f
+env VITE_DATA_MODE (production): unchanged
+env VITE_DATA_MODE (preview): unchanged
+env VITE_INDEXER_URL (production): unchanged
+env VITE_INDEXER_URL (preview): unchanged
+env VITE_MONAD_RPC_FALLBACK_URL (production): unchanged
+env VITE_MONAD_RPC_FALLBACK_URL (preview): unchanged
+deploying (prod target of the STAGING project — its own *.vercel.app domain)…
+
+deployment: https://retropick-metropolis-retro-ui-staging-4j8o60sll-asyams-projects.vercel.app
+alias: https://retropick-metropolis-retro-ui-stagi.vercel.app

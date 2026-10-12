@@ -1,0 +1,88 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ curve execution prices exclude fees, preserve settlement, and agree for 6/18 decimal quotes (5.820696ms)
+✔ prices retain sub-atomic quote-per-token precision and enormous integer amounts (0.37858ms)
+✔ Kuru last execution replaces seeded price and normalizes actual market size precision (19.964238ms)
+✔ UTC candle aggregation preserves first open, last close, extrema, volume and gaps (1.175613ms)
+✔ GTC projection handles partial fills, full fills, skipped IDs and cancellation without double debit (2.56691ms)
+✔ wallet candidates include arbitrary escrow tokens and margin assets; claims survive zero releasable (0.942134ms)
+✔ holder projection excludes zero and labels protocol custody with deterministic equal-balance ordering (1.106533ms)
+(node:39455) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ HTTP 401 "no access to this network" is classified AUTH, not rate limiting (1.997538ms)
+✔ a permanently unauthorized provider is disabled once and never receives backfill requests again (83.303619ms)
+✔ transient 5xx opens a circuit and the provider recovers after the circuit window (76.128352ms)
+✔ a valid JSON-RPC error (revert) is returned to the caller and does not fail the provider over (1247.547232ms)
+Indexed root 69509625 / 69529526 events 0
+Indexed root 69514625 / 69529526 events 0
+Indexed root 69519625 / 69529526 events 0
+Indexed root 69524625 / 69529526 events 0
+Indexed root 69529526 / 69529526 events 0
+Synced 69529526 / 69554526 launches 0 trades 0 20001 blocks in 10ms (catching up)
+Indexed beneficiary 69509625 / 69529526 events 0
+Indexed beneficiary 69514625 / 69529526 events 0
+Indexed beneficiary 69519625 / 69529526 events 0
+Indexed root 69534526 / 69549526 events 0
+Indexed beneficiary 69524625 / 69529526 events 0
+Indexed root 69539526 / 69549526 events 0
+Indexed beneficiary 69529526 / 69529526 events 0
+Indexed root 69544526 / 69549526 events 0
+Indexed root 69549526 / 69549526 events 0
+Synced 69549526 / 69554526 launches 0 trades 0 20000 blocks in 9ms (catching up)
+Indexed beneficiary 69534526 / 69549526 events 0
+Indexed beneficiary 69539526 / 69549526 events 0
+Indexed root 69554526 / 69554526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 5000 blocks in 10ms
+Indexed beneficiary 69544526 / 69549526 events 0
+Indexed beneficiary 69549526 / 69549526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 0 blocks in 2ms
+Indexed beneficiary 69554526 / 69554526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 0 blocks in 3ms
+✔ all providers unauthorized → a clear error naming each endpoint state (2417.590751ms)
+✔ rpcEndpoints is provider neutral and deduplicates (2.437485ms)
+✔ only one indexer process may own a database; stale locks are reclaimed (4.30294ms)
+✔ long catch-up publishes consistent v2 snapshots progressively and reaches the head (50.901029ms)
+✔ host-only endpoint and fixed nested diagnostics cover arbitrary credential alphabets (1214.104455ms)
+✔ 403 and wrong chain are permanently disabled; nested status is recognized (4836.028222ms)
+✔ 429 and timeout recover after circuit, slow primary leaves healthy fallback usable (140.424353ms)
+✔ stale primary head is surfaced and missing historical blocks fail over without rollback (34.91275ms)
+✔ simultaneous explicit probe and requests share one permanent provider check (21.775091ms)
+✔ malformed chain response is transient, rather than permanently declaring wrong chain (21.553673ms)
+✔ uncorrelated JSON-RPC batch rate error is classified without retaining its body (22.446231ms)
+✔ a genuinely slow primary times out and a healthy fallback serves reads (25.884977ms)
+✔ healthy primary returning null historical block fails over to intact canonical fallback (43.461882ms)
+✔ HTTP200 malformed batch rows cannot escape as undefined state or block data (96.461156ms)
+(node:39456) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ discovery applies exact bigint monetary order within explicit quote groups and stable pagination (13.482219ms)
+✔ discovery phase threshold, symbol/address pairs and creator search use actual launches (2.19707ms)
+✔ cursors reject changed query, changed snapshot/reorg and malformed input explicitly (1.579804ms)
+✔ candle range and resolution are independent, pages are latest-first then ascending within page (1.921114ms)
+✔ referral stream is canonical paginated launch/taker execution only, and handles not-yet-confirmed associations (1.453329ms)
+✔ HTTP read-only API retains freshness, supports ETag, and excludes wallet-specific caching (67.736389ms)
+✔ HTTP refuses legacy projection instead of serving incorrect price units (23.546419ms)
+✔ receipt transaction filter finds exact trades/orders before bounded pagination (1.083024ms)
+✔ creator filter is validated, case-insensitive and paginated past 25 with bound cursors (1.009472ms)
+(node:39458) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ journal replay is idempotent and preserves exact large integers (4.017734ms)
+✔ reorg removes orphaned events/checkpoints/snapshot and permits replacement (1.482381ms)
+✔ failed range does not advance checkpoint or retain partial events (1.387312ms)
+✔ empty projections do not invent launches or trade activity (3.988014ms)
+(node:39464) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Indexed beneficiary 69509625 / 69511225 events 0
+Indexed beneficiary 69511225 / 69511225 events 0
+Indexed beneficiary 69509625 / 69509625 events 0
+✔ historical beneficiary ranges batch at most eight, stay within provider100block limit, and commit contiguously (15.257025ms)
+✔ one failed parallel range cannot advance any checkpoint in that batch (3.112544ms)
+✔ reorg during an in-flight batch prevents orphaned checkpoint publication (1.544445ms)
+✔ discovery caches immutable social/quote identity, retains dynamic burned supply and original progress allocation (3.498404ms)
+✔ range errors bisect until accepted and single-block failure leaves batch uncommitted (2.882051ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10870.630067

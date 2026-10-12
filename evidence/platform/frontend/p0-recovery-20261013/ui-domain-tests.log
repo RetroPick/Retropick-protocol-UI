@@ -1,0 +1,26 @@
+$ node scripts/test-frontend.mjs
+✔ canonical pFEDBTC payoff and exact backing (3.794302ms)
+✔ nonnegative normalized allocation rejects negative and overweight baskets (1.04013ms)
+✔ zero allocation is supported, never negative liability (0.431149ms)
+✔ supply rejects fractional, negative, zero and unbounded inputs (0.546298ms)
+✔ RESOLVED alone cannot redeem even if marked funded (0.482798ms)
+✔ unfunded REDEEMABLE and zero payouts do not produce positive claims (0.611985ms)
+✔ funded winning claim can redeem (0.83298ms)
+✔ settlement balance must cover all liabilities (0.850531ms)
+✔ trade amounts reject malformed, nonpositive and out-of-range values (1.213575ms)
+✔ bounded normalized baskets preserve canonical maximum and component sum (3.687569ms)
+✔ each source normalizes to one canonical instrument with distinct semantics (4.020348ms)
+✔ kind, reference and pair are orthogonal (1.09775ms)
+✔ all tabs, watchlist and prediction topics query the same dataset (1.050837ms)
+✔ missing financial metrics remain missing (1.036754ms)
+✔ family dispatch owns detail routing and unavailable trade intent (1.336778ms)
+✔ exact chain and family registry lookup cannot route Monad to another chain (0.671992ms)
+✔ repository deduplicates shared featured/feed ID and rejects conflicting identities (1.707425ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 206.400012

@@ -1,0 +1,9 @@
+# One independently verified public Monad testnet launch contract address.
+# Extend the default rules; do not suppress API keys or arbitrary hex values.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Public Monad 10143 launch token, independently read on official and Ankr RPC"
+regexTarget = "secret"
+regexes = ['''(?i)^(?:0x)?30ccb65006665022dfc97bb5c1985610503fd1cf$''']
