@@ -58,6 +58,9 @@ def main():
         path.chmod(0o600)
     if not pathlib.Path(NODE).is_file() or not (ROOT / 'runtime/caddy').is_file():
         raise SystemExit('Upload verified private Node and Caddy binaries first.')
+    # The archive can retain private workspace modes. Release code contains no
+    # secrets; the service accounts must be able to traverse and read it.
+    run('chmod', '-R', 'a+rX', str(ROOT / 'release'))
     rpc = 'https://testnet-rpc.monad.xyz'
     services = {
         'indexer': ('apps/indexer', 'src/server.ts', {
