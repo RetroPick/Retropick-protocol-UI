@@ -1,0 +1,2 @@
+staging-api-1 ccbfaf5546f9 Up 3 days (healthy)
+staging-postgres-1 6f8b9225ed8e Up 4 days (healthy)

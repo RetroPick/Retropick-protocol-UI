@@ -1,0 +1,28 @@
+{
+  "indexer": {
+    "integrity": "ok",
+    "tables": {
+      "events": 1490,
+      "checkpoints": 45114,
+      "meta": 528
+    },
+    "sha256": "8eb6d223e4ecc826db380aad8cb43e67c7838eb232acac40d3787c390f968d37"
+  },
+  "referral": {
+    "integrity": "ok",
+    "tables": {
+      "challenges": 0,
+      "sessions": 0,
+      "associations": 1,
+      "activity": 1,
+      "state": 1
+    },
+    "sha256": "e592d8db6bce105361af051473c85a692efebd524406b08a6c8647844fea0238"
+  },
+  "media": {
+    "files": 5
+  },
+  "radar": {
+    "files": 2
+  }
+}

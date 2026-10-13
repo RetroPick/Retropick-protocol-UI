@@ -37,6 +37,40 @@ const requestReturning=(make:(url:URL)=>ActivityEnvelope|Response)=>async(input:
   const result=make(new URL(String(input)));return result instanceof Response?result:Response.json(result);
 };
 
+test('approved origins sign their own domain and cannot exchange challenges', async () => {
+  const s = setup();
+  const primary = 'https://retropick.xyz';
+  const auth = new ReferralAuth(s.store, primary,
+    (wallet, message, signature) => verifyMessage({ address: wallet as Address, message, signature }),
+    async () => 100, () => s.now);
+  const server = createReferralApp({ store: s.store, auth: s.auth,
+    authByOrigin: new Map([[primary, auth]]), secure: true, clock: () => s.now });
+  server.listen(0, '127.0.0.1'); await once(server, 'listening');
+  const base = `http://127.0.0.1:${(server.address() as { port: number }).port}/api/referrals`;
+  const post = (path: string, origin: string, body: unknown) => fetch(`${base}/${path}`, {
+    method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  try {
+    assert.equal((await post('challenge', 'https://retropick.xyz.evil.example', { wallet: alice.address })).status, 403);
+    const response = await post('challenge', primary, { wallet: alice.address });
+    assert.equal(response.status, 200);
+    const c = await response.json() as { challengeId: string; message: string };
+    assert.match(c.message, /^retropick.xyz requests/);
+    const signature = await alice.signMessage({ message: c.message });
+    const wrong = await post('verify', origin, { challengeId: c.challengeId, signature });
+    assert.equal(wrong.status, 403);
+    assert.deepEqual(await wrong.json(), { error: 'CHALLENGE_ORIGIN_MISMATCH' });
+    const fresh = await (await post('challenge', primary, { wallet: alice.address })).json() as typeof c;
+    const verified = await post('verify', primary, { challengeId: fresh.challengeId,
+      signature: await alice.signMessage({ message: fresh.message }) });
+    assert.equal(verified.status, 200);
+    const cookie = verified.headers.get('set-cookie')!;
+    assert.match(cookie, /HttpOnly; SameSite=Strict/); assert.match(cookie, /Secure/);
+    assert.doesNotMatch(cookie, /Domain=/i);
+    const old = await post('challenge', origin, { wallet: bob.address });
+    assert.equal(old.status, 200); assert.match((await old.json() as typeof c).message, /127\.0\.0\.1:3000 requests/);
+  } finally { await new Promise<void>(resolve => server.close(() => resolve())); s.store.close(); }
+});
+
 test('wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose',async()=>{
   const s=setup();try {
     const c=s.auth.challenge({wallet:alice.address,referrer:bob.address});
@@ -150,6 +184,29 @@ test('activity page size stays within the actual indexer API contract',async()=>
    assert.equal(url.searchParams.get('limit'),'100');observed=true;return envelope([event(110)]);
   }));await sync.sync();assert.equal(sync.error,null);assert.equal(observed,true);
  }finally{s.store.close();}
+});
+
+test('multi-page activity keeps the cursor-bound query identical', async () => {
+  const s = setup();
+  try {
+    await associate(s);
+    const windows: (string | null)[] = [];
+    const sync = new AttributionSync(s.store, 'http://indexer.local', requestReturning(url => {
+      const key = JSON.stringify([...url.searchParams.entries()].filter(([name]) => name !== 'cursor').sort());
+      const cursor = url.searchParams.get('cursor');
+      windows.push(url.searchParams.get('toBlock'));
+      if (cursor && Buffer.from(cursor, 'base64url').toString() !== key)
+        return Response.json({ error: 'CURSOR_QUERY_MISMATCH' }, { status: 400 });
+      const value = envelope([cursor ? event(120, 'CurveBuy', { txHash: hexHash('d') }) : event(110)]);
+      value.data.nextCursor = cursor ? null : Buffer.from(key).toString('base64url');
+      return value;
+    }));
+    await sync.sync();
+    assert.equal(sync.error, null);
+    assert.deepEqual(windows, [null, '200', '200']);
+    assert.equal(s.store.summary(lower(bob.address)).volumeByQuote[0].volumeRaw,
+      String(2n * 9007199254740993123456789n));
+  } finally { s.store.close(); }
 });
 
 test('canonical head falling below association clears orphaned qualification and records pending freshness',async()=>{

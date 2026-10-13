@@ -1,0 +1,23 @@
+{
+  "Status": 0,
+  "TC": false,
+  "RD": true,
+  "RA": true,
+  "AD": false,
+  "CD": false,
+  "Question": [
+    {
+      "name": "api-staging.retropick.xyz.",
+      "type": 1
+    }
+  ],
+  "Answer": [
+    {
+      "name": "api-staging.retropick.xyz.",
+      "type": 1,
+      "TTL": 1799,
+      "data": "84.247.158.36"
+    }
+  ],
+  "Comment": "Response from 156.154.133.200."
+}

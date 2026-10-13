@@ -1,0 +1,66 @@
+
+Running 14 tests using 1 worker
+
+(node:15726) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [staging-desktop-1440] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (3.3s)
+  ✘   2 [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (31.8s)
+(node:16001) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (retry #1) (2.8s)
+  ✓   4 [staging-desktop-1440] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (1.6s)
+  ✓   5 [staging-desktop-1440] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (1.3s)
+  ✓   6 [staging-desktop-1440] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (2.1s)
+  ✓   7 [staging-desktop-1440] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (1.3s)
+  ✓   8 [staging-desktop-1440] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (167ms)
+(node:16198) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [staging-mobile-390] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (946ms)
+  ✓  10 [staging-mobile-390] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (2.8s)
+  ✓  11 [staging-mobile-390] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (1.4s)
+  ✓  12 [staging-mobile-390] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (2.3s)
+  ✓  13 [staging-mobile-390] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (1.7s)
+  ✓  14 [staging-mobile-390] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (1.5s)
+  ✓  15 [staging-mobile-390] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (156ms)
+
+
+  1) [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('depth-panel')
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByTestId('depth-panel')
+
+
+      30 |   // an empty book (resting orders consumed) shows the designed empty state. Both are
+      31 |   // correct — what must NEVER happen is fabricated depth.
+    > 32 |   await expect(page.getByTestId('depth-panel')).toBeVisible({ timeout: 30_000 });
+         |                                                 ^
+      33 |   // Three honest terminal states, all truthful: a two-sided ladder (Spread), an empty
+      34 |   // book (No resting orders / No two-sided book), or the unavailable state when the
+      35 |   // public RPC rejects the heavy L2 read. Fabricated depth must never appear.
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging/staging.spec.ts:32:49
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/staging-vps-recovery-20261013/test-output/staging-SPA-deep-link-rend-0a3b1--with-Kuru-depth-orders-tab-staging-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/platform/frontend/staging-vps-recovery-20261013/test-output/staging-SPA-deep-link-rend-0a3b1--with-Kuru-depth-orders-tab-staging-desktop-1440/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/staging-vps-recovery-20261013/test-output/staging-SPA-deep-link-rend-0a3b1--with-Kuru-depth-orders-tab-staging-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/platform/frontend/staging-vps-recovery-20261013/test-output/staging-SPA-deep-link-rend-0a3b1--with-Kuru-depth-orders-tab-staging-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 flaky
+    [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab
+  13 passed (58.9s)

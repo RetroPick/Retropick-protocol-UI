@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-13T11:29:26.989635+00:00",
+  "checks": [
+    {
+      "origin": "https://retropick.xyz",
+      "release": {
+        "sourceSha": "346366c093010b0b3eda26fc53f866980bcf9e15",
+        "chainId": 10143
+      },
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70670207,
+        "indexedBlockHash": "0x07f837f4cd69c9e10766ce3fe38a20e56be4ffa4fa69e0f9f3b4a58e6be13f9e",
+        "headBlock": 70670215,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T11:29:24.579Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70670207
+      }
+    },
+    {
+      "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+      "release": {
+        "sourceSha": "346366c093010b0b3eda26fc53f866980bcf9e15",
+        "chainId": 10143
+      },
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70670207,
+        "indexedBlockHash": "0x07f837f4cd69c9e10766ce3fe38a20e56be4ffa4fa69e0f9f3b4a58e6be13f9e",
+        "headBlock": 70670264,
+        "confirmations": 8,
+        "lagBlocks": 57,
+        "indexedAt": "2026-10-13T11:29:24.579Z",
+        "syncing": true,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70670207
+      }
+    }
+  ]
+}

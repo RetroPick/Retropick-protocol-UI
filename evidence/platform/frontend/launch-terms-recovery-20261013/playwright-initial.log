@@ -1,0 +1,106 @@
+
+Running 16 tests using 1 worker
+
+(node:9283) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [staging-desktop-1440] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (2.0s)
+  ✓   2 [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (3.4s)
+  ✓   3 [staging-desktop-1440] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (2.1s)
+  ✓   4 [staging-desktop-1440] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (1.7s)
+  ✓   5 [staging-desktop-1440] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (2.2s)
+  ✓   6 [staging-desktop-1440] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (1.7s)
+  ✓   7 [staging-desktop-1440] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (176ms)
+  ✘   8 [staging-desktop-1440] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing (31.3s)
+(node:9731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [staging-mobile-390] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (1.7s)
+  ✓  10 [staging-mobile-390] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (3.2s)
+  ✓  11 [staging-mobile-390] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (1.7s)
+  ✓  12 [staging-mobile-390] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (2.5s)
+  ✓  13 [staging-mobile-390] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (2.1s)
+  ✓  14 [staging-mobile-390] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (2.1s)
+  ✓  15 [staging-mobile-390] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (167ms)
+  ✘  16 [staging-mobile-390] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing (31.3s)
+
+
+  1) [staging-desktop-1440] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByLabel('Paired with', { exact: true })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByLabel('Paired with', { exact: true })
+
+
+      109 |   await expect(page.getByRole('heading', {name:/2 · Market & economics/})).toBeVisible();
+      110 |   const pair=page.getByLabel('Paired with', {exact:true});
+    > 111 |   await expect(pair).toBeVisible({timeout:30000});
+          |                      ^
+      112 |   await expect(pair.locator('option').first()).toContainText('MON');
+      113 |   await expect(page.getByText('Launch terms unavailable.', {exact:false})).toHaveCount(0);
+      114 |   await expect(page.getByText(/Launch fee .* MON\. Graduates at/)).toBeVisible();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging/staging.spec.ts:111:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-desktop-1440/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-desktop-1440/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-desktop-1440/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-desktop-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [staging-mobile-390] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByLabel('Paired with', { exact: true })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByLabel('Paired with', { exact: true })
+
+
+      109 |   await expect(page.getByRole('heading', {name:/2 · Market & economics/})).toBeVisible();
+      110 |   const pair=page.getByLabel('Paired with', {exact:true});
+    > 111 |   await expect(pair).toBeVisible({timeout:30000});
+          |                      ^
+      112 |   await expect(pair.locator('option').first()).toContainText('MON');
+      113 |   await expect(page.getByText('Launch terms unavailable.', {exact:false})).toHaveCount(0);
+      114 |   await expect(page.getByText(/Launch fee .* MON\. Graduates at/)).toBeVisible();
+        at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging/staging.spec.ts:111:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-mobile-390/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-mobile-390/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-mobile-390/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../evidence/platform/frontend/launch-terms-recovery-20261013/test-output/staging-live-create-econom-9bf6a-ches-Review-without-signing-staging-mobile-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [staging-desktop-1440] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing
+    [staging-mobile-390] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing
+  14 passed (1.6m)
+undefined
+/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: playwright test --config e2e/staging.config.ts '--retries=0' '--reporter=list,json' '--output=/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/launch-terms-recovery-20261013/test-output'

@@ -29,6 +29,8 @@ export class ReferralAuth {
   async verify(input: {challengeId: unknown; signature: unknown}) {
     if(typeof input.challengeId!=='string'||!/^[\da-f]{48}$/.test(input.challengeId)||typeof input.signature!=='string'||!/^0x[\da-fA-F]{128,4096}$/.test(input.signature))throw new ApiError(400,'INVALID_SIGNATURE_REQUEST');
     const c=this.store.takeChallenge(input.challengeId,this.clock());
+    if(!c.message.startsWith(`${new URL(this.origin).host} requests a RetroPick referral association.\n`)
+      ||!c.message.includes(`\nURI: ${this.origin}\n`))throw new ApiError(403,'CHALLENGE_ORIGIN_MISMATCH');
     if(!await this.verifySignature(c.wallet,c.message,input.signature as `0x${string}`))throw new ApiError(401,'INVALID_SIGNATURE');
     const block=await this.associationBlock(); const now=this.clock();
     if(now>=c.expiresAt)throw new ApiError(401,'CHALLENGE_EXPIRED_OR_USED');

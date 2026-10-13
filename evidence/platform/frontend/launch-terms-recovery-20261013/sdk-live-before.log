@@ -1,0 +1,96 @@
+launchEnabled true
+launchFee "0"
+maxCreatorTaxBps "1000"
+snipeTaxSeconds "15"
+snipeTaxStartBps "0"
+launchConfigCount "1"
+CIRCLE_TEST_USDC "0x534b2f3A21130d7a60830c2Df862319e593943A3"
+decimals 18
+currentFeePolicy {"protocolFeeRecipient":"0xB505cBaab3ACdF287af1366b9B1229404757913b","protocolFeeShareBps":3000,"buybackBurnBps":5000,"hookFeeBps":100,"maxInternalPriceImpactBps":300}
+decimals 6
+getLaunchConfig {"supply":"1000000000000000000000","curveFeeBps":"100","phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","poolFee":0,"tickSpacing":60,"enabled":true}
+admitted {"enabled":true,"decimals":18,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","graduationQuoteCeiling":"50000000000000000000","assetId":"0x3736c40ffe29d9bda417b2e546205e5b41d3b3d83af24c07fcc7776453329095","policyHash":"0x11dc7a03a457860be9736edb4f3faf0810c98368cc3467c45a47e13cdb602464"}
+admitted {"enabled":true,"decimals":6,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000","graduationThreshold":"1000000","graduationQuoteCeiling":"50000000","assetId":"0x97a5025a6514ff49537e9e8c5b75e7842f5552c4a6a727cf21c4c76b037ff680","policyHash":"0xc41497b008b8ccc1a94d7785092ebab9d682b2a4889eb2ae9ccd0884f0b50499"}
+FAILED admitted ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 0)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4
+PRECONDITIONS_FAILED https://testnet-rpc.monad.xyz ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 0)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4
+admitted {"enabled":true,"decimals":18,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","graduationQuoteCeiling":"50000000000000000000","assetId":"0x3736c40ffe29d9bda417b2e546205e5b41d3b3d83af24c07fcc7776453329095","policyHash":"0x11dc7a03a457860be9736edb4f3faf0810c98368cc3467c45a47e13cdb602464"}
+admitted {"enabled":true,"decimals":6,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000","graduationThreshold":"1000000","graduationQuoteCeiling":"50000000","assetId":"0x97a5025a6514ff49537e9e8c5b75e7842f5552c4a6a727cf21c4c76b037ff680","policyHash":"0xc41497b008b8ccc1a94d7785092ebab9d682b2a4889eb2ae9ccd0884f0b50499"}
+FAILED admitted ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 1)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4
+launchEnabled true
+launchFee "0"
+maxCreatorTaxBps "1000"
+snipeTaxSeconds "15"
+snipeTaxStartBps "0"
+launchConfigCount "1"
+CIRCLE_TEST_USDC "0x534b2f3A21130d7a60830c2Df862319e593943A3"
+currentFeePolicy {"protocolFeeRecipient":"0xB505cBaab3ACdF287af1366b9B1229404757913b","protocolFeeShareBps":3000,"buybackBurnBps":5000,"hookFeeBps":100,"maxInternalPriceImpactBps":300}
+decimals 18
+decimals 6
+getLaunchConfig {"supply":"1000000000000000000000","curveFeeBps":"100","phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","poolFee":0,"tickSpacing":60,"enabled":true}
+admitted {"enabled":true,"decimals":18,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","graduationQuoteCeiling":"50000000000000000000","assetId":"0x3736c40ffe29d9bda417b2e546205e5b41d3b3d83af24c07fcc7776453329095","policyHash":"0x11dc7a03a457860be9736edb4f3faf0810c98368cc3467c45a47e13cdb602464"}
+admitted {"enabled":true,"decimals":6,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000","graduationThreshold":"1000000","graduationQuoteCeiling":"50000000","assetId":"0x97a5025a6514ff49537e9e8c5b75e7842f5552c4a6a727cf21c4c76b037ff680","policyHash":"0xc41497b008b8ccc1a94d7785092ebab9d682b2a4889eb2ae9ccd0884f0b50499"}
+admitted {"enabled":true,"decimals":18,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000000000000000","graduationThreshold":"1000000000000000000","graduationQuoteCeiling":"50000000000000000000","assetId":"0x3736c40ffe29d9bda417b2e546205e5b41d3b3d83af24c07fcc7776453329095","policyHash":"0x11dc7a03a457860be9736edb4f3faf0810c98368cc3467c45a47e13cdb602464"}
+FAILED admitted ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 0)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4
+PRECONDITIONS_FAILED https://rpc.ankr.com/monad_testnet ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 0)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4
+admitted {"enabled":true,"decimals":6,"venueMask":3,"policyVersion":1,"phantomQuote":"1000000","graduationThreshold":"1000000","graduationQuoteCeiling":"50000000","assetId":"0x97a5025a6514ff49537e9e8c5b75e7842f5552c4a6a727cf21c4c76b037ff680","policyHash":"0xc41497b008b8ccc1a94d7785092ebab9d682b2a4889eb2ae9ccd0884f0b50499"}
+FAILED admitted ContractFunctionExecutionError: The contract function "admitted" reverted.
+
+Error: UnsupportedQuote()
+
+Contract Call:
+  address:   0xd1211276869ec55CAF302E22371D2005B23B9B40
+  function:  admitted(address quote, uint8 venue)
+  args:              (0xff437B117Ec17a79a3b24Da4B5047dca4da9D0a2, 1)
+
+Docs: https://viem.sh/docs/contract/readContract
+Version: viem@2.57.4

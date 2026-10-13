@@ -1,4 +1,4 @@
-import { zeroAddress, type Address } from 'viem';
+import { BaseError, ContractFunctionRevertedError, zeroAddress, type Address } from 'viem';
 import { addresses, release, type ChainClient } from './chain.ts';
 import { factoryAbi } from './abis/factoryAbi.ts';
 import { registryAbi } from './abis/registryAbi.ts';
@@ -85,8 +85,18 @@ export async function readLaunchPreconditions(chain: ChainClient, account?: Addr
     chain.readContract({ address: factory, abi: factoryAbi, functionName: 'getLaunchConfig', args: [id], blockNumber })
   ));
   const attempts = await Promise.all(([VENUE.UNISWAP_V4, VENUE.KURU] as VenueId[]).flatMap(venue => candidates.map(async candidate => {
-    const config = await chain.readContract({ address: addresses.quoteRegistry, abi: registryAbi, functionName: 'admitted', args: [candidate.address, venue], blockNumber });
-    return config?.enabled ? { venue, ...candidate, phantomQuote: config.phantomQuote, graduationThreshold: config.graduationThreshold } : undefined;
+    try {
+      const config = await chain.readContract({ address: addresses.quoteRegistry, abi: registryAbi, functionName: 'admitted', args: [candidate.address, venue], blockNumber });
+      return config?.enabled ? { venue, ...candidate, phantomQuote: config.phantomQuote, graduationThreshold: config.graduationThreshold } : undefined;
+    } catch (error) {
+      // Candidate assets are not necessarily admitted. The deployed registry
+      // signals disabled assets/venues with this exact custom error, rather
+      // than returning enabled:false. Other reverts and RPC failures must
+      // still fail the snapshot; never present unavailable reads as admission.
+      const revert = error instanceof BaseError ? error.walk(cause => cause instanceof ContractFunctionRevertedError) : undefined;
+      if (revert instanceof ContractFunctionRevertedError && revert.data?.errorName === 'UnsupportedQuote') return undefined;
+      throw error;
+    }
   })));
   const quotes = attempts.filter((q): q is AdmittedQuote => q !== undefined);
   return {

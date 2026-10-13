@@ -100,3 +100,24 @@ test('public release and indexer projection match the reviewed source', async ({
   expect(value.freshness.chainId).toBe(10143); expect(value.freshness.source).toBe('MONAD_EVENT_INDEXER');
   expect(value.freshness.lagBlocks).toBeLessThanOrEqual(64);
 });
+
+test('live create economics loads admitted quotes and reaches Review without signing', async ({page}) => {
+  await page.goto('/launchpad/create');
+  await page.getByPlaceholder('Retro Coin', {exact:true}).fill('Read Only Draft');
+  await page.getByPlaceholder('RETRO', {exact:true}).fill('READ');
+  await page.getByRole('button', {name:'Continue',exact:true}).click();
+  await expect(page.getByRole('heading', {name:/2 · Market & economics/})).toBeVisible();
+  const pair=page.getByRole('combobox', {name:/^Paired with/});
+  await expect(pair).toBeVisible({timeout:30000});
+  await expect(pair.locator('option').first()).toContainText('MON');
+  await expect(page.getByText('Launch terms unavailable.', {exact:false})).toHaveCount(0);
+  await expect(page.getByText(/Launch fee .* MON\. Graduates at/)).toBeVisible();
+  await page.getByRole('button', {name:'Review',exact:true}).click();
+  await expect(page.getByTestId('launch-review')).toContainText('Read Only Draft · READ');
+  await expect(page.getByTestId('launch-review')).not.toContainText('DEMO');
+  await expect(page.getByRole('button', {name:'Connect wallet to launch',exact:true})).toBeVisible();
+  await page.getByRole('button', {name:'Back',exact:true}).click();
+  await page.getByRole('button', {name:'Back',exact:true}).click();
+  await expect(page.getByPlaceholder('Retro Coin', {exact:true})).toHaveValue('Read Only Draft');
+  await expect(page.getByPlaceholder('RETRO', {exact:true})).toHaveValue('READ');
+});

@@ -21,6 +21,9 @@ export class AttributionSync {
       const to=envelope.data.canonicalToBlock;
       // Association can be newer than the indexer's confirmation buffer.
       if(to<from){this.store.reconcile(from,to,[],envelope.freshness);this.error=null;return;}
+      // Cursors bind every query parameter. Start a multi-page traversal with
+      // an explicit upper bound so later pages use the identical query key.
+      if(envelope.data.nextCursor)envelope=await this.page(from,to);
       const events: QualifyingEvent[]=[]; const seen=new Set<string>(); const seenLogs=new Set<string>();
       let pages=0; const first=envelope.freshness;
       while(true) {

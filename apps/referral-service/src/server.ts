@@ -18,8 +18,14 @@ const store=new ReferralStore(db);
 const client=createPublicClient({chain:monadTestnet,transport:http(process.env.REFERRAL_RPC_URL??'https://testnet-rpc.monad.xyz',{timeout:5000,retryCount:1})});
 if(await client.getChainId()!==10143)throw Error('Referral service requires Monad Testnet chain 10143');
 const auth=new ReferralAuth(store,origin,(wallet,message,signature)=>client.verifyMessage({address:wallet as Address,message,signature}),()=>client.getBlockNumber({cacheTime:0}).then(Number));
+const authByOrigin=new Map<string,ReferralAuth>();
+for(const allowed of (process.env.REFERRAL_ORIGINS??origin).split(',').map(value=>value.trim()).filter(Boolean)) {
+  if(production&&!allowed.startsWith('https://'))throw Error('Production REFERRAL_ORIGINS requires HTTPS');
+  const scoped=new ReferralAuth(store,allowed,(wallet,message,signature)=>client.verifyMessage({address:wallet as Address,message,signature}),()=>client.getBlockNumber({cacheTime:0}).then(Number));
+  authByOrigin.set(scoped.origin,scoped);
+}
 const sync=new AttributionSync(store,process.env.REFERRAL_INDEXER_URL??'http://127.0.0.1:8787');
-const server=createReferralApp({store,auth,sync,secure:production||origin.startsWith('https://')});
+const server=createReferralApp({store,auth,authByOrigin,sync,secure:production||origin.startsWith('https://')});
 const port=Number(process.env.REFERRAL_PORT??8788);
 if(!Number.isInteger(port)||port<1||port>65535)throw Error('Invalid REFERRAL_PORT');
 server.listen(port,'127.0.0.1',()=>console.log('Referral attribution service listening on',port));

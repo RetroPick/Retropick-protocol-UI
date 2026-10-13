@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-13T09:40:29Z",
+  "host": "vmi3646941",
+  "sourceSha": "84e954bdcff5651a5f808882eff6226fd6419f6a",
+  "targetEnabled": "enabled",
+  "targetDependencies": "Wants=retropick-staging-indexer.service retropick-staging-gateway.service retropick-staging-referral.service retropick-staging-caddy.service retropick-staging-media.service retropick-staging-radar.service",
+  "bootSymlink": "/etc/systemd/system/retropick-staging.target",
+  "services": {
+    "indexer": "Restart=always\nRestartUSec=10s\nMainPID=1746118\nNRestarts=1\nMemoryCurrent=124628992\nUser=retropick-staging\nActiveState=active",
+    "referral": "Restart=always\nRestartUSec=10s\nMainPID=1746119\nNRestarts=1\nMemoryCurrent=50593792\nUser=retropick-staging\nActiveState=active",
+    "media": "Restart=always\nRestartUSec=10s\nMainPID=1743490\nNRestarts=0\nMemoryCurrent=30584832\nUser=retropick-staging\nActiveState=active",
+    "radar": "Restart=always\nRestartUSec=10s\nMainPID=1744130\nNRestarts=7\nMemoryCurrent=51376128\nUser=retropick-staging\nActiveState=active",
+    "gateway": "Restart=always\nRestartUSec=10s\nMainPID=1743487\nNRestarts=0\nMemoryCurrent=20574208\nUser=retropick-staging\nActiveState=active",
+    "caddy": "Restart=always\nRestartUSec=10s\nMainPID=1743488\nNRestarts=0\nMemoryCurrent=13938688\nUser=retropick-staging-caddy\nActiveState=active"
+  },
+  "environmentPermissions": {
+    "media.env": {
+      "mode": "0o600",
+      "owner": "root"
+    },
+    "radar.env": {
+      "mode": "0o600",
+      "owner": "root"
+    }
+  },
+  "yubie": {
+    "staging-api-1": "ccbfaf5546f9 2026-10-09T12:46:32.802829319Z healthy",
+    "staging-postgres-1": "6f8b9225ed8e 2026-10-09T06:24:17.008915491Z healthy"
+  },
+  "hostRebootPerformed": false,
+  "recoveryTest": "SIGKILL main indexer and referral; both automatically recovered with NRestarts=1 without removing guards or redeploying Vercel",
+  "listeners": "State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess\nLISTEN 0      4096      127.0.0.54:53        0.0.0.0:*          \nLISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          \nLISTEN 0      511        127.0.0.1:8799      0.0.0.0:*          \nLISTEN 0      511        127.0.0.1:8787      0.0.0.0:*          \nLISTEN 0      511        127.0.0.1:8788      0.0.0.0:*          \nLISTEN 0      511        127.0.0.1:8790      0.0.0.0:*          \nLISTEN 0      511        127.0.0.1:8791      0.0.0.0:*          \nLISTEN 0      4096         0.0.0.0:22        0.0.0.0:*          \nLISTEN 0      4096               *:443             *:*          \nLISTEN 0      4096            [::]:22           [::]:*          \nLISTEN 0      4096               *:80              *:*"
+}

@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-13T10:43:58.535417+00:00",
+  "https": [
+    {
+      "host": "retropick.xyz",
+      "trusted": true,
+      "tlsVersion": "TLSv1.3",
+      "subjectAltName": [
+        [
+          "DNS",
+          "retropick.xyz"
+        ]
+      ],
+      "notAfter": "Jan 10 15:04:21 2027 GMT",
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YR1"
+          ]
+        ]
+      ]
+    },
+    {
+      "host": "api-staging.retropick.xyz",
+      "trusted": true,
+      "tlsVersion": "TLSv1.3",
+      "subjectAltName": [
+        [
+          "DNS",
+          "api-staging.retropick.xyz"
+        ]
+      ],
+      "notAfter": "Jan 11 08:33:05 2027 GMT",
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YE2"
+          ]
+        ]
+      ]
+    }
+  ],
+  "httpRedirects": [
+    {
+      "host": "retropick.xyz",
+      "status": 308,
+      "location": "https://retropick.xyz/health"
+    },
+    {
+      "host": "api-staging.retropick.xyz",
+      "status": 308,
+      "location": "https://api-staging.retropick.xyz/health"
+    }
+  ]
+}

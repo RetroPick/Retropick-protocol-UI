@@ -1,0 +1,31 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ local referral capture is first touch, expires at 30 days and rejects malformed wallets (4.388498ms)
+✔ every fiat adapter fails closed for Monad Testnet MON and USDC and unqualified networks (6.426387ms)
+(node:21286) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ only one referral writer acquires a database; release allows restart (53.069411ms)
+✔ uncertain or invalid ownership is not silently removed (2.992975ms)
+✔ a legacy PID reused after a previous boot cannot prevent recovery (5.175432ms)
+(node:21292) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ approved origins sign their own domain and cannot exchange challenges (158.838839ms)
+✔ wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose (25.471507ms)
+✔ message tampering and expired challenges cannot establish attribution (8.146664ms)
+✔ concurrent verification consumes nonce once and existing referrer stays immutable (21.109453ms)
+✔ invalid addresses, self referral and unbounded first-touch dates fail closed (2.630154ms)
+✔ confirmed actor activity qualifies after association; volumes stay exact and separated by quote (16.54238ms)
+✔ full canonical replay removes orphaned qualification, launch count and volume (10.221335ms)
+✔ pagination error, malformed event and unconfirmed windows never partially replace projection (14.087156ms)
+✔ deep reorg revision replays from earliest association instead of retaining older orphaned rows (10.295532ms)
+✔ HTTP Origin, cookie ownership, invalid parameters, session expiry and logout boundaries (81.736741ms)
+✔ activity page size stays within the actual indexer API contract (7.733623ms)
+✔ multi-page activity keeps the cursor-bound query identical (10.682664ms)
+✔ canonical head falling below association clears orphaned qualification and records pending freshness (10.891373ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1837.405192

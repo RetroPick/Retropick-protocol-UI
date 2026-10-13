@@ -44,9 +44,14 @@ async function afterUrl(u) {
     let state = 'edge-not-ready';
     let authorizationBlocked = false;
     try {
-      if (await stagingReady(u)) {
-        const lastPath = resolve(runDir, 'staging-deploy.json');
-        const last = existsSync(lastPath) ? JSON.parse(readFileSync(lastPath, 'utf8')) : null;
+      const lastPath = resolve(runDir, 'staging-deploy.json');
+      const last = existsSync(lastPath) ? JSON.parse(readFileSync(lastPath, 'utf8')) : null;
+      if (last?.backendMode === 'stable') {
+        // A workstation tunnel must never replace the reviewed VPS origin.
+        const ready = await stagingReady(last.tunnelUrl) && await stagingReady(last.origin);
+        state = ready ? 'stable-backend-ready' : 'stable-backend-not-ready';
+        attempt = ready ? 0 : attempt + 1;
+      } else if (await stagingReady(u)) {
         if (!last) state = 'first-deployment-required';
         else if (last.tunnelUrl === u && await stagingReady(last.origin)) { state = 'ready'; attempt = 0; }
         else if (process.env.STAGING_AUTO_REDEPLOY !== '1') state = 'manual-redeploy-required';
@@ -67,6 +72,6 @@ async function afterUrl(u) {
     writeFileSync(resolve(runDir, 'reconciliation.json.tmp'), JSON.stringify({ tunnelUrl: u, state, attempt, checkedAt: new Date().toISOString() }) + '\n');
     renameSync(resolve(runDir, 'reconciliation.json.tmp'), resolve(runDir, 'reconciliation.json'));
     say(state);
-    await new Promise(resolve => setTimeout(resolve, state === 'ready' ? 30000 : reconciliationDelay(attempt, authorizationBlocked)));
+    await new Promise(resolve => setTimeout(resolve, state === 'ready' || state === 'stable-backend-ready' ? 30000 : reconciliationDelay(attempt, authorizationBlocked)));
   }
 }

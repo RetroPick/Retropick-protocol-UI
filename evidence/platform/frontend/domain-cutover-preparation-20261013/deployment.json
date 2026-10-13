@@ -1,0 +1,10 @@
+{
+  "url": "https://retropick-metropolis-retro-ui-staging-1sxm7pzpb-asyams-projects.vercel.app",
+  "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+  "sourceSha": "caf23208f6831b424b1cc51c0785ecf6bdeae264",
+  "tunnelUrl": "https://api-staging.retropick.xyz",
+  "backendMode": "stable",
+  "deploymentId": "dpl_9p4uikyzetTp3APK9mu9CY6WP7iR",
+  "deployedAt": "2026-10-13T10:11:47.593473+00:00",
+  "verification": "public alias 14/14 live Playwright and 10/10 supplemental checks"
+}

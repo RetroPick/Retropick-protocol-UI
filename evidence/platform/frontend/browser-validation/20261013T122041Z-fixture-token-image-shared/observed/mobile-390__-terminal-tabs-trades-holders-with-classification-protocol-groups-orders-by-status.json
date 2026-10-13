@@ -1,0 +1,12 @@
+{
+  "test": "fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status",
+  "project": "mobile-390",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 54
+}

@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-13T10:46:31.379Z",
+  "readOnly": true,
+  "fixtures": false,
+  "checks": [
+    {
+      "width": 1440,
+      "status": "PASS",
+      "rootUrl": "https://retropick.xyz/launchpad",
+      "referralPanel": "wallet connect required",
+      "pageErrors": [],
+      "unexpected502": []
+    },
+    {
+      "width": 390,
+      "status": "PASS",
+      "rootUrl": "https://retropick.xyz/launchpad",
+      "referralPanel": "wallet connect required",
+      "pageErrors": [],
+      "unexpected502": []
+    }
+  ]
+}

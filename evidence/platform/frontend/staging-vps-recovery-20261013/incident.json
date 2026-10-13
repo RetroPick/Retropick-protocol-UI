@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-13T09:06:58.493Z",
+  "localKernel": "Linux version 6.18.40.1-microsoft-standard-WSL2 (root@71c659030f6c) (gcc (GCC) 13.2.0, GNU ld (GNU Binutils) 2.41) #1 SMP PREEMPT_DYNAMIC Fri Jul 31 22:12:15 UTC 2026",
+  "bootAt": "2026-10-13T09:01:02.000Z",
+  "previousLockAt": "2026-10-13T08:55:52.651Z",
+  "previousLockPid": 560,
+  "observedPublicError": "502 DNS_HOSTNAME_NOT_FOUND",
+  "observedGatewayError": "502 STAGING_GATEWAY_UPSTREAM_UNAVAILABLE ECONNREFUSED",
+  "indexerFailure": "INDEXER_DB_LOCKED after PID-only file survived reboot; systemd restart limit exhausted",
+  "sshFailure": "Permission denied (publickey,password); ~/.ssh/retropick-agent.sock missing"
+}

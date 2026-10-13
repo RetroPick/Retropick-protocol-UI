@@ -1,0 +1,1 @@
+No backend mutation attempted. Optional SSH read could not authenticate: the configured agent socket exists but refuses connections. Public backend health remains verified. Last verified backend source: caf23208f6831b424b1cc51c0785ecf6bdeae264.

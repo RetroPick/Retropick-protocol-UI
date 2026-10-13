@@ -54,3 +54,16 @@ for Contabo inventory · 4) MetaMask publish+provision · 5) per-tx financial ap
 Code `695ae7764f72cb0fb5cfee5af205fc2975bcd32f` implements RPC budgeting/fallback and trading gates, one shared wallet picker, resilient launch terms/media, paginated creator discovery, and Mera Protected Earn enrollment/action signing. Local verification: SDK 46 pass / 2 intentional network skips; indexer 43 pass; dedicated recovery browsers 20 pass; full fixture campaign 266 pass / 40 intentional skips. Public deployment, rotation and sustained monitoring are tracked in [the incident report](../integration/stages/20261013-indexer-502-kuru-trading-incident.md).
 
 Mera is now implemented and locally tested; actual secure-origin hardware PRF recovery, fee-recipient handoff and protected financial receipts remain operator pending. APP_ONLY is bypassable outside RetroPick. No sponsor A–E gate is promoted by these results; prior evidence and outstanding qualifications stand. Quick-tunnel staging remains non-durable. Freeze begins October 14, 2026 02:59 WIB; submission 10:59 WIB remains subject to portal verification.
+
+## 2026-10-13 permanent Contabo staging
+
+The temporary WSL quick-tunnel arrangement above is superseded. Runtime source
+`84e954bdcff5651a5f808882eff6226fd6419f6a` now serves the unchanged public Vercel frontend through
+`https://api-staging.retropick.xyz`, with Namecheap DNS, Caddy HTTPS and isolated boot-enabled
+Contabo system services. SQLite history, media and radar state were preserved. Kernel-backed
+writer guards repair reboot/PID reuse; referral multi-page cursor sync is repaired.
+
+Public desktop/mobile checks pass 14/14 with retries disabled after isolated crash recovery.
+No Yubie service, contract, financial write or sponsor A–E qualification changed. Whole-host
+reboot was not performed; system boot dependencies and process recovery are verified.
+See [the current incident and monitoring report](../integration/stages/20261013-vps-recovery.md).

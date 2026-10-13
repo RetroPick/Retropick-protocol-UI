@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, rmSync, writeFileSync, utimesSync, existsSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createProviderPool, classifyFailure, redactEndpoint } from '../src/providers.ts';
@@ -82,16 +84,43 @@ test('rpcEndpoints is provider neutral and deduplicates', () => {
   assert.throws(() => rpcEndpoints({}), /required/);
 });
 
-test('only one indexer process may own a database; stale locks are reclaimed', () => {
+test('kernel writer lock excludes other connections and release cannot remove a newer lock', () => {
   const dir = mkdtempSync(join(tmpdir(), 'idx-lock-')); const file = join(dir, 'db.sqlite');
   try {
     const release = acquireDbLock(file);
     assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/, 'same process cannot acquire a second writer');
-    writeFileSync(`${file}.lock`, String(process.ppid)); // a live foreign pid
+    release();
+    const again = acquireDbLock(file);
+    release(); // duplicate cleanup must not unlock a replacement connection
     assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/);
-    writeFileSync(`${file}.lock`, '2147483646'); // dead pid → stale
-    const again = acquireDbLock(file); again(); release();
+    again();
+    assert.equal(existsSync(`${file}.writer-lock.sqlite`), true, 'guard inode must remain');
   } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('legacy pre-reboot PID reuse cannot block startup; live legacy writers remain protected', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'idx-lock-upgrade-')); const file = join(dir, 'db.sqlite');
+  try {
+    writeFileSync(`${file}.lock`, String(process.pid));
+    assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/);
+    utimesSync(`${file}.lock`, new Date(0), new Date(0)); // alive PID, but owner was from a prior boot
+    const release = acquireDbLock(file); release();
+    assert.equal(existsSync(`${file}.lock`), false);
+    writeFileSync(`${file}.lock`, '2147483646');
+    const reclaimed = acquireDbLock(file); reclaimed();
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('SIGKILL releases kernel writer lock without cleanup or PID-file deletion', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'idx-lock-kill-')); const file = join(dir, 'db.sqlite');
+  const module = new URL('../src/server.ts', import.meta.url).href;
+  const child = spawn(process.execPath, ['--experimental-strip-types', '--input-type=module', '-e', `import {acquireDbLock} from ${JSON.stringify(module)}; acquireDbLock(${JSON.stringify(file)}); process.send('locked'); setInterval(()=>{},1000);`], { stdio: ['ignore', 'ignore', 'pipe', 'ipc'] });
+  try {
+    await once(child, 'message', { signal: AbortSignal.timeout(10000) });
+    assert.throws(() => acquireDbLock(file), /INDEXER_DB_LOCKED/);
+    const exited = once(child, 'exit'); child.kill('SIGKILL'); await exited;
+    const release = acquireDbLock(file); release();
+  } finally { if (child.exitCode === null && child.signalCode === null) child.kill('SIGKILL'); rmSync(dir, { recursive: true, force: true }); }
 });
 
 test('long catch-up publishes consistent v2 snapshots progressively and reaches the head', async () => {

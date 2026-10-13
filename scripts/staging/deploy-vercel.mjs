@@ -35,6 +35,7 @@ const LEGACY = 'retropick-metropolis';
 const args = process.argv.slice(2);
 const flag = (name) => { const i = args.indexOf(name); return i === -1 ? null : args[i + 1]; };
 const DRY = args.includes('--dry-run');
+const CANDIDATE = args.includes('--candidate');
 
 function sh(cmd, argv, opts = {}) {
   return execFileSync(cmd, argv, { cwd: repo, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], ...opts }).trim();
@@ -55,7 +56,7 @@ export function publicEnv(origin) {
   if (!/^https:\/\/[^/]+$/.test(origin)) throw new Error(`STAGING_ORIGIN must be an absolute https origin without path: ${origin}`);
   return [
     ['VITE_DATA_MODE', 'live'],
-    ['VITE_INDEXER_URL', origin],
+    ['VITE_INDEXER_URL', 'same-origin'],
     ['VITE_MONAD_RPC_FALLBACK_URL', 'https://rpc.ankr.com/monad_testnet'],
   ];
 }
@@ -66,6 +67,13 @@ export function deploymentUrl(output) {
   const candidate = value?.deployment?.url ?? output.trim();
   if (!/^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(candidate)) throw Error('Vercel did not return a valid deployment URL.');
   return candidate;
+}
+
+/** Stable VPS origins take precedence over the rotating workstation tunnel. */
+export function backendOrigin(requested, pinned, quick) {
+  const value = (requested ?? pinned ?? quick)?.trim().replace(/\/$/, '');
+  if (!value || !/^https:\/\/[a-z0-9.-]+$/i.test(value)) throw Error('Expected a public HTTPS backend origin without credentials, port, path, or query.');
+  return value;
 }
 
 async function upsertEnv(cwd, key, value, target) {
@@ -86,8 +94,11 @@ async function upsertEnv(cwd, key, value, target) {
 async function main() {
   if (PROJECT === LEGACY || PROJECT !== 'retropick-metropolis-retro-ui-staging') throw Error('Refusing: not the authorized staging project.');
   const tunnelPath = resolve(runDir, 'tunnel-url');
-  if (!existsSync(tunnelPath)) throw Error('Missing tunnel URL.');
-  const tunnelUrl = readFileSync(tunnelPath, 'utf8').trim().replace(/\/$/, '');
+  const pinnedPath = resolve(runDir, 'backend-origin');
+  const requestedBackend = flag('--backend-origin') ?? process.env.STAGING_BACKEND_ORIGIN;
+  const pinnedBackend = existsSync(pinnedPath) ? readFileSync(pinnedPath, 'utf8') : null;
+  const tunnelUrl = backendOrigin(requestedBackend, pinnedBackend, existsSync(tunnelPath) ? readFileSync(tunnelPath, 'utf8') : null);
+  const backendMode = requestedBackend || pinnedBackend ? 'stable' : 'quick-tunnel';
   const vercelJson = renderVercelJson(readFileSync(resolve(here, 'vercel.template.json'), 'utf8'), tunnelUrl);
   // Source SHA: explicit --sha, else the SHA of the last staging deploy (tunnel-rotation
   // redeploys must not silently ship new code), else origin/main.
@@ -96,6 +107,7 @@ async function main() {
   const sha = sh('git', ['rev-parse', flag('--sha') ?? last?.sourceSha ?? 'origin/main']);
   console.log(`tunnel: ${tunnelUrl}\norigin: ${ORIGIN}\nsource sha: ${sha}`);
   if (DRY) { console.log(vercelJson); return; }
+  if (!await stagingReady(tunnelUrl)) throw Error('Backend not ready: verify public HTTPS, current chain head and published indexer projection before deploying.');
 
   // Clean, SHA-pinned worktree (never the dirty dev checkout). /tmp can be cleared between
   // runs while git still has the worktree registered — prune stale registrations first and
@@ -114,6 +126,27 @@ async function main() {
   writeFileSync(resolve(dir, 'vercel.json'), vercelJson);
   mkdirSync(resolve(dir, 'apps/retro-ui/public'), { recursive: true });
   writeFileSync(resolve(dir, 'apps/retro-ui/public/release.json'), JSON.stringify({ sourceSha: sha, chainId: 10143 }) + '\n');
+
+  if (CANDIDATE) {
+    // Build production artifacts without moving ANY existing domain or changing
+    // project environment values. This is the reviewable pre-cutover release.
+    const scope = process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects';
+    const inspect = target => JSON.parse(sh('vercel', ['inspect', target, '--scope', scope, '--json'], { cwd: dir, timeout: 30000 }));
+    const previous = inspect(ORIGIN);
+    const buildEnv = publicEnv(ORIGIN).flatMap(([key, value]) => ['--build-env', `${key}=${value}`]);
+    const url = deploymentUrl(sh('vercel', ['deploy', '--prod', '--skip-domain', '--yes', '--scope', scope, ...buildEnv], { cwd: dir, timeout: 600000 }));
+    // Unique production candidates can be protected even when the public alias
+    // is open. Use the authenticated CLI; never disable deployment protection.
+    const candidateFetch = async target => new Response(sh('vercel', ['curl', new URL(target).pathname + new URL(target).search, '--deployment', url, '--scope', scope, '--', '--fail', '--silent', '--show-error', '--max-time', '15'], { cwd: dir, timeout: 30000 }), { status: 200 });
+    const release = await candidateFetch(url + '/release.json').then(response => response.json());
+    const deployment = inspect(url);
+    if (release.sourceSha !== sha || deployment.name !== PROJECT || deployment.readyState !== 'READY' || !await stagingReady(url, candidateFetch)) throw Error('Candidate deployment verification failed.');
+    if (inspect(ORIGIN).id !== previous.id) throw Error('Canonical staging alias changed while validating candidate; inspect before proceeding.');
+    const record = { url, sourceSha: sha, backendOrigin: tunnelUrl, candidate: true, promoted: false, canonicalDeploymentId: previous.id, deployedAt: new Date().toISOString() };
+    writeFileSync(resolve(runDir, 'candidate-deploy.json'), JSON.stringify(record, null, 2) + '\n');
+    console.log(`candidate: ${url}\nsource sha: ${sha}\nexisting domains retained`);
+    return;
+  }
 
   // Env: only rotate when the public value actually changed.
   const statePath = resolve(runDir, 'vercel-env.json');
@@ -146,7 +179,11 @@ async function main() {
     if (!verified) await new Promise(resolve => setTimeout(resolve, 5000));
   }
   if (!verified) throw Error('Deployment submitted, but public alias verification failed; success record retained unchanged.');
-  const record = { url, origin: ORIGIN, sourceSha: sha, tunnelUrl, deployedAt: new Date().toISOString() };
+  const record = { url, origin: ORIGIN, sourceSha: sha, tunnelUrl, backendMode, deployedAt: new Date().toISOString() };
+  if (backendMode === 'stable') {
+    writeFileSync(pinnedPath + '.tmp', tunnelUrl + '\n');
+    renameSync(pinnedPath + '.tmp', pinnedPath);
+  }
   const recordPath = resolve(runDir, 'staging-deploy.json');
   writeFileSync(recordPath + '.tmp', JSON.stringify(record, null, 2) + '\n');
   renameSync(recordPath + '.tmp', recordPath);

@@ -11,7 +11,7 @@ Token/launch descriptive metadata stays canonical onchain exactly as deployed: `
 1. **Primary — IPFS via Pinata.** A dedicated `apps/media-service` (Node 24, `node:http` only, loopback-bound like the other product services, port 8790) accepts the launcher browser's multipart upload (same-origin `/api/media/upload`, dev-proxied by Vite, Vercel rewrite in production), validates it (magic-byte sniffing for PNG/JPEG/GIF/WebP, 3 MiB cap, origin allowlist, 12 uploads/min per peer), and pins the bytes via `POST https://api.pinata.cloud/pinning/pinFileToIPFS` using a server-side `PINATA_JWT` (gitignored env only). It returns `ipfs://<cid>` (~53 bytes, comfortably inside the onchain 512-byte `logo` cap), which the launcher writes into the launch calldata unchanged. This is the pump.fun-style pattern; the URI is durable and host-independent.
 2. **Fallback — local content-addressed store.** With no `PINATA_JWT` configured the same service stores files under `MEDIA_DIR` keyed by sha256 and serves them immutably at `MEDIA_PUBLIC_BASE/api/media/<hash>.<ext>`, returning that HTTP URI. Zero third-party accounts; adequate for development. HTTP URIs may be blocked as mixed content on HTTPS pages — the UI falls back to the letter glyph.
 
-The client (retro-ui) downscales to ≤1024px and re-encodes ≤256 KiB WebP before upload (GIFs ≤512 KiB pass through to preserve animation), then renders any `https://`/`http://`/`ipfs://`/`ar://` logo through public gateways (`ipfs.io` default, one `dweb.link` retry) with a letter-glyph fallback so broken/slow media never blocks trading or detail pages.
+The client (retro-ui) downscales to ≤1024px and re-encodes ≤256 KiB WebP before upload (GIFs ≤512 KiB pass through to preserve animation), then renders any `https://`/`http://`/`ipfs://`/`ar://` logo through public gateways (`gateway.pinata.cloud` default, then distinct `ipfs.io` and `dweb.link` retries, each bounded to 8 seconds) with a letter-glyph fallback so broken/slow media never blocks trading or detail pages.
 
 The indexer is unchanged (GET-only; it already persists `logo` from the token's `getTokenInfo()` and serves it on `/v1/launches*`). Onchain economic state is never moved into metadata storage. Contracts are untouched.
 
@@ -32,3 +32,22 @@ The indexer is unchanged (GET-only; it already persists `logo` from the token's 
 
 - Production: run `apps/media-service` on the worker host beside the indexer behind HTTPS, add a Vercel rewrite for `/api/media`, set `MEDIA_ORIGIN` to the frontend origin, and set `PINATA_JWT` to activate IPFS mode.
 - Serving untrusted media: responses carry `X-Content-Type-Options: nosniff` and `Content-Security-Policy: default-src 'none'; sandbox` with immutable caching; files are keyed by content hash (client filenames never used).
+
+
+## Image delivery verification (2026-10-13)
+
+The existing RETRO token `0xf8f17922599136b44e175eec9a43123c000f3366` has
+`ipfs://Qmc3ZojHMWXFkautyJvnud1YzDN3jNvPH7QWb39bYmy9aL` in both the contract's
+`logo()` and the indexed feed. Chromium on the public frontend could not load this
+CID through either ipfs.io or dweb.link (`ERR_BLOCKED_BY_RESPONSE.NotSameOrigin`).
+Pinata's public gateway returned the actual 52,540-byte WebP and Chromium decoded
+it at 1024×1024. The default rendering gateway now follows this observed working
+route; `VITE_IPFS_GATEWAY` still supports a dedicated gateway override. Onchain
+URIs and storage authority are unchanged. Gateway choice is delivery configuration,
+not an image migration or a guarantee of public-gateway availability.
+
+Creation previews and dashboard/detail identities share bounded, deduplicated
+retries and a glyph fallback. Full IPFS/Arweave content paths are preserved.
+See `evidence/platform/frontend/token-image-20261013/REPORT.md` for tests and
+runtime/deployment boundaries. Pinata documents the public gateway format at
+https://knowledge.pinata.cloud/en/articles/5666429-dedicated-gateways.

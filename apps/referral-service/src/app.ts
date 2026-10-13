@@ -21,7 +21,7 @@ function fields(value: Record<string,unknown>, allowed: string[]) {
   if(Object.keys(value).some(k=>!allowed.includes(k)))throw new ApiError(400,'INVALID_PARAMETERS');
 }
 
-export function createReferralApp({store,auth,sync,secure=false,clock=Date.now}:{store:ReferralStore;auth:ReferralAuth;sync?:AttributionSync;secure?:boolean;clock?:()=>number}) {
+export function createReferralApp({store,auth,authByOrigin,sync,secure=false,clock=Date.now}:{store:ReferralStore;auth:ReferralAuth;authByOrigin?:ReadonlyMap<string,ReferralAuth>;sync?:AttributionSync;secure?:boolean;clock?:()=>number}) {
   const rates=new Map<string,{count:number;until:number}>();
   const cookie=(token:string,clear=false)=>`${COOKIE}=${token}; Path=${PREFIX}; HttpOnly; SameSite=Strict; Max-Age=${clear?0:SESSION_MS/1000}${secure?'; Secure':''}`;
   return createServer(async(req,res)=>{
@@ -35,7 +35,8 @@ export function createReferralApp({store,auth,sync,secure=false,clock=Date.now}:
       const expectedMethod=path.endsWith('/summary')?'GET':'POST';
       if(req.method!==expectedMethod)throw new ApiError(405,'METHOD_NOT_ALLOWED');
       const origin=req.headers.origin;
-      if((expectedMethod==='POST' && origin!==auth.origin)||(origin!==undefined && origin!==auth.origin))throw new ApiError(403,'INVALID_ORIGIN');
+      const requestAuth=origin===undefined?auth:(origin===auth.origin?auth:authByOrigin?.get(origin));
+      if((expectedMethod==='POST' && origin===undefined)||!requestAuth)throw new ApiError(403,'INVALID_ORIGIN');
       const now=clock();const rateKey=req.socket.remoteAddress??'unknown';let rate=rates.get(rateKey);
       if(!rate||rate.until<=now){rate={count:0,until:now+60000};rates.set(rateKey,rate);}
       if(++rate.count>60)throw new ApiError(429,'RATE_LIMITED');
@@ -43,12 +44,12 @@ export function createReferralApp({store,auth,sync,secure=false,clock=Date.now}:
       store.cleanup(now);
       if(path.endsWith('/challenge')){
         const input=await body(req);fields(input,['wallet','referrer','firstSeenAt']);
-        const c=auth.challenge({wallet:input.wallet,referrer:input.referrer,firstSeenAt:input.firstSeenAt});
+        const c=requestAuth.challenge({wallet:input.wallet,referrer:input.referrer,firstSeenAt:input.firstSeenAt});
         send(200,{challengeId:c.id,message:c.message,expiresAt:new Date(c.expiresAt).toISOString(),chainId:10143});return;
       }
       if(path.endsWith('/verify')){
         const input=await body(req);fields(input,['challengeId','signature']);
-        const result=await auth.verify({challengeId:input.challengeId,signature:input.signature});
+        const result=await requestAuth.verify({challengeId:input.challengeId,signature:input.signature});
         const previous=sessionToken(req);if(previous)store.logout(previous);
         res.setHeader('Set-Cookie',cookie(result.token));send(200,{wallet:result.wallet,earningsEnabled:false});return;
       }

@@ -1,0 +1,264 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.local/node-v24.11.0/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "media-upload.spec.ts",
+      "--grep",
+      "existing RETRO",
+      "--project=desktop-1440",
+      "--project=mobile-390",
+      "--workers=1",
+      "--retries=0"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261013T122304Z-live-token-image-real-final/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-live-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-live-dist --port 4318 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4318/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/media-upload.spec.ts",
+      "file": "live/media-upload.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@live existing RETRO logo decodes on dashboard and token page without media stubs",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:23:14.651Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-42c0586673b38bcc3f7b",
+          "file": "live/media-upload.spec.ts",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "@live existing RETRO logo decodes on dashboard and token page without media stubs",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:23:37.177Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c8b7a4d2ea114b4336a7-b86acc24399a7fd8990b",
+          "file": "live/media-upload.spec.ts",
+          "line": 123,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T12:23:06.836Z",
+    "duration": 53459.176,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
