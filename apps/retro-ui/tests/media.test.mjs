@@ -9,7 +9,7 @@ test('resolveMediaSrc maps onchain logo URIs to browser-loadable URLs',()=>{
   assert.equal(resolveMediaSrc(''),null);assert.equal(resolveMediaSrc(null),null);assert.equal(resolveMediaSrc(undefined),null);
   assert.equal(resolveMediaSrc('https://example.com/logo.png'),'https://example.com/logo.png');
   assert.equal(resolveMediaSrc('http://127.0.0.1:8790/api/media/abcd.png'),'http://127.0.0.1:8790/api/media/abcd.png'); // Local media-service URIs pass through.
-  assert.equal(resolveMediaSrc(`ipfs://${CID}`),`https://ipfs.io/ipfs/${CID}`);
+  assert.equal(resolveMediaSrc(`ipfs://${CID}`),`https://gateway.pinata.cloud/ipfs/${CID}`);
   assert.equal(resolveMediaSrc('ar://S4IDxnXU0NbAvlUffY00lZqmi5l6IfHspdaM1QSCxntU'),'https://arweave.net/S4IDxnXU0NbAvlUffY00lZqmi5l6IfHspdaM1QSCxntU');
   assert.equal(resolveMediaSrc('  https://example.com/x.png  '),'https://example.com/x.png'); // Trimmed.
   assert.equal(resolveMediaSrc('ftp://example.com/x'),null);
@@ -20,13 +20,13 @@ test('resolveMediaSrc maps onchain logo URIs to browser-loadable URLs',()=>{
   assert.equal(resolveMediaSrc('https://evil.trycloudflare.com/other/x.png'),'https://evil.trycloudflare.com/other/x.png'); // Only content-addressed media paths are rewritten.
 });
 
-test('ipfs gateway candidates retry once on the fallback gateway',()=>{
-  const primary=`https://ipfs.io/ipfs/${CID}`;
-  assert.deepEqual(ipfsGatewayCandidates(primary),[primary,`https://dweb.link/ipfs/${CID}`]);
+test('ipfs gateway candidates try distinct gateways with full paths',()=>{
+  const primary=`https://gateway.pinata.cloud/ipfs/${CID}`;
+  assert.deepEqual(ipfsGatewayCandidates(primary),[primary,`https://ipfs.io/ipfs/${CID}`,`https://dweb.link/ipfs/${CID}`]);
   const plain='https://example.com/logo.png';
   assert.deepEqual(ipfsGatewayCandidates(plain),[plain]);
   const alreadyFallback=`https://dweb.link/ipfs/${CID}`;
-  assert.deepEqual(ipfsGatewayCandidates(alreadyFallback),[alreadyFallback]); // No self-duplicate when the fallback already is primary.
+  assert.deepEqual(ipfsGatewayCandidates(alreadyFallback),[alreadyFallback,primary,`https://ipfs.io/ipfs/${CID}`]); // No duplicate retries.
 });
 
 test('isLogoUri admits https, http (local media service), ipfs and ar with hostnames only',()=>{
@@ -47,9 +47,26 @@ test('uploadLogo maps service errors to friendly messages and returns the uri on
     await assert.rejects(uploadLogo(blob),/unreachable.*paste a logo URI/);
     globalThis.fetch=async(_input,init)=>{ // Success must post multipart with a file field.
       const form=init.body;assert.ok(form instanceof FormData);assert.ok(form.get('file') instanceof File);
-      return Response.json({uri:`ipfs://${CID}`,https:`https://ipfs.io/ipfs/${CID}`,hash:'a'.repeat(64),bytes:4,mime:'image/png',mode:'pinata'});
+      return Response.json({uri:`ipfs://${CID}`,https:`https://gateway.pinata.cloud/ipfs/${CID}`,hash:'a'.repeat(64),bytes:4,mime:'image/png',mode:'pinata'});
     };
     const result=await uploadLogo(blob);
     assert.equal(result.uri,`ipfs://${CID}`);assert.equal(result.mode,'pinata');
   }finally{globalThis.fetch=originalFetch;}
+});
+
+
+test('IPFS and Arweave directory paths survive resolution and gateway retries',()=>{
+  for(const uri of [`ipfs://${CID}/images/logo.png?download=1#preview`,`ipfs://ipfs/${CID}/images/logo.png?download=1#preview`]) {
+    const src=resolveMediaSrc(uri);
+    assert.equal(src,`https://gateway.pinata.cloud/ipfs/${CID}/images/logo.png?download=1#preview`);
+    assert.deepEqual(ipfsGatewayCandidates(src),[
+      src,`https://ipfs.io/ipfs/${CID}/images/logo.png?download=1#preview`,`https://dweb.link/ipfs/${CID}/images/logo.png?download=1#preview`,
+    ]);
+  }
+  assert.equal(resolveMediaSrc('ar://transaction/images/logo.png'),'https://arweave.net/transaction/images/logo.png');
+  for(const plain of ['blob:http://localhost/image','/api/media/image.png','https://example.com/logo.png?next=/ipfs/foo','https://example.com/assets/ipfs/foo']) {
+    assert.deepEqual(ipfsGatewayCandidates(plain),[plain]);
+  }
+  const custom=`https://dedicated.example/ipfs/${CID}`;
+  assert.deepEqual(ipfsGatewayCandidates(custom),[custom,`https://gateway.pinata.cloud/ipfs/${CID}`,`https://ipfs.io/ipfs/${CID}`,`https://dweb.link/ipfs/${CID}`]);
 });

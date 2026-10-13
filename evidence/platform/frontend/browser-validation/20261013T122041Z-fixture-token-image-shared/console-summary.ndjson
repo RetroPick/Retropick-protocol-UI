@@ -1,0 +1,54 @@
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED post-only toggle switches order policy","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create prediction market wizard still renders (regression)","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke launchpad renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-graduated renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke token-active renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prism renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke prediction renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke create renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/smoke.spec.ts > @smoke earn renders","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal dark > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal ACTIVE renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATION_READY renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATING renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > terminal light > @terminal GRADUATED renders shared terminal with DEMO provenance","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE ticket: Market/Limit then Buy/Sell; limit locked with reason; presets and slippage","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED ticket: limit enabled with GTC, margin shortfall shows two-step funding","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal chart: Line/Candles and range vs interval are independent controls","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal deposit rejected → no order; order rejected → \"Margin deposited; order not placed\" → retry without re-deposit","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal empty scenarios: no holders, no orders, stale indexer, slow RPC","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal ACTIVE orders tab is disabled until graduation","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal tabs: trades, holders with classification, protocol groups, orders by status","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED post-only toggle switches order policy","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; no-book shows empty state","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"fixture/token-terminal.spec.ts > @terminal mobile: sticky Trade bar opens bottom-sheet ticket","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

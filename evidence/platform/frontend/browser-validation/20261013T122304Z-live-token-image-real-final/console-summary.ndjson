@@ -1,0 +1,2 @@
+{"test":"live/media-upload.spec.ts > @live existing RETRO logo decodes on dashboard and token page without media stubs","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/media-upload.spec.ts > @live existing RETRO logo decodes on dashboard and token page without media stubs","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
