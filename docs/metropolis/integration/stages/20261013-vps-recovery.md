@@ -1,7 +1,7 @@
 # 2026-10-13 — repeated 502 root cause and permanent VPS recovery
 
 Status: **PASS** — permanent route, public indexer and sustained monitoring verified.
-Branch: `codex/metropolis-p0-recovery`; draft PR [31](https://github.com/RetroPick/retropick-protocol/pull/31).
+Branch: `codex/metropolis-p0-recovery`; PR [31](https://github.com/RetroPick/retropick-protocol/pull/31).
 Runtime source: `84e954bdcff5651a5f808882eff6226fd6419f6a`.
 
 ## Actual serving path
