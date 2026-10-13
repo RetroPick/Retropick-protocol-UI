@@ -66,13 +66,13 @@ Call log:
 
 ```ts
   1   | import { test, expect } from '@playwright/test';
-  2   | 
+  2   |
   3   | // Read-only checks against the PUBLIC staging deployment. Live mode only: no wallet,
   4   | // no signing, no /api writes. Asserts real data (not fixtures), SPA deep links, the
   5   | // referral/media rewrite path, and honest degradation states.
-  6   | 
+  6   |
   7   | const GRADUATED_TOKEN = '0x30ccb65006665022dfc97bb5c1985610503fd1cf'; // evidenced launch
-  8   | 
+  8   |
   9   | test('staging serves the live retro-ui build (no DEMO/mock leakage on discovery)', async ({ page }) => {
   10  |   await page.goto('/launchpad');
   11  |   const terminal = page.locator('[data-testid="discovery"], main').first();
@@ -83,7 +83,7 @@ Call log:
   16  |   // Real indexed rows eventually render (indexer is live through the tunnel).
   17  |   await expect(page.locator('a[href^="/launchpad/token/0x"]').first()).toBeVisible({ timeout: 30_000 });
   18  | });
-  19  | 
+  19  |
   20  | test('SPA deep link renders the graduated token terminal with Kuru depth + orders tab', async ({ page }) => {
   21  |   await page.goto(`/launchpad/token/${GRADUATED_TOKEN}`);
   22  |   const term = page.getByTestId('token-terminal');
@@ -105,7 +105,7 @@ Call log:
   37  |   // Orders tab is enabled after graduation.
   38  |   await expect(page.getByRole('tab', { name: 'Orders' })).toBeEnabled();
   39  | });
-  40  | 
+  40  |
   41  | test('Earn hub renders with the Mera Vault tab mounted', async ({ page }) => {
   42  |   await page.goto('/earn');
   43  |   const hub = page.getByTestId('earn-hub');
@@ -118,7 +118,7 @@ Call log:
   50  |   await expect(page.getByTestId('vault-create')).toBeVisible();
   51  |   await expect(page.getByTestId('vault-disclosure')).toContainText(/never grants spending authority/i);
   52  | });
-  53  | 
+  53  |
   54  | test('referral rewrite path serves the backend through the same origin', async ({ page, request }) => {
   55  |   const health = await request.get('/api/referrals/health');
   56  |   expect(health.status()).toBe(200);
@@ -133,7 +133,7 @@ Call log:
   65  |   await expect(page2.getByTestId('earn-hub')).toBeVisible({ timeout: 30_000 });
   66  |   expect(errors).toEqual([]);
   67  | });
-  68  | 
+  68  |
   69  | test('staging has no uncaught console errors and no horizontal overflow (both viewports)', async ({ page }) => {
   70  |   const errors: string[] = [];
   71  |   page.on('pageerror', (e) => errors.push(String(e)));
@@ -145,7 +145,7 @@ Call log:
   77  |   expect(overflow, 'no horizontal overflow').toBe(false);
   78  |   expect(errors).toEqual([]);
   79  | });
-  80  | 
+  80  |
   81  | test('wallet connect prompts the EIP-6963 picker (no implicit connect), read-only', async ({ page }) => {
   82  |   await page.goto(`/launchpad/token/${GRADUATED_TOKEN}`);
   83  |   await expect(page.getByTestId('token-terminal')).toBeVisible({ timeout: 30_000 });
@@ -157,7 +157,7 @@ Call log:
   89  |   await expect(page.getByRole('heading', { name: 'Connect a wallet' })).toBeVisible();
   90  |   await expect(page.getByText(/No wallet found/)).toBeVisible();
   91  | });
-  92  | 
+  92  |
   93  | test('public release and indexer projection match the reviewed source', async ({ request }) => {
   94  |   const release = await request.get('/release.json'); expect(release.status()).toBe(200);
   95  |   const record = await release.json(); expect(record.chainId).toBe(10143);
@@ -168,5 +168,5 @@ Call log:
   100 |   expect(value.freshness.chainId).toBe(10143); expect(value.freshness.source).toBe('MONAD_EVENT_INDEXER');
   101 |   expect(value.freshness.lagBlocks).toBeLessThanOrEqual(64);
   102 | });
-  103 | 
+  103 |
 ```
