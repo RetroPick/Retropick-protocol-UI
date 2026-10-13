@@ -74,3 +74,14 @@ samples with no failure. Both origins are supported, and the waitlist apex hash 
 Domain ownership movement/attachment and actual apex browser verification remain pending explicit
 approval. Hardware PRF and financial/sponsor gates are unchanged. See
 [CUSTOM-DOMAIN-CUTOVER-READINESS.md](CUSTOM-DOMAIN-CUTOVER-READINESS.md).
+
+## 2026-10-13 live apex and launch economics correction
+
+The operator attached the verified apex to the canonical project. Actual apex cutover reads
+passed14/14; that suite did not cover create economics. SDK quote discovery incorrectly treated
+the deployed registry UnsupportedQuote rejection for WMON as total terms failure. The corrected
+frontend `346366c093010b0b3eda26fc53f866980bcf9e15` now serves both apex and retained staging alias:
+16/16 live desktop/mobile tests, including Economics→Review, and11/11 monitoring samples pass.
+Only decoded admission rejection is skipped; unrelated failures remain fatal. No DNS, backend
+service or contract change, or financial transaction, occurred. See
+[the scoped incident report](../integration/stages/20261013-launch-terms-recovery.md).

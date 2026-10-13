@@ -1,0 +1,32 @@
+{
+  "domains": [
+    {
+      "name": "retropick.xyz",
+      "apexName": "retropick.xyz",
+      "projectId": "prj_dKwt5xQUlhZg6shbOWyFvZbZXSIO",
+      "redirect": null,
+      "redirectStatusCode": null,
+      "gitBranch": null,
+      "customEnvironmentId": null,
+      "updatedAt": 1791888017291,
+      "createdAt": 1791887656201,
+      "verified": true
+    },
+    {
+      "name": "retropick-metropolis-retro-ui-stagi.vercel.app",
+      "apexName": "vercel.app",
+      "projectId": "prj_dKwt5xQUlhZg6shbOWyFvZbZXSIO",
+      "redirect": null,
+      "gitBranch": null,
+      "customEnvironmentId": null,
+      "updatedAt": 1791700726198,
+      "createdAt": 1791700726198,
+      "verified": true
+    }
+  ],
+  "pagination": {
+    "count": 2,
+    "next": null,
+    "prev": 1791887656201
+  }
+}

@@ -1,5 +1,8 @@
 # CUSTOM DOMAIN CUTOVER READINESS REPORT
 
+Historical preparation checkpoint. The operator has since attached the apex and authorized
+read-only validation. See [the actual public post-cutover results](CUSTOM-DOMAIN-POST-CUTOVER-VALIDATION.md).
+
 2026-10-13 — **READY FOR RETROPICK.XYZ CUTOVER** (preparation checkpoint only).
 The staging promotion is complete. The apex domain remains the existing waitlist; domain
 movement/attachment requires the user's explicit approval and operator action.

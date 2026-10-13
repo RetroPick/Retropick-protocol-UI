@@ -1,0 +1,501 @@
+{
+  "at": "2026-10-13T10:44:59.598Z",
+  "origin": "https://retropick.xyz",
+  "sourceSha": "caf23208f6831b424b1cc51c0785ecf6bdeae264",
+  "readOnly": true,
+  "fixtures": false,
+  "requestInterception": false,
+  "checks": [
+    {
+      "name": "real apex, stable backend and retained staging API routes",
+      "status": "PASS",
+      "responses": [
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/health",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/v1/launches?limit=100",
+          "status": 200,
+          "rows": 9,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/v1/pairs",
+          "status": 200,
+          "rows": 1,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/v1/activity?limit=100",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/api/referrals/health",
+          "status": 200
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/api/media/health",
+          "status": 200
+        },
+        {
+          "origin": "https://retropick.xyz",
+          "path": "/api/radar/health",
+          "status": 200,
+          "freshness": {
+            "headHeight": 70661513,
+            "lastEventBlock": 70661206,
+            "cursorBlock": 70661507,
+            "lagBlocks": 6,
+            "headMinusEvent": 307
+          }
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/health",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/v1/launches?limit=100",
+          "status": 200,
+          "rows": 9,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/v1/pairs",
+          "status": 200,
+          "rows": 1,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/v1/activity?limit=100",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/api/referrals/health",
+          "status": 200
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/api/media/health",
+          "status": 200
+        },
+        {
+          "origin": "https://api-staging.retropick.xyz",
+          "path": "/api/radar/health",
+          "status": 200,
+          "freshness": {
+            "headHeight": 70661513,
+            "lastEventBlock": 70661206,
+            "cursorBlock": 70661514,
+            "lagBlocks": 0,
+            "headMinusEvent": 307
+          }
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/health",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/v1/launches?limit=100",
+          "status": 200,
+          "rows": 9,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/v1/pairs",
+          "status": 200,
+          "rows": 1,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/v1/activity?limit=100",
+          "status": 200,
+          "freshness": {
+            "chainId": 10143,
+            "indexedBlock": 70661493,
+            "indexedBlockHash": "0x9e6a1905b6e0095dee524cfcfa393f5981267a0db449d805dff9f55b25d860a8",
+            "headBlock": 70661501,
+            "confirmations": 8,
+            "lagBlocks": 8,
+            "indexedAt": "2026-10-13T10:45:09.126Z",
+            "syncing": false,
+            "error": null,
+            "source": "MONAD_EVENT_INDEXER",
+            "projectionVersion": 2,
+            "reorgRevision": 0,
+            "beneficiaryIndexedBlock": 70661493
+          }
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/api/referrals/health",
+          "status": 200
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/api/media/health",
+          "status": 200
+        },
+        {
+          "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+          "path": "/api/radar/health",
+          "status": 200,
+          "freshness": {
+            "headHeight": 70661519,
+            "lastEventBlock": 70661206,
+            "cursorBlock": 70661514,
+            "lagBlocks": 5,
+            "headMinusEvent": 313
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact public release and unauthenticated referral boundary",
+      "status": "PASS",
+      "release": {
+        "sourceSha": "caf23208f6831b424b1cc51c0785ecf6bdeae264",
+        "chainId": 10143
+      },
+      "referralStatus": 401,
+      "error": "AUTHENTICATION_REQUIRED"
+    },
+    {
+      "name": "existing media byte preservation through apex",
+      "status": "PASS",
+      "path": "/api/media/43d7651d1dbf950196d5ddff5a1b02ea438d1626f4f6f7131efbd45518eccd3e.webp",
+      "bytes": 207624,
+      "sha256": "43d7651d1dbf950196d5ddff5a1b02ea438d1626f4f6f7131efbd45518eccd3e"
+    },
+    {
+      "name": "real apex browser RPC, market reads, wallet and Mera origin 1440",
+      "status": "PASS",
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "2536",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "content-encoding": "br",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: blob:; connect-src 'self' https://testnet-rpc.monad.xyz https://rpc.ankr.com; worker-src 'self' blob:; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 10:45:15 GMT",
+        "etag": "W/\"32e1ee2bc264b795a16e3ab421e0adf4\"",
+        "last-modified": "Tue, 13 Oct 2026 10:02:58 GMT",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), publickey-credentials-get=(self), publickey-credentials-create=(self)",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "sin1::5nt8q-1791888315272-5c07c419119a"
+      },
+      "rpc": [
+        {
+          "url": "https://testnet-rpc.monad.xyz",
+          "status": 200,
+          "body": [
+            {
+              "jsonrpc": "2.0",
+              "id": 1,
+              "result": "0x279f"
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 2,
+              "result": "0x436359c"
+            }
+          ]
+        },
+        {
+          "url": "https://rpc.ankr.com/monad_testnet",
+          "status": 200,
+          "body": [
+            {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": "0x279f"
+            },
+            {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": "0x436359c"
+            }
+          ]
+        }
+      ],
+      "rp": {
+        "origin": "https://retropick.xyz",
+        "rpHostname": "retropick.xyz",
+        "secureContext": true,
+        "webAuthnApiPresent": true,
+        "credentialsApiPresent": true
+      },
+      "apiRequests": [
+        "https://retropick.xyz/v1/launches?limit=50&sort=marketCap",
+        "https://retropick.xyz/v1/pairs",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/candles?resolution=15m&range=24h",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50"
+      ],
+      "unexpected502": [],
+      "pageAndConsoleErrors": [],
+      "appMutations": [],
+      "hardwareCeremonyPerformed": false,
+      "walletSignatures": false
+    },
+    {
+      "name": "real apex browser RPC, market reads, wallet and Mera origin 390",
+      "status": "PASS",
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "2541",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "content-encoding": "br",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: blob:; connect-src 'self' https://testnet-rpc.monad.xyz https://rpc.ankr.com; worker-src 'self' blob:; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 10:45:19 GMT",
+        "etag": "W/\"32e1ee2bc264b795a16e3ab421e0adf4\"",
+        "last-modified": "Tue, 13 Oct 2026 10:02:58 GMT",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), publickey-credentials-get=(self), publickey-credentials-create=(self)",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "sin1::v5k7l-1791888319681-cf06548a02ed"
+      },
+      "rpc": [
+        {
+          "url": "https://testnet-rpc.monad.xyz",
+          "status": 200,
+          "body": [
+            {
+              "jsonrpc": "2.0",
+              "id": 1,
+              "result": "0x279f"
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 2,
+              "result": "0x43635a8"
+            }
+          ]
+        },
+        {
+          "url": "https://rpc.ankr.com/monad_testnet",
+          "status": 200,
+          "body": [
+            {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": "0x279f"
+            },
+            {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": "0x43635a9"
+            }
+          ]
+        }
+      ],
+      "rp": {
+        "origin": "https://retropick.xyz",
+        "rpHostname": "retropick.xyz",
+        "secureContext": true,
+        "webAuthnApiPresent": true,
+        "credentialsApiPresent": true
+      },
+      "apiRequests": [
+        "https://retropick.xyz/v1/launches?limit=50&sort=marketCap",
+        "https://retropick.xyz/v1/pairs",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/candles?resolution=15m&range=24h",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50",
+        "https://retropick.xyz/v1/launches/0x30ccb65006665022dfc97bb5c1985610503fd1cf/trades?limit=50"
+      ],
+      "unexpected502": [],
+      "pageAndConsoleErrors": [],
+      "appMutations": [],
+      "hardwareCeremonyPerformed": false,
+      "walletSignatures": false
+    }
+  ]
+}

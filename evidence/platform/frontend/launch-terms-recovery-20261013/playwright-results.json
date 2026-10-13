@@ -1,0 +1,646 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.local/node-v24.11.0/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "e2e/staging.config.ts",
+      "--retries=0",
+      "--reporter=list,json",
+      "--output=/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/launch-terms-recovery-20261013/test-output-final"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/launch-terms-recovery-20261013/test-output-final",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "staging-desktop-1440",
+        "name": "staging-desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/launch-terms-recovery-20261013/test-output-final",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "staging-mobile-390",
+        "name": "staging-mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/staging",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "staging.spec.ts",
+      "file": "staging.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "staging serves the live retro-ui build (no DEMO/mock leakage on discovery)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:20.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-ca5c83b1bc16535d7ff0",
+          "file": "staging.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "SPA deep link renders the graduated token terminal with Kuru depth + orders tab",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3043,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:23.062Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-ae670a8cab0104c31d1e",
+          "file": "staging.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "Earn hub renders with the Mera Vault tab mounted",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:26.124Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-e8aa21a86cb3e407828e",
+          "file": "staging.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "referral rewrite path serves the backend through the same origin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1430,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:27.310Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-95a91c52f81bed4ab3ce",
+          "file": "staging.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "staging has no uncaught console errors and no horizontal overflow (both viewports)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:28.758Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-344b67664dcc17646abf",
+          "file": "staging.spec.ts",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "wallet connect prompts the EIP-6963 picker (no implicit connect), read-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1467,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:30.531Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-f921cebab031c0668495",
+          "file": "staging.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "public release and indexer projection match the reviewed source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 317,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:32.020Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-b4b828aa9eaa6b9f119c",
+          "file": "staging.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "live create economics loads admitted quotes and reaches Review without signing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-desktop-1440",
+              "projectName": "staging-desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3253,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:32.365Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-702a02401323e1fe17bb",
+          "file": "staging.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "staging serves the live retro-ui build (no DEMO/mock leakage on discovery)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1057,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:36.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-30d1b35951919f5eae43",
+          "file": "staging.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "SPA deep link renders the graduated token terminal with Kuru depth + orders tab",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2818,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:37.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-502fb9cf0e1f4bea30ba",
+          "file": "staging.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "Earn hub renders with the Mera Vault tab mounted",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:40.560Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-a89a18b09b356103254b",
+          "file": "staging.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "referral rewrite path serves the backend through the same origin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1629,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:41.987Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-c2a2dbcf1a08b7f8e944",
+          "file": "staging.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "staging has no uncaught console errors and no horizontal overflow (both viewports)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:43.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-87de258274d44eb1596e",
+          "file": "staging.spec.ts",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "wallet connect prompts the EIP-6963 picker (no implicit connect), read-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:45.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-25aaada9ab33de7bc62d",
+          "file": "staging.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "public release and indexer projection match the reviewed source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 168,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:46.922Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-12854c0e7e4283059f18",
+          "file": "staging.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "live create economics loads admitted quotes and reaches Review without signing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "staging-mobile-390",
+              "projectName": "staging-mobile-390",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3104,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:13:47.105Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3adf166548af3c2233d4-7721e4c7e8eb3a8970eb",
+          "file": "staging.spec.ts",
+          "line": 104,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T11:13:19.593Z",
+    "duration": 30710.948,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

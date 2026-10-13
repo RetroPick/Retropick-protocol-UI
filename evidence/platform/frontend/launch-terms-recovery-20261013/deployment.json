@@ -1,0 +1,12 @@
+{
+  "url": "https://retropick-metropolis-retro-ui-staging-jyey75hvs-asyams-projects.vercel.app",
+  "origin": "https://retropick-metropolis-retro-ui-stagi.vercel.app",
+  "primaryOrigin": "https://retropick.xyz",
+  "sourceSha": "346366c093010b0b3eda26fc53f866980bcf9e15",
+  "tunnelUrl": "https://api-staging.retropick.xyz",
+  "backendMode": "stable",
+  "deploymentId": "dpl_7cgLo46getyErTy7hLAD2ZX2H8F8",
+  "deployedAt": "2026-10-13T11:15:11.368162+00:00",
+  "verification": "16/16 live apex Playwright plus economics-to-Review desktop/mobile",
+  "backendLastVerifiedSourceSha": "caf23208f6831b424b1cc51c0785ecf6bdeae264"
+}
