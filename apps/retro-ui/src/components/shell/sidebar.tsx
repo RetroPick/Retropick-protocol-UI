@@ -13,7 +13,6 @@ import {
   Wallet,
 } from 'lucide-react';
 import Link from '@/components/product/safe-link';
-import { RetroLogo } from '@/components/Icons';
 import { usePathname } from '@/lib/next-compat';
 import { useDemo } from '@/components/product/provider';
 import { useWallet } from '@/wallet/provider';
@@ -48,7 +47,7 @@ export function Sidebar({ isCollapsed, onToggleCollapse, onOpenSearch }: Sidebar
       <div className="side-top">
         <div className="side-brand">
           <Link href="/launchpad" className="side-brand-link" aria-label="RetroPick Launchpad home">
-            <RetroLogo className="w-8 h-8"/>
+            <img src="/brand/retropick.png" alt="" className="w-8 h-8 object-contain"/>
             {!isCollapsed && <span className="side-brand-name">Retro</span>}
           </Link>
           <button onClick={onToggleCollapse} className="side-collapse" aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
