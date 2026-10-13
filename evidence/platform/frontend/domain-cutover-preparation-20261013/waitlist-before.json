@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-13T09:51:50.155197+00:00",
+  "url": "https://retropick.xyz",
+  "status": 200,
+  "htmlSha256": "e664a0ff86179b7ab715e85c44a211a80b5da439b8944d60d6613aa983158589",
+  "title": [
+    "RetroPick Waitlist | Structured Event Markets"
+  ],
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Access-Control-Allow-Origin": "*",
+    "Age": "10630026",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Disposition": "inline",
+    "Content-Length": "51521",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Tue, 13 Oct 2026 09:52:00 GMT",
+    "Etag": "\"12c0d50006cd5e2f980606241be43b0c\"",
+    "Server": "Vercel",
+    "Strict-Transport-Security": "max-age=63072000",
+    "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "X-Matched-Path": "/",
+    "X-Nextjs-Prerender": "1",
+    "X-Nextjs-Stale-Time": "300",
+    "X-Vercel-Cache": "HIT",
+    "X-Vercel-Id": "sin1::7fngc-1791885120891-59398712fae6",
+    "Connection": "close"
+  },
+  "domainAssignmentModified": false,
+  "namecheapModified": false,
+  "waitlistProjectAccess": "CLI scope asyams-projects does not have access to apex domain; operator must manage existing owner association"
+}

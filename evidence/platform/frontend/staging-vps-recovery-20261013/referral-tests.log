@@ -1,0 +1,30 @@
+$ node --experimental-strip-types --test test/*.test.ts
+✔ local referral capture is first touch, expires at 30 days and rejects malformed wallets (3.492113ms)
+✔ every fiat adapter fails closed for Monad Testnet MON and USDC and unqualified networks (3.36665ms)
+(node:14489) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ only one referral writer acquires a database; release allows restart (17.383934ms)
+✔ uncertain or invalid ownership is not silently removed (2.664988ms)
+✔ a legacy PID reused after a previous boot cannot prevent recovery (3.027429ms)
+(node:14490) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose (35.640404ms)
+✔ message tampering and expired challenges cannot establish attribution (8.361214ms)
+✔ concurrent verification consumes nonce once and existing referrer stays immutable (18.000054ms)
+✔ invalid addresses, self referral and unbounded first-touch dates fail closed (1.372333ms)
+✔ confirmed actor activity qualifies after association; volumes stay exact and separated by quote (18.82385ms)
+✔ full canonical replay removes orphaned qualification, launch count and volume (8.936731ms)
+✔ pagination error, malformed event and unconfirmed windows never partially replace projection (10.944437ms)
+✔ deep reorg revision replays from earliest association instead of retaining older orphaned rows (7.809707ms)
+✔ HTTP Origin, cookie ownership, invalid parameters, session expiry and logout boundaries (109.240498ms)
+✔ activity page size stays within the actual indexer API contract (9.4413ms)
+✔ multi-page activity keeps the cursor-bound query identical (14.646815ms)
+✔ canonical head falling below association clears orphaned qualification and records pending freshness (8.875628ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1103.099208

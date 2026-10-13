@@ -1,0 +1,17 @@
+✔ rewrites: same-origin API routes precede the SPA catch-all (5.209296ms)
+✔ bundle indexer base resolves on its own browser origin after domain cutover (1.735681ms)
+✔ allowlist: indexer read routes, referral, media; radar only behind flag (2.270802ms)
+✔ deny: unknown paths, writes to indexer, traversal (0.826368ms)
+✔ proxies allowed route, 404s denied route, 502s dead upstream (173.397045ms)
+✔ readiness rejects stale, wrong-chain, wrong-projection, non-list and HTTP failure (81.382738ms)
+✔ rotation retry is bounded and authorization failures back off visibly (0.531463ms)
+✔ deploy URL supports both CLI formats and rejects a JSON success without URL (1.537408ms)
+✔ stable backend overrides workstation tunnel and rejects credential-bearing targets (0.800647ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 445.804293

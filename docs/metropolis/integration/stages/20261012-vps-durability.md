@@ -5,7 +5,7 @@
 | Lane | L6 VPS durability |
 | Branch / PR | `feat/metropolis-vps-proposal` |
 | Host | Contabo, ssh alias `vps-contabo-yubie-1` → `yubie-deploy@84.247.158.36:22` |
-| Status | **BLOCKED at access (operator ssh-agent unlock)** — proposal + inspection checklist ready; ZERO host mutation |
+| Status | Historical proposal; superseded by operator-authorized permanent migration on 2026-10-13. See [current recovery](20261013-vps-recovery.md). |
 
 ## Access boundary (observed, not worked around)
 
@@ -132,3 +132,11 @@ Mirror the WSL `systemd --user` stack onto Contabo as an isolated system-level s
 No package install (cloudflared), no user creation, no filesystem write, no DNS/Cloudflare change, no
 deployment on Contabo without a separate explicit operator-approved change scope. Capacity is proven
 sufficient; this remains preparation only. The exact approval request is in OPERATOR-ACTIONS.md.
+
+## 2026-10-13 — deployment authorization and migration completed
+
+The operator explicitly authorized isolated RetroPick deployment, supplied working SSH/sudo
+access and configured Namecheap A `api-staging` → `84.247.158.36`. The permanent Caddy HTTPS
+route replaces quick tunnels. The earlier hard gate and zero-host-write statements describe
+the proposal stage only; they are not the current runtime status. Actual paths, system users,
+units, preserved state and public verification are in [the recovery report](20261013-vps-recovery.md).

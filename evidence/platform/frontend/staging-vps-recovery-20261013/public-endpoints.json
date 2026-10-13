@@ -1,0 +1,441 @@
+{
+  "at": "2026-10-13T09:41:10.531060+00:00",
+  "checks": [
+    {
+      "url": "https://api-staging.retropick.xyz/health",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "ready": true,
+      "body": {
+        "freshness": {
+          "chainId": 10143,
+          "indexedBlock": 70648892,
+          "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+          "headBlock": 70648900,
+          "confirmations": 8,
+          "lagBlocks": 8,
+          "indexedAt": "2026-10-13T09:41:08.622Z",
+          "syncing": false,
+          "error": null,
+          "source": "MONAD_EVENT_INDEXER",
+          "projectionVersion": 2,
+          "reorgRevision": 0,
+          "beneficiaryIndexedBlock": 70648892
+        },
+        "ready": true,
+        "projection": {
+          "expected": 2,
+          "published": 2
+        },
+        "progress": {
+          "passes": 8,
+          "passStartedAt": "2026-10-13T09:41:06.774Z",
+          "passTarget": 70648892,
+          "headTarget": 70648892,
+          "lastSyncedAt": "2026-10-13T09:41:08.640Z",
+          "lastPassMs": 1866,
+          "lastPassBlocks": 48,
+          "blocksPerSecond": 26,
+          "lastError": null,
+          "catchingUp": false,
+          "cursors": {
+            "root": 70648892,
+            "dynamic": 70648892,
+            "beneficiary": 70648892
+          }
+        },
+        "providers": [
+          {
+            "endpoint": "testnet-rpc.monad.xyz",
+            "state": "healthy",
+            "chainId": 10143,
+            "requests": 112,
+            "failures": 0,
+            "lastFailure": null,
+            "lastFailureMessage": null,
+            "retryAt": null,
+            "latencyMs": 66
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/v1/launches?limit=100",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "rows": 9
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/v1/pairs",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "rows": 1
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/v1/activity?limit=100",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      }
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/api/referrals/health",
+      "httpStatus": 200,
+      "body": {
+        "chainId": 10143,
+        "attributionOnly": true,
+        "earningsEnabled": false,
+        "syncError": null
+      }
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/api/media/health",
+      "httpStatus": 200,
+      "body": {
+        "chainId": 10143,
+        "mediaOnly": true,
+        "mode": "pinata"
+      }
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/api/radar/health",
+      "httpStatus": 200,
+      "freshness": {
+        "headHeight": 70648939,
+        "lastEventBlock": 70294322,
+        "cursorBlock": 70648940,
+        "lagBlocks": 0,
+        "headMinusEvent": 354617
+      },
+      "body": {
+        "ok": true,
+        "source": "ENVIO_HYPERSYNC",
+        "provider": "10143.hypersync.xyz",
+        "configured": true,
+        "chainId": 10143,
+        "deployment": "retropick-monad-testnet-v2",
+        "status": "OK",
+        "cursorBlock": 70648940,
+        "freshness": {
+          "headHeight": 70648939,
+          "lastEventBlock": 70294322,
+          "cursorBlock": 70648940,
+          "lagBlocks": 0,
+          "headMinusEvent": 354617
+        },
+        "anchorVerified": true,
+        "recovery": "snapshot",
+        "journalCount": 178,
+        "counters": {
+          "decodeErrors": 0,
+          "reorgs": 0,
+          "rebuilds": 0,
+          "removedLogs": 0,
+          "foreignLogs": 22930
+        },
+        "lastError": null,
+        "lastBatchAt": 1791884479747,
+        "markets": 3,
+        "tokens": 9
+      }
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/health",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "ready": true,
+      "body": {
+        "freshness": {
+          "chainId": 10143,
+          "indexedBlock": 70648892,
+          "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+          "headBlock": 70648900,
+          "confirmations": 8,
+          "lagBlocks": 8,
+          "indexedAt": "2026-10-13T09:41:08.622Z",
+          "syncing": false,
+          "error": null,
+          "source": "MONAD_EVENT_INDEXER",
+          "projectionVersion": 2,
+          "reorgRevision": 0,
+          "beneficiaryIndexedBlock": 70648892
+        },
+        "ready": true,
+        "projection": {
+          "expected": 2,
+          "published": 2
+        },
+        "progress": {
+          "passes": 8,
+          "passStartedAt": "2026-10-13T09:41:06.774Z",
+          "passTarget": 70648892,
+          "headTarget": 70648892,
+          "lastSyncedAt": "2026-10-13T09:41:08.640Z",
+          "lastPassMs": 1866,
+          "lastPassBlocks": 48,
+          "blocksPerSecond": 26,
+          "lastError": null,
+          "catchingUp": false,
+          "cursors": {
+            "root": 70648892,
+            "dynamic": 70648892,
+            "beneficiary": 70648892
+          }
+        },
+        "providers": [
+          {
+            "endpoint": "testnet-rpc.monad.xyz",
+            "state": "healthy",
+            "chainId": 10143,
+            "requests": 112,
+            "failures": 0,
+            "lastFailure": null,
+            "lastFailureMessage": null,
+            "retryAt": null,
+            "latencyMs": 66
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches?limit=100",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "rows": 9
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/pairs",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      },
+      "rows": 1
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/activity?limit=100",
+      "httpStatus": 200,
+      "freshness": {
+        "chainId": 10143,
+        "indexedBlock": 70648892,
+        "indexedBlockHash": "0x4a44e78ce7627884a44267f3d82ab426210f4ac0d5c7fa2657776baa9e1b4f08",
+        "headBlock": 70648900,
+        "confirmations": 8,
+        "lagBlocks": 8,
+        "indexedAt": "2026-10-13T09:41:08.622Z",
+        "syncing": false,
+        "error": null,
+        "source": "MONAD_EVENT_INDEXER",
+        "projectionVersion": 2,
+        "reorgRevision": 0,
+        "beneficiaryIndexedBlock": 70648892
+      }
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/api/referrals/health",
+      "httpStatus": 200,
+      "body": {
+        "chainId": 10143,
+        "attributionOnly": true,
+        "earningsEnabled": false,
+        "syncError": null
+      }
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/api/media/health",
+      "httpStatus": 200,
+      "body": {
+        "chainId": 10143,
+        "mediaOnly": true,
+        "mode": "pinata"
+      }
+    },
+    {
+      "url": "https://retropick-metropolis-retro-ui-stagi.vercel.app/api/radar/health",
+      "httpStatus": 200,
+      "freshness": {
+        "headHeight": 70648939,
+        "lastEventBlock": 70294322,
+        "cursorBlock": 70648940,
+        "lagBlocks": 0,
+        "headMinusEvent": 354617
+      },
+      "body": {
+        "ok": true,
+        "source": "ENVIO_HYPERSYNC",
+        "provider": "10143.hypersync.xyz",
+        "configured": true,
+        "chainId": 10143,
+        "deployment": "retropick-monad-testnet-v2",
+        "status": "OK",
+        "cursorBlock": 70648940,
+        "freshness": {
+          "headHeight": 70648939,
+          "lastEventBlock": 70294322,
+          "cursorBlock": 70648940,
+          "lagBlocks": 0,
+          "headMinusEvent": 354617
+        },
+        "anchorVerified": true,
+        "recovery": "snapshot",
+        "journalCount": 178,
+        "counters": {
+          "decodeErrors": 0,
+          "reorgs": 0,
+          "rebuilds": 0,
+          "removedLogs": 0,
+          "foreignLogs": 22930
+        },
+        "lastError": null,
+        "lastBatchAt": 1791884479747,
+        "markets": 3,
+        "tokens": 9
+      }
+    }
+  ],
+  "certificate": {
+    "subject": [
+      [
+        [
+          "commonName",
+          "api-staging.retropick.xyz"
+        ]
+      ]
+    ],
+    "issuer": [
+      [
+        [
+          "countryName",
+          "US"
+        ]
+      ],
+      [
+        [
+          "organizationName",
+          "Let's Encrypt"
+        ]
+      ],
+      [
+        [
+          "commonName",
+          "YE2"
+        ]
+      ]
+    ],
+    "version": 3,
+    "serialNumber": "05810B49C0D78BD169D68006393BE8246868",
+    "notBefore": "Oct 13 08:33:06 2026 GMT",
+    "notAfter": "Jan 11 08:33:05 2027 GMT",
+    "subjectAltName": [
+      [
+        "DNS",
+        "api-staging.retropick.xyz"
+      ]
+    ],
+    "caIssuers": [
+      "http://ye2.i.lencr.org/"
+    ],
+    "crlDistributionPoints": [
+      "http://ye2.c.lencr.org/105.crl"
+    ]
+  },
+  "tlsVersion": "TLSv1.3",
+  "preservedMedia": {
+    "path": "/api/media/43d7651d1dbf950196d5ddff5a1b02ea438d1626f4f6f7131efbd45518eccd3e.webp",
+    "sha256": "43d7651d1dbf950196d5ddff5a1b02ea438d1626f4f6f7131efbd45518eccd3e",
+    "bytes": 207624
+  }
+}

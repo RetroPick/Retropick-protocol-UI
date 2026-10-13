@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-13T09:44:00.430265+00:00",
+  "frontendDeploymentId": "dpl_AiKrQaCLwehGuXvB1xSS9FNT8DHq",
+  "frontendDeploymentUnchangedByBackendCrash": true,
+  "sourceSha": "84e954bdcff5651a5f808882eff6226fd6419f6a",
+  "backendMode": "stable",
+  "restartedServices": {
+    "indexer": "Restart=always\nRestartUSec=10s\nMainPID=1746118\nNRestarts=1\nMemoryCurrent=124628992\nUser=retropick-staging\nActiveState=active",
+    "referral": "Restart=always\nRestartUSec=10s\nMainPID=1746119\nNRestarts=1\nMemoryCurrent=50593792\nUser=retropick-staging\nActiveState=active"
+  },
+  "bootEnabled": "enabled",
+  "wholeHostRebootPerformed": false,
+  "wslServingUnits": "stopped and disabled",
+  "publicHealth": {
+    "freshness": {
+      "chainId": 10143,
+      "indexedBlock": 70649474,
+      "indexedBlockHash": "0x6598d3242ba42bc2ea70ce5c10bc5e5bc4a575b4a1278e6a58e50fcdc3f5c0ae",
+      "headBlock": 70649482,
+      "confirmations": 8,
+      "lagBlocks": 8,
+      "indexedAt": "2026-10-13T09:44:08.700Z",
+      "syncing": false,
+      "error": null,
+      "source": "MONAD_EVENT_INDEXER",
+      "projectionVersion": 2,
+      "reorgRevision": 0,
+      "beneficiaryIndexedBlock": 70649474
+    },
+    "ready": true,
+    "projection": {
+      "expected": 2,
+      "published": 2
+    },
+    "progress": {
+      "passes": 20,
+      "passStartedAt": "2026-10-13T09:44:06.809Z",
+      "passTarget": 70649474,
+      "headTarget": 70649474,
+      "lastSyncedAt": "2026-10-13T09:44:08.721Z",
+      "lastPassMs": 1912,
+      "lastPassBlocks": 49,
+      "blocksPerSecond": 26,
+      "lastError": null,
+      "catchingUp": false,
+      "cursors": {
+        "root": 70649474,
+        "dynamic": 70649474,
+        "beneficiary": 70649474
+      }
+    },
+    "providers": [
+      {
+        "endpoint": "testnet-rpc.monad.xyz",
+        "state": "healthy",
+        "chainId": 10143,
+        "requests": 280,
+        "failures": 0,
+        "lastFailure": null,
+        "lastFailureMessage": null,
+        "retryAt": null,
+        "latencyMs": 66
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domains": [
+    {
+      "name": "retropick-metropolis-retro-ui-stagi.vercel.app",
+      "apexName": "vercel.app",
+      "projectId": "prj_dKwt5xQUlhZg6shbOWyFvZbZXSIO",
+      "redirect": null,
+      "gitBranch": null,
+      "customEnvironmentId": null,
+      "updatedAt": 1791700726198,
+      "createdAt": 1791700726198,
+      "verified": true
+    }
+  ],
+  "pagination": {
+    "count": 1,
+    "next": null,
+    "prev": 1791700726198
+  }
+}

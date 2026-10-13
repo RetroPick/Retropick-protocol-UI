@@ -1,77 +1,75 @@
-# Staging Runbook
+# Staging runbook — Contabo + stable HTTPS
 
-Updated 2026-10-12 (live-data recovery, `integration/stages/20261012-live-data-recovery.md`).
-The backend now runs as **systemd --user units** (user lingering enabled) instead of
-pidfile-managed processes, and the browser reads the indexer **same-origin**.
+Updated 2026-10-13. Judge URL:
+https://retropick-metropolis-retro-ui-stagi.vercel.app
 
-```text
-browser ──► https://retropick-metropolis-retro-ui-stagi.vercel.app
-              /v1/*, /health, /api/referrals/*, /api/media/*  (Vercel rewrites → current quick tunnel)
-              everything else → SPA index.html
-quick tunnel (retropick-tunnel) ──► gateway :8799 (allowlist) ──► indexer :8787 · referral :8788 · media :8790
-```
+Permanent API: https://api-staging.retropick.xyz
+Namecheap A `api-staging` → `84.247.158.36`; no AAAA/CNAME required.
+Keep this DNS record and the frontend origin stable. Backend restarts do not require a
+Vercel deployment. Do not restore the workstation quick-tunnel units.
 
-## Status / daily checks
+## Read-only checks
 
 ```bash
-systemctl --user list-units 'retropick*' --all --no-pager
-curl -s https://retropick-metropolis-retro-ui-stagi.vercel.app/health | grep -o '"lagBlocks":[0-9]*'   # < 64
-curl -s -o /dev/null -w '%{http_code}\n' https://retropick-metropolis-retro-ui-stagi.vercel.app/api/referrals/health
-curl -s -o /dev/null -w '%{http_code}\n' https://retropick-metropolis-retro-ui-stagi.vercel.app/api/media/health
-grep tunnel-runner .staging/tunnel.log | tail -5     # rotation + auto-redeploy history
-cat .staging/staging-deploy.json                    # current deployment, source SHA, tunnel
+curl -fsS https://api-staging.retropick.xyz/health
+curl -fsS 'https://api-staging.retropick.xyz/v1/launches?limit=1'
+curl -fsS https://retropick-metropolis-retro-ui-stagi.vercel.app/health
+curl -fsS https://retropick-metropolis-retro-ui-stagi.vercel.app/api/referrals/health
+curl -fsS https://retropick-metropolis-retro-ui-stagi.vercel.app/api/media/health
+curl -fsS https://retropick-metropolis-retro-ui-stagi.vercel.app/api/radar/health
+SSH_AUTH_SOCK=/home/ubuntu/.ssh/retropick-agent.sock ssh vps-contabo-yubie-1
+# On Contabo:
+systemctl is-enabled retropick-staging.target
+systemctl list-units 'retropick-staging*' --all --no-pager
+sudo journalctl -u retropick-staging-indexer --since '10 minutes ago' --no-pager
 ```
 
-## Install / reinstall units (idempotent, no sudo)
+Healthy indexer: chain 10143, projection 2, known chain head, error null, lag ≤64 and
+indexedAt within 120 seconds. `ready:true` alone only proves a published projection.
+Referral health should have syncError null. An empty real order book or heavy browser
+RPC rejection remains an honest state; do not fabricate liquidity or prices.
+
+## Restart only RetroPick
 
 ```bash
-node scripts/staging/install-user-units.mjs --dry-run    # print units
-node scripts/staging/install-user-units.mjs              # write + enable (needs Linger=yes)
-systemctl --user start retropick-staging.target
+sudo systemctl restart retropick-staging-indexer.service
+# All RetroPick services, preserving state:
+sudo systemctl restart retropick-staging.target
 ```
 
-## Tunnel rotation (automatic)
+SQLite writer guard files must never be manually unlinked while a writer is active.
+The kernel releases ownership automatically on crash; deleting an active guard can allow
+multiple writers. Keep the persistent guard inode. Legacy PID locks are migrated once.
 
-`retropick-tunnel` runs `scripts/staging/tunnel-runner.mjs`: when cloudflared restarts and the
-hostname rotates, it writes `.staging/tunnel-url`, waits for edge `/health`, and runs
-`deploy-vercel.mjs` at the **same source SHA** as the last deploy (rewrites-only change; the
-bundle is unchanged — it never embeds the tunnel hostname). Measured recovery after a
-cloudflared kill: ~40 s. The quick tunnel itself remains non-durable (no uptime guarantee).
-
-## Frontend release (code change)
+## Frontend release
 
 ```bash
-git fetch origin
-node scripts/staging/deploy-vercel.mjs --sha <reviewed-sha>   # clean /tmp worktree at that SHA
+node scripts/staging/deploy-vercel.mjs \
+  --backend-origin https://api-staging.retropick.xyz --sha <reviewed-source-sha>
 ```
 
-Never deploy the dirty dev checkout. Env (`VITE_DATA_MODE=live`,
-`VITE_INDEXER_URL=<canonical origin>`, `VITE_MONAD_RPC_FALLBACK_URL`) is written only when the
-value changes (`.staging/vercel-env.json`), via `vercel env add … --value … --force --non-interactive`.
+The helper checks backend freshness before deployment, uses a clean SHA-pinned worktree,
+restricts writes to the canonical staging project, verifies its public alias and release SHA,
+then pins stable backend mode in `.staging/backend-origin` and `.staging/staging-deploy.json`.
+No UI redesign or frontend-domain change is needed to operate the permanent backend.
 
-## Restart / stop
+## Backend release / rollback
 
-```bash
-systemctl --user restart retropick-indexer          # single service
-systemctl --user stop retropick-staging.target      # everything (journals/media are preserved)
-```
+Backend code, private runtime and state are separate. Stop only `retropick-staging.target`,
+make WAL-safe SQLite backups, install the reviewed backend release and keep existing persistent
+state and protected environment files. Record SOURCE_SHA, normalize release read/traverse
+permissions for service users, then start the target and verify fresh public endpoints.
+`scripts/staging/bootstrap-vps.py` installs a fresh isolated host; it refuses an existing
+installation rather than overwriting live units without review.
 
-`start-backend.mjs` / `stop-backend.mjs` are the legacy non-durable path — do not run them
-while units are active (port collisions).
+Frontend rollback means rebuild a reviewed earlier SHA with the **current permanent API**.
+Do not promote historical deployments whose rewrites reference expired quick tunnels.
+Backend rollback must retain the kernel-backed lock fix and compatible projection schema;
+never run old PID-lock and new kernel-lock writers concurrently against one database.
+Local WSL state remains a preserved pre-cutover backup, not an automatic serving fallback.
+Do not restart, reconfigure or reboot Yubie services as part of a RetroPick rollback.
 
-## Rollback
+## Evidence
 
-- Frontend: `vercel promote <previous-deployment-url>` on the staging project only
-  (pre-recovery deployment: `retropick-metropolis-retro-ui-staging-4c5oiug6a-…`).
-- Backend: `systemctl --user stop retropick-staging.target && node scripts/staging/install-user-units.mjs --uninstall`,
-  then the legacy `start-backend.mjs` path.
-- Data: WAL-safe backups in `.data/backups/20261012/` (`SHA256SUMS`).
-
-## Known operational facts
-
-- Services survive the agent/terminal session (owned by `user@1000.service`, lingering).
-  They do NOT survive the WSL VM stopping (`wsl --shutdown`, Windows sleep/reboot); on WSL boot
-  the enabled target starts them again, the tunnel rotates and auto-redeploys.
-- Public RPC occasionally rejects the heavy `getL2Book` browser call → designed unavailable state.
-- The evidenced Kuru market's resting book may be empty — the UI shows "No resting orders".
-- Durable upgrade path: named tunnel / Contabo isolated stack (`integration/stages/20261012-vps-durability.md`).
+Root cause, state checksums, tests, TLS/public endpoints, recovery and monitoring:
+`evidence/platform/frontend/staging-vps-recovery-20261013/`.

@@ -1,0 +1,23 @@
+
+Running 14 tests using 1 worker
+
+(node:16929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [staging-desktop-1440] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (1.5s)
+  ✓   2 [staging-desktop-1440] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (2.8s)
+  ✓   3 [staging-desktop-1440] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (1.0s)
+  ✓   4 [staging-desktop-1440] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (1.5s)
+  ✓   5 [staging-desktop-1440] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (1.6s)
+  ✓   6 [staging-desktop-1440] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (1.3s)
+  ✓   7 [staging-desktop-1440] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (154ms)
+(node:17110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [staging-mobile-390] › e2e/staging/staging.spec.ts:9:1 › staging serves the live retro-ui build (no DEMO/mock leakage on discovery) (1.1s)
+  ✓   9 [staging-mobile-390] › e2e/staging/staging.spec.ts:20:1 › SPA deep link renders the graduated token terminal with Kuru depth + orders tab (2.8s)
+  ✓  10 [staging-mobile-390] › e2e/staging/staging.spec.ts:41:1 › Earn hub renders with the Mera Vault tab mounted (1.5s)
+  ✓  11 [staging-mobile-390] › e2e/staging/staging.spec.ts:54:1 › referral rewrite path serves the backend through the same origin (2.0s)
+  ✓  12 [staging-mobile-390] › e2e/staging/staging.spec.ts:69:1 › staging has no uncaught console errors and no horizontal overflow (both viewports) (2.0s)
+  ✓  13 [staging-mobile-390] › e2e/staging/staging.spec.ts:81:1 › wallet connect prompts the EIP-6963 picker (no implicit connect), read-only (1.7s)
+  ✓  14 [staging-mobile-390] › e2e/staging/staging.spec.ts:93:1 › public release and indexer projection match the reviewed source (196ms)
+
+  14 passed (23.3s)

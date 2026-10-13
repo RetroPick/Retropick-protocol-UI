@@ -12,20 +12,18 @@ wallet, lock/reload, derive again (same address), screenshot both; optionally "P
 token you own and screenshot the prepared (unsent) `transferCreatorFeeRecipient`. No broadcast.
 (Lane: `20261012-mera-signer.md`.)
 
-## 3. Contabo durable hosting — RetroPick-only deployment authorization (change scope)
-Read-only inventory is COMPLETE (`evidence/hackathon/metropolis/staging/vps-inventory-20261012.txt`):
-host healthy, 4 vCPU / 7.1 GiB free / 87 GB disk, all RetroPick ports free, Yubie not host-published
-(no conflict), clean (no retropick user). To make staging durable (replace the WSL quick tunnel),
-approve this bounded, RetroPick-only change scope on `vps-contabo-yubie-1` — Yubie untouched:
-- create system user `retropick-staging` (non-root) + `loginctl enable-linger`;
-- create `/opt/retropick/staging`, `/var/lib/retropick-staging`, `/etc/retropick/staging` (0700),
-  `/var/log/retropick-staging`;
-- install `cloudflared` (named tunnel) OR point an authorized reverse proxy at loopback 8799;
-- copy the WAL-safe SQLite backups + media from WSL; run the isolated stack (ports 8787–8799 loopback);
-- DNS/Cloudflare change for the stable hostname.
-No Yubie container/DB/secret access, no shared network/volume names, no other host change. Rollback =
-repoint to the WSL quick tunnel. Without this, staging keeps running on the auto-recovering WSL quick
-tunnel (functional, non-durable).
+## 3. Contabo durable hosting — resolved 2026-10-13
+
+Operator authorized isolated deployment, unlocked SSH/sudo and added the Namecheap A record
+`api-staging` → `84.247.158.36`. The backend now runs under `retropick-staging.target` with
+persistent state and dedicated Caddy HTTPS at `https://api-staging.retropick.xyz`. Vercel retains
+its existing public URL and rewrites to this permanent hostname. Quick-tunnel units are stopped
+and disabled; backend restart no longer requires a Vercel release. Yubie remains unchanged.
+
+See `STAGING-ARCHITECTURE.md`, `STAGING-RUNBOOK.md` and
+`integration/stages/20261013-vps-recovery.md` for evidence and limitations. No additional DNS or
+staging environment setting is pending. Whole-host reboot is not part of the verification:
+it would interrupt Yubie. Boot target enablement and isolated process recovery are verified.
 
 ## 4. Publish and qualify the MetaMask agent plugin
 Approve `npm publish --access public` of `@retropick/mm-plugin@0.1.0` (2FA), then `mm login` +
@@ -38,8 +36,7 @@ fresh, transaction-specific authorization with an exact summary. None performed 
 
 ## Deferred (not blocking submission)
 - Pinata IPFS media: RESOLVED 2026-10-12 — activated on staging (operator-authorized dev JWT).
-- Named Cloudflare tunnel / Contabo migration (durable ingress; quick tunnel auto-recovers meanwhile;
-  see item 3 for the deployment change scope).
+- Permanent Contabo ingress: resolved; Namecheap DNS + dedicated Caddy HTTPS (item 3).
 - Aurora / Nansen (no supported Monad Testnet capability — BLOCKED_EXTERNAL).
 
 
@@ -50,3 +47,11 @@ The P0 code now implements enrollment/recovery, APP_ONLY action proofs and isola
 For each separately authorized testnet financial action, review chain 10143, invoking account, token/asset, current fee recipient, protected address, contract destination, amount/native value, calldata and gas funding. Use the UI review immediately before signing. Handoff requires the current authorized wallet and no active pending owner override; verify the receipt and reread beneficiary. Historical native/ERC-20 escrow credits stay with the original wallet. Protected-account claims/send/margin actions require that account's funds and gas, a new passkey ceremony and a verified receipt. No agent financial broadcast occurred in this recovery. APP_ONLY remains bypassable through another wallet/direct contract call.
 
 Follow [the P0 incident report](../integration/stages/20261013-indexer-502-kuru-trading-incident.md) for reviewed source and live evidence. Keep sponsor A–E gates pending unless their original requirements are satisfied. Freeze starts October 14, 2026 at 02:59 WIB; verify submission portal time (currently 10:59 WIB). Durable ingress, plugin publication and submission remain separate operator actions.
+
+## Custom domain cutover — prepared, awaiting explicit approval
+
+Staging SHA `caf23208f6831b424b1cc51c0785ecf6bdeae264` passed live desktop/mobile checks.
+The apex still belongs to `retropickmarket-1279s-projects` / `retropick-landing`; keep that project
+and its data. After approval, the operator moves the domain to `asyams-projects` and attaches it
+to `retropick-metropolis-retro-ui-staging`. Do not alter Namecheap or the permanent API.
+See [the readiness report](CUSTOM-DOMAIN-CUTOVER-READINESS.md) for exact actions and rollback.

@@ -1,0 +1,21 @@
+vmi3646941
+vmi3646941.contaboserver.net
+6.8.0-146-generic
+uid=1001(yubie-deploy) gid=1001(yubie-deploy) groups=1001(yubie-deploy),27(sudo),100(users)
+sudo: a password is required
+sudo_exit=1
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*
+LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*
+LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*
+LISTEN 0      4096            [::]:22           [::]:*
+UNIT FILE STATE PRESET
+
+0 unit files listed.
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        96G  9.3G   87G  10% /
+               total        used        free      shared  buff/cache   available
+Mem:            7941         622        6922          19         722        7318
+Swap:              0           0           0
+sudo: a password is required
+sudo: a password is required

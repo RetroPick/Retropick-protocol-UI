@@ -1,0 +1,136 @@
+✔ curve execution prices exclude fees, preserve settlement, and agree for 6/18 decimal quotes (4.903269ms)
+✔ prices retain sub-atomic quote-per-token precision and enormous integer amounts (0.418621ms)
+✔ Kuru last execution replaces seeded price and normalizes actual market size precision (28.235748ms)
+✔ UTC candle aggregation preserves first open, last close, extrema, volume and gaps (0.675009ms)
+✔ GTC projection handles partial fills, full fills, skipped IDs and cancellation without double debit (7.671139ms)
+✔ wallet candidates include arbitrary escrow tokens and margin assets; claims survive zero releasable (0.947957ms)
+✔ holder projection excludes zero and labels protocol custody with deterministic equal-balance ordering (0.793329ms)
+✔ HTTP 401 "no access to this network" is classified AUTH, not rate limiting (2.814416ms)
+✔ a permanently unauthorized provider is disabled once and never receives backfill requests again (116.667866ms)
+✔ transient 5xx opens a circuit and the provider recovers after the circuit window (81.707073ms)
+✔ a valid JSON-RPC error (revert) is returned to the caller and does not fail the provider over (1256.13645ms)
+✔ all providers unauthorized → a clear error naming each endpoint state (2417.531926ms)
+✔ rpcEndpoints is provider neutral and deduplicates (1.844608ms)
+✔ kernel writer lock excludes other connections and release cannot remove a newer lock (3.112812ms)
+✔ legacy pre-reboot PID reuse cannot block startup; live legacy writers remain protected (2.835756ms)
+Indexed root 69509625 / 69529526 events 0
+Indexed root 69514625 / 69529526 events 0
+Indexed root 69519625 / 69529526 events 0
+Indexed root 69524625 / 69529526 events 0
+Indexed root 69529526 / 69529526 events 0
+Synced 69529526 / 69554526 launches 0 trades 0 20001 blocks in 16ms (catching up)
+Indexed beneficiary 69509625 / 69529526 events 0
+Indexed beneficiary 69514625 / 69529526 events 0
+Indexed beneficiary 69519625 / 69529526 events 0
+Indexed root 69534526 / 69549526 events 0
+Indexed beneficiary 69524625 / 69529526 events 0
+Indexed root 69539526 / 69549526 events 0
+Indexed beneficiary 69529526 / 69529526 events 0
+Indexed root 69544526 / 69549526 events 0
+Indexed root 69549526 / 69549526 events 0
+Synced 69549526 / 69554526 launches 0 trades 0 20000 blocks in 29ms (catching up)
+Indexed beneficiary 69534526 / 69549526 events 0
+Indexed beneficiary 69539526 / 69549526 events 0
+Indexed root 69554526 / 69554526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 5000 blocks in 8ms
+Indexed beneficiary 69544526 / 69549526 events 0
+Indexed beneficiary 69549526 / 69549526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 0 blocks in 3ms
+Indexed beneficiary 69554526 / 69554526 events 0
+Synced 69554526 / 69554526 launches 0 trades 0 0 blocks in 3ms
+✔ SIGKILL releases kernel writer lock without cleanup or PID-file deletion (601.873187ms)
+✔ long catch-up publishes consistent v2 snapshots progressively and reaches the head (78.758176ms)
+✔ host-only endpoint and fixed nested diagnostics cover arbitrary credential alphabets (1215.586412ms)
+✔ 403 and wrong chain are permanently disabled; nested status is recognized (4836.257747ms)
+✔ 429 and timeout recover after circuit, slow primary leaves healthy fallback usable (149.222614ms)
+✔ stale primary head is surfaced and missing historical blocks fail over without rollback (35.324491ms)
+✔ simultaneous explicit probe and requests share one permanent provider check (24.141607ms)
+✔ malformed chain response is transient, rather than permanently declaring wrong chain (24.471562ms)
+✔ uncorrelated JSON-RPC batch rate error is classified without retaining its body (24.12116ms)
+✔ a genuinely slow primary times out and a healthy fallback serves reads (28.837311ms)
+✔ healthy primary returning null historical block fails over to intact canonical fallback (48.441398ms)
+✔ HTTP200 malformed batch rows cannot escape as undefined state or block data (107.288305ms)
+✔ discovery applies exact bigint monetary order within explicit quote groups and stable pagination (24.874724ms)
+✔ discovery phase threshold, symbol/address pairs and creator search use actual launches (3.351847ms)
+✔ cursors reject changed query, changed snapshot/reorg and malformed input explicitly (2.32322ms)
+✔ candle range and resolution are independent, pages are latest-first then ascending within page (2.604074ms)
+✔ referral stream is canonical paginated launch/taker execution only, and handles not-yet-confirmed associations (2.169052ms)
+✔ HTTP read-only API retains freshness, supports ETag, and excludes wallet-specific caching (101.752426ms)
+✔ HTTP refuses legacy projection instead of serving incorrect price units (17.08838ms)
+✔ receipt transaction filter finds exact trades/orders before bounded pagination (2.145198ms)
+✔ creator filter is validated, case-insensitive and paginated past 25 with bound cursors (2.068715ms)
+✔ journal replay is idempotent and preserves exact large integers (3.148508ms)
+✔ reorg removes orphaned events/checkpoints/snapshot and permits replacement (1.011776ms)
+✔ failed range does not advance checkpoint or retain partial events (0.900709ms)
+✔ empty projections do not invent launches or trade activity (1.655516ms)
+Indexed beneficiary 69509625 / 69511225 events 0
+Indexed beneficiary 69511225 / 69511225 events 0
+Indexed beneficiary 69509625 / 69509625 events 0
+✔ historical beneficiary ranges batch at most eight, stay within provider100block limit, and commit contiguously (23.702198ms)
+✔ one failed parallel range cannot advance any checkpoint in that batch (4.443783ms)
+✔ reorg during an in-flight batch prevents orphaned checkpoint publication (2.11905ms)
+✔ discovery caches immutable social/quote identity, retains dynamic burned supply and original progress allocation (3.660954ms)
+✔ range errors bisect until accepted and single-block failure leaves batch uncommitted (3.347119ms)
+✔ sniffImage types content by magic bytes only (2.786013ms)
+✔ health reports mode and stays read-open (85.539416ms)
+✔ local mode stores content-addressed files and serves them immutably (75.554876ms)
+✔ upload boundaries: origin, method, body kind, size, type and unknown routes fail closed (42.010634ms)
+✔ uploads are rate limited per peer per minute (88.530822ms)
+✔ pinata mode pins sniffed bytes and returns an ipfs:// uri (13.318193ms)
+✔ pinata failures map to bounded upstream errors (29.464789ms)
+✔ only one referral writer acquires a database; release allows restart (3.970752ms)
+✔ uncertain or invalid ownership is not silently removed (1.748659ms)
+✔ a legacy PID reused after a previous boot cannot prevent recovery (1.954424ms)
+✔ wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose (38.260874ms)
+✔ message tampering and expired challenges cannot establish attribution (10.885288ms)
+✔ concurrent verification consumes nonce once and existing referrer stays immutable (15.460336ms)
+✔ invalid addresses, self referral and unbounded first-touch dates fail closed (1.258225ms)
+✔ confirmed actor activity qualifies after association; volumes stay exact and separated by quote (18.039264ms)
+✔ full canonical replay removes orphaned qualification, launch count and volume (15.927728ms)
+✔ pagination error, malformed event and unconfirmed windows never partially replace projection (16.929354ms)
+✔ deep reorg revision replays from earliest association instead of retaining older orphaned rows (9.583864ms)
+✔ HTTP Origin, cookie ownership, invalid parameters, session expiry and logout boundaries (104.435607ms)
+✔ activity page size stays within the actual indexer API contract (9.961236ms)
+✔ multi-page activity keeps the cursor-bound query identical (13.759877ms)
+✔ canonical head falling below association clears orphaned qualification and records pending freshness (10.532321ms)
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] recovered: snapshot+journal-tail(1); cursor 1002; journal 2; anchorVerified true
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] reorg (anchor hash mismatch on restart): rolled back to block 1001, kept 0/1 journal events, aggregate rebuilt
+[radar] recovered: snapshot; cursor 1001; journal 0; anchorVerified true
+[radar] identity mismatch: state discarded by explicit operator flag
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+✔ buildQuery uses installed-SDK field names (PascalCase, no "topics") (2.40912ms)
+✔ normalizeTimestamp handles number/bigint/hex/ms (1.165072ms)
+✔ bigint-tagged journal survives encode/decode exactly (0.847801ms)
+✔ ingests two TokenLaunched, advances cursor via nextBlock, journals + snapshots (38.047006ms)
+✔ restart resumes from snapshot and re-folds a journal tail written after the snapshot (19.514614ms)
+✔ torn final journal line is truncated and the event re-delivered on replay (1.337774ms)
+✔ corrupt MIDDLE journal line is a hard error (no silent rebuild) (1.381545ms)
+✔ reorg: a changed block hash rolls back, drops orphaned events, replays canonical only (47.450823ms)
+✔ identity mismatch refuses by default, resets with the explicit flag (9.383781ms)
+✔ chain-id mismatch fails closed (1.38942ms)
+✔ findForkBlock walks back to the newest matching hash (3.005282ms)
+✔ lifecycle counts, active-on-curve, phase and graduation latency are exact (3.257952ms)
+✔ GraduationCompleted maps the market so later trades in the same batch join the token (0.751581ms)
+✔ duplicate delivery (same block/logIndex/tx) is idempotent (0.403572ms)
+✔ kuru trade volume math is exact bigint (18-dec normalized) (0.534746ms)
+✔ mapping conflict is counted, never silently merged (0.403803ms)
+✔ addresses are normalised to lowercase (config, args, log address) (2.996325ms)
+✔ out-of-order events across blocks are tolerated; lastBlock is the max (0.52581ms)
+✔ persist → restore roundtrip preserves exact bigints, mapping and counters (1.100121ms)
+✔ staleness is null before the first trade and monotonic after (0.494241ms)
+✔ wire format renders bigints as strings (0.746191ms)
+✔ unknown events are ignored without failing (0.264083ms)
+✔ parses proper JSON (1.831163ms)
+✔ parses the quote-stripped bare form (systemd EnvironmentFile) (0.501204ms)
+✔ lowercases and ignores malformed pairs; empty → {} (0.389246ms)
+ℹ tests 92
+ℹ suites 0
+ℹ pass 92
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12084.224167

@@ -1,0 +1,22 @@
+✔ same-origin indexer reads follow the actual frontend host (2.522286ms)
+✔ explicit local and external indexer configuration remains supported (0.786467ms)
+✔ enrollment and explicit recovery preserve the address without persisted key material (98.556027ms)
+✔ no PRF support and canceled authenticator cannot enroll or authorize (1.592473ms)
+✔ fresh signature binds exact ABI calldata, value, account, amount and RP and rejects replay (193.993509ms)
+✔ margin withdrawal binds ABI argument order (amount, asset) (1.740363ms)
+✔ signing sessions end on success and callback failure (10.940502ms)
+✔ NONE never asks for a passkey; changing native claim credit invalidates a prepared amount (126.033499ms)
+✔ derivation matches the raw SDK chain and is stable across ceremonies (87.680293ms)
+✔ local ECDSA signature recovers to the derived address (proves control, no broadcast) (117.025916ms)
+✔ viem account signs a message that recovers to the same address (64.950234ms)
+✔ a different passkey (different PRF) yields a different address (5.391904ms)
+✔ derived EVM key is independent of a vault key on the same passkey (distinct salt) (1.217396ms)
+✔ wrong-credential / cancelled ceremony surfaces as an error (no silent empty signer) (2.251038ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1227.22935

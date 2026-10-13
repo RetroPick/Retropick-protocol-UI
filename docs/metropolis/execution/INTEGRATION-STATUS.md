@@ -51,3 +51,26 @@ This document records historical campaign status and may lag later operator work
 Code `695ae7764f72cb0fb5cfee5af205fc2975bcd32f` implements RPC budgeting/fallback and trading gates, one shared wallet picker, resilient launch terms/media, paginated creator discovery, and Mera Protected Earn enrollment/action signing. Local verification: SDK 46 pass / 2 intentional network skips; indexer 43 pass; dedicated recovery browsers 20 pass; full fixture campaign 266 pass / 40 intentional skips. Public deployment, rotation and sustained monitoring are tracked in [the incident report](../integration/stages/20261013-indexer-502-kuru-trading-incident.md).
 
 Mera is now implemented and locally tested; actual secure-origin hardware PRF recovery, fee-recipient handoff and protected financial receipts remain operator pending. APP_ONLY is bypassable outside RetroPick. No sponsor A–E gate is promoted by these results; prior evidence and outstanding qualifications stand. Quick-tunnel staging remains non-durable. Freeze begins October 14, 2026 02:59 WIB; submission 10:59 WIB remains subject to portal verification.
+
+## 2026-10-13 permanent staging backend recovery
+
+The earlier quick-tunnel staging status is superseded. Runtime source
+`84e954bdcff5651a5f808882eff6226fd6419f6a` serves the same Vercel frontend through
+`https://api-staging.retropick.xyz` on Contabo. Namecheap DNS, dedicated Caddy TLS, isolated
+system services, kernel-backed writer guards and preserved SQLite/media/radar state remove
+WSL and rotating tunnels from the serving path. Referral cursor pagination is also repaired.
+
+Post-recovery public Playwright: 14/14 desktop/mobile, retries disabled. Direct and rewritten
+API checks are green, indexer/referral SIGKILL recovery is verified without Vercel redeployment,
+and shared-host boot enablement is verified without rebooting Yubie. Sustained monitoring
+results are recorded in `integration/stages/20261013-vps-recovery.md`; sponsor A–E qualification
+and separately authorized hardware/financial evidence remain unchanged.
+
+## 2026-10-13 custom-domain preparation checkpoint
+
+Prepared SHA `caf23208f6831b424b1cc51c0785ecf6bdeae264` is promoted to the unchanged public staging
+alias: 14/14 live desktop/mobile tests, 10/10 supplemental live/controlled checks, 11/11 monitor
+samples with no failure. Both origins are supported, and the waitlist apex hash remains unchanged.
+Domain ownership movement/attachment and actual apex browser verification remain pending explicit
+approval. Hardware PRF and financial/sponsor gates are unchanged. See
+[CUSTOM-DOMAIN-CUTOVER-READINESS.md](CUSTOM-DOMAIN-CUTOVER-READINESS.md).
