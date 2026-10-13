@@ -1,4 +1,5 @@
 import { chooseDataMode } from '@/lib/liquidity/registry';
+import { indexerOrigin } from './indexer-origin';
 
 /** Resolved live-mode configuration. All reads fail closed through chooseDataMode. */
 export const DATA_MODE = chooseDataMode(
@@ -7,7 +8,7 @@ export const DATA_MODE = chooseDataMode(
 );
 
 export const INDEXER_URL = DATA_MODE === 'live'
-  ? (import.meta.env.VITE_INDEXER_URL as string).replace(/\/$/, '')
+  ? indexerOrigin(import.meta.env.VITE_INDEXER_URL as string, window.location.origin)
   : null;
 
 export const PUBLIC_RPC_URL = 'https://testnet-rpc.monad.xyz';

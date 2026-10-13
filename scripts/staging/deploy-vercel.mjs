@@ -35,6 +35,7 @@ const LEGACY = 'retropick-metropolis';
 const args = process.argv.slice(2);
 const flag = (name) => { const i = args.indexOf(name); return i === -1 ? null : args[i + 1]; };
 const DRY = args.includes('--dry-run');
+const CANDIDATE = args.includes('--candidate');
 
 function sh(cmd, argv, opts = {}) {
   return execFileSync(cmd, argv, { cwd: repo, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], ...opts }).trim();
@@ -55,7 +56,7 @@ export function publicEnv(origin) {
   if (!/^https:\/\/[^/]+$/.test(origin)) throw new Error(`STAGING_ORIGIN must be an absolute https origin without path: ${origin}`);
   return [
     ['VITE_DATA_MODE', 'live'],
-    ['VITE_INDEXER_URL', origin],
+    ['VITE_INDEXER_URL', 'same-origin'],
     ['VITE_MONAD_RPC_FALLBACK_URL', 'https://rpc.ankr.com/monad_testnet'],
   ];
 }
@@ -125,6 +126,24 @@ async function main() {
   writeFileSync(resolve(dir, 'vercel.json'), vercelJson);
   mkdirSync(resolve(dir, 'apps/retro-ui/public'), { recursive: true });
   writeFileSync(resolve(dir, 'apps/retro-ui/public/release.json'), JSON.stringify({ sourceSha: sha, chainId: 10143 }) + '\n');
+
+  if (CANDIDATE) {
+    // Build production artifacts without moving ANY existing domain or changing
+    // project environment values. This is the reviewable pre-cutover release.
+    const scope = process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects';
+    const inspect = target => JSON.parse(sh('vercel', ['inspect', target, '--scope', scope, '--json'], { cwd: dir, timeout: 30000 }));
+    const previous = inspect(ORIGIN);
+    const buildEnv = publicEnv(ORIGIN).flatMap(([key, value]) => ['--build-env', `${key}=${value}`]);
+    const url = deploymentUrl(sh('vercel', ['deploy', '--prod', '--skip-domain', '--yes', '--scope', scope, ...buildEnv], { cwd: dir, timeout: 600000 }));
+    const release = await fetch(url + '/release.json', { cache: 'no-store', signal: AbortSignal.timeout(10000) }).then(response => response.json());
+    const deployment = inspect(url);
+    if (release.sourceSha !== sha || deployment.name !== PROJECT || deployment.readyState !== 'READY' || !await stagingReady(url)) throw Error('Candidate deployment verification failed.');
+    if (inspect(ORIGIN).id !== previous.id) throw Error('Canonical staging alias changed while validating candidate; inspect before proceeding.');
+    const record = { url, sourceSha: sha, backendOrigin: tunnelUrl, candidate: true, promoted: false, canonicalDeploymentId: previous.id, deployedAt: new Date().toISOString() };
+    writeFileSync(resolve(runDir, 'candidate-deploy.json'), JSON.stringify(record, null, 2) + '\n');
+    console.log(`candidate: ${url}\nsource sha: ${sha}\nexisting domains retained`);
+    return;
+  }
 
   // Env: only rotate when the public value actually changed.
   const statePath = resolve(runDir, 'vercel-env.json');

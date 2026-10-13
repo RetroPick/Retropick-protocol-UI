@@ -37,6 +37,40 @@ const requestReturning=(make:(url:URL)=>ActivityEnvelope|Response)=>async(input:
   const result=make(new URL(String(input)));return result instanceof Response?result:Response.json(result);
 };
 
+test('approved origins sign their own domain and cannot exchange challenges', async () => {
+  const s = setup();
+  const primary = 'https://retropick.xyz';
+  const auth = new ReferralAuth(s.store, primary,
+    (wallet, message, signature) => verifyMessage({ address: wallet as Address, message, signature }),
+    async () => 100, () => s.now);
+  const server = createReferralApp({ store: s.store, auth: s.auth,
+    authByOrigin: new Map([[primary, auth]]), secure: true, clock: () => s.now });
+  server.listen(0, '127.0.0.1'); await once(server, 'listening');
+  const base = `http://127.0.0.1:${(server.address() as { port: number }).port}/api/referrals`;
+  const post = (path: string, origin: string, body: unknown) => fetch(`${base}/${path}`, {
+    method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  try {
+    assert.equal((await post('challenge', 'https://retropick.xyz.evil.example', { wallet: alice.address })).status, 403);
+    const response = await post('challenge', primary, { wallet: alice.address });
+    assert.equal(response.status, 200);
+    const c = await response.json() as { challengeId: string; message: string };
+    assert.match(c.message, /^retropick.xyz requests/);
+    const signature = await alice.signMessage({ message: c.message });
+    const wrong = await post('verify', origin, { challengeId: c.challengeId, signature });
+    assert.equal(wrong.status, 403);
+    assert.deepEqual(await wrong.json(), { error: 'CHALLENGE_ORIGIN_MISMATCH' });
+    const fresh = await (await post('challenge', primary, { wallet: alice.address })).json() as typeof c;
+    const verified = await post('verify', primary, { challengeId: fresh.challengeId,
+      signature: await alice.signMessage({ message: fresh.message }) });
+    assert.equal(verified.status, 200);
+    const cookie = verified.headers.get('set-cookie')!;
+    assert.match(cookie, /HttpOnly; SameSite=Strict/); assert.match(cookie, /Secure/);
+    assert.doesNotMatch(cookie, /Domain=/i);
+    const old = await post('challenge', origin, { wallet: bob.address });
+    assert.equal(old.status, 200); assert.match((await old.json() as typeof c).message, /127\.0\.0\.1:3000 requests/);
+  } finally { await new Promise<void>(resolve => server.close(() => resolve())); s.store.close(); }
+});
+
 test('wallet ownership proof binds domain, chain, referrer, nonce, expiry and purpose',async()=>{
   const s=setup();try {
     const c=s.auth.challenge({wallet:alice.address,referrer:bob.address});

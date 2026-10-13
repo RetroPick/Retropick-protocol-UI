@@ -14,10 +14,9 @@ test('rewrites: same-origin API routes precede the SPA catch-all', () => {
   assert.equal(out.outputDirectory, 'apps/retro-ui/dist');
 });
 
-test('bundle indexer base is the canonical origin, never a tunnel, never protocol-relative', () => {
+test('bundle indexer base resolves on its own browser origin after domain cutover', () => {
   const env = Object.fromEntries(publicEnv('https://retropick-metropolis-retro-ui-stagi.vercel.app'));
-  assert.equal(env.VITE_INDEXER_URL, 'https://retropick-metropolis-retro-ui-stagi.vercel.app');
-  assert.equal(env.VITE_INDEXER_URL + '/v1/launches', 'https://retropick-metropolis-retro-ui-stagi.vercel.app/v1/launches');
+  assert.equal(env.VITE_INDEXER_URL, 'same-origin');
   assert.doesNotMatch(env.VITE_INDEXER_URL, /trycloudflare/);
   assert.throws(() => publicEnv('https://x.vercel.app/'), /without path/);
   assert.throws(() => publicEnv('//x.vercel.app'));

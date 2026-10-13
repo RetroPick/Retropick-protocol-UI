@@ -15,6 +15,7 @@ ROOT = pathlib.Path('/opt/retropick-staging')
 STATE = pathlib.Path('/var/lib/retropick-staging')
 CONFIG = pathlib.Path('/etc/retropick-staging')
 ORIGIN = 'https://retropick-metropolis-retro-ui-stagi.vercel.app'
+PRIMARY_ORIGIN = 'https://retropick.xyz'
 HOST = 'api-staging.retropick.xyz'
 NODE = str(ROOT / 'runtime/node/bin/node')
 
@@ -69,10 +70,11 @@ def main():
         'referral': ('apps/referral-service', 'src/server.ts', {
             'REFERRAL_DB': str(STATE / 'referral/referral-attribution.sqlite'),
             'REFERRAL_PORT': '8788', 'REFERRAL_INDEXER_URL': 'http://127.0.0.1:8787',
-            'REFERRAL_RPC_URL': rpc, 'REFERRAL_ORIGIN': ORIGIN}),
+            'REFERRAL_RPC_URL': rpc, 'REFERRAL_ORIGIN': ORIGIN,
+            'REFERRAL_ORIGINS': f'{ORIGIN},{PRIMARY_ORIGIN}'}),
         'media': ('apps/media-service', 'src/server.ts', {
             'MEDIA_DIR': str(STATE / 'media'), 'MEDIA_PORT': '8790',
-            'MEDIA_ORIGIN': ORIGIN, 'MEDIA_PUBLIC_BASE': ORIGIN}),
+            'MEDIA_ORIGIN': f'{ORIGIN},{PRIMARY_ORIGIN}', 'MEDIA_PUBLIC_BASE': ORIGIN}),
         'radar': ('integrations/envio-market-radar', 'src/server.ts', {
             'RADAR_STATE_DIR': str(STATE / 'radar'), 'RADAR_PORT': '8791',
             'RADAR_CHAIN_ID': '10143', 'RADAR_RPC_URL': rpc,
