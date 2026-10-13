@@ -152,6 +152,29 @@ test('activity page size stays within the actual indexer API contract',async()=>
  }finally{s.store.close();}
 });
 
+test('multi-page activity keeps the cursor-bound query identical', async () => {
+  const s = setup();
+  try {
+    await associate(s);
+    const windows: (string | null)[] = [];
+    const sync = new AttributionSync(s.store, 'http://indexer.local', requestReturning(url => {
+      const key = JSON.stringify([...url.searchParams.entries()].filter(([name]) => name !== 'cursor').sort());
+      const cursor = url.searchParams.get('cursor');
+      windows.push(url.searchParams.get('toBlock'));
+      if (cursor && Buffer.from(cursor, 'base64url').toString() !== key)
+        return Response.json({ error: 'CURSOR_QUERY_MISMATCH' }, { status: 400 });
+      const value = envelope([cursor ? event(120, 'CurveBuy', { txHash: hexHash('d') }) : event(110)]);
+      value.data.nextCursor = cursor ? null : Buffer.from(key).toString('base64url');
+      return value;
+    }));
+    await sync.sync();
+    assert.equal(sync.error, null);
+    assert.deepEqual(windows, [null, '200', '200']);
+    assert.equal(s.store.summary(lower(bob.address)).volumeByQuote[0].volumeRaw,
+      String(2n * 9007199254740993123456789n));
+  } finally { s.store.close(); }
+});
+
 test('canonical head falling below association clears orphaned qualification and records pending freshness',async()=>{
   const s=setup();try {
     await associate(s);s.store.reconcile(100,200,[event(110),event(120,'TokenLaunched',{txHash:hexHash('2')})],freshness());
