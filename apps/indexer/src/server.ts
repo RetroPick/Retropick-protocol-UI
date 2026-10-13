@@ -1,5 +1,6 @@
 import { createServer } from 'node:http';
-import { mkdirSync, openSync, writeSync, closeSync, readFileSync, rmSync } from 'node:fs';
+import { mkdirSync, existsSync, statSync, readFileSync, rmSync } from 'node:fs';
+import { DatabaseSync } from 'node:sqlite';
 import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -33,20 +34,33 @@ export function createReadServer(source: { snapshot(): Snapshot | undefined; fre
     } catch (error) { send(error instanceof QueryError ? error.status : 500, { error: error instanceof QueryError ? error.code : 'QUERY_FAILED', freshness }); }
   });
 }
-/** One indexer process per database: an exclusive lock file with the owner pid; stale locks (dead pid) are reclaimed. */
+/** Kernel-backed writer exclusion. Never unlink the guard: its inode owns the lock. */
 export function acquireDbLock(file: string): () => void {
-  const lock = `${file}.lock`;
-  for (let attempt = 0; attempt < 2; attempt++) {
-    try { const fd = openSync(lock, 'wx'); writeSync(fd, String(process.pid)); closeSync(fd); return () => { try { if (readFileSync(lock, 'utf8') === String(process.pid)) rmSync(lock); } catch { /* already gone */ } }; }
-    catch (error) {
-      if ((error as NodeJS.ErrnoException).code !== 'EEXIST') throw error;
-      const owner = Number(readFileSync(lock, 'utf8'));
-      let alive = false; try { process.kill(owner, 0); alive = true; } catch { alive = false; }
-      if (alive) throw Error(`INDEXER_DB_LOCKED: database ${file} is owned by pid ${owner}`);
-      rmSync(lock, { force: true });
+  const guard = new DatabaseSync(`${file}.writer-lock.sqlite`);
+  try {
+    guard.exec('PRAGMA busy_timeout=0; BEGIN EXCLUSIVE');
+    // Upgrade only after an old writer exits. A legacy PID can be reused as a
+    // process OR thread after reboot; kill(pid, 0) alone is not ownership proof.
+    const legacy = `${file}.lock`;
+    if (existsSync(legacy)) {
+      const previous = statSync(legacy);
+      const owner = Number(readFileSync(legacy, 'utf8'));
+      let bootMs = 0;
+      try { bootMs = Number(readFileSync('/proc/stat', 'utf8').match(/^btime (\d+)$/m)?.[1] ?? 0) * 1000; } catch { /* non-Linux: fail closed for a live legacy owner */ }
+      let alive = false;
+      try { if (Number.isSafeInteger(owner) && owner > 0) { process.kill(owner, 0); alive = true; } } catch (error) { alive = (error as NodeJS.ErrnoException).code !== 'ESRCH'; }
+      if (alive && previous.mtimeMs >= bootMs) throw Error(`Legacy indexer writer ${owner} is still active; stop it before upgrading.`);
+      if (!Number.isSafeInteger(owner) || owner <= 0) throw Error('Unrecognized legacy writer lock; inspect it before upgrading.');
+      const current = statSync(legacy);
+      if (current.ino !== previous.ino || current.mtimeMs !== previous.mtimeMs) throw Error('Legacy writer lock changed during upgrade.');
+      rmSync(legacy);
     }
+  } catch (cause) {
+    guard.close();
+    throw Error(`INDEXER_DB_LOCKED: cannot acquire writer for ${file}`, { cause });
   }
-  throw Error(`INDEXER_DB_LOCKED: could not acquire ${lock}`);
+  let released = false;
+  return () => { if (!released) { released = true; guard.close(); } };
 }
 /** Ordered, provider-neutral endpoint list: MONAD_TESTNET_RPC_URLS (comma separated) or primary + fallback. */
 export function rpcEndpoints(env: NodeJS.ProcessEnv): string[] {

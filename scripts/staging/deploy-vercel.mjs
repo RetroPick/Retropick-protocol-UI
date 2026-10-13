@@ -68,6 +68,13 @@ export function deploymentUrl(output) {
   return candidate;
 }
 
+/** Stable VPS origins take precedence over the rotating workstation tunnel. */
+export function backendOrigin(requested, pinned, quick) {
+  const value = (requested ?? pinned ?? quick)?.trim().replace(/\/$/, '');
+  if (!value || !/^https:\/\/[a-z0-9.-]+$/i.test(value)) throw Error('Expected a public HTTPS backend origin without credentials, port, path, or query.');
+  return value;
+}
+
 async function upsertEnv(cwd, key, value, target) {
   const ls = () => sh('vercel', ['env', 'ls', target, '--scope', process.env.STAGING_VERCEL_SCOPE ?? 'asyams-projects'], { cwd });
   // Single idempotent write (CLI ≥ 62: --value/--force/--non-interactive). The earlier
@@ -86,8 +93,11 @@ async function upsertEnv(cwd, key, value, target) {
 async function main() {
   if (PROJECT === LEGACY || PROJECT !== 'retropick-metropolis-retro-ui-staging') throw Error('Refusing: not the authorized staging project.');
   const tunnelPath = resolve(runDir, 'tunnel-url');
-  if (!existsSync(tunnelPath)) throw Error('Missing tunnel URL.');
-  const tunnelUrl = readFileSync(tunnelPath, 'utf8').trim().replace(/\/$/, '');
+  const pinnedPath = resolve(runDir, 'backend-origin');
+  const requestedBackend = flag('--backend-origin') ?? process.env.STAGING_BACKEND_ORIGIN;
+  const pinnedBackend = existsSync(pinnedPath) ? readFileSync(pinnedPath, 'utf8') : null;
+  const tunnelUrl = backendOrigin(requestedBackend, pinnedBackend, existsSync(tunnelPath) ? readFileSync(tunnelPath, 'utf8') : null);
+  const backendMode = requestedBackend || pinnedBackend ? 'stable' : 'quick-tunnel';
   const vercelJson = renderVercelJson(readFileSync(resolve(here, 'vercel.template.json'), 'utf8'), tunnelUrl);
   // Source SHA: explicit --sha, else the SHA of the last staging deploy (tunnel-rotation
   // redeploys must not silently ship new code), else origin/main.
@@ -96,6 +106,7 @@ async function main() {
   const sha = sh('git', ['rev-parse', flag('--sha') ?? last?.sourceSha ?? 'origin/main']);
   console.log(`tunnel: ${tunnelUrl}\norigin: ${ORIGIN}\nsource sha: ${sha}`);
   if (DRY) { console.log(vercelJson); return; }
+  if (!await stagingReady(tunnelUrl)) throw Error('Backend not ready: verify public HTTPS, current chain head and published indexer projection before deploying.');
 
   // Clean, SHA-pinned worktree (never the dirty dev checkout). /tmp can be cleared between
   // runs while git still has the worktree registered — prune stale registrations first and
@@ -146,7 +157,11 @@ async function main() {
     if (!verified) await new Promise(resolve => setTimeout(resolve, 5000));
   }
   if (!verified) throw Error('Deployment submitted, but public alias verification failed; success record retained unchanged.');
-  const record = { url, origin: ORIGIN, sourceSha: sha, tunnelUrl, deployedAt: new Date().toISOString() };
+  const record = { url, origin: ORIGIN, sourceSha: sha, tunnelUrl, backendMode, deployedAt: new Date().toISOString() };
+  if (backendMode === 'stable') {
+    writeFileSync(pinnedPath + '.tmp', tunnelUrl + '\n');
+    renameSync(pinnedPath + '.tmp', pinnedPath);
+  }
   const recordPath = resolve(runDir, 'staging-deploy.json');
   writeFileSync(recordPath + '.tmp', JSON.stringify(record, null, 2) + '\n');
   renameSync(recordPath + '.tmp', recordPath);
