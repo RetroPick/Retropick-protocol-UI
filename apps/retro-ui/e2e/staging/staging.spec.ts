@@ -107,7 +107,7 @@ test('live create economics loads admitted quotes and reaches Review without sig
   await page.getByPlaceholder('RETRO', {exact:true}).fill('READ');
   await page.getByRole('button', {name:'Continue',exact:true}).click();
   await expect(page.getByRole('heading', {name:/2 · Market & economics/})).toBeVisible();
-  const pair=page.getByLabel('Paired with', {exact:true});
+  const pair=page.getByRole('combobox', {name:/^Paired with/});
   await expect(pair).toBeVisible({timeout:30000});
   await expect(pair.locator('option').first()).toContainText('MON');
   await expect(page.getByText('Launch terms unavailable.', {exact:false})).toHaveCount(0);
