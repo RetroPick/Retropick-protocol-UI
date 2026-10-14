@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["bun"],
+    "paths": {
+      // Single source of truth for deployed ABIs: the workspace SDK (relative import keeps
+      // this project standalone — no pnpm workspace membership, no root installs).
+      "@retropick/abis/*": ["../../../packages/launchpad-sdk/src/abis/*"]
+    }
+  },
+  "include": ["main.ts"]
+}

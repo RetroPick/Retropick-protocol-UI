@@ -1,0 +1,12 @@
+{
+  "test": "fixture/perf.spec.ts > @perf /launchpad/token/demo-active: cumulative layout shift < 0.1, no RPC/indexer calls in demo",
+  "project": "desktop-1280",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

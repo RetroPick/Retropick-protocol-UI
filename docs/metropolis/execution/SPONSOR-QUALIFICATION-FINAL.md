@@ -9,13 +9,13 @@ Network Monad Testnet 10143. `apps/web` zero-write across the whole campaign (0 
 |---|---|---|---|---|---|---|---|
 | **Kuru Consumer** | ✅ | ✅ | ✅ | ✅ | ✅ | **QUALIFIED_A_E** | Live graduated terminal on public staging: Kuru venue, honest empty book, real trade tx `0x93e0…5415` (Monad Explorer). SDK 43/43, terminal 14/14, staging 12/12. `sponsors/kuru/20261012/` |
 | **Chainlink CRE** | ✅ | ✅ | ✅ | ✅(sim) | ✅ | **SIMULATED (official PASS)** | `cre workflow simulate` PASS @ block 70100439, CLI v1.38.0 authed, Sourcify v2 exact_match, 3 negatives + determinism. No DON deployment claimed. `sponsors/chainlink-cre/` |
-| **Envio** | ✅ | ✅ | ✅ | ✅(local) | ⏳ | **RUNTIME_VERIFIED (local)** | Authenticated HyperSync 1.4.1 stream; lifecycle counts exact-match indexer; firstTradeTx reconciled to receipt; durable restart + reorg replay (22/22). Public `/api/radar/*` gated behind token rotation. `sponsors/envio/20261012/` |
+| **Envio** | ✅ | ✅ | ✅ | ✅ | ✅ | **QUALIFIED_A_E (public live)** | Operator-authorized dev token. Public `/api/radar/*` live: authenticated HyperSync 1.4.1 stream, lag 0, 0 decode errors, lifecycle counts exact-match indexer, receipts reconciled, durable reorg replay (25/25); frontend panel renders live metrics + tx proof. `sponsors/envio/20261012/` |
 | **Mera** | ✅ | ✅ | ✅ | ✅(local sig) | ⏳ | **TESTED_LOCAL** | passkey→secp256k1→EVM address proven (6/6): deterministic address + local ECDSA recovery + viem sign. Protected Earn 4 honest modes (5/5). `transferCreatorFeeRecipient` prepare-only. Real browser ceremony + broadcast = operator. `20261012-mera-signer.md` |
 | **MetaMask Agent** | ✅ | ✅ | ✅ | ⛔ | ⏳ | **TESTED_LOCAL (install BLOCKED_EXTERNAL)** | policy 10/10, signer-ownership fail-closed, live verification; manifest + wallet-submit cap parse on consent screen. CLI 6.2.1 BLOCKER-005 (local path/tarball → github.com// → E404). Needs npm publish / git URL + provision (operator packet). `20261012-metamask-agent.md` |
 | **Aurora Intents** | ⛔ | — | — | — | — | **BLOCKED_EXTERNAL** | No source→Monad Testnet route (mainnet only, out of scope). No mock. `sponsors/aurora/` |
 | **Nansen** | ⛔ | — | — | — | — | **BLOCKED_EXTERNAL** | No API entitlement / no testnet coverage. Own labelled local signals only; no fabricated data. `sponsors/nansen/` |
 | **Kuru New Assets (P0)** | ✅ | ✅(local) | ✅ | ⛔ | — | **DEFERRED_AUTHORIZATION** | kernels locally qualified; deployment/liquidity needs funded-wallet operator go (HARD GATE). `execution/stages/P0_*.md` |
-| Pinata (infra) | ✅ | ✅ | ✅ | ⏳ | — | **DEFERRED** | local media verified; disclosed JWT unused; activation needs rotation + isolated upload test. `20261012-closures.md` |
+| Pinata (infra) | ✅ | ✅ | ✅ | ✅ | — | **ACTIVATED (staging)** | operator-authorized dev JWT; isolated auth+pin+gateway match; media svc pinata mode (403 wrong-origin / 415 non-image); existing local images preserved; public origin mode=pinata. `sponsors/pinata/20261012/` |
 
 Legend: ✅ met · ⏳ gated on an operator action (not a code gap) · ⛔ externally blocked.
 
@@ -26,11 +26,17 @@ Legend: ✅ met · ⏳ gated on an operator action (not a code gap) · ⛔ exter
 - CRE official-simulation evidence (deterministic, reproducible).
 
 ## Honest limitations
-- Envio public radar + Mera on-chain signing + MetaMask live order await operator credential
-  rotation / provisioning (all code + local proof complete).
+- Mera on-chain signing + MetaMask live order await operator provisioning / a per-tx approval (all
+  code + local proof complete). Mera browser passkey ceremony evidence is an operator capture.
 - Aurora/Nansen have no supported Monad Testnet capability.
 - Staging rides a Cloudflare quick tunnel (auto-recovers on rotation ~40 s); durable ingress is the
-  Contabo proposal, pending operator unlock.
+  Contabo proposal (inventory complete, deployment gated on an operator change scope).
+
+## 2026-10-12 operator-unblock update
+- **Envio** → QUALIFIED_A_E (public): dev token authorized, `/api/radar/*` live end-to-end.
+- **Pinata** → ACTIVATED on staging: dev JWT authorized, media in pinata mode, backward-compatible.
+- **Contabo** inventory complete with real figures; deployment remains a HARD GATE (change scope in
+  OPERATOR-ACTIONS item 3).
 
 
 ## 2026-10-13 P0 recovery checkpoint

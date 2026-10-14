@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "source": "ENVIO_HYPERSYNC",
+  "provider": "10143.hypersync.xyz",
+  "configured": true,
+  "chainId": 10143,
+  "deployment": "retropick-monad-testnet-v2",
+  "status": "OK",
+  "cursorBlock": 70783853,
+  "freshness": {
+    "headHeight": 70783859,
+    "lastEventBlock": 70709910,
+    "cursorBlock": 70783853,
+    "lagBlocks": 6,
+    "headMinusEvent": 73949
+  },
+  "anchorVerified": true,
+  "recovery": "rebuilt-from-journal(schema)",
+  "journalCount": 1907,
+  "counters": {
+    "decodeErrors": 0,
+    "reorgs": 0,
+    "rebuilds": 1,
+    "removedLogs": 0,
+    "foreignLogs": 16965
+  },
+  "lastError": null,
+  "lastBatchAt": 1791925626865,
+  "markets": 4,
+  "tokens": 11
+}

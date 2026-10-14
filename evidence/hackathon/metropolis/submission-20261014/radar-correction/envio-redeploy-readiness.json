@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-13T21:07:49.214066+00:00",
+  "status": "PRODUCTION_APEX_V4_VERIFIED",
+  "tests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "candidate": {
+    "source": "ENVIO_HYPERSYNC",
+    "aggregationVersion": 4,
+    "lagBlocks": 6,
+    "anchorVerified": true,
+    "stateMigration": "schema3 raw journal retained, canonical replay, normalized amount recovery"
+  },
+  "publicApex": {
+    "url": "https://retropick.xyz/api/radar/radar",
+    "aggregationVersion": 4,
+    "correctedBackendDeployed": true,
+    "frontendSourceSha": "3728ce516df74954fc829211921632f7c830f36d",
+    "frontendDeploymentId": "dpl_54nQgxwmf2iTJR1scSaxDUZeB1F8",
+    "desktopMobileVerification": "apex-v4/verification.json"
+  },
+  "blocker": "Configured ubuntu and hermes-op SSH publickey denied; RemoteOps forced-command allowlist has no deployment route",
+  "upgradeBundle": "/home/ubuntu/retropick-media/metropolis-20261014/envio-upgrade",
+  "noFinancialWrites": true,
+  "candidateStopped": true,
+  "userDirectedContaboAccess": {
+    "alias": "vps-contabo-yubie-1",
+    "host": "84.247.158.36",
+    "user": "yubie-deploy",
+    "result": "Permission denied (publickey,password)",
+    "remoteMutation": false
+  },
+  "priorAccessBlockerResolvedExternally": true,
+  "latestVerifiedAt": "2026-10-13T22:46:56.922848+00:00"
+}

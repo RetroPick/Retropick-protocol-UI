@@ -107,12 +107,19 @@ test('live create economics loads admitted quotes and reaches Review without sig
   await page.getByPlaceholder('RETRO', {exact:true}).fill('READ');
   await page.getByRole('button', {name:'Continue',exact:true}).click();
   await expect(page.getByRole('heading', {name:/2 · Market & economics/})).toBeVisible();
-  const pair=page.getByRole('combobox', {name:/^Paired with/});
+  const pair=page.getByRole('radio', {name:/^MON quote logo MON Monad Live testnet/});
   await expect(pair).toBeVisible({timeout:30000});
-  await expect(pair.locator('option').first()).toContainText('MON');
+  await expect(pair).toBeChecked();
+  await expect(page.getByText('Currently admitted for this venue on Monad Testnet.', {exact:true})).toBeVisible();
   await expect(page.getByText('Launch terms unavailable.', {exact:false})).toHaveCount(0);
   await expect(page.getByText(/Launch fee .* MON\. Graduates at/)).toBeVisible();
-  await page.getByRole('button', {name:'Review',exact:true}).click();
+  // Admission/fee reads can finish before the pinned-block economics read.
+  // Retry only this unsigned navigation until its live-read guard clears.
+  await expect(async () => {
+    const review = page.getByRole('button', {name:'Review',exact:true});
+    if (await review.isVisible()) await review.click();
+    await expect(page.getByTestId('launch-review')).toBeVisible({timeout:1000});
+  }).toPass({timeout:30000, intervals:[1000,2000,3000]});
   await expect(page.getByTestId('launch-review')).toContainText('Read Only Draft · READ');
   await expect(page.getByTestId('launch-review')).not.toContainText('DEMO');
   await expect(page.getByRole('button', {name:'Connect wallet to launch',exact:true})).toBeVisible();

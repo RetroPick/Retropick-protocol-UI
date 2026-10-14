@@ -16,9 +16,10 @@ export interface RadarMarket {
   token: string | null;
   trades: number;
   ordersCreated: number;
-  ordersCanceled: number;
-  filledBaseUnits: bigint;
-  quoteVolume18: bigint;
+  ordersCanceled: number | null;
+  baseDecimals: number | null;
+  filledBaseUnits: bigint | null;
+  quoteVolume18: bigint | null;
   firstTradeAt: number | null;
   firstTradeTx: string | null;
   lastTradeAt: number | null;
@@ -38,6 +39,7 @@ export interface RadarToken {
 }
 
 export interface RadarSnapshot {
+  aggregationVersion: number | null;
   source: 'ENVIO_HYPERSYNC';
   chainId: number;
   counts: { launched: number; committed: number; secured: number; completed: number };
@@ -53,7 +55,18 @@ export class RadarUnavailableError extends Error {
   constructor(message: string, readonly cause?: unknown) { super(message); this.name = 'RadarUnavailableError'; }
 }
 
-const big = (v: unknown) => { try { return BigInt(String(v ?? '0')); } catch { return 0n; } };
+const big = (v: unknown) => typeof v === 'string' && /^\d+$/.test(v) ? BigInt(v) : null;
+
+/** Exact units; never describe a positive amount below display precision as zero. */
+export function formatRadarAmount(raw: bigint | null, decimals: number | null): string {
+  if (raw === null || decimals === null || !Number.isInteger(decimals) || decimals < 0 || decimals > 255 || raw < 0n) return 'Unavailable';
+  if (raw === 0n) return '0';
+  const scale = 10n ** BigInt(decimals);
+  if (raw * 10_000n < scale) return '<0.0001';
+  const whole = raw / scale;
+  const fraction = (raw % scale).toString().padStart(decimals, '0').slice(0, 4).replace(/0+$/, '');
+  return `${whole.toLocaleString('en-US')}${fraction ? '.' + fraction : ''}`;
+}
 
 export async function fetchRadar(signal?: AbortSignal): Promise<RadarSnapshot> {
   if (!RADAR_URL) throw new RadarUnavailableError('Radar disabled (no live mode).');
@@ -68,15 +81,23 @@ export async function fetchRadar(signal?: AbortSignal): Promise<RadarSnapshot> {
   if (!res.ok) throw new RadarUnavailableError(`Market radar HTTP ${res.status}.`);
   let raw: Record<string, unknown>;
   try { raw = await res.json() as Record<string, unknown>; } catch (error) { throw new RadarUnavailableError('Market radar returned non-JSON.', error); }
+  return parseRadarSnapshot(raw);
+}
+
+export function parseRadarSnapshot(raw: Record<string, unknown>): RadarSnapshot {
   if (raw.source !== 'ENVIO_HYPERSYNC' || raw.chainId !== CHAIN_ID) throw new RadarUnavailableError('Market radar provenance/chain rejected.');
-  const markets = (raw.markets as Array<Record<string, unknown>> ?? []).map((m) => ({
-    market: String(m.market), token: (m.token as string | null) ?? null,
-    trades: Number(m.trades ?? 0), ordersCreated: Number(m.ordersCreated ?? 0), ordersCanceled: Number(m.ordersCanceled ?? 0),
-    filledBaseUnits: big(m.filledBaseUnits), quoteVolume18: big(m.quoteVolume18),
-    firstTradeAt: (m.firstTradeAt as number | null) ?? null, firstTradeTx: (m.firstTradeTx as string | null) ?? null,
-    lastTradeAt: (m.lastTradeAt as number | null) ?? null, lastTradeTx: (m.lastTradeTx as string | null) ?? null,
-    stalenessS: (m.stalenessS as number | null) ?? null,
-  }) satisfies RadarMarket);
+  const current = raw.aggregationVersion === 4;
+  const markets = (Array.isArray(raw.markets) ? raw.markets as Array<Record<string, unknown>> : []).map((m) => {
+    const baseDecimals = current && typeof m.baseDecimals === 'number' && Number.isInteger(m.baseDecimals) && m.baseDecimals >= 0 && m.baseDecimals <= 255 ? m.baseDecimals : null;
+    return {
+      market: String(m.market), token: (m.token as string | null) ?? null,
+      trades: Number(m.trades ?? 0), ordersCreated: Number(m.ordersCreated ?? 0), ordersCanceled: current ? Number(m.ordersCanceled ?? 0) : null,
+      baseDecimals, filledBaseUnits: baseDecimals === null ? null : big(m.filledBaseUnits), quoteVolume18: baseDecimals === null ? null : big(m.quoteVolume18),
+      firstTradeAt: (m.firstTradeAt as number | null) ?? null, firstTradeTx: (m.firstTradeTx as string | null) ?? null,
+      lastTradeAt: (m.lastTradeAt as number | null) ?? null, lastTradeTx: (m.lastTradeTx as string | null) ?? null,
+      stalenessS: (m.stalenessS as number | null) ?? null,
+    } satisfies RadarMarket;
+  });
   const tokens = (raw.tokens as Array<Record<string, unknown>> ?? []).map((t) => ({
     token: String(t.token), phase: t.phase as RadarToken['phase'],
     launchedAt: (t.launchedAt as number | null) ?? null, completedAt: (t.completedAt as number | null) ?? null,
@@ -85,6 +106,7 @@ export async function fetchRadar(signal?: AbortSignal): Promise<RadarSnapshot> {
   }) satisfies RadarToken);
   const f = raw.freshness as RadarSnapshot['freshness'] | undefined;
   return {
+    aggregationVersion: typeof raw.aggregationVersion === 'number' ? raw.aggregationVersion : null,
     source: 'ENVIO_HYPERSYNC', chainId: CHAIN_ID,
     counts: raw.counts as RadarSnapshot['counts'], activeOnCurve: Number(raw.activeOnCurve ?? 0),
     tokens, markets,

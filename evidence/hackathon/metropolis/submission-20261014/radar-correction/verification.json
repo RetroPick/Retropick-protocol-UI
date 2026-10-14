@@ -1,0 +1,72 @@
+[
+  {
+    "check": "radar-full",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "test/journal.test.ts",
+      "test/market-params.test.ts",
+      "test/radar-client.test.ts",
+      "test/radar.test.ts",
+      "test/server-env.test.ts"
+    ],
+    "cwd": "/home/ubuntu/project/retropick/retropick-protocol/integrations/envio-market-radar",
+    "startedAt": "2026-10-13T19:39:38.199855+00:00",
+    "exitCode": 0,
+    "output": "/tmp/retropick-radar-correction-20261014/radar-full.log"
+  },
+  {
+    "check": "frontend-terminal",
+    "command": [
+      "node",
+      "--test",
+      "tests/terminal.test.mjs"
+    ],
+    "cwd": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui",
+    "startedAt": "2026-10-13T19:39:39.069447+00:00",
+    "exitCode": 0,
+    "output": "/tmp/retropick-radar-correction-20261014/frontend-terminal.log"
+  },
+  {
+    "check": "radar-source-types",
+    "command": [
+      "../../apps/retro-ui/node_modules/.bin/tsc",
+      "--noEmit",
+      "--strict",
+      "--target",
+      "es2022",
+      "--module",
+      "esnext",
+      "--moduleResolution",
+      "bundler",
+      "--allowImportingTsExtensions",
+      "--skipLibCheck",
+      "--types",
+      "node",
+      "--typeRoots",
+      "../../apps/retro-ui/node_modules/@types",
+      "src/journal.ts",
+      "src/market-params.ts",
+      "src/radar.ts",
+      "src/server.ts",
+      "src/stream.ts"
+    ],
+    "cwd": "/home/ubuntu/project/retropick/retropick-protocol/integrations/envio-market-radar",
+    "startedAt": "2026-10-13T19:39:39.665317+00:00",
+    "exitCode": 0,
+    "output": "/tmp/retropick-radar-correction-20261014/radar-source-types.log"
+  },
+  {
+    "check": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ubuntu/project/retropick/retropick-protocol",
+    "startedAt": "2026-10-13T19:39:42.230861+00:00",
+    "exitCode": 0,
+    "output": "/tmp/retropick-radar-correction-20261014/diff-check.log"
+  }
+]

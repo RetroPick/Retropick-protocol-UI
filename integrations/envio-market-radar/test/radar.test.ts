@@ -5,6 +5,7 @@ import { RadarAggregator, radarJson, marketStalenessS, bytes32ToAddress, eventId
 
 const MARKET = '0x1f5de72616a7fe645cf45ac66dfce8ac7452c57f';
 const TOKEN = '0x43e7e9b1b7d9a143573307b13d14b51580c18f15';
+const PARAMS = { token: TOKEN, baseDecimals: 18, sizePrecision: 10n ** 18n };
 const ev = (name: string, args: Record<string, unknown>, over: Partial<RadarEvent> = {}): RadarEvent => ({
   name, args, address: MARKET, blockNumber: 100, blockTimestamp: 1000, logIndex: 0, transactionHash: '0xt1', ...over,
 });
@@ -51,7 +52,7 @@ test('duplicate delivery (same block/logIndex/tx) is idempotent', () => {
 });
 
 test('kuru trade volume math is exact bigint (18-dec normalized)', () => {
-  const agg = new RadarAggregator();
+  const agg = new RadarAggregator({ [MARKET]: TOKEN }, { [MARKET]: PARAMS });
   agg.ingest([
     ev('Trade', { filledSize: 10n ** 18n, price: 4n * 10n ** 18n }, { logIndex: 1 }),
     ev('Trade', { filledSize: 500_000_000_000_000_000n, price: 4n * 10n ** 18n }, { logIndex: 2 }),
@@ -92,11 +93,11 @@ test('out-of-order events across blocks are tolerated; lastBlock is the max', ()
 });
 
 test('persist → restore roundtrip preserves exact bigints, mapping and counters', () => {
-  const agg = new RadarAggregator({ [MARKET]: TOKEN });
+  const agg = new RadarAggregator({ [MARKET]: TOKEN }, { [MARKET]: PARAMS });
   agg.ingest([ev('TokenLaunched', { token: '0xA' }, { blockNumber: 10, blockTimestamp: 100, logIndex: 1 }), ev('Trade', { filledSize: 3n, price: 2n ** 70n }, { blockNumber: 11 })]);
   agg.recordDecodeError(2);
   const wire = JSON.parse(JSON.stringify(agg.persist(), (_, v) => (typeof v === 'bigint' ? v.toString() : v)));
-  const restored = RadarAggregator.restore(wire, { [MARKET]: TOKEN });
+  const restored = RadarAggregator.restore(wire, { [MARKET]: TOKEN }, { [MARKET]: PARAMS });
   const s = restored.snapshot();
   assert.equal(s.markets[0].quoteVolume18, (2n ** 70n * 3n) / 10n ** 18n);
   assert.equal(s.counts.launched, 1);
@@ -114,7 +115,7 @@ test('staleness is null before the first trade and monotonic after', () => {
 });
 
 test('wire format renders bigints as strings', () => {
-  const agg = new RadarAggregator();
+  const agg = new RadarAggregator({ [MARKET]: TOKEN }, { [MARKET]: PARAMS });
   agg.ingest([ev('Trade', { filledSize: 3n, price: 2n ** 70n })]);
   const parsed = JSON.parse(radarJson(agg.snapshot()));
   assert.equal(typeof parsed.markets[0].quoteVolume18, 'string');
@@ -125,4 +126,41 @@ test('unknown events are ignored without failing', () => {
   const agg = new RadarAggregator();
   agg.ingest([ev('SomethingNew', {}, { logIndex: 9 })]);
   assert.equal(agg.snapshot().counts.launched, 0);
+});
+
+test('real RPV2M and RPE2E Trade values normalize grid size rather than token decimals', () => {
+  for (const [filledSize, price, base, quote] of [
+    [10_000_000n, 3_980_190_000_000_000n, 100_000_000_000_000_000n, 398_019_000_000_000n],
+    [100_000_000n, 3_990_000_000_000_000n, 1_000_000_000_000_000_000n, 3_990_000_000_000_000n],
+  ]) {
+    const agg = new RadarAggregator({ [MARKET]: TOKEN }, { [MARKET]: { ...PARAMS, sizePrecision: 100_000_000n } });
+    agg.ingest([ev('Trade', { filledSize, price })]);
+    const s = agg.snapshot();
+    assert.equal(s.aggregationVersion, 4);
+    assert.equal(s.markets[0].baseDecimals, 18);
+    assert.equal(s.markets[0].filledBaseUnits, base);
+    assert.equal(s.markets[0].quoteVolume18, quote);
+  }
+});
+
+test('unknown parameters yield null amounts; later verification recovers all prior trades', () => {
+  const agg = new RadarAggregator({ [MARKET]: TOKEN });
+  agg.ingest([ev('Trade', { filledSize: 125n, price: 2n * 10n ** 18n })]);
+  assert.equal(agg.snapshot().markets[0].filledBaseUnits, null);
+  assert.equal(agg.snapshot().markets[0].quoteVolume18, null);
+  agg.setMarketParams(MARKET, { token: TOKEN, baseDecimals: 6, sizePrecision: 100n });
+  assert.equal(agg.snapshot().markets[0].filledBaseUnits, 1_250_000n);
+  assert.equal(agg.snapshot().markets[0].quoteVolume18, 2_500_000_000_000_000_000n);
+  agg.setMarketParams(MARKET, { token: '0xwrong', baseDecimals: 6, sizePrecision: 100n });
+  assert.equal(agg.snapshot().markets[0].quoteVolume18, null);
+});
+
+test('semantic cancellation dedup spans individual/batch logs, delivery batches and restart', () => {
+  const agg = new RadarAggregator({ [MARKET]: TOKEN });
+  agg.ingest([ev('OrderCanceled', { orderId: 2n }, { logIndex: 1 })]);
+  const restored = RadarAggregator.restore(agg.persist(), { [MARKET]: TOKEN });
+  restored.ingest([ev('OrdersCanceled', { orderId: [2n, 2n, 0n, 3n] }, { logIndex: 2 })]);
+  assert.equal(restored.snapshot().markets[0].ordersCanceled, 2);
+  restored.ingest([ev('OrderCanceled', { orderId: 3n }, { logIndex: 3 })]);
+  assert.equal(restored.snapshot().markets[0].ordersCanceled, 2);
 });

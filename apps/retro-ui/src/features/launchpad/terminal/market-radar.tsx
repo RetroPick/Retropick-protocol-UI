@@ -7,7 +7,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Radar } from 'lucide-react';
 import { RADAR_URL } from '@/lib/live/env';
-import { fetchRadar, radarForToken, RadarUnavailableError } from '@/lib/live/radar-client';
+import { fetchRadar, radarForToken, RadarUnavailableError, formatRadarAmount } from '@/lib/live/radar-client';
 import { AddressChip } from '@/components/trading/primitives';
 
 const fmtDuration = (s: number | null): string => {
@@ -16,15 +16,6 @@ const fmtDuration = (s: number | null): string => {
   if (s < 3600) return `${Math.floor(s / 60)}m ${s % 60}s`;
   return `${Math.floor(s / 3600)}h ${Math.floor((s % 3600) / 60)}m`;
 };
-/** Base-unit bigint → compact decimal with the given decimals (default 18). Exact-integer formatting, never float. */
-function fmtUnits(raw: bigint, decimals = 18): string {
-  if (raw === 0n) return '0';
-  const neg = raw < 0n; const v = neg ? -raw : raw;
-  const base = 10n ** BigInt(decimals);
-  const whole = v / base; const frac = v % base;
-  const fracStr = frac.toString().padStart(decimals, '0').slice(0, 4).replace(/0+$/, '');
-  return `${neg ? '-' : ''}${whole.toLocaleString('en-US')}${fracStr ? '.' + fracStr : ''}`;
-}
 
 export function MarketRadarPanel({ token, quoteSymbol }: { token: string; quoteSymbol: string }) {
   const q = useQuery({
@@ -61,9 +52,9 @@ export function MarketRadarPanel({ token, quoteSymbol }: { token: string; quoteS
       <div><dt>Graduation latency</dt><dd title="GraduationCompleted − TokenLaunched">{fmtDuration(t.graduationLatencyS)}</dd></div>
       <div><dt>Time to first Kuru trade</dt><dd title="First Kuru trade − graduation">{fmtDuration(t.timeToFirstKuruTradeS)}</dd></div>
       <div><dt>Filled Kuru trades</dt><dd>{market ? market.trades : 0}</dd></div>
-      <div><dt>Historical filled size</dt><dd>{market ? fmtUnits(market.filledBaseUnits) : '0'} <span className="rp-unit">base</span></dd></div>
-      <div><dt>Historical quote volume</dt><dd>{market ? fmtUnits(market.quoteVolume18) : '0'} <span className="rp-unit">{quoteSymbol}</span> <span className="rp-muted" title="18-decimal normalized price × size; historical, not live depth">hist.</span></dd></div>
-      <div><dt>Order churn</dt><dd>{market ? `${market.ordersCreated} created · ${market.ordersCanceled} cancelled` : '—'}</dd></div>
+      <div><dt>Historical filled size</dt><dd>{formatRadarAmount(market?.filledBaseUnits ?? null, market?.baseDecimals ?? null)} <span className="rp-unit">base</span></dd></div>
+      <div><dt>Historical quote volume</dt><dd>{formatRadarAmount(market?.quoteVolume18 ?? null, 18)} <span className="rp-unit">{quoteSymbol}</span> <span className="rp-muted" title="Gross historical quote volume from verified Kuru price and size units; not live depth or net settlement">hist.</span></dd></div>
+      <div><dt>Order churn</dt><dd>{market?.ordersCanceled != null ? `${market.ordersCreated} created · ${market.ordersCanceled} cancelled` : 'Unavailable'}</dd></div>
       <div><dt>Indexed through</dt><dd>block {snapshot.freshness.cursorBlock.toLocaleString('en-US')} · lag {snapshot.freshness.lagBlocks}</dd></div>
     </dl>
     <div className="rp-radar-proof">

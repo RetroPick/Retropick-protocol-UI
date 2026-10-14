@@ -1,0 +1,12 @@
+{
+  "test": "fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+  "project": "desktop-1280",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 53
+}

@@ -2,7 +2,7 @@
 
 **The market creation layer for Monad.**
 
-RetroPick lets anyone launch a token through transparent onchain price discovery and automatically graduate it into mature Kuru orderbook liquidity.
+RetroPick carries community tokens through onchain bonding discovery and protected graduation into Kuru orderbook trading. Current scope is an unaudited Monad Testnet candidate; market depth and demand remain market-dependent.
 
 **Launch → Bonding Curve → Graduation Coordinator → Kuru Market → Protected Liquidity → Orderbook Trading**
 
@@ -16,7 +16,7 @@ The canonical deployed candidate demonstrates:
 - ✅ Permissionless completion/retry
 - ✅ Live testnet limit order, fill and cancel
 
-[Open the live frontend](https://retropick-metropolis.vercel.app). A fresh public-frontend launch, buy/sell, Kuru graduation and two-wallet order/fill/cancel are [verified](evidence/hackathon/metropolis/frontend-e2e-trading.json). [Watch the 2:48 technical demo](https://retropick-metropolis.vercel.app/launchpad/demo). The testnet contract lifecycle is already evidenced; this is an **unaudited hackathon candidate**, not a production or mainnet release. Canonical Circle-USDC live smoke: **BLOCKED_FUNDING**.
+[Open the canonical live frontend](https://retropick.xyz/launchpad). Historical team functional-test receipts demonstrate launch, curve trading, Kuru graduation and two-wallet order/fill/cancel; they are not organic volume or present orderbook depth. Fresh desktop/mobile checks and the current video status are recorded in the [submission readiness report](docs/metropolis/submission-20261014/READINESS_REPORT.md). The founder-recorded pitch remains founder-owned. Canonical Circle-USDC live smoke: **BLOCKED_FUNDING**.
 
 [Judge overview](HACKATHON.md) · [Evidence map](docs/hackathon/EVIDENCE_MAP.md) · [Full deployment manifest](deployments/monad-testnet/v2.json) · [Metropolis requirements](docs/hackathon/METROPOLIS_REQUIREMENTS.md)
 
@@ -56,15 +56,15 @@ Node ≥22.13 and pnpm 11.25.0:
 
 ```sh
 pnpm install --frozen-lockfile
-cp apps/web/.env.example apps/web/.env.local
-pnpm --filter @retropick/web dev
+cp apps/retro-ui/.env.example apps/retro-ui/.env.local
+pnpm --filter @retropick/retro-ui dev
 ```
 
-The default live flow uses deployed Monad Testnet addresses. Set a server-only `MONAD_TESTNET_RPC_URL` for a reliable provider. Wallets sign/broadcast directly; the server RPC proxy is read-only. Set `NEXT_PUBLIC_DATA_MODE=mock` only for the explicitly labelled legacy visual prototype.
+The canonical frontend is `apps/retro-ui`. Configure its documented live data mode and public read infrastructure; never put credentials or signing keys in a browser environment. Wallets sign normal economic writes directly to chain. `apps/web` is legacy and excluded from this submission's demo and implementation work.
 
 ```sh
-pnpm --filter @retropick/web typecheck
-pnpm --filter @retropick/web build
+pnpm --filter @retropick/retro-ui typecheck
+pnpm --filter @retropick/retro-ui build
 ```
 
 Contracts require Foundry, recursive submodules, the separately built v4/Permit2 dependencies and a funded RPC endpoint for mandatory fork tests. See [contract setup](contracts/README.md) and [release evidence](evidence/launchpad/v2-monad-testnet/README.md). Never commit signing keys.

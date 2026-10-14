@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-13T22:51:31.898Z",
+  "results": [
+    {
+      "name": "brag",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=_dwYsOE8nDM",
+      "anonymous": true,
+      "duration": 29.921,
+      "time": 4.501041,
+      "width": 1280,
+      "height": 720,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick | From Token Launch to Kuru Trading | Silent Product Ad - YouTube",
+      "passed": true
+    }
+  ]
+}

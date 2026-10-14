@@ -1,0 +1,12 @@
+{
+  "test": "fixture/earn.spec.ts > @earn referral copy, section tabs, demo positions toggle",
+  "project": "tablet-768",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 60
+}

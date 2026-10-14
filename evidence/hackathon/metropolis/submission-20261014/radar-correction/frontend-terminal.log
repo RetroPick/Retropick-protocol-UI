@@ -1,0 +1,22 @@
+✔ orderSizeRaw equals former kuru-ticket inline math (1.048144ms)
+✔ holderValueRaw equals former token-detail inline math (0.206845ms)
+✔ curveSpotX18 and marketCapRaw equal former token-detail inline math (0.1767ms)
+✔ formatRaw truncates without float error (0.500787ms)
+✔ range and interval are independent; only page-safe combinations are offered (0.796068ms)
+✔ demo fixtures cover the four lifecycle states deterministically (89.567206ms)
+✔ sufficient margin: no deposit, single order (0.753224ms)
+✔ shortfall: deposits exactly the gap, waits, re-reads margin, then a separate order (0.253948ms)
+✔ rejecting the deposit prevents the order (0.329799ms)
+✔ order failure after deposit: "Margin deposited; order not placed", retry never re-deposits (0.393263ms)
+✔ retry refuses to place the order if deposited margin is no longer sufficient (0.276404ms)
+✔ buildDepthLadder sorts, dedupes and accumulates exact bigints (0.355729ms)
+✔ buildDepthLadder handles empty, one-sided and malformed books fail-closed (0.211579ms)
+✔ demo fixture exposes a deterministic two-sided graduated book (0.247303ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 558.275489

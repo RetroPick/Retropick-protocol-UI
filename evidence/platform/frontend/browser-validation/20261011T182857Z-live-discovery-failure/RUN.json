@@ -1,0 +1,7 @@
+{
+  "target": "live",
+  "label": "discovery-failure",
+  "startedAt": "2026-10-11T18:28:57.632Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts e2e/live/discovery-failure.spec.ts e2e/live/live-readonly.spec.ts --project desktop-1440 --project mobile-390",
+  "cwd": "apps/retro-ui"
+}

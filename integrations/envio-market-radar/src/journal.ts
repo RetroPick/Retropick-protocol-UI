@@ -1,4 +1,4 @@
-// Durable state for the Envio radar (schema v3).
+// Durable state for the Envio radar (schema v4; raw journal format unchanged).
 //
 //   journal.jsonl  append-only, one FULL replayable decoded event per line (bigints tagged),
 //                  fsync'd before the aggregate is advanced. It is the source of truth.
@@ -14,7 +14,7 @@ import { existsSync, mkdirSync, openSync, readFileSync, renameSync, writeFileSyn
 import { join } from 'node:path';
 import type { RadarEvent } from './radar.ts';
 
-export const STATE_SCHEMA_VERSION = 3;
+export const STATE_SCHEMA_VERSION = 4;
 export const HASH_RING_SIZE = 512;
 
 export interface JournalEvent extends RadarEvent { id: string; blockHash: string }
@@ -56,13 +56,13 @@ export function writeSnapshot(dir: string, state: SnapshotState): void {
   atomicWrite(join(dir, SNAPSHOT), encode(state) + '\n');
 }
 
-export type SnapshotLoad = { snapshot: SnapshotState | null; reason: 'ok' | 'missing' | 'corrupt' | 'schema' };
+export type SnapshotLoad = { snapshot: SnapshotState | null; previousIdentity?: Identity; reason: 'ok' | 'missing' | 'corrupt' | 'schema' };
 export function loadSnapshot(dir: string): SnapshotLoad {
   const p = join(dir, SNAPSHOT);
   if (!existsSync(p)) return { snapshot: null, reason: 'missing' };
   try {
     const s = decode<SnapshotState>(readFileSync(p, 'utf8'));
-    if (s.schemaVersion !== STATE_SCHEMA_VERSION) return { snapshot: null, reason: 'schema' };
+    if (s.schemaVersion !== STATE_SCHEMA_VERSION) return { snapshot: null, previousIdentity: s.identity, reason: 'schema' };
     return { snapshot: s, reason: 'ok' };
   } catch { return { snapshot: null, reason: 'corrupt' }; }
 }

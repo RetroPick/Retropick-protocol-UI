@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-13T21:35:13.413Z",
+  "results": [
+    {
+      "name": "product",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=M5nCBgfZu04",
+      "anonymous": true,
+      "duration": 124.041,
+      "time": 3.306601,
+      "width": 1280,
+      "height": 720,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Product Demo | Launch to Kuru Trading on Monad Testnet | 2:04 - YouTube",
+      "passed": true
+    },
+    {
+      "name": "kuru",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=fF6K2h31vVI",
+      "anonymous": true,
+      "duration": 110.041,
+      "time": 2.801808,
+      "width": 1280,
+      "height": 720,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Kuru Consumer Demo | Bond-to-Book Trading | Monad Testnet | 1:50 - YouTube",
+      "passed": true
+    },
+    {
+      "name": "product",
+      "mobile": true,
+      "url": "https://www.youtube.com/watch?v=M5nCBgfZu04",
+      "anonymous": true,
+      "duration": 124.041,
+      "time": 2.866283,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Product Demo | Launch to Kuru Trading on Monad Testnet | 2:04 - YouTube",
+      "passed": true
+    },
+    {
+      "name": "kuru",
+      "mobile": true,
+      "url": "https://www.youtube.com/watch?v=fF6K2h31vVI",
+      "anonymous": true,
+      "duration": 110.041,
+      "time": 2.886301,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Kuru Consumer Demo | Bond-to-Book Trading | Monad Testnet | 1:50 - YouTube",
+      "passed": true
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 // Pure market-quality aggregation over RetroPick launch-lifecycle + Kuru orderbook
 // events. No I/O: the stream module feeds decoded events in, snapshots come out.
 // All quantities are exact bigints; quote volume is 18-decimal normalized
-// (priceX18 × filledSize / 1e18) and labeled as such downstream.
+// (priceX18 × filledSize / verified sizePrecision). Kuru sizes are grid units,
+// not token atomic units. Unknown market parameters make amount fields null.
 //
 // Addresses are normalised to lowercase everywhere (config, event args, log address).
 // Market → token mapping is AUTHORITATIVELY derived onchain from the coordinator's
@@ -38,9 +39,10 @@ export interface MarketActivity {
   trades: number;
   ordersCreated: number;
   ordersCanceled: number;
-  filledBaseUnits: bigint;
+  baseDecimals: number | null;
+  filledBaseUnits: bigint | null;
   /** 18-decimal-normalized quote volume (see module comment). */
-  quoteVolume18: bigint;
+  quoteVolume18: bigint | null;
   firstTradeBlock: number | null;
   firstTradeAt: number | null;
   firstTradeTx: string | null;
@@ -52,6 +54,7 @@ export interface MarketActivity {
 export type Phase = 'LAUNCHED' | 'COMMITTED' | 'GRADUATION_SECURED' | 'GRADUATED' | 'UNKNOWN';
 
 export interface RadarMetrics {
+  aggregationVersion: 4;
   lastBlock: number;
   counts: { launched: number; committed: number; secured: number; completed: number };
   activeOnCurve: number;
@@ -77,7 +80,8 @@ export interface RadarMetrics {
 }
 
 const lc = (v: unknown) => String(v ?? '').toLowerCase();
-const BIG_KEYS = ['filledBaseUnits', 'quoteVolume18'] as const;
+export interface VerifiedMarketParams { token: string; baseDecimals: number; sizePrecision: bigint }
+export const AGGREGATION_VERSION = 4;
 
 /** bytes32 left-padded address → lowercase 20-byte address, or null if not address-shaped. */
 export function bytes32ToAddress(value: unknown): string | null {
@@ -97,6 +101,8 @@ export interface PersistedAggregator {
   decodeErrors: number;
   mappingConflicts: number;
   lastEventBlock: number;
+  cancelled: string[];
+  tradeTotals: [string, { filledSize: bigint; quoteProduct: bigint }][];
 }
 
 export class RadarAggregator {
@@ -110,23 +116,27 @@ export class RadarAggregator {
   #mappingConflicts = 0;
   #lastEventBlock = 0;
   #headHeight = 0;
+  #cancelled = new Set<string>();
+  #tradeTotals = new Map<string, { filledSize: bigint; quoteProduct: bigint }>();
+  #marketParams = new Map<string, VerifiedMarketParams>();
 
-  constructor(marketTokens: Record<string, string> = {}) {
+  constructor(marketTokens: Record<string, string> = {}, marketParams: Record<string, VerifiedMarketParams> = {}) {
     this.#marketTokens = new Map(Object.entries(marketTokens).map(([m, t]) => [lc(m), lc(t)]));
+    for (const [market, params] of Object.entries(marketParams)) this.setMarketParams(market, params);
   }
 
   /** Restore from a persisted snapshot. Accepts bigint fields as strings (JSON). */
-  static restore(state: Partial<PersistedAggregator>, marketTokens: Record<string, string> = {}): RadarAggregator {
-    const agg = new RadarAggregator(marketTokens);
+  static restore(state: Partial<PersistedAggregator>, marketTokens: Record<string, string> = {}, marketParams: Record<string, VerifiedMarketParams> = {}): RadarAggregator {
+    const agg = new RadarAggregator(marketTokens, marketParams);
     for (const [m, t] of state.marketTokens ?? []) agg.#marketTokens.set(lc(m), lc(t));
     for (const id of state.seen ?? []) agg.#seen.add(id);
     for (const [k, v] of state.tokens ?? []) agg.#tokens.set(lc(k), { ...v });
     for (const entry of state.markets ?? []) {
       const [key, raw] = entry as [string, MarketActivity];
-      const m = { ...raw } as MarketActivity & Record<string, unknown>;
-      for (const k of BIG_KEYS) m[k] = BigInt((raw as unknown as Record<string, unknown>)[k] as string | bigint ?? 0);
-      agg.#markets.set(lc(key), m);
+      agg.#markets.set(lc(key), { ...raw, baseDecimals: null, filledBaseUnits: null, quoteVolume18: null });
     }
+    for (const key of state.cancelled ?? []) agg.#cancelled.add(key);
+    for (const [market, totals] of state.tradeTotals ?? []) agg.#tradeTotals.set(lc(market), { filledSize: BigInt(totals.filledSize), quoteProduct: BigInt(totals.quoteProduct) });
     if (state.counts) agg.#counts = { ...state.counts };
     agg.#lastBlock = state.lastBlock ?? 0;
     agg.#lastEventBlock = state.lastEventBlock ?? state.lastBlock ?? 0;
@@ -147,6 +157,8 @@ export class RadarAggregator {
       decodeErrors: this.#decodeErrors,
       mappingConflicts: this.#mappingConflicts,
       lastEventBlock: this.#lastEventBlock,
+      cancelled: [...this.#cancelled],
+      tradeTotals: [...this.#tradeTotals.entries()].map(([k, v]) => [k, { ...v }]),
     };
   }
 
@@ -155,6 +167,12 @@ export class RadarAggregator {
   has(id: string): boolean { return this.#seen.has(id); }
   /** Kuru logs are only aggregated for markets mapped to a RetroPick token. */
   isTrackedMarket(address: string): boolean { return this.#marketTokens.has(lc(address)); }
+  setMarketParams(market: string, params: VerifiedMarketParams | null): void {
+    const key = lc(market);
+    if (params && Number.isInteger(params.baseDecimals) && params.baseDecimals >= 0 && params.baseDecimals <= 255 && params.sizePrecision > 0n) {
+      this.#marketParams.set(key, { ...params, token: lc(params.token) });
+    } else this.#marketParams.delete(key);
+  }
 
   /** Idempotent ingest: each (block, logIndex, tx) is processed exactly once. */
   ingest(events: RadarEvent[]): { accepted: number; duplicates: number } {
@@ -214,19 +232,31 @@ export class RadarAggregator {
         m.lastTradeBlock = e.blockNumber; m.lastTradeAt = e.blockTimestamp; m.lastTradeTx = e.transactionHash;
         const filled = BigInt((e.args.filledSize as bigint | undefined) ?? 0n);
         const price = BigInt((e.args.price as bigint | undefined) ?? 0n);
-        m.filledBaseUnits += filled;
-        m.quoteVolume18 += (price * filled) / 10n ** 18n;
+        const totals = this.#tradeTotals.get(m.market) ?? { filledSize: 0n, quoteProduct: 0n };
+        if (filled < 0n || price < 0n) throw Error('Negative Kuru trade quantity');
+        totals.filledSize += filled;
+        totals.quoteProduct += price * filled;
+        this.#tradeTotals.set(m.market, totals);
         break;
       }
       case 'OrderCreated': this.#market(e.address).ordersCreated++; break;
-      case 'OrderCanceled': this.#market(e.address).ordersCanceled++; break;
+      case 'OrderCanceled': this.#cancel(e, e.args.orderId); break;
       case 'OrdersCanceled': {
         const ids = Array.isArray(e.args.orderId) ? e.args.orderId : [];
-        this.#market(e.address).ordersCanceled += ids.length;
+        for (const id of ids) this.#cancel(e, id);
         break;
       }
       default: break; // unknown events are ignored, never fatal
     }
+  }
+
+  #cancel(e: RadarEvent, id: unknown): void {
+    const orderId = BigInt(String(id ?? 0));
+    if (orderId <= 0n) return; // NoRevert batch events use zero for skipped orders.
+    const key = `${lc(e.address)}:${orderId}:${lc(e.transactionHash)}`;
+    if (this.#cancelled.has(key)) return;
+    this.#cancelled.add(key);
+    this.#market(e.address).ordersCanceled++;
   }
 
   #lifecycle(token: string): TokenLifecycle {
@@ -238,7 +268,7 @@ export class RadarAggregator {
   #market(address: string): MarketActivity {
     const key = lc(address);
     let m = this.#markets.get(key);
-    if (!m) { m = { market: key, token: this.#marketTokens.get(key) ?? null, trades: 0, ordersCreated: 0, ordersCanceled: 0, filledBaseUnits: 0n, quoteVolume18: 0n, firstTradeBlock: null, firstTradeAt: null, firstTradeTx: null, lastTradeBlock: null, lastTradeAt: null, lastTradeTx: null }; this.#markets.set(key, m); }
+    if (!m) { m = { market: key, token: this.#marketTokens.get(key) ?? null, trades: 0, ordersCreated: 0, ordersCanceled: 0, baseDecimals: null, filledBaseUnits: null, quoteVolume18: null, firstTradeBlock: null, firstTradeAt: null, firstTradeTx: null, lastTradeBlock: null, lastTradeAt: null, lastTradeTx: null }; this.#markets.set(key, m); }
     return m;
   }
 
@@ -251,11 +281,17 @@ export class RadarAggregator {
     });
     const activeOnCurve = tokens.filter((t) => t.launchedAt !== null && t.completedAt === null).length;
     return {
+      aggregationVersion: AGGREGATION_VERSION,
       lastBlock: this.#lastBlock,
       counts: { ...this.#counts },
       activeOnCurve,
       tokens: tokens.sort((a, b) => (b.launchedAt ?? 0) - (a.launchedAt ?? 0)),
-      markets: [...this.#markets.values()].map((m) => ({ ...m })),
+      markets: [...this.#markets.values()].map((m) => {
+        const params = this.#marketParams.get(m.market);
+        const totals = this.#tradeTotals.get(m.market) ?? { filledSize: 0n, quoteProduct: 0n };
+        if (!params || params.token !== m.token) return { ...m, baseDecimals: null, filledBaseUnits: null, quoteVolume18: null };
+        return { ...m, baseDecimals: params.baseDecimals, filledBaseUnits: totals.filledSize * 10n ** BigInt(params.baseDecimals) / params.sizePrecision, quoteVolume18: totals.quoteProduct / params.sizePrecision };
+      }),
       computedAt: Math.floor(Date.now() / 1000),
       freshness: {
         headHeight: this.#headHeight,

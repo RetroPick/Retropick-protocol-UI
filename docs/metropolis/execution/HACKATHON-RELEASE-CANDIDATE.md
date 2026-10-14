@@ -18,11 +18,13 @@ Primary track: Onchain Finance & Trading. Deadline Oct 14 2026 10:59 WIB (verify
 - Live launch discovery: 9 launches, 3 graduated, indexer lag ~8, chainId 10143. RPC healthy.
 - Freshness/empty/unavailable states are honest and distinct.
 
-## Verification run (this session, all green)
+## Verification run (2026-10-12, operator-unblock pass, all green)
 retro-ui domain 17 · mera-signer 6 · protection 5 · media 4 · vault 7 · indexed-record 6 ·
-public-rpc-env 2 · terminal 14 · SDK 43 · indexer 42 · Envio radar 22 · MetaMask policy 10 ·
-staging/gateway/deploy 5 · staging Playwright 12 · radar panel Playwright 3 · discovery-failure 8 ·
-Protected Earn Playwright 2. Typecheck clean. No apps/web diff. Secret scan clean.
+public-rpc-env 2 · terminal 14 · SDK 43 · indexer 42 · Envio radar 25 · MetaMask policy 10 ·
+staging/gateway/deploy 5 · staging Playwright 12. Typecheck clean. No apps/web diff.
+Live staging: 6/6 units active; `/launchpad`, `/v1/launches`, `/api/referrals/health`,
+`/api/media/health` (mode pinata), `/api/radar/health` (OK, lag 0, 0 decode errors) all 200;
+indexer chain 10143.
 
 ## Judge demonstration path
 1. Open the staging URL → Launchpad shows real indexed launches (freshness badge, lag).

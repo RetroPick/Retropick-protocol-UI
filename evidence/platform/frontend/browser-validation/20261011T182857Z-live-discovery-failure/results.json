@@ -1,0 +1,982 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "e2e/live/discovery-failure.spec.ts",
+      "e2e/live/live-readonly.spec.ts",
+      "--project",
+      "desktop-1440",
+      "--project",
+      "mobile-390"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-live-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-live-dist --port 4318 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4318/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/discovery-failure.spec.ts",
+      "file": "live/discovery-failure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@live indexer unreachable renders an explicit unavailable state, not an empty filter result",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:03.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-728cd39fb433b852ecd4",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "@live indexer HTTP 502 is classified as an outage",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1704,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:03.730Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-6131ec75fe4cd73905a0",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "@live wrong-chain envelope is rejected",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1687,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:03.756Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-e8e0d3a59ebf2079f93f",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "@live successful zero-row result keeps the genuine empty state",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:03.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-5b7889ad89f22856b783",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "@live indexer unreachable renders an explicit unavailable state, not an empty filter result",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:07.190Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-5cdda606b586e44c5125",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "@live indexer HTTP 502 is classified as an outage",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1138,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:07.978Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-8d645ac0dec2a321a826",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "@live wrong-chain envelope is rejected",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 970,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:08.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-762fa4a7acdfe8f258a9",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "@live successful zero-row result keeps the genuine empty state",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:09.282Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d0cf0cdac19ff9e7a2a-ac20f6711b53445ce07a",
+          "file": "live/discovery-failure.spec.ts",
+          "line": 32,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "live/live-readonly.spec.ts",
+      "file": "live/live-readonly.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@live discovery renders indexed launches read-only",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 990,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:06.009Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad02b925d28411410718-4d7de9ddc8656666e821",
+          "file": "live/live-readonly.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "@live ACTIVE token terminal renders from indexer + chain without signing",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 32412,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 74,
+                      "line": 41
+                    },
+                    "snippet": "  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 74,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n\n  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:06.020Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 74,
+                    "line": 41
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 32376,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 74,
+                      "line": 41
+                    },
+                    "snippet": "  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 74,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n\n  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-11T18:29:40.352Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-A-b2963-dexer-chain-without-signing-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 74,
+                    "line": 41
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ad02b925d28411410718-ef142812d4f51d4e559c",
+          "file": "live/live-readonly.spec.ts",
+          "line": 25,
+          "column": 3
+        },
+        {
+          "title": "@live GRADUATED token terminal renders from indexer + chain without signing",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "failed",
+                  "duration": 32423,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 74,
+                      "line": 41
+                    },
+                    "snippet": "  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 74,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n\n  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:06.039Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 74,
+                    "line": 41
+                  }
+                },
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 32454,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 74,
+                      "line": 41
+                    },
+                    "snippet": "  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 74,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n\n  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-11T18:29:40.335Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-desktop-1440-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 74,
+                    "line": 41
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ad02b925d28411410718-909a66dea0d827992ca7",
+          "file": "live/live-readonly.spec.ts",
+          "line": 25,
+          "column": 3
+        },
+        {
+          "title": "@live discovery renders indexed launches read-only",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1254,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:09.695Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad02b925d28411410718-9ce15911ae1aace9d1a8",
+          "file": "live/live-readonly.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "@live ACTIVE token terminal renders from indexer + chain without signing",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2879,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:10.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad02b925d28411410718-3adcba41f3946f0408d8",
+          "file": "live/live-readonly.spec.ts",
+          "line": 25,
+          "column": 3
+        },
+        {
+          "title": "@live GRADUATED token terminal renders from indexer + chain without signing",
+          "ok": false,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 33048,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 74,
+                      "line": 41
+                    },
+                    "snippet": "  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 74,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket').getByRole('button', { name: /Connect wallet/ })\u001b[22m\n\n\n  39 |     const ticket = page.getByTestId('trade-ticket');\n  40 |     await expect(ticket).toBeVisible();\n> 41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n     |                                                                          ^\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n  44 |     await snap(`live-${phase.toLowerCase()}`);\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:41:74"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T18:29:11.053Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 74,
+                    "line": 41
+                  }
+                },
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2272,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket')\nExpected: visible\nError: strict mode violation: getByTestId('trade-ticket') resolved to 2 elements:\n    1) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByTestId('trade-ticket').first()\n    2) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByRole('region', { name: 'Trade ticket' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket')\nExpected: visible\nError: strict mode violation: getByTestId('trade-ticket') resolved to 2 elements:\n    1) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByTestId('trade-ticket').first()\n    2) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByRole('region', { name: 'Trade ticket' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket')\u001b[22m\n\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:40:26",
+                    "location": {
+                      "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                      "column": 26,
+                      "line": 40
+                    },
+                    "snippet": "  38 |     if (test.info().project.name.startsWith('mobile')) await page.getByTestId('mobile-trade-bar').getByRole('button', { name: 'Trade' }).tap();\n  39 |     const ticket = page.getByTestId('trade-ticket');\n> 40 |     await expect(ticket).toBeVisible();\n     |                          ^\n  41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                        "column": 26,
+                        "line": 40
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('trade-ticket')\nExpected: visible\nError: strict mode violation: getByTestId('trade-ticket') resolved to 2 elements:\n    1) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByTestId('trade-ticket').first()\n    2) <section class=\"rp-ticket\" aria-label=\"Trade ticket\" data-testid=\"trade-ticket\">…</section> aka getByRole('region', { name: 'Trade ticket' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('trade-ticket')\u001b[22m\n\n\n  38 |     if (test.info().project.name.startsWith('mobile')) await page.getByTestId('mobile-trade-bar').getByRole('button', { name: 'Trade' }).tap();\n  39 |     const ticket = page.getByTestId('trade-ticket');\n> 40 |     await expect(ticket).toBeVisible();\n     |                          ^\n  41 |     await expect(ticket.getByRole('button', { name: /Connect wallet/ })).toBeVisible();\n  42 |     if (phase === 'ACTIVE') await expect(ticket.getByRole('radiogroup', { name: 'Order type' }).getByRole('radio', { name: 'Limit' })).toHaveAttribute('aria-disabled', 'true');\n  43 |     if (phase === 'GRADUATED') await expect(ticket).toContainText('Kuru orderbook');\n    at /home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts:40:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-11T18:29:46.096Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/browser-validation/20261011T182857Z-live-discovery-failure/test-output/live-live-readonly--live-G-642b4-dexer-chain-without-signing-mobile-390-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e/live/live-readonly.spec.ts",
+                    "column": 26,
+                    "line": 40
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ad02b925d28411410718-31495eeb97edef7c0ff1",
+          "file": "live/live-readonly.spec.ts",
+          "line": 25,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T18:28:59.157Z",
+    "duration": 74944.605,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

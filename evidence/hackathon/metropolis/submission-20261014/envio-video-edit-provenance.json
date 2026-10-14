@@ -1,0 +1,163 @@
+{
+  "method": "FFmpeg edit of real Ultrademo Playwright captures; not a native Remotion export",
+  "sourceOrigin": "https://retropick.xyz",
+  "capturedFrontendRevision": "54a003dff49033b82ab1fa4cd0d0e13ade8409c0",
+  "backendAggregationVersion": 4,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "audio": "none; professional on-screen captions",
+  "durationSeconds": 115.0,
+  "sourceProject": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014",
+  "edits": [
+    {
+      "scene": "s1-product-context",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s1-product-context.mp4",
+      "sourceSha256": "bbd783d72197debb9baffeb3aa5a176fddfd25e0a025cad5e423c527878ada98",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 15.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 225,
+          "text": "RetroPick \u00b7 Monad Testnet"
+        },
+        {
+          "from": 225,
+          "to": 450,
+          "text": "Envio: lifecycle insight for creators and traders"
+        }
+      ]
+    },
+    {
+      "scene": "s2-provider-freshness",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s2-provider-freshness.mp4",
+      "sourceSha256": "48a69ce2759f857e6f7d6699b59b60584c49db8c172c2d9066e2ed150e9b89b3",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 15.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 15.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 225,
+          "text": "Actual public HyperSync health response"
+        },
+        {
+          "from": 225,
+          "to": 450,
+          "text": "Source, cursor, lag and canonical anchor"
+        }
+      ]
+    },
+    {
+      "scene": "s3-lifecycle",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s3-lifecycle.mp4",
+      "sourceSha256": "0c323e659fa6f4f46c782a4059a01336822576242d68039e30007e6166cd1a66",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 20.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 30.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 300,
+          "text": "Joined launch \u2192 graduation events"
+        },
+        {
+          "from": 300,
+          "to": 600,
+          "text": "Graduation latency \u00b7 bottleneck evidence"
+        }
+      ]
+    },
+    {
+      "scene": "s4-first-execution",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s4-first-execution.mp4",
+      "sourceSha256": "4058c28bd6a99a056821ff74f8b436cfe9b14a05c1d33501ec4997cf6ab9e200",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 20.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 50.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 300,
+          "text": "First Kuru execution has a transaction proof"
+        },
+        {
+          "from": 300,
+          "to": 600,
+          "text": "Historical team tests \u2260 organic demand"
+        }
+      ]
+    },
+    {
+      "scene": "s5-exact-units",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s5-exact-units.mp4",
+      "sourceSha256": "45bd694eac4d9e792c41e8699c35e4c98f7c9f03430ed1fc1e270d7c6fd9352b",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 20.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 70.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 300,
+          "text": "Verified market units \u00b7 exact integers"
+        },
+        {
+          "from": 300,
+          "to": 600,
+          "text": "Grid-size normalization; cancellation deduplication"
+        }
+      ]
+    },
+    {
+      "scene": "s6-compare-execution",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s6-compare-execution.mp4",
+      "sourceSha256": "23ce14e1405bfd0a91e513cb29e240b7dc6a0d224696e5485d7a960c404ed05c",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 15.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 90.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 225,
+          "text": "Actual retropick.xyz Market Quality Radar"
+        },
+        {
+          "from": 225,
+          "to": 450,
+          "text": "Historical activity \u2260 executable orderbook depth"
+        }
+      ]
+    },
+    {
+      "scene": "s7-close",
+      "source": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/captures/s7-close.mp4",
+      "sourceSha256": "e2b1149ba581f073da4da40ba03bc0aa4b1a1122a2f2c82c7ec4045718272a99",
+      "sourceStartSeconds": 0,
+      "durationSeconds": 10.0,
+      "playbackRate": 1,
+      "timelineStartSeconds": 105.0,
+      "captionCues": [
+        {
+          "from": 0,
+          "to": 150,
+          "text": "Envio supplies insight \u00b7 Kuru executes \u00b7 Monad settles"
+        },
+        {
+          "from": 150,
+          "to": 300,
+          "text": "Unaudited Testnet candidate \u00b7 retropick.xyz"
+        }
+      ]
+    }
+  ],
+  "output": "/home/ubuntu/retropick-media/metropolis-20261014/final/retropick-envio-115s.mp4",
+  "sha256": "8e63c307e945e7d974fad625312eacca3d84b4b5970f71726cfe4afb9cb723ba"
+}

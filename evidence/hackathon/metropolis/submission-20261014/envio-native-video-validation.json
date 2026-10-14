@@ -1,0 +1,110 @@
+{
+  "source": "/home/ubuntu/retropick-media/metropolis-20261014/envio115-native-candidate.mp4",
+  "sha256": "10ec6defad637dfe6adcb29b14a54c79b41eece083aef8c7ae9788e90027ce17",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuvj420p",
+        "level": 40,
+        "color_range": "pc",
+        "color_space": "bt470bg",
+        "chroma_location": "center",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 10350000,
+        "duration": "115.000000",
+        "bit_rate": "693088",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "3450",
+        "extradata_size": 51,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.100 libx264"
+        },
+        "side_data_list": [
+          {
+            "side_data_type": "ICC Profile"
+          }
+        ]
+      }
+    ],
+    "format": {
+      "filename": "/home/ubuntu/retropick-media/metropolis-20261014/envio115-native-candidate.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "115.000000",
+      "size": "10005967",
+      "bit_rate": "696067",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf60.16.100",
+        "comment": "Made with Remotion 4.0.487"
+      }
+    }
+  },
+  "fullDecode": "PASS",
+  "visualReview": "PASS: all seven midpoint frames actually viewed; readable native lower-third captions, correct actual apex source HUD, formatted API excerpts explicitly labelled, no exposed secrets or fabricated screens.",
+  "durationSeconds": 115.0,
+  "method": "Native Ultrademo pipeline export: scripts/render.mjs \u2192 Remotion Demo, explicit 3450 frames, 1920\u00d71080, 30fps; no narration.",
+  "sourceStoryboard": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/assets/storyboard.json",
+  "completedRenderLog": "/home/ubuntu/retropick-media/metropolis-20261014/envio-render-resumed.log",
+  "rawNativeExport": "/home/ubuntu/retropick-media/metropolis-20261014/ultrademo-workspace/projects/retropick-envio-technical-20261014/out/retropick-envio-technical-20261014.mp4",
+  "rawNativeSha256": "668e61d6edc5fb35e0b83eb040aa3af3a713c498f9e4e8d57cd25672f587e50e",
+  "postExportRepair": "Removed silent AAC track by stream copy; no video reencoding. Raw AAC mean/max -91dB; raw mux duration115.050667s; raw video115s. Strict noaudio gate originally failed, repaired variant is separately validated.",
+  "videoPacketHash": "SHA256=eebff66317252baa9a0c6d86649e11abebee58a6ac5b6a6097b4ef2209fa59ba",
+  "identicalNativeVideoPackets": "PASS",
+  "output": "/home/ubuntu/retropick-media/metropolis-20261014/final/retropick-envio-native-ultrademo-115s.mp4",
+  "publicUse": "Local optional native variant only. Published primary https://youtu.be/2yn3fzz-AeE remains the FFmpeg edited version."
+}

@@ -1,0 +1,7 @@
+monad-testnet-settings:
+  user-workflow:
+    workflow-name: "graduation-safety-neg-notgraduated"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.monad-testnet.json"
+    secrets-path: ""

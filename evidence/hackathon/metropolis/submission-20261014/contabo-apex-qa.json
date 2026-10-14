@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-13T21:31:39.558Z",
+  "results": [
+    {
+      "check": "discovery",
+      "mobile": false,
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "mobile": false,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n6s\nTime to first Kuru trade\n3m 0s\nFilled Kuru trades\n1\nHistorical filled size\n0.1 base\nHistorical quote volume\n0.0003 MON hist.\nOrder churn\n3 created · 2 cancelled\nIndexed through\nblock 70,788,602 · lag 5\nGraduation\n0x70d0…3fde\nFirst trade\n0x93e0…5415\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "mobile": false,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created · 1 cancelled\nIndexed through\nblock 70,788,602 · lag 5\nGraduation\n0xa97b…63d6\nFirst trade\n0x53c0…8862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "uncaught-errors",
+      "mobile": false,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "check": "discovery",
+      "mobile": true,
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "mobile": true,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n6s\nTime to first Kuru trade\n3m 0s\nFilled Kuru trades\n1\nHistorical filled size\n0.1 base\nHistorical quote volume\n0.0003 MON hist.\nOrder churn\n3 created · 2 cancelled\nIndexed through\nblock 70,788,602 · lag 5\nGraduation\n0x70d0…3fde\nFirst trade\n0x93e0…5415\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "mobile": true,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created · 1 cancelled\nIndexed through\nblock 70,788,602 · lag 5\nGraduation\n0xa97b…63d6\nFirst trade\n0x53c0…8862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "uncaught-errors",
+      "mobile": true,
+      "errors": [],
+      "passed": true
+    }
+  ]
+}
