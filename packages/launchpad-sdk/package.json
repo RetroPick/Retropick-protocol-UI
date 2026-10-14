@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "exports": { "./*": "./src/*.ts" },
+  "exports": {
+    "./*": "./src/*.ts"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test test/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@retropick/abi": "workspace:*",
-    "viem": "2.57.4"
+    "viem": "2.57.4",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

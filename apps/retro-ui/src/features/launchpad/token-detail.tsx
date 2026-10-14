@@ -11,6 +11,7 @@ import { useLaunchDetail } from '@/hooks/use-launch-detail';
 import { useKuruBook } from '@/hooks/use-kuru-book';
 import { useWallet } from '@/wallet/provider';
 import { useSearchParams } from '@/lib/next-compat';
+import { bondingProgressBps } from '@retropick/launchpad-sdk/graduation';
 import { addresses } from '@retropick/launchpad-sdk/chain';
 import { EmptyState, ErrorState, SkeletonLine } from '@/components/trading/primitives';
 import { TokenTerminal, type TerminalTab } from './terminal/token-terminal';
@@ -66,7 +67,7 @@ function LiveTokenRoute({ id }: { id: string }) {
   const detail = useLaunchDetail(id, wallet.account ?? undefined, { range: chart.range, resolution: chart.interval, proofEnabled: tab === 'Protocol' });
   // Depth (live): aggregated on-chain L2 book for the graduated Kuru market; null before graduation.
   const market = detail.essential && detail.essential.ledger.phase === 2 ? detail.essential.receipt.market : null;
-  const depth = useKuruBook(id, market ?? null, detail.essential?.ledger.phase === 2);
+  const depth = useKuruBook(id, market ?? null, detail.essential?.ledger.phase === 2 && detail.essential.packet.venue === 1);
   const trades = useQuery({ queryKey: launchKeys.resource(id, 'trade-page', { cursor: tradeCursor }), queryFn: ({ signal }) => fetchTrades(INDEXER_URL!, id, { cursor: tradeCursor }, signal), enabled: !!detail.indexed && tab === 'Trades', refetchInterval: tradeCursor ? false : 10000 });
   const holders = useQuery({ queryKey: launchKeys.resource(id, 'holders', { cursor: holderCursor }), queryFn: ({ signal }) => fetchHolders(INDEXER_URL!, id, { cursor: holderCursor }, signal), enabled: !!detail.indexed && tab === 'Holders', refetchInterval: holderCursor ? false : 10000 });
 
@@ -93,7 +94,7 @@ function LiveTokenRoute({ id }: { id: string }) {
       marketCapRaw: mcap, liquidityRaw: state?.ledger.phase === 0 ? state.realQuote.toString() : indexed?.liquidityRaw ?? null,
       liquidityNote: lifecycle === 'GRADUATED' ? 'Kuru book depth is not aggregated' : 'Real curve quote reserve',
       volume24hRaw: indexed?.volume24hRaw ?? null, lifetimeVolumeRaw: indexed?.lifetimeVolumeRaw ?? null, trades24h: indexed?.trades24h ?? null, holderCount: indexed?.holderCount ?? null,
-      supplyRaw: state ? state.supply.toString() : indexed?.supplyRaw ?? null, creatorEarnedRaw: null, bondingProgressBps: indexed?.bondingProgressBps ?? null,
+      supplyRaw: state ? state.supply.toString() : indexed?.supplyRaw ?? null, creatorEarnedRaw: null, bondingProgressBps: state ? state.ledger.phase === 2 ? 10000 : bondingProgressBps(state.realQuote, state.packet.graduationThreshold) : indexed?.bondingProgressBps ?? null,
       addresses: { token: id, curve: state?.packet.curve ?? indexed?.curve ?? null, factory: addresses.factory ?? null, coordinator: addresses.coordinator ?? null, quoteAsset, creator: state?.creator ?? indexed?.creator ?? seed?.creator ?? null, creatorFeeRecipient: economic?.record.creatorFeeRecipient ?? null, market: state?.receipt.market && state.receipt.market !== zeroAddress ? state.receipt.market : indexed?.market ?? null, vault: state?.receipt.vault && state.receipt.vault !== zeroAddress ? state.receipt.vault : indexed?.vault ?? null, lpLock: state?.ledger.protectedLPReceiver && state.ledger.protectedLPReceiver !== zeroAddress ? state.ledger.protectedLPReceiver : null, excessLock: state?.ledger.protectedExcessReceiver && state.ledger.protectedExcessReceiver !== zeroAddress ? state.ledger.protectedExcessReceiver : null },
       economics: { curveFeeBps: economic ? Number(economic.fee) : null, creatorFeeBps: economic ? Number(economic.tax) : null, policy: state ? `Version ${state.packet.quotePolicyVersion} · ${String(state.packet.quotePolicyHash).slice(0, 10)}…` : null, buybackEnabled: economic ? Boolean(economic.record.buybackEnabled) : null, graduationThresholdRaw: state ? String(state.packet.graduationThreshold) : null },
       txs: { launch: indexed?.launchTransactionHash ?? null, graduation: indexed?.graduationTransactionHash ?? null },

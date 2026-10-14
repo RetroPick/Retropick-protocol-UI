@@ -1,4 +1,5 @@
 import type { IndexedCandle, IndexedLaunch, IndexedTrade, IndexEnvelope, IndexFreshness, IndexedHolder } from '@retropick/launchpad-sdk/read-model';
+import { IncompleteDiscoveryError } from '@retropick/launchpad-sdk/discovery-snapshot';
 import { measureStage } from './performance';
 export type { IndexedCandle, IndexedLaunch, IndexedTrade, IndexEnvelope, IndexFreshness, IndexedHolder };
 export const STALE_LAG_BLOCKS = 64;
@@ -14,6 +15,7 @@ export class IndexerUnavailableError extends Error {
 }
 /** Human-facing title/text for an indexer read failure. Never phrased as an empty result. */
 export function describeIndexerError(error: unknown): { kind: IndexerFailureKind; title: string; text: string } {
+  if (error instanceof IncompleteDiscoveryError) return { kind: 'invalid-response', title: 'Complete discovery snapshot unavailable', text: error.message };
   const kind: IndexerFailureKind = error instanceof IndexerUnavailableError ? error.kind : 'unreachable';
   const status = error instanceof IndexerUnavailableError ? error.status : undefined;
   switch (kind) {

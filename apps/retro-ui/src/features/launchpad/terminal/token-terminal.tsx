@@ -8,6 +8,8 @@ import { Sheet, SheetContent, SheetTitle, SheetDescription } from '@/components/
 import { AddressChip, DataTable, DemoBadge, EmptyState, ErrorState, FreshnessIndicator, InfoHint, LifecycleBadge, Metric, MetricStrip, PairBadge, SegmentedControl, SkeletonLine, TokenIdentity, cx, type Column } from '@/components/trading/primitives';
 import { RANGE_INTERVALS, RANGE_LABELS, ageFrom, changeDirection, formatBps, formatPriceX18, formatRaw, formatRawCompact, holderValueRaw, lifecycleLabel, orderSizeRaw, type CandleInterval, type ChartRange, type TerminalData, type TerminalDepth, type TokenTerminalVM } from '@/lib/view-models/token-terminal';
 import type { IndexedHolder, IndexedOrder, IndexedTrade } from '@retropick/launchpad-sdk/read-model';
+import { BondingProgress } from '@/components/trading/bonding-progress';
+import { PairIdentity } from '@/components/trading/pair-identity';
 import { MarketRadarPanel } from './market-radar';
 
 const TradingChart = lazy(() => import('../trading-chart'));
@@ -47,7 +49,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
     <Link className="rp-back" href={backHref}><ArrowLeft size={14} aria-hidden/>Launches</Link>
 
     <header className="rp-head">
-      <TokenIdentity name={vm.name} symbol={vm.symbol} icon={vm.icon} logo={vm.logo} size="lg">
+      <TokenIdentity name={vm.name} symbol={vm.symbol} icon={vm.icon} logo={vm.logo} quote={{ address: vm.addresses.quoteAsset, symbol: q }} size="lg">
         <div className="rp-meta">
           {demo && <DemoBadge/>}
           <LifecycleBadge lifecycle={vm.lifecycle}/>
@@ -70,6 +72,8 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
 
     {(vm.sync.indexer === 'stale' || vm.sync.indexer === 'unavailable') && <div className="rp-banner" role="status"><FreshnessIndicator freshness={vm.freshness} demo={demo}/><span>{vm.sync.message ?? 'Indexed history may be behind. Trading reads current on-chain state.'}</span>{onRetry && <button className="rp-link" onClick={onRetry}>Retry</button>}</div>}
 
+    <BondingProgress progressBps={vm.bondingProgressBps} goalRaw={vm.economics.graduationThresholdRaw} decimals={vm.quote.decimals} symbol={q} graduated={vm.lifecycle === 'GRADUATED'}/>
+    {vm.lifecycle === 'GRADUATED' && !kuruOrders && <p className="rp-note">This market graduated to Uniswap V4. An AMM venue has no resting orderbook; this release supports orderbook trading on Kuru.</p>}
     <div className="rp-grid">
       <section className="rp-chart-panel" aria-label="Price chart">
         <ChartToolbar chart={chart} truncated={data.candles.nextCursor !== null}/>
@@ -82,7 +86,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
         </div>
         <div className="rp-chart-foot"><FreshnessIndicator freshness={vm.freshness} demo={demo}/><span>{demo ? 'SIMULATED candles from a deterministic fixture.' : 'Candles from confirmed executed trades.'}</span></div>
       </section>
-      {!mobile && <aside className="rp-rail" aria-label="Trade">{kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}{ticket}</aside>}
+      {!mobile && <aside className="rp-rail" aria-label="Trade">{kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}<div className="rp-ticket-pair"><PairIdentity name={vm.name} symbol={vm.symbol} logo={vm.logo} quoteAddress={vm.addresses.quoteAsset} quoteSymbol={q} compact/></div>{ticket}</aside>}
     </div>
 
     {mobile && kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}
@@ -135,7 +139,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
         <SheetContent side="bottom" className="rp-sheet">
           <SheetTitle className="rp-sr">Trade {vm.symbol}</SheetTitle>
           <SheetDescription className="rp-sr">Order ticket for {vm.name}</SheetDescription>
-          {ticket}
+          <div className="rp-ticket-pair"><PairIdentity name={vm.name} symbol={vm.symbol} logo={vm.logo} quoteAddress={vm.addresses.quoteAsset} quoteSymbol={q} compact/></div>{ticket}
         </SheetContent>
       </Sheet>
     </>}
@@ -242,7 +246,7 @@ function MarketDepth({ vm, depth }: { vm: TokenTerminalVM; depth: TerminalDepth 
   const q = vm.quote.symbol;
   const ladder = depth.ladder;
   const empty = depth.status === 'ready' && (!ladder || (!ladder.asks.length && !ladder.bids.length));
-  const maxCumulative = ladder ? Math.max(Number(ladder.asks.at(-1)?.cumulativeRaw ?? 0n), Number(ladder.bids.at(-1)?.cumulativeRaw ?? 0n)) : 0;
+  const maxCumulative = ladder ? [ladder.asks.at(-1)?.cumulativeRaw ?? 0n, ladder.bids.at(-1)?.cumulativeRaw ?? 0n].reduce((a, b) => a > b ? a : b) : 0n;
   return <section className="rp-depth" aria-label="Orderbook depth" data-testid="depth-panel" data-data-mode={vm.dataMode} data-status={depth.status}>
     <header className="rp-depth-head">
       <h3>Orderbook</h3>
@@ -267,8 +271,8 @@ function MarketDepth({ vm, depth }: { vm: TokenTerminalVM; depth: TerminalDepth 
   </section>;
 }
 
-function DepthRow({ level, vm, maxCumulative, side }: { level: { priceX18: bigint; sizeRaw: bigint; cumulativeRaw: bigint }; vm: TokenTerminalVM; maxCumulative: number; side: 'ask' | 'bid' }) {
-  const pct = maxCumulative > 0 ? Math.round((Number(level.cumulativeRaw) / maxCumulative) * 100) : 0;
+function DepthRow({ level, vm, maxCumulative, side }: { level: { priceX18: bigint; sizeRaw: bigint; cumulativeRaw: bigint }; vm: TokenTerminalVM; maxCumulative: bigint; side: 'ask' | 'bid' }) {
+  const pct = maxCumulative > 0n ? Number(level.cumulativeRaw * 10000n / maxCumulative) / 100 : 0;
   return <li className="rp-depth-row" data-side={side}>
     <span className="rp-depth-bar" data-side={side} style={{ width: `${pct}%` }} aria-hidden="true"/>
     <span className="rp-depth-price">{formatPriceX18(level.priceX18.toString())}</span>
