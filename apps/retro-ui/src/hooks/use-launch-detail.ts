@@ -37,7 +37,7 @@ export function useLaunchDetail(token: string | null, account?: Address, options
  const graduated=current?.ledger.phase===2;
  const kuru=useQuery({
   queryKey:launchKeys.resource(address,'kuru-quotes',{account:account??''}),enabled:valid&&!!graduated,
-  queryFn:()=>readKuru(publicClient,current!.receipt.market,address,current!.receipt.vault,account,{includeBook:false,includeBalances:false}),
+  queryFn:()=>readKuru(publicClient,current!.receipt.market,address,current!.receipt.vault,account,{includeBook:false,includeBalances:false,quoteAsset:current!.packet.quoteAsset}),
   staleTime:5000,refetchInterval:10000,structuralSharing:false,
  });
  const proof=useQuery({queryKey:launchKeys.resource(address,'proof'),enabled:valid&&!!current&&!!options.proofEnabled,queryFn:()=>readLaunchProof(publicClient,current!),staleTime:60000,structuralSharing:false});

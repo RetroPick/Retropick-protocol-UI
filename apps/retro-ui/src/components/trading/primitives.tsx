@@ -4,6 +4,8 @@ import { Tooltip as RTooltip } from 'radix-ui';
 import { AlertTriangle, Check, Copy, ExternalLink, Info, RefreshCw, SearchX } from 'lucide-react';
 import { explorer } from '@retropick/launchpad-sdk/chain';
 import { lifecycleLabel, shortHex, type Lifecycle } from '@/lib/view-models/token-terminal';
+import { quoteAssetByAddress } from '@retropick/launchpad-sdk/quote-assets';
+import { PairAvatars } from './pair-identity';
 import { TokenImage } from '@/components/product/token-image';
 import './trading.css';
 
@@ -93,10 +95,11 @@ export function DemoBadge({ text = 'DEMO' }: { text?: 'DEMO' | 'SIMULATED' | str
   return <span className="rp-badge rp-demo" data-provenance="demo">{text}</span>;
 }
 
-export function TokenIdentity({ name, symbol, icon, logo, size = 'md', children }: { name: string; symbol: string; icon: { glyph: string; color: string }; logo?: string | null; size?: 'sm' | 'md' | 'lg'; children?: ReactNode }) {
+export function TokenIdentity({ name, symbol, icon, logo, quote, size = 'md', children }: { quote?: { address: string | null; symbol: string }; name: string; symbol: string; icon: { glyph: string; color: string }; logo?: string | null; size?: 'sm' | 'md' | 'lg'; children?: ReactNode }) {
   return <div className={cx('rp-identity', `rp-identity-${size}`)}>
-    <TokenImage src={logo} className="rp-avatar" alt="" width={size === 'lg' ? 56 : 32} height={size === 'lg' ? 56 : 32}
-      fallback={<span className="rp-avatar" style={{ color: icon.color, background: `${icon.color}1f` }} aria-hidden>{icon.glyph}</span>}/>
+    {quote ? <PairAvatars baseSymbol={symbol} baseLogo={logo} quote={quoteAssetByAddress(10143, quote.address)} quoteSymbol={quote.symbol} size={size === 'lg' ? 56 : 32}/> : <TokenImage src={logo} className="rp-avatar" alt="" width={size === 'lg' ? 56 : 32} height={size === 'lg' ? 56 : 32}
+      fallback={<span className="rp-avatar" style={{ color: icon.color, background: `${icon.color}1f` }} aria-hidden>{icon.glyph}</span>}/>}
+
     <div className="rp-identity-text"><div className="rp-identity-name"><strong>{name}</strong><span className="rp-symbol">{symbol}</span></div>{children}</div>
   </div>;
 }

@@ -13,9 +13,9 @@ function rejected(name:'UnsupportedQuote'|'InvalidQuoteConfig') {
 function chain(admission:(asset:Address,venue:number)=>unknown) {
  const reads:{functionName:string;blockNumber?:bigint}[]=[];
  const values:Record<string,unknown>={launchEnabled:true,launchFee:0n,maxCreatorTaxBps:1000n,snipeTaxSeconds:15n,snipeTaxStartBps:0n,launchConfigCount:1n,canLaunch:true,CIRCLE_TEST_USDC:usdc,currentFeePolicy:{hookFeeBps:100},getLaunchConfig:{supply:1000n*10n**18n,curveFeeBps:100n,phantomQuote:10n**18n,graduationThreshold:10n**18n,poolFee:0,tickSpacing:60,enabled:true}};
- return {reads,client:{getBlockNumber:async()=>700n,readContract:async(a:any)=>{reads.push(a);if(a.functionName==='admitted')return admission(a.args[0],a.args[1]);if(a.functionName==='decimals')return a.address.toLowerCase()===usdc.toLowerCase()?6:18;return values[a.functionName];}} as unknown as ChainClient};
+ return {reads,client:{getBlockNumber:async()=>700n,getChainId:async()=>10143,getCode:async()=>'0x6000',readContract:async(a:any)=>{reads.push(a);if(a.functionName==='getConfig') return {...admitted, decimals:a.args[0].toLowerCase()===usdc.toLowerCase()?6:18};if(a.functionName==='symbol')return a.address.toLowerCase()===usdc.toLowerCase()?'USDC':'WETH';if(a.functionName==='admitted')return {...admission(a.args[0],a.args[1]) as object, decimals:a.args[0].toLowerCase()===usdc.toLowerCase()?6:18};if(a.functionName==='decimals')return a.address.toLowerCase()===usdc.toLowerCase()?6:18;return values[a.functionName];}} as unknown as ChainClient};
 }
-const admitted={enabled:true,phantomQuote:1n,graduationThreshold:2n};
+const admitted={enabled:true,venueMask:3,policyVersion:1,policyHash:'0x'+'11'.repeat(32),assetId:'0x'+'22'.repeat(32),phantomQuote:1n,graduationThreshold:2n,graduationQuoteCeiling:50n};
 test('unadmitted WMON does not discard live MON and USDC economics',async()=>{
  const {client,reads}=chain(asset=>{if(asset===wrapped)throw rejected('UnsupportedQuote');return admitted;});
  const terms=await readLaunchPreconditions(client,usdc);
@@ -33,4 +33,23 @@ test('other contract errors and provider failures still fail launch terms',async
  for(const error of [rejected('InvalidQuoteConfig'),new Error('RPC_TIMEOUT'),new Error('UnsupportedQuote')]){
  const {client}=chain(()=>{throw error;});await assert.rejects(readLaunchPreconditions(client),e=>e===error);
  }
+});
+
+test('custom candidate authorization requires code and matching decimals at the pinned block',async()=>{
+ const extra='0x7777777777777777777777777777777777777777' as Address;
+ const {client,reads}=chain(()=>admitted);
+ const terms=await readLaunchPreconditions(client,undefined,701n,{candidateAddresses:[extra,extra]});
+ assert.equal(terms.quotes.filter(q=>q.address===extra).length,2);assert(reads.every(r=>r.blockNumber===701n));
+ client.getCode=async()=>undefined;await assert.rejects(readLaunchPreconditions(client),/no contract code/);
+});
+test('wrong chain is rejected before registry inspection',async()=>{const {client,reads}=chain(()=>admitted);client.getChainId=async()=>143;await assert.rejects(readLaunchPreconditions(client),/10143/);assert.equal(reads.length,0);});
+test('disabled candidates never require token metadata',async()=>{
+ const {client}=chain(()=>admitted);const read=client.readContract;
+ client.readContract=(async(a:any)=>a.functionName==='getConfig'?{enabled:false}:a.functionName==='decimals'?Promise.reject(Error('should not read')):read(a)) as typeof read;
+ assert.deepEqual((await readLaunchPreconditions(client)).quotes,[]);
+});
+test('token decimals and registry policy must match',async()=>{
+ const {client}=chain(()=>admitted);const read=client.readContract;
+ client.readContract=(async(a:any)=>a.functionName==='decimals'?8:read(a)) as typeof read;
+ await assert.rejects(readLaunchPreconditions(client),/decimals mismatch/);
 });

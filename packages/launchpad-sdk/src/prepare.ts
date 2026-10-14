@@ -82,7 +82,7 @@ export async function prepareLaunchToken(chain: ChainClient, account: Address, i
   if (byteLength(input.name) > 64 || byteLength(input.symbol) > 16 || byteLength(input.logo) > 512 || byteLength(input.description) > 2048 || Object.values(input.socials).some(value => byteLength(value ?? "") > 256)) fail("Token metadata exceeds the deployed byte limits.");
   if (!input.name.trim() || !input.symbol.trim()) fail('Token name and symbol are required.');
   const [preconditions, economics, feePolicy] = await Promise.all([
-    readLaunchPreconditions(chain, account, blockNumber),
+    readLaunchPreconditions(chain, account, blockNumber, { candidateAddresses: [input.pairToken] }),
     chain.readContract({
       address: addresses.factory,
       abi: factoryAbi,
@@ -96,6 +96,8 @@ export async function prepareLaunchToken(chain: ChainClient, account: Address, i
       functionName: 'currentFeePolicy', blockNumber,
     }),
   ]);
+  if (input.expectedEconomics && input.expectedEconomics.toLowerCase() !== economics.toLowerCase()) fail('Launch economics changed. Review the refreshed terms before signing.');
+  if (!preconditions.launchEnabled) fail('The factory is not accepting launches.');
   if (preconditions.canLaunch === false) fail('This wallet is not authorized to launch. Launches may be whitelist-only right now.');
   const config = preconditions.configs.find((entry) => entry.id === input.launchConfigId);
   if (!config) fail('Unknown launch configuration.');

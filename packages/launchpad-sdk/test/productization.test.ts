@@ -12,7 +12,7 @@ const params=[100_000_000n,100_000_000n,token,18,zeroAddress,18,1,100_000n,10n**
 function mock(overrides:Record<string,unknown>={}) {
  const calls:{functionName:string;args?:unknown[];blockNumber?:bigint}[]=[];
  const values:Record<string,unknown>={packet:{token,curve,quoteAsset:zeroAddress,quoteDecimals:18,venue:1},ledger:{phase:2,protectedLPReceiver:account,protectedExcessReceiver:account},receipt:{market,vault:curve,lpAsset:token},name:'Test',symbol:'TEST',totalSupply:10n**27n,description:'Real',logo:'',deployer:account,getReserves:[10n**18n,10n**27n],sellableTokens:1000n,reservedTokens:100n,realQuoteReserve:100n,feeBps:50n,creatorTaxBps:0n,getLaunchedToken:{exists:true},balanceOf:10n**24n,balanceOfToken:10n**18n,releasable:10n**18n,vestingTerms:[account,curve,1000],getMarketParams:params,verifiedMarket:params,marginAccountAddress:release.kuruEnvironment.marginAccount,orderBookImplementation:release.kuruEnvironment.orderBookImplementation,kuruAmmVaultImplementation:release.kuruEnvironment.vaultImplementation,getBalance:10n**24n,s_orders:[account,10n,0,0,0,1,0,true],s_buyPricePoints:[1,1],s_sellPricePoints:[1,1],validate:undefined,...overrides};
- const chain={getBlockNumber:async()=>77n,getChainId:async()=>10143,getBalance:async()=>10n**24n,estimateGas:async()=>21000n,estimateFeesPerGas:async()=>({maxFeePerGas:1n}),readContract:async(call:typeof calls[number])=>{calls.push(call);const value=values[call.functionName];return typeof value==='function'?(value as (x:typeof call)=>unknown)(call):value;},simulateContract:async()=>({result:10n**18n})} as unknown as ChainClient;
+ const chain={getBlockNumber:async()=>77n,getCode:async()=>'0x6000',getChainId:async()=>10143,getBalance:async()=>10n**24n,estimateGas:async()=>21000n,estimateFeesPerGas:async()=>({maxFeePerGas:1n}),readContract:async(call:typeof calls[number])=>{calls.push(call);const value=values[call.functionName];return typeof value==='function'?(value as (x:typeof call)=>unknown)(call):value;},simulateContract:async()=>({result:10n**18n})} as unknown as ChainClient;
  return {chain,calls};
 }
 test('escrow credit reads recipient then token, matching deployed storage',async()=>{
@@ -38,7 +38,7 @@ test('cancel validates ownership while gone IDs use NoRevert',async()=>{
  assert.equal((await prepareKuruCancel(mock({s_orders:[zeroAddress,0n,0,0,0,0,0,false]}).chain,market,account,[1])).functionName,'batchCancelOrdersNoRevert');
 });
 test('create reads current hook policy and rejects combined hook fee',async()=>{
- const {chain,calls}=mock({launchEnabled:true,canLaunch:true,launchFee:1n,maxCreatorTaxBps:2000n,snipeTaxSeconds:0n,snipeTaxStartBps:0n,launchConfigCount:1n,CIRCLE_TEST_USDC:token,decimals:18,getLaunchConfig:{supply:10n**27n,curveFeeBps:0n,phantomQuote:1n,graduationThreshold:1n,poolFee:0,tickSpacing:1,enabled:true},admitted:{enabled:true,phantomQuote:1n,graduationThreshold:1n},previewVenueEconomics:'0x'+'01'.repeat(32),currentFeePolicy:{hookFeeBps:1000n}});
+ const {chain,calls}=mock({launchEnabled:true,canLaunch:true,launchFee:1n,maxCreatorTaxBps:2000n,snipeTaxSeconds:0n,snipeTaxStartBps:0n,launchConfigCount:1n,CIRCLE_TEST_USDC:token,decimals:18,getConfig:{enabled:true,decimals:18,venueMask:3,policyVersion:1,phantomQuote:1n,graduationThreshold:1n,graduationQuoteCeiling:50n,policyHash:'0x01',assetId:'0x02'},getLaunchConfig:{supply:10n**27n,curveFeeBps:0n,phantomQuote:1n,graduationThreshold:1n,poolFee:0,tickSpacing:1,enabled:true},admitted:{enabled:true,decimals:18,venueMask:3,policyVersion:1,phantomQuote:1n,graduationThreshold:1n,graduationQuoteCeiling:50n,policyHash:'0x01',assetId:'0x02'},previewVenueEconomics:'0x'+'01'.repeat(32),currentFeePolicy:{hookFeeBps:1000n}});
  await assert.rejects(()=>prepareLaunchToken(chain,account,{name:'T',symbol:'TT',logo:'',description:'',socials:{},creatorTaxBps:1500n,buybackEnabled:false,launchConfigId:0n,pairToken:zeroAddress,venue:1}),/Combined hook/);assert.ok(calls.some(c=>c.functionName==='currentFeePolicy'));assert.ok(!calls.some(c=>c.functionName==='getLaunchFeePolicy'));assert.ok(calls.every(c=>c.blockNumber===77n));
 });
 test('same-chain send rejects zero recipient, gas overspend and false ERC20',async()=>{
@@ -95,4 +95,18 @@ test('voluntary handoff verifies current recipient and active owner override at 
  await assert.rejects(()=>prepareTransferCreatorFeeRecipient(setup({pendingCreatorFeeRecipient:[market,200n,300n]}).chain,token,account,market),/pending owner/);
  assert.equal((await prepareTransferCreatorFeeRecipient(setup({pendingCreatorFeeRecipient:[market,10n,99n]}).chain,token,account,market)).functionName,'transferCreatorFeeRecipient');
  await assert.rejects(()=>prepareTransferCreatorFeeRecipient(chain,token,account,account),/equals/);
+});
+
+test('ERC20 Kuru enrichment binds the committed quote and reads that asset margin balance',async()=>{
+ const {readKuru}=await import('../src/kuru.ts');
+ const ercParams=[...params];ercParams[4]=curve as never;ercParams[5]=6 as never;
+ const {chain,calls}=mock({getMarketParams:ercParams,verifiedMarket:ercParams,getVaultParams:[curve]});
+ const state=await readKuru(chain,market,token,curve,account,{includeBook:false,quoteAsset:curve});
+ assert.equal(state.params[4],curve);assert(calls.some(c=>c.functionName==='getBalance'&&c.args?.[1]===curve));
+ await assert.rejects(readKuru(chain,market,token,curve,account,{includeBook:false,freshIdentity:true}),/identity/);
+});
+
+test('changed reviewed economics cannot prepare a signing request',async()=>{
+ const {chain}=mock({launchEnabled:true,canLaunch:true,launchFee:1n,maxCreatorTaxBps:2000n,snipeTaxSeconds:0n,snipeTaxStartBps:0n,launchConfigCount:0n,CIRCLE_TEST_USDC:token,decimals:18,getConfig:{enabled:false},previewVenueEconomics:'0x'+'01'.repeat(32),currentFeePolicy:{hookFeeBps:100}});
+ await assert.rejects(prepareLaunchToken(chain,account,{name:'T',symbol:'TT',logo:'',description:'',socials:{},creatorTaxBps:0n,buybackEnabled:false,launchConfigId:0n,pairToken:zeroAddress,venue:1,expectedEconomics:('0x'+'02'.repeat(32)) as `0x${string}`}),/economics changed/);
 });

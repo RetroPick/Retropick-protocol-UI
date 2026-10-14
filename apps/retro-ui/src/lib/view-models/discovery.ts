@@ -20,6 +20,7 @@ export interface DiscoveryRow {
   quote: { symbol: string; decimals: number; address: string | null };
   lifecycle: Lifecycle;
   bondingProgressBps: number | null;
+  quoteReserveRaw?: string;
   priceX18: string | null;
   change24hBps: string | null;
   marketCapRaw: string | null;
@@ -37,7 +38,7 @@ export function liveRow(l: IndexedLaunch): DiscoveryRow {
   return {
     dataMode: 'live', id: l.token, href: `/launchpad/token/${l.token}`, name: l.name, symbol: l.symbol,
     logo: resolveMediaSrc(l.logo), icon: { glyph: (l.name[0] ?? '◈').toUpperCase(), color: '#836ef9' },
-    quote: { symbol: l.quoteSymbol, decimals: l.quoteDecimals, address: l.quoteAsset }, lifecycle: l.phase, bondingProgressBps: l.bondingProgressBps,
+    quote: { symbol: l.quoteSymbol, decimals: l.quoteDecimals, address: l.quoteAsset }, lifecycle: l.phase, bondingProgressBps: l.bondingProgressBps, quoteReserveRaw: l.quoteReserveRaw,
     priceX18: l.priceX18 ?? l.priceRaw, change24hBps: l.change24hBps, marketCapRaw: l.marketCapRaw, liquidityRaw: l.liquidityRaw ?? null,
     volume24hRaw: l.volume24hRaw, lifetimeVolumeRaw: l.lifetimeVolumeRaw, trades24h: l.trades24h,
     createdAt: Math.floor(Date.parse(l.createdAt) / 1000) || null, creator: l.creator, closes: (l.candles ?? []).map((c) => c.close),
