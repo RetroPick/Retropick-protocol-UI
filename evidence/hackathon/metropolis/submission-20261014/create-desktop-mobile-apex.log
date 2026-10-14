@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+(node:55875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [staging-desktop-1440] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing (6.9s)
+(node:56025) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [staging-mobile-390] › e2e/staging/staging.spec.ts:104:1 › live create economics loads admitted quotes and reaches Review without signing (3.9s)
+
+  2 passed (13.8s)

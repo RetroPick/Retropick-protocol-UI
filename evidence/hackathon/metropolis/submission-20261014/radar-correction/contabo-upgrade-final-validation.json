@@ -1,0 +1,166 @@
+{
+  "checkedAt": "2026-10-13T21:57:32.638066+00:00",
+  "status": "PASS_WITH_DOCUMENTED_RECOVERED_UPSTREAM_RETRIES",
+  "passed": true,
+  "privilegedChecks": [
+    {
+      "check": "source_hashes",
+      "passed": true
+    },
+    {
+      "check": "upgrade_final_pass_evidence",
+      "passed": true,
+      "backup": "/opt/retropick-staging/backups/radar-v4-20261013T212826Z"
+    },
+    {
+      "check": "retropick-staging-radar",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 23:28:26 CEST"
+    },
+    {
+      "check": "retropick-staging-indexer",
+      "passed": true,
+      "NRestarts": "1",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:39:20 CEST"
+    },
+    {
+      "check": "retropick-staging-gateway",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:31:32 CEST"
+    },
+    {
+      "check": "retropick-staging-referral",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:56:35 CEST"
+    },
+    {
+      "check": "retropick-staging-media",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:56:35 CEST"
+    },
+    {
+      "check": "retropick-staging-caddy",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:31:32 CEST"
+    },
+    {
+      "check": "staging-api-1",
+      "passed": true,
+      "containerId": "ccbfaf5546f9",
+      "startedAt": "2026-10-09T12:46:32.802829319Z",
+      "health": "healthy",
+      "restarts": 0
+    },
+    {
+      "check": "staging-postgres-1",
+      "passed": true,
+      "containerId": "6f8b9225ed8e",
+      "startedAt": "2026-10-09T06:24:17.008915491Z",
+      "health": "healthy",
+      "restarts": 0
+    },
+    {
+      "check": "radar_journal_errors",
+      "passed": false,
+      "errorLines": 2,
+      "journalReadable": true
+    }
+  ],
+  "browserResults": [
+    {
+      "check": "discovery",
+      "mobile": false,
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "mobile": false,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n6s\nTime to first Kuru trade\n3m 0s\nFilled Kuru trades\n1\nHistorical filled size\n0.1 base\nHistorical quote volume\n0.0003 MON hist.\nOrder churn\n3 created \u00b7 2 cancelled\nIndexed through\nblock 70,788,602 \u00b7 lag 5\nGraduation\n0x70d0\u20263fde\nFirst trade\n0x93e0\u20265415\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "mobile": false,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created \u00b7 1 cancelled\nIndexed through\nblock 70,788,602 \u00b7 lag 5\nGraduation\n0xa97b\u202663d6\nFirst trade\n0x53c0\u20268862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "uncaught-errors",
+      "mobile": false,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "check": "discovery",
+      "mobile": true,
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "mobile": true,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n6s\nTime to first Kuru trade\n3m 0s\nFilled Kuru trades\n1\nHistorical filled size\n0.1 base\nHistorical quote volume\n0.0003 MON hist.\nOrder churn\n3 created \u00b7 2 cancelled\nIndexed through\nblock 70,788,602 \u00b7 lag 5\nGraduation\n0x70d0\u20263fde\nFirst trade\n0x93e0\u20265415\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "radar",
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "mobile": true,
+      "state": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created \u00b7 1 cancelled\nIndexed through\nblock 70,788,602 \u00b7 lag 5\nGraduation\n0xa97b\u202663d6\nFirst trade\n0x53c0\u20268862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "passed": true
+    },
+    {
+      "check": "uncaught-errors",
+      "mobile": true,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "recoveryEvidence": "recovery-validation.json",
+  "retainedErrors": [
+    {
+      "timestamp": "2026-10-13T21:34:54.409535+00:00",
+      "pid": "1956403",
+      "priority": "6",
+      "message": "[radar] stream error (retry in 1000ms): inner receiver"
+    },
+    {
+      "timestamp": "2026-10-13T21:35:01.944035+00:00",
+      "pid": "1956403",
+      "priority": "6",
+      "message": "[radar] stream error (retry in 1000ms): inner receiver"
+    }
+  ],
+  "noUnresolvedError": true,
+  "scope": "No unrelated service or financial contract modifications.",
+  "originalStrictScan": "production-validation-first.txt remains FAIL; blanket absence-of-error wording is not claimed."
+}

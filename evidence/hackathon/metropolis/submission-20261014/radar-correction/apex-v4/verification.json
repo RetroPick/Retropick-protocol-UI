@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-13T22:45:25.842Z",
+  "status": "PASS",
+  "sourceSha": "3728ce516df74954fc829211921632f7c830f36d",
+  "origin": "https://retropick.xyz",
+  "apiChecks": "release exact SHA, chain/indexer health, Envio v4 canonical anchor, RPE2E exact receipt units/cancellation",
+  "browserChecks": [
+    {
+      "name": "desktop",
+      "url": "https://retropick.xyz/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "radarState": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created · 1 cancelled\nIndexed through\nblock 70,803,157 · lag 0\nGraduation\n0xa97b…63d6\nFirst trade\n0x53c0…8862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "bounds": {
+        "x": 284,
+        "y": 323.6875,
+        "width": 1112,
+        "height": 313.390625
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "mobile",
+      "url": "https://retropick.xyz/launchpad/token/0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "radarState": "ready",
+      "text": "Market quality radar\nENVIO HYPERSYNC\nLifecycle phase\ngraduated\nGraduation latency\n4m 6s\nTime to first Kuru trade\n10m 36s\nFilled Kuru trades\n1\nHistorical filled size\n1 base\nHistorical quote volume\n0.0039 MON hist.\nOrder churn\n2 created · 1 cancelled\nIndexed through\nblock 70,803,173 · lag 0\nGraduation\n0xa97b…63d6\nFirst trade\n0x53c0…8862\n\nHistorical insight from the Envio HyperSync stream. Executable orderbook depth comes from live Kuru reads, not these counts.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "bounds": {
+        "x": 17,
+        "y": 130.265625,
+        "width": 356,
+        "height": 583.171875
+      },
+      "pageErrors": []
+    }
+  ]
+}

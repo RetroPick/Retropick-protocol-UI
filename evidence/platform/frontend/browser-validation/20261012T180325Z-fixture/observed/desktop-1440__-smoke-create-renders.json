@@ -1,0 +1,12 @@
+{
+  "test": "fixture/smoke.spec.ts > @smoke create renders",
+  "project": "desktop-1440",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 53
+}

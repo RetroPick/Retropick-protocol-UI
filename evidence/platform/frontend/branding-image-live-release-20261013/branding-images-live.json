@@ -1,0 +1,37 @@
+{
+  "origin": "https://retropick.xyz",
+  "sourceSha": "e7188395db7ce84ab1fcae29df017b74f6582f9e",
+  "checks": [
+    {
+      "width": 1440,
+      "status": "PASS",
+      "brandHash": "0ee4d6e1aee4c7f57d84494c352ac342e6427686f52a2b58f891fa30c37e6006",
+      "favicon": "/brand/retropick.png",
+      "token": "0xf8f17922599136b44e175eec9a43123c000f3366",
+      "decodedLogoWidth": 1024,
+      "dashboard": true,
+      "hardReload": true,
+      "grid": true,
+      "tokenDetail": true,
+      "uncaughtErrors": [],
+      "financialWrites": [],
+      "imageFailures": []
+    },
+    {
+      "width": 390,
+      "status": "PASS",
+      "brandHash": "0ee4d6e1aee4c7f57d84494c352ac342e6427686f52a2b58f891fa30c37e6006",
+      "favicon": "/brand/retropick.png",
+      "token": "0xf8f17922599136b44e175eec9a43123c000f3366",
+      "decodedLogoWidth": 1024,
+      "dashboard": true,
+      "hardReload": true,
+      "grid": true,
+      "tokenDetail": true,
+      "uncaughtErrors": [],
+      "financialWrites": [],
+      "imageFailures": []
+    }
+  ],
+  "financialWrites": false
+}

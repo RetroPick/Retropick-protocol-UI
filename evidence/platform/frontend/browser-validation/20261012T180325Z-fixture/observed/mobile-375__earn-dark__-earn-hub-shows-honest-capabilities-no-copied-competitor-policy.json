@@ -1,0 +1,12 @@
+{
+  "test": "fixture/earn.spec.ts > earn dark > @earn hub shows honest capabilities, no copied competitor policy",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 60
+}

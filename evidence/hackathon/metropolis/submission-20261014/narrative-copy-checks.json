@@ -1,0 +1,257 @@
+{
+  "checkedAt": "2026-10-13T19:49:59.518817+00:00",
+  "status": "PASS",
+  "command": "python3 evidence/hackathon/metropolis/submission-20261014/verify-narrative-copy.py",
+  "exit_code": 0,
+  "sections": [
+    {
+      "file": "docs/metropolis/submission-20261014/BOND_TO_BOOK_SALES_COPY.md",
+      "section": "One-line description",
+      "char_count": 143,
+      "portal_utf16_count": 143,
+      "limit": 200,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "3d7efa309f5bea88ceab440a842089d29b89e9353e02791b79f25b9560bceb8a"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/BOND_TO_BOOK_SALES_COPY.md",
+      "section": "Description",
+      "char_count": 4424,
+      "portal_utf16_count": 4424,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "7595bdcfeafe0ea878d9dc3fd8ae758826924fc9909385721f703f906a460e5c"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/BOND_TO_BOOK_SALES_COPY.md",
+      "section": "Go-to-market and user acquisition",
+      "char_count": 3985,
+      "portal_utf16_count": 3985,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "11841e0f2afc704b2b6fdd4bd259ad17068127c6369a2bedbb7b141fa4042548"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Kuru Consumer — target user segments",
+      "char_count": 1326,
+      "portal_utf16_count": 1326,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "ae7298150081ba6ffc7d118734142bbe01acfe760260c2bb97ec5d7888f2424f"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Kuru Consumer — case studies and research showing demand",
+      "char_count": 1671,
+      "portal_utf16_count": 1671,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "b0c13104fb7b6fcfea411f17b6a8547c4a9b1ca342827107c0636f0cef8b3c88"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Kuru Consumer — roadmap beyond the hackathon",
+      "char_count": 1361,
+      "portal_utf16_count": 1361,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "ce14a585151e7f63885a19e55277bf387fb2ea2be96e2ab539be9dbcf2df3d2d"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Kuru Consumer — onboarding and retaining traders",
+      "char_count": 1539,
+      "portal_utf16_count": 1539,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "85363f3a6dcf987ff86d9c556a6c2c940e6374bc5a0706a79ff07f3acf54652a"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Envio — meaningful use of HyperIndex, HyperSync or HyperRPC",
+      "char_count": 1648,
+      "portal_utf16_count": 1648,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "81c00da2c2ef369aaa8a09ae682c5b115c63ea4c008d0d32f395de733ce869be"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Chainlink CRE — meaningful orchestration",
+      "char_count": 1441,
+      "portal_utf16_count": 1441,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "593782ab5b75f233f97474c9cdaee24818b8a7601d2cbc0247476a62d0583849"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "section": "Mera non-account — meaningful non-account work",
+      "char_count": 1468,
+      "portal_utf16_count": 1468,
+      "limit": 8000,
+      "within_limit": true,
+      "legacy_product_origin_present": false,
+      "sha256": "cec43a04593842ae4395ae1e8357d6346061c66232a5c3ca90ae210a3ecf480d"
+    }
+  ],
+  "documents_read_back": [
+    {
+      "file": "docs/metropolis/submission-20261014/BOND_TO_BOOK_SALES_COPY.md",
+      "bytes_read_back": 10165,
+      "sha256": "719dd89db2dbe8cda643510f03b79a606df6d881f2fcbdd6f11bda292c62145a"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/BOUNTY_DECISION_MATRIX.md",
+      "bytes_read_back": 3680,
+      "sha256": "482a30959343562923fd3725b32432c3c5893f04ec4e99bb1b7f507bf2a24d81"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/DEMO_TECHNICAL_3MIN_FULL_SCRIPT.md",
+      "bytes_read_back": 3057,
+      "sha256": "5b3174e3a74dffc6e074356a84dc2d1cbbcf8dbefa7c3d464179aae485b66f1c"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/DEMO_TERMINAL_READONLY_COMMANDS.md",
+      "bytes_read_back": 1958,
+      "sha256": "8dd1560ba3d787b1516fa8bd8bd5edd323ef431440387ed15958d71eb6b30747"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/DEMO_WEB_CLICKPATH.md",
+      "bytes_read_back": 1801,
+      "sha256": "0399ecae294c97c44c62dc142762e03cb72091bd8654f89ed3b9126f0f1f5f77"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/FINAL_ADVERSARIAL_QA.md",
+      "bytes_read_back": 2502,
+      "sha256": "7b31be08141e3e6dab4b1a14e19c446642676b762cf6588104ed5db2929b566d"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/FIRST_USER_AND_MARKET_FORMATION.md",
+      "bytes_read_back": 4706,
+      "sha256": "fee1eab8537df311d2376c2cf7d910d782fc92987bdeaf2d3d45dca3a8eb8add"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/FOUNDERSHIP_AND_DEMAND.md",
+      "bytes_read_back": 2841,
+      "sha256": "5153358fcb3c046ced58fa323aa44e84629790fa3e3279ab9f5b91e80fab4621"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/FOUNDER_DECISION_PACKET.md",
+      "bytes_read_back": 2270,
+      "sha256": "ae22524dd53397981925670761084643d197f0eeaee4bccd343ca8abf30d1bc5"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/GTM_ACQUISITION.md",
+      "bytes_read_back": 2327,
+      "sha256": "6c30d5201bdefcecff3a9141d65fe62502f8c535f4a6917b3d0f286f3d0bacf2"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/JUDGE_ACCESS.md",
+      "bytes_read_back": 3025,
+      "sha256": "9deefc1b9183c8d473fbe14084d605064ad5cd364f7493562731eb4578a5c8c5"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/JUDGE_QA.md",
+      "bytes_read_back": 5035,
+      "sha256": "d6a4bff46e43f1b3ff53dbaf2c16c957a5789dc5f72b56b38cb321644553cfd0"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/JUDGE_SCORECARD_REHEARSAL.md",
+      "bytes_read_back": 2335,
+      "sha256": "e8839d8accdd1cb3d37c03b9dd7ed47168a499511a02e145c5dc287d422e811f"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/MAIN_TRACK_JUDGING_MEMO.md",
+      "bytes_read_back": 2828,
+      "sha256": "af4d52b15f7944a12c78379356aee7f91fad6a756fb85767d1d8d9170480af14"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/MARKET_QUALITY_AND_RISK.md",
+      "bytes_read_back": 4231,
+      "sha256": "32f98eb63f355b46ada28415b92c1fdb7c65ef6e1116537d08fae20a7266b71f"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/ORIGINALITY_PRIOR_ART.md",
+      "bytes_read_back": 3915,
+      "sha256": "3dce6c46ab4be53483b2561c04b47f08f9e427a974b0d906b9fa18e1e402d3b8"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/PITCH_30SEC.md",
+      "bytes_read_back": 838,
+      "sha256": "6ed849ec0dcf04b05e8d66aab802bdfb70d38ee768dbe0f921046428721d7d75"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/PITCH_60SEC.md",
+      "bytes_read_back": 1418,
+      "sha256": "1c66af82f5c8c32bef2a03d023e081b95bdfbd5594c06d0019edf04bdac07799"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/PITCH_FOUNDER_2MIN.md",
+      "bytes_read_back": 3486,
+      "sha256": "1f168ca8d25c20819d17188ab07ca3d3e8229cfa773a784603907e7af748759f"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/POSITIONING_SCORECARD.md",
+      "bytes_read_back": 2513,
+      "sha256": "d1f97d1a5982256f18da08b6c125bc2f0bfbec38986899e23a1e370d80b746bb"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/PPT_SLIDE_SCRIPT.md",
+      "bytes_read_back": 3147,
+      "sha256": "36d9aceb7e0348a69b6b84609e798c1c5254b2f3889a593efdf8d008e6507d75"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/READINESS_REPORT.md",
+      "bytes_read_back": 3937,
+      "sha256": "1ee32629ff7cf728c7bc49c68399f7e0b3c59bfb3cdbb8f6ee76cf8b47f28fbf"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_ANSWERS.md",
+      "bytes_read_back": 12773,
+      "sha256": "2c4623a85c2f61c20357e3b1b6669d1f0c32fbbfbbd73c898ef68612564adcad"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SPONSOR_BOUNTY_REQUIREMENT_TO_PROOF.md",
+      "bytes_read_back": 3537,
+      "sha256": "3b2df643d4e6e33d27e4494f8554cf78f2165c036dee6ec45f6154f4f9e49048"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/SUBMISSION_STRATEGY.md",
+      "bytes_read_back": 3352,
+      "sha256": "fe8c513d77f0b05fd05d228d2563e4b23587d643cea6653636bf64515a8baeda"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/VIDEO_MANIFEST.md",
+      "bytes_read_back": 2830,
+      "sha256": "280ddb9a8ec7ee1b39f72810862a4fc2571157041ead9db5c33ef497cbb2bc83"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/VIDEO_PRODUCTION_PLAN.md",
+      "bytes_read_back": 2605,
+      "sha256": "f10f1256d93201dc02fdfa6e19d3a25e7726ce9f9a4e8143a5161f1bfacfd831"
+    },
+    {
+      "file": "docs/metropolis/submission-20261014/WINNING_CASE_AND_LIMITS.md",
+      "bytes_read_back": 1742,
+      "sha256": "af0808c5784edd6814bb18841613edf73ad87e739156bbcf8d4344949696ded5"
+    }
+  ],
+  "scope": "narrative length/origin/ownership/read-back only; not browser, portal, chain or media validation",
+  "limitations": [
+    "Portal owner confirms actual saved values and current video URLs.",
+    "Video URL instruction sections are not paste values.",
+    "Envio/Mera live gates are independently verified.",
+    "Founder pitch is externally owned."
+  ]
+}

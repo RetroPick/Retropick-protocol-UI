@@ -1,0 +1,9 @@
+{
+  "chainId": 10143,
+  "chainName": "monad-testnet",
+  "token": "0x43e7e9b1b7d9A143573307b13D14B51580c18f15",
+  "coordinator": "0xaD62309242EA65BB07C833669EC6a4ED23AF738F",
+  "factory": "0xa7f18b9eceb0A9852b08408854A45D00fc682454",
+  "expectedMarket": "0x1F5dE72616a7fe645Cf45aC66dfce8Ac7452C57F",
+  "sourcifyCheckUrl": "https://sourcify.dev.server.unreachable.invalid/x"
+}

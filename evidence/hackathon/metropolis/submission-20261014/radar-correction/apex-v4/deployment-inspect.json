@@ -1,0 +1,113 @@
+{
+  "id": "dpl_54nQgxwmf2iTJR1scSaxDUZeB1F8",
+  "name": "retropick-metropolis-retro-ui-staging",
+  "url": "retropick-metropolis-retro-ui-staging-mz5dnft4z-asyams-projects.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "createdAt": 1791929393572,
+  "duration": {
+    "startTime": 1791929398573,
+    "endTime": 1791929471547,
+    "endTimeCapped": 1791929471547,
+    "timeToReady": 40172,
+    "timeToContainerExit": 72974,
+    "timeToContainerExitCapped": 72974,
+    "timeForBilling": 120000,
+    "cpuTimeForBilling": 240000
+  },
+  "buildMachine": {
+    "cores": 2,
+    "memory": 8192,
+    "machine": "basic",
+    "selectionType": "fixed",
+    "selectionSource": "plan-default"
+  },
+  "aliases": [
+    "retropick-metropolis-retro-ui-staging-asyams-projects.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_m3rzcj78f",
+      "deploymentId": "dpl_54nQgxwmf2iTJR1scSaxDUZeB1F8",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1791929393232,
+      "createdAt": 1791929393232,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {
+        "framework": "vite",
+        "installCommand": "pnpm install --filter '@retropick/retro-ui...' --frozen-lockfile",
+        "buildCommand": "pnpm --filter @retropick/retro-ui build",
+        "outputDirectory": "apps/retro-ui/dist",
+        "nodeVersion": "24.x",
+        "projectCreatedAt": 1791700726199,
+        "vercelConfig": {
+          "framework": "vite",
+          "installCommand": "pnpm install --filter '@retropick/retro-ui...' --frozen-lockfile",
+          "buildCommand": "pnpm --filter @retropick/retro-ui build",
+          "outputDirectory": "apps/retro-ui/dist",
+          "rewrites": [
+            {
+              "source": "/v1/:path*",
+              "destination": "https://api-staging.retropick.xyz/v1/:path*"
+            },
+            {
+              "source": "/health",
+              "destination": "https://api-staging.retropick.xyz/health"
+            },
+            {
+              "source": "/api/referrals/:path*",
+              "destination": "https://api-staging.retropick.xyz/api/referrals/:path*"
+            },
+            {
+              "source": "/api/media/:path*",
+              "destination": "https://api-staging.retropick.xyz/api/media/:path*"
+            },
+            {
+              "source": "/api/radar/:path*",
+              "destination": "https://api-staging.retropick.xyz/api/radar/:path*"
+            },
+            {
+              "source": "/(.*)",
+              "destination": "/index.html"
+            }
+          ],
+          "headers": [
+            {
+              "source": "/(.*)",
+              "headers": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "strict-origin-when-cross-origin"
+                },
+                {
+                  "key": "Permissions-Policy",
+                  "value": "camera=(), microphone=(), geolocation=(), publickey-credentials-get=(self), publickey-credentials-create=(self)"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: blob:; connect-src 'self' https://testnet-rpc.monad.xyz https://rpc.ankr.com; worker-src 'self' blob:; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+                }
+              ]
+            }
+          ],
+          "name": "retropick-metropolis-retro-ui-staging",
+          "version": 2
+        }
+      },
+      "middleware": [],
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "asyams-projects"
+}

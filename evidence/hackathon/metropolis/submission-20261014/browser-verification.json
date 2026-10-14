@@ -1,0 +1,19 @@
+{
+  "origin": "https://retropick.xyz",
+  "time": "2026-10-13T19:57Z",
+  "initial": {
+    "command": "STAGING_URL=https://retropick.xyz pnpm --filter @retropick/retro-ui exec playwright test --config e2e/staging.config.ts",
+    "exitCode": 1,
+    "passed": 14,
+    "failed": 2,
+    "cause": "Outdated dropdown selector; corrected to deployed MON radio card."
+  },
+  "createRetry": {
+    "command": "STAGING_URL=https://retropick.xyz pnpm --filter @retropick/retro-ui exec playwright test --config e2e/staging.config.ts --grep \"live create economics\" --output=/tmp/retropick-create-apex-clean-20261014",
+    "exitCode": 0,
+    "passed": 2,
+    "causeOfIntermediateFailure": "Review navigation preceded completion of pinned-block economics read; test now condition-waits through safe unsigned navigation.",
+    "log": "create-desktop-mobile-apex.log"
+  },
+  "writes": "None; no wallet signing or broadcasting."
+}

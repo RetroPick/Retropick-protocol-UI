@@ -1,0 +1,263 @@
+{
+  "at": "2026-10-13T12:48:19.036Z",
+  "checks": [
+    {
+      "width": 1440,
+      "origin": "https://retropick.xyz",
+      "expectedState": "live terms and Review",
+      "draftPreserved": true,
+      "text": "Launch a token.\n\nToken, market & economics, then review. The curve opens when your launch transaction confirms.\n\nLIVE · 10143\nToken\nMarket & economics\n3\nReview\n3 · Review\n\nCheck every term. Your wallet signs one factory transaction.\n\nToken\nRead Only Draft · READ\nSupply\n1000\nQuote asset\nMON\nGraduation venue\nKuru orderbook\nGraduation threshold\n1 MON\nCurve fee\n1%\nCreator fee\n0% → Your fee wallet\nCreator fee wallet\nYour connected wallet\nLaunch fee\n0 MON\nBack\nConnect wallet to launch\nON THE BOARD\nR\nRead Only Draft\nCRYPTO\n\nREAD · MON pair\n\nSupply\n1000\nGraduates at\n1 MON\nCreator fee\n0%\nLaunch fee\n0 MON\nA real launch on Monad Testnet: your wallet signs one factory transaction that deploys the token and its bonding curve.",
+      "rpcFailures": [
+        {
+          "provider": "rpc.ankr.com",
+          "error": {
+            "code": 3,
+            "message": "execution reverted",
+            "data": "0x93504f99"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 20,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369434"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 21,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000ff437b117ec17a79a3b24da4b5047dca4da9d0a20000000000000000000000000000000000000000000000000000000000000000",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369434"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 22,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000534b2f3a21130d7a60830c2df862319e593943a30000000000000000000000000000000000000000000000000000000000000000",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369434"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 23,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369434"
+              ]
+            }
+          ]
+        },
+        {
+          "provider": "rpc.ankr.com",
+          "error": {
+            "code": 3,
+            "message": "execution reverted",
+            "data": "0x93504f99"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 24,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000ff437b117ec17a79a3b24da4b5047dca4da9d0a20000000000000000000000000000000000000000000000000000000000000001",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369434"
+              ]
+            }
+          ]
+        }
+      ],
+      "financialWrites": false
+    },
+    {
+      "width": 390,
+      "origin": "https://retropick.xyz",
+      "expectedState": "live terms and Review",
+      "draftPreserved": true,
+      "text": "Launch a token.\n\nToken, market & economics, then review. The curve opens when your launch transaction confirms.\n\nLIVE · 10143\nToken\nMarket & economics\n3\nReview\n3 · Review\n\nCheck every term. Your wallet signs one factory transaction.\n\nToken\nRead Only Draft · READ\nSupply\n1000\nQuote asset\nMON\nGraduation venue\nKuru orderbook\nGraduation threshold\n1 MON\nCurve fee\n1%\nCreator fee\n0% → Your fee wallet\nCreator fee wallet\nYour connected wallet\nLaunch fee\n0 MON\nBack\nConnect wallet to launch\nON THE BOARD\nR\nRead Only Draft\nCRYPTO\n\nREAD · MON pair\n\nSupply\n1000\nGraduates at\n1 MON\nCreator fee\n0%\nLaunch fee\n0 MON\nA real launch on Monad Testnet: your wallet signs one factory transaction that deploys the token and its bonding curve.",
+      "rpcFailures": [
+        {
+          "provider": "testnet-rpc.monad.xyz",
+          "error": {
+            "code": -32011,
+            "message": "requests limited to 15/sec"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 10,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xae72d871",
+                  "to": "0xa7f18b9eceb0A9852b08408854A45D00fc682454"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 11,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xfa677db5",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 12,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0x89a69bd8",
+                  "to": "0x6d70125c61aD8f1a6d85eA4C37c94680b42f2044"
+                },
+                "0x4369442"
+              ]
+            }
+          ]
+        },
+        {
+          "provider": "testnet-rpc.monad.xyz",
+          "error": {
+            "code": -32011,
+            "message": "requests limited to 15/sec"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 10,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xae72d871",
+                  "to": "0xa7f18b9eceb0A9852b08408854A45D00fc682454"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 11,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xfa677db5",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 12,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0x89a69bd8",
+                  "to": "0x6d70125c61aD8f1a6d85eA4C37c94680b42f2044"
+                },
+                "0x4369442"
+              ]
+            }
+          ]
+        },
+        {
+          "provider": "rpc.ankr.com",
+          "error": {
+            "code": 3,
+            "message": "execution reverted",
+            "data": "0x93504f99"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 19,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000ff437b117ec17a79a3b24da4b5047dca4da9d0a20000000000000000000000000000000000000000000000000000000000000000",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            }
+          ]
+        },
+        {
+          "provider": "rpc.ankr.com",
+          "error": {
+            "code": 3,
+            "message": "execution reverted",
+            "data": "0x93504f99"
+          },
+          "request": [
+            {
+              "jsonrpc": "2.0",
+              "id": 20,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000534b2f3a21130d7a60830c2df862319e593943a30000000000000000000000000000000000000000000000000000000000000000",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 21,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            },
+            {
+              "jsonrpc": "2.0",
+              "id": 22,
+              "method": "eth_call",
+              "params": [
+                {
+                  "data": "0xaf190c6b000000000000000000000000ff437b117ec17a79a3b24da4b5047dca4da9d0a20000000000000000000000000000000000000000000000000000000000000001",
+                  "to": "0xd1211276869ec55CAF302E22371D2005B23B9B40"
+                },
+                "0x4369442"
+              ]
+            }
+          ]
+        }
+      ],
+      "financialWrites": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] recovered: snapshot+journal-tail(1); cursor 1002; journal 2; anchorVerified true
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] reorg (anchor hash mismatch on restart): rolled back to block 1001, kept 0/1 journal events, aggregate rebuilt
+[radar] recovered: snapshot; cursor 1001; journal 0; anchorVerified true
+[radar] identity mismatch: state discarded by explicit operator flag
+[radar] recovered: fresh; cursor 1000; journal 0; anchorVerified true
+[radar] recovered: rebuilt-from-journal(schema); cursor 1001; journal 1; anchorVerified true
+[radar] recovered: rebuilt-from-journal(missing); cursor 1001; journal 1; anchorVerified true
+✔ buildQuery uses installed-SDK field names (PascalCase, no "topics") (1.888843ms)
+✔ normalizeTimestamp handles number/bigint/hex/ms (0.274349ms)
+✔ bigint-tagged journal survives encode/decode exactly (0.352274ms)
+✔ ingests two TokenLaunched, advances cursor via nextBlock, journals + snapshots (30.294723ms)
+✔ restart resumes from snapshot and re-folds a journal tail written after the snapshot (20.299028ms)
+✔ torn final journal line is truncated and the event re-delivered on replay (1.048752ms)
+✔ corrupt MIDDLE journal line is a hard error (no silent rebuild) (1.198945ms)
+✔ reorg: a changed block hash rolls back, drops orphaned events and normalized amounts, replays canonical only (25.388749ms)
+✔ identity mismatch refuses by default, resets with the explicit flag (4.386375ms)
+✔ chain-id mismatch fails closed (0.962034ms)
+✔ findForkBlock walks back to the newest matching hash (0.606414ms)
+✔ schema3 migration preserves the raw journal and rebuilds correct normalized totals (3.917854ms)
+✔ schema3 migration checks previous deployment identity before replay or write (0.974298ms)
+✔ RPC precision recovery restores complete historical amounts without duplicate counts (12.590037ms)
+✔ verified Router registration and mapped token qualify exact native-MON units (2.0371ms)
+✔ wrong token, unregistered/changed market, invalid precision/decimals and unsupported quote fail closed (0.383131ms)
+(node:40502) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ frontend formats the real RPE2E normalized amounts in their declared units (36.251592ms)
+✔ legacy aggregation and unknown/malformed amounts never become a fabricated zero (1.558395ms)
+✔ lifecycle counts, active-on-curve, phase and graduation latency are exact (5.697415ms)
+✔ GraduationCompleted maps the market so later trades in the same batch join the token (0.751208ms)
+✔ duplicate delivery (same block/logIndex/tx) is idempotent (0.366578ms)
+✔ kuru trade volume math is exact bigint (18-dec normalized) (0.565844ms)
+✔ mapping conflict is counted, never silently merged (0.363406ms)
+✔ addresses are normalised to lowercase (config, args, log address) (0.551057ms)
+✔ out-of-order events across blocks are tolerated; lastBlock is the max (0.474057ms)
+✔ persist → restore roundtrip preserves exact bigints, mapping and counters (1.2809ms)
+✔ staleness is null before the first trade and monotonic after (0.633496ms)
+✔ wire format renders bigints as strings (0.794951ms)
+✔ unknown events are ignored without failing (0.418641ms)
+✔ real RPV2M and RPE2E Trade values normalize grid size rather than token decimals (0.432357ms)
+✔ unknown parameters yield null amounts; later verification recovers all prior trades (0.479096ms)
+✔ semantic cancellation dedup spans individual/batch logs, delivery batches and restart (0.378995ms)
+✔ parses proper JSON (2.106769ms)
+✔ parses the quote-stripped bare form (systemd EnvironmentFile) (0.590847ms)
+✔ lowercases and ignores malformed pairs; empty → {} (0.478787ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 811.539865

@@ -1,0 +1,44 @@
+{
+  "test": "fixture/create.spec.ts > @create wizard: Token → Market & economics → Review, validation, unsupported option, no signing",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_ADDRESS_UNREACHABLE",
+      "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2",
+      "classification": "environment"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_ADDRESS_UNREACHABLE",
+      "url": "https://fonts.gstatic.com/s/silkscreen/v6/m8JXjfVPf62XiF7kO-i9YLNla0GA1dM.woff2",
+      "classification": "environment"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_ADDRESS_UNREACHABLE",
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+      "classification": "environment"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2",
+      "failure": "net::ERR_ADDRESS_UNREACHABLE"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/silkscreen/v6/m8JXjfVPf62XiF7kO-i9YLNla0GA1dM.woff2",
+      "failure": "net::ERR_ADDRESS_UNREACHABLE"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2",
+      "failure": "net::ERR_ADDRESS_UNREACHABLE"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 27
+}

@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > @search mobile search button opens palette",
+  "project": "tablet-834",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

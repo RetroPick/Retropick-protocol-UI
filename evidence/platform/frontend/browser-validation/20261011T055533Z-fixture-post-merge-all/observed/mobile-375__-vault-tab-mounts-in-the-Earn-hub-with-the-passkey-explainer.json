@@ -1,0 +1,12 @@
+{
+  "test": "fixture/vault.spec.ts > @vault tab mounts in the Earn hub with the passkey explainer",
+  "project": "mobile-375",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 33
+}

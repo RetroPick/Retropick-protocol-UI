@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-13T20:53:55.649Z",
+  "results": [
+    {
+      "name": "technical",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=P7rQYCbECZU",
+      "anonymous": true,
+      "duration": 175.021,
+      "time": 2.462229,
+      "width": 1280,
+      "height": 720,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Technical Demo | Bond-to-Book on Monad Testnet | 2:55 Silent Edit - YouTube",
+      "passed": true
+    },
+    {
+      "name": "cre",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=IrDQP5Y98-A",
+      "anonymous": true,
+      "duration": 90.021,
+      "time": 2.65083,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick \u2014 Chainlink CRE Graduation Safety | Monad Testnet | Official Simulation - YouTube",
+      "passed": true
+    },
+    {
+      "name": "technical",
+      "mobile": true,
+      "url": "https://www.youtube.com/watch?v=P7rQYCbECZU",
+      "anonymous": true,
+      "duration": 175.021,
+      "time": 2.35404,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick Technical Demo | Bond-to-Book on Monad Testnet | 2:55 Silent Edit - YouTube",
+      "passed": true
+    },
+    {
+      "name": "cre",
+      "mobile": true,
+      "url": "https://www.youtube.com/watch?v=IrDQP5Y98-A",
+      "anonymous": true,
+      "duration": 90.021,
+      "time": 2.538134,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick \u2014 Chainlink CRE Graduation Safety | Monad Testnet | Official Simulation - YouTube",
+      "passed": true
+    }
+  ]
+}

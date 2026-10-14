@@ -1,0 +1,9 @@
+{"test":"live/live-readonly.spec.ts > @live discovery renders indexed launches read-only","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live discovery renders indexed launches read-only","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live ACTIVE token terminal renders from indexer + chain without signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live GRADUATED token terminal renders from indexer + chain without signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live ACTIVE token terminal renders from indexer + chain without signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live GRADUATED token terminal renders from indexer + chain without signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live GRADUATED token terminal renders from indexer + chain without signing","project":"mobile-390","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live ACTIVE token terminal renders from indexer + chain without signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}
+{"test":"live/live-readonly.spec.ts > @live GRADUATED token terminal renders from indexer + chain without signing","project":"desktop-1440","app":0,"pageErrors":0,"guardViolations":0,"nonApp":0}

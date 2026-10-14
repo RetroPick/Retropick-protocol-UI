@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-13T21:46:20.355984+00:00",
+  "readOnly": true,
+  "checks": [
+    {
+      "check": "source_hashes",
+      "passed": true
+    },
+    {
+      "check": "upgrade_final_pass_evidence",
+      "passed": true,
+      "backup": "/opt/retropick-staging/backups/radar-v4-20261013T212826Z"
+    },
+    {
+      "check": "retropick-staging-radar",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 23:28:26 CEST"
+    },
+    {
+      "check": "retropick-staging-indexer",
+      "passed": true,
+      "NRestarts": "1",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:39:20 CEST"
+    },
+    {
+      "check": "retropick-staging-gateway",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:31:32 CEST"
+    },
+    {
+      "check": "retropick-staging-referral",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:56:35 CEST"
+    },
+    {
+      "check": "retropick-staging-media",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:56:35 CEST"
+    },
+    {
+      "check": "retropick-staging-caddy",
+      "passed": true,
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "ActiveEnterTimestamp": "Tue 2026-10-13 11:31:32 CEST"
+    },
+    {
+      "check": "staging-api-1",
+      "passed": true,
+      "containerId": "ccbfaf5546f9",
+      "startedAt": "2026-10-09T12:46:32.802829319Z",
+      "health": "healthy",
+      "restarts": 0
+    },
+    {
+      "check": "staging-postgres-1",
+      "passed": true,
+      "containerId": "6f8b9225ed8e",
+      "startedAt": "2026-10-09T06:24:17.008915491Z",
+      "health": "healthy",
+      "restarts": 0
+    },
+    {
+      "check": "radar_journal_errors",
+      "passed": false,
+      "errorLines": 2,
+      "journalReadable": true
+    }
+  ],
+  "passed": false
+}
+READ_ONLY_PRODUCTION_VALIDATION_FAIL

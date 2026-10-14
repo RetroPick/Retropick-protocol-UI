@@ -1,0 +1,7 @@
+{
+  "target": "live",
+  "label": "token-image-final",
+  "startedAt": "2026-10-13T12:20:40.000Z",
+  "command": "pnpm exec playwright test --config playwright.config.ts media-upload.spec.ts --project=desktop-1440 --project=mobile-390 --workers=2 --retries=0",
+  "cwd": "apps/retro-ui"
+}

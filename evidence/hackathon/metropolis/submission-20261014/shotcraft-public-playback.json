@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-13T22:52:52.473Z",
+  "results": [
+    {
+      "name": "shotcraft",
+      "mobile": false,
+      "url": "https://www.youtube.com/watch?v=DXUkWP1rM_s",
+      "anonymous": true,
+      "duration": 29.921,
+      "time": 7.147142,
+      "width": 1280,
+      "height": 720,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick | Bond-to-Book on Monad | Cinematic Silent Product Ad - YouTube",
+      "passed": true
+    },
+    {
+      "name": "shotcraft",
+      "mobile": true,
+      "url": "https://www.youtube.com/watch?v=DXUkWP1rM_s",
+      "anonymous": true,
+      "duration": 29.921,
+      "time": 5.063687,
+      "width": 640,
+      "height": 360,
+      "readyState": 4,
+      "playerError": null,
+      "title": "RetroPick | Bond-to-Book on Monad | Cinematic Silent Product Ad - YouTube",
+      "passed": true
+    }
+  ]
+}

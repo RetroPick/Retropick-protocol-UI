@@ -1,0 +1,57 @@
+{
+  "test": "live/media-upload.spec.ts > @live existing RETRO logo decodes on dashboard and token page without media stubs",
+  "project": "desktop-1440",
+  "status": "failed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "https://gateway.pinata.cloud/ipfs/REDACTED",
+      "classification": "environment"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://gateway.pinata.cloud/ipfs/REDACTED",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
+    },
+    {
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 112
+}

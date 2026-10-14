@@ -1,0 +1,12 @@
+{
+  "test": "fixture/vault.spec.ts > @vault real WebAuthn attempt in an authenticator-less browser surfaces the handled failure state",
+  "project": "mobile-390",
+  "status": "skipped",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 0
+}

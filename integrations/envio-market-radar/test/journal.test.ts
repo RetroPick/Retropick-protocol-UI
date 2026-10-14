@@ -128,7 +128,7 @@ test('corrupt MIDDLE journal line is a hard error (no silent rebuild)', () => {
   } finally { rmSync(d, { recursive: true, force: true }); }
 });
 
-test('reorg: a changed block hash rolls back, drops orphaned events, replays canonical only', async () => {
+test('reorg: a changed block hash rolls back, drops orphaned events and normalized amounts, replays canonical only', async () => {
   const d = dir();
   try {
     // Session 1: trade at 1001 on the orphaned chain (hash 0xbh1001).
@@ -140,20 +140,24 @@ test('reorg: a changed block hash rolls back, drops orphaned events, replays can
         data: encodeAbiParameters(body.map((i) => ({ type: i.type })), body.map((i) => i.type.startsWith('uint') ? (i.name === 'filledSize' ? 10n ** 18n : i.name === 'price' ? 2n * 10n ** 18n : 0n) : i.type === 'address' ? MARKET : i.type.startsWith('bytes') ? '0x' : i.type === 'bool' ? false : 0n)) };
     };
     const mkClient = (batches: ConstructorParameters<typeof FakeStream>[0], hashAt: (b: number) => string | null) => fakeClient({ height: 1010, batches, hashAt });
-    const s1 = await createRadarStream({ apiToken: 't', factory: FACTORY, coordinator: COORD, marketTokens: { [MARKET]: TOKEN }, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d },
+    const readMarketParams = async () => ({ token: TOKEN, baseDecimals: 18, sizePrecision: 10n ** 18n });
+    const s1 = await createRadarStream({ apiToken: 't', factory: FACTORY, coordinator: COORD, marketTokens: { [MARKET]: TOKEN }, readMarketParams, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d },
       async () => mkClient([{ data: { blocks: [blk(1000), blk(1001)], logs: [tradeLog(1001, '0xorphan', '0xbh1001')] }, nextBlock: 1002, archiveHeight: 1010 }], (b) => `0xbh${b}`));
     await s1.runOnce();
     assert.equal(s1.metrics().markets[0].trades, 1);
+    assert.equal(s1.metrics().markets[0].quoteVolume18, 2n * 10n ** 18n);
 
     // Session 2: block 1001 now has a DIFFERENT canonical hash; the old trade is orphaned, a new one replaces it.
     const canonical = (b: number) => (b === 1001 ? '0xNEW1001' : `0xbh${b}`);
-    const s2 = await createRadarStream({ apiToken: 't', factory: FACTORY, coordinator: COORD, marketTokens: { [MARKET]: TOKEN }, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d, resetOnIdentityMismatch: false },
+    const s2 = await createRadarStream({ apiToken: 't', factory: FACTORY, coordinator: COORD, marketTokens: { [MARKET]: TOKEN }, readMarketParams, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d, resetOnIdentityMismatch: false },
       async () => mkClient([{ data: { blocks: [{ number: 1001, hash: '0xNEW1001', parentHash: '0xbh1000', timestamp: 10010 }], logs: [tradeLog(1001, '0xnewtrade', '0xNEW1001')] }, nextBlock: 1002, archiveHeight: 1010 }], canonical));
     // Restart anchor check sees 1001 hash changed → rollback to 1001, orphan trade dropped.
     assert.equal(s2.metrics().markets[0]?.trades ?? 0, 0, 'orphaned trade removed on restart rollback');
+    assert.equal(s2.metrics().markets[0]?.quoteVolume18 ?? 0n, 0n, 'orphaned amount removed');
     const r = await s2.runOnce();
     assert.ok(r === 'end' || r === 'reorg');
     assert.equal(s2.metrics().markets[0].trades, 1, 'exactly one canonical trade after replay');
+    assert.equal(s2.metrics().markets[0].quoteVolume18, 2n * 10n ** 18n);
     assert.equal(s2.status().counters.reorgs >= 1, true);
   } finally { rmSync(d, { recursive: true, force: true }); }
 });
@@ -184,4 +188,48 @@ test('findForkBlock walks back to the newest matching hash', async () => {
   assert.equal(deep.forkBlock, null);
   const unverifiable = await findForkBlock(ring, async () => null);
   assert.equal(unverifiable.unverifiable, true);
+});
+
+test('schema3 migration preserves the raw journal and rebuilds correct normalized totals', async () => {
+  const d = dir();
+  try {
+    const event: JournalEvent = { id: '1000:0:0xfill', name: 'Trade', address: MARKET, blockNumber: 1000, blockTimestamp: 10000, logIndex: 0, transactionHash: '0xfill', blockHash: '0xbh1000', args: { filledSize: 100_000_000n, price: 3_990_000_000_000_000n } };
+    const journal = encode(event) + '\n';
+    writeFileSync(join(d, 'journal.jsonl'), journal);
+    writeFileSync(join(d, 'state.json'), encode({ schemaVersion: 3, identity: ID, aggregator: { invalidOldAmount: '399000' }, cursorBlock: 1001, journalCount: 1 }) + '\n');
+    const stream = await createRadarStream({ apiToken: 't', factory: FACTORY, marketTokens: { [MARKET]: TOKEN }, readMarketParams: async () => ({ token: TOKEN, baseDecimals: 18, sizePrecision: 100_000_000n }), fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d }, async () => fakeClient({ height: 1001, batches: [], hashAt: b => `0xbh${b}` }));
+    assert.equal(stream.metrics().markets[0].filledBaseUnits, 10n ** 18n);
+    assert.equal(stream.metrics().markets[0].quoteVolume18, 3_990_000_000_000_000n);
+    assert.equal(stream.metrics().aggregationVersion, 4);
+    assert.equal(loadSnapshot(d).snapshot!.schemaVersion, 4);
+    assert.equal(readFileSync(join(d, 'journal.jsonl'), 'utf8'), journal, 'migration must not rewrite source events');
+  } finally { rmSync(d, { recursive: true, force: true }); }
+});
+
+test('schema3 migration checks previous deployment identity before replay or write', async () => {
+  const d = dir();
+  try {
+    const old = encode({ schemaVersion: 3, identity: { ...ID, deployment: 'OTHER' } }) + '\n';
+    writeFileSync(join(d, 'state.json'), old);
+    await assert.rejects(createRadarStream({ apiToken: 't', factory: FACTORY, marketTokens: {}, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d }, async () => fakeClient({ height: 1001, batches: [], hashAt: b => `0xbh${b}` })), /refusing/);
+    assert.equal(readFileSync(join(d, 'state.json'), 'utf8'), old);
+  } finally { rmSync(d, { recursive: true, force: true }); }
+});
+
+test('RPC precision recovery restores complete historical amounts without duplicate counts', async () => {
+  const d = dir(); const now = Date.now;
+  let clock = now();
+  Date.now = () => clock;
+  try {
+    const event: JournalEvent = { id: '1000:0:0xfill', name: 'Trade', address: MARKET, blockNumber: 1000, blockTimestamp: 10000, logIndex: 0, transactionHash: '0xfill', blockHash: '0xbh1000', args: { filledSize: 100_000_000n, price: 3_990_000_000_000_000n } };
+    writeFileSync(join(d, 'journal.jsonl'), encode(event) + '\n');
+    let calls = 0;
+    const stream = await createRadarStream({ apiToken: 't', factory: FACTORY, marketTokens: { [MARKET]: TOKEN }, readMarketParams: async () => ++calls === 1 ? null : { token: TOKEN, baseDecimals: 18, sizePrecision: 100_000_000n }, fromBlock: 1000, chainId: 10143, deployment: 'test', stateDir: d }, async () => fakeClient({ height: 1005, batches: [{ data: { blocks: [], logs: [] }, nextBlock: 1005, archiveHeight: 1005 }], hashAt: b => `0xbh${b}` }));
+    assert.equal(stream.metrics().markets[0].quoteVolume18, null);
+    clock += 30_001;
+    await stream.runOnce();
+    assert.equal(stream.metrics().markets[0].quoteVolume18, 3_990_000_000_000_000n);
+    assert.equal(stream.metrics().markets[0].trades, 1);
+    assert.equal(readJournal(d).events.length, 1);
+  } finally { Date.now = now; rmSync(d, { recursive: true, force: true }); }
 });

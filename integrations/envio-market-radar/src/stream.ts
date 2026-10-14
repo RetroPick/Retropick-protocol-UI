@@ -13,7 +13,8 @@ import { decodeEventLog, toEventSelector, type Hex } from 'viem';
 import type { Query, QueryResponse, StreamConfig } from '@envio-dev/hypersync-client';
 // Relative import keeps this integration standalone (not a pnpm workspace member).
 import { indexerAbi } from '../../../packages/launchpad-sdk/src/events.ts';
-import { RadarAggregator, eventId, type RadarEvent, type RadarMetrics } from './radar.ts';
+import { RadarAggregator, eventId, bytes32ToAddress, type RadarEvent, type RadarMetrics, type VerifiedMarketParams } from './radar.ts';
+import { marketParamsReader } from './market-params.ts';
 import {
   appendJournal, findForkBlock, loadSnapshot, readJournal, resetState, rewriteJournal, ringGet, ringPut, sameIdentity,
   writeSnapshot, STATE_SCHEMA_VERSION, type Identity, type JournalEvent, type SnapshotState,
@@ -48,6 +49,8 @@ export interface RadarStreamOptions {
   stateDir: string;
   /** Read-only JSON-RPC used only as a block-hash fallback. */
   rpcUrl?: string;
+  /** Injectable read-only resolver for deterministic tests. Failures leave amounts null. */
+  readMarketParams?: (market: string, token: string) => Promise<VerifiedMarketParams | null>;
   pollMs?: number;
   /** Explicit operator choice: discard state whose identity differs instead of refusing. */
   resetOnIdentityMismatch?: boolean;
@@ -141,9 +144,34 @@ export async function createRadarStream(options: RadarStreamOptions, clientFacto
   const status = { anchorVerified: false, lastError: null as string | null, lastErrorAt: null as number | null, lastBatchAt: null as number | null, recovery: 'fresh' };
   let stopped = false;
   let active: ResponseStream | null = null;
+  const readParams = options.readMarketParams ?? (options.rpcUrl ? marketParamsReader(options.rpcUrl, options.chainId) : async () => null);
+  const params = new Map<string, { token: string; value: VerifiedMarketParams | null; checkedAt: number }>();
+  const mappings = new Map(Object.entries(options.marketTokens).map(([m, t]) => [m.toLowerCase(), t.toLowerCase()]));
 
-  const rebuildFrom = (events: JournalEvent[]) => {
+  const qualifyMappings = async (events: RadarEvent[], reset = false) => {
+    if (reset) { params.clear(); mappings.clear(); for (const [m, t] of Object.entries(options.marketTokens)) mappings.set(m.toLowerCase(), t.toLowerCase()); }
+    for (const e of events) {
+      if (e.name !== 'GraduationCompleted') continue;
+      const market = bytes32ToAddress(e.args.destination);
+      if (market && market !== '0x' + '0'.repeat(40)) mappings.set(market, String(e.args.token).toLowerCase());
+    }
+    await Promise.all([...mappings].map(async ([market, token]) => {
+      const prior = params.get(market);
+      if (prior?.token === token && Date.now() - prior.checkedAt < 30_000) return;
+      let value: VerifiedMarketParams | null = null;
+      try { value = await readParams(market, token); } catch { /* preserve lifecycle availability */ }
+      params.set(market, { token, value, checkedAt: Date.now() });
+    }));
+  };
+
+  const applyParams = (a: RadarAggregator) => {
+    for (const [market, entry] of params) a.setMarketParams(market, entry.value);
+  };
+
+  const rebuildFrom = async (events: JournalEvent[]) => {
+    await qualifyMappings(events, true);
     const a = new RadarAggregator(options.marketTokens);
+    applyParams(a);
     a.ingest(events);
     a.recordDecodeError(counters.decodeErrors);
     return a;
@@ -160,7 +188,7 @@ export async function createRadarStream(options: RadarStreamOptions, clientFacto
     rewriteJournal(dir, kept);
     journalCount = kept.length;
     counters = { ...counters, reorgs: counters.reorgs + 1 };
-    agg = rebuildFrom(kept);
+    agg = await rebuildFrom(kept);
     ring = ring.filter(([b]) => b < forkBlock);
     cursor = forkBlock;
     persist();
@@ -170,17 +198,20 @@ export async function createRadarStream(options: RadarStreamOptions, clientFacto
 
   // ---------------- recovery ----------------
   {
-    const { snapshot, reason } = loadSnapshot(dir);
-    if (snapshot && !sameIdentity(snapshot.identity, identity)) {
-      if (!options.resetOnIdentityMismatch) throw Error(`radar state in ${dir} belongs to ${JSON.stringify(snapshot.identity)}, not ${JSON.stringify(identity)} — refusing (set RADAR_RESET_ON_IDENTITY_MISMATCH=1 to discard)`);
+    const { snapshot, previousIdentity, reason } = loadSnapshot(dir);
+    const savedIdentity = snapshot?.identity ?? previousIdentity;
+    if (savedIdentity && !sameIdentity(savedIdentity, identity)) {
+      if (!options.resetOnIdentityMismatch) throw Error(`radar state in ${dir} belongs to ${JSON.stringify(savedIdentity)}, not ${JSON.stringify(identity)} — refusing (set RADAR_RESET_ON_IDENTITY_MISMATCH=1 to discard)`);
       resetState(dir);
       log('identity mismatch: state discarded by explicit operator flag');
     }
     const journal = readJournal(dir);
     const usable = snapshot && sameIdentity(snapshot.identity, identity) && snapshot.journalCount <= journal.events.length ? snapshot : null;
     if (usable) {
+      await qualifyMappings(journal.events);
       counters = { ...counters, ...usable.counters };
       agg = RadarAggregator.restore(usable.aggregator as never, options.marketTokens);
+      applyParams(agg);
       const tail = journal.events.slice(usable.journalCount);
       agg.ingest(tail); // crash between journal append and snapshot: fold the tail (idempotent)
       ring = usable.ring;
@@ -191,7 +222,7 @@ export async function createRadarStream(options: RadarStreamOptions, clientFacto
     } else {
       // Missing/corrupt/foreign snapshot or journal shorter than snapshot → rebuild from journal.
       counters = { ...counters, rebuilds: counters.rebuilds + (journal.events.length ? 1 : 0) };
-      agg = rebuildFrom(journal.events);
+      agg = await rebuildFrom(journal.events);
       for (const e of journal.events) if (e.blockHash) ring = ringPut(ring, e.blockNumber, e.blockHash);
       cursor = journal.events.length ? Math.max(options.fromBlock, ...journal.events.map((e) => e.blockNumber + 1)) : options.fromBlock;
       journalCount = journal.events.length;
@@ -249,11 +280,16 @@ export async function createRadarStream(options: RadarStreamOptions, clientFacto
       e.id = eventId(e);
       if (KURU_EVENTS.has(name) && !agg.isTrackedMarket(address)) { foreign++; continue; }
       if (agg.has(e.id)) continue;
+      if (name === 'GraduationCompleted') { await qualifyMappings([e]); applyParams(agg); }
       agg.ingest([e]); // sequential: a GraduationCompleted earlier in the batch maps its market for later trades
       fresh.push(e);
     }
     // Durable order: journal (fsync) → snapshot (tmp+fsync+rename).
     appendJournal(dir, fresh);
+    // Retry unresolved metadata without losing trades ingested while RPC was down.
+    // Raw totals make the subsequent normalized snapshot cover the whole history.
+    await qualifyMappings([]);
+    applyParams(agg);
     journalCount += fresh.length;
     if (decodeErrors) agg.recordDecodeError(decodeErrors);
     counters = { ...counters, decodeErrors: counters.decodeErrors + decodeErrors, removedLogs: counters.removedLogs + removed, foreignLogs: counters.foreignLogs + foreign };

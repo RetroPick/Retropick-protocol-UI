@@ -1,0 +1,12 @@
+{
+  "test": "fixture/discovery.spec.ts > @discovery Prediction, Crypto and PRISM navigation still work",
+  "project": "mobile-390",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 134
+}

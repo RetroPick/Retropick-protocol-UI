@@ -1,0 +1,113 @@
+{
+  "test": "live/media-upload.spec.ts > @live existing RETRO logo decodes on dashboard and token page without media stubs",
+  "project": "mobile-390",
+  "status": "failed",
+  "appConsoleErrors": [
+    {
+      "type": "error",
+      "text": "Access to fetch at 'https://api-staging.retropick.xyz/api/radar/radar' from origin 'http://127.0.0.1:4318/' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "url": "http://127.0.0.1:4318/launchpad/token/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Access to fetch at 'https://api-staging.retropick.xyz/api/radar/radar' from origin 'http://127.0.0.1:4318/' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "url": "http://127.0.0.1:4318/launchpad/token/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Access to fetch at 'https://api-staging.retropick.xyz/api/radar/radar' from origin 'http://127.0.0.1:4318/' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "url": "http://127.0.0.1:4318/launchpad/token/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Access to fetch at 'https://api-staging.retropick.xyz/api/radar/radar' from origin 'http://127.0.0.1:4318/' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "url": "http://127.0.0.1:4318/launchpad/token/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "url": "https://gateway.pinata.cloud/ipfs/REDACTED",
+      "classification": "environment"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "classification": "app"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "classification": "app"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "failure": "net::ERR_FAILED"
+    },
+    {
+      "url": "https://api-staging.retropick.xyz/api/radar/radar",
+      "failure": "net::ERR_FAILED"
+    },
+    {
+      "url": "https://gateway.pinata.cloud/ipfs/REDACTED",
+      "failure": "net::ERR_NETWORK_CHANGED"
+    },
+    {
+      "url": "https://ipfs.io/ipfs/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
+    },
+    {
+      "url": "https://dweb.link/ipfs/REDACTED",
+      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 207
+}

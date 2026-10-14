@@ -1,0 +1,40 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "authenticated": false,
+    "url": "https://www.youtube.com/watch?v=P7rQYCbECZU",
+    "before": {
+      "duration": 175.021,
+      "readyState": 4,
+      "width": 1280,
+      "height": 720,
+      "currentTime": 0
+    },
+    "after": {
+      "currentTime": 2.57863,
+      "paused": false
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "authenticated": false,
+    "url": "https://www.youtube.com/watch?v=P7rQYCbECZU",
+    "before": {
+      "duration": 175.021,
+      "readyState": 4,
+      "width": 640,
+      "height": 360,
+      "currentTime": 0
+    },
+    "after": {
+      "currentTime": 1.861849,
+      "paused": false
+    }
+  }
+]
