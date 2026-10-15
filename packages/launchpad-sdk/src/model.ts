@@ -8,16 +8,17 @@ import { factoryAbi } from './abis/factoryAbi.ts';
 export type ReadOptions = { blockNumber?: bigint; freshIdentity?: boolean };
 const identities = new WeakMap<ChainClient, Map<string, ReturnType<typeof loadIdentity>>>();
 async function loadIdentity(chain: ChainClient, token: Address, blockNumber: bigint) {
-  const [packet, name, symbol, description, logo, creator] = await Promise.all([
+  const [packet, name, symbol, description, logo, creator, decimals] = await Promise.all([
     chain.readContract({ address: addresses.coordinator, abi: coordinatorAbi, functionName: 'packet', args: [token], blockNumber }),
     chain.readContract({ address: token, abi: tokenAbi, functionName: 'name', blockNumber }),
     chain.readContract({ address: token, abi: tokenAbi, functionName: 'symbol', blockNumber }),
     chain.readContract({ address: token, abi: tokenAbi, functionName: 'description', blockNumber }),
     chain.readContract({ address: token, abi: tokenAbi, functionName: 'logo', blockNumber }),
     chain.readContract({ address: token, abi: tokenAbi, functionName: 'deployer', blockNumber }),
+    chain.readContract({ address: token, abi: tokenAbi, functionName: 'decimals', blockNumber }),
   ]);
   if (packet.token.toLowerCase() !== token.toLowerCase() || packet.curve === zeroAddress) throw Error('Not a RetroPick V2 launch');
-  return { packet, name, symbol, description, logo, creator };
+  return { packet, name, symbol, description, logo, creator, decimals };
 }
 /** Tier A: identity and current economic phase. No wallet, proof or venue-history reads. */
 export async function readLaunchEssential(chain: ChainClient, token: Address, options: ReadOptions = {}) {

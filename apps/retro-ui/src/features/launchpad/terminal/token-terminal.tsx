@@ -32,9 +32,9 @@ const ROLE_LABEL: Record<NonNullable<IndexedHolder['role']>, string | null> = {
   CURVE: 'Curve', COORDINATOR: 'Protocol', LP_EXCESS_LOCK: 'Liquidity lock', KURU_INFRASTRUCTURE: 'Liquidity', BUYBACK_VAULT: 'Protocol', FEE_ESCROW: 'Protocol', WALLET: null,
 };
 
-export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, tradesPager, holdersPager, ordersPanel, onRetry, backHref = '/launchpad' }: {
+export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, tradesPager, holdersPager, ordersPanel, headActions, onRetry, backHref = '/launchpad' }: {
   vm: TokenTerminalVM; data: TerminalData; chart: ChartControls; ticket: ReactNode; depth?: TerminalDepth | null;
-  tab: TerminalTab; onTab: (t: TerminalTab) => void; tradesPager?: Pager; holdersPager?: Pager; ordersPanel?: ReactNode; onRetry?: () => void; backHref?: string;
+  tab: TerminalTab; onTab: (t: TerminalTab) => void; tradesPager?: Pager; holdersPager?: Pager; ordersPanel?: ReactNode; headActions?: ReactNode; onRetry?: () => void; backHref?: string;
 }) {
   const demo = vm.dataMode === 'demo';
   const mobile = useMediaQuery('(max-width: 767px)');
@@ -57,6 +57,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
           <span>by <AddressChip value={vm.addresses.creator} label="creator"/></span>
           <span title={vm.createdAt ? new Date(vm.createdAt * 1000).toISOString() : undefined}>{vm.createdAt ? `${ageFrom(vm.createdAt, vm.now)} old` : '—'}</span>
           <AddressChip value={vm.addresses.token} label="token"/>
+          {headActions}
         </div>
       </TokenIdentity>
       <div className="rp-price" aria-live="off">

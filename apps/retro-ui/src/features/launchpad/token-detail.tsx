@@ -14,6 +14,7 @@ import { useSearchParams } from '@/lib/next-compat';
 import { bondingProgressBps } from '@retropick/launchpad-sdk/graduation';
 import { addresses } from '@retropick/launchpad-sdk/chain';
 import { EmptyState, ErrorState, SkeletonLine } from '@/components/trading/primitives';
+import { AddToWalletButton } from './add-to-wallet-button';
 import { TokenTerminal, type TerminalTab } from './terminal/token-terminal';
 import { DemoTicket } from './terminal/demo-ticket';
 import { LiveOrdersPanel } from './terminal/live-orders';
@@ -118,6 +119,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     return <div className="rp-terminal" data-testid="token-terminal" aria-busy="true"><div className="rp-head"><SkeletonLine width={280} height={48} label="Loading token"/><SkeletonLine width={200} height={48}/></div><div className="rp-grid"><section className="rp-chart-panel"><SkeletonLine height={380}/></section><aside className="rp-rail">{TICKET_FALLBACK}</aside></div></div>;
   }
   return <TokenTerminal vm={vm} data={data} chart={chart} depth={depth} tab={tab} onTab={(t) => { setTab(t); setTradeCursor(undefined); setHolderCursor(undefined); }} onRetry={detail.reload}
+    headActions={<AddToWalletButton token={id as Address} symbol={vm.symbol} logo={vm.logo} decimals={detail.essential?.decimals ?? null}/>}
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}
     ordersPanel={vm.lifecycle === 'GRADUATED' ? <LiveOrdersPanel token={vm.id} market={vm.addresses.market} quoteSymbol={vm.quote.symbol}/> : undefined}

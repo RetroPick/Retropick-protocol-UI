@@ -63,6 +63,47 @@ function isUnrecognizedChainError(error: unknown): boolean {
   return code === 4902 || code === -32603; // wallets surface either for unknown chains
 }
 
+/** Payload for EIP-747 wallet_watchAsset (ERC-20). */
+export type WatchAssetPayload = {
+  type: 'ERC20';
+  options: { address: Address; symbol: string; decimals: number; image?: string };
+};
+
+export type WatchAssetOptions = {
+  address: Address;
+  symbol: string;
+  /** Actual on-chain decimals — never assume a value. */
+  decimals: number;
+  /** Public HTTPS image URL. ipfs:// or http:// sources are dropped: wallets cannot fetch them. */
+  image?: string | null;
+};
+
+/**
+ * Build the EIP-747 request payload. The image field is included only when it is an
+ * https:// URL — MetaMask fetches the image from a plain web client, so ipfs:// and
+ * http:// would silently degrade the token back to its letter icon.
+ */
+export function buildWatchAssetPayload(options: WatchAssetOptions): WatchAssetPayload {
+  const image = typeof options.image === 'string' && options.image.startsWith('https://') ? options.image : undefined;
+  return image
+    ? { type: 'ERC20', options: { address: options.address, symbol: options.symbol, decimals: options.decimals, image } }
+    : { type: 'ERC20', options: { address: options.address, symbol: options.symbol, decimals: options.decimals } };
+}
+
+/**
+ * Prompt the wallet to track an ERC-20 token (EIP-747 wallet_watchAsset).
+ * Refuses to issue the request unless the provider is already on Monad Testnet —
+ * wallets can silently watch the asset on the wrong chain otherwise.
+ * Errors propagate untouched: 4001 (user rejection) and -32601 (unsupported) stay typed.
+ */
+export async function watchAsset(provider: Eip1193Provider, options: WatchAssetOptions): Promise<boolean> {
+  const chainId = await activeChainId(provider);
+  if (chainId !== monad.id) {
+    throw Object.assign(Error(`Wallet must be on Monad Testnet (chain ${monad.id}); wallet reports chain ${chainId}.`), { code: 'WRONG_CHAIN' });
+  }
+  return Boolean(await provider.request({ method: 'wallet_watchAsset', params: buildWatchAssetPayload(options) }));
+}
+
 /** Ensure the connected wallet is on Monad Testnet; switch or add when needed. */
 export async function ensureMonadTestnet(provider: Eip1193Provider): Promise<'already' | 'switched' | 'added'> {
   if (await activeChainId(provider) === monad.id) return 'already';

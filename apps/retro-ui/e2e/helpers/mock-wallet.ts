@@ -11,23 +11,25 @@ export interface MockWalletOptions {
   chainId?: number;
   /** 'reject' (default): every signature request is rejected with code 4001. */
   signing?: 'reject';
+  /** Behavior of wallet_watchAsset (EIP-747): resolve true, reject 4001, or unsupported -32601. Default: resolve. */
+  watchAsset?: 'resolve' | 'reject' | 'unsupported';
   announce?: boolean;
 }
 
 export const MOCK_ACCOUNT = '0x00000000000000000000000000000000000e2e01';
 
 export async function installMockWallet(page: Page, options: MockWalletOptions = {}): Promise<void> {
-  const config = { account: options.account ?? MOCK_ACCOUNT, chainId: options.chainId ?? 10143, announce: options.announce ?? true };
+  const config = { account: options.account ?? MOCK_ACCOUNT, chainId: options.chainId ?? 10143, announce: options.announce ?? true, watchAsset: options.watchAsset ?? 'resolve' };
   await page.addInitScript((cfg) => {
     const listeners: Record<string, Array<(v: unknown) => void>> = {};
-    const state = { chainId: cfg.chainId, connected: false, calls: [] as Array<{ method: string; at: number }> };
+    const state = { chainId: cfg.chainId, connected: false, calls: [] as Array<{ method: string; at: number; params?: unknown }> };
     const SIGNING = ['eth_sendTransaction', 'eth_sendRawTransaction', 'eth_sign', 'personal_sign', 'eth_signTypedData', 'eth_signTypedData_v3', 'eth_signTypedData_v4', 'eth_signTransaction', 'wallet_sendCalls'];
     const emit = (event: string, value: unknown) => (listeners[event] ?? []).forEach((fn) => fn(value));
     const reject = (code: number, message: string) => Object.assign(new Error(message), { code });
     const provider = {
       isRetroPickMock: true,
       async request({ method, params }: { method: string; params?: unknown[] }) {
-        state.calls.push({ method, at: Date.now() });
+        state.calls.push({ method, at: Date.now(), params });
         if (SIGNING.includes(method)) throw reject(4001, 'MockWallet: user rejected the request (automation never signs).');
         switch (method) {
           case 'eth_requestAccounts': state.connected = true; return [cfg.account];
@@ -39,6 +41,11 @@ export async function installMockWallet(page: Page, options: MockWalletOptions =
             state.chainId = id; emit('chainChanged', '0x' + id.toString(16)); return null;
           }
           case 'wallet_addEthereumChain': return null;
+          case 'wallet_watchAsset': {
+            if (cfg.watchAsset === 'unsupported') throw reject(-32601, 'MockWallet: wallet_watchAsset not supported in UI automation');
+            if (cfg.watchAsset === 'reject') throw reject(4001, 'MockWallet: user rejected the watchAsset request (automation never signs).');
+            return true;
+          }
           default: throw reject(-32601, `MockWallet: ${method} not supported in UI automation`);
         }
       },
@@ -58,4 +65,9 @@ export async function installMockWallet(page: Page, options: MockWalletOptions =
 
 export async function walletCalls(page: Page): Promise<string[]> {
   return page.evaluate(() => ((window as unknown as { __mockWallet?: { state: { calls: Array<{ method: string }> } } }).__mockWallet?.state.calls ?? []).map((c) => c.method));
+}
+
+/** Full call records (method + params) for one RPC method, in request order. */
+export async function walletMethodCalls<T = { method: string; params?: unknown }>(page: Page, method: string): Promise<T[]> {
+  return page.evaluate((target) => (((window as unknown as { __mockWallet?: { state: { calls: Array<{ method: string; params?: unknown }> } } }).__mockWallet?.state.calls ?? []).filter((c) => c.method === target) as T[]), method);
 }

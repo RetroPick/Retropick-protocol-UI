@@ -1,0 +1,493 @@
+{
+  "config": {
+    "argv": [
+      "/home/ubuntu/.nvm/versions/node/v22.23.2/bin/node",
+      "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/node_modules/@playwright/test/cli.js",
+      "test",
+      "e2e/live/add-to-wallet.spec.ts",
+      "--project=desktop-1440",
+      "--project=mobile-390",
+      "--workers=2"
+    ],
+    "configFile": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/playwright.config.ts",
+    "rootDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1440",
+        "name": "desktop-1440",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop-1280",
+        "name": "desktop-1280",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-834",
+        "name": "tablet-834",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet-768",
+        "name": "tablet-768",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-390",
+        "name": "mobile-390",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/test-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-375",
+        "name": "mobile-375",
+        "testDir": "/home/ubuntu/project/retropick/retropick-protocol/apps/retro-ui/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "live/**/*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/ubuntu/project/retropick/retropick-protocol/evidence/platform/frontend/add-to-wallet-20261015/e2e/html-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 2,
+    "webServer": {
+      "command": "pnpm exec vite build --outDir /tmp/retro-ui-e2e-live-dist --emptyOutDir --logLevel warn && pnpm exec vite preview --outDir /tmp/retro-ui-e2e-live-dist --port 4318 --strictPort --host 127.0.0.1",
+      "url": "http://127.0.0.1:4318/launchpad",
+      "reuseExistingServer": false,
+      "timeout": 240000,
+      "env": {
+        "VITE_WALLET_BRIDGE_URL": "",
+        "DISABLE_HMR": "true"
+      },
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "live/add-to-wallet.spec.ts",
+      "file": "live/add-to-wallet.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "@live add to wallet: registers the token only on click, with the on-chain payload",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3976,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T10:06:47.123Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "997286bd3cb2cc820b71-193094ec59533094b222",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@live add to wallet: wrong-chain click switches the wallet back before registering",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-1440",
+              "projectName": "desktop-1440",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T10:06:51.487Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "997286bd3cb2cc820b71-a1e036197779addcca1d",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "@live add to wallet: registers the token only on click, with the on-chain payload",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4027,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T10:06:55.881Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "997286bd3cb2cc820b71-46c78adda7801c0ee9eb",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "@live add to wallet: wrong-chain click switches the wallet back before registering",
+          "ok": true,
+          "tags": [
+            "live"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-390",
+              "projectName": "mobile-390",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T10:07:00.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "997286bd3cb2cc820b71-5e636bb3d6d306346210",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 104,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "wallet rejects the watchAsset prompt",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 75,
+          "column": 6,
+          "specs": [
+            {
+              "title": "@live add to wallet: wallet rejection surfaces once, without retry loops",
+              "ok": true,
+              "tags": [
+                "live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3625,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-15T10:06:51.750Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "997286bd3cb2cc820b71-7792cf3b864f51ea3d1f",
+              "file": "live/add-to-wallet.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "@live add to wallet: wallet rejection surfaces once, without retry loops",
+              "ok": true,
+              "tags": [
+                "live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3505,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-15T10:07:00.493Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "997286bd3cb2cc820b71-0f7be069a279cd930461",
+              "file": "live/add-to-wallet.spec.ts",
+              "line": 77,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "wallet cannot register tokens",
+          "file": "live/add-to-wallet.spec.ts",
+          "line": 89,
+          "column": 6,
+          "specs": [
+            {
+              "title": "@live add to wallet: unsupported wallets get the copy-address fallback",
+              "ok": true,
+              "tags": [
+                "live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-1440",
+                  "projectName": "desktop-1440",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3749,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-15T10:06:47.123Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "997286bd3cb2cc820b71-1a0463d478a36e839255",
+              "file": "live/add-to-wallet.spec.ts",
+              "line": 91,
+              "column": 3
+            },
+            {
+              "title": "@live add to wallet: unsupported wallets get the copy-address fallback",
+              "ok": true,
+              "tags": [
+                "live"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-390",
+                  "projectName": "mobile-390",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3569,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-15T10:06:56.064Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "997286bd3cb2cc820b71-b6551abf14c21fda7868",
+              "file": "live/add-to-wallet.spec.ts",
+              "line": 91,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T10:06:07.127Z",
+    "duration": 56973.79,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
