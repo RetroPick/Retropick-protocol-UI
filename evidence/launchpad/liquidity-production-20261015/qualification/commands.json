@@ -1,0 +1,308 @@
+{
+  "head": "e1c578535e3451de5c1792cd0a2b48d922e787c8",
+  "dirtyPathsAtStart": [
+    " M .gitignore",
+    " M apps/indexer/src/project.ts",
+    " M apps/indexer/src/query.ts",
+    " M apps/indexer/src/server.ts",
+    " M apps/indexer/src/store.ts",
+    " M apps/indexer/src/sync.ts",
+    " M apps/indexer/test/store.test.ts",
+    " M apps/retro-ui/e2e/fixture/a11y.spec.ts",
+    " M apps/retro-ui/e2e/fixture/token-terminal.spec.ts",
+    " M apps/retro-ui/package.json",
+    " M apps/retro-ui/src/components/shell/mobile-nav.tsx",
+    " M apps/retro-ui/src/components/shell/sidebar.tsx",
+    " M apps/retro-ui/src/features/launchpad/kuru-ticket.tsx",
+    " M apps/retro-ui/src/features/launchpad/terminal/token-terminal.tsx",
+    " M apps/retro-ui/src/features/launchpad/token-detail.tsx",
+    " M apps/retro-ui/src/lib/view-models/demo-terminal-fixtures.ts",
+    " M apps/retro-ui/src/routes.tsx",
+    " M package.json",
+    " M packages/launchpad-sdk/src/read-model.ts",
+    "?? .agents/",
+    "?? .codex/",
+    "?? .github/",
+    "?? apps/indexer/LIQUIDITY.md",
+    "?? apps/indexer/scripts/liquidity-migration-smoke.mjs",
+    "?? apps/indexer/test/liquidity.test.ts",
+    "?? apps/retro-ui/e2e/fixture/liquidity.spec.ts",
+    "?? apps/retro-ui/src/features/liquidity/",
+    "?? apps/retro-ui/src/hooks/use-kuru-liquidity.ts",
+    "?? apps/retro-ui/src/lib/view-models/liquidity.ts",
+    "?? apps/retro-ui/tests/liquidity.test.mjs",
+    "?? development/fullstack-integration/liquidity/",
+    "?? evidence/launchpad/liquidity-production-20261015/",
+    "?? packages/launchpad-sdk/scripts/capture-liquidity.ts",
+    "?? packages/launchpad-sdk/src/liquidity.ts",
+    "?? packages/launchpad-sdk/test/liquidity.test.ts",
+    "?? scripts/launchpad/run_playwright_mcp.mjs",
+    "?? scripts/launchpad/smoke_playwright_mcp.mjs",
+    "?? scripts/launchpad/verify_liquidity.py"
+  ],
+  "checks": [
+    {
+      "name": "abi-integrity",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "scripts/launchpad/test_abi_export.py"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:05:28.379347+00:00",
+      "finishedAt": "2026-10-15T16:05:28.494618+00:00",
+      "exitCode": 0,
+      "log": "abi-integrity.log",
+      "logSHA256": "c57bdec5f19166a93690118c71d5c3ee68b3bfc2827da2e950a0cdc421d4bd4f"
+    },
+    {
+      "name": "sdk-types",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/launchpad-sdk",
+        "typecheck"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:05:28.494984+00:00",
+      "finishedAt": "2026-10-15T16:05:33.226054+00:00",
+      "exitCode": 0,
+      "log": "sdk-types.log",
+      "logSHA256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "name": "sdk-tests",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/launchpad-sdk",
+        "test"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {
+        "RUN_SDK_NETWORK_TESTS": "0"
+      },
+      "startedAt": "2026-10-15T16:05:33.226413+00:00",
+      "finishedAt": "2026-10-15T16:05:37.661043+00:00",
+      "exitCode": 0,
+      "log": "sdk-tests.log",
+      "logSHA256": "89e0acf6e828459c7a1a6c14f0719c7d214bec91ef5c5bc8e4bda2117b7012e1"
+    },
+    {
+      "name": "indexer-types",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/indexer",
+        "typecheck"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:05:37.661399+00:00",
+      "finishedAt": "2026-10-15T16:05:42.548452+00:00",
+      "exitCode": 0,
+      "log": "indexer-types.log",
+      "logSHA256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "name": "indexer-tests",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/indexer",
+        "test"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:05:42.549094+00:00",
+      "finishedAt": "2026-10-15T16:05:54.514301+00:00",
+      "exitCode": 0,
+      "log": "indexer-tests.log",
+      "logSHA256": "3e824daff3ac2a5c50eee2e07f1fca62a4a48132ffd6b6f4091383c9f2206d85"
+    },
+    {
+      "name": "ui-types",
+      "command": [
+        "pnpm",
+        "typecheck:ui"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:05:54.514841+00:00",
+      "finishedAt": "2026-10-15T16:06:05.573367+00:00",
+      "exitCode": 0,
+      "log": "ui-types.log",
+      "logSHA256": "8b8dd18f55902439420d30b4c51ebf8e5a1dd82040ace148f3116155cebe8ecc"
+    },
+    {
+      "name": "ui-domain",
+      "command": [
+        "pnpm",
+        "test:ui"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:05.573843+00:00",
+      "finishedAt": "2026-10-15T16:06:08.299163+00:00",
+      "exitCode": 0,
+      "log": "ui-domain.log",
+      "logSHA256": "2af044acdac112a149c307acda5532af1b7c90a95a62ef348a1755bc0f2ede5f"
+    },
+    {
+      "name": "ui-product",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:product"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:08.299628+00:00",
+      "finishedAt": "2026-10-15T16:06:09.367798+00:00",
+      "exitCode": 0,
+      "log": "ui-product.log",
+      "logSHA256": "3ccd718e02bec8a5e9b98229422e469cd3a80236181b0b1e4597ebb858aab3ff"
+    },
+    {
+      "name": "ui-terminal",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:terminal"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:09.368201+00:00",
+      "finishedAt": "2026-10-15T16:06:10.538659+00:00",
+      "exitCode": 0,
+      "log": "ui-terminal.log",
+      "logSHA256": "6fcc843f762dff9e06ed87fa7a03e0c40d46a36e318e6a61e1910da1bfc5792e"
+    },
+    {
+      "name": "ui-indexed-record",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:indexed-record"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:10.539391+00:00",
+      "finishedAt": "2026-10-15T16:06:11.458099+00:00",
+      "exitCode": 0,
+      "log": "ui-indexed-record.log",
+      "logSHA256": "3a0efd0156f6cf95faa183fd0e86033c1e2e13ecde0b0226fed64836eea612ff"
+    },
+    {
+      "name": "ui-media",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:media"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:11.458515+00:00",
+      "finishedAt": "2026-10-15T16:06:12.476829+00:00",
+      "exitCode": 0,
+      "log": "ui-media.log",
+      "logSHA256": "e2f2aa9576671ff56b233fca7ed9b705a7ab44665bc0afa0338b302645f3fda0"
+    },
+    {
+      "name": "ui-add-to-wallet",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:add-to-wallet"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:12.477227+00:00",
+      "finishedAt": "2026-10-15T16:06:13.545678+00:00",
+      "exitCode": 0,
+      "log": "ui-add-to-wallet.log",
+      "logSHA256": "2dfe18cf83c31e2021510d0643d9bd284d8f2a9b5ea4fadb27919a52a6b0148d"
+    },
+    {
+      "name": "ui-vault",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:vault"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:13.546151+00:00",
+      "finishedAt": "2026-10-15T16:06:14.463794+00:00",
+      "exitCode": 0,
+      "log": "ui-vault.log",
+      "logSHA256": "0f2c4365fbbf011d71543508e3a7aeb34ee7337a49d16df9561bdedf27833ae5"
+    },
+    {
+      "name": "ui-liquidity",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@retropick/retro-ui",
+        "test:liquidity"
+      ],
+      "cwd": ".",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:14.464261+00:00",
+      "finishedAt": "2026-10-15T16:06:15.733848+00:00",
+      "exitCode": 0,
+      "log": "ui-liquidity.log",
+      "logSHA256": "bdbc26e89915813505929f2cf61fdb397eb58d6ccff03f078518b1c4653dc1f5"
+    },
+    {
+      "name": "ui-build",
+      "command": [
+        "pnpm",
+        "exec",
+        "vite",
+        "build",
+        "--outDir",
+        "/home/ubuntu/project/retropick/retropick-v2-production-liquidity/evidence/launchpad/liquidity-production-20261015/qualification/ui-dist",
+        "--emptyOutDir"
+      ],
+      "cwd": "apps/retro-ui",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-15T16:06:15.734320+00:00",
+      "finishedAt": "2026-10-15T16:06:17.609426+00:00",
+      "exitCode": 0,
+      "log": "ui-build.log",
+      "logSHA256": "960d5289c239251907e82561d855326fbbbb95fc79a68fd850dba3cd96eb8e7f"
+    },
+    {
+      "name": "browser-fixture",
+      "command": [
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.config.ts"
+      ],
+      "cwd": "apps/retro-ui",
+      "environmentOverrides": {
+        "E2E_TARGET": "fixture",
+        "E2E_EVIDENCE_DIR": "/home/ubuntu/project/retropick/retropick-v2-production-liquidity/evidence/launchpad/liquidity-production-20261015/qualification/browser",
+        "PLAYWRIGHT_HTML_OPEN": "never"
+      },
+      "startedAt": "2026-10-15T16:06:17.609927+00:00",
+      "finishedAt": "2026-10-15T16:11:00.713626+00:00",
+      "exitCode": 0,
+      "log": "browser-fixture.log",
+      "logSHA256": "d38b6e5fa4f4154d9059df9708afa13e6a5b8650224637cbf3972d0cfc76cfbd"
+    }
+  ]
+}

@@ -9,6 +9,8 @@ import { fetchHolders, fetchTrades } from '@/lib/live/indexer-client';
 import { launchKeys } from '@/lib/live/queries';
 import { useLaunchDetail } from '@/hooks/use-launch-detail';
 import { useKuruBook } from '@/hooks/use-kuru-book';
+import { LiveMarketLiquidity, MarketLiquidity } from '@/features/liquidity/market-liquidity';
+import { demoLiquidityView } from '@/lib/view-models/liquidity';
 import { useWallet } from '@/wallet/provider';
 import { useSearchParams } from '@/lib/next-compat';
 import { bondingProgressBps } from '@retropick/launchpad-sdk/graduation';
@@ -55,6 +57,7 @@ function DemoTokenRoute({ id }: { id: string }) {
   // Depth (DEMO): the fixture book through the same aggregation the live hook uses.
   const depth = fixture.vm.lifecycle === 'GRADUATED' && fixture.book ? { status: 'ready' as const, ladder: buildDepthLadder(fixture.book), block: '0', observedAt: fixture.vm.now } : null;
   return <TokenTerminal vm={fixture.vm} data={data} chart={chart} depth={depth} tab={tab} onTab={setTab}
+    liquidityPanel={<MarketLiquidity view={demoLiquidityView(fixture.vm.id, scenario)} baseSymbol={fixture.vm.symbol} quoteSymbol={fixture.vm.quote.symbol} compact/>}
     tradesPager={{ hasNext: data.trades.nextCursor !== null, hasPrev: tradePage > 0, next: () => setTradePage((p) => p + 1), first: () => setTradePage(0) }}
     ticket={<DemoTicket key={`${fixture.vm.id}:${scenario}`} fixture={fixture}/>}/>;
 }
@@ -93,7 +96,7 @@ function LiveTokenRoute({ id }: { id: string }) {
       quote: { symbol: indexed?.quoteSymbol ?? seed?.quoteSymbol ?? (quoteAsset === zeroAddress ? 'MON' : 'QUOTE'), decimals, native: quoteAsset === zeroAddress },
       baseDecimals, lifecycle, venue, price: { x18: price, source }, change24hBps: indexed?.change24hBps ?? null,
       marketCapRaw: mcap, liquidityRaw: state?.ledger.phase === 0 ? state.realQuote.toString() : indexed?.liquidityRaw ?? null,
-      liquidityNote: lifecycle === 'GRADUATED' ? 'Kuru book depth is not aggregated' : 'Real curve quote reserve',
+      liquidityNote: lifecycle === 'GRADUATED' ? 'Indexed AMM quote assets; see live market liquidity' : 'Real curve quote reserve',
       volume24hRaw: indexed?.volume24hRaw ?? null, lifetimeVolumeRaw: indexed?.lifetimeVolumeRaw ?? null, trades24h: indexed?.trades24h ?? null, holderCount: indexed?.holderCount ?? null,
       supplyRaw: state ? state.supply.toString() : indexed?.supplyRaw ?? null, creatorEarnedRaw: null, bondingProgressBps: state ? state.ledger.phase === 2 ? 10000 : bondingProgressBps(state.realQuote, state.packet.graduationThreshold) : indexed?.bondingProgressBps ?? null,
       addresses: { token: id, curve: state?.packet.curve ?? indexed?.curve ?? null, factory: addresses.factory ?? null, coordinator: addresses.coordinator ?? null, quoteAsset, creator: state?.creator ?? indexed?.creator ?? seed?.creator ?? null, creatorFeeRecipient: economic?.record.creatorFeeRecipient ?? null, market: state?.receipt.market && state.receipt.market !== zeroAddress ? state.receipt.market : indexed?.market ?? null, vault: state?.receipt.vault && state.receipt.vault !== zeroAddress ? state.receipt.vault : indexed?.vault ?? null, lpLock: state?.ledger.protectedLPReceiver && state.ledger.protectedLPReceiver !== zeroAddress ? state.ledger.protectedLPReceiver : null, excessLock: state?.ledger.protectedExcessReceiver && state.ledger.protectedExcessReceiver !== zeroAddress ? state.ledger.protectedExcessReceiver : null },
@@ -120,6 +123,7 @@ function LiveTokenRoute({ id }: { id: string }) {
     return <div className="rp-terminal" data-testid="token-terminal" aria-busy="true"><div className="rp-head"><SkeletonLine width={280} height={48} label="Loading token"/><SkeletonLine width={200} height={48}/></div><div className="rp-grid"><section className="rp-chart-panel"><SkeletonLine height={380}/></section><aside className="rp-rail">{TICKET_FALLBACK}</aside></div></div>;
   }
   return <TokenTerminal vm={vm} data={data} chart={chart} depth={depth} tab={tab} onTab={(t) => { setTab(t); setTradeCursor(undefined); setHolderCursor(undefined); }} onRetry={detail.reload}
+    liquidityPanel={<LiveMarketLiquidity token={id} baseSymbol={vm.symbol} quoteSymbol={vm.quote.symbol} compact/>}
     headActions={<AddToWalletButton token={id as Address} symbol={vm.symbol} logo={rawLogo} decimals={detail.essential?.decimals ?? null}/>}
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}

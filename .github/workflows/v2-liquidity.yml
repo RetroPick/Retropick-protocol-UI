@@ -1,0 +1,48 @@
+name: V2 liquidity qualification
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v2-liquidity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deterministic-fullstack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.11.0'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @retropick/retro-ui exec playwright install --with-deps chromium
+      - run: python3 scripts/launchpad/verify_liquidity.py --browser --evidence /tmp/v2-liquidity-ci
+
+  solidity-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          submodules: recursive
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09 # v1
+        with:
+          version: v1.8.4
+      - name: V2 unit and fuzz cases
+        working-directory: contracts
+        env:
+          FOUNDRY_PROFILE: test
+        run: forge test --match-path 'test/v2/unit/*.t.sol'
+      - name: V2 stateful invariants
+        working-directory: contracts
+        env:
+          FOUNDRY_PROFILE: test
+        run: forge test --match-path 'test/v2/invariant/*.t.sol'

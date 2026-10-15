@@ -1,0 +1,15 @@
+$ node --test tests/indexed-record.test.mjs
+✔ finds exact transaction past100rows when legacy server ignores scope (1.259657ms)
+✔ order owner and token must both match (0.339762ms)
+✔ reorg or changed snapshot across pages leaves pending (0.201801ms)
+✔ bounded pagination and repeated cursor never report false absence as success (0.315965ms)
+✔ stale failure envelope and cancelled reads cannot confirm (1.051918ms)
+✔ trade actor must match requested wallet even within same transaction (1.298018ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.08637

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "skill": "composition-patterns",
+      "repository": "vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": "MIT",
+      "upstreamSkillSHA256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+      "installedSkillSHA256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+      "adaptation": null
+    },
+    {
+      "skill": "web-design-guidelines",
+      "repository": "vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": "MIT",
+      "upstreamSkillSHA256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+      "installedSkillSHA256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+      "adaptation": null
+    },
+    {
+      "skill": "ui-ux-pro-max",
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+      "license": "MIT",
+      "upstreamSkillSHA256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
+      "installedSkillSHA256": "7a8da3768b7bf633a964d11a69a132fde46808ca87ee69448539683dd4754082",
+      "adaptation": "Codex script prefix"
+    },
+    {
+      "skill": "secure-workflow-guide",
+      "repository": "trailofbits/skills",
+      "commit": "1f68e03536f7980d4c0e6869596f708043a19443",
+      "license": "CC-BY-SA-4.0",
+      "upstreamSkillSHA256": "7c0e7fb45f97c073ec9599cbe0b2acf44f31bbece38636bc5c3fcc9bc7703015",
+      "installedSkillSHA256": "7c0e7fb45f97c073ec9599cbe0b2acf44f31bbece38636bc5c3fcc9bc7703015",
+      "adaptation": null
+    },
+    {
+      "skill": "entry-point-analyzer",
+      "repository": "trailofbits/skills",
+      "commit": "1f68e03536f7980d4c0e6869596f708043a19443",
+      "license": "CC-BY-SA-4.0",
+      "upstreamSkillSHA256": "167dca47592a8bd248916ca06977103cadc6b9492fe701ad6a6464b38fec0aec",
+      "installedSkillSHA256": "167dca47592a8bd248916ca06977103cadc6b9492fe701ad6a6464b38fec0aec",
+      "adaptation": null
+    },
+    {
+      "skill": "differential-review",
+      "repository": "trailofbits/skills",
+      "commit": "1f68e03536f7980d4c0e6869596f708043a19443",
+      "license": "CC-BY-SA-4.0",
+      "upstreamSkillSHA256": "f9af6a8193fc1a9f8ca3c54bb8d19095a5f20c9472ca6d014488bbde50b67da0",
+      "installedSkillSHA256": "f9af6a8193fc1a9f8ca3c54bb8d19095a5f20c9472ca6d014488bbde50b67da0",
+      "adaptation": null
+    }
+  ],
+  "reused": {
+    "foundry": "1.8.4",
+    "slither": "0.11.6",
+    "react-best-practices": "vercel plugin 0.54.1",
+    "playwright-test": "1.62.1"
+  },
+  "mcp": {
+    "package": "@playwright/mcp",
+    "version": "0.0.83",
+    "license": "Apache-2.0"
+  },
+  "gstack": {
+    "repository": "garrytan/gstack",
+    "commit": "47d639abffa882b8cbb641d7d1dedf08ecada9ec",
+    "license": "MIT",
+    "host": "codex",
+    "support": "experimental"
+  }
+}

@@ -1,0 +1,14 @@
+$ node --test tests/media.test.mjs
+✔ resolveMediaSrc maps onchain logo URIs to browser-loadable URLs (1.91505ms)
+✔ ipfs gateway candidates try distinct gateways with full paths (0.629429ms)
+✔ isLogoUri admits https, http (local media service), ipfs and ar with hostnames only (0.229109ms)
+✔ uploadLogo maps service errors to friendly messages and returns the uri on success (16.274398ms)
+✔ IPFS and Arweave directory paths survive resolution and gateway retries (0.336284ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 239.666344

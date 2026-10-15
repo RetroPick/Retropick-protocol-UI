@@ -1,0 +1,23 @@
+$ node --test tests/terminal.test.mjs
+✔ orderSizeRaw equals former kuru-ticket inline math (0.888355ms)
+✔ holderValueRaw equals former token-detail inline math (0.155397ms)
+✔ curveSpotX18 and marketCapRaw equal former token-detail inline math (0.203925ms)
+✔ formatRaw truncates without float error (0.387828ms)
+✔ range and interval are independent; only page-safe combinations are offered (0.761837ms)
+✔ demo fixtures cover the four lifecycle states deterministically (87.564847ms)
+✔ sufficient margin: no deposit, single order (0.594998ms)
+✔ shortfall: deposits exactly the gap, waits, re-reads margin, then a separate order (0.212367ms)
+✔ rejecting the deposit prevents the order (0.378737ms)
+✔ order failure after deposit: "Margin deposited; order not placed", retry never re-deposits (0.346894ms)
+✔ retry refuses to place the order if deposited margin is no longer sufficient (0.273407ms)
+✔ buildDepthLadder sorts, dedupes and accumulates exact bigints (0.385836ms)
+✔ buildDepthLadder handles empty, one-sided and malformed books fail-closed (0.211272ms)
+✔ demo fixture exposes a deterministic two-sided graduated book (0.439998ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 336.528534

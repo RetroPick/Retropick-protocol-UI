@@ -1,0 +1,7 @@
+# Project-local developer browser; no shared user configuration or wallet profile.
+# Provision the pinned package using the campaign TOOLKIT.md instructions first.
+[mcp_servers.playwright]
+command = "node"
+args = ["scripts/launchpad/run_playwright_mcp.mjs"]
+startup_timeout_sec = 30
+tool_timeout_sec = 60

@@ -1,0 +1,25 @@
+.rp-liquidity { display:grid; gap:20px; min-width:0; padding-bottom:28px }
+.rp-liquidity h1 { font-size:clamp(24px,4vw,34px); font-weight:650; margin:0 0 6px }
+.rp-liquidity h2 { font-size:17px; font-weight:600; margin:0 }
+.rp-liquidity-card { border:1px solid var(--border); background:var(--panel); border-radius:14px; padding:18px; min-width:0; margin-top:16px }
+.rp-liquidity-card .rp-note { overflow-wrap:anywhere }
+.rp-liquidity .rp-liquidity-card { margin-top:0 }
+.rp-liquidity-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px }
+.rp-liquidity-tabs,.rp-liquidity-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px }
+.rp-liquidity-tabs a { padding:10px 14px; border-radius:9px; border:1px solid transparent; font-size:13px; font-weight:600; min-height:40px }
+.rp-liquidity-tabs a[aria-current=page] { background:var(--hover); border-color:var(--border); color:var(--accent) }
+.rp-liquidity-quotes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:14px 0 }
+.rp-liquidity-quotes dt { font-size:12px; color:var(--text-dim); margin-bottom:4px }
+.rp-liquidity-quotes dd { margin:0; font-size:13px; font-family:'JetBrains Mono',monospace; overflow-wrap:anywhere }
+.rp-liquidity-addresses { display:flex; flex-wrap:wrap; gap:14px; font-size:12px; margin:14px 0 }
+.rp-maker-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(300px,400px); gap:18px; align-items:start }
+.rp-maker-grid > * { min-width:0 }
+.rp-maker-drafts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px }
+.rp-maker-drafts fieldset { border:1px solid var(--border); border-radius:10px; padding:12px; min-width:0 }
+.rp-maker-drafts label { display:grid; gap:6px; margin-top:10px; font-size:12px }
+.rp-maker-drafts input,.rp-liquidity-select { min-width:0; width:100%; border:1px solid var(--border); color:var(--text); background:var(--bg); border-radius:8px; padding:10px; min-height:42px }
+.rp-liquidity-table { min-width:0; overflow-x:auto }
+.rp-liquidity .rp-metric-strip { grid-template-columns:repeat(auto-fit,minmax(145px,1fr)) }
+.rp-liquidity-actions { margin-top:14px }
+@media(max-width:900px) { .rp-maker-grid { grid-template-columns:minmax(0,1fr) } }
+@media(max-width:480px) { .rp-liquidity-card { padding:13px }.rp-liquidity-quotes { grid-template-columns:minmax(0,1fr) }.rp-maker-drafts { grid-template-columns:minmax(0,1fr) } }

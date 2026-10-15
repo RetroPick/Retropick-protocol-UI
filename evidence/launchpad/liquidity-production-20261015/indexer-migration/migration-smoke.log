@@ -1,0 +1,55 @@
+(node:147291) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Indexed vault:3:0xc88ded06eb0081430ff02d124c22b532e122cbe7 69510220 / 69510320 events 5
+Indexed vault:3:0xc88ded06eb0081430ff02d124c22b532e122cbe7 69510320 / 69510320 events 0
+Indexed vault:3:0x884e97123b3933460d79e5c312247ea5b73d87df 69554637 / 69554737 events 5
+Indexed vault:3:0x884e97123b3933460d79e5c312247ea5b73d87df 69554737 / 69554737 events 0
+Indexed vault:3:0x023ef4745f4dfb0a39a69b671bbf7f6af48d4d29 69723674 / 69723774 events 5
+Indexed vault:3:0x023ef4745f4dfb0a39a69b671bbf7f6af48d4d29 69723774 / 69723774 events 0
+{
+  "copiedDatabase": "apps/indexer/.data/liquidity-migration-smoke.sqlite",
+  "originalProjection": 2,
+  "indexedBlock": 70648102,
+  "preservedCursors": {
+    "root": 70648150,
+    "dynamic": 70648102
+  },
+  "results": [
+    {
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "vault": "0xc88ded06eb0081430ff02d124c22b532e122cbe7",
+      "status": "READY",
+      "target": 70648102,
+      "historicalStart": 69510121,
+      "historicalCursor": 69510320,
+      "historyComplete": false,
+      "events": 5,
+      "seedDepositFound": true,
+      "bootstrapShares": "1000"
+    },
+    {
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "vault": "0x884e97123b3933460d79e5c312247ea5b73d87df",
+      "status": "READY",
+      "target": 70648102,
+      "historicalStart": 69554538,
+      "historicalCursor": 69554737,
+      "historyComplete": false,
+      "events": 5,
+      "seedDepositFound": true,
+      "bootstrapShares": "1000"
+    },
+    {
+      "token": "0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+      "vault": "0x023ef4745f4dfb0a39a69b671bbf7f6af48d4d29",
+      "status": "READY",
+      "target": 70648102,
+      "historicalStart": 69723575,
+      "historicalCursor": 69723774,
+      "historyComplete": false,
+      "events": 5,
+      "seedDepositFound": true,
+      "bootstrapShares": "1000"
+    }
+  ]
+}

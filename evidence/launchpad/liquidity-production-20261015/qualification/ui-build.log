@@ -1,0 +1,98 @@
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./scripts/public-rpc-env" without a file extension (vite.config.ts:5:36). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 3434 modules transformed.
+rendering chunks...
+computing gzip size...
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/index.html                                     4.37 kB │ gzip:   1.17 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/bonding-progress-CyCLxSUy.css           1.11 kB │ gzip:   0.45 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/pair-identity-DjJ0GDf0.css              1.13 kB │ gzip:   0.50 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/live-orders-CYEUVoWk.css                2.23 kB │ gzip:   0.73 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/feed-BGwqRq59.css                       2.61 kB │ gzip:   0.88 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/quote-picker-BnHhrWwe.css               3.84 kB │ gzip:   1.09 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/launch-table-0utuT8-1.css               4.06 kB │ gzip:   1.22 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/earn-BaWiVIYY.css                      20.52 kB │ gzip:   4.44 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/primitives-D9q9y6dw.css                21.83 kB │ gzip:   4.84 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/index-NF7S7KiV.css                     89.52 kB │ gzip:  17.41 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/portfolio-CVcKFG8D.js                   0.05 kB │ gzip:   0.06 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/secp256k1-CMTKsvrn.js                   0.05 kB │ gzip:   0.06 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/chevron-down-D_CZD7Si.js                0.12 kB │ gzip:   0.14 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/loader-circle-D5TNUoO6.js               0.14 kB │ gzip:   0.15 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/plus-svvZQKAn.js                        0.15 kB │ gzip:   0.15 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/arrow-left-DFCQeTjf.js                  0.16 kB │ gzip:   0.16 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/arrow-right-Bl_LzRit.js                 0.16 kB │ gzip:   0.16 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/arrow-up-right-hSPb4TDX.js              0.16 kB │ gzip:   0.15 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/circle-check-DqiG2CmQ.js                0.17 kB │ gzip:   0.16 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/send-spvCEVZY.js                        0.29 kB │ gzip:   0.22 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/shield-check-C-yeE1Hb.js                0.32 kB │ gzip:   0.24 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/math-B-JDr_2y.js                        0.35 kB │ gzip:   0.25 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/droplets-DVmqeS0h.js                    0.37 kB │ gzip:   0.28 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/skeleton-C4bKXdy6.js                    0.40 kB │ gzip:   0.30 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/layers-CrtSlXxU.js                      0.42 kB │ gzip:   0.24 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/prepare-D5DTkADV.js                     0.55 kB │ gzip:   0.30 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/list-CIBuP-SM.js                        0.59 kB │ gzip:   0.28 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/format-CEs70MzY.js                      0.74 kB │ gzip:   0.42 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/theme-Bt_O3-Ep.js                       0.74 kB │ gzip:   0.43 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/registry-mAx6CPOn.js                    1.18 kB │ gzip:   0.63 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/creator-C6hJBAdU.js                     1.23 kB │ gzip:   0.58 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/table-D2-Q6lCI.js                       1.28 kB │ gzip:   0.50 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/safe-link-B2IU8NNN.js                   1.48 kB │ gzip:   0.74 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/createLucideIcon-rl_fu48B.js            1.66 kB │ gzip:   0.90 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/bonding-progress-BgIYujAX.js            2.01 kB │ gzip:   1.00 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/referral-client-2v48I6oK.js             2.07 kB │ gzip:   1.06 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/sheet-zrGsR7tI.js                       2.19 kB │ gzip:   0.81 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/utils-Bpv4vmSW.js                       2.19 kB │ gzip:   0.97 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/provider-DccXqJcb.js                    2.19 kB │ gzip:   1.06 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/discovery-CDC9w1o2.js                   2.20 kB │ gzip:   0.96 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/launchpad-fixtures-zmRvikgV.js          2.81 kB │ gzip:   0.96 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/pair-identity-Ra-x5f9d.js               2.87 kB │ gzip:   1.37 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/ccip-Co_4d-KW.js                        2.89 kB │ gzip:   1.34 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/docs-CpXLHqx5.js                        3.74 kB │ gzip:   1.62 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/ui-BOLc0eQL.js                          3.78 kB │ gzip:   1.29 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/activity-UVPYRHwL.js                    4.02 kB │ gzip:   1.72 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/fixtures-CP4RI90W.js                    4.10 kB │ gzip:   2.16 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/launchpad-repository-Bt60OqHd.js        4.19 kB │ gzip:   1.58 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/checkbox-B_eRFNM0.js                    4.65 kB │ gzip:   1.96 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/live-trading-ticket-D1M9DLBc.js         5.40 kB │ gzip:   2.53 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/viem-xLVUtN4Z.js                        5.46 kB │ gzip:   2.03 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/launch-table-BcI-sG3m.js                6.02 kB │ gzip:   1.85 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/deposit-order-machine-BnzhFADo.js       7.87 kB │ gzip:   2.93 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/ticket-BzbpTIfO.js                      8.24 kB │ gzip:   3.10 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/serializeSignature-CeBfrT1Z.js          8.54 kB │ gzip:   3.27 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/demo-terminal-fixtures-DlobFHF6.js      8.55 kB │ gzip:   3.62 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/jsx-runtime-DIzu-bOv.js                 8.74 kB │ gzip:   3.34 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dialog-9KHsHQN2.js                      8.84 kB │ gzip:   3.10 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/discovery-tvpxA0f3.js                   9.78 kB │ gzip:   3.79 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dist-D1UquslH.js                       13.57 kB │ gzip:   4.86 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dist-cyT8bBWF.js                       14.56 kB │ gzip:   5.29 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/kuru-ticket-Cg3R30lR.js                14.69 kB │ gzip:   5.39 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/demo-discovery-Df4szBkA.js             15.38 kB │ gzip:   5.20 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/prism-BFJUwyJR.js                      15.71 kB │ gzip:   4.48 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/es2015-BGUf55OZ.js                     16.83 kB │ gzip:   6.43 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/primitives-DVQ8Yq2v.js                 19.41 kB │ gzip:   7.19 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/tx-pipeline-Dq7ONnte.js                20.47 kB │ gzip:   7.31 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/liquidity-DRH5s5RR.js                  21.62 kB │ gzip:   7.05 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/select-DyBGzV9s.js                     22.58 kB │ gzip:   7.62 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/provider-k2ZYGTb7.js                   24.76 kB │ gzip:   7.76 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dist-ClIzJGHk.js                       27.79 kB │ gzip:   8.96 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/secp256k1-Dg0yy6bC.js                  29.83 kB │ gzip:  11.89 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/live-orders-DehXRQD3.js                31.17 kB │ gzip:   7.88 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dist-CxmBm7T4.js                       33.09 kB │ gzip:  12.29 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/dist-CwDK86qi.js                       33.53 kB │ gzip:   9.35 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/chain-Ct7SNR5k.js                      38.75 kB │ gzip:  11.59 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/queries-R5x9AAAQ.js                    39.05 kB │ gzip:  12.31 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/evm-yLxbaXwz.js                        46.55 kB │ gzip:  17.59 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/create-launch-c6n0Vx23.js              52.49 kB │ gzip:  15.33 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/token-detail-1lu04U3c.js               55.25 kB │ gzip:  17.76 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/localBatchGatewayRequest-D8aVWX5p.js   71.31 kB │ gzip:  21.27 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/prepare-BydnEAMn.js                    91.95 kB │ gzip:  12.39 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/earn-CqNzegoF.js                      103.55 kB │ gzip:  31.50 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/portfolio-CbPM_K3V.js                 140.21 kB │ gzip:  44.87 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/trading-chart-CJ6YcK-L.js             184.33 kB │ gzip:  60.22 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/index-nHON5rCE.js                     204.00 kB │ gzip:  65.02 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/model-z75djvcN.js                     304.93 kB │ gzip:  63.64 kB
+../../evidence/launchpad/liquidity-production-20261015/qualification/ui-dist/assets/detail-CvXlCyWh.js                    364.14 kB │ gzip: 106.10 kB
+
+✓ built in 854ms

@@ -3,8 +3,10 @@ import { addresses, monad, release, type ChainClient } from '@retropick/launchpa
 import { coordinatorAbi, tokenAbi, curveAbi, registryAbi, kuruAbi } from '@retropick/launchpad-sdk/abi';
 import { retroPickFeeEscrowV2Abi } from '@retropick/launchpad-sdk/abis/retroPickFeeEscrowV2Abi';
 import { retroPickBuybackVaultV2Abi } from '@retropick/launchpad-sdk/abis/retroPickBuybackVaultV2Abi';
+import { readKuruLiquidity } from '@retropick/launchpad-sdk/liquidity';
+import { kuruVaultAbi } from '@retropick/launchpad-sdk/abis/kuruVaultAbi';
 import { indexerAbi } from '@retropick/launchpad-sdk/events';
-import type { IndexedLaunch, IndexedAssetMetadata, IndexedMarketParameters } from '@retropick/launchpad-sdk/read-model';
+import type { IndexedLaunch, IndexedAssetMetadata, IndexedMarketParameters, IndexedLiquidityPool } from '@retropick/launchpad-sdk/read-model';
 import { Store, type JournalEvent } from './store.ts';
 import { createProviderPool, classifyFailure, safeErrorMessage, type ProviderPool } from './providers.ts';
 import { project, marketCapQuoteRaw, executionPriceX18, PROJECTION_VERSION, type LaunchSeed, type Snapshot } from './project.ts';
@@ -56,7 +58,7 @@ export class Indexer {
   }
   async scan(stage: string, target: number, contracts: Address[], start = START_BLOCK) {
     if (!contracts.length) return;
-    const sourceAbi = stage === 'beneficiary' ? auxiliaryAbi : indexerAbi;
+    const sourceAbi = stage.startsWith('vault:') ? kuruVaultAbi.filter(e => e.type === 'event') : stage === 'beneficiary' ? auxiliaryAbi : indexerAbi;
     const eventsAbi = sourceAbi.filter(e => stage === 'root' ? rootNames.has(e.name) : !rootNames.has(e.name));
     let from = Math.max(start, this.store.cursor(stage, start) + 1);
     const revision = this.store.get<number>('reorgRevision') ?? 0;
@@ -70,9 +72,10 @@ export class Indexer {
         const events: JournalEvent[] = [];
         for (const log of logs) {
           if (log.removed || !log.blockHash || !log.transactionHash || log.blockNumber === null || log.logIndex === null || log.transactionIndex === null) throw Error('Incomplete event');
+          if (!contracts.some(a => a.toLowerCase() === log.address.toLowerCase())) throw Error('Unexpected log emitter');
           const decoded = decodeEventLog({ abi: sourceAbi, data: log.data, topics: log.topics });
           const header = await this.header(Number(log.blockNumber)); if (header.hash.toLowerCase() !== log.blockHash.toLowerCase()) throw Error('Log block mismatch');
-          events.push({ id: `10143:${log.blockHash}:${log.transactionHash}:${log.logIndex}`, chainId: 10143, address: log.address.toLowerCase(), name: decoded.eventName, args: decoded.args as Record<string, unknown>, block: Number(log.blockNumber), blockHash: log.blockHash, transactionHash: log.transactionHash, transactionIndex: log.transactionIndex, logIndex: log.logIndex, timestamp: header.timestamp });
+          events.push({ id: `10143:${log.blockHash}:${log.transactionHash}:${log.logIndex}`, chainId: 10143, address: log.address.toLowerCase(), name: decoded.eventName, args: { ...(decoded.args as Record<string, unknown>), ...(decoded.eventName === 'Transfer' ? { value: (decoded.args as { value?: bigint; amount?: bigint }).value ?? (decoded.args as { amount?: bigint }).amount } : {}) }, block: Number(log.blockNumber), blockHash: log.blockHash, transactionHash: log.transactionHash, transactionIndex: log.transactionIndex, logIndex: log.logIndex, timestamp: header.timestamp });
         }
         const hash = stage === 'beneficiary' && checkpointHashes.has(range.to) ? checkpointHashes.get(range.to)! : (await this.header(range.to)).hash;
         return { ...range, hash, events };
@@ -160,6 +163,32 @@ export class Indexer {
     }
     return seeds;
   }
+  vaultStage(vault: string) { return `vault:${PROJECTION_VERSION}:${vault.toLowerCase()}`; }
+  /** Each qualified vault owns an inclusive historical cursor, independent of dynamic logs. */
+  async liquidity(seeds: LaunchSeed[], target: number): Promise<IndexedLiquidityPool[]> {
+    const pools: IndexedLiquidityPool[] = [];
+    const anchor = await this.header(target);
+    for (const { launch: l } of seeds) {
+      if (l.phase !== 'GRADUATED' || l.venue !== 'KURU' || !l.market || !l.vault || l.graduationBlock === undefined) continue;
+      const vault = l.vault as Address, blockNumber = BigInt(target), stage = this.vaultStage(vault);
+      const pool: IndexedLiquidityPool = { token: l.token, market: l.market, vault, lpLock: l.lpLock, baseAsset: l.token, quoteAsset: l.quoteAsset, baseDecimals: l.baseDecimals ?? 18, quoteDecimals: l.quoteDecimals, baseSymbol: l.symbol, quoteSymbol: l.quoteSymbol, baseAssetsRaw: null, quoteAssetsRaw: null, totalSharesRaw: null, protectedSharesRaw: null, infrastructureSharesRaw: null, historyComplete: false, historyIndexedBlock: this.store.cursor(stage, l.graduationBlock), graduationBlock: l.graduationBlock, status: 'UNAVAILABLE' };
+      // Receipt + ledger establish discovery; the vault must independently agree on identity.
+      try {
+        const state = await readKuruLiquidity(this.client, l.token as Address, { blockNumber, includeBook: false });
+        if (state.blockHash.toLowerCase() !== anchor.hash.toLowerCase()) throw Error('Liquidity snapshot reorg');
+        if (state.identity.vault.toLowerCase() !== vault || state.identity.market.toLowerCase() !== l.market || state.identity.lpLock.toLowerCase() !== l.lpLock) throw Error('Vault discovery mismatch');
+        if (state.vault.status === 'available') {
+          pool.baseAssetsRaw = state.vault.data.baseAssetsRaw.toString(); pool.quoteAssetsRaw = state.vault.data.quoteAssetsRaw.toString(); pool.totalSharesRaw = state.vault.data.totalSharesRaw.toString(); pool.status = 'READY';
+        }
+        if (state.custody.status === 'available') { pool.protectedSharesRaw = state.custody.data.lockedSharesRaw.toString(); pool.infrastructureSharesRaw = state.custody.data.infrastructureSharesRaw.toString(); }
+        const passTarget = Math.min(target, Math.max(l.graduationBlock - 1, this.store.cursor(stage, l.graduationBlock)) + this.maxBlocksPerPass);
+        await this.scan(stage, passTarget, [vault], l.graduationBlock);
+        pool.historyIndexedBlock = this.store.cursor(stage, l.graduationBlock); pool.historyComplete = pool.historyIndexedBlock >= target;
+      } catch { /* A failed vault cannot manufacture an empty pool or complete history. */ }
+      pools.push(pool);
+    }
+    return pools;
+  }
   async sync() {
     if (this.syncing) return; this.syncing = true; this.error = null;
     try {
@@ -172,18 +201,23 @@ export class Indexer {
       const from = this.store.cursor('root', START_BLOCK);
       const target = Math.min(headTarget, Math.max(from, START_BLOCK) + this.maxBlocksPerPass);
       const passStart = Date.now(); this.progress.passStartedAt = new Date(passStart).toISOString(); this.progress.passTarget = target; this.progress.headTarget = headTarget; this.progress.catchingUp = target < headTarget;
-      for (const stage of ['root', 'dynamic', 'beneficiary']) await this.reconcile(stage);
+      for (const stage of [...new Set(['root', 'dynamic', 'beneficiary', ...this.store.stages()])]) await this.reconcile(stage);
       await this.scan('root', target, [addresses.factory, addresses.coordinator]);
+      const revision = this.store.get<number>('reorgRevision') ?? 0;
+      // Pin before all financial reads, including at-head passes with no new logs.
+      await this.header(target);
       const seeds = await this.discover(target);
       const dynamic = [...new Set(seeds.flatMap(s => [s.launch.token, s.launch.curve, ...(s.launch.market ? [s.launch.market] : [])]))] as Address[];
       if (dynamic.length) await this.scan('dynamic', target, dynamic, Math.min(...seeds.map(s => s.launch.createdBlock)));
       if (!this.backfillRunning && this.store.cursor('beneficiary', START_BLOCK) >= target - 800) await this.scan('beneficiary', target, [addresses.factory, addresses.feeEscrow, addresses.buybackVault, release.kuruEnvironment.marginAccount as Address]);
-      const events = this.store.events();
+      const liquidityPools = await this.liquidity(seeds, target);
+      const events = this.store.events().filter(e => e.block <= target);
       const assetTokens = [...new Set(events.filter(e => ['TokenCredited', 'TokenClaimed', 'Deposit', 'Withdrawal'].includes(e.name)).map(e => String(e.args.token).toLowerCase()))] as Address[];
       const assets: Record<string, IndexedAssetMetadata> = {};
       for (let i = 0; i < assetTokens.length; i += 8) for (const a of await Promise.all(assetTokens.slice(i, i + 8).map(token => this.asset(token, BigInt(target))))) assets[a.token] = a;
       const headHeader = await this.header(target, true); if (headHeader.hash !== (await this.header(target)).hash) throw Error('Snapshot reorg');
-      const data = project(events, seeds, headHeader.timestamp, { assets, custody: { [addresses.coordinator.toLowerCase()]: 'COORDINATOR', [addresses.feeEscrow.toLowerCase()]: 'FEE_ESCROW', [addresses.buybackVault.toLowerCase()]: 'BUYBACK_VAULT', [release.kuruEnvironment.marginAccount.toLowerCase()]: 'KURU_INFRASTRUCTURE' } });
+      const data = project(events, seeds, headHeader.timestamp, { assets, liquidityPools, custody: { [addresses.coordinator.toLowerCase()]: 'COORDINATOR', [addresses.feeEscrow.toLowerCase()]: 'FEE_ESCROW', [addresses.buybackVault.toLowerCase()]: 'BUYBACK_VAULT', [release.kuruEnvironment.marginAccount.toLowerCase()]: 'KURU_INFRASTRUCTURE' } });
+      if ((this.store.get<number>('reorgRevision') ?? 0) !== revision) throw Error('REORG_DURING_SNAPSHOT');
       const snapshot: Snapshot = { ...data, indexedBlock: target, indexedBlockHash: headHeader.hash, indexedTimestamp: headHeader.timestamp, indexedAt: new Date().toISOString(), projectionVersion: PROJECTION_VERSION, reorgRevision: this.store.get<number>('reorgRevision') ?? 0, beneficiaryIndexedBlock: this.store.cursor('beneficiary', START_BLOCK) }; this.store.set('snapshot', snapshot);
       const ms = Date.now() - passStart, blocks = Math.max(0, target - from);
       Object.assign(this.progress, { passes: this.progress.passes + 1, lastSyncedAt: new Date().toISOString(), lastPassMs: ms, lastPassBlocks: blocks, blocksPerSecond: ms ? Math.round(blocks * 1000 / ms) : null, lastError: null, catchingUp: target < headTarget });

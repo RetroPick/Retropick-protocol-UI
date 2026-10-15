@@ -1,6 +1,6 @@
 import { test, expect, expectClean, expectNoHorizontalOverflow } from '../helpers/test';
 
-const ROUTES = ['/launchpad', '/launchpad/token/demo-active', '/launchpad/token/demo-graduated', '/earn', '/launchpad/create'];
+const ROUTES = ['/launchpad', '/launchpad/token/demo-active', '/launchpad/token/demo-graduated', '/earn', '/launchpad/create', '/liquidity', '/liquidity/pools/demo-graduated', '/liquidity/market-making'];
 
 test('@a11y keyboard: skip link, visible focus ring, tab reaches ticket controls', async ({ page, observed }, info) => {
   test.skip(info.project.name.startsWith('mobile'), 'hardware keyboard');
