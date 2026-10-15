@@ -6,7 +6,8 @@ import { tokenAbi } from '@retropick/launchpad-sdk/abis/tokenAbi';
 import { watchAsset } from '@retropick/launchpad-sdk/wallet';
 import { publicClient } from '@/lib/live/public-client';
 import { useWallet } from '@/wallet/provider';
-import { classifyWatchAssetError, httpsImageUrl, watchAssetAction } from './add-to-wallet';
+import { classifyWatchAssetError, watchAssetAction } from './add-to-wallet';
+import { resolveWalletImage } from '@/lib/media/wallet-image';
 
 /**
  * Add-to-Wallet (EIP-747 wallet_watchAsset) for live launch tokens. The wallet prompt fires
@@ -25,7 +26,7 @@ export function AddToWalletButton({ token, symbol, logo, decimals }: { token: Ad
     // Decimals come from the identity read or a direct contract read at click time — never assumed.
     const resolved = decimals ?? Number(await publicClient.readContract({ address: token, abi: tokenAbi, functionName: 'decimals' }));
     if (!Number.isInteger(resolved) || resolved < 0 || resolved > 255) throw Error('Token decimals are unavailable.');
-    const added = await watchAsset(provider, { address: token, symbol, decimals: resolved, image: httpsImageUrl(logo) });
+    const added = await watchAsset(provider, { address: token, symbol, decimals: resolved, image: resolveWalletImage(logo) });
     if (added) {
       toast.success(`${symbol} submitted to your wallet`, { description: 'If the artwork still shows a letter icon, remove the token and add it again so the wallet re-reads its image.' });
     } else {

@@ -113,13 +113,14 @@ function LiveTokenRoute({ id }: { id: string }) {
   }), [detail, trades.data, trades.isError, trades.isLoading, holders.data, holders.isError]);
 
   if (!/^0x[\da-fA-F]{40}$/.test(id)) return <ErrorState title="Invalid token address" text="Token pages use a 0x-prefixed 20-byte address."/>;
+  const rawLogo = detail.essential?.logo ?? detail.indexed?.logo ?? detail.seed?.logo ?? null;
   if (!vm) {
     if (detail.status === 'unavailable') return <ErrorState title="Launch unavailable" text={detail.error ?? 'This address is not a RetroPick V2 launch on Monad Testnet.'} onRetry={detail.reload}/>;
     // Progressive shell: identity skeleton only — never a blank full-page blocker.
     return <div className="rp-terminal" data-testid="token-terminal" aria-busy="true"><div className="rp-head"><SkeletonLine width={280} height={48} label="Loading token"/><SkeletonLine width={200} height={48}/></div><div className="rp-grid"><section className="rp-chart-panel"><SkeletonLine height={380}/></section><aside className="rp-rail">{TICKET_FALLBACK}</aside></div></div>;
   }
   return <TokenTerminal vm={vm} data={data} chart={chart} depth={depth} tab={tab} onTab={(t) => { setTab(t); setTradeCursor(undefined); setHolderCursor(undefined); }} onRetry={detail.reload}
-    headActions={<AddToWalletButton token={id as Address} symbol={vm.symbol} logo={vm.logo} decimals={detail.essential?.decimals ?? null}/>}
+    headActions={<AddToWalletButton token={id as Address} symbol={vm.symbol} logo={rawLogo} decimals={detail.essential?.decimals ?? null}/>}
     tradesPager={{ hasNext: !!trades.data?.nextCursor, hasPrev: !!tradeCursor, next: () => setTradeCursor(trades.data!.nextCursor!), first: () => { setTradeCursor(undefined); void trades.refetch(); } }}
     holdersPager={{ hasNext: !!holders.data?.nextCursor, hasPrev: !!holderCursor, next: () => setHolderCursor(holders.data!.nextCursor!), first: () => { setHolderCursor(undefined); void holders.refetch(); } }}
     ordersPanel={vm.lifecycle === 'GRADUATED' ? <LiveOrdersPanel token={vm.id} market={vm.addresses.market} quoteSymbol={vm.quote.symbol}/> : undefined}
