@@ -1,0 +1,20 @@
+{
+  "size": 256,
+  "generatedAt": "2026-10-15T11:40:19.093Z",
+  "publicOrigin": "https://retropick.xyz",
+  "icons": [
+    {
+      "source": "ipfs://QmSHMEd2FMpQfEzuzMt3arZCStvrY9g4QjU6pJsZNLkKND",
+      "token": "0xc399c1a37d1d202d315f7f4c1a24e34c8e50e50f",
+      "note": "CIS — College is Scam (animated GIF, 331x359)",
+      "sourceHash": "f1fd3393e321ebb643154ddee5fd0b0d2ca889d191fd4a0619f1c0f8df119775",
+      "sourceBytes": 69117,
+      "file": "416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png",
+      "sha256": "416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb",
+      "bytes": 36222,
+      "width": 256,
+      "height": 256,
+      "url": "https://retropick.xyz/wallet/416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png"
+    }
+  ]
+}

@@ -1,11 +1,6 @@
 import type { Address } from 'viem';
 import { buildWatchAssetPayload, type WatchAssetPayload } from '@retropick/launchpad-sdk/wallet';
-
-/** Only wallet-fetchable images qualify: MetaMask downloads the URL from a plain web client. */
-export function httpsImageUrl(src: string | null | undefined): string | null {
-  const value = src?.trim();
-  return value && value.startsWith('https://') ? value : null;
-}
+import { resolveWalletImage } from '../../lib/media/wallet-image.ts';
 
 export type WatchAssetErrorKind = 'rejected' | 'unsupported' | 'wrong-chain' | 'failed';
 
@@ -32,5 +27,5 @@ export type AddToWalletRequestInput = { address: Address; symbol: string; decima
 
 /** The exact EIP-747 payload this page will send: resolved https logo only, on-chain decimals required. */
 export function addToWalletPayload(input: AddToWalletRequestInput): WatchAssetPayload {
-  return buildWatchAssetPayload({ address: input.address, symbol: input.symbol, decimals: input.decimals, image: httpsImageUrl(input.logo) });
+  return buildWatchAssetPayload({ address: input.address, symbol: input.symbol, decimals: input.decimals, image: resolveWalletImage(input.logo) });
 }

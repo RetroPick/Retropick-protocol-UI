@@ -9,6 +9,7 @@ const RPC = 'https://testnet-rpc.monad.xyz';
 // CIS ("College is Scam") — live launch with an on-chain ipfs:// logo.
 const CIS = '0xc399c1a37d1d202d315f7f4c1a24e34c8e50e50f';
 const CIS_LOGO_CID = 'QmSHMEd2FMpQfEzuzMt3arZCStvrY9g4QjU6pJsZNLkKND';
+const CIS_WALLET_ICON = 'https://retropick.xyz/wallet/416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png'; // Committed square-PNG derivative of the on-chain GIF.
 
 let liveReady = false; let reason = '';
 test.beforeAll(async () => {
@@ -66,8 +67,7 @@ test('@live add to wallet: registers the token only on click, with the on-chain 
   expect(payload.options.symbol).toBe('CIS');
   expect(payload.options.decimals, 'decimals are the on-chain value').toBe(18);
   const image = String(payload.options.image);
-  expect(image.startsWith('https://'), 'wallet receives a fetchable https image').toBe(true);
-  expect(image).toContain(`/ipfs/${CIS_LOGO_CID}`);
+  expect(image, 'wallet receives the committed square-PNG derivative').toBe(CIS_WALLET_ICON);
   await snap('live-add-to-wallet-registered');
   expectClean(observed);
 });
@@ -122,6 +122,6 @@ test('@live add to wallet: wrong-chain click switches the wallet back before reg
   const requests = await walletMethodCalls<{ params: { options: Record<string, unknown> } }>(page, 'wallet_watchAsset');
   expect(requests).toHaveLength(1);
   expect(requests[0].params.options.decimals).toBe(18);
-  expect(String(requests[0].params.options.image)).toContain(`/ipfs/${CIS_LOGO_CID}`);
+  expect(String(requests[0].params.options.image)).toBe(CIS_WALLET_ICON);
   expectClean(observed);
 });
