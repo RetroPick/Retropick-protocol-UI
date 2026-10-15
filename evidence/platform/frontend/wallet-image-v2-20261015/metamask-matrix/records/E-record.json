@@ -1,0 +1,117 @@
+{
+  "mode": "E",
+  "startedAt": "2026-10-15T12:48:11.688Z",
+  "steps": [
+    {
+      "step": "onboarding complete",
+      "at": "2026-10-15T12:48:43.385Z",
+      "url": "chrome-extension://ljfoeinjpaedjfecbmggjgodbgkmjkjk/home.html#"
+    },
+    {
+      "step": "wallet ready",
+      "at": "2026-10-15T12:48:43.606Z",
+      "extensionVersion": "12.23.1"
+    },
+    {
+      "step": "network prompt",
+      "at": "2026-10-15T12:50:06.545Z",
+      "approvedNet": null
+    },
+    {
+      "step": "network added",
+      "at": "2026-10-15T12:50:06.557Z",
+      "chainId": "0x279f"
+    },
+    {
+      "step": "watchAsset control-retro-png",
+      "at": "2026-10-15T12:50:11.318Z",
+      "accepted": "clicked:Add token (popup)",
+      "result": {
+        "ok": true,
+        "result": true
+      },
+      "payload": {
+        "type": "ERC20",
+        "options": {
+          "address": "0xf8f17922599136b44e175eec9a43123c000f3366",
+          "symbol": "RETRO",
+          "decimals": 18,
+          "image": "https://gateway.pinata.cloud/ipfs/Qmc3ZojHMWXFkautyJvnud1YzDN3jNvPH7QWb39bYmy9aL"
+        }
+      }
+    },
+    {
+      "step": "icon state (home)",
+      "at": "2026-10-15T12:50:17.712Z",
+      "textHasToken": false,
+      "remoteImgs": [
+        {
+          "src": "https://images.ctfassets.net/jdkgyfmyd9sw/201N9ZHvMfuWEgWKvTHpRX/b1b66bfbbe2a41bc86d87a9bf0259aa9/92998f321e62-Bitcoin_%C3%A2___Carousel__4_-100-__2_.png",
+          "nw": 500
+        },
+        {
+          "src": "https://images.ctfassets.net/jdkgyfmyd9sw/7BK3aPEAEJqCaLpf52JVRY/8627bb54087121140ab890ee9abb6722/Image__86_.png",
+          "nw": 144
+        },
+        {
+          "src": "https://images.ctfassets.net/jdkgyfmyd9sw/1ciAJC7OH8GnkuDigFOFiJ/f2db6c55fbf8f095d153b9e3c5773ab6/Image__87_.png",
+          "nw": 144
+        },
+        {
+          "src": "https://images.ctfassets.net/jdkgyfmyd9sw/7LkLrTwXxfsMQOMl0rJHrY/860e3be690305f920fc083820151de5c/Image__85_.png",
+          "nw": 144
+        },
+        {
+          "src": "https://images.ctfassets.net/jdkgyfmyd9sw/6pxXhlOfcgrk2LxizRrcTe/f16c4a6387ada94100b1e50412c06dee/Image.png",
+          "nw": 288
+        },
+        {
+          "src": "https://gateway.pinata.cloud/ipfs/Qmc3ZojHMWXFkautyJvnud1YzDN3jNvPH7QWb39bYmy9aL",
+          "nw": 0
+        }
+      ],
+      "dataImgs": 0
+    },
+    {
+      "step": "CIS row not visible on home",
+      "at": "2026-10-15T12:50:17.742Z"
+    }
+  ],
+  "extension": {
+    "id": "ljfoeinjpaedjfecbmggjgodbgkmjkjk",
+    "version": "12.23.1",
+    "browser": "playwright-chromium",
+    "source": "metamask-chrome-12.23.1.zip"
+  },
+  "chainId": "0x279f",
+  "iconState": {
+    "textHasToken": false,
+    "remoteImgs": [
+      {
+        "src": "https://images.ctfassets.net/jdkgyfmyd9sw/201N9ZHvMfuWEgWKvTHpRX/b1b66bfbbe2a41bc86d87a9bf0259aa9/92998f321e62-Bitcoin_%C3%A2___Carousel__4_-100-__2_.png",
+        "nw": 500
+      },
+      {
+        "src": "https://images.ctfassets.net/jdkgyfmyd9sw/7BK3aPEAEJqCaLpf52JVRY/8627bb54087121140ab890ee9abb6722/Image__86_.png",
+        "nw": 144
+      },
+      {
+        "src": "https://images.ctfassets.net/jdkgyfmyd9sw/1ciAJC7OH8GnkuDigFOFiJ/f2db6c55fbf8f095d153b9e3c5773ab6/Image__87_.png",
+        "nw": 144
+      },
+      {
+        "src": "https://images.ctfassets.net/jdkgyfmyd9sw/7LkLrTwXxfsMQOMl0rJHrY/860e3be690305f920fc083820151de5c/Image__85_.png",
+        "nw": 144
+      },
+      {
+        "src": "https://images.ctfassets.net/jdkgyfmyd9sw/6pxXhlOfcgrk2LxizRrcTe/f16c4a6387ada94100b1e50412c06dee/Image.png",
+        "nw": 288
+      },
+      {
+        "src": "https://gateway.pinata.cloud/ipfs/Qmc3ZojHMWXFkautyJvnud1YzDN3jNvPH7QWb39bYmy9aL",
+        "nw": 0
+      }
+    ],
+    "dataImgs": 0
+  }
+}
