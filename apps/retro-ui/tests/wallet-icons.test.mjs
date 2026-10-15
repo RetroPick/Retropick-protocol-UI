@@ -8,30 +8,52 @@ import { addToWalletPayload, classifyWatchAssetError, watchAssetAction } from '.
 
 const CIS_SRC='ipfs://QmSHMEd2FMpQfEzuzMt3arZCStvrY9g4QjU6pJsZNLkKND';
 const CIS_TOKEN='0xc399c1a37d1d202d315f7f4c1a24e34c8e50e50f';
-const CID='QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG';
+const CIS_DERIVATIVE='https://retropick.xyz/wallet/416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png';
+const RETRO_SRC='ipfs://Qmc3ZojHMWXFkautyJvnud1YzDN3jNvPH7QWb39bYmy9aL'; // existing launch, unregistered
+const FRESH_CID='QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG'; // stand-in for a newly launched token's logo
+const GATEWAY='https://gateway.pinata.cloud/ipfs/';
+const RETRO_CID=RETRO_SRC.replace('ipfs://','');
 
 const here=dirname(fileURLToPath(import.meta.url));
 const appRoot=resolve(here,'..');
 const manifest=JSON.parse(readFileSync(resolve(appRoot,'public','wallet','wallet-icons.manifest.json'),'utf8'));
 
-test('registered logos resolve to the committed content-addressed derivative',()=>{
-  const url=resolveWalletImage(CIS_SRC);
-  assert.equal(url,'https://retropick.xyz/wallet/416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png');
-  assert.ok(url.startsWith('https://')); // Wallets get an absolute fetchable URL.
+test('registered logos (CIS) resolve to the committed content-addressed derivative',()=>{
+  assert.equal(resolveWalletImage(CIS_SRC),CIS_DERIVATIVE);
 });
 
-test('unregistered sources keep the old rule: https passes, everything else drops',()=>{
-  assert.equal(resolveWalletImage(`https://gateway.pinata.cloud/ipfs/${CID}`),`https://gateway.pinata.cloud/ipfs/${CID}`);
-  assert.equal(resolveWalletImage(`ipfs://${CID}`),null); // Unregistered ipfs:// never reaches a wallet.
-  assert.equal(resolveWalletImage('http://127.0.0.1:8790/api/media/ab.gif'),null);
+test('unregistered IPFS logos KEEP wallet metadata through the media resolver (regression: PR #37 draft dropped them)',()=>{
+  assert.equal(resolveWalletImage(RETRO_SRC),`${GATEWAY}${RETRO_CID}`); // existing launch, no registry entry
+  assert.equal(resolveWalletImage(`ipfs://${FRESH_CID}`),`${GATEWAY}${FRESH_CID}`); // newly launched, unregistered
+  assert.equal(resolveWalletImage(`ipfs://ipfs/${FRESH_CID}`),`${GATEWAY}${FRESH_CID}`); // ipfs://ipfs/<cid> variant
+});
+
+test('arweave logos resolve to the public arweave gateway; https artwork passes through',()=>{
+  assert.equal(resolveWalletImage('ar://S4IDxnXU0NbAvlUffY00lZqmi5l6IfHspdaM1QSCxntS'),'https://arweave.net/S4IDxnXU0NbAvlUffY00lZqmi5l6IfHspdaM1QSCxntS');
+  assert.equal(resolveWalletImage('https://cdn.example.com/logo.png'),'https://cdn.example.com/logo.png');
+  assert.equal(resolveWalletImage(`  https://cdn.example.com/x.png  `),'https://cdn.example.com/x.png'); // Trimmed.
+});
+
+test('quick-tunnel era media rewrites to an absolute public-origin URL',()=>{
+  const h='a'.repeat(64);
+  assert.equal(resolveWalletImage(`https://old-tunnel.trycloudflare.com/api/media/${h}.png`),`https://retropick.xyz/api/media/${h}.png`);
+});
+
+test('invalid or wallet-unfetchable URIs drop the image field (never a broken payload)',()=>{
+  assert.equal(resolveWalletImage('http://127.0.0.1:8790/api/media/ab.gif'),null); // mixed-content http
+  assert.equal(resolveWalletImage('data:image/gif;base64,R0lGOD'),null);
+  assert.equal(resolveWalletImage('ftp://example.com/x'),null);
+  assert.equal(resolveWalletImage('not a uri'),null);
   assert.equal(resolveWalletImage(''),null);
   assert.equal(resolveWalletImage(null),null);
   assert.equal(resolveWalletImage(undefined),null);
 });
 
-test('the wallet payload for CIS carries the derivative image',()=>{
-  const payload=addToWalletPayload({address:CIS_TOKEN,symbol:'CIS',decimals:18,logo:CIS_SRC});
-  assert.deepEqual(payload,{type:'ERC20',options:{address:CIS_TOKEN,symbol:'CIS',decimals:18,image:'https://retropick.xyz/wallet/416b0da3cf5de37a329f941291a19230f6d7a45ee9572e858e6b7dc46d84f9fb.png'}});
+test('the wallet payload carries the derivative for CIS and gateway URLs for unregistered IPFS tokens',()=>{
+  assert.deepEqual(addToWalletPayload({address:CIS_TOKEN,symbol:'CIS',decimals:18,logo:CIS_SRC}),
+    {type:'ERC20',options:{address:CIS_TOKEN,symbol:'CIS',decimals:18,image:CIS_DERIVATIVE}});
+  assert.deepEqual(addToWalletPayload({address:'0xf8f17922599136b44e175eec9a43123c000f3366',symbol:'RETRO',decimals:18,logo:RETRO_SRC}),
+    {type:'ERC20',options:{address:'0xf8f17922599136b44e175eec9a43123c000f3366',symbol:'RETRO',decimals:18,image:`${GATEWAY}${RETRO_CID}`}});
 });
 
 test('manifest integrity: every derivative file exists, is a square 256 PNG, matches its sha256 name and size cap',()=>{

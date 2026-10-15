@@ -26,9 +26,11 @@ test('the button routes each wallet state to its preceding wallet interaction',(
   assert.equal(watchAssetAction('connected'),'request');
 });
 
-test('addToWalletPayload carries the on-chain decimals and drops unfetchable logos',()=>{
+test('addToWalletPayload carries the on-chain decimals and resolves logos through the wallet resolver',()=>{
   assert.deepEqual(addToWalletPayload({address:TOKEN,symbol:'CIS',decimals:18,logo:GATEWAY}),
-    {type:'ERC20',options:{address:TOKEN,symbol:'CIS',decimals:18,image:GATEWAY}}); // Registered or plain https passes through.
+    {type:'ERC20',options:{address:TOKEN,symbol:'CIS',decimals:18,image:GATEWAY}}); // Plain https passes through.
   assert.deepEqual(addToWalletPayload({address:TOKEN,symbol:'CIS',decimals:6,logo:`ipfs://${CID}`}),
-    {type:'ERC20',options:{address:TOKEN,symbol:'CIS',decimals:6}}); // Unregistered ipfs:// → no image field, registration still valid.
+    {type:'ERC20',options:{address:TOKEN,symbol:'CIS',decimals:6,image:GATEWAY}}); // Unregistered ipfs:// keeps metadata via the gateway.
+  assert.deepEqual(addToWalletPayload({address:TOKEN,symbol:'CIS',decimals:18,logo:'http://insecure/x.gif'}),
+    {type:'ERC20',options:{address:TOKEN,symbol:'CIS',decimals:18}}); // Unfetchable → no image field, registration still valid.
 });
