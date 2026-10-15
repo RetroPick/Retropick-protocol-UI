@@ -1,0 +1,44 @@
+{
+  "test": "live/add-to-wallet.spec.ts > wallet cannot register tokens > @live add to wallet: unsupported wallets get the copy-address fallback",
+  "project": "mobile-390",
+  "status": "passed",
+  "appConsoleErrors": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED",
+      "classification": "provider-rpc"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/candles?resolution=15m&range=24h",
+      "classification": "provider-rpc"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/trades?limit=50",
+      "classification": "provider-rpc"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED",
+      "failure": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/candles?resolution=15m&range=24h",
+      "failure": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://127.0.0.1:8787/v1/launches/REDACTED/trades?limit=50",
+      "failure": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "guardViolations": [],
+  "blockedExternal": [],
+  "requestCount": 76
+}

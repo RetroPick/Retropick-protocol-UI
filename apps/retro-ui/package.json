@@ -20,6 +20,7 @@
     "e2e:research": "node e2e/run.mjs research",
     "test:indexed-record": "node --test tests/indexed-record.test.mjs",
     "test:media": "node --test tests/media.test.mjs",
+    "test:add-to-wallet": "node --test tests/add-to-wallet.test.mjs",
     "test:vault": "node --test tests/vault.test.mjs"
   },
   "dependencies": {

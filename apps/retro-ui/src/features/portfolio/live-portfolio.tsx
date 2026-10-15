@@ -9,6 +9,10 @@ import { useWallet } from '@/wallet/provider';
 import { publicClient } from '@/lib/live/public-client';
 import { launchKeys } from '@/lib/live/queries';
 import { fetchWalletState } from '@/services/wallet-state';
+import { fetchLaunch } from '@/lib/live/indexer-client';
+import { INDEXER_URL } from '@/lib/live/env';
+import { resolveMediaSrc } from '@/lib/media/resolve';
+import { TokenImage } from '@/components/product/token-image';
 import { executePreparedWrite, type TxPhase } from '@/services/tx-pipeline';
 import { prepareKuruCancel, prepareMarginWithdraw } from '@retropick/launchpad-sdk/prepare';
 import Link from '@/components/product/safe-link';
@@ -23,6 +27,15 @@ export function LivePortfolio() {
  const state=useQuery({queryKey:launchKeys.wallet(account??'disconnected','state'),enabled:!!account,queryFn:({signal})=>fetchWalletState(account!,signal),refetchInterval:10_000,structuralSharing:false});
  const [tx,setTx]=useState<TxPhase|{kind:'idle'}>({kind:'idle'}),[error,setError]=useState('');
  const busy=!['idle','failed','success'].includes(tx.kind),data=state.data;
+ // Token-position logos: wallet-asset rows carry no artwork, so join each held launch with its
+ // indexed logo (same source the discovery feed uses). Glyph fallback stays for unindexed tokens.
+ const assetTokens=(data?.assets??[]).map(row=>row.token.toLowerCase());
+ const logos=useQuery({queryKey:[...launchKeys.wallet(account??'disconnected','asset-logos'),assetTokens.join(',')],
+  enabled:!!account&&assetTokens.length>0,
+  queryFn:async({signal})=>{const entries=await Promise.all(assetTokens.map(async(token):Promise<[string,string|null]>=>{
+    try{return [token,(await fetchLaunch(INDEXER_URL!,token,signal)).data?.logo??null];}catch{return [token,null];}
+  }));return Object.fromEntries(entries);},
+  staleTime:60_000,structuralSharing:false});
  const run=async(prepare:()=>Promise<Parameters<typeof executePreparedWrite>[2]>)=>{if(!wallet.wallet)return;setError('');setTx({kind:'preparing'});try{const result=await executePreparedWrite(publicClient,wallet.wallet,await prepare(),{onPhase:setTx});if(result.kind==='failed')setError(result.reason);else void state.refetch();}catch(e){setError(e instanceof Error?e.message:'Action failed.');}finally{setTx({kind:'idle'});}};
  if(!account)return <Reveal><section className="rp-hub-section" aria-label="Live portfolio"><h2 className="rp-section-title"><Wallet size={15} aria-hidden/>Portfolio</h2>
    <div className="rp-empty-panel"><span className="rp-empty-disc"><Wallet size={22} aria-hidden/></span><strong>Connect your wallet</strong><p>Wallet assets, Kuru margin balances and open orders appear once a wallet is connected.</p></div></section></Reveal>;
@@ -35,12 +48,16 @@ export function LivePortfolio() {
   <div className="rp-tile"><span className="rp-tile-label"><span className="rp-cell-glyph" style={MON_GLYPH} aria-hidden><ArrowDownToLine size={13}/></span>MON in Kuru margin</span><strong><MonoAmount raw={data!.nativeMarginRaw} decimals={18} unit="MON"/></strong><small>Free margin, withdrawable to your wallet</small>{data!.nativeMarginRaw>0n&&<div className="rp-tile-actions"><button className="rp-btn rp-btn-sm" disabled={busy||!wallet.wallet} onClick={()=>void run(()=>prepareMarginWithdraw(publicClient,account,{token:zeroAddress,amount:data!.nativeMarginRaw}))}><ArrowDownToLine size={12} aria-hidden/>Withdraw to wallet</button></div>}</div>
  </div>
  {assets.length?<div className="rp-hub-card"><div className="rp-hub-card-head"><h3>Token positions</h3><span className="rp-count-chip">{assets.length} asset{assets.length===1?'':'s'}</span></div>
-   <table className="detail-trades"><thead><tr><th>Asset</th><th className="rp-num">Wallet</th><th className="rp-num">Kuru margin</th><th>Action</th></tr></thead><tbody>{assets.map(row=><tr key={row.token}>
-     <td><span className="rp-cell-asset"><span className="rp-cell-glyph" style={TOKEN_GLYPH} aria-hidden>{(row.symbol?.[0]??'T').toUpperCase()}</span><Link href={`/launchpad/token/${row.token}`}>{row.symbol}</Link></span></td>
+   <table className="detail-trades"><thead><tr><th>Asset</th><th className="rp-num">Wallet</th><th className="rp-num">Kuru margin</th><th>Action</th></tr></thead><tbody>{assets.map(row=>{
+     const resolved=resolveMediaSrc(logos.data?.[row.token.toLowerCase()]??null),glyph=(row.symbol?.[0]??'T').toUpperCase();
+     return <tr key={row.token}>
+     <td><span className="rp-cell-asset"><span className="rp-cell-glyph" style={TOKEN_GLYPH} aria-hidden>{resolved
+       ?<TokenImage src={resolved} width={16} height={16} style={{borderRadius:'50%',objectFit:'cover',display:'block'}} alt="" fallback={glyph}/>
+       :glyph}</span><Link href={`/launchpad/token/${row.token}`}>{row.symbol}</Link></span></td>
      <td className="rp-num">{row.decimals===null?`${row.walletRaw} atomic units`:<MonoAmount raw={row.walletRaw} decimals={row.decimals}/>}</td>
      <td className="rp-num">{row.decimals===null?`${row.marginRaw} atomic units`:<MonoAmount raw={row.marginRaw} decimals={row.decimals}/>}</td>
      <td><button className="rp-btn rp-btn-sm" disabled={busy||!wallet.wallet||!row.marginRaw} onClick={()=>void run(()=>prepareMarginWithdraw(publicClient,account,{token:row.token as Address,amount:row.marginRaw}))}><ArrowDownToLine size={12} aria-hidden/>Withdraw</button></td>
-   </tr>)}</tbody></table></div>
+   </tr>;})}</tbody></table></div>
   :<div className="rp-empty-panel rp-empty-compact"><span className="rp-empty-disc"><Wallet size={18} aria-hidden/></span><div><strong>No indexed token balances</strong><p>Balances held in your wallet or Kuru margin appear here once your launches are indexed.</p></div></div>}
  <div className="rp-hub-card"><div className="rp-hub-card-head"><h3>Open Kuru orders</h3><span className="rp-count-chip">{orders.length} open</span></div>
    {orders.length?<table className="detail-trades"><thead><tr><th>Side</th><th className="rp-num">Price</th><th className="rp-num">Initial resting size</th><th className="rp-num">Remaining</th><th>Created</th><th>Status</th><th>Action</th></tr></thead><tbody>{orders.map(o=><tr key={`${o.market}:${o.orderId}`}>
