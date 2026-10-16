@@ -40,7 +40,10 @@ evidence/**/test-output/
 .playwright-mcp/
 
 # local agent/session tooling state
-.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/retropick-*/
 .cursor/
 .zcode/
 .zcodeignore

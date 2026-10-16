@@ -13,6 +13,7 @@ const Portfolio=lazy(()=>import('@/features/portfolio/portfolio'));
 const MarketDetail=lazy(()=>import('@/features/markets/detail'));
 const ActivityFeed=lazy(()=>import('@/features/markets/activity'));
 const Creator=lazy(()=>import('@/features/creator/creator'));
+const Liquidity=lazy(()=>import('@/features/liquidity/liquidity'));
 const PrismDiscovery=lazy(()=>import('@/features/prism/prism').then(m=>({default:m.PrismDiscovery})));
 const PrismDetail=lazy(()=>import('@/features/prism/prism').then(m=>({default:m.PrismDetail})));
 const PrismCreate=lazy(()=>import('@/features/prism/prism').then(m=>({default:m.PrismCreate})));
@@ -79,6 +80,7 @@ function RouteSwitch() {
       case 'create': return <RedirectTo to={legacyCreateTarget(params)}/>;
       case 'activity': return <ActivityFeed/>;
       case 'earn': return <EarnPage/>;
+      case 'liquidity': return <Liquidity/>;
       case 'portfolio': return DATA_MODE === 'live' ? <RedirectTo to="/earn"/> : <Portfolio/>;
       case 'prism': return <PrismDiscovery/>;
       case 'docs': return <Docs/>;
@@ -87,6 +89,8 @@ function RouteSwitch() {
   if (segs[0] === 'launchpad' && segs.length === 2 && segs[1] === 'create') return <CreateLaunch initialType={params.get('type') ?? undefined}/>;
   if (segs[0] === 'launchpad' && segs.length === 3 && segs[1] === 'prediction') return <MarketDetail id={segs[2]}/>;
   if (segs[0] === 'launchpad' && segs.length === 3 && segs[1] === 'token') return <TokenDetail id={segs[2]}/>;
+  if (segs[0] === 'liquidity' && segs.length === 3 && segs[1] === 'pools') return <Liquidity token={segs[2]}/>;
+  if (segs[0] === 'liquidity' && segs.length === 2 && segs[1] === 'market-making') return <Liquidity maker/>;
   if (segs[0] === 'markets' && segs.length === 2) return <RedirectTo to={legacyMarketDetailTarget(segs[1], params)}/>;
   if (segs[0] === 'prism' && segs.length === 2) {
     if (segs[1] === 'create') return <PrismCreate/>;

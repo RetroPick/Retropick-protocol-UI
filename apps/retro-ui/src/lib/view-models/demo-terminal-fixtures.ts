@@ -139,7 +139,7 @@ function build(seed: Seed): Omit<DemoFixture, 'scenario'> {
     change24hBps: changeBps.toString(),
     marketCapRaw: (priceX18 * supplyRaw * qScale / (E18 * E18)).toString(),
     liquidityRaw: seed.lifecycle === 'GRADUATED' ? null : (graduationThreshold * BigInt(seed.progressBps) / 10_000n).toString(),
-    liquidityNote: seed.lifecycle === 'GRADUATED' ? 'Kuru book depth is not aggregated' : 'Curve quote reserve',
+    liquidityNote: seed.lifecycle === 'GRADUATED' ? 'AMM quote assets shown separately' : 'Curve quote reserve',
     volume24hRaw: vol24.toString(), lifetimeVolumeRaw: sum(candles).toString(), trades24h: trades24, holderCount: holders.length,
     supplyRaw: supplyRaw.toString(), creatorEarnedRaw: null, bondingProgressBps: seed.progressBps,
     addresses: { token: demoAddr(rand), curve: demoAddr(rand), factory: demoAddr(rand), coordinator: demoAddr(rand), quoteAsset: seed.quote.native ? 'native MON' : demoAddr(rand), creator: 'demo:creator', creatorFeeRecipient: 'demo:creator', market: seed.lifecycle === 'GRADUATED' ? 'demo:market' : null, vault: seed.lifecycle === 'GRADUATED' ? demoAddr(rand) : null, lpLock: seed.lifecycle === 'GRADUATED' ? demoAddr(rand) : null, excessLock: seed.lifecycle === 'GRADUATED' ? demoAddr(rand) : null },

@@ -32,9 +32,9 @@ const ROLE_LABEL: Record<NonNullable<IndexedHolder['role']>, string | null> = {
   CURVE: 'Curve', COORDINATOR: 'Protocol', LP_EXCESS_LOCK: 'Liquidity lock', KURU_INFRASTRUCTURE: 'Liquidity', BUYBACK_VAULT: 'Protocol', FEE_ESCROW: 'Protocol', WALLET: null,
 };
 
-export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, tradesPager, holdersPager, ordersPanel, headActions, onRetry, backHref = '/launchpad' }: {
+export function TokenTerminal({ vm, data, chart, ticket, depth, liquidityPanel, tab, onTab, tradesPager, holdersPager, ordersPanel, headActions, onRetry, backHref = '/launchpad' }: {
   vm: TokenTerminalVM; data: TerminalData; chart: ChartControls; ticket: ReactNode; depth?: TerminalDepth | null;
-  tab: TerminalTab; onTab: (t: TerminalTab) => void; tradesPager?: Pager; holdersPager?: Pager; ordersPanel?: ReactNode; headActions?: ReactNode; onRetry?: () => void; backHref?: string;
+  tab: TerminalTab; onTab: (t: TerminalTab) => void; tradesPager?: Pager; holdersPager?: Pager; ordersPanel?: ReactNode; headActions?: ReactNode; liquidityPanel?: ReactNode; onRetry?: () => void; backHref?: string;
 }) {
   const demo = vm.dataMode === 'demo';
   const mobile = useMediaQuery('(max-width: 767px)');
@@ -91,6 +91,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
     </div>
 
     {mobile && kuruOrders && <MarketDepth vm={vm} depth={depth ?? null}/>}
+    {kuruOrders && liquidityPanel}
 
     <MetricStrip label="Key metrics">
       <Metric testId="metric-mcap" label="Market cap" value={formatRawCompact(vm.marketCapRaw, vm.quote.decimals)} unit={q} definition="Price × total supply, in the quote asset."/>
@@ -100,7 +101,7 @@ export function TokenTerminal({ vm, data, chart, ticket, depth, tab, onTab, trad
       <Metric testId="metric-creator" label="Creator earned" value={vm.creatorEarnedRaw ? formatRawCompact(vm.creatorEarnedRaw, vm.quote.decimals) : '—'} unit={q} definition="Per-launch creator earnings are not exposed by the indexer yet. See Earn for your claimable balance."/>
     </MetricStrip>
     <MetricStrip label="Market analytics" variant="secondary">
-      <Metric label="Liquidity" value={formatRawCompact(vm.liquidityRaw, vm.quote.decimals)} unit={q} note={vm.liquidityNote}/>
+      <Metric label={kuruOrders ? 'AMM quote assets' : 'Liquidity'} value={formatRawCompact(vm.liquidityRaw, vm.quote.decimals)} unit={q} note={vm.liquidityNote}/>
       <Metric label="Volume 24h" value={formatRawCompact(vm.volume24hRaw, vm.quote.decimals)} unit={q}/>
       <Metric label="Lifetime volume" value={formatRawCompact(vm.lifetimeVolumeRaw, vm.quote.decimals)} unit={q}/>
       <Metric label="Curve progress" value={vm.lifecycle === 'ACTIVE' && vm.bondingProgressBps !== null ? formatBps(vm.bondingProgressBps) : vm.lifecycle === 'PENDING_CONFIRMATION' ? '—' : 'Complete'} definition="Quote reserve relative to the graduation threshold."/>
@@ -250,13 +251,13 @@ function MarketDepth({ vm, depth }: { vm: TokenTerminalVM; depth: TerminalDepth 
   const maxCumulative = ladder ? [ladder.asks.at(-1)?.cumulativeRaw ?? 0n, ladder.bids.at(-1)?.cumulativeRaw ?? 0n].reduce((a, b) => a > b ? a : b) : 0n;
   return <section className="rp-depth" aria-label="Orderbook depth" data-testid="depth-panel" data-data-mode={vm.dataMode} data-status={depth.status}>
     <header className="rp-depth-head">
-      <h3>Orderbook</h3>
+      <h3>CLOB orderbook</h3>
       {vm.dataMode === 'demo' ? <DemoBadge text="SIMULATED"/> : depth.block ? <span className="rp-muted">block {depth.block}</span> : null}
     </header>
     {depth.status === 'loading' && <div role="status" aria-label="Loading orderbook depth">{Array.from({ length: 5 }, (_, i) => <SkeletonLine key={i} height={16}/>)}</div>}
     {depth.status === 'stale' && <p className="rp-note" role="status">Orderbook snapshot is stale. The current book is unavailable; this snapshot cannot qualify a market order.</p>}
     {depth.status === 'error' && <p className="rp-note" role="status">Live orderbook depth is unavailable. Trading reads current on-chain state when you place an order.</p>}
-    {empty && <EmptyState title="No resting orders" text="The book has no open depth right now. Market orders may fail until liquidity is posted."/>}
+    {empty && <EmptyState title="No resting CLOB orders" text="This ladder shows user limit orders only. AMM inventory and size-dependent market quotes are shown separately."/>}
     {depth.status === 'ready' && ladder && !empty && <>
       <div className="rp-depth-cols" aria-hidden="true"><span>Price</span><span>{vm.symbol}</span><span>Total</span></div>
       <ul className="rp-depth-side" data-side="ask" aria-label="Asks (lowest ask last)">

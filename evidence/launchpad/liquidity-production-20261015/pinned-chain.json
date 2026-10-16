@@ -1,0 +1,114 @@
+{
+  "recordedAt": "2026-10-15T15:35:14.333Z",
+  "broadcast": false,
+  "snapshot": {
+    "chainId": 10143,
+    "blockNumber": "71284933",
+    "blockHash": "0x87e703d4cd5c1d37db5ad84c7627a887866b828d0bae39c7c039ec4dee738b34",
+    "observedAt": 1792078513842,
+    "identity": {
+      "token": "0x43e7e9b1b7d9A143573307b13D14B51580c18f15",
+      "quoteAsset": "0x0000000000000000000000000000000000000000",
+      "market": "0x1F5dE72616a7fe645Cf45aC66dfce8Ac7452C57F",
+      "vault": "0xc88DED06eB0081430Ff02d124C22b532e122CbE7",
+      "lpLock": "0x72ced84b20Bb8467c5547e3EbF85E62321B6a425",
+      "marginAccount": "0xd029C2D98ff85D8F64799017fE00a59B1159CE02",
+      "baseDecimals": 18,
+      "quoteDecimals": 18,
+      "pricePrecision": "100000000",
+      "sizePrecision": "100000000"
+    },
+    "clob": {
+      "status": "available",
+      "source": "KURU_CLOB",
+      "data": {
+        "block": "71284933",
+        "bids": [],
+        "asks": []
+      }
+    },
+    "vault": {
+      "status": "available",
+      "source": "KURU_VAULT",
+      "data": {
+        "baseAssetsRaw": "250000000000000000249",
+        "quoteAssetsRaw": "1000000000000000002",
+        "totalSharesRaw": "15811388300841896683",
+        "shareDecimals": 18,
+        "bidX18": "3960396039603960",
+        "askX18": "4000000000000000",
+        "bidOrderSizeUnits": "125000000",
+        "askOrderSizeUnits": "124378109",
+        "bidPartiallyFilledUnits": "0",
+        "askPartiallyFilledUnits": "0",
+        "bidAvailableBaseRaw": "1250000000000000000",
+        "askAvailableBaseRaw": "1243781090000000000",
+        "spreadBps": "100"
+      }
+    },
+    "bestExecutable": {
+      "status": "available",
+      "source": "KURU_BEST_BID_ASK",
+      "data": {
+        "bidX18": "3960396039603960",
+        "askX18": "4000000000000000",
+        "marketState": 0
+      }
+    },
+    "custody": {
+      "status": "available",
+      "source": "RETROPICK_LIQUIDITY_LOCK",
+      "data": {
+        "lockedSharesRaw": "15811388300841895683",
+        "excessBaseRaw": "249999999999999999751",
+        "infrastructureSharesRaw": "1000"
+      }
+    },
+    "position": {
+      "status": "available",
+      "source": "KURU_VAULT_PREVIEW_WITHDRAW",
+      "data": {
+        "account": "0xB505cBaab3ACdF287af1366b9B1229404757913b",
+        "sharesRaw": "0",
+        "previewBaseRaw": "0",
+        "previewQuoteRaw": "0",
+        "kind": "wallet"
+      }
+    }
+  },
+  "simulations": [
+    {
+      "side": "buy",
+      "kind": "size-quote",
+      "inputRaw": "100000000000000",
+      "expectedRaw": "24925000000000000",
+      "minimumRaw": "24800375000000000",
+      "status": "success"
+    },
+    {
+      "side": "buy",
+      "kind": "funded-account",
+      "inputRaw": "100000000000000",
+      "minimumRaw": "24800375000000000",
+      "status": "failed",
+      "error": "REVERT_SELECTOR_0xf4d678b8"
+    },
+    {
+      "side": "sell",
+      "kind": "size-quote",
+      "inputRaw": "10000000000000000",
+      "expectedRaw": "39485148514850",
+      "minimumRaw": "39287722772275",
+      "status": "success"
+    },
+    {
+      "side": "sell",
+      "kind": "funded-account",
+      "inputRaw": "10000000000000000",
+      "minimumRaw": "39287722772275",
+      "resultRaw": "39485148514850",
+      "status": "success"
+    }
+  ],
+  "coverage": "Pinned chain reads and eth_call only; no transaction receipt is created."
+}

@@ -1,0 +1,27 @@
+$ pnpm --filter @retropick/retro-ui test
+$ node scripts/test-frontend.mjs
+✔ canonical pFEDBTC payoff and exact backing (1.771977ms)
+✔ nonnegative normalized allocation rejects negative and overweight baskets (0.192401ms)
+✔ zero allocation is supported, never negative liability (0.109712ms)
+✔ supply rejects fractional, negative, zero and unbounded inputs (0.164309ms)
+✔ RESOLVED alone cannot redeem even if marked funded (0.122627ms)
+✔ unfunded REDEEMABLE and zero payouts do not produce positive claims (0.140858ms)
+✔ funded winning claim can redeem (0.174024ms)
+✔ settlement balance must cover all liabilities (0.173062ms)
+✔ trade amounts reject malformed, nonpositive and out-of-range values (0.326645ms)
+✔ bounded normalized baskets preserve canonical maximum and component sum (0.625763ms)
+✔ each source normalizes to one canonical instrument with distinct semantics (1.409252ms)
+✔ kind, reference and pair are orthogonal (0.47148ms)
+✔ all tabs, watchlist and prediction topics query the same dataset (0.294299ms)
+✔ missing financial metrics remain missing (0.223532ms)
+✔ family dispatch owns detail routing and unavailable trade intent (0.334392ms)
+✔ exact chain and family registry lookup cannot route Monad to another chain (0.198802ms)
+✔ repository deduplicates shared featured/feed ID and rejects conflicting identities (0.559517ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.311394

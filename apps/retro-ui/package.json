@@ -13,6 +13,7 @@
     "test": "node scripts/test-frontend.mjs",
     "test:product": "node --test tests/product-data.test.mjs",
     "test:terminal": "node --test tests/terminal.test.mjs",
+    "test:liquidity": "node --test tests/liquidity.test.mjs",
     "e2e": "node e2e/run.mjs fixture",
     "e2e:smoke": "node e2e/run.mjs smoke",
     "e2e:fixture": "node e2e/run.mjs fixture",

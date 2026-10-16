@@ -11,6 +11,7 @@ import {
   Sun,
   Moon,
   Wallet,
+  Droplets,
 } from 'lucide-react';
 import Link from '@/components/product/safe-link';
 import { usePathname } from '@/lib/next-compat';
@@ -32,13 +33,15 @@ export function Sidebar({ isCollapsed, onToggleCollapse, onOpenSearch }: Sidebar
   const pathname = usePathname();
   const theme = useTheme();
   const demo = useDemo();
-  const isActive = (id: 'home' | 'earn') => {
+  const isActive = (id: 'home' | 'earn' | 'liquidity') => {
+    if (id === 'liquidity') return pathname.startsWith('/liquidity');
     if (id === 'earn') return pathname.startsWith('/earn') || pathname.startsWith('/portfolio');
     return pathname.startsWith('/launchpad') || pathname.startsWith('/prism') || pathname.startsWith('/creator') || pathname === '/docs';
   };
 
   const navItems = [
     { id: 'home' as const, label: 'Home', icon: Home, href: '/launchpad' },
+    { id: 'liquidity' as const, label: 'Liquidity', icon: Droplets, href: '/liquidity' },
     { id: 'earn' as const, label: 'Earn', icon: Coins, href: '/earn' },
   ];
 

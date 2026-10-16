@@ -1,0 +1,18 @@
+$ node --test tests/liquidity.test.mjs
+✔ empty CLOB does not erase AMM assets or become an execution guarantee (1.718209ms)
+✔ section failure remains unavailable while independent data stays usable (0.229554ms)
+✔ missing and stale snapshots are different from confirmed zero positions (0.178147ms)
+✔ paused markets retain prices with an explicit restriction (0.124731ms)
+✔ demo liquidity states stay explicitly synthetic and independent (0.402509ms)
+✔ capital deduplicates the same shared asset across markets without summing it (0.1675ms)
+✔ two-sided drafts use SDK directional tick normalization and exact size units (0.732511ms)
+✔ invalid maker amounts, crossed quotes, and out-of-range prices are rejected (0.60769ms)
+✔ second-leg recovery preserves first receipt and rejects out-of-order or duplicate confirmations (0.305041ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 328.67341

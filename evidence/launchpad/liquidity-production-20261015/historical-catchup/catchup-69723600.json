@@ -1,0 +1,67 @@
+{
+  "source": "external offline database copy",
+  "targetBlock": 69723600,
+  "targetHash": "0x0be41e345109e5840847aa345ff8ce7f789ca5a74ba81c27b1fad0507190dcd5",
+  "discoveredLaunches": 4,
+  "discoveredPools": 3,
+  "allVaultsComplete": true,
+  "supplyReconciliation": "PASS",
+  "projectionLiquidityEventCount": 9,
+  "projectionLPPositionCount": 6,
+  "pools": [
+    {
+      "token": "0x43e7e9b1b7d9a143573307b13d14b51580c18f15",
+      "market": "0x1f5de72616a7fe645cf45ac66dfce8ac7452c57f",
+      "vault": "0xc88ded06eb0081430ff02d124c22b532e122cbe7",
+      "lpLock": "0x72ced84b20bb8467c5547e3ebf85e62321b6a425",
+      "graduationBlock": 69510121,
+      "targetBlock": 69723600,
+      "cursor": 70064420,
+      "eventsIndexed": 5,
+      "historyComplete": true,
+      "observedTotalSharesRaw": "15811388300841896683",
+      "derivedTotalSharesRaw": "15811388300841896683",
+      "supplyReconciliation": "PASS",
+      "balances": [
+        { "wallet": "0x72ced84b20bb8467c5547e3ebf85e62321b6a425", "sharesRaw": "15811388300841895683" },
+        { "wallet": "0xd029c2d98ff85d8f64799017fe00a59b1159ce02", "sharesRaw": "1000" }
+      ]
+    },
+    {
+      "token": "0x9bae085e25c940ed311d15d423c602b1c5d3ccf5",
+      "market": "0x9dc675e88da25e7bbea297344b7b094689677517",
+      "vault": "0x884e97123b3933460d79e5c312247ea5b73d87df",
+      "lpLock": "0x9f5fb44a1f4a1850651c6991de68c2636d0ec2e1",
+      "graduationBlock": 69554538,
+      "targetBlock": 69723600,
+      "cursor": 69723600,
+      "eventsIndexed": 5,
+      "historyComplete": true,
+      "observedTotalSharesRaw": "15811388300841896683",
+      "derivedTotalSharesRaw": "15811388300841896683",
+      "supplyReconciliation": "PASS",
+      "balances": [
+        { "wallet": "0x9f5fb44a1f4a1850651c6991de68c2636d0ec2e1", "sharesRaw": "15811388300841895683" },
+        { "wallet": "0xd029c2d98ff85d8f64799017fe00a59b1159ce02", "sharesRaw": "1000" }
+      ]
+    },
+    {
+      "token": "0x30ccb65006665022dfc97bb5c1985610503fd1cf",
+      "market": "0x7402dee487b1517764a220946b99255fab9d1206",
+      "vault": "0x023ef4745f4dfb0a39a69b671bbf7f6af48d4d29",
+      "lpLock": "0xe35c4a10e9106f650164dc073de60c0c61acd955",
+      "graduationBlock": 69723575,
+      "targetBlock": 69723600,
+      "cursor": 69743474,
+      "eventsIndexed": 5,
+      "historyComplete": true,
+      "observedTotalSharesRaw": "15811388300841896683",
+      "derivedTotalSharesRaw": "15811388300841896683",
+      "supplyReconciliation": "PASS",
+      "balances": [
+        { "wallet": "0xe35c4a10e9106f650164dc073de60c0c61acd955", "sharesRaw": "15811388300841895683" },
+        { "wallet": "0xd029c2d98ff85d8f64799017fe00a59b1159ce02", "sharesRaw": "1000" }
+      ]
+    }
+  ]
+}

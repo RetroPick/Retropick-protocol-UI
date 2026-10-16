@@ -6,6 +6,13 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "dev:ui": "pnpm --filter @retropick/retro-ui dev",
+    "build:ui": "pnpm --filter @retropick/retro-ui build",
+    "typecheck:ui": "pnpm --filter @retropick/retro-ui typecheck",
+    "test:ui": "pnpm --filter @retropick/retro-ui test",
+    "e2e:ui": "pnpm --filter @retropick/retro-ui e2e:fixture",
+    "dev:legacy-web": "pnpm --filter @retropick/web dev",
+    "build:legacy-web": "pnpm --filter @retropick/web build",
     "dev:web": "pnpm --filter @retropick/web dev",
     "build:web": "pnpm --filter @retropick/web build",
     "lint:web": "pnpm --filter @retropick/web lint",

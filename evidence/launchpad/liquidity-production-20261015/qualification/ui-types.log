@@ -1,0 +1,2 @@
+$ pnpm --filter @retropick/retro-ui typecheck
+$ tsc --noEmit

@@ -1,0 +1,12 @@
+$ node --test tests/add-to-wallet.test.mjs
+✔ watchAsset failures map to precise UI copy triggers (1.217488ms)
+✔ the button routes each wallet state to its preceding wallet interaction (0.151194ms)
+✔ addToWalletPayload carries the on-chain decimals and resolves logos through the wallet resolver (1.295636ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 256.166812

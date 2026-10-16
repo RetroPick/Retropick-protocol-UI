@@ -1,0 +1,12 @@
+$ node --test tests/product-data.test.mjs
+✔ chart shares sorted unique canonical OHLC timestamps and quote volume units (3.263725ms)
+✔ chart never manufactures missing trades or accepts invalid OHLC (0.219122ms)
+✔ exact formatting retains integer digits beyond Number precision (0.38878ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 237.826769

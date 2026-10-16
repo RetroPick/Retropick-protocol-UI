@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Coins, Plus } from 'lucide-react';
+import { Home, Coins, Plus, Droplets } from 'lucide-react';
 import Link from '@/components/product/safe-link';
 import { usePathname } from '@/lib/next-compat';
 
@@ -8,13 +8,15 @@ import { usePathname } from '@/lib/next-compat';
 // so phones get a bottom bar with the same destinations plus Launch.
 export function MobileNav() {
   const pathname = usePathname();
-  const isActive = (id: 'home' | 'earn') => {
+  const isActive = (id: 'home' | 'earn' | 'liquidity') => {
+    if (id === 'liquidity') return pathname.startsWith('/liquidity');
     if (id === 'earn') return pathname.startsWith('/earn') || pathname.startsWith('/portfolio');
     return pathname.startsWith('/launchpad') || pathname.startsWith('/prism') || pathname.startsWith('/creator') || pathname === '/docs';
   };
 
   const navItems = [
     { id: 'home' as const, label: 'Home', icon: Home, href: '/launchpad' },
+    { id: 'liquidity' as const, label: 'Liquidity', icon: Droplets, href: '/liquidity' },
     { id: 'earn' as const, label: 'Earn', icon: Coins, href: '/earn' },
   ];
 

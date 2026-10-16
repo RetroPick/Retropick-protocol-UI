@@ -203,7 +203,7 @@ test('@terminal GRADUATED renders aggregated orderbook depth; ACTIVE hides it; n
   await page.goto('/launchpad/token/demo-graduated?scenario=no-book');
   const empty = page.getByTestId('depth-panel');
   await expect(empty).toBeVisible();
-  await expect(empty).toContainText('No resting orders');
+  await expect(empty).toContainText('No resting CLOB orders');
   expectClean(observed);
 });
 

@@ -1,9 +1,10 @@
-import type { IndexedLaunch, IndexedTrade, IndexedCandle, IndexedOrder, IndexedWalletAsset, IndexedClaim, IndexedBuyback, IndexedAssetMetadata, IndexedQualifyingEvent, IndexedHolder, CandleResolution } from '@retropick/launchpad-sdk/read-model';
+import type { IndexedLaunch, IndexedTrade, IndexedCandle, IndexedOrder, IndexedWalletAsset, IndexedClaim, IndexedBuyback, IndexedAssetMetadata, IndexedQualifyingEvent, IndexedHolder, CandleResolution, IndexedLiquidityPool, IndexedLPPosition, IndexedLiquidityEvent } from '@retropick/launchpad-sdk/read-model';
+import { release } from '@retropick/launchpad-sdk/chain';
 import type { JournalEvent } from './store.ts';
-export const PROJECTION_VERSION = 2;
+export const PROJECTION_VERSION = 3;
 export const ZERO = '0x0000000000000000000000000000000000000000';
 export type LaunchSeed = { launch: Omit<IndexedLaunch, 'volume24hRaw' | 'lifetimeVolumeRaw' | 'trades24h' | 'holderCount' | 'change24hBps' | 'candles'> };
-export type Projection = { launches: IndexedLaunch[]; trades: IndexedTrade[]; activity: JournalEvent[]; holders: Record<string, IndexedHolder[]>; orders: IndexedOrder[]; walletAssets: Record<string, IndexedWalletAsset[]>; claims: IndexedClaim[]; buybacks: IndexedBuyback[]; qualifyingEvents: IndexedQualifyingEvent[] };
+export type Projection = { launches: IndexedLaunch[]; trades: IndexedTrade[]; activity: JournalEvent[]; holders: Record<string, IndexedHolder[]>; orders: IndexedOrder[]; walletAssets: Record<string, IndexedWalletAsset[]>; claims: IndexedClaim[]; buybacks: IndexedBuyback[]; qualifyingEvents: IndexedQualifyingEvent[]; liquidityPools: IndexedLiquidityPool[]; lpPositions: IndexedLPPosition[]; liquidityEvents: IndexedLiquidityEvent[] };
 export type Snapshot = Projection & { indexedBlock: number; indexedBlockHash: string; indexedTimestamp: number; indexedAt: string; projectionVersion: number; reorgRevision: number; beneficiaryIndexedBlock: number };
 const amount = (v: unknown) => BigInt(String(v ?? 0));
 const lower = (v: unknown) => String(v ?? ZERO).toLowerCase();
@@ -32,7 +33,7 @@ export function aggregateCandles(base: IndexedCandle[], resolution: CandleResolu
   return [...result.values()];
 }
 
-export function project(events: JournalEvent[], seeds: LaunchSeed[], now: number, context: { assets?: Record<string, IndexedAssetMetadata>; custody?: Record<string, IndexedHolder['role']> } = {}): Projection {
+export function project(events: JournalEvent[], seeds: LaunchSeed[], now: number, context: { assets?: Record<string, IndexedAssetMetadata>; custody?: Record<string, IndexedHolder['role']>; liquidityPools?: IndexedLiquidityPool[] } = {}): Projection {
   const ordered = [...events].sort((a, b) => a.block - b.block || a.transactionIndex - b.transactionIndex || a.logIndex - b.logIndex);
   const unique = [...new Map(ordered.map(e => [e.id, e])).values()];
   const launches: IndexedLaunch[] = seeds.map(seed => ({ ...seed.launch, token: lower(seed.launch.token), curve: lower(seed.launch.curve), candles: [], volume24hRaw: '0', lifetimeVolumeRaw: '0', trades24h: 0, holderCount: 0, change24hBps: null }));
@@ -60,7 +61,7 @@ export function project(events: JournalEvent[], seeds: LaunchSeed[], now: number
     if (e.name === 'TokenLaunched') {
       const l = byToken.get(lower(a.token)); if (l) qualifying(e, 'TokenLaunched', lower(a.deployer), l.token, l.quoteAsset, '0');
     }
-    if (e.name === 'Deposit' || e.name === 'Withdrawal') candidate(lower(a.owner), lower(a.token), 'margin');
+    if ((e.name === 'Deposit' || e.name === 'Withdrawal') && a.owner && a.token) candidate(lower(a.owner), lower(a.token), 'margin');
     if (e.name === 'NativeCredited' || e.name === 'NativeClaimed') candidate(lower(a.recipient), ZERO, 'escrow');
     if (e.name === 'TokenCredited' || e.name === 'TokenClaimed') candidate(lower(a.recipient), lower(a.token), 'escrow');
     if (e.name === 'NativeClaimed' || e.name === 'TokenClaimed') claims.push({ id: e.id, wallet: lower(a.recipient), token: e.name === 'NativeClaimed' ? ZERO : lower(a.token), amountRaw: amount(a.amount).toString(), block: e.block, timestamp: e.timestamp, transactionHash: e.transactionHash, logIndex: e.logIndex });
@@ -76,7 +77,7 @@ export function project(events: JournalEvent[], seeds: LaunchSeed[], now: number
       let holders = balances.get(launch.token); if (!holders) balances.set(launch.token, holders = new Map());
       for (const [key, sign] of [['from', -1n], ['to', 1n]] as const) {
         const wallet = lower(a[key]); if (wallet === ZERO) continue;
-        holders.set(wallet, (holders.get(wallet) ?? 0n) + sign * amount(a.value)); candidate(wallet, launch.token, 'wallet');
+        holders.set(wallet, (holders.get(wallet) ?? 0n) + sign * amount(a.value ?? a.amount)); candidate(wallet, launch.token, 'wallet');
       }
       continue;
     }
@@ -139,5 +140,30 @@ export function project(events: JournalEvent[], seeds: LaunchSeed[], now: number
     const metadata = assets.get(token) ?? { token, name: token, symbol: token, decimals: null }; const l = byToken.get(token);
     return { ...metadata, sources: [...sources].sort(), quoteAsset: l?.quoteAsset ?? null, quoteSymbol: l?.quoteSymbol ?? null, quoteDecimals: l?.quoteDecimals ?? null };
   }).sort((a, b) => a.token.localeCompare(b.token))]));
-  return { launches, trades, activity, holders, orders: [...orders.values()], walletAssets, claims, buybacks: [...buybacks.values()], qualifyingEvents };
+  const liquidityPools = context.liquidityPools ?? [];
+  const liquidityEvents: IndexedLiquidityEvent[] = []; const lpPositions: IndexedLPPosition[] = [];
+  for (const pool of liquidityPools) {
+    const balances = new Map<string, bigint>();
+    for (const e of unique.filter(e => lower(e.address) === pool.vault && e.block >= pool.graduationBlock)) {
+      const a = e.args;
+      if (!['Transfer', 'KuruVaultDeposit', 'KuruVaultWithdraw'].includes(e.name)) continue;
+      const transfer = e.name === 'Transfer';
+      liquidityEvents.push({ id: e.id, token: pool.token, vault: pool.vault, kind: transfer ? 'TRANSFER' : e.name === 'KuruVaultDeposit' ? 'DEPOSIT' : 'WITHDRAW', actor: lower(transfer ? a.to : a.userAddress), ...(transfer ? { from: lower(a.from), to: lower(a.to) } : { baseRaw: amount(a.amount1).toString(), quoteRaw: amount(a.amount2).toString() }), sharesRaw: amount(transfer ? a.value ?? a.amount : a.shares).toString(), block: e.block, logIndex: e.logIndex, transactionIndex: e.transactionIndex, timestamp: e.timestamp, transactionHash: e.transactionHash });
+      // Deposit/withdraw describe assets; only ERC20 transfers change share ownership.
+      if (transfer) for (const [wallet, sign] of [[lower(a.from), -1n], [lower(a.to), 1n]] as const) if (wallet !== ZERO) balances.set(wallet, (balances.get(wallet) ?? 0n) + sign * amount(a.value ?? a.amount));
+    }
+    if (pool.historyComplete) {
+      if ([...balances.values()].some(v => v < 0n)) throw Error('Incomplete vault share history');
+      if (pool.totalSharesRaw !== null && [...balances.values()].reduce((a, b) => a + b, 0n) !== amount(pool.totalSharesRaw)) throw Error('Vault share supply mismatch');
+      for (const [wallet, shares] of balances) if (shares > 0n) lpPositions.push({ token: pool.token, market: pool.market, vault: pool.vault, wallet, sharesRaw: shares.toString(), role: wallet === pool.lpLock ? 'PROTECTED' : wallet === release.kuruEnvironment.marginAccount.toLowerCase() ? 'INFRASTRUCTURE' : 'WALLET' });
+      pool.protectedSharesRaw = (balances.get(pool.lpLock ?? ZERO) ?? 0n).toString();
+      pool.infrastructureSharesRaw = (balances.get(release.kuruEnvironment.marginAccount.toLowerCase()) ?? 0n).toString();
+    }
+    const launch = byToken.get(pool.token);
+    if (launch && pool.status === 'READY') {
+      launch.liquiditySource = 'KURU_VAULT'; launch.liquidityRaw = null;
+      launch.liquidity = { source: 'KURU_VAULT', baseAssetsRaw: pool.baseAssetsRaw, quoteAssetsRaw: pool.quoteAssetsRaw, baseDecimals: pool.baseDecimals, quoteDecimals: pool.quoteDecimals };
+    }
+  }
+  return { liquidityPools, lpPositions, liquidityEvents, launches, trades, activity, holders, orders: [...orders.values()], walletAssets, claims, buybacks: [...buybacks.values()], qualifyingEvents };
 }

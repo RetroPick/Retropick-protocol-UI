@@ -20,8 +20,8 @@ export function createReadServer(source: { snapshot(): Snapshot | undefined; fre
     if (req.method !== 'GET') { send(405, { error: 'READ_ONLY_API' }); return; }
     const url = new URL(req.url ?? '/', 'http://localhost'); const freshness = source.freshness(); const snapshot = source.snapshot();
     if (url.pathname === '/health') { send(200, { freshness, ready: snapshot?.projectionVersion === PROJECTION_VERSION, projection: { expected: PROJECTION_VERSION, published: snapshot?.projectionVersion ?? null }, ...(source.diagnostics?.() ?? {}) }); return; }
-    if (!snapshot || snapshot.projectionVersion !== PROJECTION_VERSION) { send(503, { error: snapshot ? 'INDEX_SCHEMA_UPGRADING' : 'INDEX_NOT_READY', freshness }); return; }
-    if (url.pathname.startsWith('/v1/wallets/') && snapshot.beneficiaryIndexedBlock < snapshot.indexedBlock) { send(503, { error: 'BENEFICIARY_HISTORY_SYNCING', freshness }); return; }
+    if (!snapshot || (snapshot.projectionVersion !== PROJECTION_VERSION && !(snapshot.projectionVersion === 2 && !url.pathname.startsWith('/v1/liquidity/') && !url.pathname.endsWith('/lp-positions')))) { send(503, { error: snapshot ? 'INDEX_SCHEMA_UPGRADING' : 'INDEX_NOT_READY', freshness }); return; }
+    if (url.pathname.startsWith('/v1/wallets/') && !url.pathname.endsWith('/lp-positions') && snapshot.beneficiaryIndexedBlock < snapshot.indexedBlock) { send(503, { error: 'BENEFICIARY_HISTORY_SYNCING', freshness }); return; }
     try {
       const result = query(snapshot, url, freshness); const body = jsonExact(result);
       const walletSpecific = url.pathname.startsWith('/v1/wallets/') || url.searchParams.has('owner');

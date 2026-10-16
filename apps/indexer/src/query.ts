@@ -68,6 +68,23 @@ export function query(snapshot: Snapshot, url: URL, freshness: IndexFreshness): 
     const result = page(rows, e => e.id);
     return { ...result, data: { events: result.data, nextCursor: result.nextCursor, canonicalFromBlock: from, canonicalToBlock: to } satisfies IndexedActivityPage };
   }
+  if (path === '/v1/liquidity/pools') {
+    const rows = (snapshot.liquidityPools ?? []).filter(p => !term || [p.token, p.baseSymbol, p.quoteSymbol].some(v => v.toLowerCase().includes(term))).sort((a, b) => a.token.localeCompare(b.token));
+    return page(rows, p => p.token);
+  }
+  const poolMatch = /^\/v1\/liquidity\/pools\/(0x[\da-fA-F]{40})(?:\/(events))?$/.exec(path);
+  if (poolMatch) {
+    const token = poolMatch[1].toLowerCase(); const pool = snapshot.liquidityPools?.find(p => p.token === token);
+    if (!pool) throw new QueryError(404, 'POOL_NOT_FOUND');
+    if (!poolMatch[2]) return { data: pool, freshness };
+    if (!pool.historyComplete) throw new QueryError(503, 'LIQUIDITY_HISTORY_SYNCING');
+    return page(snapshot.liquidityEvents.filter(e => e.token === token && (!transactionHash || e.transactionHash.toLowerCase() === transactionHash)).sort(descendingEvent), e => e.id);
+  }
+  const lpWallet = /^\/v1\/wallets\/(0x[\da-fA-F]{40})\/lp-positions$/.exec(path);
+  if (lpWallet) {
+    if (!snapshot.liquidityPools || snapshot.liquidityPools.some(p => !p.historyComplete)) throw new QueryError(503, 'LIQUIDITY_HISTORY_SYNCING');
+    return page(snapshot.lpPositions.filter(p => p.wallet === lpWallet[1].toLowerCase()).sort((a, b) => a.token.localeCompare(b.token)), p => p.vault);
+  }
   const walletMatch = /^\/v1\/wallets\/(0x[\da-fA-F]{40})\/(assets|orders|claims|buybacks)$/.exec(path);
   if (walletMatch) {
     const wallet = walletMatch[1].toLowerCase();
