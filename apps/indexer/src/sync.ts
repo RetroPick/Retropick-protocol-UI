@@ -165,7 +165,7 @@ export class Indexer {
   }
   vaultStage(vault: string) { return `vault:${PROJECTION_VERSION}:${vault.toLowerCase()}`; }
   /** Each qualified vault owns an inclusive historical cursor, independent of dynamic logs. */
-  async liquidity(seeds: LaunchSeed[], target: number): Promise<IndexedLiquidityPool[]> {
+  async liquidity(seeds: LaunchSeed[], target: number, options: { scan?: boolean } = {}): Promise<IndexedLiquidityPool[]> {
     const pools: IndexedLiquidityPool[] = [];
     const anchor = await this.header(target);
     for (const { launch: l } of seeds) {
@@ -181,8 +181,10 @@ export class Indexer {
           pool.baseAssetsRaw = state.vault.data.baseAssetsRaw.toString(); pool.quoteAssetsRaw = state.vault.data.quoteAssetsRaw.toString(); pool.totalSharesRaw = state.vault.data.totalSharesRaw.toString(); pool.status = 'READY';
         }
         if (state.custody.status === 'available') { pool.protectedSharesRaw = state.custody.data.lockedSharesRaw.toString(); pool.infrastructureSharesRaw = state.custody.data.infrastructureSharesRaw.toString(); }
-        const passTarget = Math.min(target, Math.max(l.graduationBlock - 1, this.store.cursor(stage, l.graduationBlock)) + this.maxBlocksPerPass);
-        await this.scan(stage, passTarget, [vault], l.graduationBlock);
+        if (options.scan !== false) {
+          const passTarget = Math.min(target, Math.max(l.graduationBlock - 1, this.store.cursor(stage, l.graduationBlock)) + this.maxBlocksPerPass);
+          await this.scan(stage, passTarget, [vault], l.graduationBlock);
+        }
         pool.historyIndexedBlock = this.store.cursor(stage, l.graduationBlock); pool.historyComplete = pool.historyIndexedBlock >= target;
       } catch { /* A failed vault cannot manufacture an empty pool or complete history. */ }
       pools.push(pool);

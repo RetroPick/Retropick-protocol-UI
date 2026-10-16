@@ -30,3 +30,9 @@ Completed share histories must have no negative balances and must reconcile to l
 `npm --prefix apps/indexer test`
 
 The liquidity regression suite covers mint/transfer/burn reconstruction, infrastructure custody, duplicates, supply conservation, substituted emitters, existing-cursor backfill, rollback/replay, API completeness gates, wallet isolation, cursor expiry, and schema compatibility. Live RPC qualification is a separate environment-dependent check and is not implied by unit test results.
+
+## Full offline catch-up
+
+`scripts/liquidity-full-catchup.mjs` is the reusable operator for a transactionally backed-up database. It scans Coordinator root events to an explicit target, discovers qualified vaults at that target, groups active vault addresses in provider-safe 100-block windows, splits logs into independent `vault:3:<address>` stages, and writes a report with per-vault cursor progress and exact supply reconciliation. It never resets a checkpoint and never starts the HTTP server.
+
+Representative qualification used the projection-2 production backup at block `70,648,102` with replay target `69,723,600` (just after all three vaults represented in that backup had graduated). All three vault histories completed; each reconstructed nonzero-address balance sum equaled its on-chain `totalSupply`. No user-owned LP existed in that history: each pool had its permanent lock balance plus the pinned MarginAccount's 1,000 bootstrap shares.
