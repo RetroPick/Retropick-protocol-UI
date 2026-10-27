@@ -55,7 +55,35 @@ function DemoTokenRoute({ id }: { id: string }) {
   }, [fixture, chart.range, chart.interval, tradePage]);
   if (!fixture || !data) return <EmptyState title="Token launch not found" text="This demo token is not part of the DEMO fixture set." action={<Link className="rp-btn rp-btn-ghost" href="/launchpad">Back to Launchpad</Link>}/>;
   // Depth (DEMO): the fixture book through the same aggregation the live hook uses.
-  const depth = fixture.vm.lifecycle === 'GRADUATED' && fixture.book ? { status: 'ready' as const, ladder: buildDepthLadder(fixture.book), block: '0', observedAt: fixture.vm.now } : null;
+  const depth = (fixture.vm.lifecycle === 'GRADUATED' && fixture.book)
+    ? { status: 'ready' as const, ladder: buildDepthLadder(fixture.book), block: '0', observedAt: fixture.vm.now }
+    : (fixture.vm.lifecycle === 'GRADUATION_READY' && fixture.vm.price.x18)
+      ? {
+          status: 'ready' as const,
+          ladder: buildDepthLadder({
+            bids: [
+              { price: BigInt(fixture.vm.price.x18) * 995n / 1000n, size: 6450n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 990n / 1000n, size: 16100n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 985n / 1000n, size: 161000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 978n / 1000n, size: 322000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 970n / 1000n, size: 450000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 960n / 1000n, size: 520000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 950n / 1000n, size: 680000n * 10n ** 18n },
+            ],
+            asks: [
+              { price: BigInt(fixture.vm.price.x18) * 1005n / 1000n, size: 6450n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1010n / 1000n, size: 16100n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1015n / 1000n, size: 161000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1022n / 1000n, size: 322000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1030n / 1000n, size: 450000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1040n / 1000n, size: 520000n * 10n ** 18n },
+              { price: BigInt(fixture.vm.price.x18) * 1050n / 1000n, size: 680000n * 10n ** 18n },
+            ],
+          }),
+          block: '0',
+          observedAt: fixture.vm.now,
+        }
+      : null;
   return <TokenTerminal vm={fixture.vm} data={data} chart={chart} depth={depth} tab={tab} onTab={setTab}
     liquidityPanel={<MarketLiquidity view={demoLiquidityView(fixture.vm.id, scenario)} baseSymbol={fixture.vm.symbol} quoteSymbol={fixture.vm.quote.symbol} compact/>}
     tradesPager={{ hasNext: data.trades.nextCursor !== null, hasPrev: tradePage > 0, next: () => setTradePage((p) => p + 1), first: () => setTradePage(0) }}

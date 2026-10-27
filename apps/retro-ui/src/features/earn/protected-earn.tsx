@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { ShieldCheck } from 'lucide-react';
+import { RiShieldCheckLine } from 'react-icons/ri';
 import { isAddress, zeroAddress, type Address } from 'viem';
 import { AddressChip, ErrorState } from '@/components/trading/primitives';
 import { useWallet } from '@/wallet/provider';
@@ -127,7 +127,7 @@ export function ProtectedEarn() {
   const canHandoff = !!wallet.wallet && !!signer && !rights.isError && !!rights.data?.launch.exists && rights.data.launch.creatorFeeRecipient.toLowerCase() === account?.toLowerCase() && rights.data.launch.creatorFeeRecipient.toLowerCase() !== signer.address.toLowerCase() && !rights.data.pending;
   const balances = !protectedState.isError ? protectedState.data : undefined;
   return <section className="rp-protect" data-testid="protected-earn" aria-labelledby="rp-protect-h">
-    <header><h2 id="rp-protect-h"><ShieldCheck size={16} aria-hidden/> Protected Earn</h2><p className="rp-note">Keep connected-wallet funds and the independent passkey fee wallet separate.</p></header>
+    <header><h2 id="rp-protect-h"><RiShieldCheckLine size={16} aria-hidden/> Protected Earn</h2><p className="rp-note">Keep connected-wallet funds and the independent passkey fee wallet separate.</p></header>
     <ul className="rp-protect-modes" data-testid="protection-modes">{(Object.keys(PROTECTION_MODES) as ProtectionMode[]).map(key => {
       const info = PROTECTION_MODES[key];
       return <li className="rp-protect-mode" key={key} data-mode={key} data-bypassable={info.bypassable} data-available={info.available}>

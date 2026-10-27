@@ -7,8 +7,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { type PasskeySecretVault } from '@category-labs/mera';
 import { createSecretVaultWithExistingPasskey, createSecretVaultWithNewPasskey, decryptSecretVaultWithPasskey } from '@category-labs/mera';
-import { Lock, LockOpen, Plus, ShieldCheck, Trash2 } from 'lucide-react';
-import { DemoBadge, InfoHint } from '@/components/trading/primitives';
+import { FiLock, FiUnlock, FiPlus, FiTrash2 } from 'react-icons/fi';
+import { RiShieldCheckLine } from 'react-icons/ri';
+import { DemoBadge } from '@/components/trading/primitives';
 import { DATA_MODE } from '@/lib/live/env';
 import {
   clearStoredVault, decodeEntries, describeVaultError, encodeEntries, ENTRY_KINDS, loadStoredVault,
@@ -92,17 +93,13 @@ export function StrategyVault() {
   return <section className="rp-hub-section" aria-label="Private strategy vault" data-testid="strategy-vault" data-state={state}>
     <div className="rp-hub-card">
       <div className="rp-hub-card-head">
-        <span className="rp-card-icon"><ShieldCheck size={15} aria-hidden /></span>
+        <span className="rp-card-icon"><RiShieldCheckLine size={15} aria-hidden /></span>
         <h3>Private Strategy Vault</h3>
         <span className="rp-chip">Mera · passkey PRF</span>
         {demo && <DemoBadge />}
       </div>
       <p className="rp-card-sub">
-        Protect trading theses, draft prediction markets, watchlists and agent risk budgets with a passkey. Encryption keys are derived
-        from the passkey's WebAuthn PRF output inside your browser<InfoHint text="The passkey produces a 32-byte PRF output; the Mera SDK derives a non-extractable AES-256-GCM key from it. The plaintext never leaves this browser and is never sent to any server." /> — never stored, never transmitted.
-      </p>
-      <p className="rp-note" data-testid="vault-disclosure">
-        Unlocking this vault <strong>never grants spending authority</strong> — wallet transactions still require your separate wallet confirmation. The vault is bound to this browser's passkey: keep an exported backup; a lost passkey without a synced copy (e.g. iCloud Keychain) cannot be recovered.
+        Protect trading theses, draft prediction markets and agent risk budgets with browser passkey encryption.
       </p>
 
       {state === 'none' && <>
@@ -113,22 +110,22 @@ export function StrategyVault() {
         </div>
         <details className="rp-advanced">
           <summary>Import an exported vault</summary>
-          <p className="rp-note">For cross-device use: the vault is bound to your passkey. On another device with the same synced passkey, import the exported JSON to restore access.</p>
+          <p className="rp-note">For cross-device use: restore access using your exported JSON vault file.</p>
           <textarea data-testid="vault-import" rows={4} value={importText} onChange={(e) => setImportText(e.target.value)} placeholder='{"version":1,"credential":{…},"prfSalt":…}' aria-label="Vault JSON"/>
           <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" data-testid="vault-import-go" disabled={!!busy || !importText.trim()} onClick={() => void importVault()}>Import vault</button>
         </details>
       </>}
 
       {state === 'corrupt' && <div className="rp-tx rp-tx-fail" role="alert" data-testid="vault-corrupt">
-        The stored vault is malformed or was modified. {!entries && 'Create a new vault, or import an exported copy to recover.'}
+        The stored vault is malformed. {!entries && 'Create a new vault, or import an exported copy to recover.'}
         <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={() => { clearStoredVault(); setStored(null); }}>Delete stored vault</button>
       </div>}
 
-      {credential && <p className="rp-note" data-testid="vault-credential">Passkey credential <code>{shortCredential(credential.credentialId)}</code> · vault format v{VAULT_SCHEMA_VERSION}</p>}
+      {credential && <p className="rp-note" data-testid="vault-credential">Passkey credential <code>{shortCredential(credential.credentialId)}</code> · format v{VAULT_SCHEMA_VERSION}</p>}
 
       {state === 'locked' && <div className="rp-vault-actions">
         <button type="button" className="rp-btn rp-btn-primary" data-testid="vault-unlock" disabled={!!busy} onClick={() => void unlock()}>
-          <LockOpen size={14} aria-hidden/> {busy === 'unlock' ? 'Waiting for passkey…' : 'Unlock with passkey'}
+          <FiUnlock size={14} aria-hidden/> {busy === 'unlock' ? 'Waiting for passkey…' : 'Unlock with passkey'}
         </button>
         <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={exportVault}>Export backup</button>
         <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={() => { clearStoredVault(); setStored(null); }}>Delete vault</button>
@@ -164,10 +161,10 @@ function VaultEntries({ entries, busy, onSave, onLock, onExport, busyLabel }: {
 
   return <>
     <div className="rp-hub-row">
-      <h4 className="rp-section-title"><Lock size={13} aria-hidden/> Unlocked · {entries.length} {entries.length === 1 ? 'entry' : 'entries'}</h4>
+      <h4 className="rp-section-title"><FiLock size={13} aria-hidden/> Unlocked · {entries.length} {entries.length === 1 ? 'entry' : 'entries'}</h4>
       <div className="rp-vault-actions">
         <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={onExport}>Export</button>
-        <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" data-testid="vault-lock" onClick={onLock}><Lock size={13} aria-hidden/> Lock now</button>
+        <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" data-testid="vault-lock" onClick={onLock}><FiLock size={13} aria-hidden/> Lock now</button>
       </div>
     </div>
     {sorted.length === 0 && !draft && <div className="rp-empty-panel" data-testid="vault-empty">
@@ -181,7 +178,7 @@ function VaultEntries({ entries, busy, onSave, onLock, onExport, busyLabel }: {
           <strong>{entry.title}</strong>
           <span className="rp-muted">{new Date(entry.updatedAt * 1000).toLocaleDateString()}</span>
           <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" aria-label={`Edit ${entry.title}`} disabled={busy} onClick={() => setDraft({ id: entry.id, title: entry.title, kind: entry.kind, body: entry.body })}>Edit</button>
-          <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" aria-label={`Delete ${entry.title}`} disabled={busy} onClick={() => onSave(entries.filter((e) => e.id !== entry.id))}><Trash2 size={13} aria-hidden/></button>
+          <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" aria-label={`Delete ${entry.title}`} disabled={busy} onClick={() => onSave(entries.filter((e) => e.id !== entry.id))}><FiTrash2 size={13} aria-hidden/></button>
         </div>
         {entry.body && <p className="rp-vault-body">{entry.body}</p>}
       </li>)}
@@ -192,10 +189,10 @@ function VaultEntries({ entries, busy, onSave, onLock, onExport, busyLabel }: {
       <label className="rp-field">Content (stays encrypted at rest)<textarea rows={5} maxLength={8000} value={draft.body} onChange={(e) => setDraft({ ...draft, body: e.target.value })} placeholder="Private notes — max 8,000 characters."/></label>
       <div className="rp-vault-actions">
         <button type="button" className="rp-btn rp-btn-primary rp-btn-sm" data-testid="vault-save" disabled={busy || !draft.title.trim()} onClick={commit}>
-          <Plus size={13} aria-hidden/> {saving ? 'Waiting for passkey…' : 'Save (re-encrypts with passkey)'}
+          <FiPlus size={13} aria-hidden/> {saving ? 'Waiting for passkey…' : 'Save (re-encrypts with passkey)'}
         </button>
         <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" disabled={busy} onClick={() => setDraft(null)}>Cancel</button>
       </div>
-    </div> : <button type="button" className="rp-btn rp-btn-primary rp-btn-sm" data-testid="vault-add" disabled={busy} onClick={add}><Plus size={13} aria-hidden/> Add private entry</button>}
+    </div> : <button type="button" className="rp-btn rp-btn-primary rp-btn-sm" data-testid="vault-add" disabled={busy} onClick={add}><FiPlus size={13} aria-hidden/> Add private entry</button>}
   </>;
 }

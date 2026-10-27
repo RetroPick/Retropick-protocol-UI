@@ -21,38 +21,38 @@
    names follow the shadcn convention so the ported components/ui primitives
    style themselves unchanged. */
 :root {
-  --bg: #000000;
-  --bg-raise: #06030f;
-  --panel: #0e0a1c;
-  --panel-2: #0c0819;
-  --inset: #090615;
-  --border: #241e42;
-  --border-soft: #1b1732;
-  --text: #e9e6f5;
-  --text-2: #b9b2ce;
-  --text-3: #8b84a3;
-  --text-dim: #615a78;
-  --hover: rgba(131, 110, 249, .06);
-  --accent: #836ef9;
-  --accent-fill: #836ef9;
+  --bg: #090a10;
+  --bg-raise: #0f1118;
+  --panel: #13151f;
+  --panel-2: #181b28;
+  --inset: #0b0d14;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.05);
+  --text: #f8fafc;
+  --text-2: #cbd5e1;
+  --text-3: #94a3b8;
+  --text-dim: #64748b;
+  --hover: rgba(139, 92, 246, 0.08);
+  --accent: #8b5cf6;
+  --accent-fill: #7c3aed;
   --accent-ink: #ffffff;
-  --accent-dim: #1c1440;
-  --accent-glow: rgba(131, 110, 249, .5);
-  --pos: #5feddf;
-  --pos-bg: #0c2622;
-  --pos-border: #1f4a45;
-  --neg: #ff8fa3;
-  --neg-bg: #271820;
-  --neg-border: #452833;
-  --warn-bg: #1d180d;
-  --warn-border: #4c4128;
-  --warn-text: #dccb9d;
-  --popover: #100b20;
-  --grid-line: #191336;
-  --grad-a: #200052;
-  --grad-b: #0d0720;
-  --violet: #b09cfa;
-  --shadow-soft: 0 14px 44px rgba(0, 0, 0, .5);
+  --accent-dim: rgba(139, 92, 246, 0.15);
+  --accent-glow: rgba(139, 92, 246, 0.35);
+  --pos: #10b981;
+  --pos-bg: rgba(16, 185, 129, 0.1);
+  --pos-border: rgba(16, 185, 129, 0.25);
+  --neg: #f43f5e;
+  --neg-bg: rgba(244, 63, 94, 0.1);
+  --neg-border: rgba(244, 63, 94, 0.25);
+  --warn-bg: rgba(245, 158, 11, 0.1);
+  --warn-border: rgba(245, 158, 11, 0.25);
+  --warn-text: #fbbf24;
+  --popover: #13151f;
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --grad-a: #1e1b4b;
+  --grad-b: #0f0e1f;
+  --violet: #a78bfa;
+  --shadow-soft: 0 14px 44px rgba(0, 0, 0, .6);
   /* shadcn token bridge */
   --background: var(--bg);
   --foreground: var(--text);
@@ -67,15 +67,15 @@
   --muted-foreground: var(--text-3);
   --accent-foreground: var(--text);
   --destructive: var(--neg);
-  --input: #292349;
+  --input: rgba(255, 255, 255, 0.1);
   --ring: var(--accent);
   --chart-1: var(--pos);
   --chart-2: var(--neg);
   --chart-3: var(--violet);
-  --chart-4: #e5c88f;
-  --chart-5: #5feddf;
-  --radius: 0.625rem;
-  --sidebar: var(--panel);
+  --chart-4: #f59e0b;
+  --chart-5: #10b981;
+  --radius: 0.75rem;
+  --sidebar: var(--bg-raise);
   --sidebar-foreground: var(--text);
   --sidebar-primary: var(--accent);
   --sidebar-primary-foreground: var(--accent-ink);
@@ -204,17 +204,23 @@ input::-webkit-inner-spin-button { appearance: none }
   left: 0;
   bottom: 0;
   z-index: 40;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--bg);
-  border-right: 1px solid var(--border);
-  width: 240px;
-  transition: width .2s;
+  background: #0e1017;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  width: 260px;
+  transition: width .25s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
 }
-@media (min-width: 768px) { .sidebar { display: flex } }
-.sidebar.collapsed { width: 72px }
+@media (max-width: 1023px) { 
+  .sidebar { 
+    display: none !important; 
+  } 
+}
+.sidebar.collapsed { 
+  width: 76px !important; 
+}
 .side-top { padding: 16px; display: flex; flex-direction: column }
 .side-brand { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px }
 .side-brand-link { display: flex; align-items: center; gap: 12px }

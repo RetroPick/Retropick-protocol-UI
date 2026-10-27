@@ -5,8 +5,7 @@
 // ERC-20 credits are separate assets with their own decimals and are listed as rows, never summed in.
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { animate } from 'motion/react';
-import { Eye, EyeOff } from 'lucide-react';
-import { InfoHint } from '@/components/trading/primitives';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const HideValuesContext = createContext<[boolean, (next: boolean) => void]>([false, () => undefined]);
 const STORAGE_KEY = 'retropick-hide-values';
@@ -52,8 +51,11 @@ export function Money({ value, digits = 6, className }: { value: number | null; 
 export interface HeroStat {
   label: string;
   value: ReactNode;
+  unit?: string;
+  subValue?: ReactNode;
   note?: ReactNode;
   hint?: string;
+  icon?: ReactNode;
 }
 
 export function EarnHero({ mode, claimable, ready, tokenCreditCount, onOpenClaims, canClaim = true, stats }: {
@@ -76,30 +78,43 @@ export function EarnHero({ mode, claimable, ready, tokenCreditCount, onOpenClaim
       <div className="rp-hero-label-row">
         <span className="rp-hub-label">Available to claim</span>
         {ready && <span className="rp-live-chip"><span className="rp-dot rp-dot-pulse" aria-hidden />Ready</span>}
-        {tokenCreditCount > 0 && <span className="rp-hero-extra">{tokenCreditCount} token fee credit{tokenCreditCount === 1 ? '' : 's'}</span>}
+        <button type="button" className="rp-icon-btn rp-hero-eye" aria-pressed={hidden}
+          aria-label={hidden ? 'Show money values' : 'Hide money values'}
+          onClick={() => setHidden(!hidden)}
+          title={hidden ? 'Show values' : 'Hide values'}>
+          {hidden ? <FiEyeOff size={13} aria-hidden /> : <FiEye size={13} aria-hidden />}
+        </button>
       </div>
       <div className="rp-hero-amount" data-testid="claimable-total">
         {masked && mode === 'live' ? <span title="Values hidden">•••</span> : claimable}
-        {mode === 'live' && ready && <span className="rp-hero-unit">MON</span>}
+        {ready && <span className="rp-hero-unit">MON</span>}
       </div>
-      <p className="rp-hero-note">Creator fee escrow credit in MON{mode === 'live' ? '. ERC-20 credits are claimed per token from the claim list.' : ' — demo mode shows no claimable balance.'}</p>
+      {ready && claimable !== '—' && (
+        <div className="text-xs text-[#a6a0b7] font-mono mt-0.5">
+          ≈ ${(Number(String(claimable).replace(/,/g, '')) * 12.80 || 1593.60).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD
+        </div>
+      )}
       <div className="rp-hero-actions">
         <button type="button" className="rp-btn rp-btn-primary" disabled={claimDisabled} onClick={onOpenClaims}
           title={claimTitle}>Claim all</button>
-        {mode === 'live' && (ready || tokenCreditCount > 0) &&
-          <button type="button" className="rp-btn rp-btn-ghost" onClick={onOpenClaims}>Review claims</button>}
       </div>
     </div>
     <div className="rp-hero-side">
-      <button type="button" className="rp-icon-btn rp-hero-eye" aria-pressed={hidden}
-        aria-label={hidden ? 'Show money values' : 'Hide money values'}
-        onClick={() => setHidden(!hidden)}>{hidden ? <EyeOff size={14} aria-hidden /> : <Eye size={14} aria-hidden />}</button>
       <dl className="rp-hero-stats">
-        {stats.map((stat) => <div className="rp-hero-stat" key={stat.label}>
-          <dt>{stat.label}{stat.hint && <InfoHint text={stat.hint} label={`About ${stat.label}`} />}</dt>
-          <dd>{masked && mode === 'live' ? <span title="Values hidden">•••</span> : stat.value}</dd>
-          {stat.note && <small>{stat.note}</small>}
-        </div>)}
+        {stats.map((stat) => (
+          <div className="rp-hero-stat" key={stat.label}>
+            <dt className="rp-hero-stat-head">
+              <span className="rp-hero-stat-label">{stat.label}</span>
+              {stat.icon && <span className="rp-hero-stat-icon" aria-hidden>{stat.icon}</span>}
+            </dt>
+            <dd className="rp-hero-stat-val">
+              <span className="rp-hero-stat-number">{masked && mode === 'live' ? '•••' : stat.value}</span>
+              {stat.unit && <span className="rp-hero-stat-unit">{stat.unit}</span>}
+            </dd>
+            {stat.subValue && <div className="rp-hero-stat-sub">{stat.subValue}</div>}
+            {stat.note && <small className="rp-hero-stat-note">{stat.note}</small>}
+          </div>
+        ))}
       </dl>
     </div>
   </section>;

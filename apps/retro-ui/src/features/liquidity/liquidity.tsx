@@ -2,9 +2,15 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { IndexedLiquidityPool, IndexedLPPosition, IndexFreshness } from '@retropick/launchpad-sdk/read-model';
 import type { Address } from 'viem';
-import { Droplets } from 'lucide-react';
+import {
+  CardStackIcon,
+  MagnifyingGlassIcon,
+  MagicWandIcon,
+  InfoCircledIcon,
+} from '@radix-ui/react-icons';
+import { CheckCircle2 } from 'lucide-react';
 import Link from '@/components/product/safe-link';
-import { usePathname, useSearchParams } from '@/lib/next-compat';
+import { usePathname, useSearchParams, navigate } from '@/lib/next-compat';
 import { DATA_MODE, INDEXER_URL } from '@/lib/live/env';
 import { launchKeys } from '@/lib/live/queries';
 import { isStale } from '@/lib/live/indexer-client';
@@ -16,6 +22,16 @@ import { demoLiquidityView, liquidityView } from '@/lib/view-models/liquidity';
 import { LiveMarketLiquidity, MarketLiquidity, StateValue } from './market-liquidity';
 import { demoPool, demoPoolEvents, fetchLPPositions, fetchPool, fetchPoolEvents, fetchPools } from './liquidity-data';
 import { MarketMaking } from './market-making';
+import {
+  KURU_POOLS,
+  KURU_VAULTS,
+  INITIAL_USER_POSITIONS,
+  KuruPoolMarket,
+  KuruVault,
+  KuruPosition,
+  formatUsd,
+} from './kuru-data';
+import { AddLiquidityModal, VaultDetailModal } from './liquidity-modals';
 import './liquidity.css';
 
 const live = DATA_MODE === 'live';
@@ -31,29 +47,387 @@ function PageLinks({ cursor, next, onCursor }: { cursor?: string; next?: string 
 
 export default function Liquidity({ token, maker = false }: { token?: string; maker?: boolean }) {
   const pathname = usePathname(), params = useSearchParams();
-  const positions = !maker && !token && params.get('tab') === 'positions';
-  return <div className="rp-liquidity" data-testid="liquidity-page" data-data-mode={live ? 'live' : 'demo'}>
-    <header><h1><Droplets size={25} aria-hidden/> Liquidity</h1><p className="rp-note">Pools, protected protocol liquidity and manual market making on Monad Testnet.</p>{!live && <DemoBadge/>}</header>
-    <nav className="rp-liquidity-tabs" aria-label="Liquidity sections"><Link href="/liquidity" aria-current={!positions && !maker ? 'page' : undefined}>Pools</Link><Link href="/liquidity?tab=positions" aria-current={positions ? 'page' : undefined}>My Positions</Link><Link href="/liquidity/market-making" aria-current={pathname.includes('/market-making') ? 'page' : undefined}>Market Making</Link></nav>
-    {maker ? <MarketMaking/> : token ? <PoolDetails key={token} token={token}/> : positions ? <LPPositions/> : <Pools/>}
-  </div>;
+  const positionsTab = !maker && !token && params.get('tab') === 'positions';
+
+  return (
+    <div className="rp-liquidity" data-testid="liquidity-page" data-data-mode={live ? 'live' : 'demo'}>
+      <header className="rp-liquidity-top-header">
+        <div>
+          <h1 className="flex items-center gap-2.5">
+            <CardStackIcon className="w-6 h-6 text-[#836ef9]" aria-hidden />
+            <span>Liquidity</span>
+          </h1>
+          <p className="rp-note">Explore automated vaults, concentrated liquidity pools and market making on Monad Testnet.</p>
+        </div>
+        {!live && <DemoBadge />}
+      </header>
+
+      <nav className="rp-liquidity-tabs" aria-label="Liquidity sections">
+        <Link href="/liquidity" aria-current={!positionsTab && !maker && !token ? 'page' : undefined}>
+          Pools
+        </Link>
+        <Link href="/liquidity?tab=positions" aria-current={positionsTab ? 'page' : undefined}>
+          My Positions
+        </Link>
+        <Link href="/liquidity/market-making" aria-current={pathname.includes('/market-making') || maker ? 'page' : undefined}>
+          Market Making
+        </Link>
+      </nav>
+
+      {maker ? (
+        <MarketMaking />
+      ) : token ? (
+        <PoolDetails key={token} token={token} />
+      ) : (
+        <KuruLiquidityOverview initialTab={positionsTab ? 'positions' : 'explore'} />
+      )}
+    </div>
+  );
 }
 
-function Pools() {
-  const [cursor, setCursor] = useState<string>();
-  const q = useQuery({ queryKey: launchKeys.resource('all', 'liquidity-pools', { cursor }), enabled: live && !!INDEXER_URL, queryFn: ({ signal }) => fetchPools(INDEXER_URL!, cursor, signal), refetchInterval: cursor ? false : 15_000 });
-  const rows = live ? q.data?.data ?? [] : [demoPool];
-  return <section className="rp-liquidity-card" aria-label="Liquidity pools"><div className="rp-liquidity-header"><h2>Pools</h2>{live && <LiquidityFreshness freshness={q.data?.freshness}/>}</div>
-    <p className="rp-note">Base and quote inventory are shown separately. Inventory does not guarantee execution for a particular order size.</p>
-    {live && q.isError ? <ErrorState title="Pool discovery unavailable" text={q.error.message} onRetry={() => void q.refetch()}/> : <DataTable caption="Kuru liquidity pools" rows={rows} rowKey={row => row.token} empty={<EmptyState title={live && q.isPending ? 'Loading pools…' : 'No indexed Kuru pools'} text="Only graduated RetroPick Kuru markets appear here."/>} columns={[
-      { key: 'pool', header: 'Pool', cell: row => <Link className="rp-link" href={`/liquidity/pools/${row.token}`}>{row.baseSymbol} / {row.quoteSymbol}</Link> },
-      { key: 'base', header: 'AMM base assets', align: 'right', cell: row => row.baseAssetsRaw === null ? 'Unavailable' : `${formatRaw(row.baseAssetsRaw, row.baseDecimals)} ${row.baseSymbol}` },
-      { key: 'quote', header: 'AMM quote assets', align: 'right', cell: row => row.quoteAssetsRaw === null ? 'Unavailable' : `${formatRaw(row.quoteAssetsRaw, row.quoteDecimals)} ${row.quoteSymbol}` },
-      { key: 'state', header: 'Snapshot', cell: row => row.status === 'UNAVAILABLE' ? 'Unavailable' : row.historyComplete ? 'Indexed' : 'History backfill pending' },
-      { key: 'action', header: 'Actions', cell: row => <div className="rp-liquidity-actions"><Link className="rp-link" href={`/launchpad/token/${row.token}`}>Trade</Link><Link className="rp-link" href={`/liquidity/market-making?token=${row.token}`}>Make markets</Link></div> },
-    ]}/>}
-    {live && !q.isError && q.data && <PageLinks cursor={cursor} next={q.data.nextCursor} onCursor={setCursor}/>}
-  </section>;
+function KuruLiquidityOverview({ initialTab = 'explore' }: { initialTab?: 'explore' | 'positions' }) {
+  const [activeTab, setActiveTab] = useState<'explore' | 'positions'>(initialTab);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [positions, setPositions] = useState<KuruPosition[]>(INITIAL_USER_POSITIONS);
+
+  const [selectedPoolForAdd, setSelectedPoolForAdd] = useState<KuruPoolMarket | null>(null);
+  const [selectedVault, setSelectedVault] = useState<KuruVault | null>(null);
+
+  // Live indexer query if live mode is active
+  const q = useQuery({
+    queryKey: launchKeys.resource('all', 'liquidity-pools'),
+    enabled: live && !!INDEXER_URL,
+    queryFn: ({ signal }) => fetchPools(INDEXER_URL!, undefined, signal),
+    refetchInterval: 15_000,
+  });
+
+  const filteredPools = KURU_POOLS.filter(
+    (p) =>
+      p.symbol.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.baseToken.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handlePositionCreated = (newPos: KuruPosition) => {
+    setPositions((prev) => [newPos, ...prev]);
+    setActiveTab('positions');
+  };
+
+  const handleWithdraw = (posId: string) => {
+    setPositions((prev) => prev.filter((p) => p.id !== posId));
+  };
+
+  return (
+    <div className="rp-kuru-liquidity">
+      {/* SECTION 1: Explore Vaults */}
+      <section className="rp-vaults-section">
+        <h2 className="rp-section-title">Explore vaults</h2>
+        <div className="rp-vaults-grid">
+          {KURU_VAULTS.map((vault) => (
+            <div
+              key={vault.id}
+              onClick={() => setSelectedVault(vault)}
+              className="rp-vault-card group"
+              role="button"
+              tabIndex={0}
+            >
+              {/* Header: Pair + APR */}
+              <div className="rp-vault-card-header">
+                <div className="rp-pair-identity">
+                  <div className="rp-pair-icons">
+                    <span
+                      className="rp-token-dot"
+                      style={{ backgroundColor: vault.baseToken.iconBg }}
+                    >
+                      {vault.baseToken.iconText || vault.baseToken.symbol[0]}
+                    </span>
+                    <span
+                      className="rp-token-dot"
+                      style={{ backgroundColor: vault.quoteToken.iconBg }}
+                    >
+                      {vault.quoteToken.iconText || vault.quoteToken.symbol[0]}
+                    </span>
+                  </div>
+                  <span className="rp-pair-symbol">{vault.symbol}</span>
+                </div>
+
+                <div className="rp-apr-badge-wrap">
+                  <span className="rp-apr-text">APR {vault.apr.toFixed(1)}%</span>
+                  {vault.isBoosted ? (
+                    <span className="rp-apr-sparkle-pill" title="Boosted Vault">
+                      <MagicWandIcon className="w-3.5 h-3.5 text-[#eab308]" />
+                    </span>
+                  ) : (
+                    <span className="rp-apr-info-pill" title="Standard Vault">
+                      <InfoCircledIcon className="w-3.5 h-3.5 text-[var(--text-dim)]" />
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Bottom stats: TVL & 24h Vol */}
+              <div className="rp-vault-card-footer">
+                <div className="rp-metric-item">
+                  <span className="rp-metric-label">TVL</span>
+                  <span className="rp-metric-value">{formatUsd(vault.tvl)}</span>
+                </div>
+                <div className="rp-metric-item">
+                  <span className="rp-metric-label">24h Vol.</span>
+                  <span className="rp-metric-value">{formatUsd(vault.volume24h)}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 2: Explore pools / Your positions */}
+      <section className="rp-pools-section">
+        <div className="rp-pools-header-row">
+          <div className="rp-subtabs-wrap">
+            <button
+              onClick={() => setActiveTab('explore')}
+              className={`rp-subtab-btn ${activeTab === 'explore' ? 'active' : ''}`}
+            >
+              Explore pools
+              {activeTab === 'explore' && <span className="rp-subtab-indicator" />}
+            </button>
+            <button
+              onClick={() => setActiveTab('positions')}
+              className={`rp-subtab-btn ${activeTab === 'positions' ? 'active' : ''}`}
+            >
+              Your positions
+              {positions.length > 0 && (
+                <span className="rp-positions-counter">{positions.length}</span>
+              )}
+              {activeTab === 'positions' && <span className="rp-subtab-indicator" />}
+            </button>
+          </div>
+
+          {activeTab === 'explore' && (
+            <div className="rp-search-wrap">
+              <MagnifyingGlassIcon className="rp-search-icon w-3.5 h-3.5 text-[var(--text-dim)]" />
+              <input
+                type="text"
+                placeholder="Search pools"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="rp-search-input"
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Tab 1: Explore pools table */}
+        {activeTab === 'explore' && (
+          <div className="rp-pools-table-card">
+            <div className="rp-table-responsive">
+              <table className="rp-kuru-table">
+                <thead>
+                  <tr>
+                    <th className="th-market">Market</th>
+                    <th className="th-num">TVL</th>
+                    <th className="th-num">Volume (24h)</th>
+                    <th className="th-num">Fees (24h)</th>
+                    <th className="th-num">Pool APR</th>
+                    <th className="th-action">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredPools.map((pool) => (
+                    <tr key={pool.id} className="rp-pool-row">
+                      {/* Market */}
+                      <td className="td-market">
+                        <div className="rp-market-cell">
+                          <div className="rp-pair-icons">
+                            <span
+                              className="rp-token-dot"
+                              style={{ backgroundColor: pool.baseToken.iconBg }}
+                            >
+                              {pool.baseToken.iconText || pool.baseToken.symbol[0]}
+                            </span>
+                            <span
+                              className="rp-token-dot"
+                              style={{ backgroundColor: pool.quoteToken.iconBg }}
+                            >
+                              {pool.quoteToken.iconText || pool.quoteToken.symbol[0]}
+                            </span>
+                          </div>
+                          <div>
+                            <div className="rp-market-name-wrap">
+                              <span className="rp-market-name">{pool.symbol}</span>
+                              {pool.verified && (
+                                <CheckCircle2 size={13} className="text-pos rp-verified-icon" />
+                              )}
+                            </div>
+                            <span className="rp-market-id">{pool.id}</span>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* TVL */}
+                      <td className="td-num">
+                        <span className="font-mono">{formatUsd(pool.tvl)}</span>
+                      </td>
+
+                      {/* 24h Vol */}
+                      <td className="td-num">
+                        <span className="font-mono">{formatUsd(pool.volume24h)}</span>
+                      </td>
+
+                      {/* 24h Fees */}
+                      <td className="td-num">
+                        <span className="font-mono">{formatUsd(pool.fees24h)}</span>
+                      </td>
+
+                      {/* Pool APR */}
+                      <td className="td-num">
+                        <span className="font-mono">
+                          {pool.poolApr > 0 ? `${pool.poolApr.toFixed(1)}%` : '0%'}
+                        </span>
+                      </td>
+
+                      {/* Actions */}
+                      <td className="td-action">
+                        <div className="rp-row-actions">
+                          {pool.id === '#00101' ? (
+                            <>
+                              <Link
+                                href={`/liquidity/pools/demo-graduated`}
+                                className="rp-action-link"
+                              >
+                                View
+                              </Link>
+                              <Link
+                                href={`/launchpad/token/demo-graduated`}
+                                className="rp-action-link"
+                              >
+                                Trade
+                              </Link>
+                              <button
+                                className="rp-btn-add-liquidity"
+                                onClick={() => setSelectedPoolForAdd(pool)}
+                              >
+                                Add liquidity
+                              </button>
+                            </>
+                          ) : (
+                            <button
+                              className="rp-btn-add-liquidity"
+                              onClick={() => setSelectedPoolForAdd(pool)}
+                            >
+                              Add liquidity
+                            </button>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {filteredPools.length === 0 && (
+              <div className="rp-empty-pools">
+                <p>No pools matching "{searchQuery}"</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Tab 2: Your positions */}
+        {activeTab === 'positions' && (
+          <div className="rp-positions-container">
+            {positions.length === 0 ? (
+              <div className="rp-positions-empty">
+                <p className="rp-empty-title">No Active LP Positions</p>
+                <p className="rp-note">
+                  You do not have any open liquidity positions on Monad Testnet yet.
+                </p>
+                <button
+                  className="rp-btn rp-btn-primary"
+                  onClick={() => setActiveTab('explore')}
+                >
+                  Explore Pools to Deposit
+                </button>
+              </div>
+            ) : (
+              <div className="rp-positions-list">
+                {positions.map((pos) => (
+                  <div key={pos.id} className="rp-position-card">
+                    <div className="rp-pos-header">
+                      <div className="rp-pos-title-wrap">
+                        <h3>{pos.marketSymbol}</h3>
+                        <span className="rp-pos-type-tag">
+                          {pos.type === 'vault' ? 'Automated Vault' : 'CLOB Liquidity'}
+                        </span>
+                        <span className="rp-pos-status-badge in-range">
+                          <span className="dot" /> In Range
+                        </span>
+                      </div>
+                      <div className="rp-pos-actions">
+                        <button
+                          className="rp-btn-withdraw"
+                          onClick={() => handleWithdraw(pos.id)}
+                        >
+                          Withdraw
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="rp-pos-stats-grid">
+                      <div>
+                        <span className="rp-dim">Total Value</span>
+                        <strong className="text-pos">${formatUsd(pos.totalValueUsd)}</strong>
+                      </div>
+                      <div>
+                        <span className="rp-dim">Earned Fees</span>
+                        <strong className="text-accent">${formatUsd(pos.earnedFeesUsd)}</strong>
+                      </div>
+                      <div>
+                        <span className="rp-dim">Deposited Assets</span>
+                        <span className="font-mono">
+                          {pos.baseDeposited} {pos.baseTokenSymbol} + {pos.quoteDeposited}{' '}
+                          {pos.quoteTokenSymbol}
+                        </span>
+                      </div>
+                      {pos.minPrice && pos.maxPrice && (
+                        <div>
+                          <span className="rp-dim">Price Range</span>
+                          <span className="font-mono">
+                            ${pos.minPrice.toFixed(2)} - ${pos.maxPrice.toFixed(2)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* Modals */}
+      {selectedPoolForAdd && (
+        <AddLiquidityModal
+          pool={selectedPoolForAdd}
+          isOpen={!!selectedPoolForAdd}
+          onClose={() => setSelectedPoolForAdd(null)}
+          onSuccess={handlePositionCreated}
+        />
+      )}
+
+      {selectedVault && (
+        <VaultDetailModal
+          vault={selectedVault}
+          isOpen={!!selectedVault}
+          onClose={() => setSelectedVault(null)}
+          onSuccess={handlePositionCreated}
+        />
+      )}
+    </div>
+  );
 }
 
 function PoolDetails({ token }: { token: string }) {
@@ -85,24 +459,4 @@ function PoolHistory({ token, pool }: { token: string; pool?: IndexedLiquidityPo
     ]}/>}
     {live && !q.isError && q.data && <PageLinks cursor={cursor} next={q.data.nextCursor} onCursor={setCursor}/>}
   </section>;
-}
-
-function LPPositions() {
-  const wallet = useWallet(), account = wallet.account;
-  const [cursor, setCursor] = useState<string>();
-  const q = useQuery({ queryKey: launchKeys.wallet(account ?? 'disconnected', `lp-positions:${cursor ?? ''}`), enabled: live && !!account && !!INDEXER_URL, queryFn: ({ signal }) => fetchLPPositions(INDEXER_URL!, account!, cursor, signal), refetchInterval: cursor ? false : 15_000 });
-  if (live && !account) return <EmptyState title="Connect a wallet to see LP positions" text="LP shares are distinct from Kuru trading margin." action={<button className="rp-btn rp-btn-primary" onClick={() => void wallet.connect().catch(() => {})}>Connect wallet</button>}/>;
-  const rows: IndexedLPPosition[] = live ? q.data?.data ?? [] : [];
-  return <section className="rp-liquidity-card" aria-label="Your LP positions"><div className="rp-liquidity-header"><h2>My Positions</h2>{live && <LiquidityFreshness freshness={q.data?.freshness}/>}</div><p className="rp-note">Read-only wallet-owned LP shares. Protected graduation shares belong to the protocol lock. Trading capital and open orders remain separate.</p>
-    {live && q.isError ? <ErrorState title="LP positions unavailable" text="Position history is unavailable or still syncing. This does not establish a zero share balance." onRetry={() => void q.refetch()}/> : rows.length ? rows.map(row => <VerifiedPosition key={`${row.vault}:${row.wallet}`} row={row} account={account!}/>) : <EmptyState title={live && q.isPending ? 'Loading LP positions…' : 'No indexed LP positions on this page'} text={live ? 'Only verified, indexed Kuru vault positions appear here.' : 'The demo wallet has no LP shares. Demo margin balances are trading capital, not LP ownership.'}/>}
-    {live && !q.isError && q.data && <PageLinks cursor={cursor} next={q.data.nextCursor} onCursor={setCursor}/>}
-  </section>;
-}
-
-function VerifiedPosition({ row, account }: { row: IndexedLPPosition; account: Address }) {
-  const q = useKuruLiquidity(row.token, account);
-  const view = liquidityView(row.token, q.data, { loading: q.isPending, error: q.isError ? q.error.message : null, stale: !!q.data && (q.isError || Date.now() - q.dataUpdatedAt >= 20_000) });
-  return <article className="rp-liquidity-card"><h3><Link className="rp-link" href={`/liquidity/pools/${row.token}`}>View pool</Link> <AddressChip value={row.token} label="position token"/></h3><p className="rp-note">{row.role === 'PROTECTED' ? 'Protected protocol position' : row.role === 'INFRASTRUCTURE' ? 'Infrastructure position' : 'Wallet position'} · {view.block ? `chain block ${view.block}` : 'Chain confirmation unavailable'}</p>
-    <dl className="rp-liquidity-quotes"><div><dt>Current shares</dt><dd><StateValue status={view.position.status}>{view.shareDecimals === null ? `${view.position.sharesRaw ?? '—'} atomic shares` : formatRaw(view.position.sharesRaw, view.shareDecimals)}</StateValue></dd></div><div><dt>Underlying preview · base / quote</dt><dd><StateValue status={view.position.status}>{formatRaw(view.position.baseRaw, view.baseDecimals)} / {formatRaw(view.position.quoteRaw, view.quoteDecimals)}</StateValue></dd></div></dl><p className="rp-note">Underlying values are the current vault withdrawal preview; they are not guaranteed withdrawal proceeds.</p>
-  </article>;
 }

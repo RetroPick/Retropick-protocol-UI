@@ -1,10 +1,10 @@
 'use client';
 // Claims tab: ready escrow credits, one-step-away buyback releases and the claim history ledger.
-// All data comes from the shared useEarnWallet query; actions reuse the SDK prepare functions.
 import { formatUnits, zeroAddress } from 'viem';
-import { Coins, Download, Hourglass, ReceiptText, Wallet } from 'lucide-react';
+import { RiCoinsLine, RiWallet3Line } from 'react-icons/ri';
+import { FiDownload, FiClock, FiFileText } from 'react-icons/fi';
 import { toast } from 'sonner';
-import { AddressChip, DataTable, ErrorState, InfoHint, SkeletonLine, type Column } from '@/components/trading/primitives';
+import { AddressChip, DataTable, ErrorState, SkeletonLine, type Column } from '@/components/trading/primitives';
 import { ClaimRowItem } from './claim-sheet';
 import { MonoAmount, Reveal } from './amount';
 import { age } from '@/lib/live/format';
@@ -28,7 +28,7 @@ function ClaimSkeleton() {
 
 function NoCreditsEmpty() {
   return <div className="rp-empty-panel">
-    <Disc><Coins size={22} aria-hidden /></Disc>
+    <Disc><RiCoinsLine size={22} aria-hidden /></Disc>
     <strong>No escrow credits right now</strong>
     <p>Credits build up as traders buy and sell your launches on the bonding curve.</p>
     <div className="rp-steps" aria-label="How credits build up">
@@ -41,7 +41,7 @@ function NoCreditsEmpty() {
 
 function BuybackEmpty() {
   return <div className="rp-empty-panel rp-empty-compact">
-    <Disc><Hourglass size={18} aria-hidden /></Disc>
+    <Disc><FiClock size={18} aria-hidden /></Disc>
     <div><strong>No indexed vesting positions</strong>
       <p>Buyback vault shares vest over time. When a release becomes available it appears here, one step away from claiming.</p></div>
   </div>;
@@ -86,16 +86,15 @@ function ClaimHistoryCard({ claims, assets }: { claims: IndexedClaim[]; assets: 
   ];
   return <Reveal delay={0.12}><div className="rp-hub-card">
     <div className="rp-hub-card-head">
-      <span className="rp-card-icon"><ReceiptText size={15} aria-hidden /></span>
+      <span className="rp-card-icon"><FiFileText size={15} aria-hidden /></span>
       <h3>Claim history</h3>
       <span className="rp-count-chip">{claims.length} confirmed</span>
       <div className="rp-card-aside">
-        {rows.length > 0 && <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={exportCsv}><Download size={13} aria-hidden />Export CSV</button>}
-        <InfoHint text="Indexed claim transactions for this wallet. Newest entries may lag the chain by the indexer's block lag." />
+        {rows.length > 0 && <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={exportCsv}><FiDownload size={13} aria-hidden />Export CSV</button>}
       </div>
     </div>
     <DataTable caption="Claim history" columns={columns} rows={rows} rowKey={(row) => row.id}
-      empty={<div className="rp-empty-panel rp-empty-compact"><Disc><ReceiptText size={18} aria-hidden /></Disc>
+      empty={<div className="rp-empty-panel rp-empty-compact"><Disc><FiFileText size={18} aria-hidden /></Disc>
         <div><strong>No indexed claims yet</strong><p>Once you claim escrow credits, confirmed transactions appear here with explorer links.</p></div></div>} />
   </div></Reveal>;
 }
@@ -103,7 +102,7 @@ function ClaimHistoryCard({ claims, assets }: { claims: IndexedClaim[]; assets: 
 export function ClaimsTab({ earn }: { earn: Earn }) {
   const { account, state, claimRows, buybackRows, claims, phaseOf, claimRow, releaseBuyback, batch } = earn;
   if (!account) return <Reveal><div className="rp-empty-panel">
-    <Disc><Wallet size={22} aria-hidden /></Disc>
+    <Disc><RiWallet3Line size={22} aria-hidden /></Disc>
     <strong>Connect a wallet to see your earnings</strong>
     <p>Creator fee escrow credits, buyback releases and the claim history of your Monad Testnet wallet appear here.</p>
   </div></Reveal>;
@@ -112,9 +111,8 @@ export function ClaimsTab({ earn }: { earn: Earn }) {
   return <div className="rp-hub-section">
     <Reveal><div className="rp-hub-card">
       <div className="rp-hub-card-head">
-        <span className="rp-card-icon"><Coins size={15} aria-hidden /></span>
+        <span className="rp-card-icon"><RiCoinsLine size={15} aria-hidden /></span>
         <h3>Ready to claim</h3>
-        <InfoHint text="The RetroPick fee escrow credits your wallet on every curve trade of launches you created. Each claim is a separate signature." />
         <div className="rp-card-aside">{claimRows.length > 0 && <span className="rp-count-chip">{claimRows.length} asset{claimRows.length === 1 ? '' : 's'}</span>}</div>
       </div>
       {claimRows.length
@@ -124,9 +122,8 @@ export function ClaimsTab({ earn }: { earn: Earn }) {
     </div></Reveal>
     <Reveal delay={0.06}><div className="rp-hub-card">
       <div className="rp-hub-card-head">
-        <span className="rp-card-icon"><Hourglass size={15} aria-hidden /></span>
+        <span className="rp-card-icon"><FiClock size={15} aria-hidden /></span>
         <h3>Buyback releases</h3>
-        <InfoHint text="Vested buyback shares become releasable over time. Releasing credits the fee escrow; claim the token separately afterwards." />
       </div>
       {buybackRows.length
         ? <div className="rp-claim-list">{buybackRows.map((row) =>

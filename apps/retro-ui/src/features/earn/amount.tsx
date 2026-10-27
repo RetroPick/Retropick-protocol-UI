@@ -3,7 +3,7 @@
 // value preserved on hover + click-to-copy, and a staggered motion reveal for section cards.
 import { useEffect, useState, type ReactNode } from 'react';
 import { motion } from 'motion/react';
-import { Check, Copy } from 'lucide-react';
+import { FiCheck, FiCopy } from 'react-icons/fi';
 import { formatUnits } from 'viem';
 import { exactAmount } from '@/lib/live/format';
 
@@ -25,7 +25,7 @@ export function MonoAmount({ raw, decimals, digits = 6, unit }: {
     <span className="rp-mono" title={exact ? `Exact: ${exact}${unit ? ` ${unit}` : ''}` : undefined}>{display}</span>
     {unit && <small>{unit}</small>}
     {exact && <button type="button" className="rp-amount-copy-btn" aria-label={`Copy exact amount ${exact} ${unit ?? ''}`}
-      onClick={copy}>{copied ? <Check size={11} className="rp-amount-copied" aria-hidden /> : <Copy size={11} className="rp-amount-copy" aria-hidden />}</button>}
+      onClick={copy}>{copied ? <FiCheck size={11} className="rp-amount-copied" aria-hidden /> : <FiCopy size={11} className="rp-amount-copy" aria-hidden />}</button>}
     <span className="rp-sr" aria-live="polite">{copied ? 'Copied' : ''}</span>
   </span>;
 }

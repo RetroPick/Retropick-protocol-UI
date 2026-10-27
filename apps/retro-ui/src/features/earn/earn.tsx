@@ -9,7 +9,6 @@ import { useQuery } from '@tanstack/react-query';
 import { formatUnits } from 'viem';
 import { motion } from 'motion/react';
 import { Tabs as RTabs } from 'radix-ui';
-import { ArrowUpRight, Coins, Gift, Layers, Link2, Lock, Rocket, Send, ShieldCheck, Wallet } from 'lucide-react';
 import Link from '@/components/product/safe-link';
 import Portfolio from '@/features/portfolio/portfolio';
 import { LivePortfolio } from '@/features/portfolio/live-portfolio';
@@ -35,21 +34,40 @@ import { LaunchTable } from '@/features/launchpad/launch-table';
 import { age } from '@/lib/live/format';
 import './earn-hub.css';
 
+import { EarnPortfolioDashboard } from './components/EarnPortfolioDashboard';
+import { EarnPerformanceView } from './components/EarnPerformanceView';
+import { EarnProtectionView } from './components/EarnProtectionView';
+import { 
+  RiWallet3Line, 
+  RiCoinsLine, 
+  RiLineChartLine, 
+  RiRocketLine, 
+  RiGiftLine, 
+  RiSendPlaneLine, 
+  RiSafe2Line, 
+  RiShieldCheckLine,
+  RiDatabase2Line,
+  RiStackLine,
+  RiExchangeDollarLine
+} from 'react-icons/ri';
+import { toast } from 'sonner';
+
 const TABS: Array<[string, string, ReactNode]> = [
-  ['claims', 'Claims', <Coins key="c" size={14} aria-hidden />],
-  ['portfolio', 'Portfolio', <Wallet key="p" size={14} aria-hidden />],
-  ['created', 'Created', <Rocket key="l" size={14} aria-hidden />],
-  ['referrals', 'Referrals', <Gift key="r" size={14} aria-hidden />],
-  ['funding', 'Fund & send', <Send key="f" size={14} aria-hidden />],
-  ['vault', 'Vault', <Lock key="v" size={14} aria-hidden />],
-  ['protection', 'Protection', <ShieldCheck key="s" size={14} aria-hidden />],
+  ['portfolio', 'Portfolio', <RiWallet3Line key="p" size={14} className="shrink-0" aria-hidden />],
+  ['claims', 'Claims', <RiCoinsLine key="c" size={14} className="shrink-0" aria-hidden />],
+  ['performance', 'Performance', <RiLineChartLine key="b" size={14} className="shrink-0" aria-hidden />],
+  ['created', 'Created', <RiRocketLine key="l" size={14} className="shrink-0" aria-hidden />],
+  ['referrals', 'Referrals', <RiGiftLine key="r" size={14} className="shrink-0" aria-hidden />],
+  ['funding', 'Fund & Send', <RiSendPlaneLine key="f" size={14} className="shrink-0" aria-hidden />],
+  ['vault', 'Vault', <RiSafe2Line key="v" size={14} className="shrink-0" aria-hidden />],
+  ['protection', 'Protection', <RiShieldCheckLine key="s" size={14} className="shrink-0" aria-hidden />],
 ];
 
 function initialTab(): string {
   try {
     const hash = window.location.hash.slice(1);
-    return TABS.some(([id]) => id === hash) ? hash : 'claims';
-  } catch { return 'claims'; }
+    return TABS.some(([id]) => id === hash) ? hash : 'portfolio';
+  } catch { return 'portfolio'; }
 }
 
 function HubTabs({ tab, onTab, contents }: { tab: string; onTab: (value: string) => void; contents: Record<string, ReactNode> }) {
@@ -74,7 +92,7 @@ function CreatedLaunches() {
   const rows = (q.data?.pages.flatMap(page => page.data) ?? []).map(liveRow);
   if (q.isPending && account) return <p role="status">Loading created launches…</p>;
   if (!account) return <Reveal><div className="rp-empty-panel">
-    <span className="rp-empty-disc"><Rocket size={22} aria-hidden /></span>
+    <span className="rp-empty-disc"><RiRocketLine size={22} aria-hidden /></span>
     <strong>Connect a wallet to see launches you created</strong>
     <p>Every launch lists its creator wallet; yours appear here with their curve status, volume and fees.</p>
   </div></Reveal>;
@@ -84,7 +102,7 @@ function CreatedLaunches() {
     {rows.length
       ? <Reveal><LaunchTable rows={rows} view="list" now={Date.now()} /></Reveal>
       : <Reveal><div className="rp-empty-panel">
-        <span className="rp-empty-disc"><Rocket size={22} aria-hidden /></span>
+        <span className="rp-empty-disc"><RiRocketLine size={22} aria-hidden /></span>
         <strong>No indexed launches list this wallet as creator</strong>
         <p>Launch a token on the bonding curve and it appears here with its lifecycle, volume and fee escrow.</p>
         <div className="rp-empty-actions">
@@ -105,7 +123,9 @@ function LiveHub() {
   const openClaims = () => setSheetOpen(true);
   return <HideValuesProvider>
     <div className="rp-hub" data-testid="earn-hub" data-data-mode="live">
-      <header className="rp-hub-head"><div><h1>Earn &amp; Portfolio</h1><p>Real balances, claims and attribution for your connected Monad Testnet wallet.</p></div></header>
+      <header className="rp-hub-head">
+        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white m-0">Earn &amp; Portfolio</h1>
+      </header>
       <EarnHero mode="live"
         claimable={data ? formatUnits(data.nativeCreditRaw, 18) : '—'}
         ready={(data?.nativeCreditRaw ?? 0n) > 0n}
@@ -113,18 +133,37 @@ function LiveHub() {
         onOpenClaims={openClaims}
         canClaim={!!earn.account && earn.claimRows.length > 0}
         stats={[
-          { label: 'Wallet MON', value: <Money value={data ? Number(formatUnits(data.monRaw, 18)) : null} />, hint: 'Spendable native balance read from chain.' },
-          { label: 'Kuru margin MON', value: <Money value={data ? Number(formatUnits(data.nativeMarginRaw, 18)) : null} />, hint: 'Free margin balance on the Kuru margin account. Withdraw from the Portfolio tab.' },
-          { label: 'Lifetime claims', value: earn.claims.length || '0', note: lastClaim ? `Last claim ${age(lastClaim.timestamp)} ago` : 'No claims yet' },
+          {
+            label: 'Wallet Balance',
+            value: <Money value={data ? Number(formatUnits(data.monRaw, 18)) : null} />,
+            unit: 'MON',
+            subValue: data ? `≈ $${(Number(formatUnits(data.monRaw, 18)) * 12.80).toFixed(2)}` : 'Onchain balance',
+            icon: <RiWallet3Line size={13} style={{ color: '#836ef9' }} />,
+          },
+          {
+            label: 'Kuru Margin',
+            value: <Money value={data ? Number(formatUnits(data.nativeMarginRaw, 18)) : null} />,
+            unit: 'MON',
+            subValue: 'Free CLOB margin',
+            icon: <RiExchangeDollarLine size={13} style={{ color: '#5feddf' }} />,
+          },
+          {
+            label: 'Lifetime Claims',
+            value: earn.claims.length ? `${earn.claims.length}` : '0',
+            unit: 'TX',
+            note: lastClaim ? `Last ${age(lastClaim.timestamp)} ago` : 'No claims yet',
+            icon: <RiShieldCheckLine size={13} style={{ color: '#b09cfa' }} />,
+          },
         ]} />
       <HubTabs tab={tab} onTab={(value) => { setTab(value); try { history.replaceState(null, '', `#${value}`); } catch { /* ignore */ } }} contents={{
-        claims: <ClaimsTab earn={earn} />,
         portfolio: <LivePortfolio />,
+        claims: <ClaimsTab earn={earn} />,
+        performance: <EarnPerformanceView isPopulated={true} />,
         created: <CreatedLaunches />,
         referrals: <Reveal delay={0.05}><ReferralCard /></Reveal>,
         funding: <Reveal delay={0.05}><FundWallet><SendToWallet /></FundWallet></Reveal>,
         vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
-        protection: <Reveal delay={0.05}><ProtectedEarn /></Reveal>,
+        protection: <EarnProtectionView />,
       }} />
       <ClaimSheet open={sheetOpen} onOpenChange={setSheetOpen} earn={earn} />
     </div>
@@ -133,71 +172,130 @@ function LiveHub() {
 
 const DEMO_REFERRAL = 'https://demo.retropick.xyz/r/DEMO-0001';
 
-function DemoClaims() {
+function DemoClaims({ isPopulated }: { isPopulated?: boolean }) {
   return <section className="rp-hub-section">
     <div className="rp-tile-grid">
-      <div className="rp-tile"><span className="rp-tile-label"><span className="rp-cell-glyph" style={{ color: '#836ef9', background: '#836ef91f' }} aria-hidden><Coins size={13} /></span>Creator fees<InfoHint text="The creator fee configured on each launch (shown on the token's Protocol tab) is credited to the fee escrow on every curve trade." /></span><strong>—</strong><small>Fee escrow credit · live only</small></div>
-      <div className="rp-tile"><span className="rp-tile-label"><span className="rp-cell-glyph" style={{ color: '#b09cfa', background: '#b09cfa1f' }} aria-hidden><Layers size={13} /></span>Buyback / vested release</span><strong>—</strong><small>Releasable share from buyback vaults · live only</small></div>
-      <div className="rp-tile"><span className="rp-tile-label"><span className="rp-cell-glyph" style={{ color: '#5feddf', background: '#5feddf1f' }} aria-hidden><Gift size={13} /></span>Referral earnings</span><strong>Not enabled</strong><small>Referral attribution is tracked; payouts are not funded.</small></div>
+      <div className="rp-tile">
+        <span className="rp-tile-label">
+          <span className="rp-cell-glyph" style={{ color: '#836ef9', background: '#836ef91f' }} aria-hidden><RiCoinsLine size={13} /></span>
+          Creator fees
+        </span>
+        <strong>{isPopulated ? '88.50 MON ($1,132.80)' : '—'}</strong>
+        <small>{isPopulated ? 'Ready to claim in active session' : 'Fee escrow credit'}</small>
+      </div>
+      <div className="rp-tile">
+        <span className="rp-tile-label">
+          <span className="rp-cell-glyph" style={{ color: '#b09cfa', background: '#b09cfa1f' }} aria-hidden><RiStackLine size={13} /></span>
+          Buyback / vested release
+        </span>
+        <strong>{isPopulated ? '36.00 MON ($460.80)' : '—'}</strong>
+        <small>{isPopulated ? 'Vested release 100% unlocked' : 'Releasable share from buyback vaults'}</small>
+      </div>
+      <div className="rp-tile">
+        <span className="rp-tile-label">
+          <span className="rp-cell-glyph" style={{ color: '#5feddf', background: '#5feddf1f' }} aria-hidden><RiGiftLine size={13} /></span>
+          Referral earnings
+        </span>
+        <strong>{isPopulated ? '14 referrals tracked' : 'Not enabled'}</strong>
+        <small>{isPopulated ? 'Attribution link active' : 'Referral attribution is tracked'}</small>
+      </div>
     </div>
-    <p className="rp-note">In live mode the claim sheet lists one row per asset with its own signed claim transaction, plus a sequential claim-all for the batch.</p>
+
+    <div className="mt-2 p-4 rounded-xl bg-[#12141c] border-none flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[0_4px_16px_rgba(0,0,0,0.25)]">
+      <div className="flex items-center gap-2">
+        <span className="text-sm text-white font-bold">Unclaimed Protocol Royalties</span>
+        <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#5feddf]/15 text-[#5feddf] font-bold">Monad Testnet</span>
+      </div>
+      <button
+        onClick={() => toast.success(isPopulated ? 'Simulated batch claim confirmed: +124.50 MON' : 'No escrow balance to claim')}
+        className="rp-btn rp-btn-primary rp-btn-sm whitespace-nowrap"
+      >
+        {isPopulated ? 'Claim All Escrow' : 'Check Escrow'}
+      </button>
+    </div>
   </section>;
 }
 
 function DemoHub() {
-  const demo = useDemo();
   const [copied, copy] = useCopy();
-  const [showPositions, setShowPositions] = useState(false);
+  const [isPopulated, setIsPopulated] = useState(true);
   const [tab, setTab] = useState(initialTab);
+
   return <HideValuesProvider>
     <div className="rp-hub" data-testid="earn-hub" data-data-mode="demo">
-      <header className="rp-hub-head"><div><h1>Earn &amp; Portfolio <DemoBadge /></h1><p>How creator fees, buyback releases, referrals and wallet funding appear in RetroPick. No real funds and no claim contract are connected in demo mode.</p></div></header>
-      <EarnHero mode="demo" claimable="—" ready={false} tokenCreditCount={0} stats={[
-        { label: 'Wallet MON', value: '—', hint: 'Live mode reads the spendable native balance from chain.' },
-        { label: 'Kuru margin MON', value: '—', hint: 'Live mode reads the free margin balance on the Kuru margin account.' },
-        { label: 'Lifetime claims', value: '—', hint: 'Live mode counts indexed claim transactions for the wallet.' },
-      ]} />
-      <HubTabs tab={tab} onTab={(value) => { setTab(value); try { history.replaceState(null, '', `#${value}`); } catch { /* ignore */ } }} contents={{
-        claims: <DemoClaims />,
-        portfolio: <section className="rp-hub-section" aria-label="Portfolio">
-          <div className="rp-hub-row"><h2 className="rp-section-title"><Wallet size={15} aria-hidden />Portfolio</h2>
-            <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={() => setShowPositions((v) => !v)} aria-expanded={showPositions}>{showPositions ? 'Hide demo positions' : 'Show demo positions'}</button></div>
-          <p className="rp-note">Live mode lists wallet assets, Kuru margin (with withdraw), and open orders from chain + indexer.{demo.connected ? '' : ' Prediction/PRISM demo positions are available below.'}</p>
-          {showPositions && <div className="rp-hub-embed"><Portfolio /></div>}
-        </section>,
-        created: <Reveal><section className="rp-hub-section">
-          <div className="rp-empty-panel">
-            <span className="rp-empty-disc"><Rocket size={22} aria-hidden /></span>
-            <strong>Launches your wallet creates appear here in live mode</strong>
-            <p>Matched by creator address, with lifecycle status, volume and fee escrow per launch.</p>
-            <div className="rp-empty-actions">
-              <Link className="rp-btn rp-btn-primary" href="/launchpad/create">Launch a token</Link>
-              <Link className="rp-btn rp-btn-ghost" href="/launchpad">Explore launches <ArrowUpRight size={13} aria-hidden /></Link>
-            </div>
-          </div>
-        </section></Reveal>,
-        referrals: <Reveal><section className="rp-hub-section" aria-label="Referrals">
-          <div className="rp-hub-card">
-            <div className="rp-hub-card-head">
-              <span className="rp-card-icon"><Gift size={15} aria-hidden /></span>
-              <h3>Referrals</h3>
-              <span className="rp-chip">Attribution</span>
-            </div>
-            <p className="rp-card-sub">Share a link to attribute confirmed launches and trades to your wallet. Referral earnings are not enabled.</p>
-            <div className="rp-ref-grid">
-              <div className="rp-ref">
-                <div className="rp-ref-link"><Link2 size={13} aria-hidden style={{ color: 'var(--text-3)', flexShrink: 0 }} /><input id="demo-ref" readOnly value={DEMO_REFERRAL} aria-label="Your referral link" /></div>
-                <button type="button" className="rp-btn rp-btn-sm" onClick={() => copy(DEMO_REFERRAL)}>{copied ? 'Link copied' : 'Copy'}</button>
-                <DemoBadge />
-              </div>
-              <ReferralQr value={DEMO_REFERRAL} label="Demo referral link" />
-            </div>
-          </div>
-        </section></Reveal>,
-        funding: <Reveal><section className="rp-hub-section"><FundWallet /><div className="rp-hub-send"><h3 className="rp-section-title"><Send size={15} aria-hidden />Send</h3><p className="rp-note">Transfers to an EVM address on Monad Testnet. Connect a live wallet in live mode; demo mode never sends.</p></div></section></Reveal>,
-        vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
-        protection: <Reveal delay={0.05}><div className="rp-hub-section"><p className="rp-note">Protected Earn (passkey-controlled creator-fee wallet) is a live-mode feature. Switch to live mode and connect a wallet to derive your protected wallet and review a fee-recipient handoff.</p></div></Reveal>,
-      }} />
+      <header className="rp-hub-head">
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white m-0">Earn &amp; Portfolio</h1>
+          <button
+            type="button"
+            onClick={() => {
+              setIsPopulated(v => !v);
+              toast.info(!isPopulated ? 'Sample active portfolio activated' : 'Switched to clean $0 state');
+            }}
+            className="px-3 py-1.5 rounded-lg border-none text-xs font-mono font-medium transition-all cursor-pointer flex items-center gap-2"
+            style={{
+              background: isPopulated ? 'rgba(131, 110, 249, 0.15)' : '#181a24',
+              color: isPopulated ? '#e9e6f5' : '#615a78',
+              boxShadow: isPopulated ? '0 0 12px rgba(131, 110, 249, 0.2)' : 'none'
+            }}
+          >
+            <RiDatabase2Line size={13} style={{ color: isPopulated ? '#836ef9' : '#615a78' }} />
+            <span>{isPopulated ? 'Sample Portfolio' : 'Clean State'}</span>
+          </button>
+        </div>
+      </header>
+
+      <EarnHero
+        mode={isPopulated ? 'live' : 'demo'}
+        claimable={isPopulated ? '124.50' : '—'}
+        ready={isPopulated}
+        tokenCreditCount={isPopulated ? 2 : 0}
+        canClaim={isPopulated}
+        onOpenClaims={() => {
+          toast.success('Batch claims simulated: +124.50 MON');
+        }}
+        stats={[
+          {
+            label: 'Wallet Balance',
+            value: isPopulated ? '88.21' : '—',
+            unit: 'MON',
+            subValue: isPopulated ? '≈ $1,129.08' : 'Spendable balance',
+            icon: <RiWallet3Line size={13} style={{ color: '#836ef9' }} />,
+          },
+          {
+            label: 'Kuru Margin',
+            value: isPopulated ? '10.00' : '—',
+            unit: 'MON',
+            subValue: isPopulated ? '≈ $128.00' : 'Free CLOB margin',
+            icon: <RiExchangeDollarLine size={13} style={{ color: '#5feddf' }} />,
+          },
+          {
+            label: 'Lifetime Claims',
+            value: isPopulated ? '1,420.00' : '—',
+            unit: 'MON',
+            subValue: isPopulated ? '≈ $18,176.00' : 'Total claimed',
+            icon: <RiShieldCheckLine size={13} style={{ color: '#b09cfa' }} />,
+          },
+        ]}
+      />
+
+      <HubTabs
+        tab={tab}
+        onTab={(value) => {
+          setTab(value);
+          try { history.replaceState(null, '', `#${value}`); } catch { /* ignore */ }
+        }}
+        contents={{
+          portfolio: <EarnPortfolioDashboard isPopulated={isPopulated} onTogglePopulate={() => setIsPopulated(v => !v)} />,
+          claims: <DemoClaims isPopulated={isPopulated} />,
+          performance: <EarnPerformanceView isPopulated={isPopulated} />,
+          created: <CreatedLaunches />,
+          referrals: <Reveal delay={0.05}><ReferralCard /></Reveal>,
+          funding: <Reveal delay={0.05}><FundWallet><SendToWallet /></FundWallet></Reveal>,
+          vault: <Reveal delay={0.05}><StrategyVault /></Reveal>,
+          protection: <EarnProtectionView />,
+        }}
+      />
     </div>
   </HideValuesProvider>;
 }
@@ -205,3 +303,4 @@ function DemoHub() {
 export default function EarnPage() {
   return DATA_MODE === 'live' ? <LiveHub /> : <DemoHub />;
 }
+

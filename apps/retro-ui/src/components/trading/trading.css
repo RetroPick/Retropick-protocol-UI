@@ -141,24 +141,31 @@
 .rp-table-skel { display: grid; gap: 10px; padding: 12px 0 }
 
 /* Terminal layout */
-.rp-terminal { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--rp-gap); min-width: 0 }
+.rp-terminal { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0 }
 .rp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); font-family: var(--rp-mono); font-size: 11.5px; width: fit-content }
 .rp-back:hover { color: var(--accent) }
-.rp-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap }
+.rp-head { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 14px 18px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--rp-radius) }
+.rp-head-stats { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 10px 18px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--rp-radius); font-size: 12px }
+.rp-stat-pill { display: flex; align-items: baseline; gap: 6px }
+.rp-stat-label { color: var(--text-dim); font-size: 10.5px; font-family: var(--rp-mono); text-transform: uppercase; letter-spacing: .5px }
+.rp-stat-value { color: var(--text); font-family: var(--rp-mono); font-weight: 650; font-variant-numeric: tabular-nums }
 .rp-price { text-align: right; display: grid; gap: 2px; justify-items: end }
 .rp-price-label { font-family: var(--rp-mono); font-size: 10.5px; letter-spacing: .6px; text-transform: uppercase; color: var(--text-3) }
-.rp-price-main { font-size: clamp(28px, 3.4vw, 40px); font-weight: 750; letter-spacing: -1px; font-variant-numeric: tabular-nums; line-height: 1.05 }
-.rp-price-unit { font-size: 15px; font-weight: 600; color: var(--text-3); margin-left: 8px; letter-spacing: 0 }
-.rp-price-sub { display: flex; gap: 14px; align-items: baseline; font-size: 14px }
+.rp-price-main { font-size: clamp(26px, 3.2vw, 36px); font-weight: 750; letter-spacing: -1px; font-variant-numeric: tabular-nums; line-height: 1.05 }
+.rp-price-unit { font-size: 14px; font-weight: 600; color: var(--text-3); margin-left: 6px; letter-spacing: 0 }
+.rp-price-sub { display: flex; gap: 12px; align-items: baseline; font-size: 13px }
 .rp-change { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; font-variant-numeric: tabular-nums }
 .rp-change small { color: var(--text-3); font-weight: 500 }
 .rp-mcap { color: var(--text-3) } .rp-mcap strong { color: var(--text-2) }
-.rp-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: var(--rp-gap); align-items: start }
-.rp-rail { position: sticky; top: 16px; min-width: 0 }
-.rp-chart-panel { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); background: var(--panel); padding: 12px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; overflow: hidden }
+.rp-grid { display: grid; grid-template-columns: minmax(0, 1fr) 350px; gap: 12px; align-items: stretch }
+.rp-grid.rp-grid-3col { grid-template-columns: minmax(0, 1.8fr) 280px 340px }
+.rp-orderbook-col { height: 100%; min-width: 0; display: flex; flex-direction: column }
+.rp-orderbook-col .rp-depth { height: 100%; margin-bottom: 0; display: flex; flex-direction: column; justify-content: space-between }
+.rp-rail { position: sticky; top: 16px; min-width: 0; display: flex; flex-direction: column; gap: 10px }
+.rp-chart-panel { border: 1px solid var(--border); border-radius: var(--rp-radius); background: var(--panel); padding: 12px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden }
 .rp-chart-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
-.rp-chart-box { position: relative; min-height: 0 }
-.rp-chart { position: relative }
+.rp-chart-box { position: relative; min-height: 0; flex: 1 }
+.rp-chart { position: relative; height: 100% }
 .rp-chart-canvas { width: 100%; height: 440px; min-width: 0; overflow: hidden; position: relative }
 .rp-chart-loading { height: 440px }
 .rp-chart-legend { position: absolute; top: 6px; left: 8px; display: flex; flex-wrap: wrap; gap: 10px; font-family: var(--rp-mono); font-size: 11px; color: var(--text-2); pointer-events: none; z-index: 2; background: color-mix(in srgb, var(--panel) 80%, transparent); padding: 2px 6px; border-radius: 4px }
@@ -281,25 +288,28 @@
   .rp-btn, .rp-seg-item { transition: none }
 }
 
-/* Orderbook depth panel (rail / mobile above trade bar) + post-only check */
-.rp-depth { border: 1px solid var(--border-soft); border-radius: var(--rp-radius); background: var(--panel); padding: 12px; margin-bottom: var(--rp-gap); display: grid; gap: 8px; font-variant-numeric: tabular-nums }
-.rp-depth-head { display: flex; justify-content: space-between; align-items: center; gap: 8px }
-.rp-depth-head h3 { margin: 0; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; color: var(--text-3) }
-.rp-depth-cols, .rp-depth-row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr); gap: 8px; align-items: baseline }
-.rp-depth-cols { color: var(--text-dim); font-family: var(--rp-mono); font-size: 10px; text-transform: uppercase; padding: 0 6px }
+/* Orderbook depth panel (rail / middle column / mobile above trade bar) */
+.rp-depth { border: 1px solid var(--border); border-radius: var(--rp-radius); background: var(--panel); padding: 12px; margin-bottom: 0; display: flex; flex-direction: column; justify-content: space-between; font-variant-numeric: tabular-nums; height: 100% }
+.rp-depth-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px }
+.rp-depth-title-group { display: flex; align-items: center; gap: 8px }
+.rp-depth-head h3 { margin: 0; font-size: 13px; font-weight: 700; color: var(--text) }
+.rp-depth-controls { display: flex; align-items: center; gap: 6px }
+.rp-depth-tag { font-size: 10.5px; font-family: var(--rp-mono); color: var(--text-dim); background: var(--inset); border: 1px solid var(--border-soft); padding: 1px 6px; border-radius: 4px }
+.rp-depth-cols, .rp-depth-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 6px; align-items: baseline }
+.rp-depth-cols { color: var(--text-dim); font-family: var(--rp-mono); font-size: 10.5px; text-transform: uppercase; padding: 4px 6px; border-bottom: 1px solid var(--border-soft) }
 .rp-depth-cols span + span, .rp-depth-row > span + span { text-align: right }
 .rp-depth-side { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px }
 .rp-depth-row { position: relative; padding: 3px 6px; border-radius: 4px; overflow: hidden; font-size: 12px }
 .rp-depth-row > span { position: relative; z-index: 1 }
 .rp-depth-bar { position: absolute; inset-block: 0; right: 0; z-index: 0; border-radius: 4px; max-width: 100% }
-.rp-depth-bar[data-side='ask'] { background: var(--neg-bg); border-left: 1px solid var(--neg-border) }
-.rp-depth-bar[data-side='bid'] { background: var(--pos-bg); border-left: 1px solid var(--pos-border) }
-.rp-depth-price { font-family: var(--rp-mono) }
+.rp-depth-bar[data-side='ask'] { background: rgba(255, 143, 163, 0.14); border-left: 2px solid rgba(255, 143, 163, 0.4) }
+.rp-depth-bar[data-side='bid'] { background: rgba(95, 237, 223, 0.14); border-left: 2px solid rgba(95, 237, 223, 0.4) }
+.rp-depth-price { font-family: var(--rp-mono); font-weight: 600 }
 .rp-depth-row[data-side='ask'] .rp-depth-price { color: var(--neg) }
 .rp-depth-row[data-side='bid'] .rp-depth-price { color: var(--pos) }
-.rp-depth-size, .rp-depth-total { color: var(--text-3) }
-.rp-depth-spread { margin: 0; padding: 6px; border-block: 1px solid var(--border-soft); font-size: 12px; color: var(--text-3); text-align: center }
-.rp-depth-spread strong { color: var(--text) }
+.rp-depth-size, .rp-depth-total { color: var(--text-2); font-family: var(--rp-mono) }
+.rp-depth-spread { margin: 4px 0; padding: 6px; border-block: 1px solid var(--border-soft); font-size: 11.5px; color: var(--text-3); text-align: center; background: rgba(131, 110, 249, 0.04); border-radius: 4px }
+.rp-depth-spread strong { color: var(--text); font-family: var(--rp-mono) }
 .rp-check { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; cursor: pointer; padding: 4px 0 6px }
 .rp-check input { width: 16px; height: 16px; margin: 2px 0 0; accent-color: var(--accent); flex: none }
 .rp-check .rp-muted { display: block }

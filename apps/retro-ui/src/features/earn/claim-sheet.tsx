@@ -3,7 +3,7 @@
 // claim actions and a sequential "Claim all" batch. Each claim is its own wallet signature —
 // no batching contract exists and none is implied.
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Loader2 } from 'lucide-react';
+import { RiLoader4Line } from 'react-icons/ri';
 import { EmptyState } from '@/components/trading/primitives';
 import { useHideValues } from './earn-hero';
 import type { ClaimRow, RowPhase, useEarnWallet } from './use-claims';
@@ -41,7 +41,7 @@ export function ClaimRowItem({ row, phase, onAction, disabled }: {
       <small>{row.kind === 'buyback-release' ? 'releasable now' : 'in escrow'}</small>
     </div>
     <button type="button" className="rp-btn rp-btn-sm" disabled={disabled || busy} onClick={onAction}>
-      {busy && <Loader2 size={13} className="rp-spin" aria-hidden />}
+      {busy && <RiLoader4Line size={13} className="rp-spin" aria-hidden />}
       {phaseLabel(phase, row.actionLabel)}
     </button>
   </div>;

@@ -1,7 +1,15 @@
 // RetroPick trading design-system primitives (Section 4). Built on installed radix-ui + lucide only.
 import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { Tooltip as RTooltip } from 'radix-ui';
-import { AlertTriangle, Check, Copy, ExternalLink, Info, RefreshCw, SearchX } from 'lucide-react';
+import { 
+  CheckIcon, 
+  CopyIcon, 
+  ExternalLinkIcon, 
+  InfoCircledIcon, 
+  ExclamationTriangleIcon, 
+  ReloadIcon, 
+  MagnifyingGlassIcon 
+} from '@radix-ui/react-icons';
 import { explorer } from '@retropick/launchpad-sdk/chain';
 import { lifecycleLabel, shortHex, type Lifecycle } from '@/lib/view-models/token-terminal';
 import { quoteAssetByAddress } from '@retropick/launchpad-sdk/quote-assets';
@@ -49,7 +57,7 @@ export function Hint({ text, children }: { text: ReactNode; children: ReactNode 
 }
 
 export function InfoHint({ text, label = 'Definition' }: { text: ReactNode; label?: string }) {
-  return <Hint text={text}><button type="button" className="rp-info" aria-label={label}><Info size={12} aria-hidden/></button></Hint>;
+  return <Hint text={text}><button type="button" className="rp-info" aria-label={label}><InfoCircledIcon className="rp-radix-icon" width={13} height={13} aria-hidden/></button></Hint>;
 }
 
 export function Metric({ label, value, unit, note, definition, testId }: { label: string; value: ReactNode; unit?: string; note?: ReactNode; definition?: ReactNode; testId?: string }) {
@@ -75,9 +83,9 @@ export function AddressChip({ value, kind = 'address', label, full = false }: { 
   return <span className="rp-address" data-address={value}>
     <span className="rp-mono" title={value}>{text}</span>
     <button type="button" className="rp-icon-btn" onClick={copy} aria-label={copied ? `${label ?? 'Address'} copied` : `Copy ${label ?? (kind === 'tx' ? 'transaction hash' : 'address')}`}>
-      {copied ? <Check size={12} aria-hidden/> : <Copy size={12} aria-hidden/>}
+      {copied ? <CheckIcon width={13} height={13} aria-hidden/> : <CopyIcon width={13} height={13} aria-hidden/>}
     </button>
-    {chain && <a className="rp-icon-btn" href={explorer(value, kind)} target="_blank" rel="noreferrer" aria-label={`Open ${label ?? value} in Monad Explorer`}><ExternalLink size={12} aria-hidden/></a>}
+    {chain && <a className="rp-icon-btn" href={explorer(value, kind)} target="_blank" rel="noreferrer" aria-label={`Open ${label ?? value} in Monad Explorer`}><ExternalLinkIcon width={13} height={13} aria-hidden/></a>}
     <span className="rp-sr" aria-live="polite">{copied ? 'Copied' : ''}</span>
   </span>;
 }
@@ -105,12 +113,12 @@ export function TokenIdentity({ name, symbol, icon, logo, quote, size = 'md', ch
 }
 
 export function EmptyState({ title, text, action }: { title: string; text?: ReactNode; action?: ReactNode }) {
-  return <div className="rp-empty" role="status"><SearchX size={22} aria-hidden/><strong>{title}</strong>{text && <p>{text}</p>}{action}</div>;
+  return <div className="rp-empty" role="status"><MagnifyingGlassIcon width={24} height={24} aria-hidden/><strong>{title}</strong>{text && <p>{text}</p>}{action}</div>;
 }
 
 export function ErrorState({ title, text, onRetry, action }: { title: string; text?: ReactNode; onRetry?: () => void; action?: ReactNode }) {
-  return <div className="rp-error" role="alert"><AlertTriangle size={18} aria-hidden/><div><strong>{title}</strong>{text && <p>{text}</p>}</div>
-    {onRetry && <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={onRetry}><RefreshCw size={13} aria-hidden/>Retry</button>}{action}</div>;
+  return <div className="rp-error" role="alert"><ExclamationTriangleIcon width={18} height={18} aria-hidden/><div><strong>{title}</strong>{text && <p>{text}</p>}</div>
+    {onRetry && <button type="button" className="rp-btn rp-btn-ghost rp-btn-sm" onClick={onRetry}><ReloadIcon width={13} height={13} aria-hidden/>Retry</button>}{action}</div>;
 }
 
 export function FreshnessIndicator({ freshness, demo }: { freshness: { indexedBlock: string; lagBlocks: number; stale: boolean } | null; demo?: boolean }) {

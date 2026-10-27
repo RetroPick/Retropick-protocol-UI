@@ -18,14 +18,13 @@ export function TicketShell({ title = 'Trade', venue, demo, kind, onKind, limitD
   sync?: ReactNode; children: ReactNode; cta: ReactNode; status?: ReactNode; footer?: ReactNode; testId?: string;
 }) {
   return <section className="rp-ticket" aria-label={`${title} ticket`} data-testid={testId} data-order-kind={kind} data-side={side}>
-    <header className="rp-ticket-head"><h2>{title}</h2><span className="rp-ticket-venue">{demo && <DemoBadge/>}{venue}</span></header>
+    {!sideDisabled && <SegmentedControl label="Trade side" value={side} onChange={onSide} size="md" className="rp-side" options={[
+      { value: 'Buy', label: 'Buy', tone: 'buy' }, { value: 'Sell', label: 'Sell', tone: 'sell' },
+    ]}/>}
     <SegmentedControl label="Order type" value={kind} onChange={onKind} options={[
       { value: 'Market', label: 'Market' },
       { value: 'Limit', label: 'Limit', disabled: !!limitDisabledReason, reason: limitDisabledReason ?? undefined },
     ]}/>
-    {!sideDisabled && <SegmentedControl label="Trade side" value={side} onChange={onSide} size="md" className="rp-side" options={[
-      { value: 'Buy', label: 'Buy', tone: 'buy' }, { value: 'Sell', label: 'Sell', tone: 'sell' },
-    ]}/>}
     {sync && <div className="rp-ticket-sync" role="status">{sync}</div>}
     <div className="rp-ticket-body">{children}</div>
     {status}

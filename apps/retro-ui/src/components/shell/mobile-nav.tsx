@@ -1,6 +1,7 @@
 'use client';
 
-import { Home, Coins, Plus, Droplets } from 'lucide-react';
+import { RiRocketLine, RiWaterPercentLine, RiCoinsLine } from 'react-icons/ri';
+import { FiPlus } from 'react-icons/fi';
 import Link from '@/components/product/safe-link';
 import { usePathname } from '@/lib/next-compat';
 
@@ -15,9 +16,9 @@ export function MobileNav() {
   };
 
   const navItems = [
-    { id: 'home' as const, label: 'Home', icon: Home, href: '/launchpad' },
-    { id: 'liquidity' as const, label: 'Liquidity', icon: Droplets, href: '/liquidity' },
-    { id: 'earn' as const, label: 'Earn', icon: Coins, href: '/earn' },
+    { id: 'home' as const, label: 'Home', icon: RiRocketLine, href: '/launchpad' },
+    { id: 'liquidity' as const, label: 'Liquidity', icon: RiWaterPercentLine, href: '/liquidity' },
+    { id: 'earn' as const, label: 'Earn', icon: RiCoinsLine, href: '/earn' },
   ];
 
   return (
@@ -33,7 +34,7 @@ export function MobileNav() {
         );
       })}
       <Link href="/launchpad/create" className="mnav-item">
-        <span className="mnav-launch-icon"><Plus className="w-4 h-4 stroke-[3]"/></span>
+        <span className="mnav-launch-icon"><FiPlus className="w-4 h-4 stroke-[3]"/></span>
         <span>Launch</span>
       </Link>
     </nav>
